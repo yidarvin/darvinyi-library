@@ -1,0 +1,204 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Curve, Compare, Concentric, ProcessLoop, Spectrum, Flow } from "../components/diagrams";
+
+<Hero
+  slug="atomic-habits"
+  thesis="Big results do not come from big moves. They come from small habits repeated until they compound, and from becoming the kind of person those habits belong to."
+  minutes={7}
+/>
+
+## The thesis
+
+Most attempts at change fail because they aim at the wrong target. We set a goal, chase
+it with a burst of effort, hit it or miss it, and drift back to where we started. Clear's
+argument is that the real unit of change is not the goal but the habit: a small action,
+repeated. Improve by a tiny amount each day and the gains do not add, they multiply, until
+what looks from the outside like a sudden transformation is really the sum of a thousand
+unremarkable repetitions. The work is to build systems that make good habits automatic and
+bad ones awkward, and to let each repetition slowly rewrite who you believe you are.
+
+## The math of small margins
+
+A single one percent improvement is invisible. You will not feel it and no one will
+notice. The point is what happens when you keep earning it. Get one percent better every
+day for a year and the improvements compound to roughly thirty-seven times where you
+began. Get one percent worse each day and you decline to almost nothing. The gap between
+those two paths is trivial on any given Tuesday and enormous across a year.
+
+This is why habits seem not to work right up until they obviously do. For weeks the curve
+of progress hugs the floor, far below the straight line you expected to be walking. Clear
+calls this stretch the plateau of latent potential: the value is accumulating, it just has
+not surfaced yet. Most people quit somewhere inside that flat region, which is exactly
+where quitting costs the most.
+
+<Figure id="1.1" caption="One percent a day is nothing on Tuesday and everything by December.">
+  <Curve
+    shape="exp"
+    axes={{ x: "one year of days", y: "where the habit takes you" }}
+    annotations={[
+      { x: 0.28, y: 0.06, text: "looks flat for weeks" },
+      { x: 0.92, y: 0.78, text: "~37x" },
+    ]}
+  />
+</Figure>
+
+## Goals set direction; systems make progress
+
+Goals are useful for pointing. They tell you which way to face. They are poor at
+producing, because every rival chasing the same prize shares the same goal, and because a
+goal is a yes-or-no event that ends the moment you reach it. What actually separates people
+is the system: the set of repeatable actions that runs whether or not you feel like it.
+Two people can hold the identical ambition and still end up worlds apart, because the
+ambition is the common part and the daily process is not. Fall in love with the routine and
+the result tends to follow. Fixate on the result alone and you white-knuckle your way there,
+then relax and slide back down.
+
+<Figure id="1.2" caption="A goal is a moment; a system is a habit you keep.">
+  <Compare
+    favor="right"
+    left={{
+      title: "a goal",
+      points: ["a target you hit or miss", "ends when reached", "shared by every rival", "runs on willpower"],
+    }}
+    right={{
+      title: "a system",
+      points: ["a routine you run", "repeats every day", "yours alone", "runs on autopilot"],
+    }}
+  />
+</Figure>
+
+## Habits reach down to identity
+
+There are three depths at which you can try to change. The shallowest is outcomes: the
+results you want, like a finished manuscript or a lower number on a scale. Beneath that are
+processes: the habits and routines you actually follow. Deepest is identity: the person you
+believe yourself to be. Most people start from the outside and chase outcomes. Change that
+lasts runs the other way, from the inside out. Each small action you repeat is a quiet claim
+about who you are, and the mind keeps score. Do a thing once and the claim is flimsy. Repeat
+it enough and it hardens into self-image, until being the kind of person who does it feels
+less like effort and more like a plain description of you. Write often enough and you stop
+needing to talk yourself into writing. The habit is no longer something you do. It has become
+something you are.
+
+<Figure id="1.3" caption="Change that lasts starts at the center and works outward.">
+  <Concentric
+    rings={[{ label: "identity" }, { label: "processes" }, { label: "outcomes" }]}
+    highlight={0}
+  />
+</Figure>
+
+## Every habit runs the same four-beat loop
+
+Underneath every habit is one four-part cycle. A cue is the trigger, a scrap of information
+that predicts a reward. The cue sparks a craving, the wanting that gives you a reason to
+move. The craving drives a response, the habit itself. The response delivers a reward, which
+satisfies the craving and, just as importantly, teaches your brain that this cue was worth
+paying attention to. That lesson feeds back to the cue, so the loop tightens a little on
+every pass. Habits form because this circuit runs thousands of times, almost all of it
+below awareness. To understand any habit, good or bad, find its four parts.
+
+<Figure id="1.4" caption="Each reward makes the next cue a little more magnetic.">
+  <ProcessLoop
+    stages={["cue", "craving", "response", "reward"]}
+    compoundingEdge={3}
+    centerLabel="the habit loop"
+  />
+</Figure>
+
+## Friction decides which habits win
+
+We like to explain behavior with willpower and motivation, but the stronger lever is
+friction: how much effort a habit takes to begin. People run on a law of least effort,
+drifting toward whatever is easiest in the moment. So the reliable move is not to summon
+more discipline, it is to redesign the effort. Make a good habit easier to start than to
+skip: lay out the clothes the night before, keep the guitar on its stand, put the one app
+you want on the home screen. Make a bad habit harder: unplug the console, log out of the
+account, add steps between you and it. The two-minute rule works on the same principle.
+Shrink any new habit to a version you can finish in two minutes, so beginning costs almost
+nothing, because a habit you never begin cannot compound.
+
+<Figure id="1.5" caption="Lower the friction on what you want to do; raise it on what you do not.">
+  <Spectrum
+    left="effortful"
+    right="effortless"
+    marker={0.85}
+    markerLabel="two-minute rule"
+    zones={[
+      { from: 0.0, to: 0.36, label: "make bad habits hard" },
+      { from: 0.62, to: 1.0, label: "make good habits easy", accent: true },
+    ]}
+  />
+</Figure>
+
+## The four laws of behavior change
+
+Clear turns the loop into a set of levers. Because a habit has four beats, there are four
+ways to strengthen it, one per beat. To build a good habit: make it obvious, so the cue is
+easy to notice; make it attractive, so the craving pulls; make it easy, so the response
+takes little effort; and make it satisfying, so the reward lands and the loop wants to run
+again. To break a bad habit, invert each law: make it invisible, unattractive, hard, and
+unsatisfying. This is the practical spine of the book, and it is where the earlier ideas
+cash out. The compounding, the systems, the identity, all of it gets built one obvious,
+attractive, easy, satisfying repetition at a time.
+
+<Figure id="1.6" caption="The four laws act on the four beats of the loop; invert each one to break a habit instead.">
+  <Flow steps={["make it obvious", "make it attractive", "make it easy", "make it satisfying"]} />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Stack a new habit on an old one">
+Name one thing you already do without fail: pouring your morning coffee, closing your
+laptop at the end of the day. Bolt the new habit onto it with a single sentence: after I
+[current habit], I will [new habit]. The routine you already own becomes the cue you were
+missing.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Design the cue into your room">
+Pick one habit you want more of and one you want less of. Make the first one's cue
+impossible to miss, like the water bottle parked on your desk, and remove the second one's
+cue entirely, like the snacks moved out of sight. Let the room do the remembering so you do
+not have to.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Shrink it to two minutes">
+Take a habit that keeps stalling and cut it down to a version you can finish in two minutes.
+"Read before bed" becomes "read one page." Get good at showing up first. Scale the habit up
+only once turning up is automatic.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make recovery the rule">
+Perfection is the wrong bar, because one missed day is inevitable and mostly harmless. The
+damage comes from letting a single skip stretch into a run of them. So decide in advance that
+the day after a slip is non-negotiable: whatever you dropped yesterday, you do the small
+version of it today. Falling off is fine. Staying off is the thing to prevent.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+A few honest caveats. The headline math, one percent a day compounding to thirty-seven
+times, illustrates how compounding behaves; it is not a measured law of self-improvement,
+and real progress is lumpier than any smooth curve. The framework is a synthesis rather than
+new science: the cue-craving-response-reward loop builds on earlier work by Charles Duhigg
+and, before him, decades of research on conditioning. Timelines vary far more than the tidy
+story admits. In a 2010 study by Phillippa Lally and colleagues in the European Journal of
+Social Psychology, a new habit took an average of about sixty-six days to feel automatic,
+but individual times ran from eighteen days to well past two hundred. And environment design
+has limits: cutting friction helps enormously with small, discrete habits and much less with
+changes that are hard for reasons no cue placement can reach. The book is an excellent
+operating manual for behavior. It is not a guarantee.
+</Callout>
+
+## If you remember one thing
+
+You do not need a bigger goal or more willpower. You need one small habit, repeated until it
+runs without a decision, aimed at the person you want to become, and protected long enough
+to compound.
+
+<ShelvedNearby
+  related={[]}
+  buyUrl="https://jamesclear.com/atomic-habits"
+  buyLabel="Atomic Habits by James Clear"
+/>
