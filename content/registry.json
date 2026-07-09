@@ -1,26 +1,1328 @@
 {
-  "title": "refsite",
-  "subtitle": "a queue-built reference site --- replace this with your subject",
+  "title": "the library",
+  "subtitle": "big non-fiction ideas, distilled into prose and diagrams",
   "mode": "book",
   "chapters": [
     {
       "num": 0,
-      "slug": "how-this-book-is-built",
-      "title": "How this book is built",
-      "subtitle": "the grammar and the queue",
-      "part": "Part 0 --- The system",
-      "routes": [
-        "meta",
-        "workflow"
-      ],
+      "slug": "about",
+      "title": "About this library",
+      "subtitle": "ideas, not text",
+      "part": "The system",
+      "routes": [],
       "status": "done"
     },
     {
       "num": 1,
-      "slug": "the-first-real-chapter",
-      "title": "Your first real chapter",
-      "subtitle": "written by the runner",
-      "part": "Part I --- Begin here",
+      "slug": "atomic-habits",
+      "title": "Atomic Habits",
+      "subtitle": "James Clear · 2018",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 2,
+      "slug": "thinking-fast-and-slow",
+      "title": "Thinking, Fast and Slow",
+      "subtitle": "Daniel Kahneman · 2011",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 3,
+      "slug": "seven-habits",
+      "title": "The 7 Habits of Highly Effective People",
+      "subtitle": "Stephen Covey · 1989",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 4,
+      "slug": "how-to-win-friends",
+      "title": "How to Win Friends and Influence People",
+      "subtitle": "Dale Carnegie · 1936",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 5,
+      "slug": "sapiens",
+      "title": "Sapiens",
+      "subtitle": "Yuval Noah Harari · 2011",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 6,
+      "slug": "mans-search-for-meaning",
+      "title": "Man's Search for Meaning",
+      "subtitle": "Viktor Frankl · 1946",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 7,
+      "slug": "psychology-of-money",
+      "title": "The Psychology of Money",
+      "subtitle": "Morgan Housel · 2020",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 8,
+      "slug": "start-with-why",
+      "title": "Start With Why",
+      "subtitle": "Simon Sinek · 2009",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 9,
+      "slug": "mindset",
+      "title": "Mindset",
+      "subtitle": "Carol Dweck · 2006",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 10,
+      "slug": "influence",
+      "title": "Influence: The Psychology of Persuasion",
+      "subtitle": "Robert Cialdini · 1984",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 11,
+      "slug": "power-of-habit",
+      "title": "The Power of Habit",
+      "subtitle": "Charles Duhigg · 2012",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 12,
+      "slug": "rich-dad-poor-dad",
+      "title": "Rich Dad Poor Dad",
+      "subtitle": "Robert Kiyosaki · 1997",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 13,
+      "slug": "deep-work",
+      "title": "Deep Work",
+      "subtitle": "Cal Newport · 2016",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 14,
+      "slug": "never-split-the-difference",
+      "title": "Never Split the Difference",
+      "subtitle": "Chris Voss · 2016",
+      "part": "Negotiation",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 15,
+      "slug": "subtle-art",
+      "title": "The Subtle Art of Not Giving a F*ck",
+      "subtitle": "Mark Manson · 2016",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 16,
+      "slug": "predictably-irrational",
+      "title": "Predictably Irrational",
+      "subtitle": "Dan Ariely · 2008",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 17,
+      "slug": "nudge",
+      "title": "Nudge",
+      "subtitle": "Richard Thaler and Cass Sunstein · 2008",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 18,
+      "slug": "black-swan",
+      "title": "The Black Swan",
+      "subtitle": "Nassim Nicholas Taleb · 2007",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 19,
+      "slug": "intelligent-investor",
+      "title": "The Intelligent Investor",
+      "subtitle": "Benjamin Graham · 1949",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 20,
+      "slug": "freakonomics",
+      "title": "Freakonomics",
+      "subtitle": "Steven Levitt and Stephen Dubner · 2005",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 21,
+      "slug": "good-to-great",
+      "title": "Good to Great",
+      "subtitle": "Jim Collins · 2001",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 22,
+      "slug": "lean-startup",
+      "title": "The Lean Startup",
+      "subtitle": "Eric Ries · 2011",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 23,
+      "slug": "zero-to-one",
+      "title": "Zero to One",
+      "subtitle": "Peter Thiel · 2014",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 24,
+      "slug": "drive",
+      "title": "Drive",
+      "subtitle": "Daniel Pink · 2009",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 25,
+      "slug": "innovators-dilemma",
+      "title": "The Innovator's Dilemma",
+      "subtitle": "Clayton Christensen · 1997",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 26,
+      "slug": "nonviolent-communication",
+      "title": "Nonviolent Communication",
+      "subtitle": "Marshall Rosenberg · 1999",
+      "part": "Communication & Relationships",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 27,
+      "slug": "crucial-conversations",
+      "title": "Crucial Conversations",
+      "subtitle": "Kerry Patterson, Joseph Grenny, Ron McMillan, and Al Switzler · 2002",
+      "part": "Communication & Relationships",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 28,
+      "slug": "five-love-languages",
+      "title": "The 5 Love Languages",
+      "subtitle": "Gary Chapman · 1992",
+      "part": "Communication & Relationships",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 29,
+      "slug": "getting-to-yes",
+      "title": "Getting to Yes",
+      "subtitle": "Roger Fisher, William Ury, and Bruce Patton · 1981",
+      "part": "Negotiation",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 30,
+      "slug": "emotional-intelligence",
+      "title": "Emotional Intelligence",
+      "subtitle": "Daniel Goleman · 1995",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 31,
+      "slug": "grit",
+      "title": "Grit",
+      "subtitle": "Angela Duckworth · 2016",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 32,
+      "slug": "body-keeps-the-score",
+      "title": "The Body Keeps the Score",
+      "subtitle": "Bessel van der Kolk · 2014",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 33,
+      "slug": "guns-germs-steel",
+      "title": "Guns, Germs, and Steel",
+      "subtitle": "Jared Diamond · 1997",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 34,
+      "slug": "outliers",
+      "title": "Outliers",
+      "subtitle": "Malcolm Gladwell · 2008",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 35,
+      "slug": "selfish-gene",
+      "title": "The Selfish Gene",
+      "subtitle": "Richard Dawkins · 1976",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 36,
+      "slug": "short-history-nearly-everything",
+      "title": "A Short History of Nearly Everything",
+      "subtitle": "Bill Bryson · 2003",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 37,
+      "slug": "thinking-in-systems",
+      "title": "Thinking in Systems",
+      "subtitle": "Donella Meadows · 2008",
+      "part": "Systems, Complexity & the Future",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 38,
+      "slug": "range",
+      "title": "Range",
+      "subtitle": "David Epstein · 2019",
+      "part": "Systems, Complexity & the Future",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 39,
+      "slug": "meditations",
+      "title": "Meditations",
+      "subtitle": "Marcus Aurelius · c. 180 CE",
+      "part": "Philosophy & Wisdom",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 40,
+      "slug": "obstacle-is-the-way",
+      "title": "The Obstacle Is the Way",
+      "subtitle": "Ryan Holiday · 2014",
+      "part": "Philosophy & Wisdom",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 41,
+      "slug": "power-of-now",
+      "title": "The Power of Now",
+      "subtitle": "Eckhart Tolle · 1997",
+      "part": "Spirituality & Mindfulness",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 42,
+      "slug": "peak",
+      "title": "Peak",
+      "subtitle": "Anders Ericsson and Robert Pool · 2016",
+      "part": "Learning & Skill Acquisition",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 43,
+      "slug": "big-magic",
+      "title": "Big Magic",
+      "subtitle": "Elizabeth Gilbert · 2015",
+      "part": "Creativity & Writing",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 44,
+      "slug": "steal-like-an-artist",
+      "title": "Steal Like an Artist",
+      "subtitle": "Austin Kleon · 2012",
+      "part": "Creativity & Writing",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 45,
+      "slug": "on-writing",
+      "title": "On Writing",
+      "subtitle": "Stephen King · 2000",
+      "part": "Creativity & Writing",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 46,
+      "slug": "why-we-sleep",
+      "title": "Why We Sleep",
+      "subtitle": "Matthew Walker · 2017",
+      "part": "Health & the Body",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 47,
+      "slug": "superforecasting",
+      "title": "Superforecasting",
+      "subtitle": "Philip Tetlock and Dan Gardner · 2015",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 48,
+      "slug": "thinking-in-bets",
+      "title": "Thinking in Bets",
+      "subtitle": "Annie Duke · 2018",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 49,
+      "slug": "fooled-by-randomness",
+      "title": "Fooled by Randomness",
+      "subtitle": "Nassim Nicholas Taleb · 2001",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 50,
+      "slug": "paradox-of-choice",
+      "title": "The Paradox of Choice",
+      "subtitle": "Barry Schwartz · 2004",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 51,
+      "slug": "blink",
+      "title": "Blink",
+      "subtitle": "Malcolm Gladwell · 2005",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 52,
+      "slug": "getting-things-done",
+      "title": "Getting Things Done",
+      "subtitle": "David Allen · 2001",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 53,
+      "slug": "essentialism",
+      "title": "Essentialism",
+      "subtitle": "Greg McKeown · 2014",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 54,
+      "slug": "flow",
+      "title": "Flow",
+      "subtitle": "Mihaly Csikszentmihalyi · 1990",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 55,
+      "slug": "the-one-thing",
+      "title": "The One Thing",
+      "subtitle": "Gary Keller and Jay Papasan · 2013",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 56,
+      "slug": "four-thousand-weeks",
+      "title": "Four Thousand Weeks",
+      "subtitle": "Oliver Burkeman · 2021",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 57,
+      "slug": "almanack-naval",
+      "title": "The Almanack of Naval Ravikant",
+      "subtitle": "Eric Jorgenson · 2020",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 58,
+      "slug": "think-and-grow-rich",
+      "title": "Think and Grow Rich",
+      "subtitle": "Napoleon Hill · 1937",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 59,
+      "slug": "random-walk",
+      "title": "A Random Walk Down Wall Street",
+      "subtitle": "Burton Malkiel · 1973",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 60,
+      "slug": "millionaire-next-door",
+      "title": "The Millionaire Next Door",
+      "subtitle": "Thomas Stanley and William Danko · 1996",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 61,
+      "slug": "richest-man-babylon",
+      "title": "The Richest Man in Babylon",
+      "subtitle": "George Clason · 1926",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 62,
+      "slug": "common-sense-investing",
+      "title": "The Little Book of Common Sense Investing",
+      "subtitle": "John Bogle · 2007",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 63,
+      "slug": "dare-to-lead",
+      "title": "Dare to Lead",
+      "subtitle": "Brené Brown · 2018",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 64,
+      "slug": "built-to-last",
+      "title": "Built to Last",
+      "subtitle": "Jim Collins and Jerry Porras · 1994",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 65,
+      "slug": "good-strategy",
+      "title": "Good Strategy Bad Strategy",
+      "subtitle": "Richard Rumelt · 2011",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 66,
+      "slug": "hard-thing",
+      "title": "The Hard Thing About Hard Things",
+      "subtitle": "Ben Horowitz · 2014",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 67,
+      "slug": "blue-ocean",
+      "title": "Blue Ocean Strategy",
+      "subtitle": "W. Chan Kim and Renée Mauborgne · 2004",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 68,
+      "slug": "e-myth",
+      "title": "The E-Myth Revisited",
+      "subtitle": "Michael Gerber · 1995",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 69,
+      "slug": "extreme-ownership",
+      "title": "Extreme Ownership",
+      "subtitle": "Jocko Willink and Leif Babin · 2015",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 70,
+      "slug": "four-hour-workweek",
+      "title": "The 4-Hour Workweek",
+      "subtitle": "Tim Ferriss · 2007",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 71,
+      "slug": "effective-executive",
+      "title": "The Effective Executive",
+      "subtitle": "Peter Drucker · 1966",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 72,
+      "slug": "difficult-conversations",
+      "title": "Difficult Conversations",
+      "subtitle": "Douglas Stone, Bruce Patton, and Sheila Heen · 1999",
+      "part": "Communication & Relationships",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 73,
+      "slug": "seven-principles-marriage",
+      "title": "The Seven Principles for Making Marriage Work",
+      "subtitle": "John Gottman · 1999",
+      "part": "Communication & Relationships",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 74,
+      "slug": "made-to-stick",
+      "title": "Made to Stick",
+      "subtitle": "Chip Heath and Dan Heath · 2007",
+      "part": "Communication & Relationships",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 75,
+      "slug": "quiet",
+      "title": "Quiet",
+      "subtitle": "Susan Cain · 2012",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 76,
+      "slug": "happiness-hypothesis",
+      "title": "The Happiness Hypothesis",
+      "subtitle": "Jonathan Haidt · 2006",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 77,
+      "slug": "flourish",
+      "title": "Flourish",
+      "subtitle": "Martin Seligman · 2011",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 78,
+      "slug": "four-agreements",
+      "title": "The Four Agreements",
+      "subtitle": "Don Miguel Ruiz · 1997",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 79,
+      "slug": "twelve-rules",
+      "title": "12 Rules for Life",
+      "subtitle": "Jordan Peterson · 2018",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 80,
+      "slug": "feeling-good",
+      "title": "Feeling Good",
+      "subtitle": "David Burns · 1980",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 81,
+      "slug": "homo-deus",
+      "title": "Homo Deus",
+      "subtitle": "Yuval Noah Harari · 2015",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 82,
+      "slug": "cosmos",
+      "title": "Cosmos",
+      "subtitle": "Carl Sagan · 1980",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 83,
+      "slug": "brief-history-time",
+      "title": "A Brief History of Time",
+      "subtitle": "Stephen Hawking · 1988",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 84,
+      "slug": "the-gene",
+      "title": "The Gene",
+      "subtitle": "Siddhartha Mukherjee · 2016",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 85,
+      "slug": "why-nations-fail",
+      "title": "Why Nations Fail",
+      "subtitle": "Daron Acemoglu and James Robinson · 2012",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 86,
+      "slug": "factfulness",
+      "title": "Factfulness",
+      "subtitle": "Hans Rosling · 2018",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 87,
+      "slug": "emperor-maladies",
+      "title": "The Emperor of All Maladies",
+      "subtitle": "Siddhartha Mukherjee · 2010",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 88,
+      "slug": "henrietta-lacks",
+      "title": "The Immortal Life of Henrietta Lacks",
+      "subtitle": "Rebecca Skloot · 2010",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 89,
+      "slug": "antifragile",
+      "title": "Antifragile",
+      "subtitle": "Nassim Nicholas Taleb · 2012",
+      "part": "Systems, Complexity & the Future",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 90,
+      "slug": "fifth-discipline",
+      "title": "The Fifth Discipline",
+      "subtitle": "Peter Senge · 1990",
+      "part": "Systems, Complexity & the Future",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 91,
+      "slug": "daily-stoic",
+      "title": "The Daily Stoic",
+      "subtitle": "Ryan Holiday and Stephen Hanselman · 2016",
+      "part": "Philosophy & Wisdom",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 92,
+      "slug": "tao-te-ching",
+      "title": "Tao Te Ching",
+      "subtitle": "Lao Tzu · c. 400 BCE",
+      "part": "Philosophy & Wisdom",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 93,
+      "slug": "letters-from-a-stoic",
+      "title": "Letters from a Stoic",
+      "subtitle": "Seneca · c. 65 CE",
+      "part": "Philosophy & Wisdom",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 94,
+      "slug": "ego-is-the-enemy",
+      "title": "Ego Is the Enemy",
+      "subtitle": "Ryan Holiday · 2016",
+      "part": "Philosophy & Wisdom",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 95,
+      "slug": "untethered-soul",
+      "title": "The Untethered Soul",
+      "subtitle": "Michael Singer · 2007",
+      "part": "Spirituality & Mindfulness",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 96,
+      "slug": "wherever-you-go",
+      "title": "Wherever You Go, There You Are",
+      "subtitle": "Jon Kabat-Zinn · 1994",
+      "part": "Spirituality & Mindfulness",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 97,
+      "slug": "make-it-stick",
+      "title": "Make It Stick",
+      "subtitle": "Peter Brown, Henry Roediger, and Mark McDaniel · 2014",
+      "part": "Learning & Skill Acquisition",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 98,
+      "slug": "ultralearning",
+      "title": "Ultralearning",
+      "subtitle": "Scott Young · 2019",
+      "part": "Learning & Skill Acquisition",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 99,
+      "slug": "bird-by-bird",
+      "title": "Bird by Bird",
+      "subtitle": "Anne Lamott · 1994",
+      "part": "Creativity & Writing",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 100,
+      "slug": "war-of-art",
+      "title": "The War of Art",
+      "subtitle": "Steven Pressfield · 2002",
+      "part": "Creativity & Writing",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 101,
+      "slug": "artists-way",
+      "title": "The Artist's Way",
+      "subtitle": "Julia Cameron · 1992",
+      "part": "Creativity & Writing",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 102,
+      "slug": "breath",
+      "title": "Breath",
+      "subtitle": "James Nestor · 2020",
+      "part": "Health & the Body",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 103,
+      "slug": "outlive",
+      "title": "Outlive",
+      "subtitle": "Peter Attia · 2023",
+      "part": "Health & the Body",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 104,
+      "slug": "misbehaving",
+      "title": "Misbehaving",
+      "subtitle": "Richard Thaler · 2015",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 105,
+      "slug": "stumbling-on-happiness",
+      "title": "Stumbling on Happiness",
+      "subtitle": "Daniel Gilbert · 2006",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 106,
+      "slug": "noise",
+      "title": "Noise",
+      "subtitle": "Daniel Kahneman, Olivier Sibony, and Cass Sunstein · 2021",
+      "part": "Behavioral Science & Decision-Making",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 107,
+      "slug": "make-time",
+      "title": "Make Time",
+      "subtitle": "Jake Knapp and John Zeratsky · 2018",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 108,
+      "slug": "indistractable",
+      "title": "Indistractable",
+      "subtitle": "Nir Eyal · 2019",
+      "part": "Habits & Productivity",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 109,
+      "slug": "your-money-or-your-life",
+      "title": "Your Money or Your Life",
+      "subtitle": "Vicki Robin and Joe Dominguez · 1992",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 110,
+      "slug": "i-will-teach-you",
+      "title": "I Will Teach You to Be Rich",
+      "subtitle": "Ramit Sethi · 2009",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 111,
+      "slug": "capital-21c",
+      "title": "Capital in the Twenty-First Century",
+      "subtitle": "Thomas Piketty · 2013",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 112,
+      "slug": "total-money-makeover",
+      "title": "The Total Money Makeover",
+      "subtitle": "Dave Ramsey · 2003",
+      "part": "Money, Investing & Economics",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 113,
+      "slug": "measure-what-matters",
+      "title": "Measure What Matters",
+      "subtitle": "John Doerr · 2018",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 114,
+      "slug": "48-laws-of-power",
+      "title": "The 48 Laws of Power",
+      "subtitle": "Robert Greene · 1998",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 115,
+      "slug": "originals",
+      "title": "Originals",
+      "subtitle": "Adam Grant · 2016",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 116,
+      "slug": "radical-candor",
+      "title": "Radical Candor",
+      "subtitle": "Kim Scott · 2017",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 117,
+      "slug": "culture-code",
+      "title": "The Culture Code",
+      "subtitle": "Daniel Coyle · 2018",
+      "part": "Leadership & Business",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 118,
+      "slug": "talking-to-strangers",
+      "title": "Talking to Strangers",
+      "subtitle": "Malcolm Gladwell · 2019",
+      "part": "Communication & Relationships",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 119,
+      "slug": "supercommunicators",
+      "title": "Supercommunicators",
+      "subtitle": "Charles Duhigg · 2024",
+      "part": "Communication & Relationships",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 120,
+      "slug": "attached",
+      "title": "Attached",
+      "subtitle": "Amir Levine and Rachel Heller · 2010",
+      "part": "Communication & Relationships",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 121,
+      "slug": "getting-past-no",
+      "title": "Getting Past No",
+      "subtitle": "William Ury · 1991",
+      "part": "Negotiation",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 122,
+      "slug": "bargaining-for-advantage",
+      "title": "Bargaining for Advantage",
+      "subtitle": "G. Richard Shell · 1999",
+      "part": "Negotiation",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 123,
+      "slug": "talk-to-someone",
+      "title": "Maybe You Should Talk to Someone",
+      "subtitle": "Lori Gottlieb · 2019",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 124,
+      "slug": "gifts-of-imperfection",
+      "title": "The Gifts of Imperfection",
+      "subtitle": "Brené Brown · 2010",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 125,
+      "slug": "lost-connections",
+      "title": "Lost Connections",
+      "subtitle": "Johann Hari · 2018",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 126,
+      "slug": "behave",
+      "title": "Behave",
+      "subtitle": "Robert Sapolsky · 2017",
+      "part": "Meaning, Psychology & the Mind",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 127,
+      "slug": "silent-spring",
+      "title": "Silent Spring",
+      "subtitle": "Rachel Carson · 1962",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 128,
+      "slug": "sixth-extinction",
+      "title": "The Sixth Extinction",
+      "subtitle": "Elizabeth Kolbert · 2014",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 129,
+      "slug": "astrophysics-hurry",
+      "title": "Astrophysics for People in a Hurry",
+      "subtitle": "Neil deGrasse Tyson · 2017",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 130,
+      "slug": "demon-haunted-world",
+      "title": "The Demon-Haunted World",
+      "subtitle": "Carl Sagan · 1995",
+      "part": "Big Ideas: Science, History & Society",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 131,
+      "slug": "the-innovators",
+      "title": "The Innovators",
+      "subtitle": "Walter Isaacson · 2014",
+      "part": "Systems, Complexity & the Future",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 132,
+      "slug": "superintelligence",
+      "title": "Superintelligence",
+      "subtitle": "Nick Bostrom · 2014",
+      "part": "Systems, Complexity & the Future",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 133,
+      "slug": "scientific-revolutions",
+      "title": "The Structure of Scientific Revolutions",
+      "subtitle": "Thomas Kuhn · 1962",
+      "part": "Systems, Complexity & the Future",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 134,
+      "slug": "godel-escher-bach",
+      "title": "Gödel, Escher, Bach",
+      "subtitle": "Douglas Hofstadter · 1979",
+      "part": "Systems, Complexity & the Future",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 135,
+      "slug": "guide-to-good-life",
+      "title": "A Guide to the Good Life",
+      "subtitle": "William Irvine · 2008",
+      "part": "Philosophy & Wisdom",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 136,
+      "slug": "art-of-war",
+      "title": "The Art of War",
+      "subtitle": "Sun Tzu · c. 500 BCE",
+      "part": "Philosophy & Wisdom",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 137,
+      "slug": "tao-of-pooh",
+      "title": "The Tao of Pooh",
+      "subtitle": "Benjamin Hoff · 1982",
+      "part": "Philosophy & Wisdom",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 138,
+      "slug": "miracle-of-mindfulness",
+      "title": "The Miracle of Mindfulness",
+      "subtitle": "Thich Nhat Hanh · 1975",
+      "part": "Spirituality & Mindfulness",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 139,
+      "slug": "waking-up",
+      "title": "Waking Up",
+      "subtitle": "Sam Harris · 2014",
+      "part": "Spirituality & Mindfulness",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 140,
+      "slug": "moonwalking-einstein",
+      "title": "Moonwalking with Einstein",
+      "subtitle": "Joshua Foer · 2011",
+      "part": "Learning & Skill Acquisition",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 141,
+      "slug": "mind-for-numbers",
+      "title": "A Mind for Numbers",
+      "subtitle": "Barbara Oakley · 2014",
+      "part": "Learning & Skill Acquisition",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 142,
+      "slug": "creative-act",
+      "title": "The Creative Act",
+      "subtitle": "Rick Rubin · 2023",
+      "part": "Creativity & Writing",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 143,
+      "slug": "show-your-work",
+      "title": "Show Your Work!",
+      "subtitle": "Austin Kleon · 2014",
+      "part": "Creativity & Writing",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 144,
+      "slug": "how-not-to-die",
+      "title": "How Not to Die",
+      "subtitle": "Michael Greger · 2015",
+      "part": "Health & the Body",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 145,
+      "slug": "omnivores-dilemma",
+      "title": "The Omnivore's Dilemma",
+      "subtitle": "Michael Pollan · 2006",
+      "part": "Health & the Body",
+      "routes": [],
+      "status": "pending"
+    },
+    {
+      "num": 146,
+      "slug": "when-breath-becomes-air",
+      "title": "When Breath Becomes Air",
+      "subtitle": "Paul Kalanithi · 2016",
+      "part": "Health & the Body",
       "routes": [],
       "status": "pending"
     }

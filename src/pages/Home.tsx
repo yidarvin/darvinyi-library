@@ -1,58 +1,45 @@
 import { Link } from "react-router";
-import { registry } from "../lib/registry";
+import { registry, type ChapterMeta } from "../lib/registry";
 import { useHead } from "../lib/useHead";
 import { Layout } from "../components/Layout";
+import { BookCover } from "../components/BookCover";
 
-// Home --- the table of contents, generated from content/registry.json.
-// Chapters group under their optional `part`. Pending chapters are shown as
-// dimmed, unlinked rows so the shape of the whole book is visible from day one.
+// Home --- the library. A shelf per `part`, each a grid of generated covers, driven
+// entirely from content/registry.json. A built book links to its page; a book still
+// in the queue shows as a dimmed, unlinked cover ("in the stacks"), so the whole
+// shape of the library is visible from day one and fills in as the queue runs.
 export function Home() {
   useHead(registry.title, registry.subtitle);
-  const parts = groupByPart(registry.chapters);
+  const about = registry.chapters.find((c) => c.slug === "about");
+  const books = registry.chapters.filter((c) => c.slug !== "about");
+  const shelves = groupByPart(books);
 
   return (
     <Layout>
-      <p className="eyebrow mb-3">index</p>
-      <h1 className="font-mono text-3xl font-bold tracking-tight text-fg">{registry.title}</h1>
-      <p className="mt-2 text-muted">{registry.subtitle}</p>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="eyebrow mb-3">library</p>
+          <h1 className="font-mono text-3xl font-bold tracking-tight text-fg">{registry.title}</h1>
+          <p className="mt-2 max-w-xl text-muted">{registry.subtitle}</p>
+        </div>
+        {about && (
+          <Link to={`/${about.slug}`} className="mt-1 shrink-0 font-mono text-xs text-muted hover:text-accent">
+            {about.title}
+          </Link>
+        )}
+      </div>
 
-      <div className="mt-12 space-y-10">
-        {parts.map(({ part, chapters }) => (
+      <div className="mt-14 space-y-12">
+        {shelves.map(({ part, chapters }) => (
           <section key={part ?? "_"}>
             {part && (
-              <h2 className="mb-4 font-mono text-xs uppercase tracking-wider text-comment">
-                {part}
-              </h2>
+              <h2 className="mb-4 font-mono text-xs uppercase tracking-wider text-comment">{`// ${part}`}</h2>
             )}
-            <ol className="space-y-1">
-              {chapters.map((c) => {
-                const num = String(c.num).padStart(2, "0");
-                const published = c.status !== "pending";
-                const row = (
-                  <div className="flex items-baseline gap-4 rounded-md px-3 py-2 transition-colors">
-                    <span className="w-8 shrink-0 font-mono text-xs text-comment">{num}</span>
-                    <span className="flex-1">
-                      <span className={published ? "text-fg" : "text-muted"}>{c.title}</span>
-                      {c.subtitle && (
-                        <span className="ml-2 text-sm text-muted">{c.subtitle}</span>
-                      )}
-                    </span>
-                    <StatusTag status={c.status} />
-                  </div>
-                );
-                return (
-                  <li key={c.slug}>
-                    {published ? (
-                      <Link to={`/${c.slug}`} className="block no-underline hover:bg-surface">
-                        {row}
-                      </Link>
-                    ) : (
-                      <div className="cursor-default opacity-70">{row}</div>
-                    )}
-                  </li>
-                );
-              })}
-            </ol>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+              {chapters.map((c) => (
+                <Shelf key={c.slug} chapter={c} />
+              ))}
+            </div>
           </section>
         ))}
       </div>
@@ -60,22 +47,37 @@ export function Home() {
   );
 }
 
-function StatusTag({ status }: { status: string }) {
-  const color =
-    status === "done" ? "var(--accent)" : status === "draft" ? "var(--fg-muted)" : "var(--comment)";
+function Shelf({ chapter }: { chapter: ChapterMeta }) {
+  const published = chapter.status !== "pending";
+  if (published) {
+    return (
+      <Link to={`/${chapter.slug}`} className="block no-underline transition-opacity hover:opacity-80">
+        <BookCover meta={chapter} size="tile" />
+      </Link>
+    );
+  }
   return (
-    <span className="shrink-0 font-mono text-[0.7rem] uppercase tracking-wider" style={{ color }}>
-      {status}
-    </span>
+    <div className="cursor-default opacity-45" title="in the stacks">
+      <BookCover meta={chapter} size="tile" />
+    </div>
   );
 }
 
-function groupByPart<T extends { part?: string }>(items: T[]): { part?: string; chapters: T[] }[] {
-  const out: { part?: string; chapters: T[] }[] = [];
+// Group every book onto its shelf. The registry is ordered by tier then shelf, so a
+// shelf recurs across tiers; a real library shows each shelf once with all its books.
+// Shelves keep first-appearance order, and books keep registry order within a shelf.
+function groupByPart(items: ChapterMeta[]): { part?: string; chapters: ChapterMeta[] }[] {
+  const out: { part?: string; chapters: ChapterMeta[] }[] = [];
+  const byPart = new Map<string, ChapterMeta[]>();
   for (const item of items) {
-    const last = out[out.length - 1];
-    if (last && last.part === item.part) last.chapters.push(item);
-    else out.push({ part: item.part, chapters: [item] });
+    const key = item.part ?? "_";
+    let bucket = byPart.get(key);
+    if (!bucket) {
+      bucket = [];
+      byPart.set(key, bucket);
+      out.push({ part: item.part, chapters: bucket });
+    }
+    bucket.push(item);
   }
   return out;
 }

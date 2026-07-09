@@ -1,0 +1,82 @@
+import { Flow, Compare, Iceberg } from "../components/diagrams";
+
+This is a library of distilled non-fiction. Each page takes one educational book and
+rebuilds its ideas in original prose and original diagrams, so you can leave
+understanding the core argument, the central framework, and how to use it, without
+having read a line of the original. It is a synthesis, not a summary of chapters, and
+never a copy.
+
+## Ideas, not text
+
+The line we hold is simple. Ideas are free; expression is not. We distill the concepts
+and the lessons, and we write every page from scratch. There is no verbatim quoting
+beyond the rare short attributed epigraph, and no close paraphrase either: swapping
+synonyms into an author's sentence is still borrowing their sentence. The test we use is
+plain. If we could not explain an idea with the book closed, we have not distilled it
+yet.
+
+<Figure id="0.1" caption="What crosses over into a page, and what stays in the book.">
+  <Compare
+    favor="left"
+    left={{
+      title: "what we keep",
+      points: ["the argument", "the central model", "how to use it", "the honest caveats"],
+    }}
+    right={{
+      title: "what stays behind",
+      points: ["the author's wording", "their figures and charts", "long quotations", "the cover art"],
+    }}
+  />
+</Figure>
+
+The same rule governs the diagrams, which are the point of this site rather than its
+decoration. When a book has a famous figure, we do not trace it. We build an original
+visual of the underlying idea in a fixed house vocabulary, so the whole shelf reads in
+one voice and no page reproduces someone else's chart.
+
+## The shape under the words
+
+A good non-fiction book is usually one clear idea carried by a large body of story and
+evidence. Most of the page count is the carrying. A distillation keeps the shape and
+lets the supporting mass go, because you can reconstruct the examples for yourself once
+you hold the structure.
+
+<Figure id="0.2" caption="A book is a small idea held up by a large body of story and evidence.">
+  <Iceberg
+    above="the one idea"
+    below={["the framework that holds it up", "the studies and the stories", "the caveats and edge cases"]}
+    waterlineLabel="what a page keeps"
+  />
+</Figure>
+
+## Organized by our own logic
+
+Pages are grouped on shelves by subject, not by any book's table of contents. A
+distillation that mirrors the chapter order reads as a replacement for the book. One
+that reorganizes the ideas by how they actually relate reads as synthesis, which is the
+honest thing to make and also the more useful one. Where two books argue about the same
+idea, their pages link to each other, so the library slowly becomes a light web instead
+of a flat list.
+
+## One book at a time
+
+The library is built from a queue. Each book is researched, distilled, drawn, and
+shelved in a single focused pass, then checked before it ships. Because the whole queue
+is visible from the first day, you can see the full shape of the shelves right now. The
+covers that look dimmed are still in the stacks, waiting their turn.
+
+<Figure id="0.3" caption="How one queued title becomes a page on the shelf.">
+  <Flow steps={["queued", "researched", "distilled", "drawn", "shelved"]} highlight={2} />
+</Figure>
+
+## If you want the book, buy it
+
+A distillation is a map, not the territory. It will orient you fast and help you decide
+what deserves your full attention, but it cannot replace the hours an author spent
+making an idea land. Every page links out to a bookseller for that reason. If a page
+makes you want the real thing, the library has done its job: go and buy it.
+
+<Callout kind="note">
+Ideas are free; expression is not. We distill concepts and lessons. We never reproduce.
+If you ever find a page that crosses that line, treat it as a bug, not the design.
+</Callout>
