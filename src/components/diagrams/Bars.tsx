@@ -1,4 +1,4 @@
-import { C, MONO, type DiagramBase } from "./_util";
+import { C, MONO, wrapLabel, type DiagramBase } from "./_util";
 import { Svg } from "./_shared";
 
 export interface BarItem {
@@ -37,10 +37,15 @@ export function Bars({ items = [], ariaLabel, className }: BarsProps) {
         const y = top + i * rowH + rowH / 2;
         const v = Math.min(1, Math.max(0, item.value));
         const w = Math.max(2, trackW * v);
+        const labelLines = wrapLabel(item.label, 16);
         return (
           <g key={i}>
-            <text x={gutter} y={y + 4} textAnchor="end" fontFamily={MONO} fontSize="11" fill={item.accent ? C.accent : C.fg}>
-              {item.label}
+            <text textAnchor="end" fontFamily={MONO} fontSize="11" fill={item.accent ? C.accent : C.fg}>
+              {labelLines.map((ln, li) => (
+                <tspan key={li} x={gutter} y={y + 4 - (labelLines.length - 1) * 6 + li * 12}>
+                  {ln}
+                </tspan>
+              ))}
             </text>
             <rect x={trackX} y={y - 9} width={trackW} height={18} rx="4" fill={C.surface2} stroke={C.border} />
             <rect x={trackX} y={y - 9} width={w} height={18} rx="4" fill={item.accent ? C.accent : C.comment} fillOpacity={item.accent ? 0.85 : 0.6} />

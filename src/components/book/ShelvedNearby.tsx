@@ -40,7 +40,12 @@ export function ShelvedNearby({ related = [], buyUrl, buyLabel }: ShelvedNearbyP
       {buyUrl && (
         <p className="mt-6 font-mono text-sm text-muted">
           {"/* want the whole book? */ "}
-          <a href={buyUrl} target="_blank" rel="noopener noreferrer">
+          <a
+            href={buyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${buyLabel ?? "buy it"} (opens in a new tab)`}
+          >
             {buyLabel ?? "buy it"}
           </a>
         </p>

@@ -51,17 +51,14 @@ export function Iceberg({
 
       {/* labels */}
       <CenteredText x={cx} y={82} lines={wrapLabel(above, 16)} fill={C.accent} size={11.5} font={MONO} weight={600} />
-      {below.map((b, i) => (
-        <CenteredText
-          key={i}
-          x={cx}
-          y={waterY + 40 + i * 34}
-          lines={wrapLabel(b, 22)}
-          fill={C.fg}
-          size={11.5}
-          font={MONO}
-        />
-      ))}
+      {below.map((b, i) => {
+        // Spread the drivers down the wide belly of the mass so any count stays inside it.
+        const labTop = waterY + 34;
+        const labBottom = 236;
+        const y =
+          below.length > 1 ? labTop + (i * (labBottom - labTop)) / (below.length - 1) : (labTop + labBottom) / 2;
+        return <CenteredText key={i} x={cx} y={y} lines={wrapLabel(b, 22)} fill={C.fg} size={11.5} font={MONO} />;
+      })}
     </Svg>
   );
 }

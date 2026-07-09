@@ -36,7 +36,7 @@ export function NodeGraph({ nodes = [], edges = [], ariaLabel, className }: Node
 
   const pos = (node: GraphNode, i: number): [number, number] => {
     if (typeof node.x === "number" && typeof node.y === "number") {
-      return [40 + node.x * 300, 34 + node.y * 256];
+      return [47 + node.x * 286, 34 + node.y * 256];
     }
     const a = (-90 + (i * 360) / n) * (Math.PI / 180);
     return [cx + R * Math.cos(a), cy + R * Math.sin(a)];

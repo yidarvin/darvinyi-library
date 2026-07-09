@@ -2,6 +2,7 @@
 // forms (see docs/diagram-vocabulary.md). A book page composes and labels these; it
 // never authors raw SVG from zero. All forms theme to the house tokens and read at
 // 360px wide. See ./README.md for the form-to-props cheatsheet.
+export type { DiagramBase } from "./_util";
 export { ProcessLoop, type ProcessLoopProps } from "./ProcessLoop";
 export { Matrix, type MatrixProps, type MatrixQuadrant } from "./Matrix";
 export { Pyramid, type PyramidProps, type PyramidTier } from "./Pyramid";

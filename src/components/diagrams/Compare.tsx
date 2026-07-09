@@ -18,7 +18,13 @@ export interface CompareProps extends DiagramBase {
  * System 2, before and after, positions versus interests. The panels are kept
  * visually parallel so the contrast reads at a glance.
  */
-export function Compare({ left, right, favor = "right", ariaLabel, className }: CompareProps) {
+export function Compare({
+  left = { title: "", points: [] },
+  right = { title: "", points: [] },
+  favor = "right",
+  ariaLabel,
+  className,
+}: CompareProps) {
   const panelW = 168;
   const gapX = 20;
   const x0 = 8;

@@ -17,7 +17,7 @@ export interface VennProps extends DiagramBase {
  * combination ideas: the Hedgehog concept, an ikigai-style overlap where the overlap
  * itself is the point.
  */
-export function Venn({ sets = [], intersectionLabel, ariaLabel, className }: VennProps) {
+export function Venn({ sets = [], intersectionLabel = "", ariaLabel, className }: VennProps) {
   const three = sets.length >= 3;
   const r = three ? 84 : 82;
   const label = (i: number) => (sets[i] ? sets[i].label : "");

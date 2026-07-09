@@ -25,9 +25,9 @@ export interface MatrixProps extends DiagramBase {
  * accent; the rest stay muted.
  */
 export function Matrix({
-  xAxis,
-  yAxis,
-  quadrants,
+  xAxis = { left: "", right: "" },
+  yAxis = { low: "", high: "" },
+  quadrants = [{ title: "" }, { title: "" }, { title: "" }, { title: "" }],
   highlight,
   ariaLabel,
   className,
