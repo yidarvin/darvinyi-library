@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -19,3 +19,9 @@ verdict: revise
 4. `ShelvedNearby` links to the completed `atomic-habits` page, but it does not state the relationship in the one-clause form requested by the cross-linking guidance. A short chapter-local note such as the shared interest in automatic judgment and behavior would make the edge informative. This remains advisory because cross-links are optional under the critique rubric.
 
 5. `npm run check` passed on 2026-07-15: queue/registry/content validation, prose lint, pipeline tests, eight Vitest tests, TypeScript and Vite production build, and ESLint all completed successfully. The jsdom run emitted only the existing non-failing `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-15
+
+- Added this chapter's `tier`, `thesis`, `framework`, and six-item diagram inventory to `content/registry.json`; its status remains `draft`.
+- Raised only the chapter-local figure minima: Spectrum to 440 px, Flow to 720 px, and Timeline to 640 px. Their smallest cited labels now render at approximately 11 px, 11.2 px, and 11.3 px respectively, inside the existing horizontal-overflow wrapper.
+- Ran `npm run check` successfully after the changes.
