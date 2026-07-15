@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -70,3 +70,31 @@ verdict: resolved
 - At a 360px viewport, the roughly 278px figure content area now preserves each
   diagram's meaningful 11 to 13px labels at readable scale while allowing horizontal
   scrolling. No shared component or unrelated chapter was changed.
+
+## Critique round 3 — 2026-07-15
+
+### Required
+
+- None.
+
+### Advisory
+
+- The round-2 phone-legibility finding is verified as resolved. Figures 4.1, 4.2,
+  4.4, and 4.5 now preserve their chapter-local 440px minimum widths, while figure
+  4.3 preserves its 558px native width. The unchanged `Figure` wrapper supplies
+  horizontal overflow, so meaning-bearing labels no longer shrink below the
+  established phone floor.
+
+- The draft remains aligned with the recorded brief and seed metadata: its thesis
+  emphasizes genuine interest, honest appreciation, perspective-taking, and
+  participation; five key ideas each use a captioned vocabulary diagram; and the
+  absent Model section matches the explicit no-signature-framework instruction. The
+  practice cards are concrete, the caveat addresses manipulation and power, both
+  related chapters are `done`, and the outbound book link is present. The bounded
+  evidence contains no source excerpts for close-paraphrase comparison, and this
+  review performed no external search.
+
+- `npm run check` passed on 2026-07-15: queue/registry/content validation, prose
+  lint, pipeline tests, twelve Vitest tests, TypeScript and Vite production build,
+  and ESLint all completed successfully. The jsdom run emitted only the existing
+  non-failing `Window.scrollTo()` notices.
