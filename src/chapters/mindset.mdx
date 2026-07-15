@@ -110,9 +110,9 @@ exhaustion in the name of character.
     edges={[
       { from: "attempt", to: "evidence" },
       { from: "attempt", to: "support" },
-      { from: "evidence", to: "strategy", kind: "reinforcing" },
-      { from: "support", to: "strategy", kind: "reinforcing" },
-      { from: "strategy", to: "attempt", kind: "reinforcing" },
+      { from: "evidence", to: "strategy" },
+      { from: "support", to: "strategy" },
+      { from: "strategy", to: "attempt" },
     ]}
   />
 </Figure>
@@ -129,10 +129,10 @@ move the next attempt a little to the right.
 <Figure id="9.5" caption="A mindset is a position that can vary by domain, not a permanent identity badge.">
   <Spectrum
     className="block w-full min-w-[440px]"
-    left="ability is fixed"
-    right="ability can grow"
+    left="fixed ability"
+    right="can grow"
     marker={0.56}
-    markerLabel="this domain, today"
+    markerLabel="today"
     zones={[
       { from: 0.0, to: 0.35, label: "protect the label" },
       { from: 0.62, to: 1.0, label: "test and learn", accent: true },
@@ -149,24 +149,24 @@ practice, instruction, strategy, support, and time. Neither claim says every per
 reach the same outcome. The practical question is smaller and more useful: what capacity is
 actually open to development here, and what would a better next attempt require?
 
-<Figure id="9.6" caption="The model contrasts two interpretations of ability and the actions each interpretation makes more likely.">
+<Figure id="9.6" caption="A belief about ability sits between two poles; the panels trace the actions each interpretation makes more likely.">
   <div className="min-w-[440px] space-y-6">
     <Spectrum
       className="block w-full"
-      left="fixed mindset"
-      right="growth mindset"
+      left="fixed view"
+      right="growth view"
       marker={0.5}
-      markerLabel="belief about ability"
+      markerLabel="belief"
     />
     <Compare
       className="block w-full"
       favor="right"
       left={{
-        title: "when ability seems fixed",
+        title: "fixed ability",
         points: ["challenge can threaten status", "feedback can feel personal", "failure can invite withdrawal"],
       }}
       right={{
-        title: "when ability seems developable",
+        title: "ability can grow",
         points: ["challenge can reveal a next step", "feedback can guide practice", "failure can invite revision"],
       }}
     />

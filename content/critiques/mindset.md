@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -62,3 +62,17 @@ verdict: revise
    lint, pipeline tests, twenty-two Vitest tests, TypeScript and Vite production
    build, and ESLint all completed successfully. The jsdom run emitted only the
    existing non-failing `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-15
+
+- Reworked Figure 9.6's chapter-local `Compare` titles as `fixed ability` and
+  `ability can grow`. Both remain distinct, fit inside the existing 168-unit
+  panels, and require no change to the shared component.
+- Replaced the colliding Spectrum labels in Figure 9.5 with `fixed ability`, `can
+  grow`, and `today`. In Figure 9.6, the corresponding labels are now `fixed view`,
+  `growth view`, and `belief`; the revised caption spells out that this marker is a
+  belief about ability. Each label now has its own readable space in the unchanged
+  SVG geometry.
+- Removed the `reinforcing` edge kinds from Figure 9.4. Its arrows now communicate
+  the documented learning sequence without asserting unsupported system-dynamics
+  polarity.
