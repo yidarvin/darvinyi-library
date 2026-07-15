@@ -160,16 +160,27 @@ EOF
 }
 
 run_agent() {
-  local action="$1" slug="$2" title="$3" model="$4" prompt
+  local action="$1" slug="$2" title="$3" model="$4" prompt transcript final rc
   prompt="$(agent_prompt "$action" "$slug" "$title")"
-  local args=(codex --search -m "$model" -c "model_reasoning_effort=\"${EFFORT}\"" -s workspace-write -a never exec --ephemeral "$prompt")
-  if [ "$TIMEOUT" -gt 0 ]; then "$TIMEOUT_BIN" "$TIMEOUT" "${args[@]}" </dev/null &
-  else "${args[@]}" </dev/null &
+  mkdir -p "${TMPDIR:-/tmp}/darvinyi-runqueue" || return 1
+  transcript="${TMPDIR:-/tmp}/darvinyi-runqueue/${slug}-${action}-$(date +%Y%m%d-%H%M%S).log"
+  final="${transcript}.final"
+  local args=(codex --search -m "$model" -c "model_reasoning_effort=\"${EFFORT}\"" -s workspace-write -a never exec --ephemeral -o "$final" "$prompt")
+  if [ "$TIMEOUT" -gt 0 ]; then "$TIMEOUT_BIN" "$TIMEOUT" "${args[@]}" </dev/null >"$transcript" 2>&1 &
+  else "${args[@]}" </dev/null >"$transcript" 2>&1 &
   fi
   CHILD_PID=$!
   wait "$CHILD_PID"
-  local rc=$?
+  rc=$?
   CHILD_PID=''
+  if [ -s "$final" ]; then
+    printf '\n%s\n' "agent summary:"
+    sed -n '1,80p' "$final"
+  fi
+  if [ "$rc" -ne 0 ]; then
+    printf '\n%s\n' "agent transcript (last 80 lines): $transcript" >&2
+    tail -n 80 "$transcript" >&2
+  fi
   return "$rc"
 }
 
