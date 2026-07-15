@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -66,3 +66,19 @@ verdict: revise
    lint, pipeline tests, fourteen Vitest tests, TypeScript and Vite production
    build, and ESLint all completed successfully. The jsdom run emitted only the
    existing non-failing `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-15
+
+- Replaced the six full-width SVG classes with chapter-local minimum rendered widths
+  inside the existing horizontal-overflow wrapper: 380 px for the node graph, 680 px
+  for the four-step flow, 400 px for the comparison, 440 px for the iceberg and
+  spectrum, and 480 px for the timeline. This keeps each figure's meaning-bearing
+  labels at approximately 11 CSS px or larger at a 360 px viewport while preserving
+  horizontal access to the wider diagrams.
+- Recalculated the Hero badge from the final reader-facing page content and changed it
+  from `9-min` to `7-min`.
+- Preserved the chapter's original figure structure while clarifying the advisory
+  issues recorded in this critique: scoped biological transmission to inherited
+  variants in human populations, qualified the money claim to shared-acceptance
+  money, and removed the spectrum's arbitrary currency marker in favor of two equal
+  qualitative trust mechanisms.

@@ -5,7 +5,7 @@ import { Compare, Flow, Iceberg, NodeGraph, Spectrum, Timeline } from "../compon
 <Hero
   slug="sapiens"
   thesis="Humans built power at planetary scale by coordinating around stories that exist only when many people keep acting as if they are real."
-  minutes={9}
+  minutes={7}
 />
 
 ## The thesis
@@ -35,7 +35,7 @@ can move resources across a country.
 
 <Figure id="5.1" caption="Shared rules turn many separate decisions into a network of coordination.">
   <NodeGraph
-    className="block w-full"
+    className="block min-w-[380px]"
     nodes={[
       { id: "story", label: "shared story", x: 0.5, y: 0.12 },
       { id: "strangers", label: "strangers", x: 0.14, y: 0.54 },
@@ -55,7 +55,7 @@ can move resources across a country.
 
 ## Culture is an accumulating experiment
 
-A biological mutation spreads only through reproduction. A cultural invention can travel by
+An inherited biological variant spreads through reproduction within human populations. A cultural invention can travel by
 conversation, imitation, teaching, and record keeping. It can also be altered on the way.
 That gives human groups a rapid, fallible way to test tools, norms, and explanations across
 generations. The result is not a single march toward improvement. Cultures borrow, compete,
@@ -65,7 +65,7 @@ do.
 
 <Figure id="5.2" caption="Ideas can be passed on, changed, and built into the next round of practice.">
   <Flow
-    className="block w-full"
+    className="block min-w-[680px]"
     steps={["observe or invent", "share the practice", "adapt it", "inherit a changed starting point"]}
     highlight={2}
   />
@@ -82,7 +82,7 @@ not a simple scoreboard on which cultivation defeats foraging.
 
 <Figure id="5.3" caption="Agriculture enlarged what societies could organize, while creating new burdens for daily life.">
   <Compare
-    className="block w-full"
+    className="block min-w-[400px]"
     favor="none"
     left={{
       title: "what it enabled",
@@ -106,7 +106,7 @@ than on a law of physics.
 
 <Figure id="5.4" caption="A public rule sits above the institutions and repeated habits that make it durable.">
   <Iceberg
-    className="block w-full"
+    className="block min-w-[440px]"
     above="the rule that feels natural"
     waterlineLabel="what is publicly visible"
     below={["laws and records", "repeated incentives", "education and ritual"]}
@@ -115,22 +115,21 @@ than on a law of physics.
 
 ## Money extends trust beyond acquaintance
 
-Money is not valuable because of the material in a coin or note. It works when a buyer and a
-seller expect other people to accept it later. That shared expectation makes exchange possible
+Money whose exchange value depends chiefly on shared acceptance is not valuable because of the
+material in a coin or note. It works when a buyer and a seller expect other people to accept it
+later. That shared expectation makes exchange possible
 without a personal relationship and without finding someone who wants exactly what you have.
 It is a powerful coordination device, not a moral verdict. A market can connect distant lives
 while leaving open questions about fairness, coercion, and what should never be priced.
 
 <Figure id="5.5" caption="Currency works when two strangers expect the same token to be accepted again.">
   <Spectrum
-    className="block w-full"
+    className="block min-w-[440px]"
     left="personal trust"
     right="portable trust"
-    marker={0.7}
-    markerLabel="currency"
     zones={[
-      { from: 0.0, to: 0.38, label: "exchange depends on knowing the person" },
-      { from: 0.58, to: 1.0, label: "exchange depends on shared acceptance", accent: true },
+      { from: 0.0, to: 0.5, label: "exchange depends on knowing the person" },
+      { from: 0.5, to: 1.0, label: "exchange depends on shared acceptance", accent: true },
     ]}
   />
 </Figure>
@@ -146,7 +145,7 @@ breaks. Each label covers long, uneven processes with different timings in diffe
 
 <Figure id="5.6" caption="Three long transformations frame Harari's account of human coordination and power.">
   <Timeline
-    className="block w-full"
+    className="block min-w-[480px]"
     segments={[
       { label: "cognitive revolution", sub: "symbols and flexible cooperation" },
       { label: "agricultural revolution", sub: "cultivation, surplus, settlement" },
