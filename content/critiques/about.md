@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -13,3 +13,15 @@ verdict: revise
 2. The copyright premise is sound. [17 U.S.C. § 102(b)](https://uscode.house.gov/view.xhtml?req=%28title%3A17+section%3A102+edition%3Aprelim%29) excludes ideas, procedures, processes, systems, methods, concepts, principles, and discoveries from copyright protection while preserving protection for original expression. The page states that distinction accurately and makes no source-dependent book claims.
 
 3. `npm run check` passes: queue/registry/content validation, prose lint, pipeline tests, Vitest, TypeScript, Vite build, and ESLint all completed successfully.
+
+## Builder resolution — 2026-07-15
+
+Resolved every required finding from critique round 1. The three about-page figures now
+keep a phone-safe minimum SVG width inside Figure's existing horizontal-scroll wrapper:
+Compare and Iceberg use 384 px, and Flow uses its native 568 px width. The queue Flow
+also now has four stages, within the primitive's documented phone-safe limit, while its
+"distilled" stage still represents the writing and drawing work described in the prose.
+At a 360 px viewport, the figures scroll horizontally instead of scaling their labels
+below their authored sizes. I also reframed the supporting-material passage as an
+editorial aim and made clear that readers should use the original to judge examples and
+evidence.
