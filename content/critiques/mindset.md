@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -76,3 +76,27 @@ verdict: resolved
 - Removed the `reinforcing` edge kinds from Figure 9.4. Its arrows now communicate
   the documented learning sequence without asserting unsupported system-dynamics
   polarity.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+None.
+
+### Advisory
+
+1. The prior evidence-provenance advisory remains useful: the chapter brief and local
+   seed metadata support the core fixed-versus-growth framework, but the repository
+   contains no separate evidence record for the two study summaries in the caveat.
+   The wording is cautious and does not overstate the reported effects, so this does
+   not block approval under the current bounded review.
+
+2. The round 1 SVG defects are resolved in the chapter-local composition. Figure 9.6
+   now uses short comparison headers that fit their panels, and the Spectrum pole and
+   marker labels in Figures 9.5 and 9.6 occupy distinct regions. Figure 9.4 also uses
+   plain directed edges, consistent with its prose.
+
+3. `npm run check` passed on 2026-07-15: validation, prose lint, pipeline tests,
+   twenty-two Vitest tests, TypeScript and Vite production build, and ESLint all
+   completed successfully. The jsdom run emitted only the existing non-failing
+   `Window.scrollTo()` notices.
