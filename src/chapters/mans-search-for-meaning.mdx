@@ -1,0 +1,206 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Venn } from "../components/diagrams";
+
+<Hero
+  slug="mans-search-for-meaning"
+  thesis="Meaning does not erase suffering or change the facts, but a person can still answer the moment before them with care, courage, and responsibility."
+  minutes={7}
+/>
+
+## The thesis
+
+Frankl's argument begins where control ends. A person cannot always choose the conditions
+of life, and the book bears witness to conditions of calculated cruelty that no philosophy
+can redeem. Yet conditions do not settle every human possibility. Even under severe
+constraint, there can remain a narrow space in which to choose a stance, attend to another
+person, or carry out one necessary act. Meaning is found in that concrete answer, not in a
+universal slogan and not in a promise that pain will make sense.
+
+## Why it matters
+
+This is both a Holocaust memoir and an account of a therapeutic idea. Its enduring force
+comes partly from refusing a shallow version of optimism. Frankl does not ask people to
+pretend that horror is good. He asks a harder question: given what is true and cannot now be
+changed, what response is still mine to make? That question scales down from catastrophe to
+ordinary grief, illness, boredom, and difficult obligations, while keeping the difference in
+scale morally visible.
+
+## Key ideas
+
+## Conditions and response are not the same thing
+
+Frankl separates the world imposed on a person from the stance they can sometimes take
+within it. The distinction is small but important. It does not grant magical control over
+health, violence, poverty, loss, or another person's behavior. It identifies a remaining
+margin of agency: the next honest action, the refusal to betray a value, the care offered to
+someone else. The margin may be thin, and trauma can shrink a person's available choices
+further. It is still different from zero.
+
+<Figure id="6.1" caption="Circumstances set real limits; a response can still be chosen within them.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "conditions",
+      points: ["what happened", "other people's actions", "real limits and losses", "not ours to command"],
+    }}
+    right={{
+      title: "response",
+      points: ["the next honest act", "a stance toward pain", "care for another person", "a value kept under pressure"],
+    }}
+  />
+</Figure>
+
+## Meaning is specific to the moment
+
+The book resists the hunt for one permanent answer to the meaning of life. A parent at a
+bedside, a worker facing an obligation, and a person mourning a loss face different calls.
+Meaning is less like a possession to acquire than a demand embedded in a situation. Notice
+what the moment asks, weigh it against conscience and responsibility, then act. The answer
+can be modest. Calling a friend, finishing a needed task, or accepting help can be a more
+faithful response than an impressive life plan.
+
+<Figure id="6.2" caption="Meaning becomes practical when a concrete situation meets a responsible reply.">
+  <Flow
+    className="block w-full min-w-[540px]"
+    steps={["the situation", "notice what matters", "choose a response", "carry it out"]}
+    highlight={2}
+  />
+</Figure>
+
+## There are several paths into meaning
+
+Frankl describes three broad routes. A person can contribute through work or a deed, receive
+something valuable through love, nature, art, or relationship, and choose a stance toward
+unavoidable suffering. These are not a scorecard. Someone may be unable to work, unable to
+access a cherished relationship, or too overwhelmed to make a heroic gesture. The point is
+that meaning has more than one door. A life need not meet a grand public standard to contain
+an answer worth giving.
+
+<Figure id="6.3" caption="Doing, receiving, and taking a stance can each open a route toward meaning.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[{ label: "contribute" }, { label: "encounter" }, { label: "take a stance" }]}
+    intersectionLabel="a meaningful reply"
+  />
+</Figure>
+
+## Attention can move beyond the self
+
+When attention narrows around "How do I feel about myself?", every setback can become a
+verdict. Frankl's alternative is self-transcendence: direct attention toward a person to
+love, a responsibility to meet, or work that needs doing. This is not a command to neglect
+your own needs. It is a way to loosen the grip of self-absorption by joining something
+outside the self. Meaning often appears in relationship to a task or another person, rather
+than in endless inspection of one's internal state.
+
+<Figure id="6.4" caption="The felt problem may be inward; the next source of meaning can lie beyond it.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="How do I feel?"
+    below={["a person to serve", "a task that needs care", "a value to embody"]}
+    waterlineLabel="where attention first lands"
+  />
+</Figure>
+
+## A vacuum invites easy substitutes
+
+Frankl calls the feeling of inner emptiness an existential vacuum. In that state, noise can
+masquerade as direction. Busyness, conformity, status seeking, and distraction may quiet the
+question for a while without answering it. The remedy is not constant intensity or a larger
+to-do list. It is to return to the situation at hand and take responsibility for a fitting
+next act. That act can create a small amount of coherence, which makes the next choice easier
+to see.
+
+<Figure id="6.5" caption="Distraction can repeat the emptiness; a responsible act creates a different next step.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["emptiness", "easy distraction", "brief relief", "emptiness again"]}
+    compoundingEdge={3}
+    centerLabel="the substitute loop"
+  />
+</Figure>
+
+## The Model
+
+Logotherapy treats the search for meaning as a central human motive. Its three connected
+claims are that people retain some freedom to choose a stance, are drawn toward meaning, and
+can discover a meaningful possibility in the particular circumstances before them. Together,
+they turn freedom into responsibility. The framework is not a technique for manufacturing
+good feelings. It is an orientation for meeting a real situation with the most responsible
+answer available.
+
+<Figure id="6.6" caption="Logotherapy links freedom, the search for meaning, and the responsibility of a particular moment.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "freedom", label: "freedom to choose a stance", x: 0.5, y: 0.08 },
+      { id: "will", label: "will to meaning", x: 0.1, y: 0.52 },
+      { id: "moment", label: "meaning in this situation", x: 0.9, y: 0.52 },
+      { id: "answer", label: "responsible answer", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "freedom", to: "will" },
+      { from: "will", to: "answer", kind: "reinforcing" },
+      { from: "moment", to: "answer", kind: "reinforcing" },
+      { from: "freedom", to: "moment" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the part you cannot change">
+Write one difficult situation in a sentence with no advice attached. Then make a second
+column headed "still mine." List only actions, requests, boundaries, or attitudes that are
+actually available this week. Keep the list small enough to be true.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Ask what this moment needs">
+Before reacting to a hard moment, pause long enough to ask: what is the most responsible
+thing I can do here? The answer might be a practical task, a conversation, rest, a boundary,
+or asking for help. Do not look for the grandest answer. Look for the next one you can carry
+out.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Choose one route toward meaning">
+For the next seven days, make room for one contribution, one meaningful encounter, and one
+deliberate stance toward something you cannot change. Keep a sentence each night about what
+you chose. The record is for noticing patterns, not grading your character.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Bring in real support">
+If despair, trauma, or thoughts of self-harm are present, meaning exercises are not enough.
+Tell someone you trust and contact a qualified mental health professional or local crisis
+service. Asking for care is itself a responsible response to the situation.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The most damaging misreading turns Frankl's account into a demand that victims make their
+suffering meaningful, or suggests that a positive attitude can overcome violence, trauma,
+illness, or structural injustice. It cannot. The book's claim concerns a possible stance
+under constraint, not blame for what was done to a person and not a guarantee of recovery.
+It is also a memoir shaped by one survivor's perspective, not a representative history of
+the Holocaust or a universal clinical prescription. Logotherapy can be useful alongside
+appropriate medical and psychological care; it should not replace evidence-based treatment,
+safety, material support, or collective action.
+</Callout>
+
+## If you remember one thing
+
+Meaning is not a prize for suffering and it does not put suffering in your control. It can
+be the responsible next answer a person gives when the situation itself will not yield.
+
+## Shelved nearby
+
+The 7 Habits of Highly Effective People develops responsibility and proactive choice for
+ordinary life. Thinking, Fast and Slow helps explain why a pause before response can matter.
+
+<ShelvedNearby
+  related={["seven-habits", "thinking-fast-and-slow"]}
+  buyUrl="https://www.beacon.org/Mans-Search-for-Meaning-P602.aspx"
+  buyLabel="Man's Search for Meaning by Viktor E. Frankl"
+/>
