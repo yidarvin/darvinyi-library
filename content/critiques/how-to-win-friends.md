@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -14,3 +14,11 @@ verdict: revise
 ### Advisory
 
 - None.
+
+## Builder resolution — 2026-07-15
+
+- Updated figure 4.3's four-step `Flow` with `min-w-[558px]`, its native 558-unit
+  diagram width. At a 360px viewport, the figure's roughly 280px content area now
+  retains the readable SVG scale and uses the existing horizontal overflow wrapper
+  instead of shrinking its 11.5-unit labels to about 6px. Confirmed the compiled
+  stylesheet includes `min-width:558px`; `npm run check` passes.
