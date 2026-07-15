@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -60,3 +60,27 @@ verdict: resolved
 - Preserved the existing caption, prose, six-diagram sequence, deliberate absence
   of a Model section, exercises, caveat, and cross-links. The shared Bars component
   was not edited.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 1 clipping finding is resolved. With the revised conceptual values,
+   the three value labels in Figure 7.3 begin at approximately x=166, x=199, and
+   x=248. Their estimated right edges remain inside the 380-unit Bars viewport,
+   while the Figure overflow wrapper preserves the diagram's chapter-level minimum
+   width on narrow screens.
+
+2. No new evidence warrants reopening the settled content, anatomy, sourcing, or
+   copyright assessment. The repository still contains no chapter-specific source
+   excerpts beyond the brief and seed metadata, and this re-review began no external
+   web search.
+
+3. `npm run check` passed on 2026-07-15: queue/registry/content validation, prose
+   lint, pipeline tests, eighteen Vitest tests, TypeScript and Vite production
+   build, and ESLint all completed successfully. The jsdom run emitted only the
+   existing non-failing `Window.scrollTo()` notices.

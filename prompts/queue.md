@@ -21,7 +21,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 004 | how-to-win-friends              | How to Win Friends and Influence People       | DONE    |
 | 005 | sapiens                         | Sapiens                                       | DONE    |
 | 006 | mans-search-for-meaning         | Man's Search for Meaning                      | DONE    |
-| 007 | psychology-of-money             | The Psychology of Money                       | PENDING |
+| 007 | psychology-of-money             | The Psychology of Money                       | DONE    |
 | 008 | start-with-why                  | Start With Why                                | PENDING |
 | 009 | mindset                         | Mindset                                       | PENDING |
 | 010 | influence                       | Influence: The Psychology of Persuasion       | PENDING |
