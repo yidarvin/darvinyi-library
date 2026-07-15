@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -59,3 +59,14 @@ verdict: revise
    lint, pipeline tests, twelve Vitest tests, TypeScript and Vite production build,
    and ESLint all completed successfully. The jsdom run emitted only the existing
    non-failing `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-15
+
+- Preserved the prior figure 4.3 `Flow` fix at `min-w-[558px]`.
+- Added chapter-local minimum widths to the remaining phone-sensitive figures so the
+  existing `Figure` horizontal-overflow wrapper scrolls them instead of shrinking
+  their labels: figures 4.1 and 4.4 (`Compare`) and figure 4.5 (`ProcessLoop`) now
+  use `min-w-[440px]`; figure 4.2 (`Iceberg`) also uses `min-w-[440px]`.
+- At a 360px viewport, the roughly 278px figure content area now preserves each
+  diagram's meaningful 11 to 13px labels at readable scale while allowing horizontal
+  scrolling. No shared component or unrelated chapter was changed.
