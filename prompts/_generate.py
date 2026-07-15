@@ -116,8 +116,8 @@ Run order, top to bottom. The **next** item is the first `PENDING` row. Statuses
 `PENDING`, `DONE`, `SKIPPED`. Update the status cell after each run. Reorder by
 moving rows. Adding a book means adding a `PENDING` row here and a matching entry
 in `content/registry.json` (or just add it to `prompts/_books.py` and re-run
-`python3 prompts/_generate.py`). See `CLAUDE.md` for the trigger phrases and the
-`refsite-runner` skill for the per-item procedure.
+`python3 prompts/_generate.py`). See `AGENTS.md` and the `library-runner` skill for
+the per-item procedure. A built page becomes `DONE` only after an independent critique.
 
 The first row, `about`, is the bootstrap: building it also builds the library
 landing page, the diagram primitive components, and the shared book-page layout.

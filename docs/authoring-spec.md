@@ -1,6 +1,6 @@
 # Authoring Spec — darvinyi-library
 
-The quality contract for every book page. The refsite-runner skill owns the *mechanics* (how to run the queue, wire nav, validate, commit). This file owns the *standard*: what a finished distillation is, how it reads, how it looks, and how it stays on the right side of copyright. If this file and the skill ever disagree on mechanics, the skill wins; on voice and anatomy, this file wins.
+The quality contract for every book page. The repository-local `library-runner` skill owns the *mechanics* (how to run the queue, wire nav, validate, critique, commit, and push). This file owns the *standard*: what a finished distillation is, how it reads, how it looks, and how it stays on the right side of copyright. If this file and the skill ever disagree on mechanics, the skill wins; on voice and anatomy, this file wins.
 
 ## What this site is
 

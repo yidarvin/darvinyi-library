@@ -4,8 +4,8 @@ Run order, top to bottom. The **next** item is the first `PENDING` row. Statuses
 `PENDING`, `DONE`, `SKIPPED`. Update the status cell after each run. Reorder by
 moving rows. Adding a book means adding a `PENDING` row here and a matching entry
 in `content/registry.json` (or just add it to `prompts/_books.py` and re-run
-`python3 prompts/_generate.py`). See `CLAUDE.md` for the trigger phrases and the
-`refsite-runner` skill for the per-item procedure.
+`python3 prompts/_generate.py`). See `AGENTS.md` and the `library-runner` skill for
+the per-item procedure. A built page becomes `DONE` only after an independent critique.
 
 The first row, `about`, is the bootstrap: building it also builds the library
 landing page, the diagram primitive components, and the shared book-page layout.
@@ -14,8 +14,8 @@ Run it first. Every row after it is one book. Each book has a brief at
 
 | #   | slug                            | item                                          | status  |
 |-----|---------------------------------|-----------------------------------------------|---------|
-| 000 | about                           | About this library                            | DONE    |
-| 001 | atomic-habits                   | Atomic Habits                                 | DONE    |
+| 000 | about                           | About this library                            | PENDING |
+| 001 | atomic-habits                   | Atomic Habits                                 | PENDING |
 | 002 | thinking-fast-and-slow          | Thinking, Fast and Slow                       | PENDING |
 | 003 | seven-habits                    | The 7 Habits of Highly Effective People       | PENDING |
 | 004 | how-to-win-friends              | How to Win Friends and Influence People       | PENDING |

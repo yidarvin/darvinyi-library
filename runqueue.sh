@@ -1,210 +1,170 @@
 #!/usr/bin/env bash
-# runqueue.sh -- headless build loop for a queue-driven refsite.
+# runqueue.sh -- Codex-driven build, critique, and resolution loop for the library.
 #
-# Walks prompts/queue.md and, for every PENDING row, invokes `claude -p` to build
-# the next item (research, write, gate, commit, push), then runs `npm run check` as
-# an independent second gate. It stops the moment anything is off: a nonzero claude
-# exit, a hung run past --timeout, a failing check, a working tree the run left
-# dirty, or a run that made no queue progress. That last guard is what keeps an
-# unattended loop from spinning forever on one item, and it is why the loop measures
-# progress as DONE+SKIPPED going up (monotonic) rather than PENDING going down
-# (graph-mode runs append new PENDING rows, so that would misfire).
-#
-# Works with any queue.md: it finds PENDING rows by shape (a status keyword sitting
-# in its own pipe-delimited table cell), not by any specific chapter, and it tolerates
-# GFM tables with or without an outer border pipe. It assumes no non-status cell is
-# ever literally the bare word PENDING/DONE/SKIPPED.
+# Terra builds and resolves chapters. Sol independently critiques them. The driver
+# owns validation, commits, and pushes, so agents cannot silently fold unrelated work
+# into a chapter commit. It stops on an agent error, failed gate, unexpected changed
+# path, dirty tree, timeout, push failure, or too many critique rounds.
 #
 # Usage:
 #   ./runqueue.sh [-a] [-n N] [options]
 #
-#   -a, --all            run every PENDING item until the queue is drained (default)
-#   -n, --count N        run at most N items, then stop
-#   -m, --model MODEL    model passed to claude    (default: claude-opus-4-8[1m])
-#   -p, --prompt TEXT    per-item prompt           (default below)
-#   -q, --queue PATH     queue file to read        (default: prompts/queue.md)
-#   -e, --effort LEVEL   value for claude --effort (default: ultracode; "" omits it)
-#   -t, --timeout SEC    kill a single claude run after SEC seconds (needs `timeout`
-#                        or `gtimeout`; default: 0 = no limit)
-#       --no-push        build and commit but do not push (adjusts the default prompt)
-#       --no-check       skip the `npm run check` second gate (not recommended)
-#       --allow-dirty    do not require a clean git working tree
-#       --dry-run        print the resolved plan and command, then run nothing
-#   -y, --yes            do not ask for confirmation before an unbounded run
-#   -h, --help           show this help and exit
+#   -a, --all                 finish every actionable chapter (default)
+#   -n, --count N             finish at most N chapters, then stop
+#   -m, --model MODEL         deprecated alias for --build-model
+#       --build-model MODEL   Terra build/resolution model (default: gpt-5.6-terra)
+#       --critic-model MODEL  Sol critic model (default: gpt-5.6-sol)
+#   -e, --effort LEVEL        Codex reasoning effort (default: high)
+#   -p, --prompt TEXT         append instructions to every agent role
+#   -t, --timeout SEC         stop one Codex run after SEC seconds (needs timeout/gtimeout)
+#       --max-review-rounds N stop after N revise verdicts for one chapter (default: 3)
+#       --no-push             commit locally but do not push
+#       --no-check            skip the independent npm run check gate (not recommended)
+#       --allow-dirty         allow an initial dirty worktree
+#       --dry-run             print the current action and commands, then exit
+#   -y, --yes                 do not confirm an unbounded run on a TTY
+#   -h, --help                show this help and exit
+#       --version             print the runner version and exit
 #
-# Exit status: 0 when the requested work finished cleanly (queue drained or the -n
-# limit reached); 1 when the loop stopped for review; 2 on a usage error; 130 on an
-# interrupt.
+# Exit status: 0 on a clean no-op, queue drain, or requested count; 1 when a run stops
+# for review; 2 on invalid use or failed preflight; 130 on an interrupt.
 
 set -uo pipefail
 
-# --- defaults ---------------------------------------------------------------
-MODEL='claude-opus-4-8[1m]'
-EFFORT='ultracode'
-QUEUE='prompts/queue.md'
-PROMPT=''            # resolved after parsing so --no-push can adjust the default
-PROMPT_SET=0
+BUILD_MODEL='gpt-5.6-terra'
+CRITIC_MODEL='gpt-5.6-sol'
+EFFORT='high'
+EXTRA_PROMPT=''
 NO_PUSH=0
 RUN_CHECK=1
 ALLOW_DIRTY=0
 DRY_RUN=0
 ASSUME_YES=0
-TIMEOUT=0            # seconds; 0 disables the per-item wall-clock limit
+TIMEOUT=0
 TIMEOUT_BIN=''
-MAX=''               # empty means unbounded (run all)
-
-DEFAULT_PROMPT_PUSH='run the next one. commit and push the changes.'
-DEFAULT_PROMPT_NOPUSH='run the next one. commit the changes but do not push.'
+MAX=''
+MAX_REVIEW_ROUNDS=3
+CHILD_PID=''
 
 usage() { sed -n '2,/^# Exit status/{/^# Exit status/d;s/^# \{0,1\}//;p;}' "$0"; }
-
 die() { printf '\033[31m%s\033[0m\n' "runqueue: $*" >&2; exit 2; }
+stop() { printf '\033[31m%s\033[0m\n' "runqueue: $*" >&2; exit 1; }
 
-# A positive-integer argument, normalized (no leading zeros, no octal, no overflow).
-parse_count() {
-  local flag="$1" val="$2"
-  case "$val" in ''|*[!0-9]*) die "$flag needs a positive integer, got '$val'";; esac
-  [ "${#val}" -le 9 ] || die "$flag value '$val' is out of range"
-  local n=$((10#$val))
-  [ "$n" -ge 1 ] || die "$flag must be at least 1"
-  printf '%s' "$n"
+parse_positive() {
+  local flag="$1" value="$2"
+  case "$value" in ''|*[!0-9]*) die "$flag needs a positive integer, got '$value'" ;; esac
+  [ "${#value}" -le 9 ] || die "$flag value '$value' is out of range"
+  local number=$((10#$value))
+  [ "$number" -ge 1 ] || die "$flag must be at least 1"
+  printf '%s' "$number"
 }
 
-# --- parse args -------------------------------------------------------------
 while [ $# -gt 0 ]; do
   case "$1" in
-    -a|--all)       MAX=''; shift ;;
-    -n|--count)     [ $# -ge 2 ] || die "$1 needs a value"; MAX="$(parse_count "$1" "$2")"; shift 2 ;;
-    -m|--model)     [ $# -ge 2 ] || die "$1 needs a value"; MODEL="$2"; shift 2 ;;
-    -p|--prompt)    [ $# -ge 2 ] || die "$1 needs a value"; PROMPT="$2"; PROMPT_SET=1; shift 2 ;;
-    -q|--queue)     [ $# -ge 2 ] || die "$1 needs a value"; QUEUE="$2"; shift 2 ;;
-    -e|--effort)    [ $# -ge 2 ] || die "$1 needs a value"; EFFORT="$2"; shift 2 ;;
-    -t|--timeout)   [ $# -ge 2 ] || die "$1 needs a value"; TIMEOUT="$(parse_count "$1" "$2")"; shift 2 ;;
-    --no-push)      NO_PUSH=1; shift ;;
-    --no-check)     RUN_CHECK=0; shift ;;
-    --allow-dirty)  ALLOW_DIRTY=1; shift ;;
-    --dry-run)      DRY_RUN=1; shift ;;
-    -y|--yes)       ASSUME_YES=1; shift ;;
-    -h|--help)      usage; exit 0 ;;
-    --)             shift; break ;;
-    -*)             die "unknown option '$1' (try --help)" ;;
-    *)              die "unexpected argument '$1' (try --help)" ;;
+    -a|--all)                 MAX=''; shift ;;
+    -n|--count)               [ $# -ge 2 ] || die "$1 needs a value"; MAX="$(parse_positive "$1" "$2")"; shift 2 ;;
+    -m|--model)               [ $# -ge 2 ] || die "$1 needs a value"; BUILD_MODEL="$2"; printf '%s\n' "runqueue: --model is deprecated; use --build-model." >&2; shift 2 ;;
+    --build-model)            [ $# -ge 2 ] || die "$1 needs a value"; BUILD_MODEL="$2"; shift 2 ;;
+    --critic-model)           [ $# -ge 2 ] || die "$1 needs a value"; CRITIC_MODEL="$2"; shift 2 ;;
+    -e|--effort)              [ $# -ge 2 ] || die "$1 needs a value"; EFFORT="$2"; shift 2 ;;
+    -p|--prompt)              [ $# -ge 2 ] || die "$1 needs a value"; EXTRA_PROMPT="$2"; shift 2 ;;
+    -t|--timeout)             [ $# -ge 2 ] || die "$1 needs a value"; TIMEOUT="$(parse_positive "$1" "$2")"; shift 2 ;;
+    --max-review-rounds)      [ $# -ge 2 ] || die "$1 needs a value"; MAX_REVIEW_ROUNDS="$(parse_positive "$1" "$2")"; shift 2 ;;
+    --no-push)                NO_PUSH=1; shift ;;
+    --no-check)               RUN_CHECK=0; shift ;;
+    --allow-dirty)            ALLOW_DIRTY=1; shift ;;
+    --dry-run)                DRY_RUN=1; shift ;;
+    -y|--yes)                 ASSUME_YES=1; shift ;;
+    -h|--help)                usage; exit 0 ;;
+    --version)                echo "runqueue 0.2.0"; exit 0 ;;
+    --)                       shift; break ;;
+    -*)                       die "unknown option '$1' (try --help)" ;;
+    *)                        die "unexpected argument '$1' (try --help)" ;;
   esac
 done
-# The script takes no positional operands. Anything left (including tokens after --)
-# is an error, so a misplaced flag can never be silently dropped into a live run.
 [ $# -eq 0 ] || die "unexpected argument(s): $* (try --help)"
 
-# Resolve the default prompt now that --no-push is known. An explicit --prompt wins.
-if [ "$PROMPT_SET" -eq 0 ]; then
-  if [ "$NO_PUSH" -eq 1 ]; then PROMPT="$DEFAULT_PROMPT_NOPUSH"; else PROMPT="$DEFAULT_PROMPT_PUSH"; fi
-fi
-
-# --- move to the repo root (this script lives there) ------------------------
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)" || die "cannot resolve script directory"
 cd "$SCRIPT_DIR" || die "cannot cd to $SCRIPT_DIR"
 
-# --- preflight --------------------------------------------------------------
-[ -f "$QUEUE" ] || die "queue file not found: $QUEUE (run from a refsite repo, or pass --queue)"
-[ -r "$QUEUE" ] || die "queue file is not readable: $QUEUE"
-[ -f content/registry.json ] || printf '\033[33m%s\033[0m\n' "runqueue: warning: content/registry.json not found; is this a refsite repo?" >&2
-command -v claude >/dev/null 2>&1 || die "the 'claude' CLI is not on PATH"
-if [ "$RUN_CHECK" -eq 1 ]; then
-  command -v npm >/dev/null 2>&1 || die "'npm' is not on PATH (needed for the check gate; pass --no-check to skip)"
-fi
+command -v codex >/dev/null 2>&1 || die "the 'codex' CLI is not on PATH"
+command -v python3 >/dev/null 2>&1 || die "python3 is required"
+[ -f prompts/queue.md ] || die "prompts/queue.md not found"
+[ -f content/registry.json ] || die "content/registry.json not found"
+if [ "$RUN_CHECK" -eq 1 ]; then command -v npm >/dev/null 2>&1 || die "npm is required for the check gate"; fi
 if [ "$TIMEOUT" -gt 0 ]; then
   if command -v timeout >/dev/null 2>&1; then TIMEOUT_BIN=timeout
   elif command -v gtimeout >/dev/null 2>&1; then TIMEOUT_BIN=gtimeout
-  else die "--timeout needs 'timeout' or 'gtimeout' on PATH (brew install coreutils)"; fi
+  else die "--timeout needs timeout or gtimeout on PATH"; fi
 fi
 
-# Is this a git work tree? The commit/push and clean-tree guards only apply if so.
 HAVE_GIT=0
-git rev-parse --is-inside-work-tree >/dev/null 2>&1 && HAVE_GIT=1
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then HAVE_GIT=1; fi
 tree_dirty() { [ -n "$(git status --porcelain 2>/dev/null)" ]; }
-
-# An auto-committing loop must start from a clean tree, or it can fold stray local
-# changes into an unrelated chapter's commit.
 if [ "$HAVE_GIT" -eq 1 ] && [ "$ALLOW_DIRTY" -eq 0 ] && tree_dirty; then
-  die "working tree has uncommitted changes. Commit or stash them first, or pass --allow-dirty."
+  die "working tree has uncommitted changes; commit or stash first, or pass --allow-dirty"
 fi
 
-# --- counting helpers -------------------------------------------------------
-# A status cell is a pipe, optional spaces, the keyword, optional spaces, then either
-# another pipe or end of line (so bordered and borderless GFM tables both work). The
-# required leading pipe means the word PENDING in prose or an HTML comment never
-# matches. grep exit 1 means "no such row" (count 0); exit >=2 is a real read error
-# and must stop the loop, never be silently swallowed into an empty count.
-count_status() {
-  local token="$1" n rc
-  n=$(grep -Ec -- "\|[[:space:]]*${token}[[:space:]]*(\||$)" "$QUEUE" 2>/dev/null)
-  rc=$?
-  [ "$rc" -le 1 ] || die "cannot read queue file: $QUEUE"
-  printf '%s' "${n:-0}"
+next_env() { python3 scripts/decide.py next --format env; }
+done_count() {
+  python3 scripts/decide.py counts --format json | python3 -c 'import json,sys; print(json.load(sys.stdin)["done"])'
 }
-count_pending()   { count_status PENDING; }
-count_processed() { echo $(( $(count_status DONE) + $(count_status SKIPPED) )); }
-
-# --- build the claude command ----------------------------------------------
-CLAUDE_ARGS=( -p "$PROMPT" --model "$MODEL" --dangerously-skip-permissions )
-[ -n "$EFFORT" ] && CLAUDE_ARGS+=( --effort "$EFFORT" )
-
-# --- announce the plan ------------------------------------------------------
-pending_now="$(count_pending)"
-limit_desc="all ($pending_now pending)"
-[ -n "$MAX" ] && limit_desc="up to $MAX (of $pending_now pending)"
-
-printf '\033[1m%s\033[0m\n' "runqueue plan"
-printf '  queue:    %s\n' "$QUEUE"
-printf '  items:    %s\n' "$limit_desc"
-printf '  model:    %s\n' "$MODEL"
-printf '  effort:   %s\n' "${EFFORT:-<none>}"
-printf '  timeout:  %s\n' "$([ "$TIMEOUT" -gt 0 ] && echo "${TIMEOUT}s per item (${TIMEOUT_BIN})" || echo 'none')"
-printf '  gate:     %s\n' "$([ "$RUN_CHECK" -eq 1 ] && echo 'npm run check after each item' || echo 'skipped (--no-check)')"
-printf '  command:  claude %s\n' "$(printf '%q ' "${CLAUDE_ARGS[@]}")"
-
-if [ "$DRY_RUN" -eq 1 ]; then
-  printf '\n\033[33m%s\033[0m\n' "dry run: nothing was executed."
-  exit 0
-fi
-
-if [ "$pending_now" -eq 0 ]; then
-  printf '\n%s\n' "no PENDING items in $QUEUE; nothing to do."
-  exit 0
-fi
-
-# An unbounded, permission-skipping run is a big commitment; confirm when a human is
-# watching. Redirected/headless invocations (no TTY) proceed without prompting, which
-# is the whole point of an unattended loop.
-if [ -z "$MAX" ] && [ "$ASSUME_YES" -eq 0 ] && [ -t 0 ]; then
-  printf '\n%s ' "About to run ALL $pending_now item(s) with --dangerously-skip-permissions. Continue? [y/N]"
-  read -r reply
-  case "$reply" in [Yy]|[Yy][Ee][Ss]) ;; *) echo "aborted."; exit 0 ;; esac
-fi
-
-# --- signal handling and the claude runner ----------------------------------
-# Track the child so a Ctrl-C or a `kill` of a detached loop tears down the running
-# claude too, instead of orphaning it to keep committing and pushing on its own.
-CHILD_PID=''
-on_signal() {
-  printf '\n\033[33m%s\033[0m\n' "runqueue: interrupted; stopping."
-  if [ -n "$CHILD_PID" ]; then
-    kill -TERM "$CHILD_PID" 2>/dev/null
-    wait "$CHILD_PID" 2>/dev/null
-  fi
-  exit 130
+chapter_status() {
+  python3 - "$1" <<'PY'
+import json, sys
+with open("content/registry.json", encoding="utf-8") as fh:
+    data = json.load(fh)
+slug = sys.argv[1]
+print(next(c["status"] for c in data["chapters"] if c["slug"] == slug))
+PY
 }
-trap on_signal INT TERM
+chapter_verdict() {
+  python3 - "$1" <<'PY'
+import sys
+sys.path.insert(0, "scripts")
+import validate
+print(validate.critique_verdict(".", sys.argv[1]) or "")
+PY
+}
 
-# Build one item. stdin is detached from /dev/null so no tool can block on or steal
-# input, and the run is backgrounded with a tracked pid (see on_signal). Returns
-# claude's exit status; 124 signals a timeout when --timeout is in effect.
-run_claude() {
-  if [ "$TIMEOUT" -gt 0 ]; then
-    "$TIMEOUT_BIN" "$TIMEOUT" claude "${CLAUDE_ARGS[@]}" </dev/null &
-  else
-    claude "${CLAUDE_ARGS[@]}" </dev/null &
+agent_prompt() {
+  local action="$1" slug="$2" title="$3"
+  case "$action" in
+    build) cat <<EOF
+You are the Terra builder for darvinyi-library. Build exactly one pending book: ${slug} (${title}).
+
+Read AGENTS.md, prompts/notes/${slug}.md, docs/authoring-spec.md, and docs/diagram-vocabulary.md before editing. Research primary sources with web search. Write original prose and original in-vocabulary diagrams; do not reproduce book text, figures, or cover art. Follow the fixed page anatomy and house prose rules. Run npm run check and fix failures. Then run: python3 scripts/mark.py ${slug} draft.
+
+Do not critique, do not mark done, do not commit, and do not push. Touch only this chapter's content and the registry/queue status needed to mark it draft.
+EOF
+      ;;
+    critique) cat <<EOF
+You are the independent Sol critic for darvinyi-library. Critique exactly this draft: ${slug} (${title}).
+
+Read AGENTS.md, docs/authoring-spec.md, prompts/critique-rubric.md, src/chapters/${slug}.mdx, and every chapter-specific component it imports. Re-derive factual claims from primary sources where practical. Run npm run check. Do not edit page content, shared components, or build tooling.
+
+Create or append content/critiques/${slug}.md. Its first line must be verdict: approve or verdict: revise. Add a dated Critique round with REQUIRED findings first and optional ADVISORY findings after. Approve only when there are no REQUIRED findings; on approve, run: python3 scripts/mark.py ${slug} done. Do not commit or push.
+EOF
+      ;;
+    resolve) cat <<EOF
+You are the Terra resolver for darvinyi-library. Resolve the current REQUIRED critique findings for ${slug} (${title}).
+
+Read AGENTS.md, the full content/critiques/${slug}.md history, prompts/notes/${slug}.md, docs/authoring-spec.md, and every current chapter artifact. Apply every REQUIRED finding, preserve prior fixes, run npm run check, then append a dated Builder resolution section naming the concrete changes. Set the first line of the critique file to verdict: resolved.
+
+Do not mark the chapter done, do not change unrelated chapters, and do not commit or push.
+EOF
+      ;;
+    *) die "unknown action '$action'" ;;
+  esac
+  if [ -n "$EXTRA_PROMPT" ]; then printf '\nAdditional operator instructions:\n%s\n' "$EXTRA_PROMPT"; fi
+}
+
+run_agent() {
+  local action="$1" slug="$2" title="$3" model="$4" prompt
+  prompt="$(agent_prompt "$action" "$slug" "$title")"
+  local args=(codex --search -m "$model" -c "model_reasoning_effort=\"${EFFORT}\"" -s workspace-write -a never exec --ephemeral "$prompt")
+  if [ "$TIMEOUT" -gt 0 ]; then "$TIMEOUT_BIN" "$TIMEOUT" "${args[@]}" </dev/null &
+  else "${args[@]}" </dev/null &
   fi
   CHILD_PID=$!
   wait "$CHILD_PID"
@@ -213,52 +173,121 @@ run_claude() {
   return "$rc"
 }
 
-# --- the loop ---------------------------------------------------------------
-i=0
+changed_paths_are_allowed() {
+  local action="$1" slug="$2" path
+  while IFS= read -r path; do
+    case "$action:$path" in
+      build:src/chapters/"$slug".mdx|build:content/registry.json|build:prompts/queue.md) ;;
+      build:src/chapters/_figures/*|build:src/chapters/_widgets/*) ;;
+      critique:content/critiques/"$slug".md|critique:content/registry.json|critique:prompts/queue.md) ;;
+      resolve:src/chapters/"$slug".mdx|resolve:src/chapters/_figures/*|resolve:src/chapters/_widgets/*|resolve:content/critiques/"$slug".md) ;;
+      record:content/registry.json|record:prompts/queue.md) ;;
+      *) printf '%s\n' "$path"; return 1 ;;
+    esac
+  done < <(
+    {
+      git diff --name-only
+      git diff --cached --name-only
+      git ls-files --others --exclude-standard
+    } | sort -u
+  )
+  return 0
+}
+
+commit_action() {
+  local action="$1" slug="$2" title="$3" verdict message
+  case "$action" in
+    build) message="build: ${slug} -- ${title}" ;;
+    critique) verdict="$(chapter_verdict "$slug")"; message="critique: ${slug} -- ${verdict}" ;;
+    resolve) message="resolve critique: ${slug}" ;;
+    record) message="critique: ${slug} -- approve (recorded)" ;;
+    *) stop "cannot commit unknown action '$action'" ;;
+  esac
+  git add -A || return 1
+  git commit -m "$message" || return 1
+  if [ "$NO_PUSH" -eq 0 ]; then git push || return 1; fi
+}
+
+on_signal() {
+  printf '\n\033[33m%s\033[0m\n' "runqueue: interrupted; stopping."
+  if [ -n "$CHILD_PID" ]; then kill -TERM "$CHILD_PID" 2>/dev/null; wait "$CHILD_PID" 2>/dev/null; fi
+  exit 130
+}
+trap on_signal INT TERM
+
+eval "$(next_env)" || exit 1
+limit_desc="all actionable chapters"
+[ -n "$MAX" ] && limit_desc="up to $MAX completed chapters"
+printf '\033[1m%s\033[0m\n' "runqueue plan"
+printf '  items:         %s\n' "$limit_desc"
+printf '  builder:       %s (effort %s)\n' "$BUILD_MODEL" "$EFFORT"
+printf '  critic:        %s (effort %s)\n' "$CRITIC_MODEL" "$EFFORT"
+printf '  push:          %s\n' "$([ "$NO_PUSH" -eq 1 ] && echo disabled || echo enabled)"
+printf '  gate:          %s\n' "$([ "$RUN_CHECK" -eq 1 ] && echo 'npm run check after every action' || echo 'skipped')"
+printf '  next action:   %s%s\n' "$ACTION" "${SLUG:+ ($SLUG)}"
+
+if [ "$DRY_RUN" -eq 1 ]; then
+  printf '\n%s\n' "dry run: no agent, check, commit, or push was executed."
+  exit 0
+fi
+if [ "$ACTION" = noop ]; then
+  printf '\n%s\n' "no-op: no build, critique, or resolution is pending."
+  exit 0
+fi
+if [ -z "$MAX" ] && [ "$ASSUME_YES" -eq 0 ] && [ -t 0 ]; then
+  printf '\n%s ' "About to run $limit_desc with automatic commits and pushes. Continue? [y/N]"
+  read -r reply
+  case "$reply" in [Yy]|[Yy][Ee][Ss]) ;; *) echo "aborted."; exit 0 ;; esac
+fi
+
+completed=0
 while :; do
-  pending="$(count_pending)"
-  if [ "$pending" -eq 0 ]; then
-    printf '\n\033[32m%s\033[0m\n' "queue drained: no PENDING items left. Ran $i item(s)."
+  eval "$(next_env)" || exit 1
+  if [ "$ACTION" = noop ]; then
+    printf '\n\033[32m%s\033[0m\n' "queue drained: no build, critique, or resolution is pending."
     break
   fi
-  if [ -n "$MAX" ] && [ "$i" -ge "$MAX" ]; then
-    printf '\n\033[32m%s\033[0m\n' "reached limit of $MAX item(s). $pending still PENDING."
+  if [ -n "$MAX" ] && [ "$completed" -ge "$MAX" ]; then
+    printf '\n\033[32m%s\033[0m\n' "reached limit of $MAX completed chapters."
     break
   fi
 
-  before="$(count_processed)"
-  i=$((i + 1))
-  printf '\n\033[1m\033[36m==== item %d  (%s, %s pending) ====\033[0m\n' "$i" "$(date '+%Y-%m-%d %H:%M:%S')" "$pending"
-
-  run_claude; claude_rc=$?
-  if [ "$claude_rc" -ne 0 ]; then
-    if [ "$TIMEOUT" -gt 0 ] && [ "$claude_rc" -eq 124 ]; then
-      printf '\n\033[31m%s\033[0m\n' "claude exceeded the ${TIMEOUT}s timeout on item $i; stopping for review."
-    else
-      printf '\n\033[31m%s\033[0m\n' "claude exited $claude_rc on item $i; stopping for review."
-    fi
-    exit 1
-  fi
-
-  # After a successful run the tree should be clean (the item was committed). A dirty
-  # tree means the run built but did not commit; do not build on top of it.
-  if [ "$HAVE_GIT" -eq 1 ] && [ "$ALLOW_DIRTY" -eq 0 ] && tree_dirty; then
-    printf '\n\033[31m%s\033[0m\n' "item $i left uncommitted changes; stopping for review."
-    exit 1
-  fi
-
-  if [ "$RUN_CHECK" -eq 1 ]; then
-    if ! npm run check; then
-      printf '\n\033[31m%s\033[0m\n' "npm run check failed after item $i; stopping for review."
-      exit 1
+  before_done="$(done_count)"
+  printf '\n\033[1m\033[36m==== %s: %s (%s) ====\033[0m\n' "$ACTION" "$SLUG" "$TITLE"
+  if [ "$ACTION" = record ]; then
+    python3 scripts/mark.py "$SLUG" done || stop "could not record approval for $SLUG"
+  else
+    model="$BUILD_MODEL"
+    [ "$ACTION" = critique ] && model="$CRITIC_MODEL"
+    run_agent "$ACTION" "$SLUG" "$TITLE" "$model"
+    rc=$?
+    if [ "$rc" -ne 0 ]; then
+      [ "$TIMEOUT" -gt 0 ] && [ "$rc" -eq 124 ] && stop "$ACTION timed out for $SLUG"
+      stop "$ACTION agent exited $rc for $SLUG"
     fi
   fi
 
-  after="$(count_processed)"
-  if [ "$after" -le "$before" ]; then
-    printf '\n\033[31m%s\033[0m\n' "no queue progress on item $i (nothing marked DONE or SKIPPED); stopping to avoid an infinite loop."
-    exit 1
+  changed_paths_are_allowed "$ACTION" "$SLUG" || stop "unexpected changed path after $ACTION for $SLUG"
+  if [ "$RUN_CHECK" -eq 1 ] && ! npm run check; then stop "npm run check failed after $ACTION for $SLUG"; fi
+
+  if [ "$ACTION" = build ] && [ "$(chapter_status "$SLUG")" != draft ]; then stop "$SLUG was not marked draft by the builder"; fi
+  if [ "$ACTION" = critique ]; then
+    verdict="$(chapter_verdict "$SLUG")"
+    case "$verdict" in approve|revise) ;; *) stop "$SLUG critique did not set approve or revise" ;; esac
+    if [ "$verdict" = revise ]; then
+      rounds="$(grep -c '^## Critique round' "content/critiques/${SLUG}.md" 2>/dev/null || true)"
+      [ "$rounds" -le "$MAX_REVIEW_ROUNDS" ] || stop "$SLUG exceeded $MAX_REVIEW_ROUNDS critique rounds"
+    fi
   fi
+  if [ "$ACTION" = resolve ] && [ "$(chapter_verdict "$SLUG")" != resolved ]; then stop "$SLUG resolution did not set verdict: resolved"; fi
+  if [ "$ACTION" = record ] && [ "$(chapter_status "$SLUG")" != done ]; then stop "$SLUG approval was not recorded as done"; fi
+
+  if ! tree_dirty; then stop "$ACTION for $SLUG made no changes"; fi
+  commit_action "$ACTION" "$SLUG" "$TITLE" || stop "commit or push failed after $ACTION for $SLUG"
+  [ "$HAVE_GIT" -eq 0 ] || ! tree_dirty || stop "$ACTION for $SLUG left a dirty worktree"
+
+  after_done="$(done_count)"
+  if [ "$after_done" -gt "$before_done" ]; then completed=$((completed + after_done - before_done)); fi
 done
 
 exit 0

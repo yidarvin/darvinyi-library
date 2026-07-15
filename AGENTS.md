@@ -1,4 +1,4 @@
-# CLAUDE.md --- the library
+# AGENTS.md --- the library
 
 This repo is a **queue-built reference site**: a Vite + React + TypeScript + MDX
 site on Vercel, built from the `darvinyi-refsite-template`. Each item in the queue
@@ -18,10 +18,10 @@ The copyright line is non-negotiable and is stated in full in `docs/authoring-sp
 distill ideas, never reproduce expression, no close paraphrase, at most one short
 attributed epigraph, no real cover art.
 
-## Use the refsite-runner skill
+## Use the library-runner skill
 
-The build loop, the queue verbs, and the definition of done live in the
-**`refsite-runner`** skill (`~/.claude/skills/refsite-runner/`). When I say
+The build loop, queue verbs, and definition of done live in the checked-in
+**`library-runner`** skill. When I say
 **"run the next one"**, **"run the next N"**, **"queue status"**, **"add X"**,
 **"reprioritize"**, or **"rerun <slug>"**, follow that skill. If it is not
 installed, tell me before improvising.
@@ -41,9 +41,10 @@ The next item is the first `PENDING` row in `prompts/queue.md`.
   `docs/diagram-vocabulary.md` for the diagram forms. Treat the first book,
   `atomic-habits`, as the content reference to review before batch-running the rest.
 
-A run may not mark an item done unless `npm run check` passes. Then set the slug to
-`done` in `content/registry.json` and `DONE` in `prompts/queue.md` (via
-`scripts/mark.py`), commit, and stop. Never push or deploy unless I say so.
+A Terra builder may mark an item `draft` only after `npm run check` passes. A separate
+Sol critic grants `done` through an approving critique and `scripts/mark.py`. The
+headless runner owns per-stage commits and pushes; interactive work does not push unless
+explicitly asked.
 
 ## The content contract (project-specific, in docs/)
 
@@ -78,17 +79,19 @@ library.
 - `src/components/` --- shared template primitives: `Figure`, `Widget`,
   `ExerciseCard`, `Callout`.
 - `src/styles/tokens.css` --- the house style, source of truth. Do not restyle it.
-- `scripts/` --- repo-owned tooling the skill calls: `validate.py`, `prose_lint.py`,
+- `scripts/` --- repo-owned tooling: `validate.py`, `decide.py`, `prose_lint.py`,
   `new_chapter.py`, `mark.py`, `check.sh`, `sitemap.mjs`.
+- `.codex/agents/` --- project role definitions: Terra builder/resolver and Sol critic,
+  all with high reasoning effort.
 
 ## House rules
 
 - Match `src/styles/tokens.css` exactly. Prose has no em dashes and none of the AI
   tells in `prose-lint.config.json` (the gate fails the build on them).
-- `npm run check` is the whole mechanical definition of done. Do not mark an item
-  done unless it passes.
-- Never auto-commit to `main` and push, and never deploy, unless I say so. End each
-  run with a summary and let me review with `npm run dev`.
+- `npm run check` is the mechanical gate. A done item also needs `verdict: approve` in
+  `content/critiques/<slug>.md`.
+- Builders and resolvers use `gpt-5.6-terra` at high effort. Critics use
+  `gpt-5.6-sol` at high effort. Agents never commit or push; `runqueue.sh` does.
 
 ## Adding to the queue later
 

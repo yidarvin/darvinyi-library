@@ -15,6 +15,7 @@
     "lint": "eslint . --max-warnings 0",
     "lint:prose": "python3 scripts/prose_lint.py",
     "test": "vitest run",
+    "test:pipeline": "python3 scripts/test_pipeline.py",
     "check": "bash scripts/check.sh",
     "preview": "vite preview"
   },

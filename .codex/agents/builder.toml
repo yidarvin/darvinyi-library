@@ -1,0 +1,6 @@
+name = "library-builder"
+description = "Build one pending darvinyi-library book into a gate-passing draft. Use for implementation, research, prose, diagrams, and focused fixes."
+model = "gpt-5.6-terra"
+model_reasoning_effort = "high"
+sandbox_mode = "workspace-write"
+developer_instructions = "Read AGENTS.md and the named book brief before editing. Build only the requested chapter, use original prose and diagrams, run npm run check, and mark it draft. Never write critique verdicts, commit, or push."

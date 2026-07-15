@@ -24,6 +24,7 @@ import sys
 
 VALID_REGISTRY_STATUS = {"pending", "draft", "done"}
 VALID_QUEUE_STATUS = {"PENDING", "DONE", "SKIPPED"}
+VALID_CRITIQUE_VERDICTS = {"approve", "revise", "resolved"}
 
 # A shared slug pairs a registry status with a queue status. Any pair not in this
 # set is a mismatch. This encodes: DONE matches done, PENDING matches pending or
@@ -61,6 +62,30 @@ def queue_path(repo: str) -> str:
 
 def chapters_dir(repo: str) -> str:
     return os.path.join(repo, "src", "chapters")
+
+
+def critiques_dir(repo: str) -> str:
+    return os.path.join(repo, "content", "critiques")
+
+
+def critique_path(repo: str, slug: str) -> str:
+    return os.path.join(critiques_dir(repo), f"{slug}.md")
+
+
+def critique_verdict(repo: str, slug: str) -> str | None:
+    """Return a critique file's machine-read verdict, or None when absent/invalid."""
+    path = critique_path(repo, slug)
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            first = fh.readline().strip()
+    except OSError:
+        return None
+    if not first.startswith("verdict: "):
+        return None
+    verdict = first.removeprefix("verdict: ").strip()
+    return verdict if verdict in VALID_CRITIQUE_VERDICTS else None
 
 
 # ---- registry --------------------------------------------------------------
@@ -253,6 +278,46 @@ def validate(repo: str) -> tuple[list[str], list[str]]:
                     "(possible interrupted run: finish it or reset the chapter)"
                 )
     reg_slugs = set(reg_order)
+
+    # critiques ---------------------------------------------------------------
+    critique_verdicts: dict[str, str] = {}
+    ccrit = critiques_dir(repo)
+    if os.path.isdir(ccrit):
+        for name in sorted(os.listdir(ccrit)):
+            path = os.path.join(ccrit, name)
+            if not os.path.isfile(path):
+                continue
+            if not name.endswith(".md"):
+                errors.append(f"content/critiques/{name} is not a markdown critique file")
+                continue
+            slug = name[: -len(".md")]
+            if slug not in reg_slugs:
+                errors.append(f"content/critiques/{name} has no registry chapter")
+                continue
+            try:
+                with open(path, "r", encoding="utf-8") as fh:
+                    first = fh.readline().strip()
+            except OSError as exc:
+                errors.append(f"could not read content/critiques/{name}: {exc}")
+                continue
+            if not first.startswith("verdict: "):
+                errors.append(f"content/critiques/{name} first line must be 'verdict: <approve|revise|resolved>'")
+                continue
+            verdict = first.removeprefix("verdict: ").strip()
+            if verdict not in VALID_CRITIQUE_VERDICTS:
+                errors.append(
+                    f"content/critiques/{name} has invalid verdict '{verdict}' "
+                    "(expected approve, revise, or resolved)"
+                )
+                continue
+            critique_verdicts[slug] = verdict
+
+    for slug, status in reg_status.items():
+        verdict = critique_verdicts.get(slug)
+        if status == "done" and verdict != "approve":
+            errors.append(f"registry chapter '{slug}' is done but has no approving critique")
+        if status == "pending" and verdict is not None:
+            errors.append(f"registry chapter '{slug}' is pending but has critique verdict '{verdict}'")
 
     # every mdx on disk must have a registry entry (error, was a warning) --------
     cdir = chapters_dir(repo)
