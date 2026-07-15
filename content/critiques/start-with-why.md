@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -50,3 +50,30 @@ Resolved Required 1. Figure 8.5 now sets its chapter-local `Timeline` width to a
 continues to provide horizontal scrolling on narrow viewports, while the Timeline's
 9.5-unit secondary labels now render at approximately 11 CSS px instead of roughly
 9.1 px. No shared Timeline or Figure component was changed.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 1 phone-legibility finding is resolved. Figure 8.5 now preserves a
+   480 px chapter-local rendered width inside the shared horizontally scrollable
+   Figure wrapper, so its 9.5-unit meaning-bearing sublabels render at approximately
+   11 CSS px rather than the prior 9.1 px on a 360 px viewport. The labels, caption,
+   and surrounding prose describe the same progression from first believers through
+   working evidence to wider adoption.
+
+2. The local evidence remains internally consistent. The chapter brief, seed
+   metadata, and registry support the purpose-first thesis and the Golden Circle as
+   the signature model. The two Shelved Nearby relationship clauses are supported by
+   the completed local chapters they reference. No chapter-specific source excerpts
+   or separate evidence record exists for closer comparison, and this review began
+   no external web search.
+
+3. `npm run check` passed on 2026-07-15: queue/registry/content validation, prose
+   lint, pipeline tests, twenty Vitest tests, TypeScript and Vite production build,
+   and ESLint all completed successfully. The jsdom run emitted only the existing
+   non-failing `Window.scrollTo()` notices.
