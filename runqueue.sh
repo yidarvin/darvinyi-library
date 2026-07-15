@@ -141,7 +141,7 @@ EOF
     critique) cat <<EOF
 You are the independent Sol critic for darvinyi-library. Critique exactly this draft: ${slug} (${title}).
 
-Read AGENTS.md, docs/authoring-spec.md, prompts/critique-rubric.md, src/chapters/${slug}.mdx, and every chapter-specific component it imports. Re-derive factual claims from primary sources where practical. Run npm run check. Do not edit page content, shared components, or build tooling.
+Read AGENTS.md, docs/authoring-spec.md, prompts/critique-rubric.md, src/chapters/${slug}.mdx, and every chapter-specific component it imports. Re-derive factual claims from the chapter brief and recorded evidence where practical; do not begin a new external web search in this review. Run npm run check. Do not edit page content, shared components, or build tooling.
 
 Create or append content/critiques/${slug}.md. Its first line must be verdict: approve or verdict: revise. Add a dated Critique round with REQUIRED findings first and optional ADVISORY findings after. Approve only when there are no REQUIRED findings; on approve, run: python3 scripts/mark.py ${slug} done. Do not commit or push.
 EOF
@@ -149,7 +149,7 @@ EOF
     resolve) cat <<EOF
 You are the Terra resolver for darvinyi-library. Resolve the current REQUIRED critique findings for ${slug} (${title}).
 
-Read AGENTS.md, the full content/critiques/${slug}.md history, prompts/notes/${slug}.md, docs/authoring-spec.md, and every current chapter artifact. Apply every REQUIRED finding, preserve prior fixes, run npm run check, then append a dated Builder resolution section naming the concrete changes. Set the first line of the critique file to verdict: resolved.
+Read AGENTS.md, the full content/critiques/${slug}.md history, prompts/notes/${slug}.md, docs/authoring-spec.md, and every current chapter artifact. Apply every REQUIRED finding, preserve prior fixes, run npm run check, then append a dated Builder resolution section naming the concrete changes. Set the first line of the critique file to verdict: resolved. Use the recorded evidence; do not begin a new external web search unless a required finding cannot be resolved otherwise.
 
 Do not mark the chapter done, do not change unrelated chapters, and do not commit or push.
 EOF
@@ -165,7 +165,9 @@ run_agent() {
   mkdir -p "${TMPDIR:-/tmp}/darvinyi-runqueue" || return 1
   transcript="${TMPDIR:-/tmp}/darvinyi-runqueue/${slug}-${action}-$(date +%Y%m%d-%H%M%S).log"
   final="${transcript}.final"
-  local args=(codex --search -m "$model" -c "model_reasoning_effort=\"${EFFORT}\"" -s workspace-write -a never exec --ephemeral -o "$final" "$prompt")
+  local args=(codex)
+  [ "$action" = build ] && args+=(--search)
+  args+=(-m "$model" -c "model_reasoning_effort=\"${EFFORT}\"" -s workspace-write -a never exec --ephemeral -o "$final" "$prompt")
   if [ "$TIMEOUT" -gt 0 ]; then "$TIMEOUT_BIN" "$TIMEOUT" "${args[@]}" </dev/null >"$transcript" 2>&1 &
   else "${args[@]}" </dev/null >"$transcript" 2>&1 &
   fi
