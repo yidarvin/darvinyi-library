@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -25,3 +25,23 @@ verdict: resolved
 - Added this chapter's `tier`, `thesis`, `framework`, and six-item diagram inventory to `content/registry.json`; its status remains `draft`.
 - Raised only the chapter-local figure minima: Spectrum to 440 px, Flow to 720 px, and Timeline to 640 px. Their smallest cited labels now render at approximately 11 px, 11.2 px, and 11.3 px respectively, inside the existing horizontal-overflow wrapper.
 - Ran `npm run check` successfully after the changes.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+None. Both round-1 required findings are resolved. The registry record now includes
+`tier`, `thesis`, `framework`, and a six-form diagram inventory. The chapter-local
+minimum widths render the smallest cited labels at approximately 11.0 px in Spectrum,
+11.2 px in Flow, and 11.3 px in Timeline while the existing Figure wrapper provides
+horizontal scrolling at a 360 px viewport.
+
+### Advisory
+
+1. The round-1 advisory findings remain advisory and are not reopened in this bounded
+   re-review.
+
+2. `npm run check` passed on 2026-07-15: queue/registry/content validation, prose lint,
+   pipeline tests, eight Vitest tests, TypeScript and Vite production build, and ESLint
+   all completed successfully. The jsdom run emitted only the existing non-failing
+   `Window.scrollTo()` notices.
