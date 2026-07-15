@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -82,3 +82,35 @@ verdict: resolved
   variants in human populations, qualified the money claim to shared-acceptance
   money, and removed the spectrum's arbitrary currency marker in favor of two equal
   qualitative trust mechanisms.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+None.
+
+### Advisory
+
+1. Both required findings from round 1 are resolved. The Hero now reports a
+   seven-minute distillation, consistent with the final reader-facing length at
+   approximately 200 words per minute. All six SVGs now declare chapter-local
+   minimum widths inside the shared horizontal-overflow wrapper. Comparing those
+   widths with the imported components' viewBoxes keeps the smallest
+   meaning-bearing labels at approximately 11 CSS px or larger on a 360 px
+   viewport.
+
+2. The bounded factual and copyright review remains sound. The chapter's central
+   cooperation-around-shared-stories thesis and three-revolutions model match the
+   brief and seed metadata. Its mandatory caveat plainly records specialist
+   criticism and factual slips, with links to the evidence already recorded in the
+   draft. The revised biological-transmission and money passages avoid the earlier
+   overgeneralizations. No quotation, real cover art, close source-order imitation,
+   or reproduced source figure is present. Per the review instructions, this round
+   began no new external web search.
+
+3. The anatomy, diagram vocabulary, exercises, related-book edge, publisher link,
+   registry metadata, and imports all agree. `npm run check` passed on 2026-07-15:
+   queue/registry/content validation, prose lint, pipeline tests, fourteen Vitest
+   tests, TypeScript and Vite production build, and ESLint all completed
+   successfully. The jsdom run emitted only the existing non-failing
+   `Window.scrollTo()` notices.
