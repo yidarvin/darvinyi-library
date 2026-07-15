@@ -14,7 +14,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 
 | #   | slug                            | item                                          | status  |
 |-----|---------------------------------|-----------------------------------------------|---------|
-| 000 | about                           | About this library                            | PENDING |
+| 000 | about                           | About this library                            | DONE    |
 | 001 | atomic-habits                   | Atomic Habits                                 | PENDING |
 | 002 | thinking-fast-and-slow          | Thinking, Fast and Slow                       | PENDING |
 | 003 | seven-habits                    | The 7 Habits of Highly Effective People       | PENDING |

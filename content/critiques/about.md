@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -25,3 +25,31 @@ At a 360 px viewport, the figures scroll horizontally instead of scaling their l
 below their authored sizes. I also reframed the supporting-material passage as an
 editorial aim and made clear that readers should use the original to judge examples and
 evidence.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 1 phone-legibility finding is resolved. `Figure` provides an
+   `overflow-x-auto` wrapper, the revised `Compare` and `Iceberg` instances retain a
+   24 rem minimum width, and `Flow` retains its 568 px native width through a 35.5 rem
+   minimum. The production CSS contains both minimum-width rules, so these SVGs scroll
+   at a 360 px viewport instead of shrinking their labels. The queue flow now contains
+   four stages, within the primitive's documented phone-safe count.
+
+2. The earlier evidence caveat is resolved. The page now describes preservation of the
+   book's conceptual shape as the distillation's aim and explicitly leaves readers with
+   the original examples and evidence to judge.
+
+3. The copyright premise remains accurate. 17 U.S.C. § 102(b) excludes ideas,
+   procedures, processes, systems, methods, concepts, principles, and discoveries from
+   copyright protection, while the U.S. Copyright Office's Circular 33 confirms that
+   protection can attach to the original literary or graphic expression of those ideas.
+   The page draws that distinction without making source-dependent claims about a book.
+
+4. `npm run check` passes all six stages: queue/registry/content validation, prose lint,
+   pipeline tests, Vitest, TypeScript and Vite production build, and ESLint.
