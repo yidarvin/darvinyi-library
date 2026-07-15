@@ -33,8 +33,8 @@ The next item is the first `PENDING` row in `prompts/queue.md`.
 - **The first item is `about` (num 0). It is the bootstrap, not a book.** Building it
   stands up the whole library shell: the diagram primitive components, the generated
   typographic cover, the library landing page, and the shared book-page layout. Its
-  full instructions are in `prompts/notes/about.md`. Run it first, review the
-  aesthetic with `npm run dev`, then continue.
+  full instructions are in `prompts/notes/about.md`. Run it first. Visual review with
+  `npm run dev` is an operator decision, never an unattended agent step.
 - **Every item after `about` is one book.** For a book, read its brief at
   `prompts/notes/<slug>.md` (thesis, signature model, any credibility caveat), then
   build the page following `docs/authoring-spec.md` for the anatomy and
