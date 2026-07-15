@@ -1,4 +1,4 @@
-import { Compare, Concentric, Flow, Matrix, ProcessLoop, Venn } from "../components/diagrams";
+import { Compare, Concentric, Flow, Matrix, NodeGraph, Venn } from "../components/diagrams";
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
 
@@ -74,7 +74,7 @@ of whoever interrupted most effectively.
 
 <Figure id="3.3" caption="The useful target is work that matters before it becomes an emergency.">
   <Matrix
-    className="block w-full min-w-[384px]"
+    className="block w-full min-w-[448px]"
     xAxis={{ left: "less urgent", right: "more urgent", label: "time pressure" }}
     yAxis={{ low: "less important", high: "more important", label: "consequence" }}
     quadrants={[
@@ -160,19 +160,27 @@ The cycle matters because depleted people usually return to reactivity, even whe
 better.
 
 <Figure id="3.7" caption="Self-direction supports cooperation; renewal returns capacity to the start of the cycle.">
-  <ProcessLoop
+  <NodeGraph
     className="block w-full min-w-[440px]"
-    stages={[
-      "choose response",
-      "define direction",
-      "organize priorities",
-      "seek fair agreements",
-      "listen for meaning",
-      "create with difference",
-      "renew capacity",
+    ariaLabel="Seven habits as a connected system: choose response, define direction, and organize priorities support seeking fair agreements, listening for meaning, and creating with difference. Renewal returns capacity to choosing a response."
+    nodes={[
+      { id: "choose", label: "choose response", x: 0.1, y: 0.18 },
+      { id: "define", label: "define direction", x: 0.1, y: 0.5 },
+      { id: "organize", label: "organize priorities", x: 0.1, y: 0.82 },
+      { id: "agreements", label: "seek fair agreements", x: 0.5, y: 0.18 },
+      { id: "listen", label: "listen for meaning", x: 0.5, y: 0.5 },
+      { id: "create", label: "create with difference", x: 0.5, y: 0.82 },
+      { id: "renew", label: "renew capacity", x: 0.9, y: 0.5 },
     ]}
-    compoundingEdge={6}
-    centerLabel="lasting effectiveness"
+    edges={[
+      { from: "choose", to: "define" },
+      { from: "define", to: "organize" },
+      { from: "organize", to: "agreements", kind: "reinforcing" },
+      { from: "agreements", to: "listen" },
+      { from: "listen", to: "create" },
+      { from: "create", to: "renew" },
+      { from: "renew", to: "choose", kind: "reinforcing" },
+    ]}
   />
 </Figure>
 

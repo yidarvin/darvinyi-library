@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -56,3 +56,16 @@ verdict: revise
    validation; prose lint; pipeline tests; ten Vitest tests; TypeScript and Vite
    production build; and ESLint all completed successfully. The jsdom run emitted only
    the existing non-failing `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-15
+
+1. Figure 3.3 now renders its existing 384-unit Matrix at a chapter-local minimum width
+   of 448 px inside the unchanged Figure overflow wrapper. The 9.5-unit notes therefore
+   render at about 11.1 CSS px, and the 10-unit axis labels at about 11.7 CSS px, at a
+   360 px viewport.
+
+2. Figure 3.7 now uses the in-vocabulary NodeGraph composition rather than a seven-stage
+   ProcessLoop. Its seven separate nodes form a self-direction chain that feeds the
+   cooperation chain; renewal links the end of that work back to choosing a response.
+   The two reinforcing edges make the support and restoration relationships explicit
+   without exceeding ProcessLoop's documented six-stage capacity.
