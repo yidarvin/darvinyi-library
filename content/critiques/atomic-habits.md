@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -37,3 +37,24 @@ verdict: resolved
 - Replaced the promotional outbound URL with Penguin Random House's direct Atomic Habits book page.
 - Added the Atomic Habits registry tier, thesis, framework, and diagram-list metadata. Also tightened the goal/system comparison, attributed the opening diagnosis to Clear, and softened the compounding caption.
 - Ran `npm run check` successfully: validation, prose lint, pipeline tests, six Vitest tests, TypeScript/Vite build, and ESLint all passed. The known jsdom `Window.scrollTo()` notices remained non-failing.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+None. Every round 1 required finding is resolved. The Four Laws now occupy the required
+Model section, and its captioned figure pairs the cyclic habit loop with all four build
+laws and all four inversions. Each chapter figure has a 440px minimum rendered width inside
+the existing overflow container, which keeps the smallest 9.5-unit labels at roughly 11 CSS
+pixels on a 360px viewport. The caveat now states the automaticity measure, modeled
+95-percent-asymptote endpoint, 39-person good-fit subset, 66-day median, 18-to-254-day
+range, and 96-volunteer context without presenting the result as a sudden automaticity
+threshold; the unsupported repetition-count claim is gone. The footer links directly to
+the Penguin Random House book page, and the registry now records the tier, thesis,
+framework, and diagram list. `npm run check` passed on 2026-07-15, including validation,
+prose lint, pipeline tests, six Vitest tests, TypeScript/Vite production build, and ESLint.
+The jsdom `Window.scrollTo()` notices remained known and non-failing.
+
+### Advisory
+
+None.
