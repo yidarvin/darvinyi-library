@@ -1,0 +1,232 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="mindset"
+  thesis="What you believe ability means changes the risks you take, the feedback you can use, and what a setback is allowed to teach you."
+  minutes={7}
+/>
+
+## The thesis
+
+Carol Dweck's central claim is about interpretation. If ability feels like a fixed
+quantity, a hard problem can look like evidence of a limit, and protecting the image of
+being capable becomes urgent. If ability is understood as something that can be developed,
+the same hard problem becomes information about what to practice next. The belief does not
+create talent or erase constraints. It changes whether challenge, correction, and failure
+become threats to identity or raw material for learning.
+
+## Why it matters
+
+School, work, sport, and relationships regularly ask people to be beginners in public.
+That is uncomfortable even when the stakes are low. A mindset supplies a story about that
+discomfort. The fixed story says the struggle reveals who you are. The growth story says it
+reveals what the task requires. Those stories direct attention toward either self-protection
+or improvement, then make different actions feel sensible.
+
+## Key ideas
+
+## A hard task can be a verdict or a lesson
+
+The two mindsets are not personality types. They are working assumptions about whether a
+quality can change. In a fixed frame, difficulty risks exposing a permanent deficiency, so
+the safer move is often to choose what confirms competence. In a growth frame, difficulty
+signals an edge of current skill. The safer move is no longer the only rational move,
+because effort, feedback, and a better method can alter the next attempt. The difference
+appears most clearly when the answer is not immediately available.
+
+<Figure id="9.1" caption="The same challenge can protect an image of ability or direct the next round of learning.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "fixed frame",
+      points: ["ability feels given", "difficulty threatens the self", "prove competence", "avoid a visible miss"],
+    }}
+    right={{
+      title: "growth frame",
+      points: ["ability can be developed", "difficulty marks an edge", "build competence", "try, inspect, adjust"],
+    }}
+  />
+</Figure>
+
+## Goals decide what a mistake is for
+
+Dweck separates the aim of looking capable from the aim of becoming more capable. A
+performance goal asks, "Will this show that I am good at it?" A learning goal asks, "What
+can I get better at here?" Both can coexist. A surgeon must meet a performance standard,
+and a student should care about a grade. Trouble starts when every task becomes a referendum
+on worth. Then a mistake has nowhere useful to go. A learning goal keeps the mistake in the
+process, where it can point to a missing concept, an untested strategy, or a skill that needs
+more repetitions.
+
+<Figure id="9.2" caption="A goal focused on proof can narrow choices; a goal focused on learning keeps feedback in play.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["a demanding task", "choose the goal", "meet a mistake"]}
+    highlight={1}
+    branch={{ up: "protect the image", down: "inspect and revise" }}
+  />
+</Figure>
+
+## Praise teaches a theory of success
+
+Feedback does more than register a result. It tells a person what the result seems to say
+about them. Broad labels such as "gifted" or "a natural" can make identity feel expensive to
+lose. Specific feedback can keep attention on the work: the strategy that helped, the detail
+that was missed, the revision that made an argument clearer. Process-focused praise is not a
+substitute for standards. "You worked hard" is thin if the approach is failing. Useful
+feedback names effort together with strategy, choices, and progress, then asks what to try
+next.
+
+<Figure id="9.3" caption="The visible compliment carries an implied account of what success depends on.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the feedback you hear"
+    waterlineLabel="the inference it invites"
+    below={["what ability means", "what effort says", "what to do after a miss"]}
+  />
+</Figure>
+
+## Effort is a signal, not a score
+
+The slogan version of mindset makes effort sound like the whole answer. It is not. Effort
+can expose a weak strategy, missing instruction, a need for rest, or a task that needs to be
+broken down. Growth-minded effort is diagnostic: work, notice the result, seek help or
+feedback, and change the method. This matters because relentless persistence with a broken
+approach can turn a good idea into self-blame. The aim is progress through learning, not
+exhaustion in the name of character.
+
+<Figure id="9.4" caption="Productive effort stays connected to information, support, and a changed next attempt.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "attempt", label: "attempt", x: 0.12, y: 0.5 },
+      { id: "evidence", label: "evidence", x: 0.42, y: 0.16 },
+      { id: "support", label: "feedback or help", x: 0.42, y: 0.84 },
+      { id: "strategy", label: "revised strategy", x: 0.78, y: 0.5 },
+    ]}
+    edges={[
+      { from: "attempt", to: "evidence" },
+      { from: "attempt", to: "support" },
+      { from: "evidence", to: "strategy", kind: "reinforcing" },
+      { from: "support", to: "strategy", kind: "reinforcing" },
+      { from: "strategy", to: "attempt", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Mindsets are local and can shift
+
+No one holds one mindset everywhere. A person may experiment freely in a hobby and become
+defensive about writing, money, parenting, or status at work. That is useful news, not
+evidence of hypocrisy. It makes the pattern observable. Notice where a label like "I am not
+a math person" or "I am bad at conflict" shuts down inquiry. The point is not to ban the
+thought. It is to place it on a spectrum and ask what training, tools, or conditions would
+move the next attempt a little to the right.
+
+<Figure id="9.5" caption="A mindset is a position that can vary by domain, not a permanent identity badge.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="ability is fixed"
+    right="ability can grow"
+    marker={0.56}
+    markerLabel="this domain, today"
+    zones={[
+      { from: 0.0, to: 0.35, label: "protect the label" },
+      { from: 0.62, to: 1.0, label: "test and learn", accent: true },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The fixed and growth mindsets are best understood as poles on a continuum, not as two teams
+of people. A fixed belief treats present performance as a fairly direct readout of enduring
+capacity. A growth belief treats present performance as a snapshot that can change through
+practice, instruction, strategy, support, and time. Neither claim says every person will
+reach the same outcome. The practical question is smaller and more useful: what capacity is
+actually open to development here, and what would a better next attempt require?
+
+<Figure id="9.6" caption="The model contrasts two interpretations of ability and the actions each interpretation makes more likely.">
+  <div className="min-w-[440px] space-y-6">
+    <Spectrum
+      className="block w-full"
+      left="fixed mindset"
+      right="growth mindset"
+      marker={0.5}
+      markerLabel="belief about ability"
+    />
+    <Compare
+      className="block w-full"
+      favor="right"
+      left={{
+        title: "when ability seems fixed",
+        points: ["challenge can threaten status", "feedback can feel personal", "failure can invite withdrawal"],
+      }}
+      right={{
+        title: "when ability seems developable",
+        points: ["challenge can reveal a next step", "feedback can guide practice", "failure can invite revision"],
+      }}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Find one protected identity">
+Write down one label you defend: "the organized one," "the creative one," or "not a
+numbers person." Name a situation where that label makes you avoid being a beginner. For
+the next week, choose one small practice that makes the skill, not the label, the subject.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Turn a setback into a case file">
+After a miss, write three lines: what happened, what part was under your control, and what
+you will test next time. Include at least one source of feedback or help. This keeps the
+review concrete and prevents a single result from becoming a verdict on your ability.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Give feedback that can be used">
+Replace a broad compliment with an observation and a question. Instead of praising talent,
+name the strategy, revision, or preparation you saw, then ask what the person learned or
+would change. Keep the standard visible. Honest feedback is more useful than a flattering
+label.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Change the conditions as well as the story">
+Pick one skill that matters and list the resources it needs: time, instruction, a practice
+partner, tools, rest, or access. Arrange one of them this week. A belief in development is
+credible when the environment gives development somewhere to happen.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Mindset is not a claim that anyone can achieve anything through sufficient grit, nor is it a
+license to praise effort that is going nowhere. Dweck's own framework includes strategy,
+good teaching, feedback, and support. The research record also calls for modesty. A 2018
+meta-analysis found small associations between mindset and academic achievement, with
+intervention benefits concentrated in some contexts. A later national randomized study found
+that a brief online intervention improved grades for lower-achieving ninth graders and
+increased advanced-math enrollment, with effects shaped by the school environment. Mindset
+can influence how people use opportunities. It does not supply fair opportunities, remove
+disability or discrimination, or guarantee a particular result.
+</Callout>
+
+## If you remember one thing
+
+Do not ask a hard moment to certify who you are. Use it to identify the skill, strategy,
+support, or condition that would make the next attempt more informed.
+
+## Shelved nearby
+
+Atomic Habits turns repeated practice into an environment-and-system problem. Man's Search
+for Meaning offers a different account of how a person can choose a response under real
+constraint. Thinking, Fast and Slow helps explain why quick judgments can harden into labels.
+
+<ShelvedNearby
+  related={["atomic-habits", "mans-search-for-meaning", "thinking-fast-and-slow"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/44330/mindset-by-carol-s-dweck-phd/9781588365231/"
+  buyLabel="Mindset by Carol S. Dweck"
+/>

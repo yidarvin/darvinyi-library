@@ -179,7 +179,18 @@
       "subtitle": "Carol Dweck · 2006",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 1,
+      "thesis": "Beliefs about whether ability is fixed or developable shape how people meet challenge, feedback, effort, and failure.",
+      "framework": "Fixed versus growth mindset",
+      "diagrams": [
+        "comparison",
+        "flow with branch",
+        "iceberg",
+        "node graph",
+        "spectrum",
+        "spectrum with comparison"
+      ]
     },
     {
       "num": 10,
