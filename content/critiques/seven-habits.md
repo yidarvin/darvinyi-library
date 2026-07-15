@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -69,3 +69,20 @@ verdict: resolved
    cooperation chain; renewal links the end of that work back to choosing a response.
    The two reinforcing edges make the support and restoration relationships explicit
    without exceeding ProcessLoop's documented six-stage capacity.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+None.
+
+### Advisory
+
+1. Figure 3.3 now has a chapter-local 448 px minimum width, keeping its smallest
+   meaning-bearing labels at approximately 11 px on a 360 px viewport.
+
+2. Figure 3.7 now uses seven distinct NodeGraph nodes with reinforcing support and
+   renewal edges, so the model preserves both relationships without ProcessLoop overflow.
+
+3. `npm run check` passed on 2026-07-15. The jsdom run emitted only the existing
+   non-failing `Window.scrollTo()` notices.

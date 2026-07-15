@@ -17,7 +17,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 000 | about                           | About this library                            | DONE    |
 | 001 | atomic-habits                   | Atomic Habits                                 | DONE    |
 | 002 | thinking-fast-and-slow          | Thinking, Fast and Slow                       | DONE    |
-| 003 | seven-habits                    | The 7 Habits of Highly Effective People       | PENDING |
+| 003 | seven-habits                    | The 7 Habits of Highly Effective People       | DONE    |
 | 004 | how-to-win-friends              | How to Win Friends and Influence People       | PENDING |
 | 005 | sapiens                         | Sapiens                                       | PENDING |
 | 006 | mans-search-for-meaning         | Man's Search for Meaning                      | PENDING |
