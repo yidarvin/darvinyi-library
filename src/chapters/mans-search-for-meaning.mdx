@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Venn } from "../components/diagrams";
+import { Compare, Flow, NodeGraph, ProcessLoop } from "../components/diagrams";
 
 <Hero
   slug="mans-search-for-meaning"
@@ -79,10 +79,19 @@ that meaning has more than one door. A life need not meet a grand public standar
 an answer worth giving.
 
 <Figure id="6.3" caption="Doing, receiving, and taking a stance can each open a route toward meaning.">
-  <Venn
+  <NodeGraph
     className="block w-full min-w-[440px]"
-    sets={[{ label: "contribute" }, { label: "encounter" }, { label: "take a stance" }]}
-    intersectionLabel="a meaningful reply"
+    nodes={[
+      { id: "contribution", label: "a contribution", x: 0.1, y: 0.14 },
+      { id: "encounter", label: "a meaningful encounter", x: 0.1, y: 0.5 },
+      { id: "stance", label: "a stance toward what cannot change", x: 0.1, y: 0.86 },
+      { id: "meaning", label: "a meaningful reply", x: 0.83, y: 0.5 },
+    ]}
+    edges={[
+      { from: "contribution", to: "meaning" },
+      { from: "encounter", to: "meaning" },
+      { from: "stance", to: "meaning" },
+    ]}
   />
 </Figure>
 
@@ -96,11 +105,10 @@ outside the self. Meaning often appears in relationship to a task or another per
 than in endless inspection of one's internal state.
 
 <Figure id="6.4" caption="The felt problem may be inward; the next source of meaning can lie beyond it.">
-  <Iceberg
+  <Flow
     className="block w-full min-w-[440px]"
-    above="How do I feel?"
-    below={["a person to serve", "a task that needs care", "a value to embody"]}
-    waterlineLabel="where attention first lands"
+    steps={["self-monitoring", "turn attention outward", "a person, task, or value"]}
+    highlight={1}
   />
 </Figure>
 
@@ -114,12 +122,19 @@ next act. That act can create a small amount of coherence, which makes the next 
 to see.
 
 <Figure id="6.5" caption="Distraction can repeat the emptiness; a responsible act creates a different next step.">
-  <ProcessLoop
-    className="block w-full min-w-[440px]"
-    stages={["emptiness", "easy distraction", "brief relief", "emptiness again"]}
-    compoundingEdge={3}
-    centerLabel="the substitute loop"
-  />
+  <div className="grid gap-8">
+    <ProcessLoop
+      className="block w-full min-w-[440px]"
+      stages={["emptiness", "easy distraction", "brief relief", "emptiness again"]}
+      compoundingEdge={3}
+      centerLabel="the substitute loop"
+    />
+    <Flow
+      className="block w-full min-w-[560px]"
+      steps={["emptiness", "a responsible next act", "small coherence", "the next choice"]}
+      highlight={1}
+    />
+  </div>
 </Figure>
 
 ## The Model
@@ -142,8 +157,8 @@ answer available.
     ]}
     edges={[
       { from: "freedom", to: "will" },
-      { from: "will", to: "answer", kind: "reinforcing" },
-      { from: "moment", to: "answer", kind: "reinforcing" },
+      { from: "will", to: "answer" },
+      { from: "moment", to: "answer" },
       { from: "freedom", to: "moment" },
     ]}
   />

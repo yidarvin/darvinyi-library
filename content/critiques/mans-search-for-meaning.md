@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -71,3 +71,21 @@ verdict: revise
    lint, pipeline tests, sixteen Vitest tests, TypeScript and Vite production build,
    and ESLint all completed successfully. The jsdom run emitted only the existing
    non-failing `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-15
+
+- Completed the `mans-search-for-meaning` registry record with `tier: 1`, the
+  brief's thesis, `framework: "Logotherapy"`, and the six-figure diagram inventory;
+  its status remains `draft`.
+- Replaced Figure 6.3's Venn with a NodeGraph: contribution, meaningful encounter,
+  and a stance toward what cannot change now each have an independent directed path
+  to a meaningful reply.
+- Replaced Figure 6.4's Iceberg with a three-stage Flow from self-monitoring through
+  an outward turn of attention to a person, task, or value.
+- Kept the Figure 6.5 substitute ProcessLoop and added a companion Flow showing the
+  responsible-next-act exit through small coherence to the next choice.
+- Changed Figure 6.6's two annotated edges to plain directed edges, removing the
+  unexplained reinforcing-polarity marks noted in the advisory finding.
+- Ran `npm run check` successfully after the chapter and registry changes. All six
+  gate stages passed; the only test output was the existing non-failing jsdom
+  `Window.scrollTo()` notices.
