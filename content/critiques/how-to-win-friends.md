@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-15
 
@@ -22,3 +22,40 @@ verdict: resolved
   retains the readable SVG scale and uses the existing horizontal overflow wrapper
   instead of shrinking its 11.5-unit labels to about 6px. Confirmed the compiled
   stylesheet includes `min-width:558px`; `npm run check` passes.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+1. **Restore phone legibility for figures 4.1, 4.2, 4.4, and 4.5.** The round-1
+   Flow finding is resolved, but the two Compare figures, Iceberg, and ProcessLoop
+   still render as `w-full` with no minimum width. At a 360 px viewport, the layout
+   and Figure padding leave about 278 px for each SVG. Scaling their 380–384-unit
+   viewBoxes into that space reduces meaning-bearing 9.5–12-unit labels to roughly
+   7–9 CSS px. Preserve minimum widths sufficient to keep the smallest meaningful
+   text near the completed chapters' approximately 11 px phone floor, using the
+   existing horizontal overflow wrapper, or provide compact mobile layouts. Keep
+   the fix chapter-local; no shared component change is needed.
+
+### Advisory
+
+1. The round-1 Flow finding is verified as resolved. Its 558 px chapter-local
+   minimum width preserves the component's native label scale and scrolls within
+   the unchanged Figure wrapper at 360 px.
+
+2. Within the recorded brief and seed metadata, the page's thesis and five key
+   ideas are consistent with the requested emphasis on genuine interest, honest
+   appreciation, perspective-taking, and voluntary participation. The chapter uses
+   original thematic organization, no quotation or real cover art, and no recreated
+   source figure. The bounded materials contain no primary-source excerpts for a
+   closer textual comparison, and this review performed no external search.
+
+3. The remaining anatomy is sound: the absent Model section matches the brief's
+   explicit instruction, the practice cards are concrete, the caveat distinguishes
+   respect from manipulation, both related slugs resolve to completed chapters with
+   their relationships stated in prose, and the outbound book link is present.
+
+4. `npm run check` passed on 2026-07-15: queue/registry/content validation, prose
+   lint, pipeline tests, twelve Vitest tests, TypeScript and Vite production build,
+   and ESLint all completed successfully. The jsdom run emitted only the existing
+   non-failing `Window.scrollTo()` notices.
