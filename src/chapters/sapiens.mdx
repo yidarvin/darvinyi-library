@@ -1,0 +1,208 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="sapiens"
+  thesis="Humans built power at planetary scale by coordinating around stories that exist only when many people keep acting as if they are real."
+  minutes={9}
+/>
+
+## The thesis
+
+Harari's central claim is less about individual intelligence than collective coordination.
+Sapiens can cooperate with immense numbers of strangers because language lets us maintain
+shared institutions: a currency, a company, a border, a legal right, a god. These things are
+not physical objects in the way a river is physical, yet their consequences are. When enough
+people accept the same rules, they can store grain, organize armies, build markets, and alter
+the living world together.
+
+## Why it matters
+
+Modern institutions can feel like weather, given and inevitable. This book asks readers to
+see them as human arrangements, sustained by habits, documents, incentives, and belief. That
+does not make money, law, or citizenship meaningless. It makes their power easier to inspect:
+an arrangement people made can be questioned, defended, revised, or replaced.
+
+## Cooperation can outgrow the face-to-face group
+
+Most social animals cooperate, and humans do too in small groups. The unusual leap is the
+ability to coordinate with people we will never meet. A shared account of what counts as a
+debt, a promise, a rank, or a crime lets strangers predict one another's behavior. The story
+does not need to be privately believed in every detail. It needs enough public support that
+people can rely on it when they act. That is how a paper note can buy food and a court order
+can move resources across a country.
+
+<Figure id="5.1" caption="Shared rules turn many separate decisions into a network of coordination.">
+  <NodeGraph
+    className="block w-full"
+    nodes={[
+      { id: "story", label: "shared story", x: 0.5, y: 0.12 },
+      { id: "strangers", label: "strangers", x: 0.14, y: 0.54 },
+      { id: "rules", label: "rules", x: 0.5, y: 0.5 },
+      { id: "institutions", label: "institutions", x: 0.86, y: 0.54 },
+      { id: "scale", label: "larger cooperation", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "story", to: "rules", kind: "reinforcing" },
+      { from: "strangers", to: "rules" },
+      { from: "rules", to: "institutions", kind: "reinforcing" },
+      { from: "institutions", to: "scale", kind: "reinforcing" },
+      { from: "scale", to: "story", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Culture is an accumulating experiment
+
+A biological mutation spreads only through reproduction. A cultural invention can travel by
+conversation, imitation, teaching, and record keeping. It can also be altered on the way.
+That gives human groups a rapid, fallible way to test tools, norms, and explanations across
+generations. The result is not a single march toward improvement. Cultures borrow, compete,
+forget, and sometimes make their members less free or their surroundings less livable. The
+important point is speed: a learned practice can change a group's options long before genes
+do.
+
+<Figure id="5.2" caption="Ideas can be passed on, changed, and built into the next round of practice.">
+  <Flow
+    className="block w-full"
+    steps={["observe or invent", "share the practice", "adapt it", "inherit a changed starting point"]}
+    highlight={2}
+  />
+</Figure>
+
+## More food did not settle the question of a better life
+
+Farming made it possible to support denser populations, store surplus, and specialize work.
+It also tied many people to fields, seasons, disease environments, and claims over land. More
+calories at the level of a region did not automatically mean more comfort or security for each
+person. Population can rise into the extra production, while labor and vulnerability rise with
+it. The agricultural transition is therefore better read as a trade in social possibilities,
+not a simple scoreboard on which cultivation defeats foraging.
+
+<Figure id="5.3" caption="Agriculture enlarged what societies could organize, while creating new burdens for daily life.">
+  <Compare
+    className="block w-full"
+    favor="none"
+    left={{
+      title: "what it enabled",
+      points: ["denser settlements", "stored food", "specialized roles", "larger projects"],
+    }}
+    right={{
+      title: "what it demanded",
+      points: ["regular field labor", "dependence on harvests", "property disputes", "new disease exposure"],
+    }}
+  />
+</Figure>
+
+## An invented order can become ordinary
+
+Every society sorts people and things, then builds habits around those categories. A job title,
+caste, nationality, or property claim can begin as a convention and later appear self-evident
+because schools, laws, families, and rituals repeat it. Harari's useful warning is to separate
+the visible rule from the machinery that keeps it credible. Calling an order imagined does not
+mean its effects are imaginary. It means the order depends on collective maintenance rather
+than on a law of physics.
+
+<Figure id="5.4" caption="A public rule sits above the institutions and repeated habits that make it durable.">
+  <Iceberg
+    className="block w-full"
+    above="the rule that feels natural"
+    waterlineLabel="what is publicly visible"
+    below={["laws and records", "repeated incentives", "education and ritual"]}
+  />
+</Figure>
+
+## Money extends trust beyond acquaintance
+
+Money is not valuable because of the material in a coin or note. It works when a buyer and a
+seller expect other people to accept it later. That shared expectation makes exchange possible
+without a personal relationship and without finding someone who wants exactly what you have.
+It is a powerful coordination device, not a moral verdict. A market can connect distant lives
+while leaving open questions about fairness, coercion, and what should never be priced.
+
+<Figure id="5.5" caption="Currency works when two strangers expect the same token to be accepted again.">
+  <Spectrum
+    className="block w-full"
+    left="personal trust"
+    right="portable trust"
+    marker={0.7}
+    markerLabel="currency"
+    zones={[
+      { from: 0.0, to: 0.38, label: "exchange depends on knowing the person" },
+      { from: 0.58, to: 1.0, label: "exchange depends on shared acceptance", accent: true },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The book organizes its long view around three transformations. The cognitive revolution names
+the expansion of symbolic and social capacities that made flexible large-group cooperation
+possible. The agricultural revolution marks a shift toward cultivation, settlement, surplus,
+and hierarchy. The scientific revolution describes a later alliance of inquiry, institutions,
+capital, and state power that accelerated change. The timeline is a lens, not a set of clean
+breaks. Each label covers long, uneven processes with different timings in different places.
+
+<Figure id="5.6" caption="Three long transformations frame Harari's account of human coordination and power.">
+  <Timeline
+    className="block w-full"
+    segments={[
+      { label: "cognitive revolution", sub: "symbols and flexible cooperation" },
+      { label: "agricultural revolution", sub: "cultivation, surplus, settlement" },
+      { label: "scientific revolution", sub: "inquiry joined to institutions and capital" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Find the agreement beneath the object">
+Pick an ordinary thing that organizes your day: a calendar invitation, a paycheck, a degree,
+or a queue. List the people and institutions that must recognize it for it to work. This makes
+the hidden coordination visible without treating it as trivial.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Test a rule for maintenance">
+Take one rule that feels natural at work or in your community. Ask what documents, rewards,
+habits, and authorities keep it in place. Then ask who benefits, who bears the cost, and what
+would change if the rule were redesigned.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Separate capacity from welfare">
+When a new technology or policy promises more output, write two columns: what the system can
+now do, and how the gains and risks will be distributed. Greater capacity is real. Whether it
+makes particular lives better is a second question.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Use the long view to ask a local question">
+For an institution you depend on, identify one shared assumption that makes cooperation
+possible. Do not begin by trying to overturn it. Start by learning what problem it solves and
+where its terms deserve scrutiny.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The value of <em>Sapiens</em> is its provocative lens, not a settled account of every era.
+Specialists have challenged its broad causal claims, compressed chronology, and tendency to
+present contested interpretations as a single story. A scholarly review in the <a href="https://journals.rudn.ru/world-history/article/view/19553/en_US" target="_blank" rel="noopener noreferrer">RUDN Journal of World History</a> identifies weak support for some conclusions and asks why the three revolutions happened where and when the book says they did. Harari's own <a href="https://www.ynharari.com/sapiens-references/" target="_blank" rel="noopener noreferrer">reference collection</a> is a useful path into the underlying debates, and his site acknowledges that factual errors were found after publication. Read the framework as an invitation to investigate, not as a replacement for archaeology, anthropology, or regional history.
+</Callout>
+
+## If you remember one thing
+
+Human institutions are powerful because people can coordinate around shared meanings at a vast
+scale. That fact explains both their reach and their fragility: they endure through collective
+practice, and they can be changed when collective practice changes.
+
+## Shelved nearby
+
+Thinking, Fast and Slow examines some of the mental shortcuts that make stories feel more
+convincing than the evidence behind them.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow"]}
+  buyUrl="https://www.penguin.co.uk/books/419795/sapiens-by-harari-yuval-noah/9780099590088"
+  buyLabel="Sapiens by Yuval Noah Harari"
+/>
