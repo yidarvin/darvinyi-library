@@ -1,0 +1,202 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="thinking-fast-and-slow"
+  thesis="Judgment has a quick, associative mode and a slower, effortful one. The quick mode is indispensable, but it can turn a thin impression into a confident mistake."
+  minutes={7}
+/>
+
+## The thesis
+
+Kahneman's useful provocation is that thought is not one uniform activity. Much of it is
+rapid, automatic, and shaped by association. Another mode can inspect, calculate, compare,
+and follow rules, but it costs attention and is often reluctant to take over. The result is
+not random error. It is a recognizable family of mistakes: the mind answers an easier
+question than the one it was asked, lets a first number pull later estimates, and trusts a
+coherent story more readily than a representative sample.
+
+## Why it matters
+
+The most consequential choices rarely arrive with a warning label. Hiring, forecasting,
+investing, diagnosis, and policy all ask for judgment under incomplete information. The
+point is not to distrust every hunch. It is to notice which jobs can tolerate a quick
+impression and which need a pause, a comparison class, or a method that makes individual
+intuition less decisive.
+
+## A good story is not a complete view
+
+The mind is excellent at making what is in front of it feel sufficient. A vivid interview,
+one striking anecdote, or a familiar name can produce a clean explanation before the missing
+information has even been noticed. Confidence then tracks the neatness of the story, not the
+size or quality of the evidence behind it. That is why a narrow data set can feel more
+persuasive than a messy but relevant reference class.
+
+<Figure id="2.1" caption="A visible story can feel complete while the comparison data stay out of view.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the story in front of you"
+    waterlineLabel="what attention selected"
+    below={["base rates", "missing cases", "alternative causes"]}
+  />
+</Figure>
+
+## First numbers leave a trace
+
+An arbitrary number can become a starting point for an estimate. Once it is present, thought
+often adjusts away from it, but not far enough. A list price changes what a fair price feels
+like. Last year's budget frames this year's negotiation. Even a number introduced as a rough
+placeholder can bend a forecast. The repair is procedural: ask for independent estimates
+before a shared number is discussed, then compare the range and the reasons behind it.
+
+<Figure id="2.2" caption="An early number pulls the estimate unless a deliberate reset creates distance.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="initial anchor"
+    right="independent estimate"
+    marker={0.32}
+    markerLabel="default drift"
+    zones={[
+      { from: 0.0, to: 0.45, label: "first number shapes the range" },
+      { from: 0.64, to: 1.0, label: "rebuild from evidence", accent: true },
+    ]}
+  />
+</Figure>
+
+## Hard questions are quietly replaced
+
+Some questions demand evidence that is slow to gather: Will this hire thrive here? How likely
+is this plan to work? How much will this decision matter in five years? When the hard version
+is uncomfortable or underspecified, the mind can answer a nearby, easier question instead.
+Do I like this person? Does the proposal sound polished? Can I picture a success? The easier
+answer arrives with a feeling of certainty, which disguises the substitution.
+
+<Figure id="2.3" caption="A quick answer can stand in for the question that actually carries the decision.">
+  <Flow
+    className="block w-full min-w-[480px]"
+    steps={["hard question", "quick impression", "confident answer"]}
+    highlight={0}
+    branch={{ up: "ask for evidence", down: "act on the feeling" }}
+  />
+</Figure>
+
+## Resemblance is not probability
+
+People often judge likelihood by resemblance. A candidate who sounds like an archetypal
+founder seems more likely to build a company; a small sample that looks orderly seems more
+trustworthy than chance permits. The missing move is to ask how common the outcome is before
+looking at the particular case. A distinctive description can be useful evidence, but it
+cannot erase the background frequency of the thing being predicted.
+
+<Figure id="2.4" caption="A case should be judged by both its particular signs and the wider comparison class.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title:"resemblance alone",
+      points:["a vivid profile", "a familiar pattern", "confidence from fit", "base rate omitted"],
+    }}
+    right={{
+      title:"calibrated judgment",
+      points:["the particular signs", "the comparison class", "a prior likelihood", "an updated estimate"],
+    }}
+  />
+</Figure>
+
+## Experience and memory keep different records
+
+The self that lives through an event and the self that later reports on it are not keeping the
+same ledger. A remembered evaluation can put unusual weight on an intense moment and on how
+an episode finished, while giving less weight to its duration. This matters whenever a team
+uses retrospective ratings to design an experience. The survey may describe the ending more
+than the whole journey. Pair it with measures collected along the way when duration and
+burden matter.
+
+<Figure id="2.5" caption="A retrospective judgment can compress a long experience into a few selected moments.">
+  <Timeline
+    className="block w-full min-w-[500px]"
+    segments={[
+      { label: "ordinary start", sub: "lived" },
+      { label: "intense moment", sub: "remembered" },
+      { label: "the ending", sub: "remembered" },
+      { label: "later report", sub: "a compressed record" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## The Model
+
+The two-system language is best treated as a map of jobs, not a diagram of two separate
+machines in the skull. System 1 supplies impressions, associations, and practiced responses
+with little felt effort. System 2 can hold rules in mind, inspect an argument, and override a
+first response, but attention is limited. Good decision design does not demand that System 2
+supervise every moment. It reserves deliberate checks for choices where a confident error is
+expensive.
+
+<Figure id="2.6" caption="Fast thought supplies the first answer; deliberate thought is the check when the stakes justify it.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title:"System 1",
+      points:["fast and associative", "runs with little effort", "spots patterns", "produces impressions"],
+    }}
+    right={{
+      title:"System 2",
+      points:["slower and rule-guided", "uses scarce attention", "compares and calculates", "can review an impression"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Separate the first estimate">
+Before a planning meeting, have each person write a forecast privately, including the range
+and the evidence used. Reveal the numbers together. This makes it harder for the first voice
+in the room to become everyone else's anchor.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Name the reference class">
+When a plan feels promising, find several genuinely comparable cases. Ask how often the
+outcome occurred for that group before explaining why this instance is special. The base rate
+is a starting point, not a veto.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Turn a verdict into a question">
+If you catch yourself saying that a candidate, pitch, or plan just feels right, write the
+decision question beside that feeling. Then list the evidence that would change the answer.
+The gap often reveals the easier question that took over.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Build a pause into high-stakes choices">
+Decide in advance which choices require a second look: large commitments, irreversible
+changes, and forecasts that drive budgets. Use a short checklist, an outside reviewer, or a
+cooling-off period. A pause is most useful when it is part of the process, not a heroic act
+of willpower.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The two systems are a teaching model, not a claim that the brain contains two neatly bounded
+agents. Fast judgment is not synonymous with bad judgment. In a stable domain with genuine
+feedback, practiced intuition can be excellent; slow analysis can also be selective or
+self-serving. Some famous laboratory findings associated with this period of psychology,
+especially broad claims about social priming, have also proved less reliable in later
+replication efforts. The durable lesson is more modest: errors have patterns, context
+matters, and important decisions improve when their process invites calibration.
+</Callout>
+
+## If you remember one thing
+
+Do not ask a first impression to do work it cannot do. When a decision matters, slow the
+process enough to surface the missing evidence, the comparison class, and the question you
+may have quietly replaced.
+
+<ShelvedNearby
+  related={["atomic-habits"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/89308/thinking-fast-and-slow-by-daniel-kahneman/"
+  buyLabel="Thinking, Fast and Slow by Daniel Kahneman"
+/>
