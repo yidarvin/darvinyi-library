@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -89,3 +89,38 @@ verdict: resolved
 - Ran `npm run check` successfully after the chapter and registry changes. All six
   gate stages passed; the only test output was the existing non-failing jsdom
   `Window.scrollTo()` notices.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+None.
+
+### Advisory
+
+1. The builder resolved every required finding from round 1. Figure 6.3 now gives
+   contribution, encounter, and stance separate directed routes to a meaningful
+   reply. Figure 6.4 encodes the turn from self-monitoring toward an outward person,
+   task, or value. Figure 6.5 pairs the substitute loop with the responsible-action
+   path promised by its prose and caption. Figure 6.6 now uses unannotated directed
+   edges, so it no longer implies unexplained causal polarity.
+
+2. Before approval, the registry recorded tier 1, the brief-supported thesis,
+   Logotherapy, and all six figure entries while retaining `draft` for this review.
+   The chapter still has
+   the required anatomy, five key ideas with captioned vocabulary diagrams, a
+   signature Model, concrete exercises, a careful caveat, resolved related links,
+   and a direct publisher link. The diagram components expose accessible SVG labels,
+   and the shared Figure wrapper provides horizontal overflow for the chapter's
+   declared mobile minimum widths.
+
+3. No new evidence requires reopening the settled factual or copyright assessment.
+   Within the repository's bounded evidence, the chapter remains consistent with
+   the brief and seed metadata, uses original thematic prose and shared diagram
+   forms, quotes no source text, and uses no real cover art. As directed, this round
+   began no external web search.
+
+4. `npm run check` passed on 2026-07-15: queue/registry/content validation, prose
+   lint, pipeline tests, sixteen Vitest tests, TypeScript and Vite production build,
+   and ESLint all completed successfully. The jsdom run emitted only the existing
+   non-failing `Window.scrollTo()` notices.

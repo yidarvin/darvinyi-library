@@ -20,7 +20,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 003 | seven-habits                    | The 7 Habits of Highly Effective People       | DONE    |
 | 004 | how-to-win-friends              | How to Win Friends and Influence People       | DONE    |
 | 005 | sapiens                         | Sapiens                                       | DONE    |
-| 006 | mans-search-for-meaning         | Man's Search for Meaning                      | PENDING |
+| 006 | mans-search-for-meaning         | Man's Search for Meaning                      | DONE    |
 | 007 | psychology-of-money             | The Psychology of Money                       | PENDING |
 | 008 | start-with-why                  | Start With Why                                | PENDING |
 | 009 | mindset                         | Mindset                                       | PENDING |
