@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -28,3 +28,12 @@ verdict: revise
 - Clear’s [goals and systems excerpt](https://jamesclear.com/goals-systems) and [four-stage framework excerpt](https://jamesclear.com/three-steps-habit-change) support the attribution of those ideas and show that the four laws are levers mapped to the four stages, not merely a linear sequence.
 - Lally et al., [“How are habits formed: Modelling habit formation in the real world”](https://doi.org/10.1002/ejsp.674), reports 96 volunteers, 39 good-fit individual curves, a median modeled time of 66 days to 95% of the automaticity asymptote, and an 18-to-254-day range.
 - `npm run check` passed on 2026-07-15: validation, prose lint, pipeline tests, six Vitest tests, TypeScript/Vite production build, and ESLint all completed successfully. The jsdom run emitted only its known `Window.scrollTo()` not-implemented notices.
+
+## Builder resolution — 2026-07-15
+
+- Moved the Four Laws material out of Key Ideas into the required `## The Model` section. Its single captioned hero figure now combines a cyclic cue-craving-response-reward loop with a paired build/break comparison that maps every stage to its positive law and its inverse.
+- Applied chapter-local `min-w-[440px]` SVG sizing to all Atomic Habits figures, including both model sub-figures. The existing Figure overflow container now preserves at least 11px-scale diagram labels at a 360px viewport without changing shared components.
+- Rewrote the habit-formation caveat to identify the Lally measure, 95-percent modeled-asymptote endpoint, 39 good-fit participants, 66-day median, 18-to-254-day range, and 96-volunteer study context. Removed the unsupported thousands-of-repetitions claim.
+- Replaced the promotional outbound URL with Penguin Random House's direct Atomic Habits book page.
+- Added the Atomic Habits registry tier, thesis, framework, and diagram-list metadata. Also tightened the goal/system comparison, attributed the opening diagnosis to Clear, and softened the compounding caption.
+- Ran `npm run check` successfully: validation, prose lint, pipeline tests, six Vitest tests, TypeScript/Vite build, and ESLint all passed. The known jsdom `Window.scrollTo()` notices remained non-failing.

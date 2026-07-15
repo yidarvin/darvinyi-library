@@ -19,7 +19,18 @@
       "subtitle": "James Clear · 2018",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 1,
+      "thesis": "Tiny changes compound when systems and identity make small habits repeatable.",
+      "framework": "Four laws of behavior change",
+      "diagrams": [
+        "annotated curve",
+        "comparison",
+        "concentric circles",
+        "process loop",
+        "spectrum",
+        "process loop with paired comparison"
+      ]
     },
     {
       "num": 2,

@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Curve, Compare, Concentric, ProcessLoop, Spectrum, Flow } from "../components/diagrams";
+import { Curve, Compare, Concentric, ProcessLoop, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="atomic-habits"
@@ -10,9 +10,9 @@ import { Curve, Compare, Concentric, ProcessLoop, Spectrum, Flow } from "../comp
 
 ## The thesis
 
-Most attempts at change fail because they aim at the wrong target. We set a goal, chase
-it with a burst of effort, hit it or miss it, and drift back to where we started. Clear's
-argument is that the real unit of change is not the goal but the habit: a small action,
+Clear's diagnosis is that attempts at change often aim at the wrong target. We set a goal,
+chase it with a burst of effort, hit it or miss it, and drift back to where we started.
+His argument is that the real unit of change is not the goal but the habit: a small action,
 repeated. Improve by a tiny amount each day and the gains do not add, they multiply, until
 what looks from the outside like a sudden transformation is really the sum of a thousand
 unremarkable repetitions. The work is to build systems that make good habits automatic and
@@ -32,8 +32,9 @@ calls this stretch the plateau of latent potential: the value is accumulating, i
 not surfaced yet. Most people quit somewhere inside that flat region, which is exactly
 where quitting costs the most.
 
-<Figure id="1.1" caption="One percent a day is nothing on Tuesday and everything by December.">
+<Figure id="1.1" caption="The daily difference is hard to see; the accumulated difference can become large.">
   <Curve
+    className="block w-full min-w-[440px]"
     shape="exp"
     axes={{ x: "one year of days", y: "where the habit takes you" }}
     annotations={[
@@ -54,16 +55,17 @@ ambition is the common part and the daily process is not. Fall in love with the 
 the result tends to follow. Fixate on the result alone and you white-knuckle your way there,
 then relax and slide back down.
 
-<Figure id="1.2" caption="A goal is a moment; a system is a habit you keep.">
+<Figure id="1.2" caption="A goal names an outcome; a system organizes repeated action.">
   <Compare
+    className="block w-full min-w-[440px]"
     favor="right"
     left={{
       title: "a goal",
-      points: ["a target you hit or miss", "ends when reached", "shared by every rival", "runs on willpower"],
+      points: ["a target you hit or miss", "has a finish line", "often shared with rivals", "can concentrate effort"],
     }}
     right={{
       title: "a system",
-      points: ["a routine you run", "repeats every day", "yours alone", "runs on autopilot"],
+      points: ["a process you repeat", "continues after a win", "can be shared and designed", "can reduce reliance on willpower"],
     }}
   />
 </Figure>
@@ -83,6 +85,7 @@ something you are.
 
 <Figure id="1.3" caption="Change that lasts starts at the center and works outward.">
   <Concentric
+    className="block w-full min-w-[440px]"
     rings={[{ label: "identity" }, { label: "processes" }, { label: "outcomes" }]}
     highlight={0}
   />
@@ -95,11 +98,12 @@ that predicts a reward. The cue sparks a craving, the wanting that gives you a r
 move. The craving drives a response, the habit itself. The response delivers a reward, which
 satisfies the craving and, just as importantly, teaches your brain that this cue was worth
 paying attention to. That lesson feeds back to the cue, so the loop tightens a little on
-every pass. Habits form because this circuit runs thousands of times, almost all of it
-below awareness. To understand any habit, good or bad, find its four parts.
+every pass. With repeated encounters, much of this process can run below awareness. To
+understand any habit, good or bad, find its four parts.
 
 <Figure id="1.4" caption="Each reward makes the next cue a little more magnetic.">
   <ProcessLoop
+    className="block w-full min-w-[440px]"
     stages={["cue", "craving", "response", "reward"]}
     compoundingEdge={3}
     centerLabel="the habit loop"
@@ -120,6 +124,7 @@ nothing, because a habit you never begin cannot compound.
 
 <Figure id="1.5" caption="Lower the friction on what you want to do; raise it on what you do not.">
   <Spectrum
+    className="block w-full min-w-[440px]"
     left="effortful"
     right="effortless"
     marker={0.85}
@@ -131,19 +136,36 @@ nothing, because a habit you never begin cannot compound.
   />
 </Figure>
 
-## The four laws of behavior change
+## The Model
 
-Clear turns the loop into a set of levers. Because a habit has four beats, there are four
-ways to strengthen it, one per beat. To build a good habit: make it obvious, so the cue is
-easy to notice; make it attractive, so the craving pulls; make it easy, so the response
-takes little effort; and make it satisfying, so the reward lands and the loop wants to run
-again. To break a bad habit, invert each law: make it invisible, unattractive, hard, and
-unsatisfying. This is the practical spine of the book, and it is where the earlier ideas
-cash out. The compounding, the systems, the identity, all of it gets built one obvious,
-attractive, easy, satisfying repetition at a time.
+Clear turns the loop into a set of levers. Each beat has one corresponding law: act on the
+cue by making it obvious, the craving by making it attractive, the response by making it
+easy, and the reward by making it satisfying. To interrupt a bad habit, invert the same
+pairings: make the cue invisible, the craving unattractive, the response hard, and the
+reward unsatisfying. The loop is cyclical, not a start-to-finish procedure. The laws are
+places to intervene whenever the loop comes around.
 
-<Figure id="1.6" caption="The four laws act on the four beats of the loop; invert each one to break a habit instead.">
-  <Flow steps={["make it obvious", "make it attractive", "make it easy", "make it satisfying"]} />
+<Figure id="1.6" caption="The loop names the beat; the paired laws say how to build or break the habit.">
+  <div className="min-w-[440px] space-y-6">
+    <ProcessLoop
+      className="block w-full"
+      stages={["cue", "craving", "response", "reward"]}
+      compoundingEdge={3}
+      centerLabel="the habit loop"
+    />
+    <Compare
+      className="block w-full"
+      favor="left"
+      left={{
+        title: "build a habit",
+        points: ["cue: obvious", "craving: attractive", "response: easy", "reward: satisfying"],
+      }}
+      right={{
+        title: "break a habit",
+        points: ["cue: invisible", "craving: unattractive", "response: hard", "reward: unsatisfying"],
+      }}
+    />
+  </div>
 </Figure>
 
 ## Put it to work
@@ -184,8 +206,11 @@ and real progress is lumpier than any smooth curve. The framework is a synthesis
 new science: the cue-craving-response-reward loop builds on earlier work by Charles Duhigg
 and, before him, decades of research on conditioning. Timelines vary far more than the tidy
 story admits. In a 2010 study by Phillippa Lally and colleagues in the European Journal of
-Social Psychology, a new habit took an average of about sixty-six days to feel automatic,
-but individual times ran from eighteen days to well past two hundred. And environment design
+Social Psychology, 39 participants with well-fitting individual curves had a median modeled
+time of sixty-six days to reach 95 percent of their own asymptote on a self-reported
+automaticity measure. Those modeled times ranged from eighteen to 254 days. This was a
+threshold in a fitted subset of the 96 volunteers, not the moment a habit suddenly became
+automatic. And environment design
 has limits: cutting friction helps enormously with small, discrete habits and much less with
 changes that are hard for reasons no cue placement can reach. The book is an excellent
 operating manual for behavior. It is not a guarantee.
@@ -199,6 +224,6 @@ to compound.
 
 <ShelvedNearby
   related={[]}
-  buyUrl="https://jamesclear.com/atomic-habits"
+  buyUrl="https://www.penguinrandomhouse.com/books/543993/atomic-habits-by-james-clear/9780735211292/"
   buyLabel="Atomic Habits by James Clear"
 />
