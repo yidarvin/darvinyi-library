@@ -139,7 +139,18 @@
       "subtitle": "Morgan Housel · 2020",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 1,
+      "thesis": "Good financial decisions depend less on superior calculation than on habits that leave room for uncertainty, let time work, and stop the chase before it consumes the point of having money.",
+      "framework": "No single signature model; six financial behavior principles are synthesized as key ideas.",
+      "diagrams": [
+        "iceberg",
+        "annotated curve",
+        "conceptual bars",
+        "spectrum",
+        "comparison",
+        "timeline"
+      ]
     },
     {
       "num": 8,

@@ -1,0 +1,228 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Curve, Iceberg, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="psychology-of-money"
+  thesis="Good financial decisions depend less on superior calculation than on habits that leave room for uncertainty, let time work, and stop the chase before it consumes the point of having money."
+  minutes={9}
+/>
+
+## The thesis
+
+Money decisions are personal before they are mathematical. A portfolio, a savings rate, or
+a purchase sits inside a life shaped by upbringing, fear, status, and the stories a person
+has lived through. Housel's argument is not that numbers do not matter. It is that sound
+numbers still fail when the behavior around them is impatient, overconfident, or unable to
+recognize enough. Durable wealth comes from a temperament that can keep saving, stay
+invested, and preserve choices when the world turns out differently than expected.
+
+## Why it matters
+
+Advice about money often arrives as a formula that assumes identical starting points and
+identical nerves. Real people do not get either. Two investors can look at the same market,
+make opposite choices, and both believe they are being sensible because their memories of
+recession, scarcity, windfalls, or loss are different. A useful financial plan has to be
+good enough to follow through a bad year, not merely impressive in a calm one.
+
+## Every money decision has a biography
+
+What feels prudent is partly a record of what you have seen. Someone raised around layoffs
+may value cash more than an elegant spreadsheet recommends. Someone whose adulthood began
+in a booming market may underestimate how quickly confidence can reverse. Neither reaction
+is a full account of reality, but each supplies an emotional logic. Treating another
+person's choice as irrational without seeing that history misses the mechanism.
+
+The practical implication is humility. Before copying an investor, ask what risks they can
+survive, what they are trying to buy with their money, and what period taught them their
+default fears. A strategy can be sensible for its owner and badly matched to someone else.
+
+<Figure id="7.1" caption="The visible choice is usually the small part of a much longer financial story.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the decision you can see"
+    waterlineLabel="what an observer knows"
+    below={["lived history", "fear and aspiration", "room to absorb a loss"]}
+  />
+</Figure>
+
+## Compounding needs time and continuity
+
+Returns can compound only while capital remains in the game. The familiar lesson is to start
+early, but the more demanding one is to avoid interruptions that force a sale or make the
+plan unbearable. A long run contains dull stretches, crashes, recoveries, and years when
+someone else's approach looks smarter. The advantage of patience is not passive optimism.
+It is the willingness to hold a reasonable plan through periods that offer no emotional
+reward for doing so.
+
+This changes how success looks. The first years may show little besides contributions and
+ordinary market movement. Later gains can dominate earlier ones because the base has had
+time to grow. That pattern makes consistency more valuable than the urge to find a dramatic
+single move.
+
+<Figure id="7.2" caption="A long, uninterrupted run can make later years carry much more of the result.">
+  <Curve
+    className="block w-full min-w-[380px]"
+    shape="exp"
+    axes={{ x: "time stayed invested", y: "accumulated value" }}
+    annotations={[
+      { x: 0.25, y: 0.06, text: "quiet early years" },
+      { x: 0.8, y: 0.47, text: "time has a base to build on" },
+    ]}
+  />
+</Figure>
+
+## A few outcomes carry much of the result
+
+Investing, business, and careers do not distribute rewards evenly. A handful of decisions,
+years, products, or companies can do most of the work, while many attempts are merely
+ordinary or fail outright. That unevenness is uncomfortable because it makes a spotless
+record impossible. It also explains why an occasional setback does not prove a plan was
+wrong, and why a winner should not be mistaken for proof of universal skill.
+
+The response is not to predict the exceptional outcome with certainty. It is to build a
+portfolio and a life that can remain standing while you wait for it. Diversification, a
+modest position size, and a long horizon are ways to admit that the important result may
+come from a place you did not identify in advance.
+
+<Figure id="7.3" caption="In an uneven world, many ordinary outcomes can sit beside a small number that matter far more.">
+  <Bars
+    className="block w-full min-w-[380px]"
+    items={[
+      { label: "many small results", value: 0.24, valueLabel: "limited effect" },
+      { label: "a few strong results", value: 0.58, valueLabel: "meaningful effect" },
+      { label: "rare outlier", value: 0.94, accent: true, valueLabel: "can reshape the total" },
+    ]}
+  />
+</Figure>
+
+## The plan needs a margin for reality
+
+A plan that succeeds only if income rises on schedule, markets cooperate, and nothing breaks
+is not robust. It is a bet on a narrow script. Savings, insurance, diversification, and
+unclaimed capacity can look inefficient when nothing goes wrong. Their purpose is to keep a
+temporary shock from becoming a forced, permanent decision.
+
+This is a useful reversal of the usual question. Instead of asking how much return can be
+extracted from every available dollar, ask what buffer lets you keep your options when an
+unwelcome surprise arrives. The answer will vary, but the principle does not: survival is a
+financial advantage because it preserves the chance to compound later.
+
+<Figure id="7.4" caption="A buffer trades some apparent efficiency for a greater ability to stay in the game.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="fully committed"
+    right="room for error"
+    marker={0.72}
+    markerLabel="a survivable plan"
+    zones={[
+      { from: 0.0, to: 0.36, label: "one shock can force action" },
+      { from: 0.58, to: 1.0, label: "cash, time, and options", accent: true },
+    ]}
+  />
+</Figure>
+
+## Wealth is what you keep unseen
+
+Spending can make success visible, but visible spending is not the same thing as financial
+security. The house, car, trip, or logo tells an observer that money was spent. It says much
+less about savings, future flexibility, or the ability to withstand a change in income.
+Wealth is often quiet precisely because it has not been converted into a signal.
+
+That distinction matters because status can set a moving target. When someone else raises
+the standard of display, matching it may feel like keeping up, even when it weakens the
+freedom you were trying to build. The more useful measure is private: how much control does
+your balance sheet give you over your next decision?
+
+<Figure id="7.5" caption="A visible purchase and an invisible reserve can look similar from outside, but they create different choices.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "rich-looking",
+      points: ["spending is observable", "status gets attention", "resources are committed", "comparison can escalate"],
+    }}
+    right={{
+      title: "financially free",
+      points: ["savings stay private", "time becomes easier to control", "a shock is easier to absorb", "choices stay open"],
+    }}
+  />
+</Figure>
+
+## Enough is a boundary, not a smaller ambition
+
+There is no natural finish line in a comparison game. More wealth can always be measured
+against someone with more of it, which turns a genuine gain into proof of inadequacy. The
+book's corrective is to name what further risk is for and where the trade stops making
+sense. That is not a call to reject ambition. It is a refusal to endanger relationships,
+health, integrity, or independence for a reward that cannot satisfy the comparison itself.
+
+An explicit enough point makes tradeoffs visible. It lets a person say no to a wager that
+could improve a number while damaging the life the number was supposed to support. Without
+that boundary, the goal can quietly become winning a race with no finish.
+
+<Figure id="7.6" caption="An enough point turns an endless comparison into a deliberate choice about risk and life.">
+  <Timeline
+    className="block w-full min-w-[640px]"
+    segments={[
+      { label: "meet needs", sub: "security" },
+      { label: "build a reserve", sub: "resilience" },
+      { label: "enough", sub: "name the boundary" },
+      { label: "more", sub: "choose the risk on purpose" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write your personal money history">
+List three financial events that shaped you: a job loss you witnessed, a debt you carried, a
+windfall, a market fall, or a period when money felt tight. Next to each, write the instinct
+it left behind. This does not make the instinct wrong. It makes it available for inspection
+before it runs the next decision.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Choose a buffer before choosing a return">
+For your household, define a reserve that would let you handle a disrupted income, a major
+repair, or a market decline without selling long-term investments under pressure. Put the
+amount and the place it will live in writing. Revisit it after a material change in expenses
+or obligations.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Set the enough line">
+Name the outcome you want money to support: more time, a lower-stress job change, education,
+care for family, or a stable home. Then write one form of risk you will not take merely to
+raise a score. A boundary is easier to defend before envy or excitement arrives.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make a plan you can hold in a bad year">
+Read your investment and spending plan as if markets were down and income uncertain. Identify
+the part most likely to make you panic, then reduce the position, add cash, simplify the
+rules, or ask a qualified adviser to test it. The best plan is one you can still follow when
+it stops feeling clever.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Behavior matters, but it does not erase unequal incomes, inherited wealth, debt terms,
+medical costs, discrimination, or the simple fact that some households have no spare cash to
+create a large buffer. The book's stories are useful prompts for reflection, not a complete
+theory of financial policy or a substitute for regulated, personal advice. Saving and
+diversification reduce certain risks; they do not guarantee investment returns or protect
+every household from a severe shock. Treat the principles as a way to design your own
+decisions, then fit the details to your circumstances and obligations.
+</Callout>
+
+## If you remember one thing
+
+Money is useful when it buys resilience and control over your time. Build a plan with enough
+slack to survive uncertainty, give it time to compound, and decide what enough looks like
+before the next comparison tries to decide for you.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "atomic-habits"]}
+  buyUrl="https://harriman-house.com/authors/morgan-housel/the-psychology-of-money/9780857197689"
+  buyLabel="The Psychology of Money by Morgan Housel"
+/>
