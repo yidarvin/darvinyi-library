@@ -1,0 +1,211 @@
+import { Compare, Concentric, Flow, Iceberg, NodeGraph, Timeline } from "../components/diagrams";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+
+<Hero
+  slug="start-with-why"
+  thesis="A compelling purpose gives people a reason to choose, contribute, and stay. State that purpose before the features, then make every decision prove it."
+  minutes={8}
+/>
+
+## The thesis
+
+Sinek's argument is that influential leaders and organizations begin with the belief that
+drives their work, then show how they act on it and what they make. The order matters
+because a purpose gives facts their meaning. A feature list can describe an offer, but it
+cannot tell a customer, employee, or partner why this particular offer deserves a place in
+their life. When the reason is clear and the work keeps proving it, people can recognize a
+fit that is deeper than a transaction.
+
+## Why it matters
+
+Most organizations are fluent in outputs. They can name their products, their prices, and
+their process. Those details are necessary, yet they often leave the hard choices unanswered:
+what to stop doing, which customer to disappoint, or what a team should protect when a
+shortcut looks tempting. A shared reason does not remove those choices. It gives them a
+standard that is more durable than the next campaign or quarter.
+
+## A purpose earns its force through choices
+
+A purpose is not a slogan pasted above ordinary behavior. It is a claim about the change an
+organization wants to make, and the claim becomes believable only when it changes a real
+decision. What gets funded, what gets declined, who gets promoted, and how a mistake is
+handled all tell people whether the stated belief has any weight. The visible message is the
+small tip. The operating choices below it are what make it credible.
+
+<Figure id="8.1" caption="A stated purpose becomes credible when decisions beneath it point in the same direction.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the public message"
+    waterlineLabel="what people can see quickly"
+    below={["priorities and tradeoffs", "the behavior leaders reward", "what the organization refuses to do"]}
+  />
+</Figure>
+
+## Belonging has a different fuel than a bargain
+
+Discounts, deadlines, and bonuses can prompt action. They are useful tools when the choice
+is straightforward, but they make a thin basis for loyalty. The stronger form of commitment
+comes when people see their own values or aspirations in the work. They are then not merely
+responding to an inducement. They are choosing a group, a standard, or a direction they want
+to help sustain. That bond still needs a sound product and fair treatment. Purpose gives
+those practical facts a human reason to matter.
+
+<Figure id="8.2" caption="An inducement can prompt a purchase; shared meaning can support a longer commitment.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "a bargain",
+      points: ["price or reward leads", "choice resets each time", "comparison stays external", "compliance is enough"],
+    }}
+    right={{
+      title: "a shared reason",
+      points: ["belief leads", "identity can reinforce return", "fit matters alongside price", "people may contribute more"],
+    }}
+  />
+</Figure>
+
+## Lead with the reason, then make it concrete
+
+The sequence is a communication discipline. Begin with the change you are trying to make or
+the conviction you are acting on. Next, explain the distinctive practices that carry that
+conviction into the world. Only then name the product, program, role, or request. This does
+not mean hiding the details. It gives the details a frame. A listener can first decide whether
+the aim resonates, then judge whether the method is credible, then inspect the offer itself.
+
+<Figure id="8.3" caption="Start with the reason, show the method, and let the tangible offer serve as evidence.">
+  <Flow
+    className="block w-full min-w-[440px]"
+    steps={["name the purpose", "show the practices", "offer the tangible proof"]}
+    highlight={0}
+  />
+</Figure>
+
+## The middle layer turns a belief into a recognizable way of working
+
+Purpose alone is too broad to guide a Tuesday. The middle layer, the how, carries it into
+repeatable principles and choices. A company that claims to respect customers might answer
+support calls differently, write simpler contracts, or decline a revenue source that depends
+on confusion. Those practices create a recognizable fingerprint. They also let a team test
+the claim: if a proposed action violates the stated way of working, the purpose has supplied
+a useful reason to revise it.
+
+<Figure id="8.4" caption="A belief gains traction when it travels through practices into the choices people encounter.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    ariaLabel="A connected system where a purpose informs principles, principles guide decisions, decisions shape experience, and experience either builds or weakens trust in the purpose."
+    nodes={[
+      { id: "purpose", label: "purpose", x: 0.5, y: 0.08 },
+      { id: "principles", label: "working principles", x: 0.16, y: 0.38 },
+      { id: "decisions", label: "daily decisions", x: 0.16, y: 0.78 },
+      { id: "experience", label: "people's experience", x: 0.84, y: 0.78 },
+      { id: "trust", label: "trust in the claim", x: 0.84, y: 0.38 },
+    ]}
+    edges={[
+      { from: "purpose", to: "principles" },
+      { from: "principles", to: "decisions" },
+      { from: "decisions", to: "experience" },
+      { from: "experience", to: "trust", kind: "reinforcing" },
+      { from: "trust", to: "purpose", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Early believers make a new idea easier to trust
+
+New ideas usually spread through people who care about the underlying problem before they
+care about broad approval. Their willingness to try, give feedback, and tell a credible story
+creates evidence for more cautious people. The lesson is not to ignore the larger market. It
+is to avoid flattening the message until it means nothing to the people most ready to act.
+Serve the first believers well, learn from the result, and let a real record carry the idea
+outward.
+
+<Figure id="8.5" caption="Conviction starts with a small group, gains evidence in use, and can then travel to a wider audience.">
+  <Timeline
+    className="block w-full min-w-[400px]"
+    segments={[
+      { label: "first believers", sub: "care about the problem now" },
+      { label: "working evidence", sub: "results and stories accumulate" },
+      { label: "wider adoption", sub: "the risk becomes easier to judge" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## The Model
+
+The Golden Circle is a way to inspect both a message and an organization. At the center is
+WHY, the purpose, cause, or belief behind the work. Around it sits HOW, the principles and
+practices that make that belief distinctive. The outer layer is WHAT, the products, services,
+and visible actions people can point to. All three are necessary. The useful question is
+whether the outer layers consistently make the center believable, and whether communication
+travels from the center outward rather than beginning and ending with an inventory.
+
+<Figure id="8.6" caption="The Golden Circle moves from a central purpose through distinctive practice to visible work.">
+  <Concentric
+    className="block w-full min-w-[380px]"
+    rings={[
+      { label: "WHY\npurpose or belief" },
+      { label: "HOW\nprinciples and practice" },
+      { label: "WHAT\nproducts and actions" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write the reason without naming the product">
+Draft two sentences about the change you want your work to make for other people. Do not use
+the name of a product, a revenue target, or a vague word such as "excellence." If the reason
+cannot survive without the current offer, it may be a description of the what rather than a
+purpose.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Find three pieces of operating evidence">
+Choose the belief you want the team to recognize. List one decision you made this month that
+supports it, one routine that expresses it, and one place where the work contradicts it. Keep
+the first two, then name a small repair for the third. A purpose becomes useful when it can
+change a calendar, a budget, or a conversation.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Reorder one important message">
+Take a pitch, job description, project brief, or team update. Put the intended change or
+belief first. Follow it with the practices that make your approach distinctive. End with the
+specific request or offer. Ask someone unfamiliar with the work what they think you stand
+for, and revise until the answer is close to what you meant.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Listen to the first believers">
+Name the people already choosing this work for the reason you hope matters. Ask what they
+were trying to solve, what evidence made them trust you, and where the experience fell short.
+Do not use their answers as a slogan workshop. Use them to improve the work that makes the
+claim true.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+WHY is easy to inflate into a grand declaration and easy to misuse as a substitute for a
+viable offer. A noble cause does not make an unsafe product useful, fix a broken business
+model, or excuse poor treatment of employees. Nor does every purchase express identity;
+price, convenience, regulation, and habit are often decisive. The book's language about
+inspiration is most useful as a prompt to align purpose, conduct, and communication. Treat
+it as a lens for better judgment, not a scientific law that guarantees loyalty or growth.
+</Callout>
+
+## If you remember one thing
+
+State the belief that makes the work worth doing, then make your methods and visible offers
+prove it. Purpose persuades only when people can see it in the choices behind the message.
+
+The 7 Habits of Highly Effective People also uses purpose as a decision filter, while How to
+Win Friends and Influence People focuses on the respectful attention that helps a message be
+heard.
+
+<ShelvedNearby
+  related={["seven-habits", "how-to-win-friends"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/304046/start-with-why-15th-anniversary-edition-by-simon-sinek/"
+  buyLabel="Start With Why by Simon Sinek"
+/>
