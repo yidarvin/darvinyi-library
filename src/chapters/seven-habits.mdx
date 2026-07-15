@@ -1,0 +1,230 @@
+import { Compare, Concentric, Flow, Matrix, ProcessLoop, Venn } from "../components/diagrams";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+
+<Hero
+  slug="seven-habits"
+  thesis="Effectiveness has an order: take responsibility for your own choices, direct that responsibility toward a clear purpose, then use it to build capable relationships and renew the capacity to keep going."
+  minutes={7}
+/>
+
+## The thesis
+
+Covey's argument is that durable effectiveness begins before technique. A planner, a
+negotiation script, or a productivity system cannot compensate for a person who treats
+every setback as somebody else's move. The work starts with the choices within reach,
+gives those choices a direction, and then carries the same discipline into agreements
+with other people. The seven habits are a progression from self-command to cooperation,
+with renewal keeping both from becoming a short-lived burst of effort.
+
+## Why it matters
+
+Much advice starts with a tactic: speak more confidently, use a better calendar, close
+the deal. This framework asks a prior question: what kind of person and relationship
+would make that tactic reliable? Its answer is character expressed in repeated actions.
+That is why the book has stayed useful far beyond the offices and family stories that
+frame it.
+
+## Put your energy where a choice still exists
+
+Agency is not the claim that you control events. It is the more demanding claim that you
+still own a response. A delayed project, a difficult colleague, or a bad economy can set
+real limits. They do not decide the next conversation, the next request for help, or the
+next hour of preparation. When attention stays on what can be influenced, complaint turns
+into a possible move. That move may be small, but it is the only place from which further
+movement can begin.
+
+<Figure id="3.1" caption="Move inward from the noise of events to the response you can actually choose.">
+  <Concentric
+    className="block w-full min-w-[380px]"
+    rings={[
+      { label: "my next response" },
+      { label: "things I can affect" },
+      { label: "events around me" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+## Let a purpose edit the day
+
+An end in mind is not a rigid five-year prediction. It is a standard for deciding what a
+good result would look like before the inbox, a meeting, or another person's urgency writes
+the answer for you. A clear purpose gives tradeoffs a basis: a request can be declined, a
+project can be simplified, and a hard conversation can be judged by the relationship it is
+meant to protect. Without that reference point, activity feels productive simply because it
+is visible.
+
+<Figure id="3.2" caption="A stated purpose gives the next decision something more durable than urgency to answer to.">
+  <Flow
+    className="block w-full min-w-[520px]"
+    steps={["name the result", "choose a principle", "make the next decision"]}
+    highlight={1}
+  />
+</Figure>
+
+## Protect the important work from the urgent work
+
+Urgent tasks make noise. Important tasks often do not, especially before the missed
+opportunity, damaged relationship, or mounting risk makes them urgent too. The practical
+discipline here is to reserve time for preparation, learning, prevention, and the people
+whose trust makes later work possible. Some urgent work is genuinely important, and some
+can be delegated or refused. The distinction prevents the calendar from becoming a record
+of whoever interrupted most effectively.
+
+<Figure id="3.3" caption="The useful target is work that matters before it becomes an emergency.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "less urgent", right: "more urgent", label: "time pressure" }}
+    yAxis={{ low: "less important", high: "more important", label: "consequence" }}
+    quadrants={[
+      { title: "prepare", note: "protect time" },
+      { title: "respond", note: "handle now" },
+      { title: "reduce", note: "avoid drift" },
+      { title: "contain", note: "delegate or limit" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+## Build agreements that leave room for both sides
+
+Cooperation is weaker when one person has to lose for another to call the result a win.
+The alternative is not to pretend that every conflict has a painless solution. It is to
+look first for an agreement that names each side's legitimate interests, responsibilities,
+and measures of success. Where such an agreement is impossible, clarity beats a disguised
+contest. A relationship can survive a clean no more easily than it can survive a deal that
+quietly makes one party pay the cost.
+
+<Figure id="3.4" caption="A durable agreement makes responsibilities and benefits visible on both sides.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "one-sided deal",
+      points: ["one scorecard", "hidden tradeoffs", "short-term compliance", "trust wears down"],
+    }}
+    right={{
+      title: "shared agreement",
+      points: ["both interests named", "clear responsibilities", "success measures", "trust can grow"],
+    }}
+  />
+</Figure>
+
+## Understand before you try to persuade
+
+Most listening is only a pause before a reply. This habit asks for a more useful sequence:
+find out what the other person means, test that understanding by reflecting it back, then
+offer your own view in terms they can respond to. It slows a disagreement down just enough
+to uncover different facts, fears, and definitions of success. Being understood still
+matters. It works better after the other person has evidence that their view was heard
+without being reduced to a talking point.
+
+<Figure id="3.5" caption="Understanding is a checkable step before persuasion, not a courtesy added after it.">
+  <Flow
+    className="block w-full min-w-[660px]"
+    steps={["ask and listen", "reflect their meaning", "offer your view", "find the next step"]}
+    highlight={1}
+  />
+</Figure>
+
+## Treat difference as raw material, not resistance
+
+When people with different experience reach a hard choice, the quick temptation is to
+force a vote or split the difference. Covey's better ambition is to stay with the tension
+long enough to produce an option neither side brought in alone. This only works when the
+group has enough trust to surface disagreement and enough discipline to keep a common
+problem in view. Difference without trust becomes faction. Trust without difference can
+become a comfortable echo.
+
+<Figure id="3.6" caption="A stronger option appears where distinct experience, frank exchange, and a common aim overlap.">
+  <Venn
+    className="block w-full min-w-[420px]"
+    sets={[
+      { label: "different experience" },
+      { label: "frank exchange" },
+      { label: "common aim" },
+    ]}
+    intersectionLabel="a better option"
+  />
+</Figure>
+
+## The Model
+
+The model is best read as a path rather than a ranking of people. The first three habits
+build self-direction: choose a response, define a result, and organize commitments around
+what matters. The next three make that direction social: seek fair agreements, listen with
+care, and create with difference rather than merely tolerating it. The final habit restores
+the physical, mental, relational, and reflective capacity that all the earlier work spends.
+The cycle matters because depleted people usually return to reactivity, even when they know
+better.
+
+<Figure id="3.7" caption="Self-direction supports cooperation; renewal returns capacity to the start of the cycle.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={[
+      "choose response",
+      "define direction",
+      "organize priorities",
+      "seek fair agreements",
+      "listen for meaning",
+      "create with difference",
+      "renew capacity",
+    ]}
+    compoundingEdge={6}
+    centerLabel="lasting effectiveness"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the next response">
+Choose one situation you have been describing as someone else's fault. Write two columns:
+what is outside your control, and what you can do in the next two days. Put one action from
+the second column on the calendar. The point is not to deny the constraint. It is to stop
+waiting for it to make the first move.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Block one important hour">
+Pick a piece of work that prevents a later problem or strengthens an important relationship.
+Reserve an hour for it before the week fills up. Protect that block as you would a meeting
+with someone else, and decide in advance what interruption would be important enough to
+take it.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Test understanding in a live disagreement">
+In the next tense conversation, delay your argument until you can state the other person's
+view in a way they recognize as fair. Ask them to correct it. Only then explain your own
+concern and look for an agreement with explicit responsibilities.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Schedule renewal as maintenance">
+Choose one practice for energy, one for learning, one for a relationship, and one for quiet
+reflection. Make each small enough to repeat this week. Renewal is not a prize after all
+the work is finished. It is maintenance for the person doing the work.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The inside-out lens can be bracing, but it can also be misused. Personal responsibility
+does not erase unequal power, poverty, illness, discrimination, or a workplace that rewards
+constant interruption. A fair reading distinguishes agency from blame: choose the response
+available to you, while also naming and changing conditions that make good choices harder.
+The language of principles can create a false sense that every conflict has one clean moral
+answer. In real institutions, interests and obligations can collide. Use the framework to
+make commitments clearer and relationships more honest, not to turn structural problems into
+private failures.
+</Callout>
+
+## If you remember one thing
+
+Lasting effectiveness is not a collection of tricks. It is the practiced sequence of owning
+your next choice, directing it toward what matters, and making other people stronger partners
+in the work.
+
+<ShelvedNearby
+  related={["atomic-habits", "thinking-fast-and-slow"]}
+  buyUrl="https://www.simonandschuster.com/books/The-7-Habits-of-Highly-Effective-People/Stephen-R-Covey/9781982137274"
+  buyLabel="The 7 Habits of Highly Effective People by Stephen R. Covey"
+/>

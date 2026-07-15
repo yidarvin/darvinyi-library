@@ -59,7 +59,19 @@
       "subtitle": "Stephen Covey · 1989",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 1,
+      "thesis": "Lasting effectiveness begins with personal responsibility and becomes durable through clear priorities, cooperative relationships, and deliberate renewal.",
+      "framework": "The 7 habits",
+      "diagrams": [
+        "concentric circles",
+        "flow",
+        "two-by-two matrix",
+        "comparison",
+        "flow",
+        "venn overlap",
+        "process loop"
+      ]
     },
     {
       "num": 4,
