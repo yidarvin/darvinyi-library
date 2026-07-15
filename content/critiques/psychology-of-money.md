@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -47,3 +47,16 @@ verdict: revise
    lint, pipeline tests, eighteen Vitest tests, TypeScript and Vite production
    build, and ESLint all completed successfully. The jsdom run emitted only the
    existing non-failing `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-15
+
+- Revised only Figure 7.3's chapter-level conceptual bar proportions, from `0.24`,
+  `0.58`, and `0.94` to `0.12`, `0.28`, and `0.52`. The three existing
+  meaning-bearing labels remain unchanged.
+- With the shared Bars component's 204-unit track, the labels now begin at roughly
+  x=166, x=199, and x=248. Their approximate right edges are x=250, x=301, and
+  x=374, respectively, all inside the 380-unit SVG viewport at every rendered
+  width.
+- Preserved the existing caption, prose, six-diagram sequence, deliberate absence
+  of a Model section, exercises, caveat, and cross-links. The shared Bars component
+  was not edited.
