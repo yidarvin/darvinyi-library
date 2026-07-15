@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -42,3 +42,11 @@ verdict: revise
    lint, pipeline tests, twenty Vitest tests, TypeScript and Vite production build,
    and ESLint all completed successfully. The jsdom run emitted only the existing
    non-failing `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-15
+
+Resolved Required 1. Figure 8.5 now sets its chapter-local `Timeline` width to a
+480 px minimum in `src/chapters/start-with-why.mdx`. The shared Figure wrapper
+continues to provide horizontal scrolling on narrow viewports, while the Timeline's
+9.5-unit secondary labels now render at approximately 11 CSS px instead of roughly
+9.1 px. No shared Timeline or Figure component was changed.
