@@ -193,7 +193,7 @@ changed_paths_are_allowed() {
       build:src/chapters/"$slug".mdx|build:content/registry.json|build:prompts/queue.md) ;;
       build:src/chapters/_figures/*|build:src/chapters/_widgets/*) ;;
       critique:content/critiques/"$slug".md|critique:content/registry.json|critique:prompts/queue.md) ;;
-      resolve:src/chapters/"$slug".mdx|resolve:src/chapters/_figures/*|resolve:src/chapters/_widgets/*|resolve:content/critiques/"$slug".md) ;;
+      resolve:src/chapters/"$slug".mdx|resolve:src/chapters/_figures/*|resolve:src/chapters/_widgets/*|resolve:content/critiques/"$slug".md|resolve:content/registry.json) ;;
       record:content/registry.json|record:prompts/queue.md) ;;
       *) printf '%s\n' "$path"; return 1 ;;
     esac
