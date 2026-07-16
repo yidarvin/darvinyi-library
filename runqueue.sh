@@ -89,12 +89,32 @@ done
 
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)" || die "cannot resolve script directory"
 cd "$SCRIPT_DIR" || die "cannot cd to $SCRIPT_DIR"
+resolve_git_dir() {
+  local dotgit="$SCRIPT_DIR/.git" record gitdir
+  if [ -d "$dotgit" ]; then
+    printf '%s' "$dotgit"
+    return 0
+  fi
+  [ -f "$dotgit" ] || return 1
+  IFS= read -r record < "$dotgit" || return 1
+  case "$record" in
+    'gitdir: '*) gitdir="${record#gitdir: }" ;;
+    *) return 1 ;;
+  esac
+  case "$gitdir" in
+    /*) ;;
+    *) gitdir="$SCRIPT_DIR/$gitdir" ;;
+  esac
+  [ -d "$gitdir" ] || return 1
+  printf '%s' "$gitdir"
+}
+GIT_DIR_PATH="$(resolve_git_dir)" || die "cannot resolve Git metadata directory"
 # LaunchAgents can be allowed to enter the repository yet be denied getcwd() for its
 # Documents ancestor. Git calls getcwd() before it processes -C, so execute each Git
 # command from a safe directory and identify the repository explicitly.
 gitq() (
   cd / || return 1
-  GIT_DIR="$SCRIPT_DIR/.git" GIT_WORK_TREE="$SCRIPT_DIR" command git "$@"
+  GIT_DIR="$GIT_DIR_PATH" GIT_WORK_TREE="$SCRIPT_DIR" command git "$@"
 )
 
 RUNQUEUE_STATE_DIR="${TMPDIR:-/tmp}/darvinyi-runqueue"
