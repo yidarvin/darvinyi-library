@@ -30,7 +30,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 013 | deep-work                       | Deep Work                                     | DONE    |
 | 014 | never-split-the-difference      | Never Split the Difference                    | DONE    |
 | 015 | subtle-art                      | The Subtle Art of Not Giving a F*ck           | DONE    |
-| 016 | predictably-irrational          | Predictably Irrational                        | PENDING |
+| 016 | predictably-irrational          | Predictably Irrational                        | DONE    |
 | 017 | nudge                           | Nudge                                         | PENDING |
 | 018 | black-swan                      | The Black Swan                                | PENDING |
 | 019 | intelligent-investor            | The Intelligent Investor                      | PENDING |

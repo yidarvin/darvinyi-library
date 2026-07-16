@@ -1,0 +1,232 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Matrix, NodeGraph, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="nudge"
+  thesis="A choice is never presented in empty space. Defaults, timing, effort, and attention steer behavior, so the setting should be designed openly and with an easy way out."
+  minutes={7}
+/>
+
+## The thesis
+
+Thaler and Sunstein's central claim is simple and uncomfortable: every system that asks
+people to choose has already arranged the choice. A default, a form order, a reminder, and
+the number of steps all influence what happens next. Since there is no neutral arrangement,
+the responsible task is to build one that helps people act on their own interests while
+leaving alternatives available and practical to take.
+
+## Why it matters
+
+Many consequential decisions arrive when attention is thin. Retirement enrollment, medical
+forms, privacy settings, benefits, and school meals often require a decision in the middle of
+ordinary life, not a quiet hour of careful comparison. The old answer was to offer more
+options and call the job finished. This book asks a more demanding question: what will this
+particular arrangement make easy, easy to miss, or hard to undo?
+
+## The environment is part of the decision
+
+It is tempting to treat a choice as a private act that begins when someone reads the options.
+That skips the machinery that decides which options are seen, what is preselected, which
+details are buried, and when the request appears. Those features do not dictate an answer,
+but they set the path of least resistance. A cafeteria line, an onboarding screen, and a
+benefits portal each make an argument before a person has considered its reasons.
+
+<Figure id="18.1" caption="The visible choice sits on top of an arrangement that directs attention and effort.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the choice you notice"
+    waterlineLabel="the decision surface"
+    below={["what appears first", "the selected default", "steps, timing, and feedback"]}
+  />
+</Figure>
+
+## People conserve attention
+
+The book's fictional contrast between idealized decision makers and ordinary people is not an
+insult to ordinary people. It is a design constraint. Real people forget, postpone, misread,
+and accept a reasonable-looking setting when the alternative requires another task. That is
+especially predictable when the decision is unfamiliar or the consequences are far away. A
+good system does not demand perfect vigilance from its users. It reserves complexity for the
+moments when complexity buys something important.
+
+<Figure id="18.2" caption="Choice architecture begins with the gap between ideal calculation and ordinary attention.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "ideal chooser",
+      points: ["notices every option", "compares later costs", "acts without delay", "updates settings often"],
+    }}
+    right={{
+      title: "actual chooser",
+      points: ["works with partial attention", "puts off distant tradeoffs", "follows a familiar path", "needs a clear exit"],
+    }}
+  />
+</Figure>
+
+## Defaults do more than fill a blank
+
+A default is what happens when a person does nothing. That makes it powerful because doing
+nothing is often the least demanding response. It can also look like advice from the
+institution that supplied it. Research on automatic 401(k) enrollment gave the idea a
+concrete case: changing enrollment from an affirmative act to the starting condition raised
+participation, while the employer's preset contribution and investment choices strongly shaped
+where participants stayed. The lesson is not that every default is wise. It is that a preset
+is a decision with real authorship.
+
+<Figure id="18.3" caption="A default can hold because it saves effort and because it looks like an endorsed recommendation.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "default", label: "preset option", x: 0.5, y: 0.08 },
+      { id: "effort", label: "change takes effort", x: 0.1, y: 0.56 },
+      { id: "signal", label: "looks recommended", x: 0.9, y: 0.56 },
+      { id: "stay", label: "person stays put", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "default", to: "effort", kind: "reinforcing" },
+      { from: "default", to: "signal", kind: "reinforcing" },
+      { from: "effort", to: "stay", kind: "reinforcing" },
+      { from: "signal", to: "stay", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Friction gets a vote
+
+Behavior is sensitive to the cost of beginning. One extra login, an ambiguous button, or a
+form that asks for information twice can be enough to turn an intended action into a future
+intention. The inverse is useful too. Make the beneficial action short, visible, and possible
+at the moment of motivation. Friction is not a moral test. It is a setting in the system, and
+it should point in a direction you are willing to defend.
+
+<Figure id="18.4" caption="Small burdens can shift behavior from an intention toward a stalled task.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="hard to start"
+    right="easy to start"
+    marker={0.8}
+    markerLabel="good default"
+    zones={[
+      { from: 0.0, to: 0.34, label: "delay and dropout" },
+      { from: 0.66, to: 1.0, label: "action at the right moment", accent: true },
+    ]}
+  />
+</Figure>
+
+## Feedback must arrive while it can help
+
+Some decisions fail because their consequences are delayed, vague, or invisible. A monthly
+electricity bill is poor guidance for the choice to run an appliance right now. A savings
+balance does little to connect a small contribution with a later life. Bringing a relevant
+signal closer to the action makes the tradeoff easier to see. The signal should inform, not
+scold: a useful feedback loop tells someone what changed and gives them a clear chance to
+adjust.
+
+<Figure id="18.5" caption="Feedback changes behavior when it appears close enough to the action to guide the next choice.">
+  <Timeline
+    className="block w-full min-w-[520px]"
+    segments={[
+      { label: "make a choice", sub: "now" },
+      { label: "see a signal", sub: "while it matters" },
+      { label: "adjust next step", sub: "with a clear option" },
+      { label: "see the result", sub: "learn what worked" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Freedom has to be usable
+
+The phrase "libertarian paternalism" carries the book's central tension. The proposed help
+is paternal in the modest sense that an architect tries to make a better outcome more likely.
+It is libertarian only if a person can refuse without a hidden penalty, a maze, or a loss of
+basic service. This makes transparency, proportionality, and reversibility practical tests,
+not decorative ethics. If a design benefits the institution by trapping or confusing people,
+it has crossed from a nudge into manipulation.
+
+<Figure id="18.6" caption="A defensible nudge combines a plausible benefit with a refusal path that works in practice.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "hard to refuse", right: "easy to refuse", label: "exit remains practical" }}
+    yAxis={{ low: "designer gains", high: "chooser gains", label: "whose interest leads" }}
+    quadrants={[
+      { title: "coercive help", note: "good aim, bad exit" },
+      { title: "defensible nudge", note: "benefit with an easy out" },
+      { title: "dark pattern", note: "traps the chooser" },
+      { title: "neutral convenience", note: "little steering" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## The Model
+
+Choice architecture is the deliberate construction of a decision setting. The model starts
+with a real choice, identifies the predictable places where attention and effort will bend it,
+then selects a light-touch intervention such as a sensible default, a timely prompt, or a
+clear comparison. It ends by checking outcomes and the exit route. A nudge is not the whole
+environment. It is one transparent adjustment within that environment, chosen because it
+helps without closing the door.
+
+<Figure id="18.7" caption="Choice architecture locates the pressure points around a decision, then tests whether the help remains easy to decline.">
+  <Flow
+    className="block w-full min-w-[620px]"
+    steps={["name the decision", "map attention and friction", "make the helpful path simple", "test the exit and result"]}
+    highlight={2}
+    branch={{ up: "keep or improve", down: "redesign or remove" }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Find the silent default">
+Choose one form, setting, or routine you own. Write down what happens if the person does
+nothing. Then ask who benefits from that outcome, what signal it sends, and whether changing
+it is genuinely simple. A default that has never been chosen deserves a closer look.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Reduce one unnecessary step">
+Watch someone complete a routine you want to support, such as filing an expense, booking a
+checkup, or saving a document. Remove one repeated field, unclear label, or extra handoff.
+Do not make the action effortless if the cost deserves thought. Remove effort that adds no
+understanding.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Move feedback toward the moment">
+Pick a behavior whose result arrives too late to guide it. Add a small, immediate signal: a
+progress marker, a projected total, a reminder at the decision point, or a comparison that
+uses plain language. Test whether the signal changes the next action, not merely whether it
+looks informative.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Test the refusal path">
+Try to decline your own recommendation on a phone, with no special knowledge. Count the
+steps, note any guilt-inducing language, and check whether the service still works. If the
+exit feels punitive or obscure, the design has not earned the name of a nudge.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Nudges are not neutral merely because they preserve a formal option to refuse. Someone still
+chooses the goal, the default, and the measurement of success, and those choices can serve an
+institution more than its users. Effects also depend on context. The automatic-enrollment
+evidence that made defaults famous showed that preset contribution rates and investment
+allocations shaped where people remained, which is a reason to scrutinize the preset, not to
+celebrate inertia by itself. Evaluate a nudge against alternatives, publish the result when
+possible, and do not let a small behavioral fix distract from a structural problem that needs
+a rule, service, or resource instead.
+</Callout>
+
+## If you remember one thing
+
+The setting is already steering the choice. Make that steering visible, make the helpful path
+easy, and make refusal just as real.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "predictably-irrational", "influence"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/296963/nudge-by-richard-h-thaler-and-cass-r-sunstein/"
+  buyLabel="Nudge by Richard H. Thaler and Cass R. Sunstein"
+/>

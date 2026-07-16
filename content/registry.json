@@ -319,7 +319,18 @@
       "subtitle": "Dan Ariely · 2008",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "draft"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Our irrational choices are not random; they follow predictable patterns we can anticipate.",
+      "framework": "No single signature framework; the Model section is deliberately omitted, with six key-idea diagrams carrying the visual load.",
+      "diagrams": [
+        "two-by-two matrix",
+        "spectrum",
+        "comparison",
+        "flow",
+        "timeline",
+        "iceberg"
+      ]
     },
     {
       "num": 17,
@@ -328,7 +339,7 @@
       "subtitle": "Richard Thaler and Cass Sunstein · 2008",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "pending"
+      "status": "draft"
     },
     {
       "num": 18,
