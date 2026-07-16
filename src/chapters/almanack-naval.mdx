@@ -1,0 +1,250 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Curve, Flow, Iceberg, NodeGraph, Venn } from "../components/diagrams";
+
+<Hero
+  slug="almanack-naval"
+  thesis="Build uncommon ability, take ownership, and use scalable tools to create value. Then keep the resulting freedom pointed at a quieter, more deliberate life."
+  minutes={9}
+/>
+
+## The thesis
+
+This is a practical philosophy about two related kinds of freedom. Financial freedom comes
+from creating things that keep being useful without selling each hour all over again. Personal
+freedom comes from seeing desire, comparison, and mental noise before they run the day. The
+book's proposal is not a formula for a guaranteed fortune or permanent serenity. It is a way
+to choose work, build judgment, and spend the gains with more intention.
+
+## Why it matters
+
+Modern work makes it easy to confuse a full calendar with progress. A person can work hard,
+earn more, and still have little control over time, attention, or future choices. Naval
+Ravikant's ideas begin with a sharper question: what can you learn and build that continues to
+create value after the immediate effort ends? That question applies as much to a useful
+reputation or a small tool as it does to a company.
+
+## Aim for assets and autonomy, not the scoreboard
+
+Money is a medium of exchange. Status is a position relative to other people. Wealth, in this
+framework, is a stock of assets, capabilities, and relationships that can produce value when
+you are not in the room. The distinction matters because the first two can pull attention
+toward a score that never stops moving. Wealth is more useful when it buys breathing room:
+time to choose work carefully, room to recover from a bad fit, and less dependence on a single
+paycheck.
+
+This does not make money or recognition irrelevant. They can signal that something useful was
+created. The mistake is treating either signal as the object of the work. Build something that
+helps people, then decide how much of the return to retain, reinvest, or trade for time.
+
+<Figure id="57.1" caption="Wealth creates options over time; money and status can be signals without being the destination.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "money and status",
+      points: ["medium and social signal", "often measured today", "can invite comparison", "can disappear with spending"],
+    }}
+    right={{
+      title: "wealth and autonomy",
+      points: ["assets and durable capability", "can produce future value", "reduces dependence on one hour", "widens later choices"],
+    }}
+  />
+</Figure>
+
+## Specific knowledge is discovered in the work
+
+Specific knowledge is the useful combination that is hard to copy from a syllabus: your taste,
+technical fluency, pattern recognition, trust with a particular group, and knowledge of a live
+problem. It usually appears where genuine interest meets repeated contact with reality. A
+person may notice it only after people keep asking for the same help, or after a difficult
+project feels more absorbing than it feels burdensome.
+
+That makes career choice less like selecting a fashionable label and more like running small,
+serious experiments. Make things, work with people who are already good, and look for the
+problems you understand earlier or more clearly than most. Curiosity supplies the energy for
+the repetitions. Feedback tells you whether the private interest has public use.
+
+<Figure id="57.2" caption="Specific knowledge emerges where curiosity meets repeated work and useful feedback.">
+  <Flow
+    className="block w-full min-w-[620px]"
+    steps={["follow a real curiosity", "do difficult work", "notice useful feedback", "develop a rare combination"]}
+    highlight={3}
+  />
+</Figure>
+
+## Ownership gives judgment a place to compound
+
+The book favors accountability under your own name and some form of ownership in what you
+make. Ownership might mean equity, a royalty, a product, an audience you serve directly, or a
+body of work that travels with you. The point is not to reject employment. Renting time can be
+the right way to learn, earn, and find a field. The point is to seek a connection between your
+judgment and the lasting results of that judgment.
+
+Public responsibility sharpens the loop. When your decisions are visible and the consequences
+return to you, you have reason to learn, improve the work, and protect trust. A good reputation
+then opens more opportunities, which creates more chances to exercise judgment. This is slower
+than a quick transaction and more fragile than the diagram suggests, but it explains why a
+credible body of work can become an asset.
+
+<Figure id="57.3" caption="Responsible work can build a feedback loop between judgment, trust, and better opportunities.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "judgment", label: "sound judgment", x: 0.5, y: 0.06 },
+      { id: "work", label: "work under your name", x: 0.86, y: 0.52 },
+      { id: "trust", label: "earned trust", x: 0.5, y: 0.94 },
+      { id: "opportunity", label: "better opportunities", x: 0.14, y: 0.52 },
+    ]}
+    edges={[
+      { from: "judgment", to: "work" },
+      { from: "work", to: "trust", kind: "reinforcing" },
+      { from: "trust", to: "opportunity", kind: "reinforcing" },
+      { from: "opportunity", to: "judgment", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Use leverage that can travel without you
+
+Leverage is a multiplier on a decision. Labor and capital can increase what a person can do,
+but usually require permission from someone who controls the team or funds. Code and media are
+different because one useful artifact can reach many people at low additional cost. A script,
+course, essay, design system, or product can keep working after the first effort, although it
+still needs maintenance, distribution, and a real audience.
+
+This is why the book returns to making products rather than merely accumulating tasks. The goal
+is not to automate every part of life. It is to direct precious attention toward the small
+number of decisions, creations, and relationships where your particular judgment changes the
+result.
+
+<Figure id="57.4" caption="Some tools extend a single decision farther, but every form of leverage still needs useful work beneath it.">
+  <Bars
+    className="block w-full min-w-[380px]"
+    items={[
+      { label: "time sold directly", value: 0.2, valueLabel: "one person at a time" },
+      { label: "coordinated labor", value: 0.44, valueLabel: "requires permission" },
+      { label: "capital", value: 0.57, valueLabel: "requires stewardship" },
+      { label: "code or media", value: 0.84, accent: true, valueLabel: "can reach many" },
+    ]}
+  />
+</Figure>
+
+## Better judgment matters more as the multiplier grows
+
+A multiplier magnifies error as readily as insight. The more people, capital, or distribution
+a decision can affect, the more valuable it becomes to improve the decision before acting.
+Naval's answer is deliberately unglamorous: read deeply, seek the underlying principle, give
+yourself time to think, and make fewer decisions with more care. The aim is not certainty.
+It is a process that makes a costly mistake less likely and makes a correct insight more useful.
+
+Patience belongs here for a practical reason. A hurried answer is often an answer borrowed from
+the loudest nearby opinion. Time creates room to compare evidence, ask a better question, or
+decline the decision entirely. In a world of amplifiers, the pause can be productive work.
+
+<Figure id="57.5" caption="As the reach of a decision rises, small improvements in judgment can matter much more.">
+  <Curve
+    className="block w-full min-w-[380px]"
+    shape="exp"
+    axes={{ x: "reach of the decision", y: "value or damage of being right" }}
+    annotations={[
+      { x: 0.2, y: 0.08, text: "local effect" },
+      { x: 0.74, y: 0.44, text: "judgment carries farther" },
+    ]}
+  />
+</Figure>
+
+## Happiness is practice in reducing unnecessary conflict
+
+The second half of the book treats happiness less as a prize to acquire and more as a skill of
+attention. A desire can be useful when it points to food, safety, craft, or responsibility. It
+becomes costly when the mind makes present contentment conditional on an imagined future state.
+Getting the thing may solve a real problem, but it rarely settles the habit of looking for the
+next missing thing.
+
+The proposed practice is modest: observe the recurring mental story, make health and sleep
+easier to protect, choose less comparison, and return attention to the task or person in front
+of you. That is not a demand to be cheerful or passive. It is an attempt to stop needless
+internal argument from spending energy that could go to care, thought, or purposeful action.
+
+<Figure id="57.6" caption="Circumstances are visible; much of day-to-day peace depends on attention, habits, and interpretation below the surface.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="events and possessions"
+    waterlineLabel="what changes around you"
+    below={["attention and expectation", "sleep, health, and routine", "comparison and the inner story"]}
+  />
+</Figure>
+
+## The Model
+
+The central model joins a rare ability to a mechanism for scale. Specific knowledge identifies
+where you can make an unusual contribution. Ownership and accountability connect that
+contribution to a durable claim and a reputation. Leverage carries the resulting work farther
+than your available hours. Judgment decides where to apply the whole arrangement. It is a
+portfolio of capabilities, not a sequence to complete once.
+
+The model works best when it starts with genuine usefulness. Scale cannot rescue work that no
+one needs, and ownership does not turn a bad decision into a good one. The practical task is to
+keep locating the intersection where your uncommon capability can solve a real problem, then
+choose a form that can compound.
+
+<Figure id="57.7" caption="Specific knowledge becomes scalable value when it is paired with ownership, accountability, and a multiplier.">
+  <Venn
+    className="block w-full min-w-[380px]"
+    sets={[{ label: "specific knowledge" }, { label: "ownership and accountability" }, { label: "leverage" }]}
+    intersectionLabel="scalable value\nwith judgment"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Inventory the work that keeps pulling you back">
+Write down three activities that hold your attention even when they are difficult. Beside each,
+name one real problem it could help solve and one person who could tell you if the result is
+useful. Run one small project before making a grand career claim.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Turn one repeated task into an asset">
+Choose a task you explain or perform more than once. Make a reusable version: a checklist, a
+template, a short guide, a script, or a teaching note. Give it to a few people, watch where it
+fails, and improve it. The test is usefulness, not how polished the first version looks.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Create a judgment appointment">
+Reserve an hour each week without messages, feeds, or meetings. Review one decision with large
+downstream effects. State the evidence, the unknowns, the reversible next step, and the reason
+to wait if there is one. Let important decisions have more than a moment of attention.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Name one desire without obeying it immediately">
+When a comparison or purchase urge arrives, write the condition you believe it will solve.
+Wait a day, then ask whether the underlying need is security, rest, belonging, competence, or
+simple novelty. Meet the actual need if you can. If the urge remains, choose it deliberately
+rather than calling it destiny.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The framework can become a flattering story about individual merit if it ignores starting
+conditions. Education, health, immigration status, caregiving, discrimination, access to
+capital, and plain luck shape which experiments a person can afford and which risks are
+survivable. Ravikant has acknowledged that basic capacities and opportunity matter, but the
+framework still offers no complete account of those differences. Treat specific knowledge and
+leverage as prompts for choosing work, not as a verdict on anyone's worth or a promise of
+wealth. It is also not personal investment, business, or mental-health advice. Financial risk
+and persistent distress deserve methods and support suited to the actual situation.
+</Callout>
+
+## If you remember one thing
+
+Find work you can become unusually good at, take enough ownership for sound judgment to matter,
+and use tools that let useful work travel. Let the freedom this creates serve a life with less
+comparison and more attention, rather than another scoreboard.
+
+<ShelvedNearby
+  related={["psychology-of-money", "zero-to-one", "deep-work", "power-of-now"]}
+  buyUrl="https://www.amazon.com/Almanack-Naval-Ravikant-Wealth-Happiness/dp/1544514212"
+  buyLabel="The Almanack of Naval Ravikant by Eric Jorgenson"
+/>
