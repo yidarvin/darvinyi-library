@@ -25,10 +25,10 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 008 | start-with-why                  | Start With Why                                | DONE    |
 | 009 | mindset                         | Mindset                                       | DONE    |
 | 010 | influence                       | Influence: The Psychology of Persuasion       | DONE    |
-| 011 | power-of-habit                  | The Power of Habit                            | PENDING |
-| 012 | rich-dad-poor-dad               | Rich Dad Poor Dad                             | PENDING |
-| 013 | deep-work                       | Deep Work                                     | PENDING |
-| 014 | never-split-the-difference      | Never Split the Difference                    | PENDING |
+| 011 | power-of-habit                  | The Power of Habit                            | DONE    |
+| 012 | rich-dad-poor-dad               | Rich Dad Poor Dad                             | DONE    |
+| 013 | deep-work                       | Deep Work                                     | DONE    |
+| 014 | never-split-the-difference      | Never Split the Difference                    | DONE    |
 | 015 | subtle-art                      | The Subtle Art of Not Giving a F*ck           | PENDING |
 | 016 | predictably-irrational          | Predictably Irrational                        | PENDING |
 | 017 | nudge                           | Nudge                                         | PENDING |

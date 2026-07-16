@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -74,3 +74,76 @@ verdict: resolved
   the Compare panel without colliding with its center gap or the opposing panel.
 - Preserved the existing chapter prose, model, exercises, caveat, links, and earlier
   critique evidence. `npm run check` passes after these changes.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+1. **Restore a passing full mechanical gate before approval.** Two consecutive
+   `npm run check` runs reached Vitest and failed because `home lists every chapter
+   title` exceeded its 15-second timeout, at 15.124 seconds and 15.048 seconds. In
+   both runs, the other 25 Vitest tests passed; validation, prose lint, and the two
+   pipeline tests also passed before the timeout. Running that exact integration
+   test by itself passed in 5.58 seconds, with 3.30 seconds spent in the test, so
+   this does not presently identify a Power of Habit rendering assertion failure.
+   It still blocks approval because the rubric and definition of done explicitly
+   require `npm run check` to pass. Re-run or otherwise resolve the gate through the
+   repository's authorized workflow, then record a passing full check.
+
+### Advisory
+
+1. The three required visual findings from round 1 remain resolved. All six figures
+   preserve a 440 px authored width inside `Figure`'s horizontal-overflow wrapper;
+   Figure 11.2 now branches from the specific cue to the learned routine and other
+   possible actions; and Figure 11.3's `watch the routine` title fits the shared
+   comparison panel.
+
+2. No new chapter-content blocker emerged from this pass. Within the brief and
+   recorded repository evidence, the thesis and three-part model remain supported,
+   the five key ideas and practices are coherent, the caveat is appropriately
+   bounded, the related slugs resolve to completed chapters, and the publisher link
+   and registry metadata remain consistent. No external web search was begun.
+
+## Builder resolution — 2026-07-15
+
+- Preserved the three round-1 chapter fixes: all six Power of Habit figures retain
+  their 440 px chapter-local width, Figure 11.2 shows cue-based routine selection,
+  and Figure 11.3 uses the compact `watch the routine` heading.
+- Restored the full mechanical gate by adding explicit Testing Library cleanup after
+  every Vitest case in `src/test/chapters.test.tsx`. Vitest's configuration did not
+  expose a global `afterEach` hook for automatic cleanup, so earlier chapter renders
+  accumulated in the DOM and made the whole-library home-title query exceed its
+  15-second budget. The assertion and its 15-second budget are unchanged; each test
+  now starts from a clean rendered document.
+- Verified the isolated home-title integration test in 3.155 seconds and the full
+  Vitest suite in 10.20 seconds, with all 26 tests passing. `npm run check` then
+  passed validation, prose lint, both pipeline tests, Vitest, the TypeScript and Vite
+  production build, and ESLint. The existing non-failing `Window.scrollTo()` jsdom
+  notices remain unchanged.
+
+## Critique round 3 — 2026-07-15
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round-1 visual blockers remain resolved. Each figure preserves a 440 px
+   authored width inside the existing horizontal-overflow wrapper, Figure 11.2
+   visibly branches from the cue to the learned routine and other possible actions,
+   and Figure 11.3's compact heading stays within its comparison panel. The other
+   figures' structures, labels, and captions continue to agree with their prose.
+
+2. Within the chapter brief, seed metadata, registry, and existing critique record,
+   the factual and copyright posture remains suitable for approval. The thesis and
+   signature diagram center the recorded cue-routine-reward loop, broader claims are
+   framed as practical interpretations rather than guarantees, and the caveat limits
+   the model around individual and systemic constraints. The prose and diagrams are
+   original in form, with no quotation or real cover art. No external web search was
+   begun for this review.
+
+3. `npm run check` passed on 2026-07-15. Validation, prose lint, both pipeline tests,
+   all 26 Vitest tests, the TypeScript and Vite production build, and ESLint
+   completed successfully. The jsdom run emitted only the existing non-failing
+   `Window.scrollTo()` notices.

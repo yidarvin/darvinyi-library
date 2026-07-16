@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
-import { describe, it, expect } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { afterEach, describe, it, expect } from "vitest";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import { MDXProvider } from "@mdx-js/react";
 import { mdxComponents } from "../components/mdxComponents";
@@ -17,6 +17,11 @@ const mdxModules = import.meta.glob("../chapters/*.mdx") as Record<
 >;
 
 const published = registry.chapters.filter((c) => c.status !== "pending");
+
+// Vitest does not expose a global afterEach hook to Testing Library's automatic
+// cleanup in this configuration. Remove each rendered chapter before the next
+// integration test so the home-page query sees only the page it renders.
+afterEach(cleanup);
 
 describe("every MDX module renders directly", () => {
   for (const [path, load] of Object.entries(mdxModules)) {

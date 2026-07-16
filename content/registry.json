@@ -220,7 +220,7 @@
       "subtitle": "Charles Duhigg · 2012",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "draft",
+      "status": "done",
       "tier": 1,
       "thesis": "Habits conserve attention by running a learned cue, routine, and reward loop; understanding the loop makes a more useful response possible.",
       "framework": "The habit loop: cue, routine, reward.",
@@ -240,7 +240,18 @@
       "subtitle": "Robert Kiyosaki · 1997",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Financial independence begins when what you own sends more cash toward your life than it draws away from it.",
+      "framework": "Assets vs. liabilities, through a cash-flow lens",
+      "diagrams": [
+        "flow with branch",
+        "comparison",
+        "iceberg",
+        "node graph",
+        "two-by-two matrix",
+        "comparison"
+      ]
     },
     {
       "num": 13,
@@ -249,7 +260,18 @@
       "subtitle": "Cal Newport · 2016",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "The ability to focus without distraction on hard problems is rare, valuable, and trainable, and default modern work steadily erodes it.",
+      "framework": "Deep work versus shallow work",
+      "diagrams": [
+        "annotated curve",
+        "iceberg",
+        "flow",
+        "pyramid",
+        "process loop",
+        "comparison"
+      ]
     },
     {
       "num": 14,
@@ -258,7 +280,18 @@
       "subtitle": "Chris Voss · 2016",
       "part": "Negotiation",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Negotiation is emotional, not logical; win by making the other side feel understood through tactical empathy.",
+      "framework": "Mirroring, labeling, calibrated questions",
+      "diagrams": [
+        "iceberg",
+        "flow",
+        "comparison",
+        "spectrum",
+        "process loop",
+        "flow"
+      ]
     },
     {
       "num": 15,

@@ -1,0 +1,241 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Matrix, NodeGraph } from "../components/diagrams";
+
+<Hero
+  slug="rich-dad-poor-dad"
+  thesis="Financial independence begins when what you own sends more cash toward your life than it draws away from it."
+  minutes={8}
+/>
+
+## The thesis
+
+Kiyosaki asks a blunt question of every purchase: once recurring income and carrying costs are
+counted, does it increase or reduce the cash available to the household? His answer is to make
+income-producing ownership the center of a personal financial plan, rather than treating a
+larger salary or a more impressive lifestyle as proof of progress. The argument is useful
+because it makes cash flow visible. It becomes dangerous when that simple lens is mistaken for a
+complete accounting system or an invitation to take on risk without a margin for error.
+
+## Why it matters
+
+Many households can name their income and their biggest bills, yet cannot quickly say what
+their money owns or what those holdings cost to carry. That gap makes a raise easy to spend
+before it has a job. It also makes a purchase look like progress merely because it has a
+price tag, a loan, or a place on a balance sheet. This book endured because it gives that
+confusion a concrete visual test: follow the monthly cash.
+
+## Cash flow is the first test
+
+The book deliberately defines an asset by its behavior, not by its formal legal category. An
+income-producing share, a business interest, a rental, or a royalty can qualify if it leaves
+cash after its own costs. A car payment, consumer debt, or an expensive home can create the
+opposite pattern when each month requires more money to keep it. The question is not whether
+an item is respectable or enjoyable. It is what happens to the household's cash after the
+item enters the picture.
+
+That makes the distinction a diagnostic, not a moral ranking. A primary home may be valuable,
+safe, or deeply worth having. Under standard accounting it is an asset with economic value.
+Under Kiyosaki's narrower cash-flow lens, it remains a monthly outflow until it produces net
+income. Keeping those two meanings separate prevents a useful question from becoming a
+category error.
+
+<Figure id="12.1" caption="The useful test is what remains after the holding pays its own bills.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["thing you own", "cash it produces", "costs it requires"]}
+    highlight={1}
+    branch={{ up: "net cash stays", down: "net cash leaves" }}
+  />
+</Figure>
+
+## A paycheck and ownership solve different problems
+
+Work can create the surplus that makes investing possible. Kiyosaki's point is not that a
+salary is worthless. It is that a salary usually stops when the work stops, while a stake in
+a productive business or investment can keep generating cash without each payment requiring
+another hour. The aim is not to flee employment on command. It is to use earned income to
+build claims on future income over time.
+
+This distinction also sharpens the idea of freedom. Financial room comes from the gap between
+recurring income and recurring costs, not from a job title. A household with modest expenses,
+cash reserves, and diverse investments may have more choices than one with a large paycheck
+and equally large commitments. Ownership can widen that gap, but only when its risks and costs
+are understood.
+
+<Figure id="12.2" caption="Pay supports the present; productive ownership can add income that is less tied to hours worked.">
+  <Compare
+    className="block w-full min-w-[448px]"
+    favor="right"
+    left={{
+      title: "earned income",
+      points: ["payment follows work", "can fund savings", "often ends with the role", "depends on capacity and demand"],
+    }}
+    right={{
+      title: "owned cash flow",
+      points: ["payment follows a claim", "can add to income", "may continue without each hour", "still carries business and market risk"],
+    }}
+  />
+</Figure>
+
+## A raise can fund a runway or a burden
+
+The book's "rat race" is a picture of a familiar trap: income rises, then fixed commitments
+rise to meet it, leaving little ability to say no to the next paycheck. The trap is not
+caused by enjoying money. It is created when the recurring cost of a lifestyle reaches the
+same height as the income meant to support it. A larger paycheck then feels like relief, but
+also becomes necessary to keep the arrangement standing.
+
+The counter-move is plain: decide where a raise goes before it arrives. Some can cover needs
+or debt. Some can build a buffer. Some can buy a diversified investment or support a small
+business experiment. The important act is preserving a gap. A purchase that closes every gap
+may be a fine choice, but it is not a step toward greater flexibility.
+
+<Figure id="12.3" caption="As fixed commitments expand, a higher income can still leave little room to choose.">
+  <Iceberg
+    className="block w-full min-w-[448px]"
+    above="the visible upgrade"
+    waterlineLabel="the monthly bill"
+    below={["loan or lease", "insurance and upkeep", "new habits and expectations"]}
+  />
+</Figure>
+
+## Learn to read the whole household
+
+Financial literacy in this book means reading the connections among income, expenses, assets,
+and liabilities. That is more useful than memorizing terms because it turns a vague feeling
+about money into a system you can inspect. List what enters, what leaves, what is owed, and
+what is owned. Then ask which lines reinforce a growing surplus and which lines keep asking
+for more of next month's labor.
+
+The four boxes do not answer every question. Taxes, interest rates, liquidity, depreciation,
+valuation, and concentration all matter. But the habit of mapping the whole system makes
+those questions easier to see. A monthly review is a feedback loop: new information changes
+the next decision before a pattern hardens into a crisis.
+
+<Figure id="12.4" caption="A personal statement becomes useful when each category is connected to the cash decisions it shapes.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "income", label: "income", x: 0.5, y: 0.08 },
+      { id: "expenses", label: "expenses", x: 0.18, y: 0.52 },
+      { id: "owned", label: "what you own", x: 0.82, y: 0.52 },
+      { id: "next", label: "next decision", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "income", to: "expenses" },
+      { from: "income", to: "owned" },
+      { from: "expenses", to: "next", kind: "balancing" },
+      { from: "owned", to: "next", kind: "reinforcing" },
+      { from: "next", to: "income" },
+    ]}
+  />
+</Figure>
+
+## Skill lowers the cost of being wrong
+
+Kiyosaki treats learning as an asset because knowledge can improve the decisions behind every
+other asset. The sensible version of that lesson is modest. Learn to read a loan document,
+compare a fund's fees, understand a business's customer dependence, and calculate the cash
+that remains after conservative costs. Start with an amount small enough that a mistake is a
+lesson, not a household emergency.
+
+This is why the book's most durable advice is to study money rather than chase a particular
+deal. A tempting opportunity can be real and still be wrong for a buyer with little savings,
+high-interest debt, limited time, or no appetite for a loss. Knowledge is not confidence
+alone. It is the ability to name the assumptions that must hold for an investment to work.
+
+<Figure id="12.5" caption="The best first move is small enough to survive and clear enough to understand.">
+  <Matrix
+    className="block w-full min-w-[448px]"
+    xAxis={{ left: "unclear", right: "understood", label: "how well you can explain it" }}
+    yAxis={{ low: "large stake", high: "small stake", label: "size relative to your buffer" }}
+    quadrants={[
+      { title: "small unknown", note: "learn first" },
+      { title: "small, understood", note: "a manageable test" },
+      { title: "large unknown", note: "avoid" },
+      { title: "large, understood", note: "still needs a risk plan" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## The Model
+
+The core model is a cash-flow filter. Kiyosaki sorts holdings into two columns based on the
+direction of recurring money. In this version, an asset is something that produces positive
+net cash after its costs; a liability is something that requires continuing cash to carry.
+The model is intentionally narrower than standard accounting, which is why it works best as a
+decision prompt: inspect the direction and reliability of cash, then include the full balance
+sheet, risk, and personal goals before acting.
+
+<Figure id="12.6" caption="The model distinguishes cash that arrives from cash that must be supplied, after costs are counted.">
+  <Compare
+    className="block w-full min-w-[380px]"
+    favor="left"
+    left={{
+      title: "net cash in",
+      points: ["has an owner", "creates income", "costs are counted", "net cash can support expenses"],
+    }}
+    right={{
+      title: "net cash out",
+      points: ["has an owner", "requires payments", "costs recur", "work or savings must cover the gap"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Map one ordinary month">
+Open the last month of statements and make four lists: income received, recurring expenses,
+debts owed, and things you own that produce or consume cash. Do not judge the list. Get the
+directions right first. The point is to see the system that is already operating.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Calculate net cash on one holding">
+Choose one investment, side project, vehicle, or property. Write its monthly income beside
+every predictable cost: financing, taxes, insurance, maintenance, vacancy, fees, and time you
+must pay for. If the result depends on a generous assumption, write that assumption down too.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Protect the margin before pursuing yield">
+Set a minimum cash reserve and a plan for high-interest debt before committing money to a new
+investment. If a loss, missed rent payment, repair, or market drop would force you to sell or
+borrow, the stake is too large for the plan you have today.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Choose one skill with a receipt">
+Pick a practical question you cannot yet answer, such as how an index fund is priced, how a
+mortgage amortizes, or how a local business earns repeat revenue. Read one primary document or
+official guide, then explain the answer in your own words on one page. If the explanation is
+fuzzy, the investment decision can wait.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The cash-flow lens is useful, but the book's specific path deserves real skepticism. Rich Dad
+uses a cash-flow definition in which a primary home is a liability even though standard
+accounting records a home with economic value as an asset. That is a choice of lens, not a
+replacement for accounting. Its anecdotes should be treated as teaching stories, not as
+independently verifiable case history, and its more aggressive prescriptions can expose a
+household to concentrated debt or investment risk. Professional investor guidance instead begins
+with risk tolerance, time horizon, asset allocation, and diversification. Read the book for its
+prompt to track cash, then test any investment or debt decision against independent guidance
+such as [Investor.gov's overview of asset allocation and diversification](https://www.investor.gov/introduction-investing/getting-started/asset-allocation) and, for meaningful stakes, a qualified professional who has no product to sell you.
+</Callout>
+
+## If you remember one thing
+
+Follow the monthly cash, not the status of the purchase. Build a margin between what comes in
+and what must go out, then use that margin patiently and cautiously to acquire productive,
+well-understood ownership.
+
+For a complementary view of the behavior that makes a plan survivable, see *The Psychology of
+Money*.
+
+<ShelvedNearby
+  related={["psychology-of-money"]}
+  buyUrl="https://store.richdad.com/products/rich-dad-poor-dad-book"
+  buyLabel="Rich Dad Poor Dad by Robert Kiyosaki"
+/>

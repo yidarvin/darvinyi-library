@@ -1,0 +1,195 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Curve, Flow, Iceberg, ProcessLoop, Pyramid } from "../components/diagrams";
+
+<Hero
+  slug="deep-work"
+  thesis="The capacity to stay with a hard problem, without feeding every interruption, is a scarce skill that can be designed into a working day."
+  minutes={7}
+/>
+
+## The thesis
+
+Deep work is sustained, undistracted attention directed at a problem that actually asks
+something of your mind. Newport's case is that this capacity has become more valuable as
+knowledge work gets harder and more fragmented, yet ordinary work habits steadily erode
+it. The answer is not a heroic burst of willpower. It is a practice: make room for
+concentration, train the impulse to escape it, and give low-value work a proper boundary.
+
+## Why it matters
+
+Many jobs now ask people to learn complex systems, make judgments with incomplete
+information, and produce work that cannot be reduced to a quick reply. Those tasks need
+an unbroken stretch long enough for the mind to hold the moving parts together. A day can
+be full of messages, meetings, and visible motion while the work that would make a real
+difference never gets enough continuity to begin.
+
+## Difficulty is where capability grows
+
+The useful work is often the work that initially feels slow. Learning a demanding tool,
+writing a careful argument, or untangling a technical problem forces the mind to make new
+connections. That concentration produces two results at once: better output now, and a
+larger capacity for the next hard problem. Easy administrative work has its place, but it
+rarely exercises the same capability. A calendar that protects difficult practice is an
+investment in what you can do later.
+
+<Figure id="13.1" caption="Hard sessions can turn an awkward start into a larger capacity for demanding work.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="s"
+    axes={{ x: "repeated hard sessions", y: "capability" }}
+    annotations={[
+      { x: 0.18, y: 0.03, text: "awkward start" },
+      { x: 0.65, y: 0.9, text: "more becomes possible" },
+    ]}
+  />
+</Figure>
+
+## Busy signals can hide the real constraint
+
+Fast replies are easy to observe. Presence in chat, a cleared inbox, and a packed
+calendar all leave a visible trail, so organizations can accidentally reward them as a
+proxy for contribution. The harder thing to see is the protected attention behind a useful
+analysis, a design decision, or a piece of writing. That invisibility makes shallow work
+expand by default. It does not need to be declared important. It only needs to be the work
+with the quickest signal that somebody is active.
+
+<Figure id="13.2" caption="The visible activity is only the surface; norms and tools decide how much attention remains below it.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="replies, pings, and packed calendars"
+    below={["response-time expectations", "always-open communication tools", "no shared definition of valuable output"]}
+    waterlineLabel="what work makes easy to see"
+  />
+</Figure>
+
+## An interruption changes the problem in your head
+
+Resuming a task is not the same as continuing it. A hard problem leaves a temporary model
+in working memory: the decision you were testing, the code path you were tracing, the
+sentence you were shaping. A quick detour asks the mind to build a different model, then
+reconstruct the first one on return. The cost is often not the minute spent answering. It
+is the weakened thread of thought that follows. Protecting a session means protecting the
+transition back into the problem as well.
+
+<Figure id="13.3" caption="A small detour can turn one piece of focused work into repeated reconstruction.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["hold the problem", "switch to a request", "carry leftover attention", "rebuild the thread"]}
+    highlight={0}
+  />
+</Figure>
+
+## A ritual makes concentration easier to begin
+
+Focus becomes more dependable when it has a recognizable shape. Decide where the work
+happens, when it begins, how long it lasts, and what tools are permitted before the block
+starts. A modest ritual removes negotiations that otherwise recur at the worst moment:
+should I check this, where should I sit, is there enough time to begin? The ritual is not
+ceremony for its own sake. It is a set of supports that lowers the cost of crossing from
+general activity into demanding work.
+
+<Figure id="13.4" caption="A deep-work block rests on boundaries and a repeatable start, not on mood alone.">
+  <Pyramid
+    className="block w-full min-w-[480px]"
+    tiers={[
+      { label: "protected time", note: "a real block on the calendar" },
+      { label: "clear boundaries", note: "place, tools, and availability" },
+      { label: "starting ritual", note: "the cue that begins the session" },
+      { label: "demanding task", note: "one hard target" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Attention follows the escapes you rehearse
+
+The urge to check something usually arrives before a task is truly impossible. If every
+small patch of boredom ends with a feed, a message, or another tab, the mind learns that
+unease is a cue to leave. That makes longer concentration feel increasingly foreign.
+Practice runs in the other direction too. Notice the urge, keep the device out of reach,
+and return to the next concrete move in the work. The point is not to make boredom noble.
+It is to stop treating every moment without stimulation as an emergency.
+
+<Figure id="13.5" caption="Each quick escape trains the next restless moment to seek brief relief.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["friction or boredom", "urge to check", "quick escape", "brief relief"]}
+    compoundingEdge={3}
+    centerLabel="the practiced escape"
+  />
+</Figure>
+
+## The Model
+
+The central distinction is not moral. Both deep and shallow work can belong in a real job.
+The test is the kind of attention a task requires and the kind of value it can produce.
+Deep work demands concentrated effort and tends to create, solve, or improve something
+that is difficult to duplicate. Shallow work is logistical and often necessary, but it can
+usually be completed while attention is fragmented. The mistake is letting the second kind
+of work consume the time required by the first.
+
+<Figure id="13.6" caption="The aim is not to eliminate shallow work, but to keep it from claiming the hours that difficult work needs.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="left"
+    left={{
+      title: "deep work",
+      points: ["one demanding target", "attention protected", "uses and builds expertise", "creates hard-to-copy value"],
+    }}
+    right={{
+      title: "shallow work",
+      points: ["logistics and coordination", "tolerates fragmentation", "often needed to keep work moving", "easy to let expand by default"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose one depth target for this week">
+Name a task that would be materially better after ninety uninterrupted minutes: a proposal,
+a difficult analysis, a design, or learning a skill required by your work. Make the target
+small enough to advance in one session, and concrete enough that you can begin without
+deciding what to do first.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Reserve the block before the week fills">
+Put two protected sessions on the calendar, even if each is only forty-five minutes. State
+the location, the start time, and the one task in the event. Close chat, silence alerts,
+and tell the people who need to know when you will answer again.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Give shallow work a container">
+Pick one or two windows for messages and small requests. Outside those windows, capture
+the urge to reply on a short list instead of acting on it. The rule is not that messages
+are unimportant. It is that they no longer get first claim on every open minute.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="End with a restart note">
+Before a deep session ends, write the next physical action in one sentence: "compare the
+two customer segments," or "test the failed login path." The note lets tomorrow's session
+start at the work rather than at the question of where you left off.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Deep work is not an argument that collaboration, care work, customer support, or quick
+coordination are beneath serious people. Some roles genuinely require availability, and
+many workers cannot unilaterally control their calendar, workspace, or device policy. The
+more useful question is collective: which work needs continuity, and what team agreements
+would give it a fair chance? A focus practice also cannot substitute for rest, staffing,
+or a workload that fits within human limits.
+</Callout>
+
+## If you remember one thing
+
+Treat undistracted attention as a capability with a calendar, a boundary, and a training
+plan. The hard work becomes more available when shallow work stops being allowed to occupy
+every gap.
+
+<ShelvedNearby
+  related={["atomic-habits", "seven-habits", "power-of-habit"]}
+  buyUrl="https://www.hachettebookgroup.com/titles/cal-newport/deep-work/9781455586691/"
+  buyLabel="Deep Work by Cal Newport"
+/>

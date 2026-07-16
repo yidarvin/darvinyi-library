@@ -1,0 +1,196 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="never-split-the-difference"
+  thesis="A hard conversation moves when the other person feels accurately understood, then has room to help solve the problem with you."
+  minutes={8}
+/>
+
+## The thesis
+
+Voss treats negotiation as a conversation between nervous human beings, not a contest
+between spreadsheets. Facts and proposals still matter, but they arrive through a person
+who may be guarding status, safety, time, or a private constraint. The useful first move is
+tactical empathy: make that person's view clear enough that they recognize it in your words.
+Mirrors, labels, and carefully framed questions turn that recognition into information and,
+eventually, a workable next step. The aim is neither surrender nor theatrical dominance. It
+is a clearer picture of the problem before either side starts trading concessions.
+
+## Why it matters
+
+Most consequential conversations begin after someone has already decided what they want.
+A manager needs a deadline moved. A client wants a lower price. A family member wants a
+commitment. When both sides argue their positions, each new reason can sound like pressure.
+The result is a familiar stalemate: more talking, less learning. Voss's methods slow that
+cycle down. They make listening an active way to uncover what the stated demand leaves out.
+
+## The position is only the visible tip
+
+The first demand is usually a surface fact: a number, a deadline, a condition, or a flat
+refusal. It tells you where the person has planted a flag, not what put them there. Under it
+may be a fear of losing face, a budget they cannot name, a precedent they cannot accept, or
+an obligation to someone absent from the room. Treating the position as the whole problem
+produces a narrow argument over terms. Treating it as a clue invites discovery. A good
+negotiator listens for the cost or concern the demand is protecting before proposing a fix.
+
+<Figure id="14.1" caption="The stated term is visible; the pressure behind it is where better options begin.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the stated demand"
+    waterlineLabel="what was said"
+    below={["fear of loss", "status or fairness", "constraints not yet named"]}
+  />
+</Figure>
+
+## A mirror creates room to hear more
+
+Mirroring is deliberately small. Select a short, meaningful phrase from the other person's
+last sentence, repeat it with an inviting tone, and stop. The pause matters. Instead of
+countering the claim or rushing to a question, the mirror asks the speaker to continue in
+their own language. It can buy you a breath in a tense conversation, but its larger value is
+that it keeps the other person explaining. What comes next may reveal a constraint, a
+priority, or a contradiction that the original statement hid.
+
+<Figure id="14.2" caption="A short reflection turns a claim into an opening for more detail.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["hear the loaded phrase", "reflect it briefly", "pause", "listen for the expansion"]}
+    highlight={1}
+  />
+</Figure>
+
+## Name the feeling without claiming to know the person
+
+A label puts a tentative name to an emotion or concern: "It sounds like the timeline puts
+you in a difficult position." The point is not to diagnose someone or prove your insight.
+The point is to offer a description they can correct, refine, or accept. That makes a label
+safer than an accusation. A rigid interpretation, such as "You are being unreasonable,"
+narrows the conversation around blame. A tentative observation makes the hidden issue
+discussable. Accuracy helps, but a near miss can help too when it prompts a useful
+correction.
+
+<Figure id="14.3" caption="A tentative label invites clarification; a verdict invites defense.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "a verdict",
+      points: ["claims to know their motive", "assigns blame", "pushes for rebuttal", "closes the detail"],
+    }}
+    right={{
+      title: "a label",
+      points: ["names a possible concern", "leaves room to correct", "makes emotion discussable", "opens more information"],
+    }}
+  />
+</Figure>
+
+## A useful no gives the other side room
+
+Many negotiators chase yes too early, then mistake a polite answer for agreement. Voss
+reframes no as a moment of safety and definition. A person who can decline is less likely to
+feel trapped, and their boundary tells you something real. Questions that make no a
+reasonable answer can expose obstacles without demanding a promise. The point is not a
+trick to force a disguised yes. It is to let the other person protect their agency while the
+conversation gets more precise.
+
+<Figure id="14.4" caption="A quick yes can conceal uncertainty; a clear no can reveal the boundary to work with.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="polite agreement"
+    right="clear boundary"
+    marker={0.48}
+    markerLabel="useful no"
+    zones={[
+      { from: 0.0, to: 0.38, label: "pressure can hide doubt" },
+      { from: 0.62, to: 1.0, label: "safety reveals constraints", accent: true },
+    ]}
+  />
+</Figure>
+
+## Questions can hand back the work
+
+Once the concern is visible, a calibrated question shifts the next piece of thinking to the
+other side. A well-placed what or how question asks them to explain a criterion, design an
+implementation, or reckon with a constraint. That is different from pretending you have no
+agenda. The question still frames the problem, but it does not dictate the answer. If a
+demand cannot fit your limits, asking how it could work gives the counterpart a chance to
+see those limits from your side. The resulting plan is usually sturdier because they helped
+build it.
+
+<Figure id="14.5" caption="Empathy and questions repeat until the problem is clear enough to design together.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["hear the concern", "reflect it", "ask what or how", "test the next step"]}
+    compoundingEdge={3}
+    centerLabel="joint problem solving"
+  />
+</Figure>
+
+## The Model
+
+The core sequence is simple, though it asks for patience under pressure. Start with a mirror
+to keep the other person talking. Use a label to test your understanding of the emotion or
+constraint beneath their words. Then ask a calibrated question that lets them help define the
+path forward. The sequence is not a script to recite once. Move through it again whenever a
+new concern appears. Its strength comes from moving from recognition to information to shared
+design, rather than jumping straight from demand to counteroffer.
+
+<Figure id="14.6" caption="Mirror the language, label the concern, then ask a question that opens the design work.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["mirror", "label", "calibrated question", "shared next step"]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Prepare the hidden side of the conversation">
+Before the meeting, write the demand you expect to hear. Beneath it, list two or three
+plausible pressures it may protect: risk, reputation, workload, timing, or fairness. Treat
+these as hypotheses, not conclusions. Bring one tentative label for each so you can test
+them without pretending to read minds.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Practice one mirror and a real pause">
+In a low-stakes conversation, wait for a phrase that carries weight. Repeat only that short
+phrase with a questioning tone, then count silently before replying. Do not decorate it with
+your own opinion. Notice what the person adds when you leave the space open.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Turn one demand into a design question">
+When a request conflicts with a real limit, resist the immediate no or counteroffer. Name the
+constraint plainly, then ask how the request could work within it. Keep listening until the
+answer includes an owner, a timeline, and a way to tell whether the agreement is holding.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Check an agreement for implementation">
+Before you call the conversation finished, ask what happens next, who does it, and what each
+side will do if the plan slips. A verbal yes is only a starting signal. An agreement becomes
+reliable when the path through the next snag is already visible.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Tactical empathy is not a license to manufacture trust or to treat every relationship as a
+hostage scene. A mirror can sound mechanical, a label can become presumptuous, and a
+calibrated question can become coercive when the answer is already fixed. The methods work
+best when they express genuine curiosity and when the other person is free to disagree.
+They also do not erase power differences, legal duties, or the need for a fair offer. Use
+them to understand and solve a real problem, not to camouflage a demand.
+</Callout>
+
+## If you remember one thing
+
+Before trying to change a person's position, make the pressure behind it recognizable in your
+own words. When people feel understood, they give you better information, and better
+information gives both sides more room than a premature compromise.
+
+<ShelvedNearby
+  related={["how-to-win-friends", "thinking-fast-and-slow", "influence"]}
+  buyUrl="https://www.harpercollins.com/products/never-split-the-difference-chris-voss-tahl-raz"
+  buyLabel="Never Split the Difference by Chris Voss and Tahl Raz"
+/>
