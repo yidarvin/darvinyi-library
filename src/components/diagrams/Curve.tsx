@@ -8,6 +8,8 @@ export interface CurveAnnotation {
   x: number;
   y: number;
   text: string;
+  /** Put the label below its marker when the annotation describes a lower region. */
+  labelPosition?: "above" | "below";
 }
 
 export interface CurveProps extends DiagramBase {
@@ -99,7 +101,7 @@ export function Curve({ shape, axes, annotations = [], ariaLabel, className }: C
           <circle cx={px(a.x)} cy={py(a.y)} r="3.5" fill={C.accent} />
           <text
             x={px(a.x) + (a.x > 0.7 ? -8 : 8)}
-            y={py(a.y) - 8}
+            y={py(a.y) + (a.labelPosition === "below" ? 18 : -8)}
             textAnchor={a.x > 0.7 ? "end" : "start"}
             fontFamily={MONO}
             fontSize="10"

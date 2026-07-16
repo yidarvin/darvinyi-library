@@ -1057,7 +1057,7 @@
       "subtitle": "Greg McKeown · 2014",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "draft"
+      "status": "done"
     },
     {
       "num": 54,
@@ -1066,7 +1066,18 @@
       "subtitle": "Mihaly Csikszentmihalyi · 1990",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 2,
+      "thesis": "The best moments come in a state of total absorption where challenge and skill are matched, and that state can be cultivated.",
+      "framework": "The flow channel: challenge and skill rise together.",
+      "diagrams": [
+        "iceberg",
+        "flow",
+        "two-by-two matrix",
+        "concentric circles",
+        "comparison",
+        "annotated curve: flow channel"
+      ]
     },
     {
       "num": 55,
@@ -1075,7 +1086,18 @@
       "subtitle": "Gary Keller and Jay Papasan · 2013",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 2,
+      "thesis": "Extraordinary results come from narrowing focus to the single most important task and letting it drive everything else.",
+      "framework": "The focusing question",
+      "diagrams": [
+        "two-by-two matrix",
+        "timeline",
+        "node graph",
+        "conceptual bars",
+        "spectrum",
+        "flow with branch"
+      ]
     },
     {
       "num": 56,
@@ -1084,7 +1106,17 @@
       "subtitle": "Oliver Burkeman · 2021",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 2,
+      "thesis": "A finite life cannot hold every worthy possibility, so meaningful time management means choosing what to neglect and giving real attention to what remains.",
+      "framework": "No single signature model; five practices for embracing finitude are synthesized as key ideas.",
+      "diagrams": [
+        "timeline",
+        "node graph",
+        "flow",
+        "iceberg",
+        "comparison"
+      ]
     },
     {
       "num": 57,

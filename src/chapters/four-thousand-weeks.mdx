@@ -1,0 +1,189 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="four-thousand-weeks"
+  thesis="A short life cannot hold every worthwhile possibility. Relief begins when you stop trying to master time and choose what deserves the time you have."
+  minutes={6}
+/>
+
+## The thesis
+
+Time management is often sold as a campaign against overload: find the right system, clear
+the backlog, and life will finally begin. Burkeman reverses the premise. A finite person
+will never get on top of everything, because worthwhile claims on a life outnumber its
+hours. The useful response is not resignation. It is the willingness to decide, to let
+some good options go, and to give present attention to the few things that make a life
+recognizably yours.
+
+## Why it matters
+
+The wish to feel in control of time can turn ordinary days into a test of personal worth.
+An unanswered message, a postponed project, or a quiet evening starts to look like proof
+that you are falling behind. That pressure makes the world smaller. It favors tasks that
+can be cleared and postpones relationships, care, play, and difficult work, precisely
+because none of them can be completed once and for all. The book asks for a different
+measure: not whether the list is empty, but whether your limited attention is meeting a
+life you can stand behind.
+
+## A life is a bounded field, not an empty inbox
+
+Four thousand weeks is an arresting approximation, not a countdown clock. Its point is to
+make the scale of a human life visible. Even a long life contains only a limited number of
+mornings, conversations, seasons of health, and chances to make something with care.
+Every genuine commitment uses some of that field and rules out other uses. This is not a
+defect in planning. It is the condition that gives a choice weight.
+
+<Figure id="56.1" caption="A finite life gains shape when a few stretches receive real commitment.">
+  <Timeline
+    className="block w-full min-w-[440px]"
+    segments={[
+      { label: "time given", sub: "weeks arrive" },
+      { label: "choices made", sub: "some doors close" },
+      { label: "attention returned", sub: "what matters grows" },
+      { label: "a life shaped", sub: "never everything" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Efficiency can manufacture more urgency
+
+Many productivity tools work. A faster inbox routine, a better calendar, or a cleaner
+system can create real breathing room. The trap begins when each gain becomes evidence
+that still more can be demanded. Reply more quickly, receive more messages. Finish more
+projects, inherit more possible projects. The result is a self-feeding loop in which
+efficiency does not settle the sense of insufficiency, it enlarges the territory that
+seems urgent. The corrective is to set a boundary on what you will take on, not merely to
+process a larger share of it.
+
+<Figure id="56.2" caption="More throughput can invite more demands, leaving urgency intact.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "speed", label: "work moves faster", x: 0.5, y: 0.05 },
+      { id: "capacity", label: "more can fit", x: 0.88, y: 0.45 },
+      { id: "demand", label: "new demands arrive", x: 0.66, y: 0.88 },
+      { id: "urgency", label: "urgency persists", x: 0.12, y: 0.65 },
+    ]}
+    edges={[
+      { from: "speed", to: "capacity", kind: "reinforcing" },
+      { from: "capacity", to: "demand", kind: "reinforcing" },
+      { from: "demand", to: "urgency", kind: "reinforcing" },
+      { from: "urgency", to: "speed", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Choosing is the work that cannot be automated
+
+The fantasy of keeping every option alive feels generous, but it often prevents any option
+from becoming real. A project needs a scope. A friendship needs appointments that survive
+the calendar. A creative practice needs time that cannot also be spent sampling every
+other possibility. A worthwhile choice is therefore a small act of loss: you accept that
+other paths will remain unlived. That discomfort is the price of depth, not a signal that
+you chose badly.
+
+<Figure id="56.3" caption="Meaningful work moves from open possibility to a commitment that uses time.">
+  <Flow
+    className="block w-full min-w-[440px]"
+    steps={["many good options", "name one priority", "protect a block", "return again"]}
+    highlight={1}
+  />
+</Figure>
+
+## Distraction often protects you from the stakes
+
+It is tempting to treat distraction as a technical defect, solvable with a blocker or a
+better routine. Those tools help, yet they can miss what the impulse is doing. Important
+work exposes you to uncertainty: you may fail, disappoint someone, discover a limit, or
+have to decide what comes next. A feed, a chore, or another small optimization offers a
+brief exit from that exposure. The practical move is to notice the urge without making it
+a moral drama, then return to the task while the discomfort is still present.
+
+<Figure id="56.4" caption="The visible urge to escape can conceal the uncertainty of doing work that matters.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="a quick detour"
+    waterlineLabel="what is easy to notice"
+    below={["fear of failure", "uncertain outcome", "a choice with consequences"]}
+  />
+</Figure>
+
+## Patience is participation, not passivity
+
+Some parts of life resist being sped up. A child learns at a pace you cannot schedule.
+Trust forms through repeated contact. Craft asks for revisions, waiting, and attempts that
+do not pay off immediately. Treating delay as an enemy makes these realities feel like
+obstacles to life. Treating them as life changes the posture. Patience is not doing
+nothing. It is staying in contact with a process whose timetable is not fully yours.
+
+<Figure id="56.5" caption="The urge to control time narrows the day; participation makes room for its real rhythms.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "mastery reflex",
+      points: ["eliminate every delay", "measure worth by throughput", "wait for control to begin"],
+    }}
+    right={{
+      title: "finitude practice",
+      points: ["choose a few commitments", "let slow things be slow", "begin before certainty arrives"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Make a deliberate not-to-do list">
+At the start of the week, write down three worthwhile things you are consciously not
+trying to advance right now. Include one that is tempting. This gives the tradeoff a name,
+so it does not keep returning as a vague accusation whenever you focus elsewhere.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Reserve the first claim on a small block">
+Choose one project or relationship you say matters and give it a recurring block before
+routine messages expand into the whole day. Keep the block modest enough to honor. The
+purpose is not to win the day. It is to make a repeatable appointment with what you chose.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Practice one uncomfortable return">
+When you reach for a familiar distraction during important work, pause long enough to name
+what the work might expose: uncertainty, boredom, possible failure, or a hard decision.
+Then return for ten minutes. You are training the capacity to stay present, not trying to
+become a machine.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Let one process keep its own pace">
+Pick one relationship, skill, or administrative problem that you have been trying to rush.
+Take the next responsible action, then stop demanding a final resolution on your schedule.
+Notice what becomes easier when completion is not the only acceptable outcome.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Accepting limits is not an instruction to accept avoidable harm, chaotic workplaces, or an
+unequal division of care. Many people have far less control over their hours than the book's
+personal practices can acknowledge. The argument is also not anti-ambition or anti-tools.
+A calendar, a deadline, and an efficient routine can be useful. The caution is against
+using them to postpone the harder decision of what matters, or to pretend that a human life
+can contain every worthy demand.
+</Callout>
+
+## If you remember one thing
+
+You will not earn the right to begin living by clearing every obligation. Choose what you
+can genuinely give yourself to, let the rest remain unfinished, and return your attention
+to the life that is already underway.
+
+The nearby productivity shelf shows complementary answers: [Deep Work](/deep-work) helps
+protect concentration, [Essentialism](/essentialism) argues for fewer commitments, and
+[Man's Search for Meaning](/mans-search-for-meaning) asks what makes endurance worth it.
+
+<ShelvedNearby
+  related={["deep-work", "essentialism", "mans-search-for-meaning"]}
+  buyUrl="https://us.macmillan.com/books/9780374715243/fourthousandweeks/"
+  buyLabel="Four Thousand Weeks by Oliver Burkeman"
+/>

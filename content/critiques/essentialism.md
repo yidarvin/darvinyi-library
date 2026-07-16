@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-16
 
@@ -32,3 +32,24 @@ tests, 110 application tests, typecheck, production build, and lint.
   up to seven minutes at the house rate of approximately 200 words per minute.
 - This correction changes only the badge value. No reader-visible prose, diagrams,
   links, or prior content decisions were changed.
+
+## Critique round 2 — 2026-07-16
+
+### REQUIRED
+
+None. The round 1 reading-time finding is resolved: the unchanged recorded render of
+1,246 reader-visible words rounds up to seven minutes at the house rate of roughly 200
+words per minute, and the Hero now declares `minutes={7}`.
+
+### ADVISORY
+
+None. The brief and seed record support the fewer-but-better thesis and the deliberate
+absence of a signature Model section. The six key ideas each have a captioned,
+in-vocabulary structural diagram whose labels agree with the prose, the practice cards
+are concrete, the optional caveat is appropriately bounded, and all three nearby links
+resolve to done chapters. The draft contains no quotation or real cover art and uses
+shared diagram primitives with original labels rather than a bespoke reproduction of a
+book figure. No separate chapter-specific evidence dossier or source excerpts are
+recorded, and this review began no external web search. `npm run check` passed on
+2026-07-16, including validation, prose lint, pipeline tests, 110 application tests,
+typecheck, production build, and lint.

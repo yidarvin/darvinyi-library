@@ -67,10 +67,10 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 050 | paradox-of-choice               | The Paradox of Choice                         | DONE    |
 | 051 | blink                           | Blink                                         | DONE    |
 | 052 | getting-things-done             | Getting Things Done                           | DONE    |
-| 053 | essentialism                    | Essentialism                                  | PENDING |
-| 054 | flow                            | Flow                                          | PENDING |
-| 055 | the-one-thing                   | The One Thing                                 | PENDING |
-| 056 | four-thousand-weeks             | Four Thousand Weeks                           | PENDING |
+| 053 | essentialism                    | Essentialism                                  | DONE    |
+| 054 | flow                            | Flow                                          | DONE    |
+| 055 | the-one-thing                   | The One Thing                                 | DONE    |
+| 056 | four-thousand-weeks             | Four Thousand Weeks                           | DONE    |
 | 057 | almanack-naval                  | The Almanack of Naval Ravikant                | PENDING |
 | 058 | think-and-grow-rich             | Think and Grow Rich                           | PENDING |
 | 059 | random-walk                     | A Random Walk Down Wall Street                | PENDING |

@@ -1,0 +1,233 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Curve, Flow, Iceberg, Matrix } from "../components/diagrams";
+
+<Hero
+  slug="flow"
+  thesis="The richest moments of attention arrive when a meaningful task gives clear feedback and asks just enough of the skill you have now."
+  minutes={9}
+/>
+
+## The thesis
+
+Csikszentmihalyi's claim is that enjoyment is not mainly something that happens after a
+pleasant event. It can arise while a person is fully occupied by an activity whose demands
+meet their abilities. In that state, attention stops scattering across self-consciousness,
+worry, and competing signals. The task becomes absorbing because each move matters, the next
+move is legible, and capability is being used at its edge.
+
+## Why it matters
+
+Much of a day can be comfortable without being satisfying. Passive entertainment can rest a
+tired mind, but it rarely gives attention a shape. Difficult work can give attention a shape,
+but can also become a blur of interruption, ambiguity, or overload. *Flow* offers a more useful
+question than whether an activity feels easy: does it give you a demanding, intelligible way to
+participate? That question applies to cooking, conversation, a game, a craft, a sport, caring
+for something, and the serious work of a job.
+
+## Key ideas
+
+## Attention is the material of experience
+
+Consciousness has limited room. When a task does not claim it, worries, status comparisons,
+notifications, and loose ends readily do. That is why identical external circumstances can feel
+utterly different: one person is absorbed in a difficult repair while another is waiting for the
+same afternoon to be over. The difference is not a command to ignore hardship. It is a reminder
+that where attention goes helps determine what an hour is like from the inside.
+
+The practical consequence is to stop treating attention as a background condition. Decide what
+deserves it, then make that object concrete enough to hold it. A vague intention, such as
+"work on the project," leaves too many exits. A visible next move, such as comparing two
+alternatives or practicing one passage, gives attention somewhere to land.
+
+<Figure id="54.1" caption="The visible task sits above a larger field of signals competing for the same attention.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the task in front of you"
+    below={["worry and unfinished business", "interruptions and ambient cues", "the next move left unclear"]}
+    waterlineLabel="what attention competes with"
+  />
+</Figure>
+
+## A good activity tells you what to do next
+
+Absorption is easier when an activity has a goal you can recognize and feedback you can use.
+The goal need not be grand. In a climb it may be the next hold. In a conversation it may be
+understanding what the other person means. In writing it may be making one paragraph carry one
+idea. Feedback need not be a score either. It can be the sound of a note, a reader's confusion,
+the fit of a joint, or the answer from a test.
+
+These conditions do more than make a task efficient. They shorten the distance between action
+and consequence. A person can try something, notice what changed, and adjust before attention
+drifts toward a more certain source of reward. When the signal is missing, effort can feel like
+pushing through fog. When it is immediate, the work can become a conversation with the problem.
+
+<Figure id="54.2" caption="A clear aim and usable feedback keep the next move available to attention.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["name a concrete aim", "make one move", "notice the result", "adjust the next move"]}
+    highlight={2}
+  />
+</Figure>
+
+## Challenge and skill are relative, and they move
+
+The famous balance is not a fixed amount of difficulty. A task that is trivial for an experienced
+person may be frightening for a beginner. More importantly, skill changes with practice, so a
+challenge that once demanded full concentration can become routine. The task therefore needs
+recalibration. Raise the demand when the work becomes automatic. Reduce the scope when errors
+become too numerous to learn from.
+
+This is a design problem, not a verdict on character. If the task is too easy, boredom is useful
+information that the constraint or standard can change. If it is too hard, anxiety can be useful
+information that the next step needs to be smaller, slower, or better supported. The aim is not
+to keep every feeling pleasant. It is to find a task where attention can make progress.
+
+<Figure id="54.3" caption="The same task can be routine, absorbing, or overwhelming as skill and demand change.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "low skill", right: "high skill", label: "current skill" }}
+    yAxis={{ low: "low demand", high: "high demand", label: "task demand" }}
+    quadrants={[
+      { title: "overload", note: "shrink the next step" },
+      { title: "stretch", note: "learn with full attention" },
+      { title: "apathy", note: "raise the stakes" },
+      { title: "routine", note: "add a new constraint" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## The activity needs a reason inside itself
+
+Csikszentmihalyi calls an activity autotelic when doing it supplies enough of its own reason.
+External rewards can still matter. A salary, an audience, a qualification, or a win may open the
+door and sustain the commitment. They cannot do the moment-to-moment work of attention for you.
+That work depends on whether the activity itself offers a problem worth meeting, a skill worth
+using, and a response worth noticing.
+
+This distinction explains why an impressive outcome can leave a person strangely empty, while a
+modest craft can make an afternoon feel complete. It also guards against the idea that flow is
+a technique for turning every obligation into fun. Some work is simply necessary, unfair, or
+badly designed. The point is to find or build more activities that can reward participation as
+they unfold.
+
+<Figure id="54.4" caption="Outside rewards can surround an activity, but the immediate experience must still carry attention.">
+  <Concentric
+    className="block w-full min-w-[440px]"
+    rings={[
+      { label: "the next meaningful move" },
+      { label: "skill and feedback" },
+      { label: "recognition, pay, or results" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+## Order comes from choosing what enters the mind
+
+Flow is often described as a loss of self-consciousness. That does not mean a loss of judgment
+or care. It means that attention has been organized so thoroughly around the activity that there
+is little unused capacity left for monitoring how one appears. This is one reason a demanding,
+bounded task can feel restful in its own way. It provides relief from having to decide anew what
+to notice every few seconds.
+
+The conditions can be prepared. A musician can set out the score and choose one passage. A team
+can state the decision it needs by the end of a meeting. A parent can turn cooking with a child
+into a small shared challenge instead of a divided attempt to multitask. Preparation does not
+guarantee flow, but it reduces the number of unrelated decisions that crowd it out.
+
+<Figure id="54.5" caption="An organized activity gives attention a coherent object; scattered demands leave it divided.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "scattered attention",
+      points: ["several vague demands", "feedback arrives late", "easy exits compete", "self-monitoring expands"],
+    }}
+    right={{
+      title: "organized attention",
+      points: ["one bounded problem", "the next move is visible", "feedback can guide action", "the task holds the field"],
+    }}
+  />
+</Figure>
+
+## The Model
+
+The flow channel is a moving relation between challenge and skill. Below it, the task asks too
+little and attention looks elsewhere. Above it, the demand outruns the resources available for
+the next move. Inside it, the task is difficult enough to require concentration and structured
+enough for concentration to be useful. As ability grows, the channel rises with it. The durable
+practice is not chasing a sensation. It is repeatedly choosing a next challenge that meets the
+skill you have built.
+
+<Figure id="54.6" caption="Flow occupies a moving band where a task asks enough of a person's current skill to hold attention.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="channel"
+    axes={{ x: "skill", y: "challenge" }}
+    annotations={[
+      { x: 0.28, y: 0.025, text: "too little demand", labelPosition: "below" },
+      { x: 0.72, y: 0.78, text: "too much, too soon" },
+    ]}
+    ariaLabel="A conceptual flow channel with skill on the horizontal axis and challenge on the vertical axis. A rising band marked flow sits between the under-challenge, too-little-demand region below and the anxiety, too-much-demand region above."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose a task with a visible finish for today">
+Take one activity you want to enter more fully and reduce it to a session-sized aim. Replace
+"practice guitar" with "play the chord change cleanly ten times," or "write" with "draft the
+opening example." The finish should be clear enough that you can tell when the session is over.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Put feedback inside the session">
+Before you start, choose the signal that will guide the next attempt: a recording, a test,
+a timer, a sketch, a reader, or a concrete standard. Do not wait for a distant outcome to tell
+you whether the work is helping. Make one small move, inspect the signal, then use it for the
+next move.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Tune the demand, not your self-respect">
+If you avoid a task, make the first version smaller until you can see a plausible next move.
+If you drift through it, add one constraint, a higher standard, or a slightly harder variation.
+Record which adjustment changed your attention. The goal is a better fit, not proof that you
+should be able to do everything at full difficulty.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Protect a short entry window">
+Give the activity twenty-five minutes with the materials ready and the most likely distraction
+out of reach. Start with the first visible move instead of checking whether you feel ready. At
+the end, leave a note naming the next move, so the following session starts with a task rather
+than an empty field.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Flow is a description of a subjective, context-dependent experience, not a switch that effort
+or a productivity ritual can reliably flip. Clear goals, feedback, and a good challenge-skill
+fit can improve the conditions, but fatigue, health, grief, disability, workplace control,
+care duties, and access to training shape what conditions a person can actually create. The
+framework also does not make constant intensity a virtue. Rest, social connection, and work
+that is necessary but not absorbing still belong in a good life. Use flow to design a better
+encounter with an activity, not to blame yourself when absorption is unavailable.
+</Callout>
+
+## If you remember one thing
+
+Do not wait for attention to appear by itself. Give it one meaningful, bounded challenge with
+feedback close enough to guide the next move, then adjust the challenge as your skill changes.
+
+## Shelved nearby
+
+*Deep Work* helps defend the uninterrupted attention that a demanding task needs. *Peak* shows
+how feedback and a well-chosen edge turn that attention into skill. *Atomic Habits* supplies the
+small repeatable cues that can make returning to the activity easier.
+
+<ShelvedNearby
+  related={["deep-work", "peak", "atomic-habits"]}
+  buyUrl="https://www.harpercollins.com/products/flow-mihaly-csikszentmihalyi?variant=32205876293666"
+  buyLabel="Flow by Mihaly Csikszentmihalyi"
+/>

@@ -1,0 +1,227 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Flow, Matrix, NodeGraph, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="the-one-thing"
+  thesis="Exceptional progress usually begins by finding the action with the most consequences, then giving that action enough protected attention to change what comes next."
+  minutes={8}
+/>
+
+## The thesis
+
+Keller and Papasan make a case for sequence over simultaneity. A long list makes every
+item look equally deserving, while results often depend on a smaller choice: find the
+action that clears the most path ahead, do that first, and let the next useful action
+become visible afterward. Focus is not an aesthetic preference for simplicity. It is a
+way to direct limited time toward work that alters the rest of the system.
+
+## Why it matters
+
+Most knowledge work arrives as a stream of messages, requests, maintenance, and small
+decisions. Responding quickly can create the feeling of motion while the important work
+waits for an unbroken stretch that never arrives. The book offers a counterweight to
+that pattern: do not begin with every item that asks for attention. Begin with the work
+whose completion changes the value, difficulty, or necessity of the other items.
+
+## Key ideas
+
+## A full list is not a priority order
+
+A task can be urgent, visible, or easy to finish without being consequential. The
+useful distinction is downstream effect. Some work merely closes one loop. Other work
+settles a decision, removes a recurring obstacle, produces a reusable asset, or gives a
+team a direction that makes several later decisions lighter. The first task to do is not
+always the smallest or most enjoyable. It is the one whose completion improves the
+terrain for work that follows.
+
+<Figure id="55.1" caption="The target is work with a large downstream effect, not simply work that is easy to finish.">
+  <Matrix
+    className="block min-w-[440px]"
+    xAxis={{ left: "small effect", right: "large effect", label: "downstream effect" }}
+    yAxis={{ low: "low effort", high: "high effort", label: "effort required" }}
+    quadrants={[
+      { title: "busy effort", note: "do not confuse with progress" },
+      { title: "lead work", note: "make room and decide" },
+      { title: "quick upkeep", note: "finish when it fits" },
+      { title: "useful repair", note: "often a good first move" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Pull a distant aim down to the next move
+
+An ambition becomes actionable only when it can name what to do now. The book moves
+from a broad direction through progressively shorter horizons until the current day
+contains one concrete advance. This is less a prediction than a chain of questions.
+At each horizon, ask what must be true at the next shorter horizon for the larger aim to
+remain plausible. The final answer should be something that can be started, observed,
+and finished, rather than an attractive label for a project.
+
+<Figure id="55.2" caption="A distant direction becomes usable when each horizon names the next, shorter commitment.">
+  <Timeline
+    className="block min-w-[740px]"
+    segments={[
+      { label: "long direction", sub: "what matters over years" },
+      { label: "this year", sub: "a meaningful result" },
+      { label: "this month", sub: "the next milestone" },
+      { label: "this week", sub: "a decisive advance" },
+      { label: "today", sub: "a protected session" },
+      { label: "now", sub: "the next visible move" },
+    ]}
+    highlight={5}
+  />
+</Figure>
+
+## Momentum comes from dependencies, not from doing more at once
+
+The domino image is useful because it asks a causal question. Which action makes the
+next action smaller, clearer, or unnecessary? A written decision can prevent five
+meetings. A working prototype can answer questions that debate cannot. A candid
+conversation can stop weeks of guessing. The pattern is not magic, and no action
+guarantees a cascade. It is a practical way to look for dependencies before spreading
+attention across every open branch.
+
+<Figure id="55.3" caption="A lead action earns its place by changing several later decisions, not by being the only task that exists.">
+  <NodeGraph
+    className="block min-w-[440px]"
+    nodes={[
+      { id: "aim", label: "chosen result", x: 0.5, y: 0.05 },
+      { id: "lead", label: "lead action", x: 0.5, y: 0.43 },
+      { id: "plan", label: "plan becomes clear", x: 0.08, y: 0.82 },
+      { id: "block", label: "blocker removed", x: 0.5, y: 0.92 },
+      { id: "next", label: "next task shrinks", x: 0.92, y: 0.82 },
+    ]}
+    edges={[
+      { from: "aim", to: "lead", label: "select" },
+      { from: "lead", to: "plan", kind: "reinforcing", label: "clarifies" },
+      { from: "lead", to: "block", kind: "reinforcing", label: "removes" },
+      { from: "lead", to: "next", kind: "reinforcing", label: "simplifies" },
+    ]}
+  />
+</Figure>
+
+## A priority without time is a preference
+
+Choosing the lead action on paper does not protect it from a calendar. The book's
+operating move is time blocking: reserve a defined period for the priority, arrange the
+materials in advance, and treat interruptions as exceptions rather than the default.
+The first block need not consume an entire day. It does need to be long enough for the
+work to get past setup, uncertainty, and the urge to check what is easier. Planning time
+matters for the same reason. It is where the next lead action is chosen before the week
+chooses one for you.
+
+<Figure id="55.4" caption="The point of a calendar is not to fill every hour, but to give consequential work a dependable share.">
+  <Bars
+    className="block min-w-[440px]"
+    items={[
+      { label: "reactive requests", value: 0.72, valueLabel: "by default" },
+      { label: "maintenance work", value: 0.48, valueLabel: "keep things running" },
+      { label: "protected priority", value: 0.3, accent: true, valueLabel: "place it first" },
+    ]}
+  />
+</Figure>
+
+## Protecting focus requires a chosen boundary
+
+The conflict is rarely between concentration and laziness. It is often between one
+important commitment and several reasonable claims on the same hour. A protected session
+therefore needs an agreement with yourself and, when possible, with other people: what is
+being deferred, what kind of interruption is truly urgent, and when you will be available
+again. This is not a demand to ignore colleagues, family, rest, or maintenance. It is a
+way to make the trade-off explicit before a series of small concessions erases the work
+you said mattered.
+
+<Figure id="55.5" caption="Focus becomes credible when availability is adjusted deliberately rather than surrendered a minute at a time.">
+  <Spectrum
+    className="block min-w-[440px]"
+    left="available"
+    right="unavailable"
+    marker={0.55}
+    markerLabel="urgent needs"
+    zones={[
+      { from: 0.0, to: 0.3, label: "the inbox sets the day" },
+      { from: 0.45, to: 0.72, label: "guard the chosen block", accent: true },
+      { from: 0.82, to: 1.0, label: "lose useful coordination" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The focusing question is a decision procedure, not a slogan. Start with the result you
+care about, then ask which available action would make the most other work easier,
+smaller, or irrelevant. Test the answer against the calendar. If it cannot receive time,
+it is still only an intention. After the block, inspect what changed and ask again. The
+question works because it repeats at every scale, while the answer remains specific to
+the next decision.
+
+<Figure id="55.6" caption="The focusing question turns a broad result into one scheduled action, then uses its consequences to choose again.">
+  <Flow
+    className="block min-w-[620px]"
+    steps={[
+      "name the result",
+      "ask what clears the most path",
+      "choose one lead action",
+      "protect time for it",
+    ]}
+    highlight={1}
+    branch={{ up: "next work is simpler", down: "ask again with new evidence" }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Find one lead action for the coming week">
+Write the result you want by the end of the week. List the three actions that appear most
+likely to advance it, then circle the one that would remove the most uncertainty or make
+the other two easier. Describe its first physical step in a sentence. If the step cannot
+begin within ten minutes, reduce it until it can.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Reserve a real block before the calendar fills">
+Put one session for that action on your calendar before accepting optional meetings. Give
+it a beginning and end, choose the material you need, and decide what you will do with
+notifications. A block that is vague, movable, or empty of a next step is easy to lose.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make the boundary legible">
+Tell the relevant person when you will be unavailable and when you will respond. If that
+is not possible, define the smallest protected version of the session that is possible:
+twenty minutes before the household wakes, a lunch hour, or one closed-door interval.
+The aim is a workable agreement, not a performance of isolation.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Review the chain, not only the output">
+At the end of the session, record what became clearer, easier, or no longer necessary.
+Then identify the next lead action from that new position. This keeps the practice tied to
+consequences instead of turning it into a ritual about picking one thing.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+One thing does not mean one responsibility forever. Care, health, shared work, and plain
+maintenance still require attention, and many people do not control large portions of
+their schedules. The useful claim is narrower: when several demands compete, choose the
+most consequential available action for the time you actually have, and make the cost of
+that choice visible. A narrow focus can clarify a team as well as an individual, but it
+should not become an excuse to push neglected work onto someone else.
+</Callout>
+
+## If you remember one thing
+
+When your work feels crowded, do not ask how to handle every item at once. Ask which one
+available action would improve the rest of the field, then give that action a real place
+in time.
+
+For complementary ways to organize commitments, see *Getting Things Done* on clarifying
+the next action, *Essentialism* on making trade-offs visible, and *Deep Work* on building
+the conditions for sustained concentration.
+
+<ShelvedNearby
+  related={["getting-things-done", "essentialism", "deep-work"]}
+  buyUrl="https://bardpress.com/books/the-one-thing/"
+  buyLabel="The One Thing by Gary Keller and Jay Papasan"
+/>
