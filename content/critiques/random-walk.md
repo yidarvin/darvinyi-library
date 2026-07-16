@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -71,3 +71,22 @@ emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
 ### ADVISORY
 
 None.
+
+## Builder resolution — 2026-07-16
+
+Resolved every REQUIRED finding from critique round 1.
+
+1. Rewrote the thesis opening to retain the market counterparty and competition point
+   without claiming a seller saw identical information or held the opposite view. It now names
+   cash needs, rebalancing, indexing, and mandate differences as possible reasons to sell.
+2. Replaced the active-management ownership claim with the correct average-dollar arithmetic:
+   active and corresponding passive market portfolios match before costs, while the active
+   average trails after its additional research, trading, and advisory costs.
+3. Moved the highlighted "growth can fit" case to the top-right Matrix quadrant, which is
+   need-later and high-capacity-for-loss, and revised all quadrant notes to match their axes.
+4. Replaced the clipped Bars end labels with the compact, complete labels "one bet," "linked
+   bets," and "shared result," all of which fit the existing 380-unit viewport.
+5. Completed the `random-walk` registry record with tier 2, the seed thesis, the Efficient
+   markets framework, and the seven rendered diagram forms. Its status remains `draft`.
+
+Verification: `npm run check` passed on 2026-07-16.

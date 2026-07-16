@@ -11,11 +11,13 @@ import { Bars, Compare, Curve, Flow, Matrix, NodeGraph, Spectrum } from "../comp
 ## The thesis
 
 Malkiel's argument begins with an uncomfortable fact about a liquid market: every share you buy
-has been sold by someone who saw the same public information and made the opposite choice. That
-does not make prices perfect, or make research pointless. It does make a lasting, after-cost edge
-exceptionally hard to establish. For most investors, the sensible response is to stop treating
-stock selection as the default game. Own a broad, low-cost slice of the market, choose a risk level
-that fits your life, keep contributing, and let time do work that frantic trading cannot.
+has a counterparty. That seller may be raising cash, rebalancing, indexing, or working under a
+different mandate, rather than taking the opposite view. The useful point is that public
+opportunities attract competition. That does not make prices perfect, or make research pointless.
+It does make a lasting, after-cost edge exceptionally hard to establish. For most investors, the
+sensible response is to stop treating stock selection as the default game. Own a broad, low-cost
+slice of the market, choose a risk level that fits your life, keep contributing, and let time do
+work that frantic trading cannot.
 
 ## Why it matters
 
@@ -51,8 +53,10 @@ people correct it.
 The relevant comparison is not between a picked stock and no investment at all. It is between a
 picked portfolio and a broad index that already owns many companies at low cost. The active
 investor must overcome research expenses, trading friction, and the fact that the other side of
-each trade may be just as informed. Before costs, investors as a group hold the market. After
-costs, the aggregate active group must lag the market it collectively owns.
+each trade may be just as informed. The relevant arithmetic is an average comparison, not an
+ownership claim. Before costs, the average actively managed dollar earns the same gross return as
+its corresponding passive market portfolio. After the active side's additional research, trading,
+and advisory costs, its average net result must be lower.
 
 This arithmetic does not say that no manager can win. Some will, and a short stretch of success
 will always produce compelling stories. It says that selecting the future winners in advance is a
@@ -115,9 +119,9 @@ an absence of conviction.
   <Bars
     className="block w-full min-w-[440px]"
     items={[
-      { label: "one company", value: 0.94, valueLabel: "one outcome dominates" },
-      { label: "a narrow theme", value: 0.68, valueLabel: "several linked outcomes" },
-      { label: "broad market fund", value: 0.22, accent: true, valueLabel: "many companies share the result" },
+      { label: "one company", value: 0.94, valueLabel: "one bet" },
+      { label: "a narrow theme", value: 0.68, valueLabel: "linked bets" },
+      { label: "broad market fund", value: 0.22, accent: true, valueLabel: "shared result" },
     ]}
   />
 </Figure>
@@ -141,12 +145,12 @@ money changes, not because a headline has supplied a new mood.
     xAxis={{ left: "need soon", right: "need later", label: "time until the money is needed" }}
     yAxis={{ low: "low capacity for loss", high: "high capacity for loss", label: "ability to absorb volatility" }}
     quadrants={[
-      { title: "protect the need", note: "near-term money" },
-      { title: "moderate risk", note: "time helps, limits remain" },
-      { title: "stable first", note: "capacity sets a boundary" },
-      { title: "growth can fit", note: "long horizon and buffer" },
+      { title: "protect the need", note: "near-term, even with capacity" },
+      { title: "growth can fit", note: "long horizon, high capacity" },
+      { title: "stable first", note: "near-term, low capacity" },
+      { title: "stay cautious", note: "horizon cannot add capacity" },
     ]}
-    highlight={3}
+    highlight={1}
   />
 </Figure>
 
