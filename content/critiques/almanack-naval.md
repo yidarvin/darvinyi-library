@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-16
 
@@ -82,3 +82,57 @@ All required findings from critique round 1 are resolved.
 
 `npm run check` passed on 2026-07-16. The chapter remains `draft`; no status,
 queue, commit, or push action was taken.
+
+## Critique round 2 — 2026-07-16
+
+### REQUIRED
+
+1. **Compress "The thesis" to the required one or two sentences.** The paragraph
+   contains five sentences (`src/chapters/almanack-naval.mdx:13-17`), while the
+   fixed anatomy defines this section as the one- or two-sentence compression a
+   reader can carry away (`docs/authoring-spec.md:40`). Preserve the two-part
+   financial-freedom and personal-freedom argument, including its bounded posture,
+   but make this block conform to the content contract. Recompute the Hero badge
+   from the final rendered text after the edit. The current direct render contains
+   1,738 reader-visible words and correctly rounds to nine minutes at approximately
+   200 words per minute; the final count, rather than the present value, controls.
+
+2. **Keep wealth distinct from the capabilities used to build it.** The brief says
+   to build wealth *through* leverage and specific knowledge and names those inputs
+   as the signature model (`prompts/notes/almanack-naval.md:11-15`). The page instead
+   defines wealth itself as a stock of "assets, capabilities, and relationships"
+   and repeats `assets and durable capability` in Figure 57.1
+   (`src/chapters/almanack-naval.mdx:29-34,40-51`). That collapses specific knowledge
+   into the outcome before the Model later explains that specific knowledge,
+   ownership, leverage, and judgment combine to create scalable value
+   (`src/chapters/almanack-naval.mdx:181-198`). It also implies that an unembodied
+   capability or relationship can keep producing value while its holder is absent.
+   Revise the section and comparison labels so wealth means the durable assets or
+   ownership that can produce beyond hours sold, while capabilities, judgment, and
+   relationships remain resources used to create and steward those assets.
+
+The five round-1 findings remain resolved. The registry now records the brief-aligned
+tier, thesis, framework, and all seven rendered forms. Figure 57.4's value labels fit
+the Bars viewport; Figure 57.5's axis, caption, and prose consistently describe
+decision impact; Figure 57.7 receives a real newline through its JSX expression; and
+the unsupported attribution in the caveat remains removed. The other required anatomy
+is present: six key ideas each have a captioned vocabulary diagram, the signature Model
+is distinct, the four practice cards are concrete, and the caveat and final takeaway
+are appropriately bounded. No separate chapter-specific evidence dossier or source
+excerpt is recorded, and this review began no external web search.
+
+`npm run check` passed on 2026-07-16 after an unrestricted rerun, including queue and
+registry validation, prose lint, both pipeline suites, 118 application tests,
+typecheck, production build, and ESLint. The initial sandboxed run failed only because
+two launchd tests were denied access to the keepalive path under `Library/Application
+Support`; both passed when run with their normal filesystem access. Vitest emitted only
+the existing non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+1. All four `ShelvedNearby` slugs resolve to `done` chapters, but the page renders
+   only their covers and gives no one-clause explanation of each relationship. A
+   short chapter-local sentence could connect *The Psychology of Money* to the use
+   of wealth, *Zero to One* to scalable creation, *Deep Work* to rare capability,
+   and *The Power of Now* to attention. This is non-blocking under the critique
+   rubric's treatment of optional cross-link improvements.
