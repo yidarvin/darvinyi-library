@@ -1,0 +1,210 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Matrix, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="subtle-art"
+  thesis="A satisfying life is not free of difficulty. It comes from choosing what deserves your care, accepting the cost of that choice, and dropping the demand to feel good all the time."
+  minutes={8}
+/>
+
+## The thesis
+
+Manson's provocation is not a case for apathy. It is a case for a smaller, more deliberate
+set of commitments. Attention, energy, and disappointment are finite. A life gets steadier
+when its measures of success are chosen rather than borrowed from approval, comfort, or a
+constant comparison with other people. The question is not how to eliminate problems. It is
+which problems are worth having because they belong to something you value.
+
+## Why it matters
+
+Much self-help begins with the promise that better choices should produce a smoother inner
+life. This book starts from the opposite observation: frustration, loss, uncertainty, and
+embarrassment are ordinary parts of being engaged with anything that matters. Treating every
+bad feeling as evidence that something has gone wrong can make the feeling itself the next
+problem. The alternative is less glamorous and more usable: decide what earns your effort,
+then let the inevitable discomfort say something about the work, not your worth.
+
+## Caring is a selection, not a lack of feeling
+
+Indifference is not the goal. It can be another way of avoiding a difficult conversation,
+a responsibility, or a risk of being seen. The useful move is to care strongly about a few
+things, such as a relationship, a craft, a promise, or a principle, and to stop treating
+every irritation as equally urgent. That choice makes room for disagreement and failure.
+When a value is clear, an awkward moment can remain an awkward moment instead of becoming a
+crisis of identity.
+
+<Figure id="15.1" caption="A chosen value gives attention a direction and lets lesser noise stay lesser.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "everything matters",
+      points: ["every signal feels urgent", "approval sets the score", "small setbacks spread", "attention fragments"],
+    }}
+    right={{
+      title: "choose what matters",
+      points: ["a few commitments lead", "values set the score", "setbacks stay specific", "attention has a home"],
+    }}
+  />
+</Figure>
+
+## The chase for constant relief creates another burden
+
+An unpleasant emotion is information, not necessarily an emergency. Anger may point to a
+boundary, grief to a loss, anxiety to uncertainty, and shame to a conflict between conduct
+and standards. None of these messages is always accurate, but trying to erase them on sight
+often adds a second layer: anxiety about anxiety, or guilt about guilt. The result is a
+loop in which relief becomes the only objective and the original situation gets less
+attention.
+
+A better response is to name the feeling, ask what it is reacting to, and choose a next
+action that can bear inspection later. Sometimes that action is rest, a direct conversation,
+or professional support. Sometimes it is simply letting the feeling pass without granting it
+authority over every decision.
+
+<Figure id="15.2" caption="Relief-seeking can feed itself; attention to the underlying situation opens a different next move.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["discomfort", "rush to erase it", "brief relief", "unfinished problem"]}
+    compoundingEdge={3}
+    centerLabel="the relief loop"
+  />
+</Figure>
+
+## Values choose the scoreboard
+
+Goals tell you what result would be pleasant. Values tell you how to judge your conduct
+while the result is still uncertain. The distinction matters because many attractive scores
+are outside your control: being admired, always winning, never feeling rejected, or making
+someone else behave as you wish. They make a person dependent on conditions no person can
+fully command.
+
+The book favors values that can be enacted and checked in ordinary life. Honesty can be
+practiced in a difficult conversation. Curiosity can be practiced when an assumption is
+challenged. Reliability can be practiced by keeping or renegotiating a promise. These are
+not guarantees of a happy outcome. They are standards that leave room to act well even when
+the outcome is unwelcome.
+
+<Figure id="15.3" caption="A useful scoreboard favors standards you can practice over scores the world must award.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "outside your control", right: "within your control", label: "where the score comes from" }}
+    yAxis={{ low: "fragile measure", high: "durable measure", label: "how it holds up" }}
+    quadrants={[
+      { title: "shared result", note: "takes more than you" },
+      { title: "chosen conduct", note: "practice it today" },
+      { title: "approval", note: "others decide" },
+      { title: "short-term comfort", note: "easy to chase" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Responsibility begins after the cause
+
+Fault asks what produced a problem. That question can matter, especially when someone has
+been harmed or a system has failed. Responsibility asks a different question: given what is
+true now, what part of the response is mine to choose? The two should not be confused.
+Being responsible for the next move does not mean you caused the event, deserved it, or can
+solve it alone.
+
+This distinction restores agency without rewriting reality. A missed deadline may involve a
+poor handoff, an unreasonable workload, illness, or an error. The next useful step could be
+to clarify the handoff, name the workload, seek treatment, repair the error, or ask for
+help. Blame can identify a cause. A chosen response changes what happens next.
+
+<Figure id="15.4" caption="Cause and responsibility answer different questions; the latter points toward a next action.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["something happens", "name the constraints", "choose your response"]}
+    highlight={2}
+    branch={{ up: "repair or ask for help", down: "set a boundary or adapt" }}
+  />
+</Figure>
+
+## Certainty is a poor identity to defend
+
+People build identities around being right, capable, exceptional, or safe from error. Those
+identities make new evidence expensive. A correction can feel like an attack, and a failed
+plan can feel like exposure rather than information. Manson treats doubt and failure as a
+more honest starting point: every belief is partial, every plan meets reality, and a person
+can revise without becoming nothing.
+
+This is not a demand for endless self-questioning. It is an invitation to hold conclusions
+with enough looseness to update them. The practical benefit is humble but real. You can
+admit a bad call sooner, learn from it sooner, and spend less energy defending a version of
+yourself that no longer fits the facts.
+
+<Figure id="15.5" caption="Moving from defended certainty toward testing makes correction less threatening.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="protect the identity"
+    right="test the belief"
+    marker={0.55}
+    markerLabel="revise"
+    zones={[
+      { from: 0.0, to: 0.35, label: "error feels personal" },
+      { from: 0.58, to: 1.0, label: "evidence can teach", accent: true },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Audit one recurring drain">
+Write down one situation that reliably consumes your attention: a conflict, a feed, an
+obligation, or a comparison. Ask what value you are trying to protect there. If there is no
+clear answer, reduce the time and attention it receives for one week. If there is an answer,
+name one boundary or action that serves it better.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Replace a borrowed score">
+Choose one score you cannot directly control, such as being liked, getting praise, or never
+making a mistake. Write a behavioral standard beside it that you can control: be prepared,
+be candid, make the request, or do the next careful revision. Use that standard for the next
+seven days.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Separate fault from the next move">
+When a problem lands, make two short columns. In the first, list causes and constraints. In
+the second, list the responses available to you, including asking for help or changing the
+conditions. Do not use the second column to deny the first. Use it to find a move.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Test one protected belief">
+Finish this sentence: “I may be wrong that ___.” Choose a low-stakes way to check it this
+week, such as asking someone affected, reading a contrary account, or trying a different
+method. The aim is not to perform uncertainty. It is to make a better decision with better
+information.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book's language can invite a harsh reading if “take responsibility” becomes “you are to
+blame.” It should not. Trauma, disability, poverty, discrimination, illness, abuse, and
+institutional failures create real constraints and sometimes require collective change,
+protection, treatment, or material support. Personal agency is useful precisely when it is
+kept in proportion to those conditions. The ideas here are a way to choose a response where
+choice exists, not a verdict on people facing circumstances they did not create.
+</Callout>
+
+## If you remember one thing
+
+You cannot choose a life without problems, but you can choose the standards and commitments
+that make its problems worth meeting. Let those choices, rather than comfort or approval,
+decide where your care goes.
+
+## Shelved nearby
+
+Man's Search for Meaning asks how a chosen stance can endure under severe constraint.
+Mindset treats mistakes as material for learning rather than a verdict on identity.
+The Psychology of Money explores another moving score, the point at which “more” stops
+serving the life it was meant to support.
+
+<ShelvedNearby
+  related={["mans-search-for-meaning", "mindset", "psychology-of-money"]}
+  buyUrl="https://books.apple.com/us/book/the-subtle-art-of-not-giving-a-f-ck/id1071409887"
+  buyLabel="The Subtle Art of Not Giving a F*ck by Mark Manson"
+/>

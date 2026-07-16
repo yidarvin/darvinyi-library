@@ -300,7 +300,17 @@
       "subtitle": "Mark Manson · 2016",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "A good life comes from choosing what to care about, accepting struggle, and dropping the demand to feel good all the time.",
+      "framework": "No single signature framework; the Model section is deliberately omitted, with five key-idea diagrams carrying the visual load.",
+      "diagrams": [
+        "comparison",
+        "process loop",
+        "two-by-two matrix",
+        "flow with branch",
+        "spectrum"
+      ]
     },
     {
       "num": 16,
@@ -309,7 +319,7 @@
       "subtitle": "Dan Ariely · 2008",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "pending"
+      "status": "draft"
     },
     {
       "num": 17,

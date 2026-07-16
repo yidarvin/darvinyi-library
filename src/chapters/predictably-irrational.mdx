@@ -1,0 +1,213 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Matrix, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="predictably-irrational"
+  thesis="Choice is shaped by the situations that surround it. First numbers, nearby options, price tags, ownership, and momentary desire can steer us in repeatable directions."
+  minutes={8}
+/>
+
+## The thesis
+
+The useful challenge in Ariely's book is not that people make mistakes. Everyone knows that.
+It is that many mistakes have a structure. A comparison can make an option look better, a
+number can establish a reference point before judgment begins, and a price can alter an
+experience after the purchase. Those forces do not remove agency, but they do mean that a
+choice is partly designed before it feels like a choice. Better decisions start by inspecting
+the frame, not only the options inside it.
+
+## Why it matters
+
+We tend to treat a decision as a private calculation: inspect the facts, locate a preference,
+and choose. Much of everyday life works differently. A pricing page, a restaurant menu, a
+contract, a sale sign, or a stressful moment supplies a frame before deliberate comparison
+gets underway. If the frame can be changed, behavior can often be changed more reliably than
+by asking someone to become a perfectly rational calculator.
+
+## Value is often judged against a neighbor
+
+An option is easier to evaluate when something nearby makes its strengths visible. That is
+why a product line can include an offer that almost no one should choose. Its job may be to
+make a neighboring offer look sensible by comparison. The decision still concerns the two
+viable options, but the weak third option has changed what “good value” feels like. The remedy
+is to compare each candidate to your need and budget before comparing it to the menu's own
+cast of characters.
+
+<Figure id="16.1" caption="A dominated option can change the comparison without being the option anyone wants.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "lower price", right: "higher price", label: "price" }}
+    yAxis={{ low: "fewer features", high: "more features", label: "fit" }}
+    quadrants={[
+      { title: "basic", note: "cheap, limited" },
+      { title: "premium", note: "strong fit, costly" },
+      { title: "weak decoy", note: "limited at a high price" },
+      { title: "target", note: "looks favorable beside the decoy" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## A first number can become a rail
+
+Many values are not waiting in the mind with a clean price tag attached. A first number,
+even one that has little to do with the item, can supply a starting point. Later judgments
+then move from that point rather than from independent evidence. The resulting preferences
+can look consistent because every later choice is organized around the same arbitrary rail.
+That is more troubling than a random guess: coherence can disguise a bad starting point.
+When a number matters, make your estimate before hearing a seller's price, a previous budget,
+or the loudest forecast in the room.
+
+<Figure id="16.2" caption="The first number can pull a later judgment toward it, even when the number is weak evidence.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="arbitrary first number"
+    right="independent estimate"
+    marker={0.28}
+    markerLabel="default drift"
+    zones={[
+      { from: 0.0, to: 0.46, label: "anchor shapes the range" },
+      { from: 0.64, to: 1.0, label: "rebuild from evidence", accent: true },
+    ]}
+  />
+</Figure>
+
+## Free can change the kind of decision
+
+Dropping a price to zero does more than reduce it. It removes the small loss that keeps a
+tradeoff visible. At a low price, a person still asks whether the benefit is worth the money,
+the time, and the attention. At zero, the offer can feel like a gain with no downside, even
+when it brings clutter, delay, or a distraction from the better choice. The point is not to
+avoid free things. It is to restore the costs that the price tag has hidden: what will this
+take, displace, or obligate me to do?
+
+<Figure id="16.3" caption="A price of zero can hide tradeoffs that remain present in time, attention, and clutter.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "a low price",
+      points: ["cash cost is visible", "tradeoff remains explicit", "compare alternatives", "ask: is it worth it?"],
+    }}
+    right={{
+      title: "zero price",
+      points: ["cash cost disappears", "other costs can fade", "gain feels immediate", "ask: what still pays?"],
+    }}
+  />
+</Figure>
+
+## Expectations can become part of the experience
+
+We do not encounter products, meals, treatments, or performances as blank recording devices.
+We arrive with a story about what the experience should be. A higher price, a trusted label,
+or an impressive setting can strengthen that story, which can alter attention and the way the
+result is felt. This does not mean that quality is imaginary, or that expensive things always
+perform better. It means that subjective experience has two inputs: what happened and what
+the mind expected to happen. Separate claims about the product from the signals that made it
+seem promising.
+
+<Figure id="16.4" caption="Signals can shape expectations, and expectations can color the experience that follows.">
+  <Flow
+    className="block w-full min-w-[580px]"
+    steps={["a signal", "an expectation", "attention and interpretation", "the felt result"]}
+    highlight={1}
+  />
+</Figure>
+
+## A cool plan can fail in a hot moment
+
+People often make calm promises about decisions that will be made while hungry, angry,
+tired, tempted, rushed, or excited. In the later hot state, the earlier plan can seem oddly
+irrelevant because the immediate drive has changed what matters. The mistake is not weak
+character. It is treating two states as if they shared one set of preferences. A better plan
+does some work in advance: remove the cue, add a delay, make the preferred action the easy
+one, or let a trusted rule decide before the pressure arrives.
+
+<Figure id="16.5" caption="A calm intention can be overtaken when a cue creates a hotter state and a shorter time horizon.">
+  <Timeline
+    className="block w-full min-w-[640px]"
+    segments={[
+      { label: "cool state", sub: "make the rule" },
+      { label: "trigger", sub: "hunger, stress, desire" },
+      { label: "hot state", sub: "immediate relief grows" },
+      { label: "later view", sub: "evaluate the choice" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Ownership changes the reference point
+
+Once something is ours, giving it up can feel like a loss rather than the reverse of gaining
+it. The same object can therefore attract different values from a seller, a buyer, and a
+person who merely has the right to keep it. Options create a related pull: keeping an unused
+door open can feel safer than closing it, even when the open door consumes money, attention,
+or the chance to commit. Before refusing to let go, describe the choice as if you did not
+already own it. Would you buy it today, keep the option available, or pay to preserve this
+status quo from scratch?
+
+<Figure id="16.6" caption="The visible possession is only part of the decision; loss, status quo, and forgone alternatives sit below it.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the thing already mine"
+    waterlineLabel="the reference point"
+    below={["fear of giving it up", "status quo comfort", "cost of keeping options open"]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Price the option before the menu">
+Before comparing plans, subscriptions, or vendors, write your own definition of a good
+outcome, the maximum you would pay, and the few features you actually need. Then inspect the
+choices. This gives a decoy less room to choose the comparison for you.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Collect estimates before the first number">
+For a forecast, budget, or negotiation, ask each person to record an estimate and a reason
+privately. Share them only after everyone has committed. The spread is useful information,
+and it prevents the first confident number from becoming the group's rail.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Give free offers a full price">
+When something costs nothing, write down its noncash cost: time to use it, space to keep it,
+data to surrender, attention it will claim, and the alternative it may crowd out. Accept it
+only if the full price still feels worthwhile.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make the cool choice executable">
+Find one decision that gets worse under stress or temptation. Add one physical constraint
+before the next hot moment: leave the card at home, block the site, put food out of reach,
+set a waiting period, or ask someone else to hold the key. A plan that depends on perfect
+willpower is not finished.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book's examples are memorable experiments, not a universal proof that every preference
+is fabricated or every price is irrational. People do have knowledge, values, and reasons;
+contexts simply have more influence than the clean model of a fixed preference allows. Read
+individual laboratory effects as evidence about a possible mechanism, with effect sizes and
+generalizability open to further testing. The underlying literature also deserves item-by-item
+scrutiny. For example, the anchoring account draws on a six-experiment study by Ariely,
+Loewenstein, and Prelec, while the price-placebo finding is a separate study with a specific
+experimental setting. The practical lesson survives that caution: use procedures that reduce
+irrelevant framing when the cost of a bad choice is high.
+</Callout>
+
+## If you remember one thing
+
+When a choice feels obvious, look for the frame that made it feel that way. The first number,
+nearby option, zero price, familiar possession, and hot moment may be doing more deciding
+than the reasons you can name.
+
+Thinking, Fast and Slow supplies a broader account of fast judgment; Influence shows how
+social cues can shape the same moment of choice.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "influence"]}
+  buyUrl="https://www.barnesandnoble.com/w/predictably-irrational-dan-ariely/1100316887"
+  buyLabel="Predictably Irrational by Dan Ariely"
+/>
