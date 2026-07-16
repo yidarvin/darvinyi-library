@@ -435,6 +435,44 @@ class RunqueueTests(unittest.TestCase):
             self.assertFalse(model_calls.exists())
             self.assertGreaterEqual(result.stderr.count("synchronization infrastructure failure"), 3)
 
+    def test_supervisor_retries_three_transient_runner_failures_without_model_recovery(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="runqueue-supervisor-transient-") as temp:
+            root = Path(temp)
+            home = root / "home"
+            home.mkdir()
+            calls = root / "runner-calls"
+            model_calls = root / "model-calls"
+            fake_runner = root / "runner"
+            fake_runner.write_text(
+                "#!/bin/bash\n"
+                "count=0\n"
+                "[ ! -f \"$RUNNER_CALLS\" ] || read -r count < \"$RUNNER_CALLS\"\n"
+                "count=$((count + 1))\n"
+                "printf '%s\\n' \"$count\" > \"$RUNNER_CALLS\"\n"
+                "[ \"$count\" -gt 3 ] && exit 0\n"
+                "exit 75\n",
+                encoding="utf-8",
+            )
+            fake_runner.chmod(0o755)
+            env = os.environ.copy()
+            env.update(
+                {
+                    "HOME": str(home),
+                    "PIPELINE_RUNNER_BIN": str(fake_runner),
+                    "PIPELINE_INFRA_RETRY_BASE_SECONDS": "0",
+                    "PIPELINE_INFRA_RETRY_MAX_SECONDS": "0",
+                    "RUNNER_CALLS": str(calls),
+                    "MODEL_CALLS": str(model_calls),
+                }
+            )
+
+            result = self.run_command(str(LAUNCH_SUPERVISOR), env=env, timeout=10)
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(calls.read_text(encoding="utf-8").strip(), "4")
+            self.assertFalse(model_calls.exists())
+            self.assertGreaterEqual(result.stderr.count("transient runner failure"), 3)
+
     def test_supervisor_leaves_normal_stage_failure_to_existing_recovery(self) -> None:
         with tempfile.TemporaryDirectory(prefix="runqueue-supervisor-stage-") as temp:
             root = Path(temp)
@@ -462,6 +500,66 @@ class RunqueueTests(unittest.TestCase):
 
             self.assertEqual(result.returncode, 1, result.stderr)
             self.assertEqual(calls.read_text(encoding="utf-8").splitlines(), ["called"])
+
+    def test_interrupted_validation_keeps_the_transaction_restartable(self) -> None:
+        _root, repo, state, env = self.make_pipeline_fixture()
+        base_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        begin = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "begin",
+            "--action",
+            "build",
+            "--slug",
+            "sample",
+            "--title",
+            "Sample",
+            "--base-head",
+            base_head,
+            "--push-required",
+            "false",
+            "--check-required",
+            "true",
+        )
+        self.assertEqual(begin.returncode, 0, begin.stderr)
+        registry_path = repo / "content" / "registry.json"
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        registry["chapters"][0]["status"] = "draft"
+        registry_path.write_text(json.dumps(registry), encoding="utf-8")
+        (repo / "src" / "chapters" / "sample.mdx").write_text("# Sample\n", encoding="utf-8")
+        ready = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "phase",
+            "ready",
+        )
+        self.assertEqual(ready.returncode, 0, ready.stderr)
+        fake_npm = Path(env["PATH"].split(":", 1)[0]) / "npm"
+        fake_npm.write_text("#!/bin/sh\nexit 143\n", encoding="utf-8")
+        fake_npm.chmod(0o755)
+        keepalive = state / "keepalive"
+        keepalive.touch()
+        env["RUNQUEUE_KEEPALIVE_FILE"] = str(keepalive)
+
+        interrupted = self.run_command(
+            str(repo / "runqueue.sh"),
+            "--recover-only",
+            "--no-push",
+            cwd="/",
+            env=env,
+        )
+
+        self.assertEqual(interrupted.returncode, 75, interrupted.stderr)
+        self.assertIn("check interrupted with exit 143", interrupted.stderr)
+        self.assertTrue(keepalive.exists())
+        transaction = json.loads((state / "transaction.json").read_text(encoding="utf-8"))
+        self.assertEqual(transaction["phase"], "ready")
+        self.assertEqual(self.git(repo, "rev-parse", "HEAD").stdout.strip(), base_head)
+        self.assertNotEqual(self.git(repo, "status", "--porcelain").stdout.strip(), "")
 
     def test_synchronized_upstream_skips_git_push_entirely(self) -> None:
         root, repo, state, env = self.make_pipeline_fixture()

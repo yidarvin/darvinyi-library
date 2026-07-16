@@ -30,21 +30,28 @@ cd "$HOME" || exit 69
 printf 'runqueue supervisor: PATH git=%s; operational git=%s; ' "$(command -v git)" "$PIPELINE_GIT_BIN"
 "$PIPELINE_GIT_BIN" --version
 
-infra_failures=0
+retry_failures=0
 while :; do
   rc=0
   "$RUNNER" --all --yes || rc=$?
-  [ "$rc" -eq 69 ] || exit "$rc"
+  failure_kind=''
+  if [ "$rc" -eq 69 ]; then
+    failure_kind='synchronization infrastructure'
+    python3 "$REPO_ROOT/scripts/runqueue_state.py" --dir "$RUNQUEUE_STATE_DIR" reset-push-attempts || exit 69
+  elif [ "$rc" -eq 75 ] || [ "$rc" -eq 124 ] || { [ "$rc" -ge 128 ] && [ "$rc" -le 192 ]; }; then
+    failure_kind='transient runner'
+  else
+    exit "$rc"
+  fi
 
-  infra_failures=$((infra_failures + 1))
-  python3 "$REPO_ROOT/scripts/runqueue_state.py" --dir "$RUNQUEUE_STATE_DIR" reset-push-attempts || exit 69
+  retry_failures=$((retry_failures + 1))
   delay="$RETRY_BASE"
-  remaining=$((infra_failures - 1))
+  remaining=$((retry_failures - 1))
   while [ "$remaining" -gt 0 ] && [ "$delay" -lt "$RETRY_CAP" ]; do
     delay=$((delay * 2))
     [ "$delay" -le "$RETRY_CAP" ] || delay="$RETRY_CAP"
     remaining=$((remaining - 1))
   done
-  printf '%s\n' "runqueue supervisor: synchronization infrastructure failure $infra_failures; retrying in ${delay}s." >&2
+  printf '%s\n' "runqueue supervisor: $failure_kind failure $retry_failures (runner exit $rc); retrying in ${delay}s." >&2
   [ "$delay" -eq 0 ] || sleep "$delay"
 done

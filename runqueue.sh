@@ -37,7 +37,7 @@
 
 set -uo pipefail
 
-RUNQUEUE_VERSION='0.4.0'
+RUNQUEUE_VERSION='0.4.1'
 BUILD_MODEL='gpt-5.6-terra'
 CRITIC_MODEL='gpt-5.6-sol'
 EFFORT='high'
@@ -103,6 +103,11 @@ parse_nonnegative() {
   case "$value" in ''|*[!0-9]*) die "$flag needs a non-negative integer, got '$value'" ;; esac
   [ "${#value}" -le 9 ] || die "$flag value '$value' is out of range"
   printf '%s' "$((10#$value))"
+}
+
+is_transient_exit() {
+  local rc="$1"
+  [ "$rc" -eq 75 ] || [ "$rc" -eq 124 ] || { [ "$rc" -ge 128 ] && [ "$rc" -le 192 ]; }
 }
 
 while [ $# -gt 0 ]; do
@@ -329,7 +334,7 @@ committed_paths_are_allowed() {
 }
 
 validate_action() {
-  local action="$1" slug="$2" changed_rc verdict
+  local action="$1" slug="$2" changed_rc verdict check_rc
   changed_paths_are_allowed "$action" "$slug"; changed_rc=$?
   if [ "$changed_rc" -eq 2 ]; then
     printf '%s\n' "runqueue: could not inspect changed paths after $action for $slug" >&2; return 2
@@ -337,8 +342,16 @@ validate_action() {
   if [ "$changed_rc" -ne 0 ]; then
     printf '%s\n' "runqueue: unexpected changed path after $action for $slug" >&2; return 3
   fi
-  if [ "$TXN_CHECK_REQUIRED" = 1 ] && ! npm run check; then
-    printf '%s\n' "runqueue: npm run check failed after $action for $slug" >&2; return 1
+  if [ "$TXN_CHECK_REQUIRED" = 1 ]; then
+    check_rc=0
+    npm run check || check_rc=$?
+    if [ "$check_rc" -ne 0 ]; then
+      if is_transient_exit "$check_rc"; then
+        retry_later "npm run check interrupted with exit $check_rc after $action for $slug"
+      fi
+      printf '%s\n' "runqueue: npm run check failed after $action for $slug" >&2
+      return 1
+    fi
   fi
   case "$action" in
     build)
