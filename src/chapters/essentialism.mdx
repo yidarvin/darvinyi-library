@@ -1,0 +1,202 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Flow, Iceberg, Pyramid, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="essentialism"
+  thesis="A useful life is not made by fitting every reasonable demand into it. It is made by choosing a few contributions deliberately, then defending the room to do them well."
+  minutes={8}
+/>
+
+## The thesis
+
+McKeown's argument is a discipline of selection, not a trick for packing more into a
+day. Time and attention are finite, while plausible requests are nearly endless. The
+work is to notice that conflict, decide what deserves a serious share of your effort,
+and remove the rest before the rest makes the decision for you. Fewer commitments can
+produce better work when they leave enough concentration, energy, and recovery for the
+commitments that remain.
+
+## Why it matters
+
+Overload rarely arrives as one obviously bad choice. It accumulates through agreeable
+meetings, projects with fuzzy owners, invitations accepted before thinking, and work
+that feels urgent because somebody else has placed it in front of you. Each item can
+seem harmless alone. Together they turn a calendar into a set of promises that compete
+for the same limited person. Essentialism asks a blunt question before that accumulation
+becomes normal: what contribution would be diminished if this time went elsewhere?
+
+## A choice left unmade is still a choice
+
+The starting point is agency. A request does not become a commitment merely because it
+arrives in an inbox or because someone asks with confidence. People can pause, ask what
+the work requires, and decide. Without that pause, other people's priorities become the
+default organizer of a life. The cost is not only a crowded schedule. It is the gradual
+loss of any visible connection between how time is spent and what a person meant to make
+possible.
+
+<Figure id="53.1" caption="Busy output is visible; unexamined commitments and lost alternatives sit below the surface.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="a full calendar and quick replies"
+    below={["requests accepted by reflex", "priorities borrowed from others", "work displaced without a decision"]}
+    waterlineLabel="what overload makes easy to notice"
+  />
+</Figure>
+
+## Exploration is part of deciding
+
+Selective work needs room to look before it commits. That can mean reading more widely,
+asking a better question, trying a small version of an idea, or simply taking a walk
+without a device. The point is not endless analysis. It is to give alternatives enough
+attention that the best one has a chance to distinguish itself from the merely available
+one. When every open space is already assigned, the next choice can only be a reaction.
+
+<Figure id="53.2" caption="A pause to explore turns a request into a decision with real alternatives.">
+  <Flow
+    className="block w-full min-w-[520px]"
+    steps={["notice the request", "create a little space", "compare the real options", "commit with intent"]}
+    highlight={2}
+  />
+</Figure>
+
+## Every yes spends a scarce resource
+
+The difficult fact behind prioritization is that appealing options can conflict. Choosing
+one may mean declining another, postponing it, or admitting that it belongs to someone
+else. Treating trade-offs as a failure encourages a fantasy in which everything stays
+alive, then each promise receives a thin and unreliable slice of attention. Naming the
+trade-off early is cleaner. It gives a chosen commitment enough capacity to become good,
+rather than letting several commitments become perpetually almost finished.
+
+<Figure id="53.3" caption="Keeping every option open divides attention; a deliberate choice gives one path enough room.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "keep every option",
+      points: ["many active promises", "constant reprioritizing", "thin attention for each", "little room for repair"],
+    }}
+    right={{
+      title: "choose the few",
+      points: ["explicit trade-offs", "attention has an owner", "quality can improve", "room remains for the unexpected"],
+    }}
+  />
+</Figure>
+
+## Raise the bar before you say yes
+
+Most choices do not deserve equal consideration. A vague sense that an opportunity is
+pretty good is a weak reason to commit weeks of work, a recurring meeting, or a portion
+of a team's attention. A stronger filter asks what this opportunity advances, what it
+will displace, and whether its value clears a threshold that justifies the cost. The
+threshold need not be numerical, but it should be high enough that a polite request does
+not pass simply because refusing feels awkward.
+
+<Figure id="53.4" caption="A high threshold reserves commitment for opportunities that are clearly worth their cost.">
+  <Bars
+    className="block w-full min-w-[440px]"
+    items={[
+      { label: "interesting", value: 0.32, valueLabel: "notice it" },
+      { label: "useful", value: 0.58, valueLabel: "consider it" },
+      { label: "strong fit", value: 0.91, accent: true, valueLabel: "commit" },
+    ]}
+  />
+</Figure>
+
+## Boundaries make the chosen work credible
+
+Saying no is not an act of hostility. It is how a yes gains meaning. A clear boundary
+protects a project from accidental expansion and gives other people an honest answer
+before they build plans around your availability. The conversation can still be generous:
+decline the request, offer a smaller form of help, point to someone better placed to do
+it, or name a time when you can revisit it. What matters is that the answer fits the
+priority rather than the momentary pressure.
+
+<Figure id="53.5" caption="The useful boundary is neither reflexive refusal nor automatic agreement, but a response that protects the chosen commitment.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="automatic yes"
+    right="automatic no"
+    marker={0.57}
+    markerLabel="clear boundary"
+    zones={[
+      { from: 0.0, to: 0.3, label: "others set the agenda" },
+      { from: 0.44, to: 0.7, label: "decline with care", accent: true },
+      { from: 0.78, to: 1.0, label: "cut off useful ties" },
+    ]}
+  />
+</Figure>
+
+## Make execution lighter than intention
+
+Selection is only useful when the chosen work survives ordinary life. McKeown emphasizes
+preparation: leave a buffer before deadlines, remove a recurring obstacle, and turn a
+decision into a small routine so it does not need to be remade every morning. These are
+not glamorous moves. They make plans less fragile. A calendar with no slack makes every
+delay a crisis, while a protected buffer allows the important work to continue when the
+week gets noisy.
+
+<Figure id="53.6" caption="Reliable execution rests on preparation and space before it reaches the visible result.">
+  <Pyramid
+    className="block w-full min-w-[440px]"
+    tiers={[
+      { label: "slack in time and energy", note: "a buffer for reality" },
+      { label: "remove recurring obstacles", note: "make the next step easy" },
+      { label: "repeatable routine", note: "less daily renegotiation" },
+      { label: "a finished contribution", note: "the work people can see" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the contribution that needs room">
+Choose one result that would make the coming month meaningfully better: a decision,
+piece of work, relationship, or recovery practice. Write what it needs from you in hours,
+attention, and support. If the requirement is invisible, other commitments will spend
+that capacity first.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Audit one recurring commitment">
+Pick a meeting, project, or obligation that returns each week. Ask what it advances, what
+it displaces, and what would happen if you stopped, shortened, delegated, or delayed it.
+Make one concrete change, even if it is only a smaller trial for the next two weeks.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Use a pause before new commitments">
+For the next seven days, do not accept non-urgent requests on the first conversation.
+Say that you will check your current commitments and reply tomorrow. The pause creates
+space for a real answer and makes it easier to see the trade-off.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Put a buffer beside the important work">
+Find the deadline or appointment most likely to expand. Add a block before it for
+preparation or after it for recovery and follow-up. Protect that block as part of the
+commitment, not as optional empty time.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Doing less is not a license to abandon shared obligations or judge people whose time is
+already constrained by care, money, health, or an employer's demands. Many commitments
+cannot simply be declined, and a team cannot function if everyone guards only private
+priorities. The useful application is often collective: clarify the few outcomes that
+matter, reduce low-value work together, and make trade-offs visible to the people who
+will carry their cost. Selectivity helps most when it is paired with responsibility and
+fairness.
+</Callout>
+
+## If you remember one thing
+
+Protect a small number of contributions that are truly worth your effort. The decisive
+move is not working faster after every yes. It is choosing more carefully before the yes
+is made.
+
+<ShelvedNearby
+  related={["seven-habits", "deep-work", "getting-things-done"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/228364/essentialism-by-greg-mckeown/"
+  buyLabel="Essentialism by Greg McKeown"
+/>
