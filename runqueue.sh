@@ -109,11 +109,11 @@ resolve_git_dir() {
   printf '%s' "$gitdir"
 }
 GIT_DIR_PATH="$(resolve_git_dir)" || die "cannot resolve Git metadata directory"
-# LaunchAgents can be allowed to enter the repository yet be denied getcwd() for its
-# Documents ancestor. Git calls getcwd() before it processes -C, so execute each Git
-# command from a safe directory and identify the repository explicitly.
+# Git add resolves an all-pathspec from its current directory. Run from the worktree
+# while identifying the metadata explicitly, so the LaunchAgent stages the repository
+# rather than its own process directory.
 gitq() (
-  cd / || return 1
+  cd "$SCRIPT_DIR" || return 1
   GIT_DIR="$GIT_DIR_PATH" GIT_WORK_TREE="$SCRIPT_DIR" command git "$@"
 )
 
