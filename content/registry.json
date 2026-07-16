@@ -199,7 +199,19 @@
       "subtitle": "Robert Cialdini · 1984",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 1,
+      "thesis": "Compliance runs on a handful of deep psychological triggers that can be understood, spotted, and defended against.",
+      "framework": "Six Principles of Persuasion",
+      "diagrams": [
+        "iceberg",
+        "flow",
+        "process loop",
+        "venn overlap",
+        "comparison",
+        "spectrum",
+        "node graph"
+      ]
     },
     {
       "num": 11,

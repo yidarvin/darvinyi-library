@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -53,3 +53,18 @@ verdict: revise
    pipeline tests, 24 Vitest tests, TypeScript and Vite production build, and ESLint all
    completed successfully. The jsdom run emitted only the existing non-failing
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-15
+
+- Completed only the `influence` registry record with tier 1, the recorded
+  compliance-trigger thesis, the Six Principles of Persuasion framework, and the
+  seven-form diagram inventory used by the chapter: iceberg, flow, process loop,
+  Venn overlap, comparison, spectrum, and node graph. Its status remains `draft`.
+- Changed Figure 10.1's chapter-local `Iceberg` class from `min-w-[380px]` to
+  `min-w-[440px]`. The 9.5-unit waterline label now renders at about 11 CSS px at
+  the minimum width, while the shared `Iceberg` and `Figure` components remain
+  unchanged.
+- Preserved the previously accepted chapter content and all other registry records.
+  `npm run check` passed on 2026-07-15: validation, prose lint, pipeline tests,
+  24 Vitest tests, TypeScript/Vite build, and ESLint completed successfully. The
+  existing non-failing jsdom `Window.scrollTo()` notices remain.
