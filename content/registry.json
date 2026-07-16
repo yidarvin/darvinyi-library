@@ -220,7 +220,18 @@
       "subtitle": "Charles Duhigg · 2012",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 1,
+      "thesis": "Habits conserve attention by running a learned cue, routine, and reward loop; understanding the loop makes a more useful response possible.",
+      "framework": "The habit loop: cue, routine, reward.",
+      "diagrams": [
+        "iceberg",
+        "flow",
+        "comparison",
+        "spectrum",
+        "node graph",
+        "process loop"
+      ]
     },
     {
       "num": 12,

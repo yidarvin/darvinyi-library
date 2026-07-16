@@ -1,0 +1,211 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="power-of-habit"
+  thesis="Habits conserve attention by handing familiar situations to a learned loop. Change becomes more practical when you can see the cue, the routine, and the reward that keep the loop running."
+  minutes={8}
+/>
+
+## The thesis
+
+The Power of Habit treats automatic behavior as a design problem before it treats it as a
+character problem. A repeated pattern learns to recognize a situation, run a response, and
+look for a payoff. That economy is useful when the pattern serves you and costly when it does
+not. Duhigg's practical claim is that a habit becomes workable once its parts are visible:
+keep the situation and the payoff in view, then practice a response that can meet the same
+need more cleanly.
+
+## Why it matters
+
+Much of a day is too crowded for fresh deliberation at every turn. Familiar routes, morning
+rituals, workplace rituals, and reactions under pressure save effort by becoming scripts.
+That efficiency is also why an unwanted response can feel as if it happened before a choice
+was made. The book supplies a compact way to slow that moment down. Instead of asking why
+you lack discipline, ask what reliably starts the pattern and what it is trying to deliver.
+
+## Automaticity is an economy
+
+A habit is not simply a behavior performed often. It is a behavior that has been assigned to
+a setting. When the setting returns, the brain can spend less effort choosing a next move and
+reserve attention for something else. This is why routines make ordinary life manageable,
+and why a change of context can make even a familiar behavior feel strangely difficult. The
+visible action is only the tip. Beneath it sit the repeated situation, the learned expectation,
+and the response made ready by repetition.
+
+<Figure id="11.1" caption="What looks like a single choice often rests on a learned situation-and-response pattern.">
+  <Iceberg
+    className="block w-full"
+    above="the visible action"
+    waterlineLabel="what awareness catches"
+    below={["a familiar situation", "an expected payoff", "a rehearsed response"]}
+  />
+</Figure>
+
+## A cue makes one response feel relevant
+
+The cue is not necessarily a bell, a notification, or an object on a desk. It can be a time,
+a place, a person, a preceding action, or a feeling such as boredom or tension. Its job is
+selection. Amid many possible things you could do, it points toward one known script. This is
+why useful observation is specific. “I procrastinate in the afternoon” is a start. “At 2:30,
+after opening an ambiguous task, I check messages” gives you something that can be tested and
+redesigned.
+
+<Figure id="11.2" caption="A specific situation narrows many possible actions into the response the pattern has learned.">
+  <Flow
+    className="block w-full"
+    steps={["notice the situation", "name the cue", "spot the usual response", "choose a test"]}
+    highlight={1}
+  />
+</Figure>
+
+## The reward reveals the job the habit is doing
+
+The routine is easy to notice because it is the part other people can see. It is not always
+the part to fight. A walk to the snack drawer may be serving a need for a break, company, or a
+change of mental pace. Treating every unwanted routine as a hunger problem would miss that
+distinction. The reward is the result you keep returning for, including a social or emotional
+one. Identify it before choosing a replacement, or the new routine will solve the wrong
+problem and lose its contest with the old one.
+
+<Figure id="11.3" caption="Changing the visible routine works better when the underlying payoff stays in focus.">
+  <Compare
+    className="block w-full"
+    favor="right"
+    left={{
+      title: "watch only the routine",
+      points: ["ban the obvious action", "guess at the need", "replace it with a mismatch", "return to the old loop"],
+    }}
+    right={{
+      title: "test the reward",
+      points: ["name the expected relief", "try a different route", "compare the result", "keep what meets the need"],
+    }}
+  />
+</Figure>
+
+## Anticipation gives a cue its pull
+
+Rewards teach a pattern, but an established habit starts earlier than the reward itself. The
+cue begins to carry an expectation. Seeing the mug can bring a desire for a pause; arriving
+home can bring a desire to switch off. That anticipation helps explain why knowledge alone
+rarely overpowers a habit in the moment. The trigger is not neutral once it has been paired
+with a satisfying outcome many times. A new routine needs enough repetition, and a credible
+payoff, to become a plausible answer when that feeling arrives.
+
+<Figure id="11.4" caption="Repeated pairings can move a cue from a neutral signal toward a felt expectation.">
+  <Spectrum
+    className="block w-full"
+    left="neutral cue"
+    right="anticipated payoff"
+    marker={0.72}
+    markerLabel="the pull of a habit"
+    zones={[
+      { from: 0.03, to: 0.34, label: "little learned pull" },
+      { from: 0.6, to: 0.97, label: "response feels ready", accent: true },
+    ]}
+  />
+</Figure>
+
+## Some habits reorganize a wider system
+
+The book extends the loop beyond private routines. In a team, one repeatable practice can
+change what gets noticed, discussed, and rewarded, which can alter other routines around it.
+The point is not that one heroic habit solves an organization. It is that a well-placed
+practice can make a desired behavior easier to see and repeat. A regular safety review, for
+example, can surface small problems earlier, create a habit of reporting them, and give
+leaders a more reliable basis for action. The useful question is where a new routine would
+create better signals for the rest of the system.
+
+<Figure id="11.5" caption="A repeatable practice can change the cues and feedback available to the people around it.">
+  <NodeGraph
+    className="block w-full"
+    nodes={[
+      { id: "practice", label: "repeatable practice", x: 0.5, y: 0.1 },
+      { id: "signal", label: "clearer signals", x: 0.12, y: 0.52 },
+      { id: "talk", label: "better conversations", x: 0.5, y: 0.82 },
+      { id: "feedback", label: "visible feedback", x: 0.88, y: 0.52 },
+    ]}
+    edges={[
+      { from: "practice", to: "signal", kind: "reinforcing" },
+      { from: "signal", to: "talk" },
+      { from: "talk", to: "feedback", kind: "reinforcing" },
+      { from: "feedback", to: "practice" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The habit loop is deliberately spare. A cue identifies the moment. A routine is the action,
+thought, or emotional response that follows. A reward confirms that the pattern was worth
+storing. Repetition binds the three together and makes the cue increasingly predictive. The
+model does not promise that old patterns vanish on command. It gives you a map for an
+experiment: preserve the recognizable moment, state the payoff you are looking for, and
+rehearse another route to it until that route can compete.
+
+<Figure id="11.6" caption="The habit loop turns an automatic pattern into three parts that can be observed and tested.">
+  <ProcessLoop
+    className="block w-full"
+    stages={["cue", "routine", "reward"]}
+    compoundingEdge={2}
+    centerLabel="learned pattern"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Map one recent loop">
+Choose an action that happened on autopilot in the last two days. Write down the time, place,
+people present, what happened immediately before it, the action itself, and the result you
+wanted. Do this for three instances before drawing a conclusion. A pattern needs examples,
+not a verdict based on one bad afternoon.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Run a reward test">
+For the next occurrence, keep the cue but try a different short response. If you usually open
+social media when stalled, take a five-minute walk, send one clarifying question, or make tea.
+After each trial, ask what changed: energy, connection, relief, novelty, or nothing useful.
+The aim is to discover the payoff, not to choose the virtuous-looking substitute.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Write the replacement before the cue arrives">
+Once you have a plausible reward, make the alternative concrete: “When I close a difficult
+call, I will stand outside for five minutes before I open an app.” Put the needed object or
+reminder where the cue occurs. A replacement routine needs to be available at the exact
+moment the old one normally starts.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make the feedback immediate">
+Give the new routine a small, honest payoff that arrives now: check a visible tracker, make a
+cup of good tea after the work block, or tell a friend you completed the practice. Do not
+pretend the reward is larger than it is. The question is whether it makes repeating the next
+instance more likely.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The loop is a useful working model, not a complete account of behavior. It can clarify a
+small, repeatable response, but it does not reduce addiction, grief, trauma, disability,
+financial constraint, or a coercive workplace to a poorly chosen cue. Nor should it turn a
+person into a system to be optimized. Use the model to make one local experiment more
+intelligent, while taking the larger conditions around a behavior seriously. At the group
+level, a “keystone” habit is a hypothesis about how a system may respond, not a guarantee of
+change.
+</Callout>
+
+## If you remember one thing
+
+Do not begin by demanding that an unwanted habit disappear. Find the moment that starts it,
+the payoff it is pursuing, and a different response you can practice when that same moment
+returns.
+
+Atomic Habits carries the loop into environment design, while The 7 Habits of Highly
+Effective People turns repeated choice toward responsibility and relationships.
+
+<ShelvedNearby
+  related={["atomic-habits", "seven-habits"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/202855/the-power-of-habit-by-charles-duhigg/9780679603856/"
+  buyLabel="The Power of Habit by Charles Duhigg"
+/>
