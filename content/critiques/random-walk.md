@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-16
 
@@ -90,3 +90,51 @@ Resolved every REQUIRED finding from critique round 1.
    markets framework, and the seven rendered diagram forms. Its status remains `draft`.
 
 Verification: `npm run check` passed on 2026-07-16.
+
+## Critique round 2 — 2026-07-16
+
+### REQUIRED
+
+1. **Make the signature Model diagram encode the claim in its caption.** Figure 59.7
+   says that competition moves public information into prices while leaving low costs
+   and diversification as the investor's controllable edges
+   (`src/chapters/random-walk.mdx:195-213`), but the graph contains no node or edge for
+   either low costs or diversification. It only draws public facts, analysis, trades,
+   prices, and future returns. It also classifies `trades -> prices` as a
+   `reinforcing` edge even though `NodeGraph` reserves that kind for a reinforcing
+   relationship (`src/components/diagrams/NodeGraph.tsx:16-21,75-98`), and the page
+   does not explain any positive feedback mechanism on that edge. Because this is the
+   hero rendering of the book's signature model, the mismatch is substantive rather
+   than caption polish. Either draw the controllable investor response that the
+   caption and second Model paragraph promise, or narrow the caption and edge
+   semantics so the figure accurately presents only the price-discovery system it
+   actually contains.
+
+The five REQUIRED findings from round 1 are resolved and remain resolved. The opening
+now handles counterparties without imputing opposite beliefs, the active-management
+arithmetic uses the correct average-dollar comparator, Figure 59.5 places the growth
+case in the high-capacity and long-horizon quadrant, Figure 59.4's shortened end labels
+fit the viewport, and the registry contains the required tier, thesis, framework, and
+seven-form inventory.
+
+The already-recorded S&P DJI and SEC links were inspected directly without beginning
+a new external search. The S&P DJI page supports the 79% 2025 large-cap
+underperformance statistic, and the SEC bulletin supports the page's discussion of
+fund fees, trading costs, tracking error, and market risk. The publisher link resolves
+to W. W. Norton's page for the book, and all four related slugs remain `done`.
+
+`npm run check` passed on 2026-07-16 with the filesystem access required by the
+launchd-supervisor tests: queue and registry validation, prose lint, 34 pipeline tests,
+122 application tests, typecheck, production build, and ESLint all passed. The first
+sandboxed attempt failed only because three supervisor tests could not write their
+keepalive path under `Library/Application Support`; all three passed when rerun with
+that access. Vitest emitted only the existing non-failing jsdom `Window.scrollTo()`
+notices.
+
+### ADVISORY
+
+1. `ShelvedNearby` renders four relevant, completed books, but it does not state the
+   one-clause relationship for any link that the authoring spec requests
+   (`src/chapters/random-walk.mdx:264-268`). A short relationship note would make the
+   cross-links more informative, but the rubric treats optional cross-link enrichment
+   as advisory.
