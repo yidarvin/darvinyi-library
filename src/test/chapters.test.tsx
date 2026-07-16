@@ -70,6 +70,8 @@ describe("registry and modules line up", () => {
     }
   });
 
+  // This is intentionally a whole-library integration test. Give its async route
+  // rendering a budget that scales beyond Vitest's 5-second unit-test default.
   it("home lists every chapter title", async () => {
     render(
       <MDXProvider components={mdxComponents}>
@@ -81,5 +83,5 @@ describe("registry and modules line up", () => {
     for (const chapter of registry.chapters) {
       expect(await screen.findAllByText(chapter.title)).not.toHaveLength(0);
     }
-  });
+  }, 15_000);
 });
