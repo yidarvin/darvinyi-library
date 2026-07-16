@@ -1,0 +1,224 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Flow, NodeGraph, Spectrum, Timeline, Venn } from "../components/diagrams";
+
+<Hero
+  slug="guns-germs-steel"
+  thesis="The broad asymmetries of world history grew from uneven ecological starting points and their compounding effects, not from innate differences between peoples."
+  minutes={7}
+/>
+
+## The thesis
+
+Diamond argues that uneven ecological starting conditions, rather than innate differences
+between peoples, shaped the possibilities for food production, exchange, disease, technology,
+and political power. Those conditions influenced history without determining it: human choices,
+violence, institutions, and chance still changed its course.
+
+## Why it matters
+
+Explanations of global inequality often drift toward a story about the superior qualities of
+the people who prevailed. This book makes that story harder to sustain. It directs attention
+toward opportunity, ecology, exchange, colonization, and accumulated advantage. That change
+of question still matters: a population's present position is not evidence of its inherent
+capacity. It is evidence of a long and uneven history.
+
+## Key ideas
+
+## Food production began with a local set of possibilities
+
+Cultivation was learned work, not a prize automatically granted by a place. People selected,
+tended, moved, and adapted plants and animals over long periods. Diamond's point is that the
+starting menu was not distributed evenly. Some regions contained more species that could become
+reliable crops or livestock, while many useful wild species were poorly suited to domestication.
+That difference shaped which experiments were available, not the intelligence of the people
+running them. Archaeology also shows multiple centers of domestication, so the useful image is
+of several human experiments meeting different local ecologies, not one civilization inventing
+agriculture for everyone else.
+
+<Figure id="33.1" caption="Food production emerged where human experimentation met plants and animals that could support it.">
+  <Venn
+    className="block min-w-[380px]"
+    sets={[
+      { label: "local plants\nand animals" },
+      { label: "human selection\nand care" },
+    ]}
+    intersectionLabel="repeatable\nfood production"
+  />
+</Figure>
+
+## Surplus widened a society's options, and its obligations
+
+Reliable food could support more people in one place than a mobile subsistence pattern. It
+also made storage, division of labor, taxation, and specialized roles more feasible. Scribes,
+craft workers, soldiers, and officials need food they are not producing that day. None of this
+guarantees a state, writing, or conquest. Surplus can be lost, captured, or divided unequally.
+The key connection is capacity: a food base can make kinds of coordination possible that a
+small, dispersed group cannot sustain in the same way.
+
+<Figure id="33.2" caption="A dependable food base can make denser settlement possible, which can support specialized work.">
+  <Flow
+    className="block w-full min-w-[440px]"
+    steps={[
+      "repeatable food production",
+      "denser settlement and stored surplus",
+      "specialized roles and institutions",
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Dense settlements changed the disease environment
+
+Many human infections require enough nearby hosts to keep moving from one person to another.
+Living closely with domesticated animals can also create opportunities for pathogens to cross
+species boundaries. Over time, recurrent exposure can shape population-level immunity, while
+the pathogens themselves evolve too. Diamond uses this history to explain one devastating
+asymmetry of colonization: when pathogens entered populations without prior exposure, illness
+could do more damage than weapons. Disease was never a one-way European possession. Malaria and
+other local disease environments also constrained European expansion in parts of Africa.
+
+<Figure id="33.3" caption="Close human-animal contact can create spillover; dense settlements can then sustain transmission, and exposure can change vulnerability.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "human-animal contact" },
+      { label: "pathogen spillover or adaptation" },
+      { label: "dense populations sustain spread" },
+      { label: "exposure changes vulnerability" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Geography can lower the cost of diffusion
+
+Seeds, animals, techniques, languages, and institutions travel unevenly. Diamond emphasizes
+that moving across similar latitudes can sometimes preserve day length, seasonality, and climate
+better than moving across radically different ones. That makes an east-west route a useful
+claim about friction, not a magic corridor. Mountains, deserts, coastlines, politics, trade,
+and local adaptation can halt or reshape a transfer. An imported crop or practice succeeds only
+when people make it work under local conditions.
+
+<Figure id="33.4" caption="The easier the environmental match, the less adaptation a transferred practice may require, though no route guarantees adoption.">
+  <Spectrum
+    className="block w-full min-w-[480px]"
+    left="harder match"
+    right="closer match"
+    marker={0.72}
+    zones={[
+      { from: 0.0, to: 0.42, label: "more adaptation needed" },
+      { from: 0.58, to: 1.0, label: "transfer may be easier", accent: true },
+    ]}
+  />
+</Figure>
+
+## Proximate advantages can compound into unequal power
+
+The title names the visible results, but they are late links in the chain. A productive food
+base can support population density and specialist work. Those conditions can help sustain
+states, transport networks, weapons, records, and epidemic disease. When groups with such
+advantages meet groups without them, the encounter is not a fair test of merit. It is a meeting
+of histories with different accumulated resources. Colonial violence, alliance, political
+judgment, and contingency still belong in the account. The framework identifies a set of
+background conditions; it does not turn every later decision into an ecological reflex.
+
+<Figure id="33.5" caption="Long-run advantages interact, then become visible as uneven capacity in an encounter between societies.">
+  <NodeGraph
+    className="block min-w-[380px]"
+    nodes={[
+      { id: "food", label: "food base", x: 0.16, y: 0.18 },
+      { id: "density", label: "population density", x: 0.5, y: 0.1 },
+      { id: "specialists", label: "specialists and states", x: 0.84, y: 0.28 },
+      { id: "tools", label: "tools and records", x: 0.2, y: 0.72 },
+      { id: "disease", label: "disease exposure", x: 0.8, y: 0.72 },
+      { id: "power", label: "unequal power in contact", x: 0.5, y: 0.52 },
+    ]}
+    edges={[
+      { from: "food", to: "density", kind: "reinforcing" },
+      { from: "density", to: "specialists", kind: "reinforcing" },
+      { from: "specialists", to: "tools", kind: "reinforcing" },
+      { from: "density", to: "disease" },
+      { from: "tools", to: "power", kind: "reinforcing" },
+      { from: "disease", to: "power", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+Geographic determinism is the book's signature model, but Diamond's most useful version is a
+causal sequence rather than a claim that maps dictate history. Ecological conditions shape the
+initial range of domesticates and routes. Food production can reshape population, settlement,
+and specialization. Those changes create channels through which technologies, institutions,
+and pathogens accumulate. The final difference in power is therefore indirect and historical.
+At every stage, human choices and local circumstances can alter the path.
+
+<Figure id="33.6" caption="The model traces a proposed causal sequence from ecological starting conditions to uneven power in contact.">
+  <Flow
+    className="block min-w-[720px]"
+    steps={[
+      "ecological starting conditions",
+      "food production and diffusion",
+      "population density and specialization",
+      "institutions, tools, and pathogens",
+      "uneven power in contact",
+    ]}
+    highlight={4}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Replace a trait story with a conditions story">
+When you hear a group described as naturally better or worse at an outcome, pause before
+accepting the category. List the material conditions around the outcome: access to land,
+health, education, capital, networks, safety, and political power. This does not explain
+everything, but it replaces a lazy verdict with questions that evidence can answer.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Trace one advantage backward">
+Choose a familiar advantage, such as a reliable food supply, fast shipping, a professional
+credential, or a public-health system. Draw three earlier conditions that made it possible,
+then one group whose labor or losses are missing from the usual story. The aim is to see
+accumulation without treating the result as deserved by nature.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Test the missing links">
+For a broad explanation of an event, name its proposed starting condition, its intermediate
+mechanism, and the final outcome. Then ask what evidence would show the chain breaking:
+a similar setting with a different result, a different route to the same result, or a local
+choice that changed the direction. A theory becomes more useful when it can be surprised.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Keep history and policy separate">
+Use a long-run explanation to understand a constraint, then ask a present-tense question:
+what is changeable now? Disease burden can be reduced, infrastructure can be built, and
+extractive institutions can be challenged. Explaining a legacy is not permission to accept it.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book's rejection of racial hierarchy is important, but its broad causal story is heavily
+contested. Geographers and historians argue that it can make ecology look too decisive, while
+giving too little weight to institutions, political choices, local knowledge, colonial
+violence, and contingency. A <a href="https://rgs-ibg.onlinelibrary.wiley.com/doi/10.1111/j.1475-4959.2008.00265.x" target="_blank" rel="noopener noreferrer">critical analysis in <em>The Geographical Journal</em></a> cautions against simplified causal accounts grounded mainly in a deterministic view of environment. Research on domestication also describes multiple, parallel pathways rather than one simple route, as summarized by <a href="https://www.pnas.org/doi/10.1073/pnas.1308937110" target="_blank" rel="noopener noreferrer">Fuller and colleagues in <em>PNAS</em></a>. Read Diamond as a forceful argument that starting conditions matter, then test it against the specific region, period, and people in view.
+</Callout>
+
+## If you remember one thing
+
+No population's later power proves an inborn superiority. It can be the accumulated result of
+ecology, exchange, disease, institutions, violence, and chance. Geography supplies conditions,
+not a moral ranking and not a finished script.
+
+## Shelved nearby
+
+Sapiens also takes a long view of how food production and shared institutions changed the scale
+of human cooperation, though it emphasizes collective stories where Diamond emphasizes ecology.
+
+<ShelvedNearby
+  related={["sapiens"]}
+  buyUrl="https://www.penguin.co.uk/books/355771/guns-germs-and-steel-by-jared-diamond/9781448180202"
+  buyLabel="Guns, Germs and Steel by Jared Diamond"
+/>

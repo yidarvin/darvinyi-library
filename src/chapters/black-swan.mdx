@@ -1,0 +1,208 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Flow, Iceberg, Matrix, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="black-swan"
+  thesis="History is often moved by rare events that no one saw coming, then made to look inevitable by the story told afterward."
+  minutes={7}
+/>
+
+## The thesis
+
+Taleb's point is not that the future is merely uncertain. It is that a small number of
+rare events can carry a wildly disproportionate share of the consequences, while the
+models and stories we use are built from the ordinary cases that came before them. A Black
+Swan is outside normal expectation, has an extreme effect, and acquires an explanation only
+after it has happened. The practical response is not to become a better prophet. It is to
+be less exposed to ruin, less certain about tidy forecasts, and readier for outcomes that
+do not fit the plan.
+
+## Why it matters
+
+Forecasts make the world feel legible. They can be useful within a familiar range, but they
+also invite an error of scale: treating a long run of ordinary observations as proof that
+the consequential surprise has been ruled out. This matters in finance, technology,
+operations, policy, and personal commitments. In each case, a rare break in the pattern can
+matter more than a hundred uneventful days. The question is not only, "What is likely?" It
+is also, "What happens if the thing we have not modeled arrives?"
+
+## A few outcomes can dominate the total
+
+In some domains, individual observations are comparable. One person's height does not
+transform the average height of a city. In other domains, the largest observation can dwarf
+the rest: one company can reshape an index, one hit can fund a studio, one failure can end a
+firm. Taleb calls attention to this difference because averages become much less reassuring
+when the tail can dominate the sum. The right first question is not whether an average looks
+stable. It is whether the domain lets a single extreme outcome rewrite the average.
+
+<Figure id="18.1" caption="In a concentrated domain, one exceptional outcome can outweigh a long run of ordinary ones.">
+  <Bars
+    className="block w-full min-w-[380px]"
+    items={[
+      { label: "many ordinary outcomes", value: 0.24, valueLabel: "small each" },
+      { label: "a strong outcome", value: 0.43, valueLabel: "larger" },
+      { label: "one extreme outcome", value: 0.75, accent: true, valueLabel: "sets result" },
+    ]}
+  />
+</Figure>
+
+## Do not use one kind of evidence for every domain
+
+The book contrasts two broad worlds. In a bounded world, variation has natural limits and
+the crowd tells you a great deal. In an unbounded world, scale, network effects, and
+winner-take-most dynamics leave room for a few cases to tower over the rest. This is a
+warning against moving statistics from one world into the other without checking their fit.
+An estimate built for routine variation can look precise while missing the mechanism that
+creates the largest losses or gains. Before trusting the bell-shaped comfort of a model,
+ask what limits the thing being measured.
+
+<Figure id="18.2" caption="Some domains stay bounded by their parts; others allow a few cases to set the result.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "bounded variation",
+      points: ["individual cases stay comparable", "extremes have a ceiling", "averages can describe the crowd", "ordinary history is more informative"],
+    }}
+    right={{
+      title: "concentrated variation",
+      points: ["a few cases can be enormous", "scale has no obvious ceiling", "averages can hide the driver", "tails need special attention"],
+    }}
+  />
+</Figure>
+
+## A finished story hides its alternatives
+
+Once an outcome is known, the events leading to it seem to line up like clues. A success
+looks like the natural reward for talent and a failure like the predictable cost of error.
+That feeling comes partly from selection: the many possible paths that did not become the
+actual outcome disappear from view. Explanation remains valuable, but it should not pretend
+to be a forecast that was available beforehand. A postmortem is strongest when it names the
+choices and conditions it can test, then leaves room for contingency instead of turning the
+result into a morality play.
+
+<Figure id="18.3" caption="Knowledge of the ending makes a contingent sequence feel cleaner than it was at the time.">
+  <Timeline
+    className="block w-full min-w-[520px]"
+    segments={[
+      { label: "many live paths", sub: "before the event" },
+      { label: "one outcome", sub: "what happened" },
+      { label: "select causes", sub: "what gets remembered" },
+      { label: "inevitable story", sub: "afterward" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Evidence arrives through a narrow door
+
+Visible successes are easy to study because they leave records, interviews, and lessons.
+The failures that used the same strategy and vanished often do not. This is silent evidence:
+the sample is shaped by what survived long enough to be noticed. A founder's habit, an
+investment rule, or a hiring ritual can look causal when we see it only among the survivors.
+Look deliberately for the missing comparison group. If it is unavailable, lower the
+confidence of the conclusion rather than filling the gap with a better anecdote.
+
+<Figure id="18.4" caption="What reaches us is often the visible survivor, not the full set of attempts.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="visible success stories"
+    waterlineLabel="what made it into the sample"
+    below={["unrecorded failures", "similar attempts", "paths that ended early"]}
+  />
+</Figure>
+
+## Unknown risk is different from ignored risk
+
+Not every damaging surprise is a Black Swan. Some risks are plain to see, but inconvenient,
+mispriced, or politically easy to postpone. A building without a fire exit has not been
+surprised by fire. Treating known hazards as unknowable can become an excuse for neglect.
+Taleb's harder claim concerns the part outside the model's field of view. The useful
+discipline is to separate the two: fix exposures that are already visible, then design the
+rest of the system so an unseen shock does not become fatal.
+
+<Figure id="18.5" caption="Known hazards call for direct repair; model-blind uncertainty calls for limits on damage.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "visible", right: "outside the model", label: "can the risk be named now?" }}
+    yAxis={{ low: "limited damage", high: "severe damage", label: "how bad if it occurs?" }}
+    quadrants={[
+      { title: "repair the exposure", note: "a known risk left open" },
+      { title: "build resilience", note: "the unknown must not ruin you" },
+      { title: "routine check", note: "monitor and maintain" },
+      { title: "preserve optionality", note: "avoid a fatal commitment" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## The Model
+
+The Black Swan is a three-part test, not a label for every unusual headline. First, the
+event sits outside the observer's regular expectations. Second, its effects are
+disproportionate. Third, people build a coherent account after the event that makes it feel
+as if it should have been expected. The point of the model is diagnostic. When an account
+is too smooth, ask which assumptions, alternatives, and limits it leaves outside the frame.
+
+<Figure id="18.6" caption="A Black Swan combines an unanticipated event, an outsized consequence, and an explanation assembled afterward.">
+  <Flow
+    className="block w-full min-w-[520px]"
+    steps={["outside regular expectation", "outsized consequence", "retrospective explanation"]}
+    highlight={1}
+    branch={{ up: "reduce ruin before it arrives", down: "mistake the story for foresight" }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write down the ruin case">
+For one meaningful decision, name the outcome you could not comfortably recover from: loss of
+liquidity, a safety failure, a locked-in contract, or a single-point dependency. Do not
+assign it a fake precise probability. Decide what exposure limit, reserve, or exit route
+keeps that outcome from ending the game.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Ask what the average is hiding">
+When someone presents a trend, average, or forecast, ask whether one extreme observation can
+dominate the result. If it can, request a view of the largest cases, the assumptions about
+the tail, and what would happen if the current winner disappeared.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Run a pre-mortem without a prediction">
+Before committing, imagine that the plan failed badly. List several different ways it could
+have happened, including a dependency or external change no one currently expects. The goal
+is not to guess the future. It is to uncover brittle assumptions and add a margin where one
+is cheap.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Keep options open when knowledge is thin">
+Prefer small reversible tests, diverse sources, cash or time reserves, and contracts with a
+real exit when the environment is hard to model. An option costs something, but it can keep
+uncertainty from becoming a forced bet.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Black Swan does not mean any negative surprise, and it does not absolve people who ignored a
+known vulnerability. A foreseeable hazard, such as excessive leverage or a missing backup,
+requires ordinary risk management. Nor does the concept prove that forecasting is useless.
+Short-horizon forecasts in stable, well-measured systems can guide real work. The limitation
+is scope: confidence should shrink as outcomes become more concentrated, feedback gets
+slower, and the model's assumptions carry more of the conclusion. The book's strongest
+practical lesson is about exposure, not clairvoyance: do not make a confident model the
+single thing standing between you and irreversible loss.
+</Callout>
+
+## If you remember one thing
+
+The most consequential event may be one your model cannot name. Use forecasts where they
+earn their keep, but build your important decisions so an unfamiliar shock cannot end your
+ability to act.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "predictably-irrational", "nudge"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/176226/the-black-swan-second-edition-by-nassim-nicholas-taleb/hardcover/"
+  buyLabel="The Black Swan by Nassim Nicholas Taleb"
+/>

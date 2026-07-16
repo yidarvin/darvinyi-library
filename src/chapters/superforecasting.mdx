@@ -1,0 +1,211 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, ProcessLoop, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="superforecasting"
+  thesis="Forecasting improves when you replace confident stories with explicit probabilities, test them against reality, and revise them whenever the evidence changes."
+  minutes={7}
+/>
+
+## The thesis
+
+Forecasting is a skill: break broad questions into answerable parts, anchor an initial
+probability in comparable cases, and state the odds openly. Revise those odds as evidence
+arrives, then let a scored record expose and improve the judgment.
+
+## Why it matters
+
+Organizations often ask for forecasts when they are really asking for reassurance. A senior
+person says a launch is likely to succeed, a committee calls a risk remote, or a report says
+conditions are improving. Those phrases conceal both the chance being claimed and the point
+at which it can be checked. A probability makes uncertainty discussable. A dated question
+with a clear outcome makes a forecast accountable.
+
+## Key ideas
+
+### Start by making the question smaller
+
+Big questions invite big stories. “Will this market recover?” can hold several different
+claims about demand, policy, timing, and what recovery even means. A forecaster first pins
+down the outcome, deadline, and relevant comparison class. Then the question can be broken
+into drivers that are less mysterious than the original whole. The purpose is not to make a
+complex event simple. It is to give each uncertainty a place where evidence can change it.
+
+<Figure id="47.1" caption="A forecast becomes workable when a broad question is broken into testable parts.">
+  <Flow
+    className="block w-full min-w-[440px]"
+    steps={["will this market recover?"]}
+    highlight={0}
+    branch={{ up: "demand strengthens", down: "policy supports recovery" }}
+    ariaLabel="One broad market-recovery question splits into the answerable drivers of demand strength and policy support."
+  />
+</Figure>
+
+### Begin outside the story
+
+The inside view starts with the particulars that feel vivid now: a charismatic founder, a
+fresh policy, a plausible plan. The outside view asks what happened in similar cases before
+those particulars were known. That base rate is not a verdict. It is an anchor against the
+mind's habit of treating the present case as unprecedented. Start with the comparison class,
+then move away from it only for evidence that genuinely distinguishes this case.
+
+<Figure id="47.2" caption="The outside view supplies a starting point; case-specific evidence earns the adjustment.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "inside view",
+      points: ["starts with this case", "builds a causal story", "can overweight vivid facts", "asks why this time differs"],
+    }}
+    right={{
+      title: "outside view",
+      points: ["starts with comparable cases", "sets a base rate", "guards against novelty", "then tests the difference"],
+    }}
+  />
+</Figure>
+
+### Use a number, not a foggy phrase
+
+“Possible,” “likely,” and “a fair chance” sound informative until two people attach very
+different odds to the same words. A percentage does not remove judgment, but it exposes the
+judgment for discussion. Is 70 percent really more defensible than 55? What evidence would
+move it? The number also preserves useful distinctions. Treating 51 percent and 99 percent
+as the same prediction, because both are called yes, throws away most of what the forecaster
+knows.
+
+<Figure id="47.3" caption="A probability preserves degrees of belief that a yes-or-no forecast throws away.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="will not happen"
+    right="will happen"
+    marker={0.62}
+    markerLabel="62% now"
+    zones={[
+      { from: 0.02, to: 0.32, label: "unlikely" },
+      { from: 0.4, to: 0.64, label: "live uncertainty" },
+      { from: 0.74, to: 0.98, label: "likely, not certain" },
+    ]}
+  />
+</Figure>
+
+### Update in small, visible steps
+
+A first estimate is a starting position, not a promise to defend. New reporting, an observed
+decision, a failed prerequisite, or a missing deadline can all change the odds. The useful
+move is to say what changed, adjust by an amount that matches its weight, and leave a record
+of the revision. This avoids two opposite errors: freezing at the opening estimate, and
+swerving with every headline. Good forecasters retain a view while holding it loosely.
+
+<Figure id="47.4" caption="Forecasting improves through a repeated cycle of evidence, adjustment, and feedback.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["current estimate", "new evidence", "adjust the odds", "record and review"]}
+    compoundingEdge={3}
+    centerLabel="perpetual revision"
+  />
+</Figure>
+
+### Keep score across many questions
+
+Forecasting skill cannot be read from one dramatic call. An event can resolve in your favor
+for the wrong reasons, and a sensible probability can lose to an unlikely outcome. The test
+comes from a long record of forecasts that later resolve. Scoring rules reward being close
+to what happened and penalize both overconfidence and empty hedging. Calibration is the
+plain-language check: outcomes assigned about 70 percent should occur around seven times in
+ten over a large enough set.
+
+<Figure id="47.5" caption="A resolved forecast creates feedback; a record of many resolutions reveals calibration.">
+  <Timeline
+    className="block w-full min-w-[520px]"
+    segments={[
+      { label: "state odds", sub: "before resolution" },
+      { label: "update", sub: "as evidence arrives" },
+      { label: "resolve", sub: "outcome becomes known" },
+      { label: "score the record", sub: "learn across many calls" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+### Make disagreement do useful work
+
+Groups can turn into an echo chamber, especially when a confident person supplies the first
+answer. The better version of collaboration keeps individual estimates visible, asks people
+to name their evidence, and treats disagreement as a search for information that someone
+else missed. Combining independent views can reduce individual blind spots, while challenge
+keeps the combined view from becoming a polite average. A team helps when it creates more
+honest comparison, not when it manufactures consensus.
+
+<Figure id="47.6" caption="Independent estimates, challenge, and aggregation can produce a stronger shared forecast.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "views", label: "separate estimates", x: 0.5, y: 0.1 },
+      { id: "evidence", label: "share evidence", x: 0.12, y: 0.52 },
+      { id: "challenge", label: "test assumptions", x: 0.88, y: 0.52 },
+      { id: "aggregate", label: "aggregate forecast", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "views", to: "evidence" },
+      { from: "views", to: "challenge" },
+      { from: "evidence", to: "aggregate", kind: "reinforcing", label: "signal" },
+      { from: "challenge", to: "aggregate", kind: "reinforcing", label: "correction" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Turn one prediction into a question">
+Pick a decision you expect to revisit within six months. Write an outcome that can be checked,
+the date by which it will resolve, and what counts as yes. If the question cannot be scored,
+make it narrower until it can.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Set an outside-view starting point">
+Before reading the latest news, name three to ten comparable cases and write a rough base
+rate. The comparison will be imperfect. That is fine. Its job is to prevent a fresh narrative
+from becoming your only evidence.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make an update ledger">
+Record your current percentage, the two strongest reasons for it, and the next fact that
+would shift it. When that fact arrives, move the number and write one sentence explaining
+why. Do not erase the old estimate.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Review the resolved calls">
+At the end of the period, collect the questions that resolved. Look for a pattern rather than
+a flattering anecdote: were high probabilities too high, low probabilities too low, or were
+you repeatedly missing one kind of driver? Change the process before making the next set of
+calls.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Superforecasting is not a claim that the future can be mastered, or that a percentage tells
+you what to do. A forecast describes uncertainty; a decision also needs stakes, values,
+constraints, and a plan for losses. The evidence behind the approach comes largely from
+many dated geopolitical questions in a tournament, where outcomes and scores were available.
+That supports a disciplined way to make and improve forecasts. It does not guarantee that a
+small team can foresee a singular crisis, estimate an event with no useful comparison class,
+or transfer a good track record unchanged to every domain. Explicit probabilities can still
+be badly wrong. Their advantage is that wrongness becomes visible enough to study.
+</Callout>
+
+## If you remember one thing
+
+Treat every forecast as a revisable probability, not a badge of confidence. Break the
+question down, begin with the base rate, write the odds, and let a scored record teach you
+where your judgment needs to move.
+
+The nearby shelf offers the bias diagnosis behind better updates, a warning about extreme
+unknowns, and a guide to decisions made under uncertainty.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "black-swan", "nudge"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/227815/superforecasting-by-philip-e-tetlock-and-dan-gardner/"
+  buyLabel="Superforecasting by Philip E. Tetlock and Dan Gardner"
+/>

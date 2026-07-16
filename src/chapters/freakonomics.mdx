@@ -1,0 +1,205 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Matrix, NodeGraph, ProcessLoop } from "../components/diagrams";
+
+<Hero
+  slug="freakonomics"
+  thesis="The useful question is often not what people say they value, but what their choices reward, punish, and make possible."
+  minutes={7}
+/>
+
+## The thesis
+
+*Freakonomics* borrows the economist's habit of looking for incentives and applies it
+far beyond markets. A rule, price, status signal, or fear of embarrassment can change
+what people do, including people who insist they are doing something for another reason.
+The book's lasting contribution is a posture: treat a surprising pattern as a question,
+then look for the payoffs, information gaps, and evidence that might explain it.
+
+## Why it matters
+
+Public arguments tend to begin with labels: good policy, bad actor, sensible rule. That
+is a thin description of a system. A closer look asks who can gain, who can lose, what
+can be measured, and which alternatives were available. That shift does not turn every
+human question into a transaction. It does make vague explanations earn their keep.
+
+## Incentives have more than one currency
+
+Money is the obvious reward, but it is rarely the only one. Approval, belonging,
+reputation, guilt, autonomy, and the desire to avoid shame can move behavior just as
+strongly. These motives can reinforce one another or collide. A bonus may encourage
+effort, while the same bonus can make an activity feel less generous or less trustworthy.
+The practical task is to name the currencies in play before predicting a response.
+
+<Figure id="20.1" caption="A choice can carry financial, social, and personal consequences at the same time.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="none"
+    left={{
+      title: "visible incentive",
+      points: ["money", "time saved", "penalty avoided", "access gained"],
+    }}
+    right={{
+      title: "less visible incentive",
+      points: ["status", "belonging", "self-image", "disapproval avoided"],
+    }}
+  />
+</Figure>
+
+## A target can redirect effort
+
+Measures are useful because they focus attention. They are risky because people learn
+the measure. When a score becomes tied to pay, promotion, or prestige, some effort goes
+into improving the thing measured and some may go into making the score look better.
+That is not proof of bad character. It is a design problem. A well-built system pairs a
+meaningful target with checks that make hollow success hard to sustain.
+
+<Figure id="20.2" caption="A high-stakes metric can improve the work or invite work that only improves the metric.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["set a metric", "attach a consequence", "adapt behavior"]}
+    highlight={1}
+    branch={{ up: "improve the work", down: "game the measure" }}
+  />
+</Figure>
+
+## The headline is only the surface
+
+An outcome is easy to see: a price, a ranking, a test score, a crime rate. Its causes are
+not. The same number can result from different combinations of opportunity, knowledge,
+constraints, and incentives. That is why a striking result should prompt a second round
+of questions rather than a quick moral verdict. The gap between the visible outcome and
+the underlying system is where the investigation begins.
+
+<Figure id="20.3" caption="The reported outcome sits above a larger set of conditions that can produce it.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the observed result"
+    below={["who knows what", "what each option costs", "rules and constraints", "what the measure misses"]}
+    waterlineLabel="what the headline leaves out"
+  />
+</Figure>
+
+## Data makes a hunch answerable
+
+The book is at its strongest when it treats records as clues rather than decoration.
+Unusual answer strings, transaction timing, or a shift in behavior can turn a suspicion
+into a claim that could be wrong. Then the work begins: compare with a sensible baseline,
+search for rival explanations, and see whether the pattern survives. A pile of numbers is
+not an explanation. It becomes useful when it can distinguish one account from another.
+
+<Figure id="20.4" caption="Evidence becomes stronger when a pattern is tested against alternative explanations.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "question", label: "specific question", x: 0.5, y: 0.06 },
+      { id: "records", label: "relevant records", x: 0.1, y: 0.43 },
+      { id: "pattern", label: "observed pattern", x: 0.5, y: 0.76 },
+      { id: "rivals", label: "rival explanations", x: 0.9, y: 0.43 },
+    ]}
+    edges={[
+      { from: "question", to: "records" },
+      { from: "records", to: "pattern" },
+      { from: "pattern", to: "rivals" },
+      { from: "rivals", to: "question" },
+    ]}
+  />
+</Figure>
+
+## Correlation opens the case; it does not close it
+
+Two facts moving together may have a direct connection. They may also share a hidden
+cause, or one may simply arrive first by coincidence. The difference matters most when a
+claim will shape policy or blame. Good causal work looks for a comparison that makes the
+world with the proposed cause resemble the world without it, except for that cause. Such
+comparisons are difficult, and the confidence they earn should stay proportional to the
+evidence.
+
+<Figure id="20.5" caption="A causal claim needs both a plausible mechanism and a credible comparison.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "weak", right: "strong", label: "comparison" }}
+    yAxis={{ low: "weak", high: "strong", label: "mechanism" }}
+    quadrants={[
+      { title: "interesting story", note: "plausible, untested" },
+      { title: "causal confidence", note: "still provisional" },
+      { title: "coincidence risk", note: "thin on both" },
+      { title: "candidate explanation", note: "test it harder" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## The Model
+
+An incentive is not a button that produces one predictable reaction. It is a loop. Someone
+notices a reward or penalty, interprets it through their own constraints and values, acts,
+and creates an outcome that the institution may measure and respond to. The next version
+of the rule begins from that outcome. Follow the loop when designing a policy, compensation
+plan, school metric, or household rule. The most useful question is often: what behavior
+does this setup make sensible from the participant's point of view?
+
+<Figure id="20.6" caption="Incentives work through interpretation, action, and feedback, not as a simple command.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["reward or penalty", "perceived payoff", "chosen action", "measured outcome"]}
+    compoundingEdge={3}
+    centerLabel="incentive loop"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Map one live incentive">
+Choose a system you use this week, such as a team dashboard, household chore, or loyalty
+program. Write down what it rewards, what it penalizes, and what it leaves unmeasured.
+Then ask what a reasonable person would optimize inside those rules.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Look for the cheap substitute">
+For the result you want, name the easiest way to make the number look better without
+making the underlying work better. If you can name it in a minute, the system needs a
+second measure, an audit, or a different reward.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Separate the pattern from the story">
+When you encounter a surprising statistic, write two sentences: one that states only what
+changed, and one that states the explanation you are tempted to believe. Treat the second
+sentence as a hypothesis. What comparison or missing record could prove it wrong?
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Ask the other side's question">
+Before judging a choice you dislike, list the constraints and information the person may
+face. This does not excuse harmful behavior. It makes your proposed fix more likely to
+change the conditions that produced it.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book's style can make a clever explanation feel more certain than the evidence warrants.
+Incentives matter, but people also act from care, habit, identity, and values that do not
+reduce cleanly to a payoff. Its most controversial policy claim, the connection between
+abortion legalization and later crime rates, remains contested. A subsequent comment on
+the original analysis identified a coding error and specification sensitivity, while the
+authors defended revised estimates in reply. Treat this episode as a lesson in humility:
+an arresting correlation is a reason to investigate, not a license for a settled conclusion.
+The authors' own research on test-score manipulation is more useful as a narrow design
+lesson: high stakes can create distortions, so any system that rewards a number needs
+independent ways to check the underlying work.
+</Callout>
+
+## If you remember one thing
+
+When a system produces a surprising result, start by asking what it rewards and what it
+makes easy to hide. Then hold the explanation to the same standard as the people inside
+the system: show the evidence, test the alternatives, and keep the conclusion provisional.
+
+For a companion on choice design, see *Nudge*; for a reminder that neat stories can outrun
+the evidence, see *The Black Swan*.
+
+<ShelvedNearby
+  related={["nudge", "black-swan"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/103315/freakonomics-by-steven-d-levitt-and-stephen-j-dubner/"
+  buyLabel="Freakonomics by Steven Levitt and Stephen Dubner"
+/>

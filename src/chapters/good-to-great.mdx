@@ -1,0 +1,245 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, ProcessLoop, Spectrum, Venn } from "../components/diagrams";
+
+<Hero
+  slug="good-to-great"
+  thesis="Enduring performance is built through leaders who serve the work, a clear arena for disciplined choices, and many small actions that make momentum easier to sustain."
+  minutes={8}
+/>
+
+## The thesis
+
+Collins asks why a small group of established companies made a sustained improvement while
+similar firms did not. He argues that humble, willful leadership and disciplined focus make
+the repeated execution through which momentum compounds.
+
+## Why it matters
+
+Organizations often react to a disappointing period by searching for a rescue: a celebrity
+chief executive, a new slogan, a sweeping reorganization, or a fashionable tool. That search
+is understandable because visible events make a satisfying story. The book directs attention
+to plainer questions. Who can work together on hard truths? What should this organization
+be unusually good at? Which activities deserve sustained effort, and which should end? Those
+questions do not make the work easy. They make it possible to distinguish a durable practice
+from a burst of theater.
+
+## Leadership can be modest and exacting at once
+
+The book's Level 5 leader is not defined by a particular temperament. The useful contrast is
+where ambition points. A leader can be personally modest while holding an unusually demanding
+standard for the organization. That combination changes how credit and blame move through a
+team. Success becomes evidence that the system and its people are improving, not proof that
+one person is exceptional. Setbacks become information to own and examine, rather than a
+story to pin on somebody else.
+
+<Figure id="21.1" caption="The leadership test is where ambition and accountability are directed.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "personal stature",
+      points: ["status becomes the measure", "credit collects upward", "bad news threatens the image", "the team waits for a hero"],
+    }}
+    right={{
+      title: "the work outlasts you",
+      points: ["the mission sets the standard", "credit spreads to the people doing it", "bad news improves the next decision", "the system can keep working"],
+    }}
+  />
+</Figure>
+
+## People shape the strategy they can carry
+
+Strategy is often treated as a plan that leaders hand to an organization. Collins reverses
+the order. Before committing to a direction, build a team capable of arguing honestly,
+learning quickly, and taking responsibility for a shared result. That does not mean finding
+generic "A players" or assembling clones. It means being rigorous about role fit, values,
+and the kind of judgment the work will require. Once the right group is in place, choices
+about markets, products, and priorities can be made with more candor and followed with less
+coercion.
+
+<Figure id="21.2" caption="A sound direction depends on the people who must test, choose, and carry it.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["choose for judgment and fit", "put the right people in roles", "let the team test reality", "commit to a direction"]}
+    highlight={1}
+  />
+</Figure>
+
+## Reality is useful even when it is unwelcome
+
+Hope is valuable when it keeps a team engaged. It becomes dangerous when it edits the facts.
+The book argues for holding resolve and evidence together: keep faith that the work can
+improve, while refusing to soften the information that says how far there is to go. Revenue
+that flatters a dying product, a customer complaint that repeats, or a capability the team
+does not actually possess should be brought into view early. Candor is not pessimism. It is
+the raw material for a decision that has a chance of working.
+
+<Figure id="21.3" caption="Confidence is visible; the evidence that keeps it honest often sits below the surface.">
+  <Iceberg
+    className="block w-full min-w-[400px]"
+    above="the plan people can repeat"
+    waterlineLabel="the story everyone hears"
+    below={["operating evidence", "unmet customer needs", "capability gaps", "assumptions to test"]}
+  />
+</Figure>
+
+## A focus is earned at the overlap
+
+The Hedgehog Concept is a demanding filter, not a request for a catchy mission statement.
+It asks an organization to locate the overlap between an activity it can become truly strong
+at, work that gives people real energy, and an economic measure that explains how the effort
+can keep funding itself. The first answer is rarely good enough. A team discovers the focus
+by examining performance, making tradeoffs, and revising its view. The point is not to claim
+that every company can be best at anything. It is to stop mistaking historical competence for
+the field where concentrated effort will pay off.
+
+<Figure id="21.4" caption="A useful focus is narrow enough to connect capability, commitment, and economic return.">
+  <Venn
+    className="block w-full min-w-[400px]"
+    sets={[
+      { label: "a capability to build deeply" },
+      { label: "work people care to sustain" },
+      { label: "an economic engine" },
+    ]}
+    intersectionLabel="the focused arena"
+  />
+</Figure>
+
+## Discipline becomes freedom when the boundaries are clear
+
+The word discipline can suggest control imposed from above. Here it works differently. A
+clear focus reduces the number of decisions that need to be renegotiated, so people can act
+with more autonomy inside a coherent boundary. The discipline lies in refusing attractive
+work that does not fit, not in writing rules for every situation. A practical companion is a
+stop-doing list. Every new priority consumes attention, money, and leadership time. Stopping
+an activity that no longer belongs may be the most serious act of focus.
+
+<Figure id="21.5" caption="As the decision boundary becomes clearer, effort can move from scattered activity toward focused action.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="many unrelated bets"
+    right="disciplined focus"
+    marker={0.78}
+    markerLabel="the stop-doing line"
+    zones={[
+      { from: 0, to: 0.4, label: "attention leaks across competing work" },
+      { from: 0.62, to: 1, label: "freedom inside a clear boundary", accent: true },
+    ]}
+  />
+</Figure>
+
+## Momentum comes from repeated useful turns
+
+The flywheel is a corrective to the fantasy of a single breakthrough. A good decision,
+executed well, produces a little evidence and capacity. That makes the next good decision
+more likely, and the cycle eventually becomes visible from outside as momentum. The opposite
+pattern is the doom loop: frequent changes in direction, each announced as the answer, that
+prevent a team from learning what sustained work would have produced. Technology belongs in
+this picture as an amplifier. It can strengthen a coherent system, but it cannot supply the
+coherence that was missing.
+
+<Figure id="21.6" caption="Momentum grows when each turn supports the next, rather than restarting the work.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["a focused choice", "disciplined execution", "evidence and capability", "more confidence to invest"]}
+    compoundingEdge={3}
+    centerLabel="the flywheel"
+  />
+</Figure>
+
+## The Model
+
+The three signature ideas work as a sequence. Level 5 leadership creates the conditions for
+truthful decisions by placing the cause above the leader's image. The Hedgehog Concept gives
+those decisions a demanding filter, defining where the organization will concentrate. The
+flywheel describes what happens when that focus is practiced long enough to accumulate
+evidence, capability, and trust. The arrows matter: a leader without a focus can scatter a
+team, and a focus without steady execution remains a slide on a wall.
+
+<Figure id="21.7" caption="Leadership creates the conditions, focus directs the effort, and repeated execution builds momentum.">
+  <div className="min-w-[800px] space-y-6">
+    <Flow
+      className="block w-full"
+      steps={["Level 5 leadership", "Hedgehog Concept", "flywheel momentum"]}
+      highlight={1}
+      ariaLabel="Level 5 leadership leads to the Hedgehog Concept, which directs the flywheel momentum loop."
+    />
+    <div className="grid grid-cols-2 gap-6">
+      <Venn
+        className="block w-full"
+        sets={[
+          { label: "deep capability" },
+          { label: "enduring commitment" },
+          { label: "an economic engine" },
+        ]}
+        intersectionLabel="Hedgehog focus"
+      />
+      <ProcessLoop
+        className="block w-full"
+        stages={["focused choices", "consistent execution", "evidence and capacity", "confidence to invest again"]}
+        compoundingEdge={3}
+        centerLabel="the flywheel"
+      />
+    </div>
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Run a fact session before a planning session">
+Choose one important assumption in the current plan. Ask the team to bring disconfirming
+evidence, not supporting opinions: customer behavior, operating data, failed attempts, or a
+capability the plan quietly assumes. Record what would change your mind. Do this before the
+meeting where resources are assigned.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Write the boundary in one working sentence">
+Describe the arena where you intend to concentrate for the next twelve months. Include the
+capability you will build, the people you are serving, and the measure that makes the effort
+viable. Then list three plausible projects that do not fit. A boundary becomes real when it
+can rule something out.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make a stop-doing decision">
+Find one recurring meeting, offering, report, or initiative that consumes effort without
+advancing the stated focus. Name its owner, decide whether it ends or shrinks, and say where
+the released time will go. Do not replace it with a vague promise to work harder.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Define one flywheel turn">
+Pick a small action that, if completed weekly, would improve both present results and the
+ability to repeat them. A better customer handoff might reduce errors now and expose the
+process for the next team member. Track the action and its leading evidence for six weeks
+before declaring a new program.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Good to Great is most useful as a set of questions, not as a causal formula. Collins's study
+used a selected group of companies and matched comparisons, which is stronger than telling
+success stories alone but cannot isolate every cause of later performance. The book's own
+examples also belong to a particular period and industry context, and later outcomes remind
+us that a company can have an exceptional run without earning permanent greatness. Level 5
+leadership is not a personality test, the three circles are not a license to ignore workers
+or customers outside a narrow metric, and discipline cannot compensate for a harmful product
+or a broken market. Test the framework against your setting and keep revising when the facts
+say it no longer fits.
+</Callout>
+
+## If you remember one thing
+
+Do not wait for a grand turning point. Build a leadership team that can face reality, choose
+a demanding field of focus, and repeat the work that makes the next good decision easier.
+Momentum is usually the record of those ordinary turns.
+
+The 7 Habits of Highly Effective People supplies a personal version of principle-led
+discipline, while Start With Why explores how a clear purpose can give organizational choices
+a shared direction.
+
+<ShelvedNearby
+  related={["seven-habits", "start-with-why", "how-to-win-friends"]}
+  buyUrl="https://www.harpercollins.com/products/good-to-great-jim-collins"
+  buyLabel="Good to Great by Jim Collins"
+/>

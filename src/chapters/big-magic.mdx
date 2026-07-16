@@ -1,0 +1,198 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum, Venn } from "../components/diagrams";
+
+<Hero
+  slug="big-magic"
+  thesis="A creative life gets moving when curiosity chooses the next small piece of work, even while fear remains in the room."
+  minutes={6}
+/>
+
+## The thesis
+
+Gilbert treats creativity less as a verdict on talent than as a way of participating in
+life. Fear will still offer reasons to wait, hide, or make the work impossibly important.
+The more useful response is not to defeat it. It is to let curiosity pick a modest next
+move, make the work with ordinary persistence, and keep enough practical stability that
+the work can continue.
+
+## Why it matters
+
+People often postpone making things until they have proof that the result will matter.
+That bargain is backwards. The proof can only arrive after a person has made a number of
+small, uncertain attempts. A creative practice gives uncertainty somewhere to go. It turns
+private interest into experiments, drafts, conversations, and eventually a body of work.
+
+## Fear can ride along without choosing the route
+
+Fear has a sensible job: it notices exposure, uncertainty, and the possibility of looking
+foolish. The trouble starts when that alarm becomes the decision-maker. Then it treats a
+rough first draft, an untrained hand, or an untested idea as evidence that the project should
+not exist. Curiosity makes a narrower request. It asks what is interesting enough to inspect
+for one more hour. That question does not promise safety, but it produces motion.
+
+<Figure id="43.1" caption="Fear can report the risk; curiosity can still choose the next move.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "fear in charge",
+      points: ["scans for embarrassment", "demands a guarantee", "turns a draft into a verdict", "delays the start"],
+    }}
+    right={{
+      title: "curiosity in charge",
+      points: ["notices a live question", "accepts a small experiment", "treats a draft as material", "returns to the work"],
+    }}
+  />
+</Figure>
+
+## Follow the small fascination
+
+An ambitious project can become so heavy that it freezes its maker. A passing interest is
+lighter. It might be a color combination, a historical detail, a question from a friend, or
+a sentence that will not leave you alone. Gilbert's practical wager is to follow that thread
+before deciding what grand purpose it serves. Repeated attention reveals whether the thread
+has more to give. If it does not, little is lost. If it does, a direction has appeared by
+way of the work itself.
+
+<Figure id="43.2" caption="A small fascination becomes a direction by being tested in the work.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["notice a pull", "make a small study", "return with attention", "find the next question"]}
+    highlight={1}
+  />
+</Figure>
+
+## The visible piece rests on unglamorous practice
+
+Finished work gets attention because it can be shown. The conditions that made it possible
+usually do not. They include private repetition, discarded versions, a calendar defended
+against distraction, and the boring arrangements that keep a life functioning. This matters
+because comparing your ordinary middle to someone else's finished surface makes persistence
+look like a sign of failure. The middle is the job. A practice becomes less dramatic and more
+durable when it includes room for work no one will applaud.
+
+<Figure id="43.3" caption="What reaches an audience is supported by much more private, routine work.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the finished piece"
+    below={["unshown practice", "discarded attempts", "time and logistics", "returning after doubt"]}
+    waterlineLabel="what other people can see"
+  />
+</Figure>
+
+## Permission comes before confidence
+
+Confidence is often described as the entry ticket to creative work. In practice it is more
+often a late result. A person begins with uneven skill and incomplete permission, then gains
+evidence by making things anyway. The useful standard is not immediate mastery. It is a
+willingness to remain a beginner long enough to learn what the medium asks of you. That
+posture makes play possible, and play is where taste gets a chance to become craft.
+
+<Figure id="43.4" caption="Creative confidence can grow after permission to be unfinished, not before it.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="prove yourself"
+    right="practice in public"
+    marker={0.68}
+    markerLabel="permission first"
+    zones={[
+      { from: 0.02, to: 0.36, label: "waiting for certainty" },
+      { from: 0.58, to: 0.98, label: "learning by making", accent: true },
+    ]}
+  />
+</Figure>
+
+## Give the work a life it can afford
+
+Art can matter deeply without being required to pay every bill immediately. Gilbert argues
+for taking the work seriously enough to protect it, while refusing to make it carry the whole
+weight of identity, status, and income. A job, a schedule, and modest expectations are not
+betrayals of the project. They can be the structure that lets it stay playful and survive its
+early, unprofitable years. The aim is not to make art casual. It is to keep it free enough
+to grow.
+
+<Figure id="43.5" caption="A durable practice sits where attention, craft, and practical support meet.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[{ label: "steady support" }, { label: "regular craft" }, { label: "playful interest" }]}
+    intersectionLabel="work you can keep making"
+  />
+</Figure>
+
+## Release the work, then make the next thing
+
+Finishing has a special kind of risk. Once a piece leaves the studio, it can be ignored,
+misread, praised for the wrong reason, or judged harshly. Keeping it hidden avoids those
+outcomes, but it also traps the maker in a private loop where no project becomes complete.
+Gilbert's answer is continued participation: care for the piece, release it when it is ready,
+receive whatever response arrives, and turn back toward the next piece. The practice is
+larger than any one result.
+
+<Figure id="43.6" caption="Releasing one piece creates feedback, resilience, and material for the next one.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "care", label: "care for the idea", x: 0.5, y: 0.1 },
+      { id: "make", label: "make the piece", x: 0.14, y: 0.52 },
+      { id: "release", label: "release it", x: 0.86, y: 0.52 },
+      { id: "return", label: "return to work", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "care", to: "make" },
+      { from: "make", to: "release" },
+      { from: "release", to: "return", label: "response" },
+      { from: "return", to: "care", kind: "reinforcing", label: "more material" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Keep a curiosity ledger">
+For one week, write down the things that hold your attention for a few extra seconds. Do not
+rank them or explain them. At the end of the week, choose one and give it forty-five minutes
+of undistracted making. The assignment is to investigate, not to produce something impressive.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Make the project smaller">
+Name the version of your project that feels too consequential to begin. Cut it to a study you
+could finish this week: one scene, three photographs, a rough model, a two-minute melody, or
+a page of notes. Finish the small form before deciding what its larger version should be.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Build a practical container">
+Choose two recurring sessions for the next month, and protect them like appointments. Then
+name the support that makes those sessions possible: a budget, a quieter room, childcare, a
+work boundary, or permission to do less elsewhere. Treat that support as part of the practice.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Set a release rule">
+Pick one piece of work that has been waiting for perfect conditions. Define a specific finish
+line and one person or place that will receive it. When the line is met, send it. Start the
+next small piece before you know what the response means.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Gilbert's language of ideas seeking people is a useful metaphor, not a testable account of
+where inspiration comes from. It can reduce self-importance and make experimentation feel
+lighter, but it should not turn a stalled project into a mystical waiting game. Fear is also
+not always ordinary creative reluctance. When anxiety, trauma, or depression makes work or
+daily life feel unmanageable, creative advice is not a replacement for appropriate support.
+</Callout>
+
+## If you remember one thing
+
+Let curiosity choose a small piece of work, and let fear complain from the passenger seat.
+The reliable creative life is built by returning, not by waiting to feel fearless or certain.
+
+The nearby shelf offers a companion for protected concentration, one for motivation, and one
+for the long practice of persistence.
+
+<ShelvedNearby
+  related={["deep-work", "drive", "grit"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/318863/big-magic-by-elizabeth-gilbert/"
+  buyLabel="Big Magic by Elizabeth Gilbert"
+/>

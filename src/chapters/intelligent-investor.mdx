@@ -1,0 +1,240 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Flow, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="intelligent-investor"
+  thesis="Invest with a buffer for being wrong, and treat the market's changing price as an offer to examine, never an order to obey."
+  minutes={9}
+/>
+
+## The thesis
+
+Graham's central move is to separate a business from the price quoted for a piece of it.
+Markets can be useful because they make ownership liquid, but they become dangerous when their
+moods set the investor's judgment. An investment earns the name when it rests on careful
+analysis, protects the principal as well as it can, and seeks a reasonable return. The
+discipline is to pay less than a conservative estimate of value, diversify the things that can
+still go wrong, and choose a method that fits the work you are actually prepared to do.
+
+## Why it matters
+
+Markets turn a live stream of changing prices into a feeling of urgency. A rising quote can make
+patience feel foolish, while a falling one can make a sound holding feel unsafe. Graham's
+argument gives that feeling a counterweight: a price is information about what someone will pay
+today. It is not, by itself, information about what the business is worth or what you should do.
+
+## Investment starts with a claim you can examine
+
+Graham draws a hard line between investing and speculation. An operation is an investment only
+when careful analysis supports it, the principal has meaningful protection, and the expected
+return is reasonable. Everything outside that test is speculation, whether the gap is weak
+analysis, inadequate protection against loss, or an unrealistic expected return. A forecast
+about what another buyer may pay later is one familiar speculative case, not the whole category.
+
+The useful question is not whether a position will rise next month. It is what has to be true
+for the owner to receive a satisfactory result, and what evidence supports that claim. When the
+answer is mostly a hoped-for change in sentiment, the position deserves the smaller, more
+honest label.
+
+<Figure id="19.1" caption="The investment test is positive; an operation outside it is speculative, including a price forecast.">
+  <Compare
+    className="block w-full min-w-[380px]"
+    favor="left"
+    left={{
+      title: "investment",
+      points: ["careful business analysis", "protection of principal", "reasonable return sought", "price tested against value"],
+    }}
+    right={{
+      title: "speculation",
+      points: ["falls outside the test", "analysis or protection is thin", "may forecast a future price", "sentiment can become evidence"],
+    }}
+  />
+</Figure>
+
+## Price and value are different measurements
+
+A business has operations, assets, debts, customers, and an ability to produce cash over time.
+Its market price is the number currently attached to a share. The two influence each other, but
+they are not identical. A fine business can be a poor purchase when expectations have inflated
+the price. A troubled business can be a good purchase only if the price leaves enough room for
+the trouble already visible and the trouble you missed.
+
+This is why valuation is not an ornament added after a story about quality. It is the part that
+asks what the story is worth. Graham favors durable evidence over a single exciting forecast:
+financial strength, a record across more than one year, and an estimate that does not require
+perfection to work.
+
+<Figure id="19.2" caption="Business value changes gradually; the quoted price can move much faster around it.">
+  <Bars
+    className="block w-full min-w-[380px]"
+    items={[
+      { label: "business value", value: 0.58, valueLabel: "evidence-led" },
+      { label: "market price in a calm spell", value: 0.6, valueLabel: "near value" },
+      { label: "market price in excitement", value: 0.9, valueLabel: "premium" },
+      { label: "market price in fear", value: 0.32, accent: true, valueLabel: "check discount" },
+    ]}
+  />
+</Figure>
+
+## Safety is a buffer, not a prediction
+
+An estimate of value is always imperfect. Earnings disappoint, interest rates change, an asset
+is less useful than it looked, and an analyst can make a plain mistake. The margin of safety is
+the gap between a conservative estimate and the price paid. It does not make a weak business
+strong or eliminate loss. It makes the decision less dependent on getting every assumption
+right.
+
+The same idea reaches beyond individual shares. Diversification, a sensible allocation between
+asset types, and avoiding borrowed bets all keep one mistaken judgment from deciding the whole
+outcome. Safety is not the absence of uncertainty. It is arranging the portfolio so uncertainty
+does not get the final vote.
+
+<Figure id="19.3" caption="The wider the gap between a cautious value estimate and the price paid, the more error the decision can absorb.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="premium price"
+    right="discount price"
+    marker={0.74}
+    zones={[
+      { from: 0, to: 0.38, label: "good news is required" },
+      { from: 0.58, to: 1, label: "a margin of safety", accent: true },
+    ]}
+  />
+</Figure>
+
+## Match the strategy to the work you will do
+
+Graham's defensive and enterprising investors are separated by effort, not by courage. The
+defensive investor wants a durable, low-maintenance program and accepts that simplicity is a
+strength. The enterprising investor is willing to spend serious time finding and checking
+unusually attractive opportunities. Neither role is a status badge. The mistake is to want the
+results promised by extensive research while giving the portfolio only occasional attention.
+
+For most people, the defensive lesson is freeing: make a broad plan, set an allocation you can
+hold, contribute regularly, and rebalance by rule instead of by headline. More complicated
+work earns its place only when it is genuinely more rigorous than the simple alternative, after
+costs, taxes, and mistakes.
+
+<Figure id="19.4" caption="Your chosen level of effort sets the program: broad and disciplined, or selective and research-intensive.">
+  <Compare
+    className="block w-full min-w-[560px]"
+    favor="none"
+    left={{
+      title: "defensive",
+      points: ["broad, low-cost mix", "written allocation rule", "periodic rule-based review"],
+    }}
+    right={{
+      title: "enterprising",
+      points: ["selective opportunities", "sustained research", "strict comparison to value"],
+    }}
+  />
+</Figure>
+
+## Temperament keeps the method intact
+
+Investment intelligence is not a contest to identify the cleverest person in the room. A sound
+process can be abandoned by panic, boredom, envy, or the wish to recover a loss quickly. Graham
+therefore treats temperament as part of the equipment. The investor needs enough emotional
+distance to act on a written standard when the crowd is loud, and enough humility to admit that
+the standard will sometimes be wrong.
+
+That is also why a portfolio needs rules before the stressful moment. Decide how much risk is
+acceptable, what would justify a purchase, when to rebalance, and what evidence would overturn
+the thesis. A rule cannot make a judgment for you, but it can stop a passing mood from quietly
+becoming the judgment.
+
+<Figure id="19.5" caption="A written policy connects evidence to action, leaving market mood outside the decision loop.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "evidence", label: "business evidence", x: 0.5, y: 0.05 },
+      { id: "policy", label: "written policy", x: 0.83, y: 0.5 },
+      { id: "action", label: "patient action", x: 0.5, y: 0.94 },
+      { id: "review", label: "review and rebalance", x: 0.17, y: 0.5 },
+    ]}
+    edges={[
+      { from: "evidence", to: "policy" },
+      { from: "policy", to: "action" },
+      { from: "action", to: "review" },
+      { from: "review", to: "evidence" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+Mr. Market is Graham's compact way to describe the daily quotation. Imagine a partner who
+arrives each morning ready to buy your share of a business or sell you theirs. Some days the
+partner is cheerful and names an ambitious price. Other days the same partner is frightened and
+names a low one. Your advantage is that you do not have to answer. The quote exists to offer an
+option, not to dictate a belief.
+
+The model combines that freedom with a margin of safety. First estimate the business from
+evidence, then compare that estimate with the offered price. A wide enough discount may make an
+offer useful. A high price may justify selling, trimming, or simply doing nothing. Most quotes
+require no response at all. The central discipline is to let independent value do the judging.
+
+<Figure id="19.6" caption="Mr. Market supplies a changing offer; your estimate and safety buffer determine whether it deserves action.">
+  <Flow
+    className="block w-full min-w-[660px]"
+    steps={["Mr. Market names a price", "estimate business value", "check the safety buffer"]}
+    highlight={1}
+    branch={{ up: "wide discount: consider buying", down: "no buying case: wait or trim" }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write the job of each dollar">
+Separate money needed in the next few years from money with a long horizon. Near-term needs
+should not depend on a favorable market quotation arriving on schedule. For the long-term pool,
+write the mix of assets you intend to hold and why that mix fits your capacity for loss and
+change.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Make a one-page investment policy">
+State your target allocation, contribution rhythm, rebalancing rule, and the conditions under
+which you would change the plan. Keep it short enough to reread when a market move makes you
+want to improvise. If the policy is hard to follow in a bad year, simplify it before the bad
+year arrives.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Test an individual idea against a skeptical case">
+Before buying a single security, write a conservative value range and the facts behind it. Then
+list three ways the estimate could be too high: weaker earnings, more debt, tougher competition,
+or a damaged asset. If the purchase works only under the optimistic case, the price is doing too
+much of the work.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Turn market moves into a review cue">
+When a quote moves sharply, do not treat the move as a command. Check whether the business facts
+or your financial needs changed. If neither did, compare the new price with your written policy
+and the value work already done. The pause is often the most valuable part of the procedure.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Graham's principles travel better than his numerical screens. His portfolio ranges, bond
+examples, accounting measures, and bargain-hunting opportunities came from a very different
+market structure. A low price-to-book ratio, for example, can reflect a genuine bargain, a
+business built mostly from intangible assets, or a problem that the balance sheet has not yet
+captured. Margin of safety is also not a license to declare any low-priced security safe.
+Valuation is uncertain, diversification can still lose money, and no historical framework can
+provide personalized financial advice. For many investors, broad, low-cost diversification and
+a disciplined plan are a more faithful application of Graham's restraint than improvised stock
+picking.
+</Callout>
+
+## If you remember one thing
+
+The market can offer a price every day, but it cannot require a decision. Build a plan that can
+survive being wrong, compare price with conservative value, and act only when the gap gives you
+enough room to be imperfect.
+
+<ShelvedNearby
+  related={["psychology-of-money", "thinking-fast-and-slow", "black-swan"]}
+  buyUrl="https://www.harpercollins.com/products/the-intelligent-investor-benjamin-graham"
+  buyLabel="The Intelligent Investor by Benjamin Graham"
+/>

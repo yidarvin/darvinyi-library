@@ -1,0 +1,217 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Pyramid, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="on-writing"
+  thesis="Writing improves through a working exchange: read with attention, write on a regular schedule, then revise until the reader can enter the story."
+  minutes={7}
+/>
+
+## The thesis
+
+Good writing grows from an exchange between reading, regular writing, and unsparing revision:
+reading forms judgment, a daily practice produces material, and revision clears a path for the
+reader. King's life supplies the evidence, but the durable lesson is practical: craft comes
+from returning to the desk and seeing the work more clearly each time.
+
+## Why it matters
+
+Writing advice often separates inspiration from technique, as if one is romantic and the
+other mechanical. This book refuses that split. Taste needs material to work on, and routine
+needs a reason to matter. The memoir makes the craft advice feel earned: a writing life is
+not a mood one manages to preserve, but a practice one rebuilds through ordinary days,
+rejection, revision, and interruption.
+
+## Reading builds the inner editor
+
+Reading is not homework that happens before a person is allowed to write. It is where a
+writer absorbs pace, pressure, voice, and the difference between a sentence that carries its
+weight and one that merely occupies space. Wide reading also supplies standards. When a draft
+is dull, clumsy, or falsely dramatic, the writer has felt better alternatives at work in
+other books. The point is not to imitate a favorite author. It is to develop enough lived
+experience as a reader to notice the effects a draft is producing.
+
+<Figure id="45.1" caption="Reading sharpens taste, and pages written give that taste something to judge.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "read", label: "read attentively", x: 0.5, y: 0.1 },
+      { id: "notice", label: "notice effects", x: 0.12, y: 0.52 },
+      { id: "write", label: "write pages", x: 0.88, y: 0.52 },
+      { id: "judge", label: "judge the draft", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "read", to: "notice", label: "attention" },
+      { from: "notice", to: "write", label: "taste" },
+      { from: "write", to: "judge", label: "material" },
+      { from: "judge", to: "read", kind: "reinforcing", label: "sharper eye" },
+    ]}
+  />
+</Figure>
+
+## Tools serve the story
+
+Vocabulary, grammar, and style matter because they let a writer make precise choices. They
+are tools in the literal sense: a limited set of things kept close, learned through use, and
+selected for a task. Yet technical correctness does not manufacture a story. A polished
+sentence cannot rescue a scene with nobody wanting anything, no pressure, and no change. The
+craft stack starts with readable language, but it earns its place by carrying a character
+through a situation that matters.
+
+<Figure id="45.2" caption="Technical control supports the story; it does not replace it.">
+  <Pyramid
+    className="block w-full min-w-[440px]"
+    tiers={[
+      { label: "clear sentences", note: "the floor" },
+      { label: "specific choices", note: "the texture" },
+      { label: "character under pressure", note: "the engine" },
+      { label: "a story the reader follows", note: "the result" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## A routine makes room for the pages
+
+The useful question is not whether inspiration has arrived. It is whether the conditions for
+writing are present often enough for a draft to accumulate. King favors a private workspace,
+a clear daily target, and enough continuity that the work stays alive in the writer's mind.
+Those choices reduce the number of negotiations required before starting. The exact schedule
+can vary with health, employment, caregiving, and temperament. What matters is a regular
+container that turns a distant book into the next page.
+
+<Figure id="45.3" caption="A protected, repeatable session makes starting less dependent on the mood of the day.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="mood"
+    right="routine"
+    marker={0.74}
+    markerLabel="target"
+    zones={[
+      { from: 0.03, to: 0.37, label: "start only when inspired" },
+      { from: 0.58, to: 0.98, label: "protect the next session", accent: true },
+    ]}
+  />
+</Figure>
+
+## Draft privately, revise for the reader
+
+Early drafting needs momentum. If every paragraph is judged against an imagined audience,
+the writer can start performing before the story has found its shape. Write the first pass
+for the material itself, following the people and problems on the page. Revision changes the
+question. Now the writer asks what a reader can understand, where attention slows, which
+details are doing useful work, and what needs to be explained or removed. These are distinct
+jobs, so treating them as separate passes protects both discovery and communication.
+
+<Figure id="45.4" caption="Discovery and revision ask different questions of the same manuscript.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={[
+      "write the private draft",
+      "let the shape appear",
+      "read with distance",
+      "revise for a reader",
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Revision finds the real proportion
+
+Cutting is an act of respect for the reader's attention. A draft commonly contains the
+writer's warm-up, repeated explanations, favorite flourishes, and every fact gathered during
+research. Some of that material was necessary to discover the story, even if it is no longer
+necessary on the page. Revision asks each section to earn its space. Keep the details that
+create a particular world, clarify a choice, or increase pressure. Compress the rest until
+the piece moves with more force and less insistence.
+
+<Figure id="45.5" caption="A first draft holds discovery; a revision keeps the parts that carry the reader forward.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "draft material",
+      points: ["warm-up passages", "repeated explanation", "research kept for safety", "phrases the writer likes"],
+    }}
+    right={{
+      title: "revised story",
+      points: ["necessary scenes", "specific useful detail", "clear causal movement", "room for the reader"],
+    }}
+  />
+</Figure>
+
+## Let people and pressure generate the plot
+
+Plot can become a rigid plan imposed from above. King's preference is to begin with people in
+a charged situation and find out what their choices make inevitable. This does not mean
+anything goes. The writer still needs to notice cause and effect, preserve the consequences
+of earlier choices, and cut coincidences that merely rescue the plan. The difference is where
+the energy begins: not with a sequence of events to force onto characters, but with people
+whose desires collide with a situation they cannot ignore.
+
+<Figure id="45.6" caption="Visible events work when they are driven by the deeper pressures inside a situation.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the events on the page"
+    below={["what each person wants", "what the situation allows", "choices and consequences", "unresolved pressure"]}
+    waterlineLabel="what plot makes visible"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Read one page as a craftsperson">
+Choose a page from a writer you admire. Read it once for the story, then again with a pencil.
+Mark where the pace changes, what detail creates the setting, and what the paragraph makes you
+expect next. Write three observations about effects, not rules to copy.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Set a small, repeatable page target">
+Choose a session length or page count that fits the next seven days without requiring an ideal
+week. Put the sessions on your calendar, remove one predictable distraction beforehand, and
+record only whether you showed up. Adjust the size next week, not midway through a hard day.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Separate drafting from editing">
+For one scene, write for thirty minutes without stopping to fix sentences. Leave brackets
+around missing facts or weak names and keep moving. The next day, read the scene aloud and
+make a separate list of revisions. Do not make discovery and cleanup compete for the same
+minute.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Cut for forward motion">
+Take a completed page and underline every sentence that changes what the reader knows, feels,
+or expects. Test the unmarked sentences one at a time. Keep the ones that make the marked
+sentences more vivid, then cut or compress the rest. Save the removed text in a separate file
+so the decision stays reversible.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+King's advice is forceful because it comes from a long career in commercial fiction, and some
+of its preferences are personal rather than universal. Detailed outlining, sentence-level
+experimentation, collaborative feedback, and irregular working rhythms help many writers.
+A daily target can be useful, but it is not a moral test, especially when illness, disability,
+caregiving, money, or a demanding job sets the available time. Treat the book as a confident
+working method, not a complete theory of every genre or every writing life.
+</Callout>
+
+## If you remember one thing
+
+Read so you can recognize what a story does, write often enough to produce material, and
+revise until only the useful pressure remains. Talent becomes craft when it is given a regular
+place to work.
+
+The nearby shelf pairs this with a book on sustainable creative practice, one on learned
+influence, and one on guarding the attention that a writing session needs.
+
+<ShelvedNearby
+  related={["big-magic", "steal-like-an-artist", "deep-work"]}
+  buyUrl="https://www.simonandschuster.com/books/On-Writing/Stephen-King/9781982159375"
+  buyLabel="On Writing: A Memoir of the Craft by Stephen King"
+/>

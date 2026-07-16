@@ -1,0 +1,223 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum, Venn } from "../components/diagrams";
+
+<Hero
+  slug="five-love-languages"
+  thesis="Care can be sincere and still miss its mark. A relationship gets warmer when each person learns the forms of care the other is most able to recognize."
+  minutes={7}
+/>
+
+## The thesis
+
+Gary Chapman's useful observation is that affection has a translation problem. People often
+offer care in the form that feels obvious to them, then conclude that the other person is
+hard to please when it goes unnoticed. The book groups those preferred signals into five
+languages: affirming words, attentive time, thoughtful gifts, practical help, and welcome
+physical contact. The categories matter less as a personality test than as a prompt to ask,
+notice, and respond to the particular evidence of care that reaches the other person.
+
+## Why it matters
+
+Many recurring relationship fights begin with two people making an effort that the other
+cannot easily see. One cleans the kitchen after a long day. The other plans an uninterrupted
+walk. Both are trying to say something generous, but each is listening for a different
+signal. Naming that gap turns a moral accusation, "you do not care," into a practical
+question: what would care look like to you this week?
+
+## Good intentions can arrive in the wrong form
+
+The model does not begin with a shortage of love. It begins with a mismatch between the
+signal sent and the signal received. A compliment can feel thin to someone carrying an
+unshared load. A completed chore can feel beside the point to someone who wants an evening
+without distractions. Neither response proves that the gesture was worthless. It says that
+care is partly an act of interpretation, and the recipient gets a vote in what makes it
+legible.
+
+<Figure id="28.1" caption="A generous gesture can still feel faint when the sender and receiver are listening for different evidence.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="none"
+    left={{
+      title: "what I offered",
+      points: ["a helpful task", "a kind compliment", "a small present", "time near each other"],
+    }}
+    right={{
+      title: "what reached you",
+      points: ["shared attention", "specific encouragement", "relief from a burden", "a welcome touch"],
+    }}
+  />
+</Figure>
+
+## Preferences show up in patterns, not one perfect answer
+
+Chapman suggests looking for repeated clues: what someone asks for, what disappoints them,
+and how they habitually show care themselves. These clues are better starting points than
+guessing from a grand gesture or assigning a permanent type. A person may care about all
+five forms, may have two that matter equally, and may want different things when stressed,
+celebrating, grieving, or managing a crowded season. The useful result of noticing is a
+specific conversation, not a score.
+
+<Figure id="28.2" caption="Requests, disappointments, and habitual generosity are clues to test together, not a verdict about a person.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[
+      { label: "what they request" },
+      { label: "what hurts when absent" },
+      { label: "how they give care" },
+    ]}
+    intersectionLabel="a preference worth asking about"
+  />
+</Figure>
+
+## Attention is an action, not merely shared space
+
+Quality time is easy to mistake for proximity. Two people can spend an evening in the same
+room while each is elsewhere in attention. The relevant gift is chosen presence: listening
+long enough to understand, setting aside a competing screen or task, or doing something
+together that gives both people a real part in the moment. This is not a demand for constant
+access. It is a claim that attention carries meaning when it is offered deliberately.
+
+<Figure id="28.3" caption="Shared space becomes quality time when attention moves from divided to deliberately present.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="near but distracted"
+    right="present together"
+    marker={0.76}
+    zones={[
+      { from: 0, to: 0.35, label: "parallel activity" },
+      { from: 0.62, to: 1, label: "listen or share", accent: true },
+    ]}
+  />
+</Figure>
+
+## Help communicates care when it respects agency
+
+Acts of service make care visible by reducing effort, finishing an obligation, or handling
+something another person has asked not to carry alone. Their force comes from reliability
+and attention to the actual burden, not from turning help into a debt. Unasked-for help can
+also overstep, especially when it takes control away or implies incompetence. The cleanest
+version is simple: notice the load, ask what would help, follow through, and let the other
+person remain the author of their own life.
+
+<Figure id="28.4" caption="Practical help becomes connective when it follows the other person's need and preserves their say.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["notice the load", "ask what would help", "do the agreed task", "check the result"]}
+    highlight={2}
+  />
+</Figure>
+
+## The form matters, but the meaning is shared care
+
+The five categories can make love sound like a menu of separate transactions. They work
+better as routes into the same underlying work: making another person feel considered,
+known, and safe. Words can be specific rather than automatic. Gifts can show remembered
+attention rather than purchase power. Touch must be wanted and respectful. A weekly date,
+a repaired task, or a warm sentence means more when it sits inside mutual trust. The
+language is the vehicle, not the destination.
+
+<Figure id="28.5" caption="Different forms can converge on the same relational signal: I notice you and I am acting with care.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "words", label: "affirming words", x: 0.13, y: 0.23 },
+      { id: "time", label: "attentive time", x: 0.86, y: 0.23 },
+      { id: "gifts", label: "thoughtful gifts", x: 0.14, y: 0.82 },
+      { id: "help", label: "practical help", x: 0.86, y: 0.82 },
+      { id: "touch", label: "welcome touch", x: 0.5, y: 0.96 },
+      { id: "care", label: "felt care", x: 0.5, y: 0.47 },
+    ]}
+    edges={[
+      { from: "words", to: "care", kind: "reinforcing" },
+      { from: "time", to: "care", kind: "reinforcing" },
+      { from: "gifts", to: "care", kind: "reinforcing" },
+      { from: "help", to: "care", kind: "reinforcing" },
+      { from: "touch", to: "care", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The signature model is a five-part vocabulary for translating care. It does not say that
+one form is superior, or that only one can matter to a person. Its practical claim is
+narrower and more useful: when a relationship feels undernourished, expand the search beyond
+your default way of showing care. Ask which expression would land, choose one that is welcome
+and concrete, then pay attention to whether it actually changes the experience between you.
+
+<Figure id="28.6" caption="The five love languages are alternative routes for making care recognizable, not five boxes people must stay inside.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "words", label: "affirming words", x: 0.15, y: 0.17 },
+      { id: "time", label: "attentive time", x: 0.85, y: 0.17 },
+      { id: "gifts", label: "thoughtful gifts", x: 0.12, y: 0.83 },
+      { id: "help", label: "practical help", x: 0.88, y: 0.83 },
+      { id: "touch", label: "welcome touch", x: 0.5, y: 0.94 },
+      { id: "care", label: "care that lands", x: 0.5, y: 0.48 },
+    ]}
+    edges={[
+      { from: "words", to: "care", kind: "reinforcing" },
+      { from: "time", to: "care", kind: "reinforcing" },
+      { from: "gifts", to: "care", kind: "reinforcing" },
+      { from: "help", to: "care", kind: "reinforcing" },
+      { from: "touch", to: "care", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Ask one precise question">
+Instead of asking, "What is your love language?" ask, "When have you felt especially cared
+for by me lately?" Follow with, "What could I do this week that would make you feel supported?"
+Listen for the concrete action, the timing, and any boundary inside the answer.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Translate one reliable gesture">
+Name one way you already tend to show care. Then choose a small equivalent in a form your
+partner, friend, or family member has said they value. If you usually solve problems, try
+twenty phone-free minutes of listening. If you usually give encouragement, take one agreed
+task off their list. Keep it small enough to do without ceremony.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make the request usable">
+When something feels absent, replace the accusation with an observable request. "You never
+make time for me" can become "Could we take a walk together after dinner on Thursday, with
+our phones away?" A request gives the other person a way to respond. It also lets them say
+what is realistic and negotiate honestly.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Review the signal, not the score">
+After trying a gesture, ask whether it helped the other person feel seen. Do not tally who
+has given more. If it did not land, treat that as information and revise together. The point
+is a more accurate map of one another, not a better argument.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The five languages are a memorable counseling framework, not a complete science of
+attachment, compatibility, or personality. Do not use a label to excuse neglect, demand
+touch, treat gifts as proof of devotion, or turn care into a ledger. Consent, safety,
+reliability, repair after conflict, and shared responsibility still matter even when people
+prefer different signals. The book began with couples, and its vocabulary may be helpful in
+other close relationships, but the person in front of you is always more specific than the
+category.
+</Callout>
+
+## If you remember one thing
+
+When care seems to be missing, do not begin by assuming indifference. Ask what makes care
+recognizable to this person, then offer a small, welcome version of it consistently enough
+to be felt.
+
+Nonviolent Communication offers a companion practice for turning hurt into a clear request,
+while Crucial Conversations helps keep that request discussable when emotions and stakes rise.
+
+<ShelvedNearby
+  related={["nonviolent-communication", "crucial-conversations", "how-to-win-friends"]}
+  buyUrl="https://www.moodypublishers.com/the-5-love-languagesreg"
+  buyLabel="The 5 Love Languages by Gary Chapman"
+/>

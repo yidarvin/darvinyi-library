@@ -1,0 +1,214 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum, Venn } from "../components/diagrams";
+
+<Hero
+  slug="crucial-conversations"
+  thesis="When a conversation carries real stakes, candor survives only if people can add what they see without having to defend their place in the room."
+  minutes={7}
+/>
+
+## The thesis
+
+The authors' central claim is that high-stakes conversations are not won by finding the
+perfect line. They go better when each person can put relevant facts, concerns, and
+interpretations into a common space without being punished for it. That requires two jobs at
+once: say the hard thing plainly, and protect the conditions that let the other person answer
+plainly too. Dialogue is therefore less a performance of agreement than a way of making the
+whole problem visible enough to work on together.
+
+## Why it matters
+
+The conversations people avoid often have the largest consequences: a commitment that is
+slipping, a partnership that feels unequal, a decision made on incomplete information, or a
+pattern that has started to damage trust. Avoidance leaves the pattern intact. Force can put
+it on the table, but often at the cost of the information people now feel unsafe sharing.
+The book's useful contribution is to make that tradeoff explicit. A conversation can be both
+frank and safe, but neither quality appears by accident when pressure rises.
+
+## Notice when the talk has become consequential
+
+Not every disagreement needs a formal intervention. The signal is a combination of three
+conditions: the outcome matters, people see it differently, and emotion is beginning to
+drive the exchange. When all three are present, habits that work in ordinary discussion can
+fail quickly. A joke may land as contempt. A reasonable question may sound like a challenge.
+The point of noticing is not to become stiff. It is to stop treating a consequential moment
+as though it will sort itself out through hints, delay, or a louder argument.
+
+<Figure id="27.1" caption="A conversation needs special care when stakes, disagreement, and emotion rise together.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[
+      { label: "high stakes" },
+      { label: "differing views" },
+      { label: "rising emotion" },
+    ]}
+    intersectionLabel="crucial conversation"
+  />
+</Figure>
+
+## Safety is the condition for candor
+
+When someone goes quiet, changes the subject, attacks, or grows theatrical, the visible
+topic may no longer be the only issue. The person may be protecting status, belonging, or
+the belief that their aims will count. That is a safety problem. Addressing it does not mean
+retreating from the substantive concern. It means separating the concern from a threat to
+the person. State a shared purpose, clarify respect, or apologize for an actual mistake,
+then return to the issue with the room less defended.
+
+<Figure id="27.2" caption="As safety rises, people can move from self-protection toward useful contribution.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="guarded"
+    right="candid contribution"
+    marker={0.4}
+    markerLabel="enough safety"
+    zones={[
+      { from: 0, to: 0.38, label: "silence or attack" },
+      { from: 0.62, to: 1, label: "say what matters", accent: true },
+    ]}
+  />
+</Figure>
+
+## Separate the event from the story that inflames it
+
+An event arrives first: a colleague interrupts, a promise is missed, a message goes
+unanswered. The mind immediately supplies a story about it, often one that explains the
+other person's intent in the least generous way. That story can create anger, fear, or
+righteousness before it has been tested. The discipline is not to deny the feeling. It is to
+ask what facts support the interpretation, what facts do not, and what other explanation
+could fit. You can still conclude that a pattern is serious. You just arrive with a claim
+you can examine rather than a verdict that demands surrender.
+
+<Figure id="27.3" caption="The event is visible; the story and the feeling it creates can be examined before they run the talk.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="a missed commitment"
+    waterlineLabel="what happened"
+    below={["the story: I do not matter", "anger or fear", "the impulse to punish or withdraw"]}
+  />
+</Figure>
+
+## State a view as evidence, not a verdict
+
+Candor is not softened into vagueness. It is made checkable. Start with the facts you saw,
+say the conclusion you are drawing from them, and make the degree of confidence visible.
+Then ask what the other person sees. This lets you express a strong view without claiming
+that your view is the only account of reality. It also gives the other person a place to
+correct your picture before the disagreement turns into a contest over who is allowed to
+speak.
+
+<Figure id="27.4" caption="A firm view can still invite correction when facts, meaning, and questions stay distinct.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["name the facts", "share your reading", "signal uncertainty", "ask for their view"]}
+    highlight={3}
+  />
+</Figure>
+
+## Watch the two ways dialogue collapses
+
+Pressure produces opposite-looking failures. One is withdrawal: withholding a concern,
+changing the subject, agreeing outwardly, or leaving the conversation altogether. The other
+is force: interrupting, exaggerating, labeling, or pushing until agreement is no longer
+freely given. Both remove information from the conversation. The repair begins with a small
+diagnostic question: am I making it harder for the other person to contribute, or am I
+making it harder for myself to contribute? The answer points toward a pause, a clearer
+request, a question, or a direct return to the relevant fact.
+
+<Figure id="27.5" caption="Withdrawal and force look different, but both shrink the information available to solve the problem.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="none"
+    left={{
+      title: "withdrawal",
+      points: ["withhold the concern", "change the subject", "offer a false yes", "leave the issue unresolved"],
+    }}
+    right={{
+      title: "force",
+      points: ["press for agreement", "label or interrupt", "make dissent costly", "leave information unsaid"],
+    }}
+  />
+</Figure>
+
+## The Model
+
+The pool of shared meaning is an image for the information that becomes usable when people
+can contribute their separate views. It does not require everybody to agree, nor does it
+make every perspective equally sound. It gives a group a larger body of observations,
+interpretations, and concerns from which to make a choice. Safety is what keeps the paths
+open in both directions. Each person retains responsibility for their own view while letting
+that view be tested and extended by the rest of the room.
+
+<Figure id="27.6" caption="Safety lets different observations and concerns enter a shared space where a better decision can be made.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "my-view", label: "my observations", x: 0.14, y: 0.27 },
+      { id: "their-view", label: "their observations", x: 0.86, y: 0.27 },
+      { id: "other-view", label: "other concerns", x: 0.5, y: 0.95 },
+      { id: "pool", label: "shared meaning", x: 0.5, y: 0.48 },
+      { id: "action", label: "a better next action", x: 0.5, y: 0.06 },
+    ]}
+    edges={[
+      { from: "my-view", to: "pool", kind: "reinforcing" },
+      { from: "their-view", to: "pool", kind: "reinforcing" },
+      { from: "other-view", to: "pool", kind: "reinforcing" },
+      { from: "pool", to: "action" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the conversation you have been avoiding">
+Write one sentence about the issue, not the person. Include a specific event or pattern and
+the consequence you are worried about. If the sentence contains a diagnosis of motive, put
+that part on a separate line as a story to test rather than as your opening claim.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Prepare both the purpose and the concern">
+Before the meeting, write what you want for yourself, for the other person, and for the
+relationship or work you share. Then write the hard fact you need to raise. This prevents a
+good intention from becoming an excuse to avoid candor, or candor from becoming an excuse to
+forget the relationship.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Use a four-part opening">
+Start with the observable facts. Say what they led you to wonder or conclude. Add one phrase
+that shows you may be missing context. Then ask for the other person's account and leave a
+real pause. Do not stack three more arguments into the silence.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="End with an owned next step">
+When the discussion has produced a workable decision, make it concrete: who will do what,
+by when, and how will you check progress? If the answer remains unclear, say so. A pleasant
+conversation without an owner or a date is often only a delay in a friendlier form.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The framework is easy to misuse as a method for getting someone to accept a decision already
+made. Safety then becomes a performance, and questions become a longer route to pressure.
+It also cannot make a conversation safe where there is intimidation, retaliation, abuse, or
+a severe power imbalance. In those settings, boundaries, formal process, or outside support
+may be more appropriate than an invitation to speak more openly. Dialogue is valuable when
+people can contribute freely, not a duty to keep engaging under unsafe conditions.
+</Callout>
+
+## If you remember one thing
+
+Say the hard thing in a way that keeps the other person able to say their hard thing too.
+The point is not a smoother conversation. It is a fuller picture of the problem, from which
+both people can make a more responsible next move.
+
+Nonviolent Communication offers a companion discipline for separating observations from
+judgments, while Never Split the Difference focuses on listening for the concern behind a
+stated position.
+
+<ShelvedNearby
+  related={["nonviolent-communication", "never-split-the-difference"]}
+  buyUrl="https://www.amazon.com/Crucial-Conversations-Talking-Stakes-Second/dp/0071401946/"
+  buyLabel="Crucial Conversations by Kerry Patterson, Joseph Grenny, Ron McMillan, and Al Switzler"
+/>

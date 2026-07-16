@@ -1,0 +1,224 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Flow, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="peak"
+  thesis="Expert performance grows from practice designed to change a specific weakness, checked against feedback, and repeated at the edge of what you can presently do."
+  minutes={8}
+/>
+
+## The thesis
+
+*Peak* argues against the comforting idea that ability is mostly a gift revealed early. In
+many fields, the more useful question is whether practice has been built to produce change.
+Purposeful practice gives a learner a narrowly defined task, a demanding but reachable
+standard, feedback on the result, and another attempt shaped by what that feedback revealed.
+Deliberate practice is the narrower form: it uses those features inside an established field,
+following effective training methods under the guidance of a teacher or coach who understands
+how expertise develops. Time matters because improvement takes time. Time alone, however, can
+preserve a routine as easily as it develops a skill.
+
+## Why it matters
+
+Most work teaches less than it appears to. A person can spend years playing familiar pieces,
+handling routine cases, or giving the same presentation and become more efficient without
+becoming markedly better. That is useful experience, but it is not a learning system. The
+book makes improvement less mysterious by turning it into a design problem: identify the
+next capability, create a task that exposes it, and make the result visible enough to revise.
+
+## Key ideas
+
+## Repetition protects fluency; practice changes a capability
+
+Performing a familiar task is often the right choice when reliability matters. Its job is to
+deliver a result, not to reveal every weakness. Practice has the opposite job. It deliberately
+breaks a larger skill into a small component where errors can be noticed, then makes the
+learner stay with that component long enough to alter it. A pianist may isolate a difficult
+transition. A writer may work only on opening paragraphs. A manager may rehearse a hard
+conversation and examine where the explanation loses clarity. The smaller target creates a
+clearer signal than a vague instruction to do more.
+
+<Figure id="42.1" caption="Performance aims for a result; practice is arranged to expose the next improvement.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "performing",
+      points: ["use the whole skill", "favor reliability", "work from familiar routines", "judge the final result"],
+    }}
+    right={{
+      title: "practicing",
+      points: ["isolate one component", "make errors observable", "work near a limit", "judge the next adjustment"],
+    }}
+  />
+</Figure>
+
+## The useful target sits beyond automaticity, not beyond reach
+
+Improvement needs resistance. A task that is already automatic gives little new information,
+while a task far beyond current skill creates noise, frustration, and guesses about what went
+wrong. The productive target is a moving edge: demanding enough to require attention, but
+small enough that the learner can connect an attempt with a correction. As competence rises,
+the task must rise with it. A once-hard drill eventually becomes maintenance, and the edge
+moves on.
+
+<Figure id="42.2" caption="The learning target moves between easy repetition and an overload that hides the lesson.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="automatic"
+    right="beyond reach"
+    marker={0.52}
+    markerLabel="moving edge"
+    ariaLabel="A spectrum of task difficulty. Easy, automatic repetition sits at the left. A narrow middle band is the moving edge, where a demanding but reachable task receives full attention and a correction can be used. Overload sits at the right, where errors obscure the lesson."
+    zones={[
+      { from: 0, to: 0.34, label: "easy repetition" },
+      { from: 0.34, to: 0.66, label: "demanding but reachable", accent: true },
+      { from: 0.66, to: 1, label: "overload" },
+    ]}
+  />
+</Figure>
+
+## Feedback turns an attempt into evidence
+
+An error only helps if it becomes specific enough to guide the next try. That feedback can
+come from a teacher, a stopwatch, a recording, a test case, a customer, or a comparison with
+a known standard. Its value lies in its precision. "Try harder" supplies energy but no
+direction. "Your hand shifted before the note," "the reader cannot find the claim," or "the
+test fails when the input is empty" identifies something a learner can alter. The next attempt
+is an experiment, not a vote on talent.
+
+<Figure id="42.3" caption="A useful correction connects one observed result to one changed attempt.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["narrow attempt", "observe result", "name one gap", "try a correction"]}
+    compoundingEdge={3}
+    centerLabel="evidence loop"
+  />
+</Figure>
+
+## Mental representations make more of the field visible
+
+Experts do not merely accumulate facts. They develop working structures that let them notice
+patterns, hold relevant information together, and predict what matters next. A chess player
+sees a meaningful arrangement rather than a collection of pieces. A clinician can organize
+symptoms into possible causes. A good editor can hear the shape of an argument before every
+sentence is settled. These mental representations are built through informed encounters with
+the task. They then make feedback more useful, because the learner has a better frame for
+interpreting it.
+
+<Figure id="42.4" caption="Repeated, corrected encounters build a mental model that sharpens what the learner can notice.">
+  <Concentric
+    className="block w-full min-w-[440px]"
+    rings={[
+      { label: "next decision" },
+      { label: "patterns\nand standards" },
+      { label: "many corrected\nencounters" },
+    ]}
+    highlight={1}
+    externalLabel="a new attempt"
+  />
+</Figure>
+
+## A teacher designs a path, not only an explanation
+
+Instruction is most powerful when it converts an ambitious destination into a sequence of
+tasks that a learner can actually use. A capable coach sees which prerequisite is missing,
+chooses an exercise that brings that gap into view, and changes the exercise as the learner
+changes. This is more than encouragement and more than delivering information. It is the
+craft of keeping the next task within reach while refusing to let it become comfortable. That
+coach-designed path, built on training methods a field has developed, is what makes the work
+deliberate practice rather than purposeful practice. When that instructional structure is
+unavailable, a learner can still use purposeful practice by borrowing parts of the function
+through rubrics, answer keys, recordings, peer review, and carefully chosen tests.
+
+<Figure id="42.5" caption="Good instruction converts a distant standard into a sequence of observable next tasks.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["name the skill", "find the limiting piece", "design one drill", "review the result", "raise the task"]}
+    highlight={2}
+  />
+</Figure>
+
+## The Model
+
+Deliberate practice is a coach-designed loop with a deliberately narrow entry point. It is
+available where a field has developed reliable training methods and a teacher or coach can
+adapt them to the learner. Start with a concrete performance you want to improve, rather than
+a broad identity such as becoming better at music or leadership. Reduce it to the smallest
+weak component you can observe. Attempt that component with full attention, compare the result
+to a standard, and make one adjustment. The adjustment becomes the next task. Over many cycles,
+the learner's mental representation gets richer, which allows the next target to become more
+exact. When no such training path exists, use the same target, feedback, and revision cycle as
+purposeful practice, without claiming it has the narrower conditions of deliberate practice.
+
+<Figure id="42.6" caption="Deliberate practice compounds when each correction makes the next target more precise.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["specific weak point", "full-attention attempt", "specific feedback", "one adjustment"]}
+    compoundingEdge={3}
+    centerLabel="coach-designed training path"
+    ariaLabel="A clockwise deliberate-practice loop. A coach-designed training path identifies a specific weak point, followed by a full-attention attempt, specific feedback, and one adjustment. That adjustment identifies a more precise next weak point and begins the next cycle."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose one component, not a whole identity">
+Pick a skill you use regularly and describe a small performance inside it. Replace "become a
+better speaker" with "make the first thirty seconds of a proposal easy to follow." Choose a
+piece small enough to repeat several times in one session. If the task cannot be observed,
+make it more concrete.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Set a standard before you begin">
+Decide what a better attempt will look or sound like. Use a reference performance, a rubric,
+a test, a recording, or a coach's criterion. Do not wait until the end to invent the standard.
+Without one, an uncomfortable session can feel productive while teaching nothing in particular.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="End every session with one change">
+Record a short attempt, run the test, or ask for a single focused observation. Write one
+sentence that names the gap and one sentence that describes the next adjustment. Begin the
+next session by trying that adjustment before moving to anything new.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Protect recovery and attention">
+Schedule practice when you can concentrate, and stop before fatigue turns the work into empty
+repetition. Brief, demanding blocks can be more instructive than a long session spent on
+autopilot. Treat sleep, rest, equipment, instruction, and time as conditions of learning, not
+proofs of insufficient commitment.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Deliberate practice is not a promise that any person can reach any elite outcome by clocking a
+fixed number of hours. The often repeated ten-thousand-hour figure is not a threshold in the
+framework. The 1993
+<a href="https://doi.org/10.1037/0033-295X.100.3.363" target="_blank" rel="noopener noreferrer">Ericsson, Krampe, and Tesch-Römer account</a>
+described effortful practice in particular domains, under motivational and external constraints.
+It does not erase differences in opportunity, health, coaching, resources, prior development,
+or the demands of a field. Nor should every task be forced into solitary drills. Deliberate
+practice needs a well-developed field, established effective methods, and ordinarily a teacher
+or coach who can adapt those methods. In messy, new, or collaborative work, purposeful practice
+is the more accurate name for making one part observable, testing it, and improving it next.
+</Callout>
+
+## If you remember one thing
+
+Do not measure improvement by the hours spent near a skill. Find the next weak component,
+practice it with full attention, get specific evidence about the result, and let that evidence
+choose the next attempt.
+
+## Shelved nearby
+
+Mindset frames difficulty as information about what to learn next. Grit places sustained,
+informed effort inside a long-term direction. Deep Work helps protect the concentration that
+demanding practice requires.
+
+<ShelvedNearby
+  related={["mindset", "grit", "deep-work"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/217780/peak-by-anders-ericsson-and-robert-pool/"
+  buyLabel="Peak by Anders Ericsson and Robert Pool"
+/>

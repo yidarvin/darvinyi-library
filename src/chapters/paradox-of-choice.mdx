@@ -1,0 +1,216 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Curve, Iceberg, NodeGraph, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="paradox-of-choice"
+  thesis="Choice is valuable until the work of comparing, anticipating, and second-guessing consumes the freedom the options were meant to provide."
+  minutes={7}
+/>
+
+## The thesis
+
+More alternatives can improve a fit, yet each one also adds comparison work and reasons to
+doubt the final choice. Freedom remains usable when a bounded stopping standard lets a person
+act before the search consumes the attention it was meant to serve.
+
+## Why it matters
+
+Many ordinary decisions now arrive as catalogs. A streaming queue, a retirement plan, a job
+board, or a menu can offer a real improvement over having no say at all. Yet the promise of
+finding the perfect option can turn a small decision into a search with no natural stopping
+point. The book's useful question is not whether choice is good. It is when another option
+adds meaningful possibility, and when it mostly adds work.
+
+## Key ideas
+
+### An option creates work as well as freedom
+
+An additional alternative can be genuinely useful. It might fit a need the existing set
+misses. It also creates another comparison: another price, feature, review, future, and
+possible mistake to hold in mind. The burden rises especially when the differences are hard to
+judge or when the consequences feel personal. A long list is not automatically a rich choice.
+It can be an unstructured research project handed to the person who needs to decide.
+
+<Figure id="50.1" caption="Added options can improve a fit or create comparison work that leads to another close call and delay.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "options", label: "more options", x: 0.12, y: 0.5 },
+      { id: "fit", label: "possible better fit", x: 0.48, y: 0.15 },
+      { id: "choice", label: "useful choice", x: 0.86, y: 0.15 },
+      { id: "comparison", label: "comparison work", x: 0.48, y: 0.83 },
+      { id: "close-call", label: "another close call", x: 0.86, y: 0.83 },
+    ]}
+    edges={[
+      { from: "options", to: "fit" },
+      { from: "fit", to: "choice" },
+      { from: "options", to: "comparison" },
+      { from: "comparison", to: "close-call" },
+    ]}
+  />
+</Figure>
+
+### The search for best can crowd out good enough
+
+Schwartz contrasts two decision styles. A satisficer sets a standard, finds an option that
+meets it, and moves on. A maximizer keeps searching for the best available answer. The second
+style can produce a strong choice when the stakes justify investigation, but it has no easy
+finish line. Every unopened tab remains a possible improvement, so committing can feel like
+giving up rather than finishing. The practical distinction is not intelligence or care. It is
+whether the decision has a criterion for stopping.
+
+<Figure id="50.2" caption="One strategy finishes when the standard is met; the other keeps checking for an unseen best.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="left"
+    left={{
+      title: "satisficing",
+      points: ["set a useful standard", "find a fit", "choose and continue", "save attention for the next task"],
+    }}
+    right={{
+      title: "maximizing",
+      points: ["seek the best possible", "keep searching", "compare every near miss", "struggle to close the search"],
+    }}
+  />
+</Figure>
+
+### Tradeoffs stay in the room
+
+Choosing one option means giving up the value of the best alternative, which is the opportunity
+cost of the decision. With a large set, a related psychological burden can persist after that
+tradeoff: unselected alternatives and imagined outcomes stay salient, making a decent choice
+look weaker through the lens of what it excluded. A decision needs a way to acknowledge a real
+tradeoff without reopening it forever.
+
+<Figure id="50.3" caption="The selected option is visible, but the alternatives left behind can keep shaping satisfaction.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the option you chose"
+    waterlineLabel="after the decision"
+    below={["unselected alternatives", "imagined better outcomes", "attention pulled back to the search"]}
+  />
+</Figure>
+
+### Regret gets more places to land
+
+Regret needs a comparison between what happened and what might have happened. A large set
+supplies many candidates for that imagined alternative. If the chosen option disappoints even
+slightly, a person can attribute the problem to their own failure to search, compare, or
+predict well enough. The book connects this self-blame to modern abundance: when the field
+looks unlimited, an imperfect outcome can feel less like ordinary uncertainty and more like a
+personal error. That conclusion is often harsher than the evidence warrants.
+
+<Figure id="50.4" caption="More visible alternatives give disappointment more routes into counterfactual regret.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "set", label: "large option set", x: 0.5, y: 0.08 },
+      { id: "compare", label: "many comparisons", x: 0.12, y: 0.53 },
+      { id: "ideal", label: "higher ideal", x: 0.88, y: 0.53 },
+      { id: "regret", label: "regret and self-blame", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "set", to: "compare", kind: "reinforcing" },
+      { from: "set", to: "ideal", kind: "reinforcing" },
+      { from: "compare", to: "regret", kind: "reinforcing" },
+      { from: "ideal", to: "regret", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+### Abundance can reset the baseline
+
+The pleasure of a new possibility fades when it becomes the normal level of service. That is a
+useful form of adaptation, but it means more variety does not reliably deliver more lasting
+satisfaction. An expanded menu may delight once, then become the minimum expected next time.
+Meanwhile, the expanded set raises the standard the next decision must clear. The chase can
+therefore produce a peculiar result: more alternatives, more expectation, and little more
+contentment.
+
+<Figure id="50.5" caption="A new option can briefly lift satisfaction before it becomes the next ordinary baseline.">
+  <Timeline
+    className="block w-full min-w-[520px]"
+    segments={[
+      { label: "new variety", sub: "possibility expands" },
+      { label: "initial lift", sub: "the difference feels vivid" },
+      { label: "adaptation", sub: "the feature becomes familiar" },
+      { label: "raised baseline", sub: "the next set must impress again" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## The Model
+
+Choice overload is the point at which an expanding menu stops making a decision more usable.
+At first, additional options may improve the odds of finding a suitable fit. Past a context-
+dependent point, the comparison burden, ambiguity, and anticipated regret can grow faster than
+the benefit of another alternative. The curve is a conceptual guide, not a universal numerical
+threshold. Expertise, clear differences, time, and the stakes all move the point at which a
+set becomes too much.
+
+<Figure id="50.6" caption="Usable freedom can rise with options, then fall once comparison becomes the main task.">
+  <Curve
+    className="block w-full min-w-[380px]"
+    shape="bell"
+    axes={{ x: "number of options", y: "usable freedom" }}
+    annotations={[
+      { x: 0.26, y: 0.45, text: "more useful fits" },
+      { x: 0.5, y: 0.98, text: "enough to compare" },
+      { x: 0.82, y: 0.2, text: "overload" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Classify the decision before you research it">
+Ask whether the decision is reversible, consequential, and genuinely different across options.
+Spend a larger search budget only where a better answer will matter and cannot be changed
+cheaply later. For a low-stakes, reversible choice, choose a reasonable option quickly.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Write a stopping rule before opening the list">
+Name two or three requirements and one preference. Decide how many options you will inspect,
+or set a short time limit. When an option meets the requirements and is not clearly beaten on
+the preference, take it. The rule makes completion part of the decision.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Reduce a menu for someone else">
+If you present choices at work or at home, remove near-duplicates, group by the criterion that
+matters, and offer a small recommended starting set. Keep the full catalog available when it
+serves a real need. The goal is a legible path, not a hidden restriction.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Close the counterfactual tab">
+After an adequately considered choice, record why it met the standard. When the urge to reopen
+the search appears, compare the new information with that record. Revisit only if something
+material changed, not because an imaginary perfect answer appeared.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+More choice is not inherently harmful, and fewer options are not automatically kind. The effect
+depends on the task, the person's knowledge and goals, the way alternatives are organized, and
+whether differences are meaningful. There is no universal option threshold: expertise, time,
+stakes, and the clarity of the differences change when a menu becomes difficult to use. The
+useful lesson is to match the size and structure of a choice set to the decision, while
+preserving access to more variety for people who need it.
+</Callout>
+
+## If you remember one thing
+
+Freedom is not measured by how many options appear on the screen. It is measured by whether
+you can find a worthwhile option, choose it with sound reasons, and return your attention to
+living with the result.
+
+For the judgment behind a fast choice, the predictable errors around it, the way choice
+architecture shapes it, and the uncertainty that remains after it, see the nearby shelf.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "predictably-irrational", "nudge", "thinking-in-bets"]}
+  buyUrl="https://www.harpercollins.com/products/the-paradox-of-choice-barry-schwartz"
+  buyLabel="The Paradox of Choice by Barry Schwartz"
+/>

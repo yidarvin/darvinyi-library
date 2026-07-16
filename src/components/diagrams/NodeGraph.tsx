@@ -15,6 +15,8 @@ export interface GraphEdge {
   to: string;
   /** Reinforcing edges draw in accent with a plus; balancing edges dash with a minus. */
   kind?: "reinforcing" | "balancing";
+  /** A short neutral label for what travels along the connection. */
+  label?: string;
 }
 
 export interface NodeGraphProps extends DiagramBase {
@@ -92,7 +94,7 @@ export function NodeGraph({ nodes = [], edges = [], ariaLabel, className }: Node
               strokeDasharray={bal ? "5 3" : undefined}
               markerEnd={`url(#${rein ? `ng-arwA-${uid}` : `ng-arw-${uid}`})`}
             />
-            {(rein || bal) && (
+            {(rein || bal || e.label) && (
               <text
                 x={(sx + ex) / 2}
                 y={(sy + ey) / 2 - 4}
@@ -101,7 +103,7 @@ export function NodeGraph({ nodes = [], edges = [], ariaLabel, className }: Node
                 fontSize="12"
                 fill={rein ? C.accent : C.comment}
               >
-                {rein ? "+" : "−"}
+                {e.label ?? (rein ? "+" : "−")}
               </text>
             )}
           </g>

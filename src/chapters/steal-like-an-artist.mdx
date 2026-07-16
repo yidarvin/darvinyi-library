@@ -1,0 +1,205 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, Spectrum, Timeline, Venn } from "../components/diagrams";
+
+<Hero
+  slug="steal-like-an-artist"
+  thesis="Creative work begins in a lineage: study what moves you, transform it through practice, and add the particular questions only you can ask."
+  minutes={6}
+/>
+
+## The thesis
+
+Originality is not the absence of influence. It is the visible result of attention, selection,
+practice, and judgment applied to a body of inherited material. Kleon's invitation is to stop
+treating influence as embarrassing evidence of a missing self. Find the work that makes you
+want to make more work, learn how it was made, and use that study to produce a distinct next
+piece. The aim is a recognizable point of view, not a disguise for copying.
+
+## Why it matters
+
+The demand to be wholly new makes a beginner feel fraudulent before they have made anything.
+It also hides how creative fields really advance. Writers answer other writers, designers
+borrow constraints and solve them differently, musicians reshape a phrase for another room
+and another audience. Seeing that chain clearly replaces the lonely question, "What can I
+invent from nothing?" with a more useful one: "What have I learned to notice, and what can I
+make from it now?"
+
+## Build a lineage, not a pile of references
+
+Good influence is specific. Instead of collecting a thousand disconnected examples, follow a
+small group of makers backward and sideways. Learn who influenced them, what problem they were
+trying to solve, and which choices carry their work. A lineage turns taste into an education.
+It gives you material to compare, techniques to try, and standards that are sharper than a
+general wish to be creative.
+
+<Figure id="44.1" caption="A creative lineage turns admired work into questions, practice, and a new contribution.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "source", label: "admired work", x: 0.5, y: 0.08 },
+      { id: "questions", label: "better questions", x: 0.14, y: 0.52 },
+      { id: "study", label: "close study", x: 0.86, y: 0.52 },
+      { id: "practice", label: "your experiments", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "source", to: "questions", label: "notice" },
+      { from: "source", to: "study", label: "inspect" },
+      { from: "questions", to: "practice" },
+      { from: "study", to: "practice" },
+      { from: "practice", to: "source", kind: "reinforcing", label: "sharper taste" },
+    ]}
+  />
+</Figure>
+
+## Start before your identity feels settled
+
+Many people wait for a stable label before attempting the work: writer, illustrator,
+programmer, filmmaker. That reverses the order. Identity is partly a record of repeated
+actions, so it becomes clearer after you begin. Make small, imperfect versions. Keep the ones
+that teach you something. Your early work will resemble its sources more than your later work
+does, and that is normal. Repetition gradually reveals which decisions you make differently.
+
+<Figure id="44.2" caption="Practice comes first; a personal direction becomes visible through the work.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["make a small attempt", "notice what holds", "repeat and vary", "recognize your direction"]}
+    highlight={2}
+  />
+</Figure>
+
+## Make the work you wish were available
+
+Taste is often first experienced as dissatisfaction. You want to read an article that no one
+has written, hear a song that is missing, or use a tool that does not exist. That gap can be a
+brief. Rather than waiting for permission from a market or an institution, make a useful first
+version for yourself. The work may later serve people like you, but its initial standard is
+clearer: does it answer the question that bothered you enough to begin?
+
+<Figure id="44.3" caption="A vague wish becomes a project when it is translated into a specific missing thing.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "wait for a brief",
+      points: ["look for external approval", "aim at a generic audience", "treat taste as a distraction", "delay the first version"],
+    }}
+    right={{
+      title: "answer a missing need",
+      points: ["name what you cannot find", "make it useful to you", "let constraints shape it", "learn from the first version"],
+    }}
+  />
+</Figure>
+
+## Let the hand interrupt the screen
+
+Digital tools are excellent for searching, editing, duplicating, and distributing. They also
+make it easy to keep every idea in the same smooth, abstract form. Drawing a rough map,
+cutting images apart, handwriting a list, or arranging cards on a table introduces friction
+and physical limits. Those limits can expose a relation that scrolling past a screen cannot.
+The point is not nostalgia for analog tools. It is to give the mind more than one way to move
+through the material.
+
+<Figure id="44.4" caption="Switching media changes the kinds of choices a project makes available.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[{ label: "digital reach" }, { label: "physical play" }]}
+    intersectionLabel="more ways to think"
+  />
+</Figure>
+
+## Keep side work where ideas can meet
+
+The project that looks unrelated may be carrying the skill your main work needs next. A hobby
+can develop a sense of rhythm, a technical experiment can produce a visual language, and a
+private notebook can preserve observations that later find a home. Side work has room to be
+bad, slow, and unfinished. That freedom makes it a useful crossing point between interests,
+and over time it can give a body of work its connective tissue.
+
+<Figure id="44.5" caption="Side projects preserve loose material until a connection becomes useful.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "small hobby", sub: "low stakes" },
+      { label: "odd experiment", sub: "new skill" },
+      { label: "saved fragment", sub: "kept nearby" },
+      { label: "main project", sub: "connection appears" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Protect the ordinary conditions for making
+
+Creative work rarely arrives as a dramatic burst. It needs time that is dull enough to be
+reliable: a repeatable hour, a manageable desk, a way to save material, and fewer decisions
+before beginning. The routine is not the art, but it gives art somewhere to happen. A modest
+schedule also keeps the result from carrying every hope for status, income, or identity. Make
+the appointment small enough to keep, then let the accumulated sessions do their quiet work.
+
+<Figure id="44.6" caption="Move from heroic bursts toward a repeatable condition for showing up.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="rare inspiration"
+    right="regular practice"
+    marker={0.77}
+    markerLabel="protected session"
+    zones={[
+      { from: 0.02, to: 0.35, label: "wait for the mood" },
+      { from: 0.58, to: 0.98, label: "keep a workable rhythm", accent: true },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Trace one influence backward">
+Choose a piece you admire. Find two people, works, or traditions that helped shape it. Write
+down one craft choice each source makes, then make a ten-minute study of one choice. The study
+is private. Its job is to make your attention more precise.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Write the missing artifact">
+Name something you have looked for and failed to find. Give it a narrow audience and a small
+form: a one-page guide, a two-minute demo, a short scene, a poster, or a tiny tool. Finish a
+rough version this week before deciding whether it deserves expansion.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Change the medium halfway through">
+Take a current problem off the screen for twenty minutes. Draw its pieces, print and cut the
+notes apart, make a physical outline, or write a deliberately bad version by hand. Return to
+the original medium and keep one discovery from the detour.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Give a side project a container">
+Pick an interest that does not fit your main project. Reserve two short sessions for it this
+month and keep its scraps in one visible place. Do not demand a result. At the end of the
+month, ask what new skill, image, question, or connection it produced.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+"Steal" is a provocation about influence, not permission to pass off another person's work as
+your own. Copying a surface without understanding it produces imitation, not learning.
+Reproducing protected text, images, code, music, or a distinctive design can also harm the
+person who made it and may be unlawful. Keep sources visible in your working process, credit
+them when credit is due, seek permission where a use requires it, and transform what you learn
+through real study and a purpose of your own. The book's compact advice also cannot settle the
+hard questions of power, attribution, and cultural borrowing. Those deserve more care than a
+clever slogan.
+</Callout>
+
+## If you remember one thing
+
+Your voice does not appear before you work. It emerges from what you study closely, what you
+keep making, and the choices you learn to make differently from everyone who taught you.
+
+The nearby shelf pairs this with a book on returning to a creative practice, one on focused
+attention, and one on learning across fields.
+
+<ShelvedNearby
+  related={["big-magic", "deep-work", "range"]}
+  buyUrl="https://bookpeople.com/book/9781523519019"
+  buyLabel="Steal Like an Artist by Austin Kleon"
+/>

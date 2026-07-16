@@ -1,0 +1,239 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Curve, Flow, Iceberg, Matrix, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="innovators-dilemma"
+  thesis="A capable incumbent can lose by serving its best customers too well while a simpler offer learns in a market the incumbent has little reason to defend."
+  minutes={8}
+/>
+
+## The thesis
+
+Christensen's puzzle is uncomfortable precisely because it does not blame failure on
+laziness, bad managers, or a missed memo. A well-run company listens to its customers,
+improves the product they buy, and directs capital toward attractive margins. Those are
+sound habits inside an established market. Yet they can leave an opening for an entrant
+whose first offer is cheaper, simpler, and initially worse on the measures that matter to
+the mainstream. The entrant learns where the leader is not looking, improves, and eventually
+makes its modest beginning consequential.
+
+## Why it matters
+
+The word "disruptive" is often used for any impressive launch. That makes it a poor tool
+for strategy. The book is more useful as a question about incentives: which customers shape
+our roadmap, which jobs are becoming over-served, and what small market would be invisible
+if we judged it by the economics of the core business? The answers can reveal a threat, but
+they can also reveal a sensible reason not to chase every novelty.
+
+## Good management can create a blind spot
+
+The familiar customer is loud for a good reason. They pay today, know what better looks
+like, and can tell a supplier where the current product falls short. A company that reliably
+acts on that information gets better at serving the profitable center of its market. The
+same feedback system can make a tiny, low-margin opportunity look irrational. It is not
+being ignored because no one noticed it. It is being filtered out because the existing
+organization has learned what a worthwhile opportunity normally looks like.
+
+<Figure id="25.1" caption="The request a company can see is not the whole field of possible demand.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="requests from today's best customers"
+    waterlineLabel="the current business model"
+    below={["over-served users", "people priced out", "uses that do not yet fit the category"]}
+  />
+</Figure>
+
+## Performance can outrun what most buyers need
+
+In a mature category, suppliers often keep raising performance faster than many customers
+can use it. More capacity, precision, features, or service may still help a demanding
+segment, but can become surplus for someone with a simpler job. That gap is where a less
+capable product can be useful. Its weakness is real, not a marketing trick. It wins because
+it changes another part of the trade: price, convenience, access, or ease of use. The
+question is not whether the newcomer is better overall. It is whether it is good enough for
+a group whose needs the leading offer has passed.
+
+<Figure id="25.2" caption="A simpler offer can become viable when product performance rises beyond a group's practical need.">
+  <div className="min-w-[640px] space-y-6">
+    <Curve
+      className="block w-full"
+      shape="exp"
+      axes={{ x: "successive generations", y: "supplier performance" }}
+      annotations={[
+        { x: 0.32, y: 0.1, text: "early performance" },
+        { x: 0.76, y: 0.44, text: "later performance" },
+      ]}
+    />
+    <div className="grid gap-5 md:grid-cols-2">
+      <Spectrum
+        className="block w-full"
+        left="less performance"
+        right="more performance"
+        marker={0.34}
+        markerLabel="early product"
+        zones={[
+          { from: 0, to: 0.6, label: "below practical need" },
+          { from: 0.6, to: 1, label: "beyond the job's need" },
+        ]}
+      />
+      <Spectrum
+        className="block w-full"
+        left="less performance"
+        right="more performance"
+        marker={0.82}
+        markerLabel="later product"
+        zones={[
+          { from: 0, to: 0.6, label: "below practical need" },
+          { from: 0.6, to: 1, label: "surplus for this job", accent: true },
+        ]}
+      />
+    </div>
+  </div>
+</Figure>
+
+## A foothold is not a frontal assault
+
+An entrant rarely begins by beating the leader for its most demanding customers. It starts
+where the incumbent has weak incentives to respond. A low-end foothold serves customers who
+are paying for more than they need. A new-market foothold serves people who previously could
+not participate at all. Both can look too small or too unattractive to merit the core
+organization's attention. A high-end challenger that immediately targets the incumbent's
+best customers is a different competitive problem, often a sustaining contest where the
+incumbent's resources are an advantage.
+
+<Figure id="25.3" caption="Disruption begins with an overlooked foothold, not a direct fight for the premium tier.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "existing users", right: "nonconsumers", label: "who gains access" }}
+    yAxis={{ low: "simple offer", high: "premium offer", label: "starting offer" }}
+    quadrants={[
+      { title: "premium extension", note: "serve the core better" },
+      { title: "new premium niche", note: "a high-end contest" },
+      { title: "low-end foothold", note: "serve over-served users" },
+      { title: "new-market foothold", note: "make participation possible" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Margins quietly direct attention
+
+When the low end leaves, an incumbent may feel relief before it feels danger. Losing a
+small, demanding-to-serve account can make the remaining business look more profitable.
+Managers then invest in the customers with greater willingness to pay, while the entrant
+gets room to improve. This pattern explains why a warning alone is not enough. An employee
+can spot the emerging offer and still be unable to win resources for it when every familiar
+measure says the core deserves the budget. The dilemma is built into the comparison, not
+into any one person's foresight.
+
+<Figure id="25.4" caption="The core business naturally pulls attention toward the revenue it already recognizes.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="small, low-margin foothold"
+    right="large, high-margin core"
+    marker={0.82}
+    markerLabel="default investment pull"
+    zones={[
+      { from: 0, to: 0.35, label: "easy to dismiss" },
+      { from: 0.62, to: 1, label: "easy to justify", accent: true },
+    ]}
+  />
+</Figure>
+
+## The new business needs a fitting home
+
+A venture aimed at a small foothold cannot be judged as though it were already the core.
+It may need smaller revenue targets, different channels, a different cost structure, and
+permission to learn from customers the main business does not know. Christensen's practical
+answer is organizational separation with connection: give the effort enough independence to
+fit its market, while using the parent selectively for assets that truly help. Separation is
+not a magic wall. It is a way to stop a mature operating model from rejecting a young one
+before the young one has had a chance to find its economics.
+
+<Figure id="25.5" caption="A foothold venture needs measures that fit its market before it can be compared with the core.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "core business lens",
+      points: ["large current revenue", "known customers", "proven margin targets", "reliable forecasts"],
+    }}
+    right={{
+      title: "foothold venture lens",
+      points: ["small early market", "unfamiliar users", "learning economics", "room to adapt"],
+    }}
+  />
+</Figure>
+
+## The Model
+
+Disruptive innovation is a process, not a badge for a company or a technology. An entrant
+finds a foothold that the established offer handles poorly or expensively. It builds a
+business that can live there, improves the offer along dimensions that eventually matter to
+more customers, and moves into the market the incumbent has been refining. At each stage,
+the incumbent's ordinary incentives can make retreat toward its profitable core look more
+reasonable than a fight. The model describes that asymmetric path, not a guaranteed outcome.
+
+<Figure id="25.6" caption="A disruption earns its name through a foothold, a viable model, improvement, and an upmarket move.">
+  <Flow
+    className="block w-full min-w-[640px]"
+    steps={["enter an overlooked foothold", "build an economics that works there", "improve the offer", "reach more demanding customers"]}
+    highlight={0}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Map the customers your product may be over-serving">
+For one important product, list the performance measures your best customers request. Then
+interview a smaller or less profitable group about the job they are trying to finish. Look
+for a feature, service level, or cost they would willingly trade away for simpler access.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Test for a real foothold">
+Write down the group's alternative today. Is it an expensive version of the product, a
+clumsy workaround, or no participation at all? If the answer is only that they prefer a
+better premium product, the opportunity may be sustaining rather than disruptive.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Give the experiment its own scorecard">
+Choose three early measures that fit the new market, such as repeat use, a reachable price,
+or the cost of serving the first cohort. Keep them separate from the core's revenue hurdle
+until the venture has enough evidence to justify a larger comparison.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Decide the response before the threat is urgent">
+For a plausible foothold, name the asset the core can contribute and the constraint it must
+not impose. Set a small budget, an owner, and a review date. The goal is not to predict every
+winner. It is to create a way for a strange opportunity to produce evidence before the core
+economics dismiss it.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Disruptive is not a synonym for novel, fast-growing, or technologically sophisticated. A
+product that begins by outperforming the incumbent for its best customers is usually a
+sustaining challenger, even if it later wins. The theory also does not make failure
+inevitable: incumbents can respond, entrants can stall, and industry history rarely follows
+one clean curve. Treat it as a disciplined way to inspect a competitive path, not as a label
+that explains any market change after the fact.
+</Callout>
+
+## If you remember one thing
+
+The dangerous competitor may begin with an offer your best customers do not want. Watch for
+the people your current economics make easy to ignore, then give a plausible foothold enough
+room to show whether it can grow.
+
+Good to Great examines how a mature company builds disciplined momentum, while The Lean
+Startup offers a method for testing the small, uncertain market a new venture may need to
+learn from. Zero to One complements this page by asking which businesses can create a new
+category rather than merely compete inside an old one.
+
+<ShelvedNearby
+  related={["good-to-great", "lean-startup", "zero-to-one"]}
+  buyUrl="https://store.hbr.org/product/the-innovator-s-dilemma-with-a-new-foreword-when-new-technologies-cause-great-firms-to-fail/10706"
+  buyLabel="The Innovator's Dilemma by Clayton M. Christensen"
+/>

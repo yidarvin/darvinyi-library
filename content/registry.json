@@ -339,7 +339,19 @@
       "subtitle": "Richard Thaler and Cass Sunstein · 2008",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "draft"
+      "status": "done",
+      "tier": 1,
+      "thesis": "How choices are arranged quietly steers the decisions people make, so design the architecture deliberately.",
+      "framework": "Choice architecture / the nudge",
+      "diagrams": [
+        "iceberg",
+        "comparison",
+        "node graph",
+        "spectrum",
+        "timeline",
+        "two-by-two matrix",
+        "flow"
+      ]
     },
     {
       "num": 18,
@@ -348,7 +360,18 @@
       "subtitle": "Nassim Nicholas Taleb · 2007",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "History is dominated by rare, high-impact events that we cannot predict but insist on explaining after the fact.",
+      "framework": "Black swan events",
+      "diagrams": [
+        "node graph",
+        "comparison",
+        "timeline",
+        "iceberg",
+        "two-by-two matrix",
+        "flow with branch"
+      ]
     },
     {
       "num": 19,
@@ -357,7 +380,18 @@
       "subtitle": "Benjamin Graham · 1949",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Invest with a margin of safety and treat the market as a moody business partner, not a signal to obey.",
+      "framework": "Mr. Market / margin of safety",
+      "diagrams": [
+        "comparison",
+        "bars",
+        "spectrum",
+        "comparison",
+        "node graph",
+        "flow with branch"
+      ]
     },
     {
       "num": 20,
@@ -366,7 +400,18 @@
       "subtitle": "Steven Levitt and Stephen Dubner · 2005",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "If you follow the incentives, the hidden side of everyday life starts to make surprising sense.",
+      "framework": "Incentives",
+      "diagrams": [
+        "comparison",
+        "flow with branch",
+        "iceberg",
+        "node graph",
+        "two-by-two matrix",
+        "process loop"
+      ]
     },
     {
       "num": 21,
@@ -375,7 +420,19 @@
       "subtitle": "Jim Collins · 2001",
       "part": "Leadership & Business",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Enduring performance is built through leaders who serve the work, a clear arena for disciplined choices, and many small actions that make momentum easier to sustain.",
+      "framework": "Level 5 leadership, the Hedgehog Concept, and the flywheel",
+      "diagrams": [
+        "comparison",
+        "flow",
+        "iceberg",
+        "venn overlap",
+        "spectrum",
+        "process loop",
+        "flow with Venn overlap and process loop"
+      ]
     },
     {
       "num": 22,
@@ -384,7 +441,18 @@
       "subtitle": "Eric Ries · 2011",
       "part": "Leadership & Business",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Build startups as experiments: ship a minimal version, measure real behavior, and learn fast enough to change course.",
+      "framework": "Build-measure-learn / MVP",
+      "diagrams": [
+        "comparison",
+        "flow",
+        "iceberg",
+        "spectrum",
+        "comparison",
+        "process loop"
+      ]
     },
     {
       "num": 23,
@@ -393,7 +461,18 @@
       "subtitle": "Peter Thiel · 2014",
       "part": "Leadership & Business",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Real progress comes from building something genuinely new rather than copying what works, and monopolies, not competition, fund it.",
+      "framework": "0 to 1 vs. 1 to n",
+      "diagrams": [
+        "comparison",
+        "flow",
+        "timeline",
+        "node graph",
+        "venn",
+        "comparison"
+      ]
     },
     {
       "num": 24,
@@ -402,7 +481,18 @@
       "subtitle": "Daniel Pink · 2009",
       "part": "Leadership & Business",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "For work that asks for judgment, learning, or care, motivation grows when people have room to direct the work, improve at it, and see who it serves.",
+      "framework": "Autonomy, mastery, and purpose",
+      "diagrams": [
+        "comparison",
+        "node graph",
+        "annotated curve",
+        "process loop",
+        "iceberg",
+        "venn"
+      ]
     },
     {
       "num": 25,
@@ -411,7 +501,18 @@
       "subtitle": "Clayton Christensen · 1997",
       "part": "Leadership & Business",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Great companies fail precisely by doing everything right for current customers while disruptive newcomers redefine the market beneath them.",
+      "framework": "Disruptive innovation",
+      "diagrams": [
+        "iceberg",
+        "annotated curve with before-and-after spectrum",
+        "two-by-two matrix",
+        "spectrum",
+        "comparison",
+        "flow"
+      ]
     },
     {
       "num": 26,
@@ -420,7 +521,18 @@
       "subtitle": "Marshall Rosenberg · 1999",
       "part": "Communication & Relationships",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Conflict softens when we speak from observations, feelings, and needs, and make clear requests instead of demands.",
+      "framework": "Observation, feeling, need, request",
+      "diagrams": [
+        "comparison",
+        "iceberg",
+        "concentric circles",
+        "flow",
+        "spectrum",
+        "flow"
+      ]
     },
     {
       "num": 27,
@@ -429,7 +541,18 @@
       "subtitle": "Kerry Patterson, Joseph Grenny, Ron McMillan, and Al Switzler · 2002",
       "part": "Communication & Relationships",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "High-stakes talks go well when you make it safe to say hard things and keep everyone contributing to a shared pool of meaning.",
+      "framework": "Pool of shared meaning",
+      "diagrams": [
+        "venn",
+        "spectrum",
+        "iceberg",
+        "flow",
+        "comparison",
+        "node graph"
+      ]
     },
     {
       "num": 28,
@@ -438,7 +561,18 @@
       "subtitle": "Gary Chapman · 1992",
       "part": "Communication & Relationships",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "People give and receive love in different primary ways, and mismatched languages can feel like absent love.",
+      "framework": "The five love languages: affirming words, attentive time, thoughtful gifts, practical help, and welcome touch.",
+      "diagrams": [
+        "comparison",
+        "venn overlap",
+        "spectrum",
+        "flow",
+        "node graph",
+        "node graph"
+      ]
     },
     {
       "num": 29,
@@ -447,7 +581,18 @@
       "subtitle": "Roger Fisher, William Ury, and Bruce Patton · 1981",
       "part": "Negotiation",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Separate people from the problem and bargain over interests, not positions, to reach deals that actually hold.",
+      "framework": "Principled negotiation: separate people from the problem, focus on interests, invent options, use objective criteria, and compare proposals with a BATNA.",
+      "diagrams": [
+        "comparison",
+        "iceberg",
+        "comparison",
+        "node graph",
+        "spectrum",
+        "flow"
+      ]
     },
     {
       "num": 30,
@@ -456,7 +601,18 @@
       "subtitle": "Daniel Goleman · 1995",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Self-awareness, self-regulation, empathy, and social skill often matter more for a life than raw IQ.",
+      "framework": "The EI domains",
+      "diagrams": [
+        "iceberg",
+        "flow",
+        "process loop",
+        "comparison",
+        "node graph",
+        "node graph"
+      ]
     },
     {
       "num": 31,
@@ -465,7 +621,19 @@
       "subtitle": "Angela Duckworth · 2016",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Sustained passion and perseverance toward a long-term goal can predict achievement beyond talent alone.",
+      "framework": "Grit: sustained passion and perseverance toward a long-term aim",
+      "diagrams": [
+        "spectrum",
+        "flow",
+        "pyramid",
+        "process loop",
+        "flow",
+        "venn",
+        "node graph"
+      ]
     },
     {
       "num": 32,
@@ -474,7 +642,17 @@
       "subtitle": "Bessel van der Kolk · 2014",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Trauma can leave the nervous system treating a safe present like an unfinished emergency, so recovery needs meaning, bodily safety, choice, and connection.",
+      "framework": "No single signature framework; the five key-idea diagrams carry the book's visual argument.",
+      "diagrams": [
+        "flow",
+        "iceberg",
+        "flow",
+        "node graph",
+        "comparison"
+      ]
     },
     {
       "num": 33,
@@ -483,7 +661,18 @@
       "subtitle": "Jared Diamond · 1997",
       "part": "Big Ideas: Science, History & Society",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "The broad asymmetries of world history grew from uneven ecological starting points and their compounding effects, not from innate differences between peoples.",
+      "framework": "Geographic determinism: ecological conditions can shape food production, diffusion, disease, and the long-run accumulation of social power without dictating a fixed outcome.",
+      "diagrams": [
+        "venn",
+        "flow",
+        "timeline",
+        "spectrum",
+        "node graph",
+        "flow"
+      ]
     },
     {
       "num": 34,
@@ -492,7 +681,18 @@
       "subtitle": "Malcolm Gladwell · 2008",
       "part": "Big Ideas: Science, History & Society",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Exceptional achievement is usually a long accumulation of practice, timing, access, and social inheritance, not proof that one person succeeded alone.",
+      "framework": "The ten-thousand-hour rule: long, deliberate practice can develop expertise when it is supported by feedback, opportunity, and the conditions that make sustained work possible.",
+      "diagrams": [
+        "iceberg",
+        "timeline",
+        "flow",
+        "two-by-two matrix",
+        "node graph",
+        "venn"
+      ]
     },
     {
       "num": 35,
@@ -501,7 +701,18 @@
       "subtitle": "Richard Dawkins · 1976",
       "part": "Big Ideas: Science, History & Society",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Natural selection preserves gene variants that leave more copies, so organisms and their behavior can be read as the temporary means by which replication succeeds.",
+      "framework": "The gene's-eye view: follow a gene variant through bodies and environments to its copies in a later generation, with the meme as a qualified cultural parallel.",
+      "diagrams": [
+        "flow",
+        "comparison",
+        "comparison",
+        "two-by-two matrix",
+        "flow",
+        "node graph with cultural flow"
+      ]
     },
     {
       "num": 36,
@@ -510,7 +721,18 @@
       "subtitle": "Bill Bryson · 2003",
       "part": "Big Ideas: Science, History & Society",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "The world becomes stranger and more intelligible when its immense age, ordinary materials, and provisional evidence are held in the same frame.",
+      "framework": "None. This book has no single signature framework, so the Model section is deliberately absent and the key-idea diagrams carry the visual argument.",
+      "diagrams": [
+        "bars",
+        "flow",
+        "process loop",
+        "node graph",
+        "iceberg",
+        "flow"
+      ]
     },
     {
       "num": 37,
@@ -519,7 +741,18 @@
       "subtitle": "Donella Meadows · 2008",
       "part": "Systems, Complexity & the Future",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Most persistent problems arise from system structure rather than isolated errors. By tracing stocks, flows, feedback, and delays, we can look for leverage in rules, information, goals, and assumptions instead of merely treating symptoms.",
+      "framework": "Stocks, flows, feedback, and leverage points: identify the accumulation that matters, the rates that change it, the loops and delays that alter those rates, then test intervention at deeper structure.",
+      "diagrams": [
+        "comparison / split",
+        "node graph",
+        "process loop",
+        "process loop",
+        "iceberg",
+        "node graph with pyramid / hierarchy"
+      ]
     },
     {
       "num": 38,
@@ -528,7 +761,17 @@
       "subtitle": "David Epstein · 2019",
       "part": "Systems, Complexity & the Future",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "In complex, unpredictable fields, broad generalists who sample widely can outperform narrow early specialists by recognizing patterns, testing analogies, and adapting to incomplete feedback.",
+      "framework": "No single signature model; the Model section is deliberately absent, and five key-idea diagrams show how range works.",
+      "diagrams": [
+        "comparison",
+        "timeline",
+        "two-by-two matrix",
+        "flow",
+        "node graph"
+      ]
     },
     {
       "num": 39,
@@ -537,7 +780,17 @@
       "subtitle": "Marcus Aurelius · c. 180 CE",
       "part": "Philosophy & Wisdom",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "A Roman emperor's private notes on duty, mortality, and mastering the only thing in our control: our own judgments.",
+      "framework": "No single signature framework; the Model section is deliberately absent, and the five key-idea diagrams carry the visual argument.",
+      "diagrams": [
+        "concentric circles",
+        "flow",
+        "node graph",
+        "timeline",
+        "process loop"
+      ]
     },
     {
       "num": 40,
@@ -546,7 +799,18 @@
       "subtitle": "Ryan Holiday · 2014",
       "part": "Philosophy & Wisdom",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Every obstacle contains the way forward if you meet it with clear perception, decisive action, and steady will.",
+      "framework": "Perception, action, will",
+      "diagrams": [
+        "comparison",
+        "concentric circles",
+        "flow",
+        "spectrum",
+        "pyramid",
+        "process loop"
+      ]
     },
     {
       "num": 41,
@@ -555,7 +819,17 @@
       "subtitle": "Eckhart Tolle · 1997",
       "part": "Spirituality & Mindfulness",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Much suffering is amplified when thought turns memory and anticipation into a story of who you are and what must happen. Presence begins by noticing that story, returning to the moment in front of you, and responding from there.",
+      "framework": "No single signature framework; the Model section is intentionally omitted in favor of five key-idea diagrams.",
+      "diagrams": [
+        "comparison",
+        "timeline",
+        "concentric circles",
+        "iceberg",
+        "flow"
+      ]
     },
     {
       "num": 42,
@@ -564,7 +838,17 @@
       "subtitle": "Anders Ericsson and Robert Pool · 2016",
       "part": "Learning & Skill Acquisition",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Purposeful practice improves a specific weakness through attention, feedback, and revision. Deliberate practice is the narrower, coach-designed form used in well-developed fields with established training methods.",
+      "framework": "Deliberate practice: a coach-designed loop of a specific weak point, full-attention attempt, specific feedback, and one adjustment. Purposeful practice applies the core loop where that instructional structure does not exist.",
+      "diagrams": [
+        "comparison",
+        "spectrum",
+        "process loop",
+        "concentric circles",
+        "flow"
+      ]
     },
     {
       "num": 43,
@@ -573,7 +857,18 @@
       "subtitle": "Elizabeth Gilbert · 2015",
       "part": "Creativity & Writing",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "A creative life gets moving when curiosity chooses the next small piece of work, even while fear remains in the room.",
+      "framework": "No single signature model; six practices for a curiosity-led creative life are carried by the key-idea diagrams.",
+      "diagrams": [
+        "comparison",
+        "flow",
+        "iceberg",
+        "spectrum",
+        "venn overlap",
+        "node graph"
+      ]
     },
     {
       "num": 44,
@@ -582,7 +877,18 @@
       "subtitle": "Austin Kleon · 2012",
       "part": "Creativity & Writing",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Creative work develops through studied influence, sustained practice, and the distinctive choices a maker adds to inherited material.",
+      "framework": "No single signature model; the book's approach is expressed through six connected creative practices, so the Model section is deliberately absent.",
+      "diagrams": [
+        "node graph",
+        "flow",
+        "comparison",
+        "venn overlap",
+        "timeline",
+        "spectrum"
+      ]
     },
     {
       "num": 45,
@@ -591,7 +897,18 @@
       "subtitle": "Stephen King · 2000",
       "part": "Creativity & Writing",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Writing improves through a working exchange: read with attention, write on a regular schedule, then revise until the reader can enter the story.",
+      "framework": "No single signature model; the book's connected practices of reading, drafting, and revision are carried by six key-idea diagrams, so the Model section is deliberately absent.",
+      "diagrams": [
+        "node graph",
+        "pyramid",
+        "spectrum",
+        "flow",
+        "comparison",
+        "iceberg"
+      ]
     },
     {
       "num": 46,
@@ -600,7 +917,17 @@
       "subtitle": "Matthew Walker · 2017",
       "part": "Health & the Body",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 1,
+      "thesis": "Sleep is a recurring biological job, not a pause in which nothing happens. Protecting enough well-timed sleep supports alertness, learning, mood, and the ordinary capacity to meet a day with judgment.",
+      "framework": "No single signature model; the Model section is deliberately absent, and five key-idea diagrams show the linked roles of sleep pressure, circadian timing, sleep architecture, consolidation, and environmental cues.",
+      "diagrams": [
+        "comparison / split",
+        "timeline",
+        "node graph",
+        "bars",
+        "flow / sequence"
+      ]
     },
     {
       "num": 47,
@@ -609,7 +936,18 @@
       "subtitle": "Philip Tetlock and Dan Gardner · 2015",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 2,
+      "thesis": "Forecasting is a skill: ordinary people who think in calibrated probabilities and update often beat experts.",
+      "framework": "No single signature model; the Model section is deliberately absent, and the six key-idea diagrams carry the forecasting practice.",
+      "diagrams": [
+        "flow",
+        "comparison",
+        "spectrum",
+        "process loop",
+        "timeline",
+        "node graph"
+      ]
     },
     {
       "num": 48,
@@ -618,7 +956,19 @@
       "subtitle": "Annie Duke · 2018",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 2,
+      "thesis": "Good decisions and good outcomes are not the same thing; judge the decision, not the result.",
+      "framework": "Resulting: judging a decision by the eventual outcome rather than the information, options, probabilities, and stakes available beforehand.",
+      "diagrams": [
+        "two-by-two matrix",
+        "spectrum",
+        "iceberg",
+        "process loop",
+        "node graph",
+        "flow",
+        "flow / comparison composition"
+      ]
     },
     {
       "num": 49,
@@ -627,7 +977,18 @@
       "subtitle": "Nassim Nicholas Taleb · 2001",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 2,
+      "thesis": "We routinely mistake luck for skill because we see the winners and never count the invisible losers.",
+      "framework": "Survivorship bias: drawing lessons from visible survivors while the comparable attempts that failed or disappeared stay outside the sample.",
+      "diagrams": [
+        "iceberg",
+        "node graph",
+        "two-by-two matrix",
+        "flow",
+        "process loop",
+        "flow / comparison composition"
+      ]
     },
     {
       "num": 50,
@@ -636,7 +997,18 @@
       "subtitle": "Barry Schwartz · 2004",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 2,
+      "thesis": "More options can leave us less satisfied and more paralyzed, not freer.",
+      "framework": "Choice overload: additional options can improve fit until comparison burden, ambiguity, and anticipated regret make a decision less usable.",
+      "diagrams": [
+        "node graph",
+        "comparison / split",
+        "iceberg",
+        "node graph",
+        "timeline / bar",
+        "annotated curve"
+      ]
     },
     {
       "num": 51,
@@ -645,7 +1017,18 @@
       "subtitle": "Malcolm Gladwell · 2005",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 2,
+      "thesis": "Snap judgments can sometimes extract a useful pattern from very little information, but the same fast response can mistake familiarity, fear, or stereotype for evidence. Treat the instant as an impression, then use deliberate checks and later outcomes to decide whether it deserves trust.",
+      "framework": "Thin-slicing",
+      "diagrams": [
+        "spectrum",
+        "flow",
+        "annotated curve",
+        "comparison / split",
+        "iceberg",
+        "comparison / split"
+      ]
     },
     {
       "num": 52,
@@ -654,7 +1037,18 @@
       "subtitle": "David Allen · 2001",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "pending"
+      "status": "done",
+      "tier": 2,
+      "thesis": "A trusted external system turns unfinished commitments into clear next actions, freeing attention for choosing and doing the work that fits the moment.",
+      "framework": "Capture, clarify, organize, reflect, engage",
+      "diagrams": [
+        "iceberg",
+        "spectrum",
+        "node graph",
+        "two-by-two matrix",
+        "flow",
+        "process loop"
+      ]
     },
     {
       "num": 53,

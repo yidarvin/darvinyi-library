@@ -1,0 +1,223 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Flow, NodeGraph, ProcessLoop, Pyramid, Spectrum, Venn } from "../components/diagrams";
+
+<Hero
+  slug="grit"
+  thesis="Sustained passion and perseverance toward a long-term goal can predict achievement beyond talent alone."
+  minutes={8}
+/>
+
+## The thesis
+
+Angela Duckworth calls sustained passion and perseverance toward a long-term goal grit, and
+argues that it can predict achievement beyond talent alone. It is a predictive claim, not a
+universal causal law: the later sections treat grit as a way to examine a chosen pursuit and
+the routes available within it, rather than as a verdict on anyone's future.
+
+## Why it matters
+
+Many ambitions are long before they are impressive. Learning a craft, earning trust, building
+a useful company, recovering after a mistake, or contributing to a field all contain periods
+when progress is hard to see. In those periods, intensity is a weak guide. It rises and falls
+with novelty and mood. A steadier system connects one meaningful direction to ordinary,
+revisable work, so a difficult week does not have to settle the question of whether to continue.
+
+## Key ideas
+
+## Passion is a compass, not a constant feeling
+
+In this framework, passion does not mean feeling excited every day. It means returning to a
+small number of important aims across time. Durable interest often grows through repeated
+contact with real work. An encounter may get your attention, practice can give it texture, and
+a sense of contribution can give it weight. That makes a useful correction to the advice to
+"find your passion." The question is less, "Am I
+thrilled right now?" and more, "Does this still deserve another season of my attention?"
+
+<Figure id="31.1" caption="A durable interest has room for ordinary days; it does not require permanent intensity.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="momentary excitement"
+    right="enduring direction"
+    marker={0.72}
+    markerLabel="return here"
+    zones={[
+      { from: 0.0, to: 0.34, label: "novelty can fade" },
+      { from: 0.62, to: 1.0, label: "a goal organizes choices", accent: true },
+    ]}
+  />
+</Figure>
+
+## Effort turns a capacity into work someone can use
+
+Natural advantages may make an early task easier, but they do not complete the later task.
+Practice converts a capacity into a skill. Continued application converts that skill into a
+result: a finished analysis, a reliable performance, a better diagnosis, or a body of work.
+Effort therefore appears at two different points. First it improves what you can do. Then it
+makes sure that capability is actually brought to the work often enough to matter. This is why
+the useful comparison is rarely talent versus effort. The more practical question is where a
+given strength needs training, and where training needs consistent application.
+
+<Figure id="31.2" caption="Practice develops a capability; repeated application gives that developed skill a chance to produce a result.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["a starting capacity", "practice", "usable skill", "applied work", "results"]}
+    highlight={3}
+  />
+</Figure>
+
+## A high-level aim can coordinate the smaller ones
+
+Grit needs a hierarchy of goals, because no serious aim is completed in one move. A broad
+direction sits at the top. Projects, routines, and next actions sit below it. The lower goals
+are allowed to change when a method fails or circumstances change. The upper direction is
+slower to abandon because it tells the smaller actions why they belong together. A researcher
+can replace an experiment without discarding the wish to understand a problem. A teacher can
+change a lesson plan without leaving the commitment to help students learn. Flexibility in
+method and steadiness in direction are compatible.
+
+<Figure id="31.3" caption="A durable direction can hold many replaceable projects and routines beneath it.">
+  <Pyramid
+    className="block w-full min-w-[440px]"
+    tiers={[
+      { label: "next actions", note: "today" },
+      { label: "routines and projects", note: "this season" },
+      { label: "a long-range direction", note: "the organizing aim" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Deliberate practice makes persistence informative
+
+Staying with a task is not enough. Repeating the same comfortable motion can preserve a habit
+without improving it. The stronger form of persistence isolates a weak part, works near the
+edge of current ability, looks for specific feedback, and adjusts the next repetition. That
+loop makes failure useful. A bad attempt becomes evidence about a technique, a missing piece
+of knowledge, or a condition that needs changing. It also prevents grit from becoming a
+romantic name for exhaustion. If the evidence says the method is wrong, revise the method.
+
+<Figure id="31.4" caption="Persistence improves work when each attempt supplies information for the next one.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["stretch attempt", "specific feedback", "one adjustment", "next attempt"]}
+    compoundingEdge={3}
+    centerLabel="practice loop"
+  />
+</Figure>
+
+## Hope supplies a route after the plan breaks
+
+Setbacks test whether an aim has become a trap. Duckworth frames hope as the belief that a
+person can influence a future outcome, paired with a search for paths forward. It is not a
+prediction that every plan will work. It is a refusal to treat one blocked route as the whole
+map. When a proposal is rejected, a project loses funding, or a skill plateaus, hope asks what
+is still controllable: a smaller experiment, a different teacher, a new audience, more time,
+or a different route to the same contribution. That question keeps agency alive without
+denying the obstacle.
+
+<Figure id="31.5" caption="A setback can end the effort, or trigger a search for a revised route toward the same aim.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["an obstacle", "name what changed", "choose what remains worth pursuing"]}
+    highlight={2}
+    branch={{ up: "search for a revised route", down: "abandon the aim" }}
+  />
+</Figure>
+
+## The Model
+
+Grit is the meeting point of two different capacities. Perseverance keeps effort in play when
+work is repetitive, frustrating, or slow. Passion keeps that effort pointed at a coherent,
+personally meaningful direction rather than scattering it across every new possibility. Each
+part corrects a failure of the other. Persistence without direction can become busy endurance.
+Direction without persistence remains an attractive intention. The model is most useful as a
+diagnostic: when a long project stalls, ask whether the direction has lost meaning, the
+practice loop has stopped teaching, or the available route needs revision.
+
+<Figure id="31.6" caption="Grit combines a direction worth returning to with effort that keeps returning to the work.">
+  <div className="min-w-[440px] space-y-6">
+    <Venn
+      className="block w-full"
+      sets={[
+        { label: "passion\na coherent direction" },
+        { label: "perseverance\ncontinued effort" },
+      ]}
+      intersectionLabel="grit\nlong-term pursuit"
+    />
+    <NodeGraph
+      className="block w-full"
+      nodes={[
+        { id: "aim", label: "meaningful aim", x: 0.5, y: 0.1 },
+        { id: "practice", label: "informed practice", x: 0.18, y: 0.66 },
+        { id: "route", label: "revised route", x: 0.82, y: 0.66 },
+        { id: "grit", label: "return to the work", x: 0.5, y: 0.48 },
+      ]}
+      edges={[
+        { from: "aim", to: "grit", kind: "reinforcing" },
+        { from: "grit", to: "practice", kind: "reinforcing" },
+        { from: "practice", to: "route" },
+        { from: "route", to: "grit", kind: "reinforcing" },
+      ]}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose a direction for the next season">
+Write one aim that matters enough to guide the next three months. It should be broad enough
+to survive a changed plan, and specific enough to rule out distractions. Then list two
+projects that serve it and one appealing activity that does not. The point is not to purge
+every interest. It is to make the tradeoff visible before the next novelty chooses for you.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Turn a vague ambition into a practice appointment">
+Choose one component of the work that is currently weak. Reserve a short, recurring block for
+that component alone, and decide how feedback will arrive: a test, a recording, a coach, a
+customer, or a peer. End each block by writing one adjustment for the next one. Consistency is
+easier when the work has a narrow subject and a visible next move.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make a setback a routing problem">
+When a plan fails, make three columns: what the obstacle blocks, what remains under your
+control, and two alternate paths. Include the option of changing the goal if the evidence says
+it no longer serves the larger direction. This is not quitting by another name. It separates a
+blocked method from an aim that truly needs reconsideration.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Review your goal hierarchy monthly">
+At the end of the month, look at your calendar and ask whether your hours match the direction
+you named. Keep, revise, or remove the projects beneath it. Do not use the review to demand
+perfect focus. Use it to prevent a collection of urgent tasks from quietly becoming your life
+plan.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book's thesis is a claim about one pattern: sustained passion and perseverance toward a
+long-term goal can predict success better than talent does. It does not make a self-assessment
+a verdict on a person's future or a complete account of achievement. Use the model to examine
+a chosen pursuit: notice whether the aim still matters, whether the practice is teaching you,
+and whether the current route deserves revision. Changing course can be the sound response to
+new evidence, a harmful situation, or a barrier that makes the aim no longer worth the cost.
+</Callout>
+
+## If you remember one thing
+
+For a long project, choose a direction worth returning to, then make the return concrete:
+practice one weak edge, learn from the result, and revise the route without losing the reason
+the work matters.
+
+## Shelved nearby
+
+Mindset helps turn a difficult attempt into information rather than a verdict. Atomic Habits
+shows how systems and environment make repeated practice easier to sustain. Drive examines the
+conditions that make effort feel self-directed, developmental, and connected to contribution.
+
+<ShelvedNearby
+  related={["mindset", "atomic-habits", "drive"]}
+  buyUrl="https://www.simonandschuster.com/books/Grit/Angela-Duckworth/9781501111105"
+  buyLabel="Grit by Angela Duckworth"
+/>

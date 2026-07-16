@@ -32,7 +32,7 @@ details are buried, and when the request appears. Those features do not dictate 
 but they set the path of least resistance. A cafeteria line, an onboarding screen, and a
 benefits portal each make an argument before a person has considered its reasons.
 
-<Figure id="18.1" caption="The visible choice sits on top of an arrangement that directs attention and effort.">
+<Figure id="17.1" caption="The visible choice sits on top of an arrangement that directs attention and effort.">
   <Iceberg
     className="block w-full min-w-[380px]"
     above="the choice you notice"
@@ -50,7 +50,7 @@ especially predictable when the decision is unfamiliar or the consequences are f
 good system does not demand perfect vigilance from its users. It reserves complexity for the
 moments when complexity buys something important.
 
-<Figure id="18.2" caption="Choice architecture begins with the gap between ideal calculation and ordinary attention.">
+<Figure id="17.2" caption="Choice architecture begins with the gap between ideal calculation and ordinary attention.">
   <Compare
     className="block w-full min-w-[440px]"
     favor="right"
@@ -69,13 +69,13 @@ moments when complexity buys something important.
 
 A default is what happens when a person does nothing. That makes it powerful because doing
 nothing is often the least demanding response. It can also look like advice from the
-institution that supplied it. Research on automatic 401(k) enrollment gave the idea a
-concrete case: changing enrollment from an affirmative act to the starting condition raised
-participation, while the employer's preset contribution and investment choices strongly shaped
-where participants stayed. The lesson is not that every default is wise. It is that a preset
-is a decision with real authorship.
+institution that supplied it. The book uses retirement-plan enrollment to make the mechanism
+concrete. When enrollment is the starting condition rather than something a person must
+request, doing nothing produces a different result. The starting contribution rate and
+investment choice become part of the same authored setting. The lesson is not that every
+default is wise. It is that a preset is a decision with real authorship.
 
-<Figure id="18.3" caption="A default can hold because it saves effort and because it looks like an endorsed recommendation.">
+<Figure id="17.3" caption="A default can hold because it saves effort and because it looks like an endorsed recommendation.">
   <NodeGraph
     className="block w-full min-w-[380px]"
     nodes={[
@@ -101,13 +101,12 @@ intention. The inverse is useful too. Make the beneficial action short, visible,
 at the moment of motivation. Friction is not a moral test. It is a setting in the system, and
 it should point in a direction you are willing to defend.
 
-<Figure id="18.4" caption="Small burdens can shift behavior from an intention toward a stalled task.">
+<Figure id="17.4" caption="Small burdens can shift behavior from an intention toward a stalled task.">
   <Spectrum
     className="block w-full min-w-[380px]"
     left="hard to start"
     right="easy to start"
     marker={0.8}
-    markerLabel="good default"
     zones={[
       { from: 0.0, to: 0.34, label: "delay and dropout" },
       { from: 0.66, to: 1.0, label: "action at the right moment", accent: true },
@@ -124,7 +123,7 @@ signal closer to the action makes the tradeoff easier to see. The signal should 
 scold: a useful feedback loop tells someone what changed and gives them a clear chance to
 adjust.
 
-<Figure id="18.5" caption="Feedback changes behavior when it appears close enough to the action to guide the next choice.">
+<Figure id="17.5" caption="Feedback changes behavior when it appears close enough to the action to guide the next choice.">
   <Timeline
     className="block w-full min-w-[520px]"
     segments={[
@@ -146,7 +145,7 @@ basic service. This makes transparency, proportionality, and reversibility pract
 not decorative ethics. If a design benefits the institution by trapping or confusing people,
 it has crossed from a nudge into manipulation.
 
-<Figure id="18.6" caption="A defensible nudge combines a plausible benefit with a refusal path that works in practice.">
+<Figure id="17.6" caption="A defensible nudge combines a plausible benefit with a refusal path that works in practice.">
   <Matrix
     className="block w-full min-w-[384px]"
     xAxis={{ left: "hard to refuse", right: "easy to refuse", label: "exit remains practical" }}
@@ -155,7 +154,7 @@ it has crossed from a nudge into manipulation.
       { title: "coercive help", note: "good aim, bad exit" },
       { title: "defensible nudge", note: "benefit with an easy out" },
       { title: "dark pattern", note: "traps the chooser" },
-      { title: "neutral convenience", note: "little steering" },
+      { title: "designer convenience", note: "easy exit, but their gain leads" },
     ]}
     highlight={1}
   />
@@ -170,7 +169,7 @@ clear comparison. It ends by checking outcomes and the exit route. A nudge is no
 environment. It is one transparent adjustment within that environment, chosen because it
 helps without closing the door.
 
-<Figure id="18.7" caption="Choice architecture locates the pressure points around a decision, then tests whether the help remains easy to decline.">
+<Figure id="17.7" caption="Choice architecture locates the pressure points around a decision, then tests whether the help remains easy to decline.">
   <Flow
     className="block w-full min-w-[620px]"
     steps={["name the decision", "map attention and friction", "make the helpful path simple", "test the exit and result"]}
@@ -212,12 +211,12 @@ exit feels punitive or obscure, the design has not earned the name of a nudge.
 <Callout kind="note">
 Nudges are not neutral merely because they preserve a formal option to refuse. Someone still
 chooses the goal, the default, and the measurement of success, and those choices can serve an
-institution more than its users. Effects also depend on context. The automatic-enrollment
-evidence that made defaults famous showed that preset contribution rates and investment
-allocations shaped where people remained, which is a reason to scrutinize the preset, not to
-celebrate inertia by itself. Evaluate a nudge against alternatives, publish the result when
-possible, and do not let a small behavioral fix distract from a structural problem that needs
-a rule, service, or resource instead.
+institution more than its users. Effects also depend on context. The retirement-plan example
+is a warning: an architect sets not only whether enrollment begins automatically, but also
+the contribution rate and investment choice. That is a reason to scrutinize the preset, not
+to celebrate inertia by itself. Evaluate a nudge against alternatives, publish the result
+when possible, and do not let a small behavioral fix distract from a structural problem that
+needs a rule, service, or resource instead.
 </Callout>
 
 ## If you remember one thing

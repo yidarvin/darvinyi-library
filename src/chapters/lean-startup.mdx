@@ -1,0 +1,211 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="lean-startup"
+  thesis="When the future is uncertain, treat every product choice as a test: build the smallest honest experiment, watch what people do, and let the evidence decide what changes next."
+  minutes={7}
+/>
+
+## The thesis
+
+Ries treats a startup as an organization working in uncertainty, where the central risk is
+not failing to ship but spending months becoming efficient at the wrong thing. The remedy is
+validated learning: make a specific claim about customers or the business, expose it to
+reality with the smallest useful product, and use observed behavior to decide whether the
+current direction deserves another turn or a deliberate change.
+
+## Why it matters
+
+Conventional management has useful answers for a known operation. It can refine a process,
+forecast demand, and improve a proven machine. A new venture does not yet know which
+customer problem is worth solving, which behavior signals value, or which economics can
+support the work. Treating that situation as ordinary execution can produce impressive
+activity and no useful knowledge. The Lean Startup offers a management rhythm for the period
+before the answers are known.
+
+## The work is learning, not merely delivery
+
+An early team needs to deliver things, but delivery is not the finish line. Code, designs,
+campaigns, and sales calls matter because each can test an assumption that sits underneath
+the business. A feature request may assume that a particular group has a particular pain.
+A pricing page may assume that the pain is valuable enough to pay to remove. Say the
+assumption plainly before building, then decide what evidence would strengthen or weaken it.
+Otherwise a busy roadmap can hide the fact that nothing consequential is being learned.
+
+<Figure id="22.1" caption="Execution creates outputs; an experiment turns an output into evidence about a bet.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "delivery mode",
+      points: ["finish the planned feature", "measure work completed", "treat launch as the payoff", "assumptions stay implicit"],
+    }}
+    right={{
+      title: "learning mode",
+      points: ["state the risky claim", "build only what can test it", "measure customer behavior", "revise the next decision"],
+    }}
+  />
+</Figure>
+
+## An MVP is the smallest credible test
+
+Minimum viable product is often heard as permission to release something shoddy. That loses
+the point. An MVP is minimal in the amount of effort needed to test a hypothesis, and viable
+in the sense that a real person can encounter enough of the offer to reveal something. For
+one question, that may be a concierge service performed by hand. For another, it may be a
+prototype, a landing page, or a narrow working feature. The correct size depends on what the
+team needs to learn and what promise it has made to participants. It does not excuse unsafe
+work, deceptive claims, or neglected reliability where reliability is the thing being tested.
+
+<Figure id="22.2" caption="A useful MVP connects one explicit claim to behavior that can change the next decision.">
+  <Flow
+    className="block w-full min-w-[600px]"
+    steps={["name one hypothesis", "make the smallest credible test", "observe a real behavior", "update confidence"]}
+    highlight={1}
+  />
+</Figure>
+
+## Metrics earn their place by changing a choice
+
+Numbers can create the feeling of contact with reality while preserving every comforting
+story. Total registrations, press mentions, and page views may rise even as people fail to
+return or fail to get value. The book's contrast is between numbers that flatter and numbers
+that can guide action. A metric becomes useful when a team can connect it to a defined group,
+a behavior, and a decision. Compare one cohort's activation after a change with a similar
+cohort before it. Track whether a new onboarding step changes completion, not only whether
+traffic grows. The goal is not to eliminate judgment. It is to give judgment a record that
+can disagree with the loudest opinion in the room.
+
+<Figure id="22.3" caption="The headline is visible, but the behavior that explains a business sits underneath it.">
+  <Iceberg
+    className="block w-full min-w-[400px]"
+    above="a growing headline number"
+    waterlineLabel="what the dashboard makes easy to see"
+    below={["which customers arrived", "who reached value", "who returned", "what changed after the test"]}
+  />
+</Figure>
+
+## Small batches shorten the distance to a fact
+
+A large release bundles many decisions into one expensive moment. If customers react badly,
+the team cannot easily tell which choice caused the result, and the repair competes with the
+next large release already in motion. Smaller batches reduce that distance. They make a
+change easier to observe, reverse, and explain. This is not a command to fragment work for
+its own sake. The batch should be as small as possible while still giving a customer a
+meaningful experience and producing a signal worth reading.
+
+<Figure id="22.4" caption="Smaller batches bring customer contact closer to the decision that created the change.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="large batch"
+    right="small batch"
+    marker={0.8}
+    markerLabel="quick feedback"
+    zones={[
+      { from: 0, to: 0.4, label: "many choices, delayed explanation" },
+      { from: 0.62, to: 1, label: "one change, readable signal", accent: true },
+    ]}
+  />
+</Figure>
+
+## A pivot changes a hypothesis while preserving the purpose
+
+A pivot is neither panic nor stubbornness. It is a structured change to the strategy after
+evidence weakens a key assumption. A team might retain the problem it wants to solve while
+changing the customer segment, the channel, the revenue model, or the product mechanism. A
+persevering team keeps the current approach because the evidence supports the next test, not
+because changing course would be embarrassing. The distinction matters because a venture
+needs a durable purpose and flexible means. Without the first, every result starts a new
+company. Without the second, every result gets explained away.
+
+<Figure id="22.5" caption="A pivot edits one strategic assumption while keeping the larger purpose in view.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "before the evidence",
+      points: ["purpose: make team reporting easier", "customer: department leaders", "channel: direct sales", "other choices stay provisional"],
+    }}
+    right={{
+      title: "after a channel pivot",
+      points: ["purpose: make team reporting easier", "customer: department leaders", "channel: self-serve trial", "one assumption changes, purpose stays"],
+    }}
+  />
+</Figure>
+
+## The Model
+
+Build-Measure-Learn is a loop for buying information with less time and money. Start with a
+hypothesis and build the least elaborate version that can put it in front of the relevant
+people. Measure a behavior that bears on the claim, rather than a number chosen because it
+is easy to improve. Then learn: keep the strategy and test its next uncertainty, or pivot a
+specific assumption and return to the loop. Speed matters because it reduces the cost of a
+wrong belief. It is valuable only when each pass makes the next decision more informed.
+
+<Figure id="22.6" caption="The cycle turns an untested assumption into a decision about the next experiment.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["build a test", "measure behavior", "learn from the result"]}
+    centerLabel="validated learning"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write the riskiest claim before planning the work">
+For one proposed feature or offer, complete this sentence: "We believe [specific people]
+will [specific behavior] because [specific reason]." Name the behavior that would count as
+evidence and the result that would make the team reconsider. Do this before estimating a
+solution.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Design one test that a real customer can finish">
+Choose the smallest experience that can answer the claim without pretending to deliver more
+than it does. Invite a small, relevant group. Tell participants what they are trying, protect
+their time and data, and record the behavior that answers the question. A polished demo that
+cannot produce a decision is too large for this purpose.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make the metric a sentence, not a dashboard">
+Write the metric as a comparison: "For customers who saw X, did Y change compared with the
+previous version?" Define the cohort, time window, and next decision beside it. If no result
+would change what the team does, remove the metric from the meeting.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Schedule a pivot-or-persevere review">
+Set a date after enough evidence can arrive. Bring the original hypothesis, the observed
+behavior, and the decision rule. Decide whether the current strategy earns another test or
+which assumption changes. Keep the purpose visible so a pivot does not become random motion.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The loop is strongest when uncertainty can be tested cheaply and customer behavior is a fair
+proxy for value. It is a poorer fit for work with long feedback cycles, heavy regulation,
+public obligations, or high costs of failure, where a tiny experiment can still harm people
+or mislead a market. A rapid test also cannot settle questions of ethics, safety, or mission.
+The book itself frames the MVP as an experiment, not as low standards or an excuse for
+technical debt. Use the method to expose uncertainty, then add the safeguards the domain
+requires. And do not mistake frequent pivots for learning: changing direction without a
+clear hypothesis merely makes the evidence harder to interpret.
+</Callout>
+
+## If you remember one thing
+
+In an uncertain venture, the scarce resource is not ideas or output. It is reliable learning
+about what people need and what the business can sustain. Spend effort on the next experiment
+that can change your mind.
+
+Good to Great considers the organizational discipline that turns a chosen direction into
+momentum, while Start With Why asks the prior question of purpose that can remain steady while
+the strategy changes. Thinking, Fast and Slow explains why a team benefits from committing its
+decisions to observed behavior instead of relying only on confident intuition.
+
+<ShelvedNearby
+  related={["good-to-great", "start-with-why", "thinking-fast-and-slow"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/210088/the-lean-startup-by-eric-ries/"
+  buyLabel="The Lean Startup by Eric Ries"
+/>

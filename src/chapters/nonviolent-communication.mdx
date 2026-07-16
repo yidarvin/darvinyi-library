@@ -1,0 +1,202 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Flow, Iceberg, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="nonviolent-communication"
+  thesis="Conflict becomes easier to work with when people trade judgments and pressure for clear facts, honest inner experience, shared needs, and a request the other person can freely answer."
+  minutes={7}
+/>
+
+## The thesis
+
+Rosenberg's central move is to treat a difficult exchange as a problem of connection before
+it becomes a problem of solutions. Instead of leading with a verdict about what another
+person is, say what happened, name the feeling it brought up, identify the need involved,
+and ask for a concrete action. The sequence does not promise agreement. It gives both people
+enough usable information to look for an answer without making one person the enemy.
+
+## Why it matters
+
+Under stress, conversation contracts. A missed deadline becomes evidence that someone does
+not care. A refusal becomes disrespect. Each person prepares a case while the other prepares
+a defense, and the original issue gets buried under claims about character. Nonviolent
+Communication, often shortened to NVC, offers a disciplined way to slow that escalation. It
+asks speakers to separate what they saw from the meaning they assigned to it, and to make the
+human stakes discussable.
+
+## Start with what a camera could record
+
+An observation is deliberately plain: something said, done, scheduled, or omitted that two
+people could check. “The report arrived after the meeting began” is an observation. “You are
+unreliable” is an interpretation with a verdict attached. The difference is not politeness
+for its own sake. A verdict invites a fight over identity, while a concrete event gives the
+conversation a shared object. This does not require you to pretend a pattern is harmless. It
+requires giving the pattern a factual description before arguing about what it means.
+
+<Figure id="26.1" caption="An observable event can be examined together; a verdict makes the person the issue.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "a verdict",
+      points: ["labels the person", "bundles fact and interpretation", "invites a defense", "obscures the next action"],
+    }}
+    right={{
+      title: "an observation",
+      points: ["names what happened", "can be checked together", "keeps meaning open", "gives the talk a starting point"],
+    }}
+  />
+</Figure>
+
+## Feelings point beneath the argument
+
+Feelings are information about how an event is landing, not evidence that someone else has
+committed a crime against you. Saying “I am anxious” or “I am disappointed” reveals more
+than “I feel ignored,” which smuggles in a conclusion about the other person's intent. The
+feeling can then point toward what matters: reliability, consideration, rest, autonomy,
+belonging, safety, or one of many other human needs. That turn matters because it changes
+the question from who caused the pain to what the situation needs to hold.
+
+<Figure id="26.2" caption="The accusation is the visible surface; the feeling and need explain what is at stake.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above={'"you do not care"'}
+    waterlineLabel="the first accusation"
+    below={["disappointment", "a need for reliability", "a wish to matter"]}
+  />
+</Figure>
+
+## Needs are not the same as the plan
+
+A need is the condition you are trying to protect. A strategy is one possible way of meeting
+it. That distinction keeps a conversation from treating one proposed solution as the whole
+of reality. “I need you to call me every evening” sounds like a need, but it joins two things:
+the underlying wish for closeness or reassurance and one particular method for getting it.
+When the need is named separately, more options appear. A short check-in, a shared calendar,
+or a different rhythm might meet the same need without asking either person to surrender
+their own.
+
+<Figure id="26.3" caption="Keep the need at the center and let several strategies remain available around it.">
+  <Concentric
+    className="block w-full min-w-[440px]"
+    rings={[
+      { label: "the need: connection" },
+      { label: "possible strategies" },
+      { label: "call, note, plan, or check-in" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+## Empathy tries to understand before it solves
+
+NVC asks for the same four kinds of attention when listening as when speaking. Hear the
+event as the other person describes it, then test a guess about their feeling and need.
+“Are you frustrated because you need more predictability?” is not a claim to know their
+private world. It is an invitation to correct the guess. Advice, reassurance, explanation,
+and comparison can all be useful later. In the first tense minutes they often interrupt the
+thing the other person is still trying to make clear.
+
+<Figure id="26.4" caption="Empathy moves from the account of an event toward a testable understanding, before advice.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["hear the event", "name a possible feeling", "ask about the need", "let them correct you"]}
+    highlight={2}
+  />
+</Figure>
+
+## A request leaves room for a real answer
+
+The last step is an action someone can actually take, not a demand dressed in gentle words.
+“Would you send the draft by Thursday afternoon?” is specific enough to accept, decline, or
+revise. “Can you be more responsible?” leaves the other person guessing. The difference
+shows up most clearly when the answer is no. A request treats no as information about a
+constraint, then looks for another strategy. A demand treats no as disobedience and adds a
+punishment, overtly or quietly. The aim is not to make refusal painless. It is to keep the
+relationship and the problem visible after refusal arrives.
+
+<Figure id="26.5" caption="A clear request invites a response; pressure turns the response into a test of compliance.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="a demand"
+    right="a request"
+    marker={0.64}
+    markerLabel="a clear ask"
+    zones={[
+      { from: 0.0, to: 0.36, label: "punishment follows no" },
+      { from: 0.62, to: 1.0, label: "no starts a new search", accent: true },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The four parts work as a sequence, but not as a magic sentence. You may begin by listening
+to the other person, return to the observation when the story gets fuzzy, or stop after the
+need if no request is ready. The value of the model is its separation of kinds of information:
+what happened, what it stirred, what matters, and what could be tried now. Keeping those
+apart makes a hard conversation less likely to collapse into accusation or vague goodwill.
+
+<Figure id="26.6" caption="The NVC sequence turns a charged moment into information both people can respond to.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["observation", "feeling", "need", "request"]}
+    highlight={3}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write the camera version">
+Before a conversation you are dreading, write one sentence that a camera or audio recorder
+could confirm. Remove labels such as careless, selfish, or dismissive. If the sentence still
+claims to know motive, keep editing until it describes an event, a time, or exact words.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Separate the need from your first solution">
+Finish this sentence privately: “I am feeling ___ because I need ___.” Then write three
+different ways that need might be met. Bring only one concrete request to the conversation,
+but keep the alternatives in mind so a no does not leave you with nowhere to go.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Ask for something observable">
+Turn a broad wish into an action, a time, and a choice. Rather than asking a colleague to
+communicate better, ask whether they can post a two-line status by 3 p.m. on Tuesdays. Make
+the request small enough that the answer tells you something useful.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Listen for the need in a no">
+When someone declines, do not immediately restate your case. Ask what makes the request hard
+to meet and listen for the need or constraint in the answer. Name what you heard, then see if
+another strategy can protect both sides of the problem.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The framework can become a polished way to control another person. A speaker may use its
+vocabulary while still insisting that their preferred strategy is the only acceptable one.
+That is pressure in a softer voice. It also cannot make every conflict symmetrical. In a
+relationship marked by coercion, intimidation, or violence, clearer self-expression does not
+create safety or remove the need for boundaries and outside support. Use the model to seek
+understanding where there is enough safety for a conversation, not as an obligation to keep
+engaging with someone who is unsafe.
+</Callout>
+
+## If you remember one thing
+
+When conflict begins, trade the judgment for four kinds of clarity: what happened, what you
+feel, what matters, and what you are asking for now. A clear request may still receive a no,
+but it gives both people a chance to solve the actual problem instead of defending their
+character.
+
+How to Win Friends and Influence People shares the emphasis on dignity in difficult exchanges,
+while Never Split the Difference shows how reflective listening can uncover the concern behind
+a stated position.
+
+<ShelvedNearby
+  related={["how-to-win-friends", "never-split-the-difference"]}
+  buyUrl="https://www.nonviolentcommunication.com/product/nonviolent-communication-a-language-of-life-3rd-edition/"
+  buyLabel="Nonviolent Communication by Marshall B. Rosenberg"
+/>

@@ -1,0 +1,196 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph } from "../components/diagrams";
+
+<Hero
+  slug="body-keeps-the-score"
+  thesis="Trauma can leave the nervous system treating a safe present like an unfinished emergency. Recovery asks for meaning and memory, but also for enough bodily safety, choice, and connection to live in the present again."
+  minutes={8}
+/>
+
+## The thesis
+
+Bessel van der Kolk's central claim is that traumatic experience can persist as patterns of
+alarm, disconnection, and bodily reaction, not only as a story someone can tell. Talking can
+matter deeply, but understanding the event is not always enough to change a system that still
+expects danger. Healing therefore has to include a renewed sense of safety in the body, a
+capacity to choose in the moment, and relationships that make the present believable.
+
+## Why it matters
+
+After danger, people are often asked why they cannot simply move on. That question mistakes a
+protective response for a failure of character. A quick pulse, a blank spell, an urge to flee,
+or a sharp reaction may make sense as an old survival pattern meeting a cue that resembles the
+past. The book's lasting contribution is to take those reactions seriously without reducing a
+person to them. The work is not to erase the past. It is to help the past stop running the next
+minute.
+
+## Key ideas
+
+## The alarm can outlast the emergency
+
+A nervous system learns fast when survival is involved. A sound, smell, facial expression, or
+body position can later carry the meaning of a much older moment. The reaction may arrive
+before conscious interpretation: muscles tighten, attention narrows, or the urge to escape
+appears. This does not mean every strong feeling is a trauma response, or that everyone exposed
+to trauma develops PTSD. It means the useful first question is often, "What is my system
+predicting right now?" rather than, "What is wrong with me?"
+
+<Figure id="32.1" caption="A present cue can lead to orienting in the room now or to an automatic protective response, with a pause creating room to choose.">
+  <Flow
+    className="block min-w-[440px]"
+    steps={["a present cue", "pause and orient"]}
+    highlight={1}
+    branch={{ up: "respond to the room now", down: "automatic protection" }}
+  />
+</Figure>
+
+## A memory can arrive without a complete story
+
+Autobiographical memory is only one way an experience can persist. A person may recognize the
+facts of an event yet be caught by a bodily state that feels out of proportion to the room: a
+stomach dropping, a rush of heat, numbness, or a compulsion to control every exit. The book
+uses this gap to argue that recovery cannot rely only on explanation. The sensation, the
+meaning attached to it, and the action it pulls for need room to be noticed together. Naming
+the pattern does not settle it, but it makes the pattern less mysterious and more workable.
+
+<Figure id="32.2" caption="The visible reaction may sit on top of sensations, learned meanings, and protective impulses that deserve attention.">
+  <Iceberg
+    className="block min-w-[380px]"
+    above="the reaction others see"
+    waterlineLabel="what is easy to explain"
+    below={["body sensations", "an old prediction", "a protective impulse"]}
+  />
+</Figure>
+
+## A small return to the present restores some choice
+
+When activation rises, the first task is not an insight or a perfect calm. It is a small,
+concrete return to the current environment. Look for five neutral objects. Feel the support of
+the chair or floor. Let the eyes move around the room. Name the month and the place. These
+actions are not a cure, and forcing attention inward can be unhelpful for some people. Their
+purpose is more modest: to give the nervous system fresh evidence that there is a present
+moment, then create enough space to choose the next safe action.
+
+<Figure id="32.3" caption="Grounding works as a short route from an alarm signal toward one chosen next action.">
+  <Flow
+    className="block min-w-[558px]"
+    steps={["notice the alarm", "orient to the room", "feel one point of support", "choose one safe next move"]}
+    highlight={3}
+  />
+</Figure>
+
+## Safety is built with other people, too
+
+Trauma often changes the social world. Trust can feel unsafe, closeness can provoke vigilance,
+and isolation can temporarily seem easier than being seen. Yet recovery is rarely a solitary
+achievement. A steady person, a clear boundary, a predictable group, or a clinician who
+follows the survivor's pace can supply experiences that contradict the expectation of harm.
+Connection is not a demand to disclose everything or forgive anyone. It is repeated evidence
+that contact can include consent, repair, and the option to say no.
+
+<Figure id="32.4" caption="Choice, predictable contact, and repair can reinforce a more credible sense of safety.">
+  <NodeGraph
+    className="block min-w-[380px]"
+    nodes={[
+      { id: "choice", label: "choice and consent", x: 0.5, y: 0.1 },
+      { id: "contact", label: "predictable contact", x: 0.16, y: 0.64 },
+      { id: "repair", label: "repair after strain", x: 0.84, y: 0.64 },
+      { id: "safety", label: "felt safety", x: 0.5, y: 0.45 },
+    ]}
+    edges={[
+      { from: "choice", to: "safety", kind: "reinforcing" },
+      { from: "contact", to: "safety", kind: "reinforcing" },
+      { from: "repair", to: "safety", kind: "reinforcing" },
+      { from: "safety", to: "contact", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## The method has to fit the person, not the slogan
+
+The book ranges across psychotherapy, movement, theater, mindfulness, and neurofeedback.
+Its practical lesson is not that one technique works for everyone. Different people have
+different symptoms, histories, resources, cultures, and tolerances for activation. Care works
+better when it is collaborative and paced, with a clear plan for what happens if distress
+rises. A method that increases agency can help. A method imposed as a test of courage can
+repeat the loss of control that treatment is meant to address.
+
+<Figure id="32.5" caption="Trauma care becomes safer when the person's pace and feedback shape the method.">
+  <Compare
+    className="block min-w-[384px]"
+    favor="right"
+    left={{
+      title: "a fixed script",
+      points: ["one method for every person", "distress treated as failure", "pace set from outside", "little room to adjust"],
+    }}
+    right={{
+      title: "collaborative care",
+      points: ["start with current needs", "watch for overload or shutdown", "adjust pace and method", "keep choice visible"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Make a present-tense orientation card">
+Write four facts that are true when you are safe enough: today's date, your current location,
+one person you can contact, and one sensory detail that changes from day to day. Keep the card
+where you can find it. When you notice a surge, read it slowly and look for the matching facts
+in the room. If this intensifies distress, stop and use support that feels safer.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Track the sequence, not the verdict">
+After a difficult moment, write a brief chain: the cue, the first body signal, the story that
+arrived, the action you felt pulled toward, and what helped even a little. Do this later, when
+you are settled enough to be curious. The aim is not to prove the reaction irrational. It is to
+learn where choice might enter earlier next time.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Practice one consent-sized boundary">
+Choose a low-stakes way to exercise control this week: ask for a pause, decline a plan, pick a
+seat that feels comfortable, or tell a trusted person how you want to be checked on. Notice the
+result. A boundary is not a dramatic confrontation. It is evidence that your preferences can
+shape an interaction now.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Choose professional help by fit and evidence">
+If trauma symptoms are disrupting sleep, work, relationships, or safety, bring a clear question
+to a qualified trauma clinician: which treatment fits these symptoms, what evidence supports
+it, how will we monitor progress, and what are our options if it is not a fit? In an immediate
+crisis or if you may harm yourself, contact local emergency services or a crisis line now.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+"The body keeps the score" is a useful metaphor, not a literal claim that the body stores a
+complete hidden recording of an event. Trauma responses vary widely, and neither a body signal
+nor a recovered feeling can establish what happened on its own. Body-based work also should not
+be sold as a universal substitute for trauma treatment. In van der Kolk and colleagues'
+[small randomized trial](https://pubmed.ncbi.nlm.nih.gov/25004196/), trauma-informed yoga was
+studied with 64 women with chronic, treatment-resistant PTSD, not with every trauma survivor.
+More broadly, the [2023 VA/DoD guidance](https://www.ptsd.va.gov/professional/treat/txessentials/overview_therapy.asp)
+recommends specific trauma-focused psychotherapies, including prolonged exposure, cognitive
+processing therapy, and EMDR, as the best-supported treatments for PTSD. Use the book's
+attention to bodily safety as a valuable lens, not a diagnosis or a reason to postpone
+appropriate professional care.
+</Callout>
+
+## If you remember one thing
+
+When the past feels present, start by treating the reaction as protection rather than failure.
+Orient to what is true now, make one choice you can feel in your body, and seek relationships
+and care that help the present become more believable.
+
+## Shelved nearby
+
+Emotional Intelligence offers a practical way to notice an emotional signal before it becomes
+an action. Nonviolent Communication helps make needs and boundaries speakable in relationship.
+Mindset is useful when a difficult reaction has become a fixed verdict about the self.
+
+<ShelvedNearby
+  related={["emotional-intelligence", "nonviolent-communication", "mindset"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/313183/the-body-keeps-the-score-by-bessel-van-der-kolk-md/9780143127741/"
+  buyLabel="The Body Keeps the Score by Bessel van der Kolk"
+/>

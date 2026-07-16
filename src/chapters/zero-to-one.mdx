@@ -1,0 +1,231 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, Timeline, Venn } from "../components/diagrams";
+
+<Hero
+  slug="zero-to-one"
+  thesis="A venture earns unusual returns by discovering a specific future others have missed, serving a narrow market well, and building advantages that make imitation difficult."
+  minutes={8}
+/>
+
+## The thesis
+
+Thiel's central distinction is between extending a known pattern and making a new one. A
+business can become better at an established activity, but the larger prize comes from a
+different capability, product, or market that changes what is possible. The book argues that
+such work needs a precise view of the future, a small market where the company can matter
+first, and enough durable advantage to keep the value it creates from being copied away.
+
+## Why it matters
+
+Startups are often told to move quickly, watch competitors, and keep every option open. Each
+piece of advice can help in the right moment, but together they can produce a company that is
+excellent at following. Zero to One asks a prior question: what useful thing could exist that
+does not exist yet? That question turns strategy from a race to catch up into an attempt to
+make a particular future real.
+
+## Progress has a copying path and a creating path
+
+Doing more of a known thing can spread a useful practice. Opening the same service in another
+city, adopting a proven tool, or improving an established process may create real value. The
+book calls this movement from one to many. It is different from the first move, where a team
+figures out how to do something that had not been workable before. That is the zero-to-one
+move. The distinction is not a moral ranking of old and new. It is a way to avoid mistaking
+replication for invention when the problem needs the latter.
+
+<Figure id="23.1" caption="One path expands a known pattern; the other creates a new capability to expand later.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="left"
+    left={{
+      title: "0 → 1: create",
+      points: ["make a new capability", "solve an unworked problem", "learn what must be true", "create the first position"],
+    }}
+    right={{
+      title: "1 → many: expand",
+      points: ["repeat a proven pattern", "roll out to more people", "improve delivery and reach", "scale what already works"],
+    }}
+  />
+</Figure>
+
+## Competition can make the work smaller
+
+Competition is useful information about what customers can choose. It becomes a bad strategy
+when a company defines itself mainly by matching a rival. Feature lists converge, prices come
+under pressure, and the team spends its attention on the next visible move elsewhere. Thiel's
+stronger provocation is economic: when close substitutes can quickly match an offer, rivalry
+can compete away the profit that would fund patient invention. A company that escapes close
+substitutes can retain the returns needed to keep improving its technology, product, and reach.
+That is the book's case for monopoly, not merely for looking different. In practical terms,
+the question is whether a company can solve a distinctive problem well enough to earn a
+durable position, rather than joining a crowded contest with no room to invest.
+
+<Figure id="23.2" caption="Following every rival can turn a distinct offer into a costly race toward sameness.">
+  <Flow
+    className="block w-full min-w-[600px]"
+    steps={["watch a rival", "match the visible move", "offers become alike", "margins and attention shrink"]}
+    highlight={2}
+  />
+</Figure>
+
+## A narrow beginning is a strategic choice
+
+The book favors starting with a market small enough to understand and serve completely. That
+is not the same as thinking small forever. A clearly bounded group gives a young company a
+chance to learn its needs, earn trust, and become the obvious choice before it tries to reach
+people with different jobs and constraints. Expansion works best when it proceeds through
+adjacent markets that the first position actually prepares the company to serve. Broad
+ambition without a beachhead often produces a generic message and thin evidence of demand.
+
+<Figure id="23.3" caption="A strong first foothold can provide the evidence and capability for adjacent expansion.">
+  <Timeline
+    className="block w-full min-w-[480px]"
+    segments={[
+      { label: "define one exact group", sub: "a problem felt now" },
+      { label: "serve it exceptionally", sub: "become the clear choice" },
+      { label: "move to an adjacent group", sub: "carry a real advantage forward" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## A secret is an overlooked insight worth acting on
+
+For Thiel, a secret is not hidden trivia or a clever slogan. It is a meaningful truth about a
+customer, technology, or institution that has not yet become common operating knowledge. The
+book asks founders to look where the usual story may be incomplete. This page adds a practical
+extension: turn a candidate insight into a working claim, make an offer that exposes it to
+customers, and let their response support or revise the claim. Curiosity without contact with
+reality remains a theory. An overlooked insight earns strategic value only when it changes what
+a team can make or how it can serve people.
+
+<Figure id="23.4" caption="Customer evidence can support a working claim or send it back for revision.">
+  <NodeGraph
+    className="block w-full min-w-[400px]"
+    ariaLabel="An overlooked observation becomes a working claim, a different offer, customer use, and evidence that either supports or revises the claim."
+    nodes={[
+      { id: "observation", label: "overlooked observation", x: 0.5, y: 0.08 },
+      { id: "claim", label: "working claim", x: 0.14, y: 0.42 },
+      { id: "offer", label: "different offer", x: 0.18, y: 0.8 },
+      { id: "use", label: "customer use", x: 0.56, y: 0.88 },
+      { id: "evidence", label: "customer evidence", x: 0.86, y: 0.66 },
+      { id: "support", label: "support the claim", x: 0.82, y: 0.22 },
+      { id: "revise", label: "revise the claim", x: 0.52, y: 0.48 },
+    ]}
+    edges={[
+      { from: "observation", to: "claim" },
+      { from: "claim", to: "offer" },
+      { from: "offer", to: "use" },
+      { from: "use", to: "evidence" },
+      { from: "evidence", to: "support" },
+      { from: "evidence", to: "revise" },
+      { from: "support", to: "claim" },
+      { from: "revise", to: "claim" },
+    ]}
+  />
+</Figure>
+
+## Advantage must outlast the launch
+
+An invention can attract attention and still fail to become a lasting business. The book
+points to a cluster of protections: a technical lead that is difficult to duplicate, a network
+whose usefulness rises as more people participate, and scale that improves the economics of
+serving the market. Brand can reinforce those practical strengths when it gives customers a
+clear reason to remember and trust the company. None is automatic. The useful discipline is
+to ask what becomes more valuable, cheaper, or harder to copy after each customer joins.
+
+<Figure id="23.5" caption="A durable position is stronger when distinctive capability, reinforcement, and scale support one another.">
+  <Venn
+    className="block w-full min-w-[400px]"
+    sets={[
+      { label: "hard-to-copy capability" },
+      { label: "use improves with participation" },
+      { label: "economics improve at scale" },
+    ]}
+    intersectionLabel="a position that can endure"
+  />
+</Figure>
+
+## The Model
+
+The title supplies a useful decision lens. Moving from one to many takes something already
+known and carries it farther through rollout, adoption, or efficiency. Moving from zero to
+one requires a discontinuity: a new answer to a real problem, followed by the work of making
+that answer durable. Both paths demand skill. The model matters because they ask for
+different kinds of planning. One optimizes a proven machine; the other begins by finding the
+machine worth building.
+
+<Figure id="23.6" caption="The zero-to-one move creates a new capability; the one-to-many move spreads a proven one.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="left"
+    left={{
+      title: "0 → 1",
+      points: ["an unproven insight", "a new capability or market", "learn what must be true", "build a defensible first position"],
+    }}
+    right={{
+      title: "1 → many",
+      points: ["a proven pattern", "rollout or replication", "improve delivery and reach", "operate at increasing scale"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write the non-obvious customer claim">
+Choose one group you want to serve. Write a sentence that begins, "Most people assume this
+group needs [common answer], but I think the harder problem is [specific alternative]." Talk
+to people in the group until the claim becomes more precise or falls apart. A useful insight
+gets sharper when reality pushes on it.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Draw the smallest market boundary">
+Name the first customers with enough detail to recognize them in a room: their situation, the
+job they need done, and the reason current choices leave them unsatisfied. Exclude everyone
+else for this exercise. Then state what evidence would show that you have become the obvious
+choice for this initial group.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="List the advantage that compounds">
+For the proposed business, complete three sentences: "After one more customer, our product
+gets better because..." "Our cost or speed improves because..." "A follower would struggle
+to copy us because..." If every answer depends on more advertising or more features, the
+advantage may still be an aspiration rather than a mechanism.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Choose the next fact, not the next rival">
+At the next planning meeting, replace one competitor update with a question about your own
+uncertainty. Decide what observation would change the product, the market boundary, or the
+pricing. Assign one small test that could produce that observation. This keeps attention on
+the future you are trying to make rather than the move you are trying to match.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book uses "monopoly" to mean a business with no close substitutes, able to retain the
+profits that rivalry would otherwise press down. That economic claim is not a careful account
+of competition law or a permission slip to exclude people unfairly. A company can have a
+valuable lead while still facing obligations to customers, workers, suppliers, and regulators.
+Competition also has benefits the frame tends to understate: it can expose weak assumptions,
+protect customers from poor service, and limit unearned power. Treat the advice as a prompt to
+build something meaningfully better and defensible, not as a claim that every concentrated
+market is healthy or that every founder needs a grand theory of the future.
+</Callout>
+
+## If you remember one thing
+
+Do not let a crowded category choose your ambition. Find a concrete problem that others have
+overlooked, win a narrow place where the answer matters, and build the capability that makes
+the position stronger with use.
+
+The Lean Startup supplies the experiment loop for testing an unusual market claim, while Good
+to Great focuses on the discipline required to turn a chosen arena into sustained momentum.
+Start With Why is the companion question of purpose: the reason a team might keep making the
+hard tradeoffs a distinctive position requires.
+
+<ShelvedNearby
+  related={["lean-startup", "good-to-great", "start-with-why"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/234730/zero-to-one-by-peter-thiel-with-blake-masters/9780804139304/"
+  buyLabel="Zero to One by Peter Thiel and Blake Masters"
+/>

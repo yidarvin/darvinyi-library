@@ -1,0 +1,198 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Concentric, Flow, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="meditations"
+  thesis="A hard day does not belong to you, but the judgment you add to it and the duty you meet within it can."
+  minutes={7}
+/>
+
+## The thesis
+
+*Meditations* asks a person to examine the judgment an event provokes, then meet the duty
+still available with honesty, fairness, and resolve. Peace is participation in the world
+without letting luck, praise, fear, or anger choose one's character.
+
+## Key ideas
+
+## Events enter from outside; judgment begins within
+
+The book's most useful boundary is not between pleasant and unpleasant events. It is between
+what happens and the interpretation a mind places on it. A canceled plan, a cutting remark,
+and a bad diagnosis are facts with very different consequences, but none arrives with a
+complete verdict attached. The mind supplies additions: this ruins everything, they meant to
+humiliate me, I cannot bear this. Those additions may be understandable, and sometimes they
+will point to a real problem. They still deserve inspection before they become commands.
+
+That inspection is the Stoic field of action. You cannot dictate another person's conduct,
+the weather, your reputation, or whether a body stays healthy. You can ask whether your next
+judgment is accurate, whether your intention is honorable, and what action fits the facts.
+The inner circle is small. It is also where responsibility begins.
+
+<Figure id="39.1" caption="The event arrives outside the circle; judgment, intention, and action are within it.">
+  <Concentric
+    className="block w-full min-w-[380px]"
+    rings={[
+      { label: "judgment" },
+      { label: "intention and chosen action" },
+    ]}
+    externalLabel="an event: another person, outcome, or chance"
+    highlight={0}
+  />
+</Figure>
+
+## A first impression is not yet a conclusion
+
+Marcus treats the first flash of reaction as material for reason, not as an order. Something
+appears threatening, insulting, desirable, or unbearable. Before acting, pause long enough
+to separate the appearance from the claim it is making. What do I know? What story am I
+adding? What would a fair-minded person say the situation requires?
+
+The pause does not demand emotional blankness. Alarm, grief, and anger can arrive before
+deliberation, and they often carry information. The practical demand is narrower: do not
+grant them final authority while they are hot. A judgment that survives examination can guide
+action. One that does not can be released before it turns a difficult moment into a needless
+fight.
+
+<Figure id="39.2" caption="A reaction can become a considered response when inspection comes before assent.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["an impression arrives", "inspect the story", "assent or revise", "act with purpose"]}
+    highlight={1}
+  />
+</Figure>
+
+## Reason has a social job
+
+It is easy to turn Stoicism into private self-protection. Marcus argues for almost the
+opposite conclusion. Human beings are suited to cooperate, so clear judgment should make a
+person more useful to other people, not less affected by them. The question after a slight or
+setback is not only, "How do I stay calm?" It is also, "What does the shared work need now?"
+
+That can mean correcting someone without contempt, doing unglamorous work, keeping a promise,
+or refusing to repay carelessness with cruelty. Duty is not a performance for an audience.
+It is the part a person can carry in a larger human arrangement. The book's discipline of the
+self is therefore inseparable from fairness, patience, and service.
+
+<Figure id="39.3" caption="Clear judgment should travel outward into fair and useful action with other people.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "judgment", label: "clear judgment", x: 0.14, y: 0.5 },
+      { id: "intention", label: "honorable intention", x: 0.47, y: 0.18 },
+      { id: "action", label: "useful action", x: 0.47, y: 0.82 },
+      { id: "common", label: "the common good", x: 0.86, y: 0.5 },
+    ]}
+    edges={[
+      { from: "judgment", to: "intention" },
+      { from: "judgment", to: "action" },
+      { from: "intention", to: "common" },
+      { from: "action", to: "common" },
+    ]}
+  />
+</Figure>
+
+## Mortality makes the present specific
+
+Marcus returns to death often, not to make ordinary life bleak, but to remove the fantasy of
+an unlimited rehearsal. Status, applause, grievance, and the urge to postpone a needed act
+all look different when time is finite. The point is not to predict a date or to manufacture
+constant urgency. It is to stop spending a real day as though a more suitable life will begin
+later.
+
+This perspective turns large abstractions into questions for today. If recognition will fade,
+what is worth doing without it? If a disagreement will soon lose its heat, what response will
+you respect tomorrow? If the day is limited, which obligation deserves the next hour? The
+thought of an ending brings the available moment into focus.
+
+<Figure id="39.4" caption="Finitude turns an imagined future into a choice about the day presently in hand.">
+  <Timeline
+    className="block w-full min-w-[416px]"
+    segments={[
+      { label: "an imagined forever", sub: "postpone what matters" },
+      { label: "a finite life", sub: "attention returns" },
+      { label: "this day", sub: "do the next right thing" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Philosophy is a repeated return, not a mood
+
+The notebook's form reveals part of its method. Marcus tells himself many of the same things
+again because knowing a principle once does not keep it ready when pride, exhaustion, pain,
+or resentment arrive. Reflection is maintenance. The aim is to notice a drift early and
+return to a sounder judgment before the drift hardens into conduct.
+
+That makes the practice less theatrical than modern ideas of self-mastery. You review the
+day, name the point where you became reactive or vain, remember the kind of person you mean
+to be, and try again in the next encounter. The measure is not a permanently serene feeling.
+It is a quicker, more honest return to the work of living well with others.
+
+<Figure id="39.5" caption="Reflection catches a drift, reconnects it to principle, and prepares the next encounter.">
+  <ProcessLoop
+    className="block w-full min-w-[380px]"
+    stages={["notice the drift", "examine the judgment", "return to principle", "meet the next moment"]}
+    compoundingEdge={3}
+    centerLabel="a daily reset"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Divide one difficulty in two">
+Write down one situation that is bothering you. On the left, list the facts you could show a
+camera. On the right, list the predictions, labels, and accusations your mind has added. Do
+not force the right side to disappear. Ask which item on it is proven, which needs checking,
+and which is only escalating your distress.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Delay your assent">
+The next time you receive a provoking message, do not answer immediately. Write a draft if
+you need to, then wait ten minutes. Re-read it and state the other person's most plausible
+concern in one fair sentence. Decide whether your reply can address that concern without
+giving up a needed boundary.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Choose one useful part">
+At the beginning of a workday, identify one task that makes another person's work easier or
+more reliable. Do it before the task that produces the most visible credit. This is a small
+test of whether duty is guiding attention more than recognition.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Close the day with a short review">
+Before sleep, record one moment when you added a harsh story to an event, one action that was
+fair or useful, and one adjustment for tomorrow. Keep it concrete and brief. The purpose is
+to prepare the next attempt, not to build a case against yourself.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Stoicism is often reduced to "control your emotions" or "accept whatever happens." Neither
+is a sound reading. The discipline concerns judgments and chosen conduct, not a command to
+erase grief, fear, pain, or the effects of trauma. Acceptance of an uncontrollable fact also
+does not mean approval of injustice or passivity before it. A person can work to change an
+unjust condition, seek medical or psychological care, ask for help, and set a boundary while
+still refusing to let rage or despair alone choose the next act. Marcus also writes from the
+position of a Roman emperor. His language about nature, rank, and duty should be read with
+that power and its limits in view, not treated as a universal instruction manual.
+</Callout>
+
+## If you remember one thing
+
+You cannot choose every event, feeling, or outcome. You can still examine the story you are
+adding and choose the next action that is honest, fair, and useful.
+
+## Shelved nearby
+
+The 7 Habits of Highly Effective People brings the same focus on chosen response into modern
+personal practice. Man's Search for Meaning asks how responsibility can remain meaningful
+under far harsher constraints.
+
+<ShelvedNearby
+  related={["seven-habits", "mans-search-for-meaning"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/6367/meditations-by-marcus-aurelius/"
+  buyLabel="Meditations by Marcus Aurelius"
+/>

@@ -1,0 +1,199 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Curve, Flow, Iceberg, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="blink"
+  thesis="A snap judgment can extract a useful pattern from a narrow sample, but it can also turn bias or familiarity into a false signal, so later checks reveal whether it deserves trust."
+  minutes={7}
+/>
+
+## The thesis
+
+Snap judgments can sometimes extract a useful pattern from very little information, but the same
+fast response can mistake familiarity, fear, or stereotype for evidence. Treat the instant as an
+impression, then use deliberate checks and later outcomes to decide whether it deserves trust.
+
+## Why it matters
+
+Many choices arrive before a spreadsheet or meeting can: an interviewer senses a poor fit, a
+clinician sees something off, or a coach spots a mechanical error. The first feeling is neither a
+private oracle nor a reason to drown in detail. Notice it, ask what could make it informative,
+then build a way to challenge it.
+
+## Key ideas
+
+### Fast is not the same as careless
+
+A rapid judgment can reflect repeated exposure that makes useful cues easy to recognize, or a
+cue unrelated to the question. Time does not distinguish the two; the cue's relation to the
+outcome does.
+
+<Figure id="51.1" caption="A quick response ranges from an empty hunch to pattern recognition earned through feedback.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="ungrounded reaction"
+    right="calibrated recognition"
+    marker={0.78}
+    markerLabel="repeated feedback"
+    zones={[
+      { from: 0.0, to: 0.34, label: "familiarity or bias" },
+      { from: 0.62, to: 1.0, label: "diagnostic cues", accent: true },
+    ]}
+  />
+</Figure>
+
+### A thin slice is narrow, not complete
+
+Thin-slicing describes a rapid impression formed from a brief sample, not a conscious method for
+sorting signals from noise. Research on brief observations suggests that a small nonverbal sample
+can sometimes preserve information about a wider interaction, while accuracy still varies across
+the judgment and the observer. A later cue audit can test that impression, but it happens outside
+the thin slice itself.
+
+<Figure id="51.2" caption="A thin slice is a brief sample that can produce a rapid impression, not a complete view.">
+  <Flow
+    className="block w-full min-w-[420px]"
+    steps={["full interaction", "brief nonverbal sample", "rapid impression"]}
+    highlight={1}
+  />
+</Figure>
+
+### Experience gives intuition its vocabulary
+
+Experts often cannot narrate every feature behind a recognition because practice has bundled
+many comparisons into one felt response. That does not make their knowledge mystical. It means
+their learning was specific: they saw outcomes, noticed errors, and encountered the same class of
+problem again. A radiologist, a firefighter, and a tennis coach may all develop fast reads, but
+only inside the boundaries of the feedback their work actually supplies.
+
+<Figure id="51.3" caption="Fast recognition is built from repeated cases and feedback, not from confidence alone.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="log"
+    axes={{ x: "relevant cases with feedback", y: "usable pattern knowledge" }}
+    annotations={[
+      { x: 0.16, y: 0.42, text: "early corrections" },
+      { x: 0.73, y: 0.9, text: "recognition grows" },
+    ]}
+  />
+</Figure>
+
+### More analysis can protect a decision, or obscure its signal
+
+Some choices reward a pause. Others suffer when a person is forced to invent reasons for a
+preference they can recognize but cannot neatly explain. In a 1991 experiment, [Timothy Wilson
+and Jonathan Schooler](https://pubmed.ncbi.nlm.nih.gov/2016668/) found that asking students to
+analyze their reasons shifted choices away from expert ratings in their jam and course studies.
+That is a warning about the wrong kind of analysis, not a license to skip analysis. When stakes,
+data, or alternatives are large, a first response should open an investigation rather than close
+one.
+
+<Figure id="51.4" caption="Analysis helps when it tests the signal; it hurts when it substitutes easy reasons for the real criterion.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="left"
+    left={{
+      title: "test the read",
+      points: ["ask what cue mattered", "look for disconfirming evidence", "use a known standard"],
+    }}
+    right={{
+      title: "explain on demand",
+      points: ["grab easy-to-name reasons", "weight what is vivid", "mistake a story for a test"],
+    }}
+  />
+</Figure>
+
+### The first impression carries history you cannot see
+
+Snap judgments about people are especially dangerous because social cues can activate learned
+associations before a person has considered them. The visible feeling may be a sense of ease,
+threat, competence, or fit. Beneath it may sit cultural stereotypes, unequal prior exposure, or
+the fact that the setting itself favors one kind of person. Treating such a response as neutral
+turns an unexamined pattern into a decision rule.
+
+<Figure id="51.5" caption="What feels like an immediate read may rest on associations that deserve inspection.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="first impression"
+    waterlineLabel="what reaches awareness"
+    below={["past examples", "cultural stereotypes", "context and stress"]}
+  />
+</Figure>
+
+## The Model
+
+Thin-slicing names what occurs in the instant: a narrow sample produces a rapid impression. It
+does not prescribe a cue audit, structured check, or feedback loop. Those deliberate practices
+happen afterward, when they can test the impression against evidence and reveal whether confidence
+is earned.
+
+<Figure id="51.6" caption="A rapid impression happens in the thin slice; deliberate checks evaluate it afterward.">
+  <Compare
+    className="block w-full min-w-[384px]"
+    favor="right"
+    left={{
+      title: "inside the instant",
+      points: ["brief nonverbal sample", "rapid pattern extraction", "immediate impression"]
+    }}
+    right={{
+      title: "after the instant",
+      points: ["audit observable cues", "use a structured check", "track later outcomes"]
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the domain before you trust the read">
+When a judgment arrives quickly, write down the specific domain it belongs to. Ask how often you
+have seen comparable cases and whether you learned what happened next. If there is no answer,
+treat the reaction as a hypothesis, not evidence.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Find the cue, not the story">
+Before acting, name the two or three observable details that drove the impression. A candidate
+felt wrong is too vague. The candidate missed two concrete follow-up questions is a claim someone
+else can inspect. If you cannot name a cue, postpone the verdict.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Install a pause for consequential choices">
+Decide in advance which calls cannot be made on a first read: hiring, discipline, lending,
+diagnosis, or any commitment that is hard to reverse. Add a second reviewer, a structured score,
+or a cooling-off period before the decision reaches the point of no return.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Keep a calibration log">
+For recurring decisions, record the initial judgment, the cues you used, and the eventual
+outcome. Review a small set after the facts are known. This gives intuition the correction it
+needs and exposes the situations where it only sounded sure.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book's most useful claim is conditional, and it is easy to lose the conditions. The original
+[thin-slice research](https://pubmed.ncbi.nlm.nih.gov/12374446/) found variation in accuracy when
+people judged brief nonverbal behavior, including lower accuracy under induced sadness in one
+series of studies. Confidence therefore cannot certify a snap judgment: a later check can assess
+whether the impression was useful, but it is not part of the thin slice. Nor should a framework
+about quick cognition be used to excuse discrimination or to replace a fair procedure. In settings
+with uneven power or high stakes, structure and review are safeguards, not signs that a decision
+maker lacks instinct.
+</Callout>
+
+## If you remember one thing
+
+Trust a fast judgment only after asking what trained it. Intuition is valuable when it is a
+rapid impression that survives later checks, and risky when it is merely a quick feeling with no
+way to be checked.
+
+Thinking, Fast and Slow supplies a broader account of fast and slow judgment, Influence shows how
+social cues can steer a response, Thinking in Bets separates decision quality from outcomes, and
+Superforecasting turns later outcomes into a calibration practice.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "influence", "thinking-in-bets", "superforecasting"]}
+  buyUrl="https://www.hachettebookgroup.com/titles/malcolm-gladwell/blink/9780316057908/"
+  buyLabel="Blink by Malcolm Gladwell"
+/>

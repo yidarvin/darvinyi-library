@@ -1,0 +1,213 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Flow, Iceberg, Matrix, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="getting-things-done"
+  thesis="Clear commitments leave less to remember, so attention can return to choosing and doing the next useful thing."
+  minutes={7}
+/>
+
+## The thesis
+
+Put every open loop into a trusted system, clarify it into a next concrete action, and
+give it a reliable home. Review that system often enough that attention can return to
+choosing the work in front of you instead of rehearsing unfinished commitments.
+
+## Why it matters
+
+Work arrives as fragments: a request in a meeting, an email that implies three tasks,
+a form that needs a missing number, an errand noticed on the way home. A single list
+of mixed fragments does not answer the useful question, which is what can be done now.
+The method separates intake from decision-making so a small incoming item does not
+have to take over the moment in which it appears.
+
+## Unmade decisions keep asking for attention
+
+An unfinished commitment is not only a task. It is a question with no settled home:
+What is this? Does it matter? What must happen next? Until those questions have an
+answer and a place, the item keeps resurfacing whenever the mind has spare capacity.
+The burden is often less the volume of work than the number of vague, uncontained
+promises surrounding it. A trusted system makes those promises visible without asking
+your attention to hold them all at once.
+
+<Figure id="52.1" caption="The visible task is small; the unresolved decisions beneath it are what keep pulling attention back.">
+  <Iceberg
+    className="block w-full"
+    above="a request or reminder"
+    below={["what does this mean?", "is any action required?", "where will I see it again?", "what is the next physical move?"]}
+    waterlineLabel="what the mind keeps reopening"
+  />
+</Figure>
+
+## A next action turns a wish into work
+
+“Plan the workshop” is not an action. It names an outcome with several unknown moves
+inside it. The useful question is smaller: what visible thing can be done to advance
+it? Open the attendee spreadsheet, call the venue, or draft the agenda. That move may
+be brief, but it changes the starting condition. If a commitment needs several moves,
+keep the desired outcome on a projects list and put only the move that can begin now
+on an action list.
+
+<Figure id="52.2" caption="A desired outcome becomes workable when it ends in one move you can actually begin.">
+  <Spectrum
+    className="block w-full"
+    left="vague outcome"
+    right="next physical action"
+    marker={0.82}
+    zones={[
+      { from: 0.0, to: 0.42, label: "unclear commitment" },
+      { from: 0.58, to: 1.0, label: "action you can take", accent: true },
+    ]}
+  />
+</Figure>
+
+## Organize for retrieval, not for admiration
+
+The point of an organizing system is not to create a beautiful master list. It is to
+make the right kind of information appear when it is useful. A date-specific promise
+belongs on the calendar. A person who owes you something belongs on a waiting list.
+Reference material should stop competing with actions, and an idea that is not a
+commitment yet can sit in a someday list without pretending to be urgent. Each home
+removes a different kind of search at the moment of action.
+
+<Figure id="52.3" caption="One intake becomes easier to use when each kind of commitment has a distinct place to return to.">
+  <NodeGraph
+    className="block w-full"
+    nodes={[
+      { id: "inbox", label: "clarified item", x: 0.5, y: 0.5 },
+      { id: "next", label: "next actions", x: 0.18, y: 0.18 },
+      { id: "calendar", label: "calendar", x: 0.82, y: 0.18 },
+      { id: "waiting", label: "waiting for", x: 0.15, y: 0.8 },
+      { id: "reference", label: "reference", x: 0.85, y: 0.8 },
+      { id: "someday", label: "someday", x: 0.5, y: 0.94 },
+    ]}
+    edges={[
+      { from: "inbox", to: "next" },
+      { from: "inbox", to: "calendar" },
+      { from: "inbox", to: "waiting" },
+      { from: "inbox", to: "reference" },
+      { from: "inbox", to: "someday" },
+    ]}
+  />
+</Figure>
+
+## Choose from the reality of the moment
+
+Once the system holds clear actions, choosing does not require rethinking your whole
+life every hour. First narrow the field by context: can this be done with the tool,
+place, or person available? Then notice time and energy. A low-energy twenty-minute
+gap is not a failure to use for demanding writing; it is a real constraint that can
+make a short administrative action the sensible choice. Priorities still matter, but
+they work better after the immediate limits have done their filtering.
+
+<Figure id="52.4" caption="Time and energy narrow a clear action list to work that fits the moment in front of you.">
+  <Matrix
+    className="block w-full"
+    xAxis={{ left: "little time", right: "more time", label: "time available" }}
+    yAxis={{ low: "low energy", high: "high energy", label: "available energy" }}
+    quadrants={[
+      { title: "focused short task", note: "use an alert opening" },
+      { title: "deep task", note: "longer, alert stretch" },
+      { title: "small admin action", note: "close a simple loop" },
+      { title: "steady project work", note: "move one project" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Review is what makes the system trustworthy
+
+Externalizing commitments only helps if the system remains current enough to believe.
+A regular review is the maintenance pass: empty capture points, scan projects for a
+missing next move, look ahead at the calendar, and remove claims that no longer belong.
+This is where vague intentions become choices again. Without the review, lists become
+an archive of past optimism and the mind sensibly starts keeping its own backup copy.
+
+<Figure id="52.5" caption="A review makes four maintenance checks so the system stays current enough to trust.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={[
+      "empty capture points",
+      "scan projects",
+      "look ahead at calendar",
+      "remove stale items",
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## The Model
+
+The five stages are not five apps or five separate moments in a day. They are distinct
+kinds of attention. Capture collects what has your attention. Clarify decides its
+meaning and any needed action. Organize gives the result a reliable home. Reflect puts
+the whole picture back in view. Engage is the actual choice of what to do now. The
+sequence loops because new commitments keep arriving while work is underway.
+
+<Figure id="52.6" caption="The workflow clears incoming commitments, restores perspective, and returns attention to the present choice.">
+  <ProcessLoop
+    className="block w-full"
+    stages={["capture", "clarify", "organize", "reflect", "engage"]}
+    centerLabel="a trusted workflow"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Make one capture point unavoidable">
+Choose one place for incoming commitments, such as a notebook, a phone inbox, or a
+paper tray. For one week, put every task-shaped thought and every promise you make into
+that place. Do not sort it while you are busy. The first win is proving that your head
+does not have to be the collection tool.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Clarify one noisy item to its next move">
+Pick the item that has been nagging at you most often. Write the outcome you want in a
+short phrase, then name the next visible action. If the action takes only a moment and
+you can do it now, finish it. Otherwise, put it where you will see it in the context
+that makes it possible.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Build only the lists you will consult">
+Start with a calendar, a short next-actions list, a projects list, and a waiting-for
+list. Keep reference material elsewhere. Add categories only when they solve a real
+retrieval problem. A smaller system that gets reviewed is more useful than an elaborate
+one you avoid opening.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Set a recurring review appointment">
+Reserve thirty minutes at the end of the week. Empty your capture point, update each
+project with a next move, look two weeks ahead, and remove stale items. Treat this as
+maintenance for the system, not as optional sorting when you happen to feel organized.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+GTD is a method for managing commitments, not a machine for deciding which commitments
+deserve your life. A perfectly maintained system can still hold too much work, the wrong
+work, or work that belongs to somebody else. It can also become a form of productive
+avoidance when list maintenance replaces action. Keep the structure light, let a calendar
+hold only genuine time commitments, and use review to renegotiate obligations instead of
+merely preserving them.
+</Callout>
+
+## If you remember one thing
+
+Do not ask your mind to remember every unfinished promise. Give each one a trusted home,
+make its next move clear, and review the system often enough that you can act from it
+without rehearsing the whole backlog.
+
+## Shelved Nearby
+
+*Deep Work* is the companion argument for protecting the attention that a clear action
+list frees up. *Atomic Habits* helps make the review routine easier to keep, while *The
+7 Habits of Highly Effective People* asks which commitments deserve priority in the first
+place.
+
+<ShelvedNearby
+  related={["deep-work", "atomic-habits", "seven-habits"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/316489/getting-things-done-by-david-allen/"
+  buyLabel="Getting Things Done by David Allen"
+/>

@@ -1,0 +1,223 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="getting-to-yes"
+  thesis="A durable agreement begins when people stop defending demands, uncover the interests and standards beneath them, and compare every proposal with a real alternative."
+  minutes={8}
+/>
+
+## The thesis
+
+Fisher, Ury, and Patton offer a way out of the familiar choice between fighting for every
+inch and giving in to keep the peace. Treat the relationship and the disputed terms as
+different problems. Then look underneath each stated demand for the interests it protects,
+make room for options that serve more than one interest, and judge those options by reasons
+neither side invented just for this meeting. A deal is worth accepting only when it is better
+than the course you could take without it.
+
+## Why it matters
+
+Most negotiations become narrow before they become difficult. A price, deadline, or refusal
+gets stated early, then each side starts defending it as a matter of identity. That wastes
+information. The original dispute may contain concerns about risk, recognition, cash flow,
+or precedent that no one has named. Principled negotiation gives a conversation a different
+job: understand the problem well enough to design an agreement that can survive after the
+meeting ends.
+
+## The person and the problem need different attention
+
+A disagreement always carries two tracks. One is substantive: what will happen, who pays,
+what changes, and by when. The other is human: perception, emotion, trust, and the ability
+to communicate. Blending them turns a disagreement over terms into a verdict about character.
+Ignoring the human track makes even a sensible proposal hard to hear. The useful move is to
+take both seriously without treating either person as the obstacle. Name the shared problem,
+listen for how it is being experienced, and keep returning to the work itself.
+
+<Figure id="29.1" caption="The relationship needs care while the disputed terms remain a shared object of work.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "person as problem",
+      points: ["blame explains the impasse", "emotion becomes evidence", "defense replaces listening", "terms become personal"],
+    }}
+    right={{
+      title: "problem as problem",
+      points: ["acknowledge the human strain", "inspect the terms together", "separate facts from assumptions", "protect the working relationship"],
+    }}
+  />
+</Figure>
+
+## A position is a clue, not the whole case
+
+A position is the answer someone has announced: a number, a condition, a deadline, or a no.
+It is useful because it marks a boundary, but it rarely explains itself. The reason behind a
+firm date may be a launch commitment. The reason behind a firm price may be a budget cycle or
+a fairness concern. Ask what the requested term is meant to protect, and explain your own
+interests with the same clarity. This does not guarantee compatible interests. It does make
+the real tradeoffs visible before the conversation hardens around one proposed solution.
+
+<Figure id="29.2" caption="A stated term sits above the interests and constraints that make it matter.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="a stated position"
+    waterlineLabel="the announced term"
+    below={["practical constraint", "fairness or status concern", "risk the person is trying to avoid"]}
+  />
+</Figure>
+
+## More interests create more possible trades
+
+Once interests are on the table, negotiation stops being a single rope pulled from two ends.
+One side may care most about speed while the other cares most about certainty. One may need
+cash now while the other can offer a longer commitment. Those differences are not automatically
+an advantage, but they create material for design. Generate several packages before choosing
+one. The aim is to find combinations in which each side gives on something it values less and
+receives something it values more, rather than splitting one issue by reflex.
+
+<Figure id="29.3" caption="Differences can create a trade: one side gets speed, while the other gets a longer commitment.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="none"
+    left={{
+      title: "your side",
+      points: ["value more: speed", "can give: a longer commitment", "receive: a faster decision"],
+    }}
+    right={{
+      title: "their side",
+      points: ["value more: certainty", "can give: a faster decision", "receive: a longer commitment"],
+    }}
+  />
+</Figure>
+
+## Invent before deciding
+
+People often reject good ideas because they arrive before the problem has been fully explored,
+or because the first proposal sounds like a concession. Separate invention from commitment.
+First, gather possible variables: scope, timing, payment, responsibility, review points,
+and risk sharing. Then combine them into a few coherent packages. Only after there are real
+alternatives should either side ask which package is best. This sequence makes imagination
+less threatening because no one has to endorse an option merely by putting it in the room.
+
+<Figure id="29.4" caption="A negotiation has more room when several connected terms can be redesigned together.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "scope", label: "scope", x: 0.12, y: 0.23 },
+      { id: "timing", label: "timing", x: 0.5, y: 0.05 },
+      { id: "price", label: "price", x: 0.88, y: 0.23 },
+      { id: "risk", label: "risk", x: 0.2, y: 0.71 },
+      { id: "review", label: "review point", x: 0.8, y: 0.71 },
+      { id: "package", label: "a package", x: 0.5, y: 0.48 },
+    ]}
+    edges={[
+      { from: "scope", to: "package" },
+      { from: "timing", to: "package" },
+      { from: "price", to: "package" },
+      { from: "risk", to: "package" },
+      { from: "review", to: "package" },
+    ]}
+  />
+</Figure>
+
+## Use standards, and keep an alternative
+
+When the dispute is about what is fair, pressure produces a fragile answer. Look instead for
+a standard that can be examined by both sides: market practice, independent expertise, a
+published rule, replacement cost, or a comparable transaction. The standard will not choose
+for you, but it changes the question from whose preference wins to which reason fits the
+case. At the same time, prepare a best alternative to a negotiated agreement, usually called
+a BATNA. Improve it where you can, and use it as a private threshold. A proposal may sound
+cooperative yet still leave you worse off than walking away.
+
+<Figure id="29.5" caption="BATNA is a comparison point: accept only an agreement that improves on the available alternative.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="walk away"
+    right="accept"
+    marker={0.5}
+    markerLabel="BATNA"
+    zones={[
+      { from: 0.0, to: 0.42, label: "keep improving or use the alternative" },
+      { from: 0.58, to: 1.0, label: "a deal worth considering", accent: true },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+Principled negotiation is not a script for making every conflict pleasant. It is a method for
+making a proposal earn its place. Keep the people problem distinct from the terms. Find the
+interests under the stated positions. Create options before treating the first idea as the
+only idea. Use objective standards to compare the options, and then measure the best proposal
+against your BATNA. If it clears that threshold, there is a basis for agreement. If it does
+not, the alternative protects you from accepting a deal merely because the conversation was
+long or tense.
+
+<Figure id="29.6" caption="A principled agreement emerges from shared problem-solving, then has to beat the best available alternative.">
+  <Flow
+    className="block w-full min-w-[706px]"
+    steps={["separate people and problem", "map interests", "create packages", "apply standards", "compare with BATNA"]}
+    highlight={4}
+    branch={{ up: "better: make the deal", down: "worse: use the alternative" }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Prepare an interest map">
+Before a meeting, write the position you expect from each side. Under each one, list the
+practical interests it might represent: money, time, control, recognition, risk, or precedent.
+Mark your guesses as guesses. The purpose is to prepare better questions, not to decide what
+the other person thinks before they arrive.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Bring three package options">
+Choose at least three variables you could change, such as scope, timing, price, review rights,
+or who carries a risk. Draft two or three packages that trade those variables differently.
+Present them as options to explore, not traps designed to make one answer look inevitable.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Find a standard before the argument">
+For each disputed issue, identify one outside reference both sides could inspect. It might be
+a published rate, a neutral assessment, a policy, or a comparable deal. Ask whether the
+standard fits this situation, and be prepared to revise your own preferred standard too.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Write down your walk-away comparison">
+Name what you will do if no agreement is reached, then take one practical step to strengthen
+that alternative. Before agreeing, compare the whole package, including uncertainty and
+implementation cost, with that alternative. Do not confuse a difficult conversation with a
+reason to make a bad deal.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Interest-based negotiation is not a way to wish away unequal power, bad faith, or coercion.
+A person with no safe alternative cannot create equal bargaining power by asking better
+questions. Objective criteria can also be chosen selectively, and a shared-interest framing
+can hide a conflict that is genuinely zero-sum. Use the framework to clarify choices and test
+fairness, while keeping legal rights, safety, authority to commit, and the option to decline
+firmly in view. In an unsafe or abusive situation, distance and outside support may be the
+right alternative to more negotiation.
+</Callout>
+
+## If you remember one thing
+
+Do not negotiate only over the answer first put on the table. Separate the people from the
+problem, find the interests and standards underneath it, and accept a deal only when it is
+better than your best available alternative.
+
+How to Win Friends and Influence People shares the concern for dignity in tense exchanges.
+Never Split the Difference adds a listening-first method for drawing out what a stated demand
+leaves unsaid, while Nonviolent Communication offers a related discipline for separating
+observation from judgment.
+
+<ShelvedNearby
+  related={["how-to-win-friends", "never-split-the-difference", "nonviolent-communication"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/324551/getting-to-yes-by-roger-fisher-and-william-ury/"
+  buyLabel="Getting to Yes by Roger Fisher, William Ury, and Bruce Patton"
+/>

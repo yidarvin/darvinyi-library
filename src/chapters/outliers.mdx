@@ -1,0 +1,228 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Flow, Iceberg, Matrix, NodeGraph, Timeline, Venn } from "../components/diagrams";
+
+<Hero
+  slug="outliers"
+  thesis="Exceptional achievement is usually a long accumulation of practice, timing, access, and social inheritance, not proof that one person succeeded alone."
+  minutes={9}
+/>
+
+## The thesis
+
+Gladwell asks us to stop reading an exceptional outcome as a biography of one exceptional
+person. Skill and effort matter, but they arrive inside a setting: a birth cohort, a school,
+a family, a labor market, a rule for selecting children, a set of cultural habits, and a run
+of opportunities. Success is personal work meeting conditions that made the work possible.
+
+## Why it matters
+
+The lone-genius story is flattering because it offers a clean moral. The winner must have
+deserved the result, and everyone else must have fallen short. That story makes it easy to
+miss the early invitations, spare time, coaching, money, safety, and second chances that let
+one person's ability grow. Looking for conditions does not erase agency. It makes agency more
+precise, and it reveals conditions that institutions can choose to widen.
+
+## Key ideas
+
+## The visible achievement rests on an unseen base
+
+An award, a company, a record, or a public reputation is the tip of a much larger structure.
+The visible part is a performance at one moment. Under it sit years of access to tools,
+teachers, time, encouragement, and opportunities to make mistakes without being excluded.
+Gladwell's useful move is to ask what had to be present before the visible outcome could
+happen. That question resists both cynicism and hero worship. A person still has to do the
+work. The work, however, is never produced in a vacuum.
+
+<Figure id="34.1" caption="Public achievement is easy to see; the conditions that made sustained work possible are usually below the surface.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="visible achievement"
+    below={["developed skill", "access to time and tools", "teachers, networks, and chances"]}
+    waterlineLabel="what a success story usually leaves out"
+  />
+</Figure>
+
+## Timing opens some doors and closes others
+
+Being born at a particular moment can place a person near an expanding industry, a new tool,
+or a school system ready to teach a valuable skill. This is not a claim that one generation is
+better than another. It is a claim about fit between a person's formative years and a changing
+environment. A teenager who encounters a new medium early can build fluency while the medium
+is still cheap, open, and hungry for experiment. Later entrants may be just as able, but the
+entry conditions have changed. Opportunity has a calendar.
+
+<Figure id="34.2" caption="A favorable cohort meets a growing field early enough for practice and opportunity to reinforce one another.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "formative years", sub: "skills take shape" },
+      { label: "a field opens", sub: "new demand and tools" },
+      { label: "long practice window", sub: "time to build fluency" },
+      { label: "opportunity arrives", sub: "skill meets a market" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Small early gaps can become selection loops
+
+Rules that group children by a single cutoff date can create an accidental advantage. Within a
+cohort, the older children may be larger or more coordinated for a while. Adults can read that
+temporary edge as promise, select those children for better teams or instruction, and give them
+more practice. The selection then helps create the performance that appears to justify the
+selection. This relative-age effect is a clear example of the book's broader argument: a tiny
+starting difference can become a durable difference when a system keeps feeding it.
+
+<Figure id="34.3" caption="An early edge can lead to selection, better instruction, and more practice, which can enlarge the original gap.">
+  <Flow
+    className="block w-full min-w-[700px]"
+    steps={[
+      "slightly older within a cohort",
+      "appears more ready",
+      "selected for stronger support",
+      "gets more practice and feedback",
+      "later performance confirms selection",
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Practice becomes development when it has a target
+
+Hours can be filled with familiar activity, and familiar activity often feels productive. It
+does not necessarily change what a person can do. The more demanding version of practice has a
+specific weakness in view, pushes slightly beyond current performance, produces feedback, and
+changes the next attempt. That is why an hour with a coach, a test, a recording, or a demanding
+customer can teach more than an hour spent merely repeating a comfortable routine. Time matters
+because learning takes time. The design of the time matters because learning needs information.
+
+<Figure id="34.4" caption="Practice pays off most when time is joined to a clear target and usable feedback.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "little feedback", right: "specific feedback", label: "information about the attempt" }}
+    yAxis={{ low: "comfortable task", high: "stretch task", label: "difficulty" }}
+    quadrants={[
+      { title: "frustration", note: "hard, but no correction" },
+      { title: "deliberate practice", note: "stretch plus feedback" },
+      { title: "habit", note: "easy repetition" },
+      { title: "guided routine", note: "useful, but limited stretch" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Cultural habits can shape how people handle institutions
+
+Gladwell also argues that inherited social patterns can affect how people communicate with
+authority, interpret risk, or coordinate with one another. The responsible reading is not that
+culture fixes anybody's character. It is that learned habits can travel across generations and
+meet particular institutions in helpful or unhelpful ways. A workplace, school, or family can
+then reward some habits and punish others. The practical question is not which group is better.
+It is which expectation is operating, who set it, and whether people can change the setting.
+
+<Figure id="34.5" caption="Learned norms meet institutional rules, then shape which actions are encouraged, noticed, or penalized.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "norms", label: "learned norms", x: 0.18, y: 0.2 },
+      { id: "family", label: "family and peers", x: 0.18, y: 0.76 },
+      { id: "institution", label: "institutional rules", x: 0.82, y: 0.2 },
+      { id: "response", label: "how people respond", x: 0.5, y: 0.5 },
+      { id: "outcome", label: "opportunity and outcome", x: 0.82, y: 0.76 },
+    ]}
+    edges={[
+      { from: "family", to: "norms" },
+      { from: "norms", to: "response" },
+      { from: "institution", to: "response" },
+      { from: "response", to: "outcome", kind: "reinforcing" },
+      { from: "outcome", to: "family" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The popular ten-thousand-hour rule gives a memorable shape to the book's argument: mastery is
+usually built across a long stretch of work, rather than revealed in a single breakthrough.
+Use the number as a prompt to respect the scale of serious learning, not as a stopwatch or a
+promise. A block of time becomes development only when it is paired with a worthwhile task,
+feedback, recovery, and enough opportunity to keep going. The model therefore points beyond
+the individual: someone needs access to the hours before those hours can accumulate.
+
+<Figure id="34.6" caption="The ten-thousand-hour slogan points toward a long arc of work, but development depends on practice quality, feedback, and the conditions that sustain it.">
+  <Venn
+    className="block w-full"
+    sets={[
+      { label: "long-term practice" },
+      { label: "specific challenge and feedback" },
+      { label: "access, recovery, and resources" },
+    ]}
+    intersectionLabel="conditions for development"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Map the conditions around one ambition">
+Choose an outcome you admire or want. Write the visible result at the top of a page, then list
+the conditions beneath it: time, money, safety, tools, teachers, peers, permissions, and
+opportunities to try again. Circle the two conditions you can change this month, and name one
+institutional condition you cannot solve alone. The point is to replace vague admiration with
+a more accurate map.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Turn hours into a feedback appointment">
+Pick one narrow part of a skill. Schedule a short practice session around a test of that part,
+not around the vague intention to work. Decide before you begin how feedback will arrive: a
+recording, a rubric, a coach, a customer, or a comparison to a clear standard. End by noting
+one adjustment for the next session.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Look for an accidental cutoff">
+In a team, class, hiring process, or program you influence, find one early filter: an age rule,
+a credential, a time of day, a referral, or a minimum experience threshold. Ask whether it
+confuses prior access with potential. Where possible, add a later entry point, a trial period,
+or a second way to demonstrate readiness.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make the opportunity shareable">
+If you have a useful introduction, a spare hour of coaching, an unused tool, or knowledge of
+how a process works, offer it to someone who has less access to the same resource. This is not
+charity as a story about yourself. It is a practical way to widen the conditions from which
+good work can emerge.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The ten-thousand-hour rule is a simplification, and the researcher whose work popularized the
+idea, K. Anders Ericsson, objected to treating it as a universal threshold. The 1993
+<a href="https://doi.org/10.1037/0033-295X.100.3.363" target="_blank" rel="noopener noreferrer">Ericsson, Krampe, and Tesch-Römer paper</a>
+studied deliberate practice in expert performance. It did not establish that everyone who logs
+ten thousand hours will become an expert, nor that every hour has equal value. Ericsson later
+argued for keeping the definition of deliberate practice tied to conditions for improvement,
+including task design and feedback, in a
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6824411/" target="_blank" rel="noopener noreferrer">2019 clarification</a>.
+There are also many contributors to performance besides practice, including opportunity,
+instruction, health, resources, and domain-specific starting differences. The slogan is useful
+only if it makes the reader respect long learning without pretending that a number can settle
+who will succeed.
+</Callout>
+
+## If you remember one thing
+
+Treat remarkable success as a question, not a verdict: what effort did the person make, and
+what timing, access, institutions, and inherited advantages allowed that effort to compound?
+
+## Shelved nearby
+
+Grit examines sustained effort toward a long aim, while Atomic Habits focuses on the systems
+that make repetition easier. Guns, Germs, and Steel makes the related historical case that
+large outcomes can grow from uneven starting conditions.
+
+<ShelvedNearby
+  related={["grit", "atomic-habits", "guns-germs-steel"]}
+  buyUrl="https://www.hachettebookgroup.com/titles/malcolm-gladwell/outliers/9780316040340/"
+  buyLabel="Outliers by Malcolm Gladwell"
+/>

@@ -1,0 +1,243 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Matrix, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="thinking-in-bets"
+  thesis="A good decision can lose, and a bad one can win. Judge the process with the information available before the result, then use the result to improve the next decision."
+  minutes={8}
+/>
+
+## The thesis
+
+Every consequential choice is a wager on incomplete information: state what you believe,
+why, and what would revise it. Judge its process by the information available before the
+result, then use that result to improve the next decision rather than treating it as a verdict.
+
+## Why it matters
+
+Outcomes have a persuasive force. A profitable launch can make a reckless plan look wise,
+while a sound medical, financial, or hiring decision can be followed by bad news. That
+tempts people to turn every result into a verdict on their own intelligence. Duke's poker
+frame is useful because it makes the missing ingredient hard to ignore: chance. A record of
+how a decision was made gives luck somewhere to sit besides the driver's seat.
+
+## Key ideas
+
+### An outcome is evidence, not a grade
+
+A result matters, but it cannot carry the whole evaluation. Good information, sensible
+tradeoffs, and a sound estimate can still lead to a loss when the unlikely branch occurs.
+The reverse is also true: a decision made from wishful assumptions can be rescued by a lucky
+break. Treating the result as the entire report card teaches the wrong lesson in both cases.
+Review the reasons, alternatives, and probabilities that existed at the moment of choice,
+then let the outcome add evidence to that record.
+
+<Figure id="48.1" caption="One result can pair with either a sound or a weak decision process.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "weak process", right: "sound process", label: "quality of the decision" }}
+    yAxis={{ low: "bad outcome", high: "good outcome", label: "what happened once" }}
+    quadrants={[
+      { title: "lucky win", note: "do not copy it blindly" },
+      { title: "earned win", note: "process and result align" },
+      { title: "weak loss", note: "repair the process" },
+      { title: "unlucky loss", note: "inspect before abandoning" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+### A belief should have a price
+
+Saying that something is likely can hide a wide range of confidence. A bet forces the
+question into the open: how likely, what would you give up, and what information would make
+you change your mind? The point is not to gamble on every decision. It is to treat a belief
+as a claim with a strength, a downside, and a condition for revision. Once the odds are
+explicit, two people can disagree usefully instead of arguing over the same vague word.
+
+<Figure id="48.2" caption="A probability makes the strength of a belief discussable before the outcome arrives.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="long shot"
+    right="near certain"
+    marker={0.63}
+    markerLabel="63% belief"
+    zones={[
+      { from: 0.03, to: 0.3, label: "small stake" },
+      { from: 0.38, to: 0.7, label: "name the evidence", accent: true },
+      { from: 0.78, to: 0.97, label: "still leave room" },
+    ]}
+  />
+</Figure>
+
+### Facts and stories need different labels
+
+The mind does not enjoy an empty explanation. A missed target becomes proof that the team
+was careless, a win becomes proof that the strategy was right, and a confident narrative
+fills the gap between what happened and what caused it. Some of those stories will be true.
+The trouble begins when an interpretation is filed as a fact. Keep the observable event,
+your inference, and the uncertainty around it separate. That small act makes it easier to
+notice another explanation and harder to defend a flattering one.
+
+<Figure id="48.3" caption="The visible result is thinner than the assumptions and interpretations beneath it.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the result"
+    waterlineLabel="where observation turns into story"
+    below={["available information", "assumptions at the time", "alternative explanations"]}
+  />
+</Figure>
+
+### Learning needs a record made before you know
+
+Memory is a poor audit trail. Once a result is known, people quietly remember having been
+more certain, more skeptical, or more prescient than they were. A decision journal gives the
+past a voice. Before acting, write the choice, the odds, the reasons, the alternatives, and
+what would count as a surprise. When the result arrives, compare it with that frozen record.
+The goal is not self-punishment. It is a feedback loop sturdy enough to reveal recurring
+overconfidence, missing information, and good judgment that met bad luck.
+
+<Figure id="48.4" caption="A written decision turns a later outcome into usable feedback rather than a revised memory.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["write the bet", "act on the choice", "observe the result", "review the record"]}
+    compoundingEdge={3}
+    centerLabel="decision journal"
+  />
+</Figure>
+
+### Dissent is information to investigate
+
+Agreement feels efficient, especially after a group has committed to a plan. But quick
+consensus can hide the very uncertainty a decision needs to expose. A productive group asks
+for independent views before the senior voice sets the tone, welcomes a reasoned challenge,
+and asks what evidence would change each position. The aim is not permanent argument. It is
+to find the assumptions that only one person noticed while there is still time to act on
+them.
+
+<Figure id="48.5" caption="Independent views become useful when challenge and evidence feed a shared decision.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "views", label: "separate views", x: 0.5, y: 0.1 },
+      { id: "evidence", label: "reasons and evidence", x: 0.12, y: 0.52 },
+      { id: "challenge", label: "dissenting case", x: 0.88, y: 0.52 },
+      { id: "choice", label: "revised choice", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "views", to: "evidence" },
+      { from: "views", to: "challenge" },
+      { from: "evidence", to: "choice", kind: "reinforcing", label: "support" },
+      { from: "challenge", to: "choice", kind: "reinforcing", label: "test" },
+    ]}
+  />
+</Figure>
+
+### Rehearse the future in both directions
+
+Before a decision, imagine that the plan failed and write several plausible reasons. This
+premortem turns a vague feeling of risk into assumptions you can test, safeguards you can
+add, or triggers you can monitor. Then imagine a successful future and work backward from
+it: what had to become true, and which early signs would show that the path is forming? The
+two exercises do not predict the future. They widen the range of futures considered before
+commitment makes the preferred story feel inevitable.
+
+<Figure id="48.6" caption="Looking backward from failure and success exposes different assumptions before commitment.">
+  <div className="min-w-[520px] space-y-5">
+    <Flow
+      className="block w-full"
+      steps={["future failure", "weak assumption then", "safeguard today"]}
+      highlight={0}
+    />
+    <Flow
+      className="block w-full"
+      steps={["future success", "required condition", "positive early sign today"]}
+      highlight={0}
+    />
+  </div>
+</Figure>
+
+## The Model
+
+Resulting is Duke's name for a common shortcut: using a good or bad outcome to decide whether
+the preceding choice was good or bad. It feels natural because the outcome is visible and
+the decision conditions have passed. The correction is not to ignore outcomes. It is to put
+them in the right order. First reconstruct the information, options, probabilities, and
+stakes available before the choice. Then use the eventual result as one new data point for
+the next decision, rather than as a retroactive rewrite of the old one.
+
+<Figure id="48.7" caption="Resulting collapses a choice into its outcome; a sound review returns to what was knowable before acting.">
+  <div className="min-w-[520px] space-y-6">
+    <Flow
+      className="block w-full"
+      steps={["information then", "choice", "outcome later"]}
+      highlight={0}
+      branch={{ up: "resulting: judge by outcome", down: "review: judge the process" }}
+    />
+    <Compare
+      className="block w-full"
+      favor="right"
+      left={{
+        title: "resulting",
+        points: ["win means good decision", "loss means bad decision", "luck disappears from view"],
+      }}
+      right={{
+        title: "decision review",
+        points: ["rebuild what was knowable", "inspect odds and alternatives", "learn from outcome without rewriting history"],
+      }}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write one decision before you make it">
+For a decision with real consequences, record the options, your current best choice, the two
+strongest reasons, and the chance you think it works. Include one fact that would make you
+reverse the choice. Keep the note short enough that you will actually use it.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Ask the bet question">
+When someone says a claim is obvious, ask what odds they would put on it and what evidence
+would move them. Apply the same question to yourself. The goal is not a clever challenge. It
+is a more specific belief that another person can inspect.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Run a ten-minute premortem">
+Before a launch, hire, purchase, or commitment, suppose it has gone badly six months from
+now. List three ways that could have happened. Circle the one you can cheaply reduce now,
+and choose an early warning sign for another.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Review without a victory lap or a trial">
+When a decision resolves, open the original note before explaining the result. Ask what the
+process got right, what it missed, and whether chance had a large role. Change one part of
+the next decision process, even if this one happened to go well.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Thinking in bets does not mean reducing every human choice to a monetary wager or refusing
+to take responsibility for consequences. Some decisions involve duties, relationships, and
+hard constraints that a probability alone cannot settle. Nor does uncertainty excuse a weak
+process. Known risks still deserve preparation, and repeated losses still deserve a serious
+look at the choices that produced them. The useful distinction is between a single noisy
+result and a pattern. Better process raises the odds over many decisions; it never creates a
+guarantee for one of them.
+</Callout>
+
+## If you remember one thing
+
+Do not let one win teach you to repeat a bad decision, or one loss teach you to discard a
+good one. Preserve what you knew before acting, then let each result improve your next bet.
+
+The nearby shelf pairs this practice with a study of cognitive bias, a method for calibrated
+forecasts, and a warning about the uncertainty no forecast can fully contain.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "superforecasting", "black-swan"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/552885/thinking-in-bets-by-annie-duke/"
+  buyLabel="Thinking in Bets by Annie Duke"
+/>

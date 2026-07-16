@@ -31,42 +31,42 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 014 | never-split-the-difference      | Never Split the Difference                    | DONE    |
 | 015 | subtle-art                      | The Subtle Art of Not Giving a F*ck           | DONE    |
 | 016 | predictably-irrational          | Predictably Irrational                        | DONE    |
-| 017 | nudge                           | Nudge                                         | PENDING |
-| 018 | black-swan                      | The Black Swan                                | PENDING |
-| 019 | intelligent-investor            | The Intelligent Investor                      | PENDING |
-| 020 | freakonomics                    | Freakonomics                                  | PENDING |
-| 021 | good-to-great                   | Good to Great                                 | PENDING |
-| 022 | lean-startup                    | The Lean Startup                              | PENDING |
-| 023 | zero-to-one                     | Zero to One                                   | PENDING |
-| 024 | drive                           | Drive                                         | PENDING |
-| 025 | innovators-dilemma              | The Innovator's Dilemma                       | PENDING |
-| 026 | nonviolent-communication        | Nonviolent Communication                      | PENDING |
-| 027 | crucial-conversations           | Crucial Conversations                         | PENDING |
-| 028 | five-love-languages             | The 5 Love Languages                          | PENDING |
-| 029 | getting-to-yes                  | Getting to Yes                                | PENDING |
-| 030 | emotional-intelligence          | Emotional Intelligence                        | PENDING |
-| 031 | grit                            | Grit                                          | PENDING |
-| 032 | body-keeps-the-score            | The Body Keeps the Score                      | PENDING |
-| 033 | guns-germs-steel                | Guns, Germs, and Steel                        | PENDING |
-| 034 | outliers                        | Outliers                                      | PENDING |
-| 035 | selfish-gene                    | The Selfish Gene                              | PENDING |
-| 036 | short-history-nearly-everything | A Short History of Nearly Everything          | PENDING |
-| 037 | thinking-in-systems             | Thinking in Systems                           | PENDING |
-| 038 | range                           | Range                                         | PENDING |
-| 039 | meditations                     | Meditations                                   | PENDING |
-| 040 | obstacle-is-the-way             | The Obstacle Is the Way                       | PENDING |
-| 041 | power-of-now                    | The Power of Now                              | PENDING |
-| 042 | peak                            | Peak                                          | PENDING |
-| 043 | big-magic                       | Big Magic                                     | PENDING |
-| 044 | steal-like-an-artist            | Steal Like an Artist                          | PENDING |
-| 045 | on-writing                      | On Writing                                    | PENDING |
-| 046 | why-we-sleep                    | Why We Sleep                                  | PENDING |
-| 047 | superforecasting                | Superforecasting                              | PENDING |
-| 048 | thinking-in-bets                | Thinking in Bets                              | PENDING |
-| 049 | fooled-by-randomness            | Fooled by Randomness                          | PENDING |
-| 050 | paradox-of-choice               | The Paradox of Choice                         | PENDING |
-| 051 | blink                           | Blink                                         | PENDING |
-| 052 | getting-things-done             | Getting Things Done                           | PENDING |
+| 017 | nudge                           | Nudge                                         | DONE    |
+| 018 | black-swan                      | The Black Swan                                | DONE    |
+| 019 | intelligent-investor            | The Intelligent Investor                      | DONE    |
+| 020 | freakonomics                    | Freakonomics                                  | DONE    |
+| 021 | good-to-great                   | Good to Great                                 | DONE    |
+| 022 | lean-startup                    | The Lean Startup                              | DONE    |
+| 023 | zero-to-one                     | Zero to One                                   | DONE    |
+| 024 | drive                           | Drive                                         | DONE    |
+| 025 | innovators-dilemma              | The Innovator's Dilemma                       | DONE    |
+| 026 | nonviolent-communication        | Nonviolent Communication                      | DONE    |
+| 027 | crucial-conversations           | Crucial Conversations                         | DONE    |
+| 028 | five-love-languages             | The 5 Love Languages                          | DONE    |
+| 029 | getting-to-yes                  | Getting to Yes                                | DONE    |
+| 030 | emotional-intelligence          | Emotional Intelligence                        | DONE    |
+| 031 | grit                            | Grit                                          | DONE    |
+| 032 | body-keeps-the-score            | The Body Keeps the Score                      | DONE    |
+| 033 | guns-germs-steel                | Guns, Germs, and Steel                        | DONE    |
+| 034 | outliers                        | Outliers                                      | DONE    |
+| 035 | selfish-gene                    | The Selfish Gene                              | DONE    |
+| 036 | short-history-nearly-everything | A Short History of Nearly Everything          | DONE    |
+| 037 | thinking-in-systems             | Thinking in Systems                           | DONE    |
+| 038 | range                           | Range                                         | DONE    |
+| 039 | meditations                     | Meditations                                   | DONE    |
+| 040 | obstacle-is-the-way             | The Obstacle Is the Way                       | DONE    |
+| 041 | power-of-now                    | The Power of Now                              | DONE    |
+| 042 | peak                            | Peak                                          | DONE    |
+| 043 | big-magic                       | Big Magic                                     | DONE    |
+| 044 | steal-like-an-artist            | Steal Like an Artist                          | DONE    |
+| 045 | on-writing                      | On Writing                                    | DONE    |
+| 046 | why-we-sleep                    | Why We Sleep                                  | DONE    |
+| 047 | superforecasting                | Superforecasting                              | DONE    |
+| 048 | thinking-in-bets                | Thinking in Bets                              | DONE    |
+| 049 | fooled-by-randomness            | Fooled by Randomness                          | DONE    |
+| 050 | paradox-of-choice               | The Paradox of Choice                         | DONE    |
+| 051 | blink                           | Blink                                         | DONE    |
+| 052 | getting-things-done             | Getting Things Done                           | DONE    |
 | 053 | essentialism                    | Essentialism                                  | PENDING |
 | 054 | flow                            | Flow                                          | PENDING |
 | 055 | the-one-thing                   | The One Thing                                 | PENDING |

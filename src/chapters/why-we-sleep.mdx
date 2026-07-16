@@ -1,0 +1,203 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Flow, NodeGraph, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="why-we-sleep"
+  thesis="Sleep is a recurring biological job, not a pause in which nothing happens. Protecting enough well-timed sleep supports alertness, learning, mood, and the ordinary capacity to meet a day with judgment."
+  minutes={7}
+/>
+
+## The thesis
+
+Sleep is a condition that helps the brain and body do their regular work, not spare time left
+after the serious parts of life. Protect it without chasing a perfect nightly score, and
+investigate persistent problems rather than normalizing them.
+
+## Why it matters
+
+Sleep loss is easy to normalize because its effects can arrive gradually. A person can feel
+accustomed to a short night while attention, reaction time, patience, and learning have
+quietly changed. In a controlled fourteen-day study, adults assigned six hours or less in bed
+per night accumulated marked performance deficits while their own sleepiness ratings did not
+fully track the decline. The point is not that every tired morning predicts disaster. It is
+that subjective familiarity is a poor reason to assume a routine is harmless.
+
+## Key ideas
+
+### Sleep pressure and the body clock solve different problems
+
+Two forces shape when sleep comes easily. Sleep pressure builds during time awake and eases
+when sleep occurs. The circadian clock supplies a daily pattern of readiness, using light,
+regular timing, activity, and other signals to coordinate the body with day and night. One
+force explains why an unusually long day can make anyone drowsy. The other explains why a nap
+or a late schedule can leave a person tired at the desired bedtime yet alert at an inconvenient
+hour. Better sleep habits tend to work when they respect both forces instead of trying to
+overpower either one.
+
+<Figure id="46.1" caption="Sleep pressure tracks time awake; the body clock organizes when that pressure can become sleep.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="none"
+    left={{
+      title: "sleep pressure",
+      points: ["builds across waking hours", "falls during sleep", "a nap can reduce it", "answers: how much sleep drive?"],
+    }}
+    right={{
+      title: "circadian timing",
+      points: ["runs on an approximately daily rhythm", "responds strongly to light", "can shift later or earlier", "answers: when is sleep likely?"],
+    }}
+  />
+</Figure>
+
+### A night has changing jobs, not one uniform state
+
+Sleep is made of recurring non-REM and REM periods, with the balance changing through the
+night. Deep non-REM sleep is often more prominent early, while REM periods commonly lengthen
+later. It is tempting to turn this into a simple allocation, as though each stage belongs to
+one named benefit. The science is less tidy. Sleep stages interact, and memory, emotion, and
+restoration do not fit into isolated boxes. The practical implication is still plain: cutting
+the night short repeatedly changes the architecture of sleep, not merely its total minutes.
+
+<Figure id="46.2" caption="A full night cycles through changing states, so shortening it changes more than a single total.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "sleep onset", sub: "settling" },
+      { label: "earlier cycles", sub: "more deep non-REM" },
+      { label: "later cycles", sub: "more REM" },
+      { label: "wake", sub: "cycle pattern varies" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+### Sleep helps make a new memory usable later
+
+Learning does not end when a study session, rehearsal, or difficult conversation ends. New
+information needs to be stabilized and connected with what is already known. Sleep research
+supports the idea that offline brain activity contributes to this consolidation. One line of
+evidence comes from targeted memory reactivation experiments, where cues associated with prior
+learning are presented during sleep and later recall improves modestly on average. This does
+not make sleep a substitute for attention, practice, or a good explanation. It makes sleep
+part of the learning process that those waking efforts start.
+
+<Figure id="46.3" caption="Learning begins while awake, then sleep helps carry a fragile trace toward later retrieval.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "learn", label: "new learning", x: 0.16, y: 0.48 },
+      { id: "trace", label: "fresh trace", x: 0.45, y: 0.22 },
+      { id: "sleep", label: "sleep cycles", x: 0.79, y: 0.48 },
+      { id: "retrieve", label: "later retrieval", x: 0.48, y: 0.8 },
+    ]}
+    edges={[
+      { from: "learn", to: "trace", label: "encode" },
+      { from: "trace", to: "sleep", label: "process" },
+      { from: "sleep", to: "retrieve", kind: "reinforcing", label: "stabilize" },
+      { from: "retrieve", to: "learn", label: "use" },
+    ]}
+  />
+</Figure>
+
+### A debt can grow while confidence stays steady
+
+One poor night may call for a gentler day, not a theory about your health. The more important
+pattern is chronic restriction. Laboratory work has found dose-related declines in alertness
+and performance when time in bed is limited over successive nights. People can also become
+used to the feeling of insufficient sleep faster than they recover their performance. That gap
+matters in work that requires driving, careful judgment, or emotional restraint. Rest is not a
+prize for finishing everything. It is part of the equipment needed to do some things safely.
+
+<Figure id="46.4" caption="With repeated restriction, performance can keep declining after tiredness begins to feel familiar.">
+  <Bars
+    className="block w-full min-w-[380px]"
+    ariaLabel="Conceptual bars show reliable daytime performance declining across successive restricted nights."
+    items={[
+      { label: "first restricted night", value: 0.88 },
+      { label: "next restricted night", value: 0.7 },
+      { label: "third restricted night", value: 0.53 },
+      { label: "several nights in", value: 0.36, accent: true },
+    ]}
+  />
+</Figure>
+
+### The evening should make the next action obvious
+
+Many sleep recommendations fail because they are phrased as moral commands. A better question
+is which signals your routine is sending. Late caffeine can preserve alertness into the night.
+Bright light and stimulating screen use can push a bedtime later for some people. In a small
+controlled crossover study, reading on a light-emitting e-reader before bed delayed sleep and
+circadian timing relative to reading print. The answer is not an ascetic bedroom. It is a
+repeatable transition that reduces the signals pulling you toward another hour awake.
+
+<Figure id="46.5" caption="A reliable wind-down replaces late stimulation with cues that make sleep the next obvious step.">
+  <Flow
+    className="block w-full min-w-[696px]"
+    steps={["set a wake time", "get daytime light", "move caffeine earlier", "dim and disengage", "go to bed"]}
+    highlight={3}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Anchor the morning first">
+Choose a wake time you can keep most days, including days without an alarm. Use it as the
+starting point for setting a workable bedtime, rather than negotiating bedtime afresh each
+night. Get outside or into bright daylight soon after waking when you can. The goal is a
+consistent signal, not a heroic early hour.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Run a two-week sleep experiment">
+For fourteen days, note bedtime, wake time, naps, caffeine, alcohol, exercise, and how alert
+you felt in the morning and afternoon. Change one variable, such as moving the last coffee
+earlier, before changing another. A pattern on paper beats a vague memory of having slept
+badly for a while.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Build a low-stimulation landing strip">
+Pick a small sequence for the last hour: lower the lights, charge the phone outside the bed,
+read something undemanding, shower, stretch, or prepare tomorrow's first task. Keep the
+sequence short enough for ordinary nights. A routine that only works on ideal evenings is not
+a routine yet.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Escalate persistent symptoms">
+Do not try to optimize your way past severe sleepiness, chronic insomnia, loud snoring, gasping,
+or sleep that disrupts daily life. Bring a short sleep record to a qualified clinician. Sleep
+problems can have medical, mental health, medication, and work-schedule causes that a general
+book cannot sort out.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The core lesson, that sleep deserves protection, is stronger than many of the book's sharpest
+claims. In a detailed independent [audit](https://guzey.com/books/why-we-sleep/) of *Why We
+Sleep*, Alexey Guzey identified factual errors, overstated causal claims, and a book graphic
+that he argues omitted a source-data bar inconsistent with its message. Statistician Andrew
+Gelman and colleagues later discussed that graphic as an example of misleading presentation in
+[their analysis](https://sites.stat.columbia.edu/gelman/research/published/ethics21.pdf).
+Long-sleep and short-sleep mortality findings, for example, are mostly observational and can
+be tangled with illness, measurement error, and reverse causation. Read the book as a forceful
+argument for taking sleep seriously, not as a source for every
+dramatic numerical claim or a substitute for individualized medical advice.
+</Callout>
+
+## If you remember one thing
+
+Give sleep a real place in the schedule. A reasonably consistent wake time, daylight, an
+intentional wind-down, and attention to persistent symptoms can do more than another attempt to
+borrow from tomorrow's alertness.
+
+## Shelved nearby
+
+Atomic Habits helps turn a wind-down into a cue-rich routine. Deep Work makes the cognitive
+cost of disrupted attention more visible. The Body Keeps the Score considers why safety and
+sleep can become entangled after trauma.
+
+<ShelvedNearby
+  related={["atomic-habits", "deep-work", "body-keeps-the-score"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/553136/why-we-sleep-by-matthew-walker-phd/"
+  buyLabel="Why We Sleep by Matthew Walker"
+/>

@@ -1,0 +1,216 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Flow, Iceberg, NodeGraph, ProcessLoop } from "../components/diagrams";
+
+<Hero
+  slug="short-history-nearly-everything"
+  thesis="The world becomes stranger and more intelligible when its immense age, ordinary materials, and provisional evidence are held in the same frame."
+  minutes={8}
+/>
+
+## The thesis
+
+Bryson's grand tour argues that the universe, the planet, life, and our species are products of
+long, contingent processes, not a human-scale backdrop. Science makes parts of that unwitnessed
+history knowable by connecting faint traces to testable accounts that later evidence can revise.
+
+## Why it matters
+
+Daily life is tuned to human distances and human deadlines. That makes the ground feel fixed,
+the sky feel nearby, and our own era feel central. A deep-time view breaks those habits of
+attention. It does not make people insignificant. It makes dependence visible: on a restless
+planet, on evolved bodies, on a thin atmosphere, and on methods of inquiry built by many people
+who were willing to be corrected.
+
+## Key ideas
+
+## The familiar world arrived very late
+
+The present is the thin end of a very long story. Cosmology places the universe at about 13.8
+billion years old, while Earth formed roughly 4.6 billion years ago. Modern humans occupy only
+about 300,000 years of that planetary history. These figures are not a contest for the oldest
+number. They reset the question. Mountains, oceans, species, and climates are not scenery behind
+human action. They are temporary arrangements inside processes that began long before any record
+keeper arrived.
+
+<Figure id="36.1" caption="On a linear scale, Earth spans a third of cosmic age and modern humans are a sliver.">
+  <Bars
+    className="block min-w-[380px]"
+    items={[
+      { label: "universe: 13.8 billion years", value: 1 },
+      { label: "Earth: 4.6 billion years", value: 4.6 / 13.8 },
+      { label: "Homo sapiens: about 300,000 years", value: 0.0003 / 13.8, accent: true },
+    ]}
+  />
+</Figure>
+
+## A measurement is a clue with a method attached
+
+The past does not hand scientists a narrated record. It leaves rock layers, isotope ratios,
+fossils, light, chemical signatures, and patterns in living bodies. None is self-explanatory.
+A useful claim joins a trace to a measurement method, a physical model, and independent checks.
+Radiometric dating, for example, works because particular isotopes change at known rates. Its
+strength comes not from one persuasive specimen, but from agreement across materials and methods
+that would fail in different ways if the story were wrong. This is the quiet drama behind a date
+printed in a textbook.
+
+<Figure id="36.2" caption="A scientific account earns trust by connecting a trace to a method, a prediction, and an independent check.">
+  <Flow
+    className="block min-w-[558px]"
+    steps={[
+      "a trace in the world",
+      "a way to measure it",
+      "a model that explains it",
+      "a check that could disagree",
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Earth is an active system, not a finished object
+
+The planet looks solid because its most visible movements are slow. Beneath that appearance,
+heat moves material, plates shift, volcanoes build, weather wears down, and sediments are buried
+into future rock. The same planet can preserve a fossil bed for hundreds of millions of years
+and erase most of the earlier surface that might have told us more. Geology therefore combines
+patience with humility. The archive is vast, but it has been folded, heated, recycled, and
+partly destroyed by the system it records.
+
+<Figure id="36.3" caption="Rock is made, exposed, worn down, buried, and remade in a planet that keeps altering its own archive.">
+  <ProcessLoop
+    className="block min-w-[380px]"
+    stages={["rock forms", "uplift exposes it", "weather breaks it down", "burial remakes it"]}
+    centerLabel="a changing planet"
+  />
+</Figure>
+
+## Life and planet keep changing each other's conditions
+
+Life did not merely adapt to a completed Earth. Organisms have repeatedly changed the conditions
+later organisms inherited. Photosynthetic microbes added oxygen to the atmosphere. Plants altered
+soils and carbon cycling. Animals, fungi, and microbes reshaped one another's opportunities.
+The important lesson is not that life controls the planet from a command center. It is that many
+small exchanges can accumulate into a new environment, which then changes what kinds of life can
+thrive within it. Evolution and geology are often the same story viewed from different ends.
+
+<Figure id="36.4" caption="Living things alter air, water, and soil; those changed conditions then alter which living things can persist.">
+  <NodeGraph
+    className="block min-w-[380px]"
+    nodes={[
+      { id: "life", label: "living communities", x: 0.5, y: 0.1 },
+      { id: "air", label: "atmosphere", x: 0.18, y: 0.45 },
+      { id: "water", label: "water and nutrients", x: 0.82, y: 0.45 },
+      { id: "habitat", label: "conditions for later life", x: 0.5, y: 0.82 },
+    ]}
+    edges={[
+      { from: "life", to: "air" },
+      { from: "life", to: "water" },
+      { from: "air", to: "habitat" },
+      { from: "water", to: "habitat" },
+      { from: "habitat", to: "life" },
+    ]}
+  />
+</Figure>
+
+## The evidence is thinner than the confidence of the story
+
+A fluent account can make an uncertain past sound fully observed. Usually, the visible evidence
+is only a small part of what once existed. A handful of fossils must stand in for whole
+populations. A rock sample records a condition at one place and time, not everywhere. A telescope
+shows distant light from the past, not a film of the event. The right response is neither
+cynicism nor blind faith. It is to ask what is directly measured, what is inferred from it, and
+how wide the remaining uncertainty is.
+
+<Figure id="36.5" caption="The direct observation is often small; the explanation extends further, with uncertainty that should stay visible.">
+  <Iceberg
+    className="block min-w-[380px]"
+    above="direct observations"
+    below={[
+      "models joining many clues",
+      "inferences about unobserved events",
+      "unknowns and future revision",
+    ]}
+  />
+</Figure>
+
+## Awe is compatible with precision
+
+Big numbers can turn into a vague feeling of grandeur. Bryson's better habit is more exact:
+notice the ordinary mechanism that makes a surprising fact possible. The sky's darkness, the
+existence of oxygen, the age of a rock, and the shape of a cell are each questions with distinct
+evidence. Wonder begins the inquiry, but it is not the answer. Precision gives wonder edges. It
+turns "how amazing" into "what would have to be true, and how could we tell?"
+
+<Figure id="36.6" caption="Good inquiry moves from a broad surprise to a question and then to evidence for a claim.">
+  <Flow
+    className="block min-w-[420px]"
+    steps={[
+      "notice a surprise",
+      "frame a testable question",
+      "support a claim with evidence",
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Add a time scale to one ordinary object">
+Choose something within reach: a phone, a glass of water, a wooden table, or a piece of fruit.
+Trace one material in it backward through three earlier stages. Where did it form, what process
+moved it, and how long might each step have taken? The goal is not to guess exact dates. It is to
+replace a static object with a process you can investigate.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Separate the trace from the story">
+When you meet a confident claim about the distant past, write two lines. On the first, name the
+observation: a fossil, measurement, document, or sample. On the second, name the inference that
+connects it to a larger story. Then ask what other observation would make that inference weaker.
+This keeps respect for evidence without confusing evidence with narration.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Use one primary source">
+Pick a scientific fact you repeat often, such as the age of Earth or the reason seasons occur.
+Find an explanation from the institution or research group that measures it. Note the instrument,
+comparison, or calculation it relies on. A source is more useful when you can describe the bridge
+between its data and its conclusion.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Practice a precise form of wonder">
+On a walk, identify one thing that feels ordinary and make it a question with a boundary: not
+"why are there trees?" but "what keeps this tree supplied with water on a hot day?" Look for the
+mechanisms first. The larger sense of wonder tends to return once the question has teeth.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book's sweep is its pleasure and its limitation. A 2003 popular account cannot carry every
+later result, and no single narrative can settle live disputes in cosmology, geology, evolution,
+or human origins. Treat its dates and anecdotes as invitations to check the underlying field,
+not as permanent endpoints. For example, NASA describes the universe as about 13.8 billion years
+old while stressing unanswered questions about its earliest expansion, and the Smithsonian's
+<a href="https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens" target="_blank" rel="noopener noreferrer">Human Origins Program</a>
+places <em>Homo sapiens</em> at about 300,000 years ago, a history that remains actively refined.
+The book also sometimes gives scientific discovery the shape of a lone genius's adventure.
+Discovery is usually less tidy: collaborative, instrument-dependent, and full of results that
+do not make the final popular story.
+</Callout>
+
+## If you remember one thing
+
+The world is not a backdrop for human life. It is an unfinished, ancient system that can be
+understood only by following evidence carefully, holding conclusions lightly enough to revise,
+and keeping the scale of the question in view.
+
+## Shelved nearby
+
+Sapiens picks up near the end of this long view, asking how one young species built large-scale
+forms of cooperation. The Selfish Gene offers a closer lens on the evolutionary processes that
+shape living populations.
+
+<ShelvedNearby
+  related={["sapiens", "selfish-gene"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/213302/a-short-history-of-nearly-everything-by-bill-bryson/"
+  buyLabel="A Short History of Nearly Everything by Bill Bryson"
+/>

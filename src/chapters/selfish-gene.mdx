@@ -1,0 +1,243 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Matrix, NodeGraph } from "../components/diagrams";
+
+<Hero
+  slug="selfish-gene"
+  thesis="Natural selection preserves gene variants that leave more copies, so organisms and their behavior can be read as the temporary means by which replication succeeds."
+  minutes={8}
+/>
+
+## The thesis
+
+Dawkins asks evolution to be read from the point of view of what persists across
+generations. Organisms are born, develop, reproduce, and die. A gene variant can pass through
+many such lives. When a variant tends, through all the effects it has, to leave more copies
+than its alternatives, it becomes more common. The gene-centered view makes that durable
+pattern the unit of explanation. It does not say that bodies are unimportant, or that genes
+have intentions. It says that replication is the accounting problem natural selection solves.
+
+## Why it matters
+
+Phrases such as "survival of the fittest" can make evolution sound like a contest of lone,
+hostile animals. This lens makes the question sharper. A behavior can look costly to one body
+and still spread if it helps copies of the same variant elsewhere. Cooperation, care, rivalry,
+and restraint then become outcomes to explain, not exceptions to be waved away.
+
+## Key ideas
+
+## Selection changes the frequency of copies
+
+Evolution requires more than survival. There must be differences that can be inherited, and
+those differences must affect how many copies reach a later generation. A variant need not make
+an animal stronger in every situation. It only has to do better, on average and in context,
+than competing variants at getting copied. Natural selection is therefore a population process:
+the important result is a shift in frequencies across generations, not the victory of a single
+individual.
+
+<Figure id="35.1" caption="Inherited variation can change in frequency when some variants leave more copies than others.">
+  <Flow
+    className="block w-full min-w-[580px]"
+    steps={[
+      "inherited variation",
+      "different effects in a setting",
+      "unequal reproductive success",
+      "changed frequency next generation",
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## A body is where a gene's effects are tested
+
+Genes do not build a second copy of themselves in empty space. Their effects are filtered
+through development, a body, a social setting, and an environment. Dawkins calls the body a
+vehicle to keep attention on this relationship: it is a temporary arrangement through which
+heritable information can influence its own chances of being passed on. The word is useful only
+if it is kept narrow. An organism is a living, sensing whole, not a disposable robot, and a
+single gene's effects depend heavily on its partners and its circumstances.
+
+<Figure id="35.2" caption="The gene-centered lens follows a persistent copy; the organism is the living context in which its effects play out.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "an organism",
+      points: ["develops once", "acts in a particular setting", "reproduces or does not", "eventually dies"],
+    }}
+    right={{
+      title: "a gene variant",
+      points: ["can recur across relatives", "has effects through bodies", "is counted by copies", "may persist across generations"],
+    }}
+  />
+</Figure>
+
+## Help can favor copies outside your own body
+
+Relatives tend to share some gene variants because of their shared ancestry. That makes a
+costly act toward a relative biologically intelligible when the help creates enough additional
+copies of a relevant variant to outweigh the actor's lost opportunity. The calculation is not a
+conscious motive and it is not a moral rule. It is a way of asking which effects of a behavior
+matter to selection. Kinship can make care, warning, food sharing, and cooperative breeding
+easier to evolve, while leaving room for conflict because relatives do not share every interest.
+
+<Figure id="35.3" caption="Kin selection weighs the actor's cost C against the recipients' relatedness-weighted benefit rB.">
+  <Compare
+    className="block min-w-[440px]"
+    favor="right"
+    ariaLabel="Kin selection compares an actor's cost C with related recipients' benefit B, weighted by relatedness r. A variant can be favored when r times B is greater than C."
+    left={{
+      title: "actor's cost",
+      points: ["lost own copies: C", "the actor pays it now", "counts against spread"],
+    }}
+    right={{
+      title: "recipients' gain",
+      points: ["extra copies: B", "relatedness weight: r", "can favor spread: rB > C"],
+    }}
+  />
+</Figure>
+
+## A strategy succeeds against other strategies
+
+An inherited tendency is not judged in a vacuum. Whether escalating a conflict pays off depends
+on how often opponents escalate, retreat, or signal. This is why game theory became useful to
+evolutionary biology. A stable pattern is one that cannot be easily displaced by a rare rival
+strategy once most of the population is using it. It can include display, restraint, or a
+conditional response, not only aggression. The question is always relational: what happens when
+this way of acting meets the alternatives around it?
+
+<Figure id="35.4" caption="The value of escalation or restraint depends on the strategy it meets, not on either move alone.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "opponent escalates", right: "opponent yields", label: "opponent's move" }}
+    yAxis={{ low: "you yield", high: "you escalate", label: "your move" }}
+    quadrants={[
+      { title: "costly clash", note: "both risk damage" },
+      { title: "quick gain", note: "you take the ground" },
+      { title: "give ground", note: "opponent takes it" },
+      { title: "low-cost settlement", note: "both avoid a fight" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Culture also carries patterns forward
+
+The book closes by proposing a cultural parallel to genetic replication: a tune, phrase,
+technique, or custom can be copied, altered, and transmitted again. Dawkins named this proposed
+unit a meme. The useful part of the analogy is that cultural patterns can spread because they
+are easy to remember, rewarding to repeat, or supported by institutions, even when they do not
+serve anyone's long-term interests. Unlike genetic inheritance, cultural transmission can move
+through teaching, media, and deliberate revision on very short timescales. The resemblance is a
+prompt for inquiry, not proof that culture has one gene-like unit.
+
+<Figure id="35.5" caption="Cultural patterns can be copied, changed, and passed on through channels far faster than reproduction.">
+  <Flow
+    className="block w-full min-w-[580px]"
+    steps={[
+      "a pattern is noticed",
+      "someone repeats or teaches it",
+      "a version changes",
+      "the changed version spreads",
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## The Model
+
+The gene's-eye view is a tracing method. Start with a gene variant, follow the effects it has
+through developing bodies and their surroundings, then ask whether those effects alter the
+number of copies that return to the next generation. The body is not omitted from this model. It
+is the pathway through which selection gets any result at all. The meme is a deliberately
+separate extension: it asks whether a cultural pattern can be followed through an analogous
+cycle of copying and alteration.
+
+<Figure id="35.6" caption="The model traces a variant's effects to differential later copies, with cultural transmission beside it as a qualified parallel.">
+  <div className="space-y-6">
+    <NodeGraph
+      className="block min-w-[380px]"
+      ariaLabel="A tracing model: a gene variant influences development; development and the social and physical setting shape body and behavior; body and behavior lead to differential copies in a later generation."
+      nodes={[
+        { id: "variant", label: "gene variant", x: 0.5, y: 0.1 },
+        { id: "development", label: "development", x: 0.2, y: 0.4 },
+        { id: "body", label: "body and behavior", x: 0.5, y: 0.55 },
+        { id: "setting", label: "social and physical setting", x: 0.8, y: 0.4 },
+        { id: "copies", label: "differential copies in a later generation", x: 0.5, y: 0.9 },
+      ]}
+      edges={[
+        { from: "variant", to: "development" },
+        { from: "development", to: "body" },
+        { from: "setting", to: "body" },
+        { from: "body", to: "copies" },
+      ]}
+    />
+    <Flow
+      className="block min-w-[558px]"
+      ariaLabel="A qualified cultural parallel: a cultural pattern moves through a copying channel, variation, and differential copying."
+      steps={["cultural pattern", "copying channel", "variation", "differential copying"]}
+      highlight={3}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Change the unit of the question">
+When a behavior looks puzzling, do not begin with a story about personality. Ask what is being
+passed on, who is affected, and what repeated result would make that behavior more common in a
+population. The point is not to reduce a person to a gene. It is to distinguish an explanation
+of a pattern from an assumption about intention.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Map the indirect consequences">
+For one act of help at work, at home, or in a group, list the direct cost, the direct benefit,
+and the people who are changed by the result. Then mark which effects could recur if the pattern
+were repeated. This is a practical version of looking beyond the immediate actor.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Treat conflict as an interaction">
+Before calling a behavior aggressive or passive, write the response it expects from others.
+What happens if everyone adopts it? What happens if a small number switch? This reveals why a
+strategy that looks sensible for one encounter may fail when it becomes common.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Audit one cultural pattern">
+Choose a saying, meeting habit, or online format that keeps reappearing. Identify its copying
+channel, the small change that makes it easier to repeat, and the incentive that keeps it alive.
+Then ask whether its spread is evidence of its value, or simply of its fit with the channel.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+"Selfish" is a metaphor for differential copying, not a claim that genes want, plan, or make
+people selfish. The gene-centered view is a powerful explanatory perspective, but it does not
+replace developmental biology, ecology, learning, or social history. Kin selection is also not
+a license to turn every act of care into hidden genetic calculation. W. D. Hamilton's original
+<a href="https://pubmed.ncbi.nlm.nih.gov/5875341/" target="_blank" rel="noopener noreferrer">1964 paper</a>
+gave a formal account of how effects on relatives can matter to selection, while John Maynard
+Smith and George Price's <a href="https://www.nature.com/articles/246015a0" target="_blank" rel="noopener noreferrer">1973 paper</a>
+showed why conflict strategies must be evaluated against one another. Both are models with
+conditions, not stories about what any individual consciously seeks. The meme was an inventive
+analogy, but cultural evolution has no settled one-to-one counterpart of the gene, and copying
+an idea can be shaped by institutions, interpretation, and power as much as by replication.
+</Callout>
+
+## If you remember one thing
+
+Natural selection can be understood by following which inherited variants leave copies across
+generations. That perspective explains why a behavior may serve a wider pattern of replication
+without making the organism that performs it a selfish machine.
+
+## Shelved nearby
+
+Sapiens also considers how inherited and cultural patterns scale human cooperation, while Guns,
+Germs, and Steel follows how ecological conditions shape the historical settings in which those
+patterns spread.
+
+<ShelvedNearby
+  related={["sapiens", "guns-germs-steel"]}
+  buyUrl="https://global.oup.com/academic/product/the-selfish-gene-9780198788607"
+  buyLabel="The Selfish Gene by Richard Dawkins"
+/>

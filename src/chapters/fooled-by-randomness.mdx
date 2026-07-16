@@ -1,0 +1,215 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Matrix, NodeGraph, ProcessLoop } from "../components/diagrams";
+
+<Hero
+  slug="fooled-by-randomness"
+  thesis="Luck can produce a convincing winner. Skill becomes visible only when we count the many comparable attempts that disappeared from view."
+  minutes={8}
+/>
+
+## The thesis
+
+Taleb asks us to distrust a result that arrives without its denominator. A winning trader,
+founder, or forecaster may be skilled. They may also be the one visible survivor of many
+people who took a similar risk and lost. When success is the only evidence that reaches us,
+luck wears the costume of ability. The practical task is to separate a process from one
+outcome, seek the missing failures, and avoid exposures that one fortunate run can hide.
+
+## Why it matters
+
+Modern work is unusually good at broadcasting wins. Rankings, case studies, return charts,
+and social feeds preserve the people who made it through a contest. The failed peers often
+leave no book, interview, or archive. That creates a lopsided education. We inherit the
+winner's habits, then mistake their visibility for proof that those habits caused the win.
+The error matters most when the cost of copying a strategy is large or irreversible.
+
+## Key ideas
+
+### A visible winner is a filtered observation
+
+Suppose a large group makes risky choices. A few will land a remarkable result even if their
+choices are no better than anyone else's. Attention collects around those few, because an
+extreme success is memorable and a quiet failure is not. The sample that reaches us has
+already passed through a filter. Before treating its traits as a recipe, ask who tried
+something similar, how many there were, and what became of the ones who did not survive.
+
+<Figure id="49.1" caption="The successful case is easy to see; the comparable failed attempts often never enter the story.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the visible winner"
+    waterlineLabel="what attention preserves"
+    below={["similar attempts", "unseen losses", "people who left the field"]}
+  />
+</Figure>
+
+### A streak is evidence with a noisy source
+
+A run of good outcomes should raise interest, not end the inquiry. In a field with many
+participants and plenty of variation, somebody will have an impressive run by chance.
+Repeated results can contain information about skill, but their meaning depends on the
+number of trials, the baseline odds, the risks taken, and whether the same method works in
+new conditions. A streak becomes more informative when it survives a fair comparison, not
+when it is retold more confidently.
+
+<Figure id="49.2" caption="A wide field of comparable trials can produce one visible streak while the other outcomes drop out of view.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "field", label: "large field of trials", x: 0.06, y: 0.5 },
+      { id: "variation", label: "chance variation", x: 0.5, y: 0.5 },
+      { id: "streak", label: "one visible streak", x: 0.94, y: 0.18 },
+      { id: "rest", label: "unseen outcomes", x: 0.94, y: 0.82 },
+    ]}
+    edges={[
+      { from: "field", to: "variation", label: "outcomes vary" },
+      { from: "variation", to: "streak", label: "a possible draw" },
+      { from: "variation", to: "rest", label: "not selected" },
+    ]}
+  />
+</Figure>
+
+### Consequences matter more than the story of the win
+
+Two strategies can produce the same average-looking result while taking radically different
+risks. One earns steadily while preserving the ability to continue after a bad surprise. The
+other collects small wins by accepting a rare loss large enough to end the game. A short
+record may flatter the second strategy because the damaging branch has not arrived yet.
+The sound question is not only, "How often did this work?" It is also, "What happens on the
+bad branch, and can the person or system still act afterward?"
+
+<Figure id="49.3" caption="Frequent wins and a survivable downside are separate qualities of a strategy.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "fragile downside", right: "survivable downside", label: "what a bad outcome costs" }}
+    yAxis={{ low: "few wins", high: "many wins", label: "what the short record shows" }}
+    quadrants={[
+      { title: "dangerous lottery", note: "wins can hide ruin" },
+      { title: "durable process", note: "a record worth testing" },
+      { title: "weak and fragile", note: "change the approach" },
+      { title: "room to improve", note: "losses do not end the game" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+### Stories arrive after the outcome
+
+Once the winner is known, the mind can assemble a clean account of why they deserved to
+win. Their confidence becomes vision, their timing becomes judgment, and the risks that
+could have ended differently fade into background detail. A story can still teach. It needs
+to be treated as a hypothesis rather than a verdict. The useful version asks which parts
+were decisions, which conditions were outside the person's control, and which alternatives
+would have led to another ending.
+
+<Figure id="49.4" caption="The known ending pulls a messy set of possibilities into one tidy explanation.">
+  <Flow
+    className="block w-full min-w-[520px]"
+    steps={["many live paths", "one observed result", "a story of skill"]}
+    highlight={1}
+    branch={{ up: "inspect conditions and chance", down: "copy the winner's story" }}
+  />
+</Figure>
+
+### A process earns trust across different draws
+
+The antidote is neither cynicism nor a demand for impossible certainty. It is a better
+audit. State the strategy before the outcome, name the risk it carries, compare it with
+alternatives, and return to it across enough independent situations to see whether it holds
+up. Look for behavior that would remain sensible even when the favorable draw does not
+arrive. This turns admiration into a testable question and lets evidence accumulate without
+pretending randomness has vanished.
+
+<Figure id="49.5" caption="A process becomes more credible when it is stated first, exposed to new cases, and reviewed against its risks.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["state the process", "take the risk", "observe many outcomes", "review the full sample"]}
+    compoundingEdge={3}
+    centerLabel="process audit"
+  />
+</Figure>
+
+## The Model
+
+Survivorship bias begins with a population, not a winner. Many people may use an approach,
+but only some remain visible after outcomes and attrition have done their sorting. If we
+study the survivors alone, the sample makes survival look like proof of the approach. The
+missing group is not a footnote. It is the information needed to tell whether the apparent
+success came from a durable edge, a favorable draw, or some combination of both.
+
+<Figure id="49.6" caption="Survivorship bias turns a whole field of attempts into a lesson drawn from the few still visible.">
+  <div className="min-w-[520px] space-y-6">
+    <Flow
+      className="block w-full"
+      steps={["many comparable attempts", "outcomes and attrition", "visible survivors"]}
+      highlight={2}
+      branch={{ up: "count the missing cases", down: "mistake survival for skill" }}
+    />
+    <Compare
+      className="block w-full"
+      favor="right"
+      left={{
+        title: "winner-only view",
+        points: ["study the visible result", "copy the survivor's traits", "chance stays hidden"],
+      }}
+      right={{
+        title: "full-sample view",
+        points: ["find comparable attempts", "inspect losses and risks", "estimate skill with humility"],
+      }}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Ask for the denominator">
+When a success story offers a tactic, ask how many people used a similar tactic and what
+happened to them. If that number is unavailable, treat the story as a lead for further
+research, not as evidence that a method works.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Read past the headline metric">
+For an investment, project, or vendor, look beyond the best-looking return, launch, or case
+study. Ask about the worst period, the conditions that produced it, the losses avoided, and
+the risks that remain outside the chart.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Write the process before the result">
+Before a meaningful decision, record the goal, the assumptions, the downside you can bear,
+and what evidence would make you change course. A short record prevents a later win or loss
+from rewriting what you actually believed.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Prefer experiments that keep you in the game">
+When uncertainty is high, favor a small reversible test over a large one-way commitment.
+Set an exposure limit before you begin. The aim is to give good ideas more than one chance
+to prove themselves, rather than letting a single unlucky draw decide everything.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Luck is not a claim that skill does not exist. Expertise can be real, and careful evidence
+can detect it. The correction is about the strength of the inference: a winner's result
+alone cannot tell us how much came from ability, chance, selection, or a risk that has not
+yet paid its cost. Survivorship bias also is not an excuse to ignore performance. Over a
+well-defined comparison set and enough relevant trials, performance remains useful evidence.
+The discipline is to keep looking for the denominator and the downside before treating a
+pleasant record as a durable law.
+</Callout>
+
+## If you remember one thing
+
+Do not ask only why the winner succeeded. Ask who tried the same thing, who disappeared,
+and what the winner risked on the path. A result becomes useful evidence when it is placed
+back into the full field that produced it.
+
+The nearby shelf adds Taleb's later warning about extreme uncertainty, Duke's method for
+reviewing decisions before outcomes, and Tetlock's practical discipline of calibrated
+forecasting.
+
+<ShelvedNearby
+  related={["black-swan", "thinking-in-bets", "superforecasting"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/176225/fooled-by-randomness-by-nassim-nicholas-taleb/"
+  buyLabel="Fooled by Randomness by Nassim Nicholas Taleb"
+/>

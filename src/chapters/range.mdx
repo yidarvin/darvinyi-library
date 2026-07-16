@@ -1,0 +1,226 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Matrix, NodeGraph, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="range"
+  thesis="When the rules are unclear and the feedback is noisy, a wide base of experiences helps people notice patterns, test better questions, and adapt before a narrow specialty becomes a blind spot."
+  minutes={8}
+/>
+
+## The thesis
+
+The case for early specialization is strongest when a field has stable rules, rapid feedback,
+and a reliable definition of success. In those settings, repetition can turn good judgment into
+fast judgment. Much of adult work is different. Problems arrive with incomplete information,
+the rules change while people are playing, and an apparently familiar case can hide a new
+structure. In that territory, breadth is not a delay before real work. It is a way to build
+the comparisons, analogies, and humility that make adaptation possible.
+
+## Why it matters
+
+Schools, hiring systems, and career stories often reward a clean line: choose early, improve
+quickly, and never look sideways. That story can make exploration look like indecision and a
+career change look like failure. *Range* offers a different standard. The useful question is
+not whether a path looks efficient from the outside. It is whether the work has taught you
+enough about the problem, and about yourself, to make the next commitment a better one.
+
+## Key ideas
+
+### Learn the difference between clean and messy feedback
+
+Some learning environments are kind. A chess move is legal or illegal, a golf shot has an
+immediate result, and practice presents the same governing rules again and again. Patterns
+earned there can become dependable intuition. Other environments are wicked: feedback may be
+late, noisy, or missing; several causes can produce the same outcome; and a rule that worked
+last year can fail today. Policy, medicine, management, and markets often have this character.
+
+The distinction changes what practice should accomplish. In a kind setting, a narrow routine
+can improve a known response. In a wicked setting, the learner needs a larger library of
+cases, a habit of checking assumptions, and permission to revise a first answer. Expertise
+still matters, but confidence has to be calibrated to the quality of the feedback that built
+it.
+
+<Figure id="1.1" caption="Fast, stable feedback can reward specialization; delayed, shifting feedback demands wider checks.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "kind setting",
+      points: ["rules stay visible", "feedback arrives quickly", "similar cases repeat", "practice can narrow"],
+    }}
+    right={{
+      title: "wicked setting",
+      points: ["rules partly hide", "feedback comes late", "cases keep changing", "comparisons must widen"],
+    }}
+  />
+</Figure>
+
+### Sample before treating a choice as permanent
+
+Early exploration is often productive because preferences and aptitudes are discovered in the
+work itself. A person cannot accurately choose among paths they have never encountered. Short
+projects, adjacent roles, classes, conversations, and failed attempts supply information that
+abstract planning cannot. The point is not to drift forever. It is to run enough inexpensive
+experiments that a later commitment rests on evidence rather than a premature identity.
+
+This is a better picture of a career than a single ladder. A detour may reveal a constraint,
+an interest, or a transferable skill that changes the next choice. The route can look uneven
+when viewed year by year and still produce a more precise fit over time. The useful record is
+not only what you completed, but what each attempt taught you to seek, avoid, or combine.
+
+<Figure id="1.2" caption="Sampling creates evidence for a better match before a path becomes expensive to change.">
+  <Timeline
+    className="block w-full min-w-[440px]"
+    segments={[
+      { label: "try", sub: "small exposure" },
+      { label: "notice", sub: "energy and friction" },
+      { label: "compare", sub: "other plausible paths" },
+      { label: "commit", sub: "with better evidence" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+### Make practice harder in the way the real problem is hard
+
+Practice that feels smooth can create an illusion of mastery. Repeating one problem type until
+the answer is familiar teaches recognition of that narrow setup, but many real decisions first
+require identifying what kind of problem is present. Mixing examples, spacing sessions, and
+switching among related techniques makes practice feel less fluent. It also forces the learner
+to retrieve, discriminate, and select a method instead of merely continuing the one already in
+hand.
+
+This is not an argument for needless confusion. Begin with enough structure to learn a skill,
+then introduce variation that resembles the choices the setting will actually demand. A
+designer can compare different user cases, a clinician can contrast nearby diagnoses, and a
+student can alternate problem families. The signal of useful difficulty is a practice task
+that exposes a distinction the real task will later require.
+
+<Figure id="1.3" caption="Variation and realistic feedback make practice less tidy, but more likely to transfer.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "same case", right: "varied cases", label: "example variety" }}
+    yAxis={{ low: "weak feedback", high: "clear feedback", label: "feedback quality" }}
+    quadrants={[
+      { title: "guided repetition", note: "repeat, correct, refine" },
+      { title: "adaptive practice", note: "select, test, revise" },
+      { title: "false fluency", note: "repeat without correction" },
+      { title: "unguided variety", note: "many cases, little signal" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+### Carry relationships across fields, not surface features
+
+Breadth pays off when it produces analogies. The transfer is rarely a copied answer from one
+field to another. It begins by stripping away local vocabulary and asking what relationship is
+actually at work: a bottleneck, a feedback loop, a hidden incentive, a selection effect, or a
+tradeoff between speed and reliability. That more abstract pattern can then suggest a question
+in an unfamiliar domain.
+
+Analogies need testing, because a superficial resemblance can mislead as badly as no
+comparison at all. The discipline is to name the shared structure, state where the two cases
+differ, and then look for evidence before importing a solution. Generalists earn their value
+when they translate carefully, not when they casually borrow metaphors.
+
+<Figure id="1.4" caption="Useful transfer moves from a local case to its underlying relationship, then tests it in a new case.">
+  <Flow
+    className="block w-full min-w-[440px]"
+    steps={["local case", "name the relation", "new field", "test the fit"]}
+    highlight={1}
+  />
+</Figure>
+
+### Build bridges between specialists
+
+Complex work rarely needs a room full of identical generalists, or a room full of isolated
+specialists. It needs depth where precision matters and people who can connect the depths.
+Someone with range can ask a question that exposes an assumption shared by one field, bring a
+useful model from another, or make two expert explanations legible to each other. Their role
+is partly translation and partly problem framing.
+
+That connective work becomes more valuable as a problem crosses functions. An engineering
+decision can change customer behavior, a clinical protocol can change access to care, and a
+financial incentive can distort the metric a team is trying to improve. No individual can hold
+every detail. A network becomes wiser when its members preserve their specialties while also
+maintaining paths for evidence and questions to move between them.
+
+<Figure id="1.5" caption="Depth solves parts of a complex problem; bridges let those parts inform one another.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "field", label: "field insight", x: 0.5, y: 0.12 },
+      { id: "design", label: "design", x: 0.12, y: 0.36 },
+      { id: "bridge", label: "bridge", x: 0.3, y: 0.66 },
+      { id: "operations", label: "operations", x: 0.88, y: 0.36 },
+      { id: "problem", label: "shared problem", x: 0.7, y: 0.66 },
+    ]}
+    edges={[
+      { from: "field", to: "bridge", label: "evidence" },
+      { from: "design", to: "bridge", label: "constraints" },
+      { from: "operations", to: "bridge", label: "conditions" },
+      { from: "bridge", to: "problem", label: "framing" },
+      { from: "problem", to: "field", label: "questions" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Map the feedback before choosing the practice">
+Pick one skill you are trying to improve. Write down what counts as feedback, how long it takes
+to arrive, and how often the same conditions repeat. If the answer is delayed or unstable, add
+a second source of evidence such as a review, a comparison case, or a small reversible test.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Run one small career experiment">
+Choose a neighboring path that interests you but feels too large to commit to. Design a
+two-week version: shadow a practitioner, complete a small assignment, or interview three
+people doing the work. At the end, record what surprised you, what felt durable, and what the
+experiment did not tell you yet.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Mix the cases in your next study session">
+Do not group every similar task together. Take three nearby kinds of problem and alternate
+them. Before each attempt, say which method you expect to use and why. Check the answer after,
+then write down the feature that should help you recognize that method next time.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Translate one idea across a boundary">
+Find a problem outside your usual field. Describe its structure without the field's jargon,
+then name one model from your own work that might illuminate it. List one important difference
+before deciding what, if anything, should transfer.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Range is a corrective to premature narrowing, not a case against expertise. Early
+specialization can be entirely sensible in stable, rule-bound fields, and serious work still
+requires long periods of focused practice. The book also assembles career histories and
+research findings from very different domains. Those examples make a strong case for keeping
+options open under uncertainty, but they cannot prove that every late start or career change
+will outperform an early commitment. Treat range as a design principle: match the breadth of
+your learning to the uncertainty of the problem, then go deep where the evidence calls for it.
+</Callout>
+
+## If you remember one thing
+
+Do not confuse a narrow early path with a reliable route to mastery. When a problem is
+unfamiliar, sample enough of the world to see its structure, test the analogy, and then bring
+depth to the part that genuinely needs it.
+
+## Shelved nearby
+
+Thinking in Systems is the companion for seeing why a locally sensible move can misread a
+larger system. Thinking, Fast and Slow adds a warning about the confident intuition that weak
+feedback can create, while The Lean Startup offers a concrete loop for learning from small
+experiments under uncertainty.
+
+<ShelvedNearby
+  related={["thinking-in-systems", "thinking-fast-and-slow", "lean-startup"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/550188/range-by-david-epstein/9780735214507/"
+  buyLabel="Range by David Epstein"
+/>

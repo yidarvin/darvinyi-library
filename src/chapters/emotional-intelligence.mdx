@@ -1,0 +1,226 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop } from "../components/diagrams";
+
+<Hero
+  slug="emotional-intelligence"
+  thesis="A feeling is information with momentum. The useful skill is to notice it, understand what it may be pointing to, and choose what to do before it chooses for you."
+  minutes={8}
+/>
+
+## The thesis
+
+Daniel Goleman's argument is that a capable life asks for more than analytic horsepower.
+People also need to recognize their own emotional signals, regulate a reaction without
+erasing it, stay directed through setbacks, understand another person's experience, and
+handle the relationships in which work and life happen. These are learnable capacities, not
+a score that replaces IQ. Their value is practical: they create a little room between a
+feeling and an action, and that room changes what becomes possible.
+
+## Why it matters
+
+Many costly mistakes begin before anyone has named the state they are in. Irritation becomes
+a cutting reply. Anxiety becomes avoidance dressed up as caution. Shame becomes defensiveness.
+At the same time, a team can mistake silence for agreement, or a friend can mistake a quick
+solution for listening. The book gave ordinary language to these moments. Its lasting use is
+less a promise to rank people by an emotional quotient than a prompt to pay closer attention
+to the forces already shaping a decision or a relationship.
+
+## Feelings are signals, not instructions
+
+An emotion can be fast, physical, and persuasive. That does not make it a command or a
+complete explanation of the situation. Anger may point to a crossed boundary, but it can also
+carry an unfair story about intent. Fear may identify danger, or it may be an old alarm
+ringing in a new room. Self-awareness starts by separating the signal from the conclusion.
+What am I feeling? Where do I feel it? What story has arrived with it? Those questions do not
+make the feeling disappear. They make it available for inspection before it becomes behavior.
+
+<Figure id="30.1" caption="The reaction is visible first; its signal, story, and impulse deserve a second look.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the sharp reply"
+    waterlineLabel="what others can see"
+    below={["an emotional signal", "a story about what happened", "an impulse to act now"]}
+  />
+</Figure>
+
+## Naming creates room to respond
+
+Regulation is often confused with suppression. It is not the project of becoming blank or
+pleasant on demand. It is the capacity to keep an emotion from taking the steering wheel when
+its first impulse would make matters worse. A short pause can be enough to change the sequence:
+notice the surge, give it a specific name, find the need or threat beneath it, then choose a
+response that serves the situation. The choice may still be firm. It may be a boundary, a
+request, an exit, or a delayed answer. The point is that it is chosen rather than discharged.
+
+<Figure id="30.2" caption="A named emotion can move from immediate reaction toward a response you can stand behind.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["notice the surge", "name the feeling", "check the story", "choose a response"]}
+    highlight={3}
+  />
+</Figure>
+
+## Motivation needs an emotional engine
+
+The book treats motivation as more than optimism. It is the ability to use hope, interest,
+and commitment to keep moving when a reward is late or a result is disappointing. This does
+not mean forcing cheerfulness. It means keeping contact with a reason to continue, then
+reducing the next move until it is doable. A meaningful aim directs attention. A completed
+small action provides evidence that progress is still possible. That evidence can restore
+energy for the next action, especially when the larger outcome remains uncertain.
+
+<Figure id="30.3" caption="A valued aim, a small action, and evidence of progress can reinforce persistence through a setback.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["a valued aim", "attention", "one small action", "evidence of progress"]}
+    compoundingEdge={3}
+    centerLabel="directed effort"
+  />
+</Figure>
+
+## Empathy starts with a hypothesis, not certainty
+
+Empathy is not telepathy, agreement, or permission to ignore your own needs. It is an effort
+to understand what an experience may be like from another person's position. That effort goes
+wrong when confidence outruns evidence. "You are angry because you do not care" closes a door.
+"You seem frustrated. Did I miss something important?" leaves the other person authority over
+their account. Observe what is available, make a tentative reading, and ask. The answer may
+correct you, and that correction is part of the skill.
+
+<Figure id="30.4" caption="Empathy improves when an assumption becomes a question the other person can answer or revise.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "mind reading",
+      points: ["assume the motive", "treat the story as fact", "argue with the reaction", "make correction costly"],
+    }}
+    right={{
+      title: "curious empathy",
+      points: ["observe the signal", "offer a tentative reading", "ask what it means", "let them correct you"],
+    }}
+  />
+</Figure>
+
+## Relationship skill is the coordination layer
+
+The social part of emotional intelligence is not charm. It is the ability to carry the
+earlier capacities into contact with other people: to listen without vanishing, state a
+concern without making contempt the delivery method, notice when repair is needed, and make
+an agreement concrete. No person supplies the whole climate of a relationship, and no
+framework can remove a real conflict of interests. Still, a group gains options when people
+can name pressure, ask for missing information, and return after a rupture instead of
+pretending it did not happen.
+
+<Figure id="30.5" caption="Relationship skill connects the inner work of awareness and regulation to the shared work of repair and agreement.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "notice", label: "notice pressure", x: 0.15, y: 0.22 },
+      { id: "regulate", label: "regulate response", x: 0.85, y: 0.22 },
+      { id: "listen", label: "listen for meaning", x: 0.15, y: 0.82 },
+      { id: "repair", label: "repair after rupture", x: 0.85, y: 0.82 },
+      { id: "coordinate", label: "coordinate a next step", x: 0.5, y: 0.48 },
+    ]}
+    edges={[
+      { from: "notice", to: "coordinate", kind: "reinforcing" },
+      { from: "regulate", to: "coordinate", kind: "reinforcing" },
+      { from: "listen", to: "coordinate", kind: "reinforcing" },
+      { from: "repair", to: "coordinate", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+Goleman organizes the book's practical account into five domains. Self-awareness and
+self-management concern what happens within a person. Motivation gives effort a direction
+across time. Empathy and relationship skill bring that work into contact with other people.
+The domains are not a ladder or a personality type. They are mutually supporting jobs. Better
+awareness gives regulation something accurate to work with. Regulation makes it easier to
+listen. Empathy supplies information for a relationship choice. The aim is not flawless
+composure. It is a more capable next move under emotional pressure.
+
+<Figure id="30.6" caption="The five domains connect personal awareness and management with the social work of empathy and relationship skill.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "awareness", label: "self-awareness", x: 0.5, y: 0.48 },
+      { id: "management", label: "self-management", x: 0.16, y: 0.18 },
+      { id: "motivation", label: "motivation", x: 0.84, y: 0.18 },
+      { id: "empathy", label: "empathy", x: 0.16, y: 0.82 },
+      { id: "relationship", label: "relationship skill", x: 0.84, y: 0.82 },
+    ]}
+    edges={[
+      { from: "awareness", to: "management", kind: "reinforcing" },
+      { from: "awareness", to: "motivation", kind: "reinforcing" },
+      { from: "awareness", to: "empathy", kind: "reinforcing" },
+      { from: "management", to: "relationship", kind: "reinforcing" },
+      { from: "empathy", to: "relationship", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Catch one recurring reaction">
+For one week, choose a moment that tends to hook you: a delayed message, criticism in a
+meeting, a family request, or a tense commute. When it happens, write three short lines:
+what you felt, the story you began telling, and what you did next. Look for the gap between
+the event and the story. That gap is a place to practice.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Create a pause you can actually use">
+Choose a physical interruption for charged moments: put both feet on the floor, take a walk
+to refill water, or say, "I want to answer this well. Give me ten minutes." The move is not
+avoidance if you name when you will return. It is a way to give the first emotional wave time
+to pass before it sets the terms of the conversation.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Test one empathic guess">
+In your next friction point, replace an interpretation of motive with an observation and a
+question. Try: "When the plan changed at the last minute, you went quiet. Are you upset, or
+am I reading that wrong?" Listen to the correction without immediately explaining yourself.
+Your task is to make your map more accurate, not to win the first exchange.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make a repair specific">
+After a strained interaction, name the concrete behavior rather than your whole character.
+Say what you think its effect was, own the part that is yours, and ask what would help repair
+it. Then agree on one next action. An apology without a changed practice can be sincere, but
+it gives the relationship little new evidence to rely on.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Emotional intelligence is not a single settled measurement, and the book's broad domains are
+not the same thing as an ability test. In their [ability model](https://scholars.unh.edu/psych_facpub/375/),
+John Mayer, Peter Salovey, and David Caruso describe emotion-related reasoning as a more
+bounded capacity. Goleman's broader account combines skills, dispositions, and social
+behavior. The distinction matters when claims become predictive. A [2015 meta-analysis](https://pubmed.ncbi.nlm.nih.gov/25243996/)
+found that mixed, self-report EI measures overlap substantially with personality, self-belief,
+and cognitive measures, and their apparent job-performance advantage did not survive those
+controls. This does not make reflection, regulation, empathy, or repair useless. It does mean
+that "EI matters more than IQ" is a slogan, not a conclusion the evidence can cleanly support.
+</Callout>
+
+## If you remember one thing
+
+Treat an emotion as a signal to understand, not an order to obey. Notice it early, test the
+story it brings, and make the next response one you can take responsibility for with other
+people in view.
+
+Nonviolent Communication provides a practical language for observations, feelings, needs,
+and requests, while Crucial Conversations focuses on keeping high-stakes dialogue open when
+emotion rises.
+
+<ShelvedNearby
+  related={["nonviolent-communication", "crucial-conversations", "how-to-win-friends"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/69105/emotional-intelligence-by-daniel-goleman/"
+  buyLabel="Emotional Intelligence by Daniel Goleman"
+/>

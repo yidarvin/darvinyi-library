@@ -1,0 +1,213 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Curve, Iceberg, NodeGraph, ProcessLoop, Venn } from "../components/diagrams";
+
+<Hero
+  slug="drive"
+  thesis="For work that asks for judgment, learning, or care, motivation grows when people have room to direct the work, improve at it, and see who it serves."
+  minutes={8}
+/>
+
+## The thesis
+
+Pink's argument begins with a mismatch. Many workplaces still try to buy effort with a
+bonus, a ranking, or the threat of a consequence. That can work for a simple, tightly
+specified task. It is a poor default for work that needs attention, invention, and steady
+judgment. The more useful design question is not, "What prize will make someone comply?"
+It is, "What conditions let a person take ownership, get better, and contribute to something
+that matters?" Pink groups those conditions under autonomy, mastery, and purpose.
+
+## Why it matters
+
+The old approach is tempting because it is visible. A manager can announce a target, attach
+a payment, and watch a dashboard. The missing part is the quality of attention that follows.
+People may do exactly what a metric asks while withholding initiative, avoiding the risky
+experiment, or losing interest in the work once the prize disappears. Drive offers a way to
+design for the work that cannot be reduced to a checklist without losing its value.
+
+## The task changes what a reward can do
+
+Rewards are not useless. A fair wage, clear expectations, and recognition all matter. The
+mistake is treating them as a universal engine. When a job has a known method and a narrow
+finish line, an external incentive can focus attention on execution. When the job requires a
+new answer, the same pressure can narrow attention too far. It can turn a problem to explore
+into a hurdle to clear. The practical move is to separate baseline fairness from the attempt
+to purchase curiosity.
+
+<Figure id="24.1" caption="A tightly specified task can use an incentive differently from work that needs discovery.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "known execution",
+      points: ["method is already clear", "finish line is narrow", "speed or volume can be counted", "an incentive can focus effort"],
+    }}
+    right={{
+      title: "judgment and discovery",
+      points: ["method must be chosen", "tradeoffs need care", "learning changes the answer", "ownership protects attention"],
+    }}
+  />
+</Figure>
+
+## Autonomy is a real decision space
+
+Autonomy does not mean working alone or ignoring commitments. It means that a person has
+meaningful room to decide inside commitments that are understood. Pink points to four useful
+places to look: the work itself, the timing of it, the way it is done, and the people involved.
+A team may not be able to choose all four. Even one genuine area of control can replace a
+performative request for "ownership" with an actual choice that someone can stand behind.
+
+<Figure id="24.2" caption="Self-direction can appear in the work, the timing, the method, and the collaborators.">
+  <NodeGraph
+    className="block w-full min-w-[400px]"
+    ariaLabel="A self-direction node connects to four areas of autonomy: task, time, technique, and team."
+    nodes={[
+      { id: "autonomy", label: "self-direction", x: 0.5, y: 0.5 },
+      { id: "task", label: "task\nwhat to tackle", x: 0.5, y: 0.1 },
+      { id: "time", label: "time\nwhen to work", x: 0.1, y: 0.5 },
+      { id: "technique", label: "technique\nhow to work", x: 0.9, y: 0.5 },
+      { id: "team", label: "team\nwith whom", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "autonomy", to: "task" },
+      { from: "autonomy", to: "time" },
+      { from: "autonomy", to: "technique" },
+      { from: "autonomy", to: "team" },
+    ]}
+  />
+</Figure>
+
+## Mastery lives at the edge of current ability
+
+Mastery is not a certificate or a moment when there is nothing left to learn. It is the
+experience of becoming more capable at work worth doing. That needs a task hard enough to
+demand concentration, but not so far beyond present skill that every attempt becomes
+confusion. It also needs feedback that reveals what to adjust. A manager cannot hand someone
+mastery. They can provide a useful problem, time to practice, and a way to see improvement.
+
+<Figure id="24.3" caption="The productive zone pairs a growing skill with a challenge that still asks for a stretch.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="channel"
+    axes={{ x: "skill", y: "challenge" }}
+    ariaLabel="A challenge-versus-skill channel: too hard is anxiety, too easy is boredom, and the diagonal flow band marks stretch and focus."
+    annotations={[
+      { x: 0.2, y: 0.72, text: "too hard: anxiety" },
+      { x: 0.78, y: 0.18, text: "too easy: drift" },
+    ]}
+  />
+</Figure>
+
+## Visible progress gives effort a reason to continue
+
+Long projects often fail motivationally before they fail technically. The next milestone is
+far away, the remaining work is unclear, and a person cannot tell whether the last week made
+any difference. Small, credible signs of progress change that experience. They make the next
+practice attempt easier to begin and furnish information for the next adjustment. The loop is
+not a promise of constant enthusiasm. It is a way to keep effort connected to evidence that
+the work is moving.
+
+<Figure id="24.4" caption="A small advance supplies feedback, which makes the next deliberate attempt easier to start.">
+  <ProcessLoop
+    className="block w-full min-w-[400px]"
+    stages={["attempt", "feedback", "small advance", "renewed effort"]}
+    compoundingEdge={2}
+    centerLabel="mastery in motion"
+  />
+</Figure>
+
+## Purpose connects the metric to a person
+
+Purpose is often reduced to a mission statement, then left disconnected from the ordinary
+decisions that shape a job. Pink's stronger claim is that people work differently when they
+can locate their effort inside a contribution beyond themselves. A number on a dashboard may
+still be necessary. It becomes more intelligible when the team can name the customer helped,
+the colleague unblocked, or the harm avoided. The connection has to be concrete. Grand words
+without a visible consequence are merely decoration.
+
+<Figure id="24.5" caption="Metrics are visible, while the people and consequences they represent usually sit below the surface.">
+  <Iceberg
+    className="block w-full min-w-[400px]"
+    above="the visible metric"
+    waterlineLabel="the daily score"
+    below={["a person with a real need", "the quality of the decision", "the longer consequence of the work"]}
+  />
+</Figure>
+
+## The Model
+
+Autonomy, mastery, and purpose are not three perks to distribute separately. Together they
+describe an environment in which a person can make choices, develop capability, and care about
+the consequence. Remove autonomy and the work becomes mere compliance. Remove mastery and
+choice can feel directionless. Remove purpose and skill can become an empty game. The model
+is a diagnostic: when energy has gone flat, look for the missing condition before reaching for
+another incentive.
+
+<Figure id="24.6" caption="Enduring motivation is more likely when self-direction, growing capability, and contribution meet.">
+  <Venn
+    className="block w-full min-w-[400px]"
+    sets={[
+      { label: "autonomy\nroom to choose" },
+      { label: "mastery\nroom to improve" },
+      { label: "purpose\na reason to care" },
+    ]}
+    intersectionLabel="sustained motivation"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name one decision that can move closer to the work">
+Choose a recurring decision that currently travels upward by habit: how to schedule a block of
+work, which customer issue to solve first, or how to run a review. State the outcome and the
+non-negotiable constraints, then let the person doing the work make the next choice. Review
+the result together after a week.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Turn a performance goal into a learning target">
+Pick a goal that is only a number. Add the capability that would make the number more likely:
+conduct a better discovery call, write a clearer brief, diagnose a production fault, or teach
+a new colleague. Reserve a regular practice block, ask for specific feedback, and record one
+adjustment after each attempt.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make progress visible without turning it into surveillance">
+At the end of a project week, ask three questions: what moved, what did we learn, and what is
+the smallest useful next step? Keep the answers on a shared page. The record should help the
+team see movement and revise its plan, not become a tally of individual activity.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Trace one metric to its human consequence">
+Choose a dashboard number your team watches. Write the name of the person or group whose
+experience the number is meant to represent. Then ask what action would improve the metric
+while making that experience worse. If you can name one, add a second observation that keeps
+the measure honest.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Autonomy, mastery, and purpose are not substitutes for adequate pay, safety, staffing, or
+fair treatment. It is hard to care about a mission while basic conditions are insecure. The
+research behind the book also has boundaries: controlled rewards can be useful for routine,
+clearly bounded work, and a well-designed reward can convey useful feedback rather than
+control. Pink's trio is a compact management lens, not the whole of motivation science. In
+self-determination theory, relatedness is also a basic psychological need, and work is shaped
+by power, resources, labor markets, and personal circumstances as well as individual drive.
+</Callout>
+
+## If you remember one thing
+
+When the work needs thought, do not begin by asking how to make people chase the next prize.
+Build a setting where they can choose a meaningful part of the work, become better at it, and
+see the contribution their effort makes.
+
+Deep Work supplies the focus practice that protects mastery, Good to Great shows how disciplined
+teams sustain a demanding standard, and Start With Why examines how a shared reason can guide
+an organization's choices.
+
+<ShelvedNearby
+  related={["deep-work", "good-to-great", "start-with-why"]}
+  buyUrl="https://bookshop.org/p/books/drive-the-surprising-truth-about-what-motivates-us-daniel-h-pink/330d4157d10f631c?ean=9781594484803"
+  buyLabel="Drive by Daniel H. Pink"
+/>

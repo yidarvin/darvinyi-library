@@ -1,0 +1,246 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Iceberg, NodeGraph, ProcessLoop, Pyramid } from "../components/diagrams";
+
+<Hero
+  slug="thinking-in-systems"
+  thesis="Many stubborn problems are produced by the way a whole system is arranged. See what accumulates, what changes it, and what feeds back, then look for a better place to intervene."
+  minutes={7}
+/>
+
+## The thesis
+
+Most persistent problems arise from system structure rather than isolated errors. By tracing
+stocks, flows, feedback, and delays, we can look for leverage in rules, information, goals,
+and assumptions instead of merely treating symptoms.
+
+## Why it matters
+
+Linear stories are comfortable. They offer a culprit, a quick repair, and a clear moment of
+success. Systems often deny all three. An intervention can work at first and then create a
+counter-reaction. A benefit can arrive long after its cost, or a cost long after its cause.
+The point of systems thinking is not to predict every consequence. It is to make the
+structure visible enough that surprise becomes a prompt to learn rather than proof that
+nothing can be understood.
+
+## A system is more than its inventory
+
+Listing the parts of a school, a company, or a watershed does not yet explain its behavior.
+The decisive question is what connects the parts. Who receives information? What moves from
+one place to another? What rule decides the next action? A football team can keep the same
+players and become a different system when its incentives, communication, or aim changes.
+Likewise, swapping a person in a failing arrangement often leaves the pattern intact. The
+connections and the purpose do more explanatory work than the roster.
+
+<Figure id="37.1" caption="The same elements can behave differently when their connections and aim change.">
+  <Compare
+    className="block w-full min-w-[420px]"
+    left={{
+      title: "speed first",
+      points: ["same signals → people", "rule: reward volume", "aim: output today"],
+    }}
+    right={{
+      title: "reliability first",
+      points: ["same signals → review → people", "rule: reward quality", "aim: durable service"],
+    }}
+  />
+</Figure>
+
+## Stocks remember what flows forget
+
+A stock is the quantity that has built up so far: cash in an account, trust in a team,
+carbon in the atmosphere, unfinished work in a queue. Inflows add to it. Outflows remove
+from it. The distinction sounds elementary, yet it corrects a common mistake: reacting to a
+rate as if it were the accumulated condition. A growing number of hires does not immediately
+erase a staffing deficit. A lower emissions rate can still leave atmospheric carbon rising,
+only more slowly; the stock falls only when total removals exceed total emissions. The present
+state contains the history of earlier additions and removals.
+
+That memory makes stocks both stabilizing and slow. A large reserve can absorb a shock, but
+it can also keep an organization from noticing drift until the reserve is nearly gone. To
+understand a problem, name the stock first, then draw the few flows that actually change it.
+It is a much sharper starting point than asking who is to blame.
+
+<Figure id="37.2" caption="A stock changes only through its inflows and outflows, so it carries the past forward.">
+  <NodeGraph
+    className="block w-full min-w-[420px]"
+    nodes={[
+      { id: "in", label: "inflow", x: 0.07, y: 0.5 },
+      { id: "stock", label: "work waiting", x: 0.5, y: 0.5 },
+      { id: "out", label: "outflow", x: 0.93, y: 0.5 },
+      { id: "past", label: "earlier rates", x: 0.5, y: 0.11 },
+    ]}
+    edges={[
+      { from: "in", to: "stock" },
+      { from: "stock", to: "out" },
+      { from: "past", to: "stock" },
+    ]}
+  />
+</Figure>
+
+## Feedback writes the next round
+
+Some effects circle back into their own causes. A reinforcing loop amplifies a direction:
+more useful contributors attract more users, which creates more value, which attracts still
+more contributors. It can create growth, but it can also create decline. A balancing loop
+pushes against change: a thermostat detects a colder room and turns on heat; a budget limit
+cuts spending as a reserve falls. Neither kind is morally good or bad. Their behavior depends
+on what they are reinforcing or regulating, and on the strength of the response.
+
+The practical move is to identify the loop before changing a visible part of it. If a
+reinforcing loop is accelerating harm, reducing its gain can matter more than working harder
+against the symptoms. If a balancing loop is missing, weak, or blocked from receiving the
+right information, the system may continue far beyond the range people assumed was safe.
+
+<Figure id="37.3" caption="Feedback turns an outcome into a condition for the next outcome.">
+  <ProcessLoop
+    className="block w-full min-w-[420px]"
+    stages={["more capacity", "better service", "more demand", "pressure to add capacity"]}
+    compoundingEdge={3}
+    centerLabel="a reinforcing loop"
+  />
+</Figure>
+
+## Delays can turn a correction into a swing
+
+A system rarely reports its state at the exact moment action would be most useful. Sales
+data arrive after orders. Ecological damage becomes visible after the source has spread.
+Training pays off after the team has already had to make decisions. When a response chases a
+delayed signal too aggressively, the correction can arrive after conditions have changed and
+push the system too far in the other direction. Oscillation is often a structural result,
+not a sign that everyone involved is careless.
+
+This is why fast action is not always the same as good control. Sometimes the right move is
+to shorten the information delay. Sometimes it is to slow the rate of change, add a buffer,
+or use smaller adjustments while the signal catches up. The choice begins with asking which
+clock is slow: observation, decision, or physical change.
+
+<Figure id="37.4" caption="A large correction that follows stale information can reverse the condition and trigger the next swing.">
+  <ProcessLoop
+    className="block w-full min-w-[420px]"
+    stages={[
+      "stock moves below target",
+      "late report shows the earlier state",
+      "large correction begins",
+      "stock crosses past target",
+      "next late report starts another correction",
+    ]}
+    centerLabel="delayed feedback can oscillate"
+  />
+</Figure>
+
+## Events are the visible edge of structure
+
+An event is real, and it may demand an immediate response. It is still the smallest frame.
+Beneath a recurring event sit patterns over time. Beneath patterns sit structures such as
+incentives, flows, and access to information. Beneath structure sit the assumptions that
+make the arrangement seem normal. A late shipment may lead to an urgent call. Repeated late
+shipments invite a look at the queue, the purchasing rule, the forecast, and the definition
+of success that made the delay unsurprising.
+
+Moving down this stack does not excuse action at the surface. It prevents surface action from
+being the only action. The deeper view is where systems thinking becomes useful to design:
+change what keeps recreating the event, rather than treating every recurrence as a new
+emergency.
+
+<Figure id="37.5" caption="Events are easiest to notice; the structures that repeat them sit below the waterline.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="a visible crisis"
+    waterlineLabel="the moment people discuss"
+    below={["recurring pattern", "rules and information", "assumptions about success"]}
+  />
+</Figure>
+
+## The Model
+
+The signature model is a way to read a system before trying to fix it. Start with the stock,
+the quantity whose condition matters. Add the inflows and outflows that change it. Trace the
+feedback loops that alter those flows, including the information they receive and the delays
+they carry. Only then ask where to intervene. The most convenient targets, such as a single
+number or a single actor, can be useful but are often shallow. Rules, information, goals,
+and the assumptions behind them tend to reshape more of the system at once.
+
+<Figure id="37.6" caption="Map the accumulation and feedback first, then seek an intervention deeper than the symptom.">
+  <div className="min-w-[420px] space-y-6">
+    <NodeGraph
+      className="block w-full"
+      nodes={[
+        { id: "in", label: "inflow", x: 0.03, y: 0.54 },
+        { id: "stock", label: "stock", x: 0.45, y: 0.54 },
+        { id: "out", label: "outflow", x: 0.86, y: 0.54 },
+        { id: "info", label: "information", x: 0.45, y: 0.09 },
+      ]}
+      edges={[
+        { from: "in", to: "stock" },
+        { from: "stock", to: "out" },
+        { from: "stock", to: "info" },
+        { from: "info", to: "in", kind: "balancing" },
+      ]}
+    />
+    <Pyramid
+      className="block w-full"
+      tiers={[
+        { label: "parameters", note: "a number or setting" },
+        { label: "feedback and information", note: "what can respond" },
+        { label: "rules", note: "what actions are allowed" },
+        { label: "goals", note: "what the system pursues" },
+        { label: "mindsets", note: "what seems possible" },
+      ]}
+      highlight={4}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the stock before debating the fix">
+Choose one problem that keeps returning. State the accumulated condition in one measurable
+phrase: unresolved customer requests, cash reserve, defect backlog, trust, or available
+time. Then list the two or three flows that add to it and take from it. Do this before
+proposing solutions.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Draw one loop, including the information">
+Pick a change that seems to feed itself. Write each step in a circle and mark whether the
+loop amplifies movement or resists it. Add the signal that triggers the response and how
+long it takes to arrive. You are looking for a missing signal, a blocked response, or an
+amplifier that can be softened.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Separate the signal from the state">
+For a volatile metric, write down what the metric reports and what stock it is meant to
+represent. Ask how late the report is, and how late the action is. Before making a large
+correction, decide whether a smaller test or a slower cadence would prevent a swing.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Climb toward a deeper intervention">
+When a proposed fix is a target, a budget line, or a person to replace, ask four questions:
+what information is missing, what rule rewards the present behavior, what goal organizes the
+system, and what assumption keeps that goal unquestioned? You may still use the quick fix,
+but you will know whether it is only buying time.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Systems thinking is a discipline of better questions, not a license to draw a complicated
+diagram and claim foresight. A boundary always leaves something outside, so a model can be
+precise about the wrong system. Feedback labels can also become a way to postpone moral or
+political judgment, even when a decision about responsibility is required. Meadows's own
+work on leverage points carries a warning: complex systems are counterintuitive, and an
+intervention can push in the wrong direction. Treat the map as a testable hypothesis, watch
+the response, and revise the map when reality disagrees.
+</Callout>
+
+## If you remember one thing
+
+Before fixing a recurring problem, ask what is accumulating, which flows change it, and what
+feedback keeps the pattern going. The answer will often reveal a deeper, less obvious place
+to act.
+
+<ShelvedNearby
+  related={["black-swan", "thinking-fast-and-slow", "nudge"]}
+  buyUrl="https://www.chelseagreen.com/product/thinking-in-systems/"
+  buyLabel="Thinking in Systems by Donella Meadows"
+/>
