@@ -1,0 +1,264 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Curve, Flow, Matrix, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="random-walk"
+  thesis="When thousands of capable investors compete on public information, the dependable advantage for most people is not a clever forecast but broad ownership, low costs, and a plan they can keep."
+  minutes={9}
+/>
+
+## The thesis
+
+Malkiel's argument begins with an uncomfortable fact about a liquid market: every share you buy
+has been sold by someone who saw the same public information and made the opposite choice. That
+does not make prices perfect, or make research pointless. It does make a lasting, after-cost edge
+exceptionally hard to establish. For most investors, the sensible response is to stop treating
+stock selection as the default game. Own a broad, low-cost slice of the market, choose a risk level
+that fits your life, keep contributing, and let time do work that frantic trading cannot.
+
+## Why it matters
+
+Investing is unusually good at converting activity into the feeling of control. A forecast, a new
+fund, or a crisp story about the next winner gives the mind something to do. The bill arrives later,
+through fees, taxes, trading spreads, concentration, and decisions made at the worst moment. The
+book's enduring contribution is a change of burden of proof: a complicated investment move should
+have to earn its extra costs and risks against the plain alternative of owning the market.
+
+## Price is where competing views meet
+
+A market price is not a verdict from an oracle. It is the current agreement produced by people
+with different information, models, constraints, and appetites for risk. New earnings, economic
+data, or a changed expectation gives every participant a reason to reassess. Their orders move the
+price until the obvious opportunity is much harder to see.
+
+That process makes a useful distinction. A company can be excellent and still be a disappointing
+investment if the price already assumes an even better future. A troubled company can rise if the
+news is less bad than the price had assumed. The investor is not paid merely for recognizing a
+good story. The investor needs to recognize something the price has missed, before other capable
+people correct it.
+
+<Figure id="59.1" caption="News becomes a price through a crowded sequence of interpretation and trade.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["new public information", "competing interpretations", "buy and sell orders", "a revised market price"]}
+    highlight={3}
+  />
+</Figure>
+
+## A forecast needs to beat a strong opponent
+
+The relevant comparison is not between a picked stock and no investment at all. It is between a
+picked portfolio and a broad index that already owns many companies at low cost. The active
+investor must overcome research expenses, trading friction, and the fact that the other side of
+each trade may be just as informed. Before costs, investors as a group hold the market. After
+costs, the aggregate active group must lag the market it collectively owns.
+
+This arithmetic does not say that no manager can win. Some will, and a short stretch of success
+will always produce compelling stories. It says that selecting the future winners in advance is a
+second problem, one that also has to survive fees and taxes. The book's preference for indexing is
+therefore less a declaration that intelligence does not exist than a refusal to pay for an edge
+without strong evidence that it will persist.
+
+<Figure id="59.2" caption="A selected portfolio has to clear the market return after the costs of trying to exceed it.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "active selection",
+      points: ["choose securities or managers", "trade on a view", "adds research and trading costs", "must beat the benchmark after costs"],
+    }}
+    right={{
+      title: "broad indexing",
+      points: ["own the benchmark's market exposure", "trade mainly to track or rebalance", "keeps costs visible and low", "accept the market return before costs"],
+    }}
+  />
+</Figure>
+
+## Costs are a certainty inside an uncertain result
+
+Future returns are uncertain. A fund's expense ratio, advisory charge, trading frequency, and tax
+bill are not predictions. They are claims on the result that arrive regardless of whether the
+market rises or falls. A small annual difference can look harmless because it is easy to ignore in
+one statement. Across decades, it keeps reducing the capital that can earn the next period's
+return.
+
+The lesson is not that the cheapest product is automatically right. It is that price deserves the
+same scrutiny as any other investment feature. If two ways of reaching the same broad exposure are
+available, the cheaper structure starts ahead. It needs no forecast to justify that head start.
+
+<Figure id="59.3" caption="A recurring cost takes a larger bite over a longer investing horizon.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="exp"
+    axes={{ x: "years invested", y: "cumulative cost drag" }}
+    annotations={[
+      { x: 0.22, y: 0.04, text: "easy to dismiss" },
+      { x: 0.78, y: 0.48, text: "less capital compounds" },
+    ]}
+  />
+</Figure>
+
+## Diversification changes what one mistake can do
+
+Owning a single company makes the portfolio depend on a narrow list of things: its product,
+management, debt, competition, regulation, and accidents no spreadsheet anticipated. Owning a
+broad fund does not remove market risk. It does make one failed thesis, fraud, bankruptcy, or
+missed innovation less able to decide the entire outcome.
+
+This is the quiet power of diversification. It asks neither which company will win nor which one
+will fail. It accepts that a personal forecast can be wrong and spreads ownership widely enough
+that the rest of the portfolio can continue. Broad ownership is an admission of uncertainty, not
+an absence of conviction.
+
+<Figure id="59.4" caption="Broad ownership leaves one company as a contributor, rather than the portfolio's single point of failure.">
+  <Bars
+    className="block w-full min-w-[440px]"
+    items={[
+      { label: "one company", value: 0.94, valueLabel: "one outcome dominates" },
+      { label: "a narrow theme", value: 0.68, valueLabel: "several linked outcomes" },
+      { label: "broad market fund", value: 0.22, accent: true, valueLabel: "many companies share the result" },
+    ]}
+  />
+</Figure>
+
+## The portfolio should fit the investor, not the headline
+
+Malkiel pairs broad diversification with an investor's time horizon and ability to bear loss. The
+right mix is not a universal percentage. Money required soon has a different job from money meant
+for decades from now. A plan also fails when its owner cannot sleep through the volatility it
+contains. The practical question is not how much risk looks heroic in a rising market, but how
+much decline you can absorb without abandoning the plan.
+
+That makes allocation a design decision. Near-term obligations call for more stability and
+liquidity. A long horizon can make room for assets that fluctuate more, but only when the investor
+has a real buffer and the temperament to remain invested. Revisit the mix when the job of the
+money changes, not because a headline has supplied a new mood.
+
+<Figure id="59.5" caption="A longer horizon can carry more fluctuation, while a nearer need calls for a steadier allocation.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "need soon", right: "need later", label: "time until the money is needed" }}
+    yAxis={{ low: "low capacity for loss", high: "high capacity for loss", label: "ability to absorb volatility" }}
+    quadrants={[
+      { title: "protect the need", note: "near-term money" },
+      { title: "moderate risk", note: "time helps, limits remain" },
+      { title: "stable first", note: "capacity sets a boundary" },
+      { title: "growth can fit", note: "long horizon and buffer" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Market movement is not a message
+
+The book's title is a reminder that short-run price changes are often hard to separate from noise.
+A chart can invite a story after the fact, but a story is not evidence that the next movement is
+known. Technical patterns, hot tips, and confident forecasts tend to promise a readable signal in
+a series that is crowded with surprise.
+
+This does not require indifference to new information. It requires a rule for what information
+actually changes the plan: a revised financial goal, a changed time horizon, a need to rebalance,
+or evidence that an investment no longer does the job it was chosen to do. Price motion alone is
+usually a poor reason to rewrite a long-term policy.
+
+<Figure id="59.6" caption="A written policy separates a changed life need from a market move that merely demands attention.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="market noise"
+    right="plan-relevant change"
+    marker={0.76}
+    markerLabel="review the plan"
+    zones={[
+      { from: 0.0, to: 0.38, label: "headline, tip, or price swing" },
+      { from: 0.62, to: 1.0, label: "goal, horizon, or allocation changed", accent: true },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+Efficient markets are best understood as a pressure, not a claim of flawless foresight. Publicly
+available facts are watched by many people who want an advantage. Their research and trades push
+obvious opportunities toward disappearance. What remains may still contain errors, but it is not
+easy money waiting in plain sight. A superior return has to compensate for taking more risk, being
+lucky, or having a real advantage that other participants have not already competed away.
+
+The model directs attention to the part an individual can control. Rather than trying to outguess
+the network, own a diversified exposure to it and keep the frictions low. The point is probability,
+not a promise: a market portfolio can fall sharply and stay disappointing for a long time.
+
+<Figure id="59.7" caption="Competition moves public information into prices, leaving low costs and diversification as controllable edges.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "facts", label: "public facts", x: 0.5, y: 0.04 },
+      { id: "analysis", label: "competing analysis", x: 0.88, y: 0.42 },
+      { id: "trades", label: "trades", x: 0.67, y: 0.92 },
+      { id: "prices", label: "market prices", x: 0.13, y: 0.74 },
+      { id: "returns", label: "future returns", x: 0.14, y: 0.24 },
+    ]}
+    edges={[
+      { from: "facts", to: "analysis" },
+      { from: "analysis", to: "trades" },
+      { from: "trades", to: "prices", kind: "reinforcing", label: "price discovery" },
+      { from: "prices", to: "returns" },
+      { from: "returns", to: "analysis" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Give each pool of money a time horizon">
+List the money you may need in the next few years separately from long-term retirement or other
+goals. Do not make a near-term obligation dependent on a favorable stock-market date. This first
+separation makes the appropriate level of risk easier to see.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Read the all-in cost">
+For each fund, account, or adviser, find the expense ratio, advisory fee, trading costs, and any
+sales charge. Compare each cost with a broad, low-cost alternative that offers similar exposure.
+The aim is not to worship a single number. It is to know what an active decision has to overcome.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Write an allocation rule before the next large move">
+Choose a broad mix of assets that suits your horizon, financial cushion, and tolerance for loss.
+Write when you will review or rebalance it, such as once a year or when the mix moves outside a
+defined range. A rule written in calm conditions is harder for excitement or fear to edit.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make the default contribution automatic">
+Set a recurring contribution to the diversified investments chosen by your plan. Review the
+amount after a change in income or obligations, not after a market prediction. Regular investing
+does not prevent losses, but it keeps the decision tied to your saving program rather than to
+today's story.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Efficient does not mean infallible. Prices can be distorted by liquidity stress, limits on trading,
+crowd behavior, and institutional constraints. Active managers sometimes outperform, and a broad
+index can be concentrated in a few large companies or poorly matched to a specific goal. The
+[S&P Dow Jones Indices 2025 SPIVA scorecard](https://www.spglobal.com/spdji/en/spiva/article/spiva-us/)
+found that 79% of active U.S. large-cap funds lagged the S&P 500 in that year, which illustrates a
+difficult base rate, not a guarantee about any manager or future period. Index funds also carry
+fees, tracking differences, market losses, and sometimes tax consequences. The SEC's
+[investor guidance on index funds](https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-26)
+notes those sources of tracking shortfall. This framework is education, not individualized
+investment advice. Match a plan to your circumstances, and seek a qualified professional when
+the stakes or choices require it.
+</Callout>
+
+## If you remember one thing
+
+You do not need to predict the next winning stock to invest responsibly. In a market crowded with
+smart competitors, a diversified, low-cost plan that matches your horizon gives you a result you
+can understand and a better chance of staying invested long enough for it to matter.
+
+<ShelvedNearby
+  related={["psychology-of-money", "intelligent-investor", "thinking-in-bets", "fooled-by-randomness"]}
+  buyUrl="https://wwnorton.com/books/9781324051138"
+  buyLabel="A Random Walk Down Wall Street by Burton G. Malkiel"
+/>
