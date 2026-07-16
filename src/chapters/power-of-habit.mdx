@@ -36,7 +36,7 @@ and the response made ready by repetition.
 
 <Figure id="11.1" caption="What looks like a single choice often rests on a learned situation-and-response pattern.">
   <Iceberg
-    className="block w-full"
+    className="block w-full min-w-[440px]"
     above="the visible action"
     waterlineLabel="what awareness catches"
     below={["a familiar situation", "an expected payoff", "a rehearsed response"]}
@@ -54,9 +54,10 @@ redesigned.
 
 <Figure id="11.2" caption="A specific situation narrows many possible actions into the response the pattern has learned.">
   <Flow
-    className="block w-full"
-    steps={["notice the situation", "name the cue", "spot the usual response", "choose a test"]}
-    highlight={1}
+    className="block w-full min-w-[440px]"
+    steps={["a specific cue"]}
+    highlight={0}
+    branch={{ up: "the learned routine", down: "other possible actions" }}
   />
 </Figure>
 
@@ -71,10 +72,10 @@ problem and lose its contest with the old one.
 
 <Figure id="11.3" caption="Changing the visible routine works better when the underlying payoff stays in focus.">
   <Compare
-    className="block w-full"
+    className="block w-full min-w-[440px]"
     favor="right"
     left={{
-      title: "watch only the routine",
+      title: "watch the routine",
       points: ["ban the obvious action", "guess at the need", "replace it with a mismatch", "return to the old loop"],
     }}
     right={{
@@ -95,7 +96,7 @@ payoff, to become a plausible answer when that feeling arrives.
 
 <Figure id="11.4" caption="Repeated pairings can move a cue from a neutral signal toward a felt expectation.">
   <Spectrum
-    className="block w-full"
+    className="block w-full min-w-[440px]"
     left="neutral cue"
     right="anticipated payoff"
     marker={0.72}
@@ -119,7 +120,7 @@ create better signals for the rest of the system.
 
 <Figure id="11.5" caption="A repeatable practice can change the cues and feedback available to the people around it.">
   <NodeGraph
-    className="block w-full"
+    className="block w-full min-w-[440px]"
     nodes={[
       { id: "practice", label: "repeatable practice", x: 0.5, y: 0.1 },
       { id: "signal", label: "clearer signals", x: 0.12, y: 0.52 },
@@ -146,7 +147,7 @@ rehearse another route to it until that route can compete.
 
 <Figure id="11.6" caption="The habit loop turns an automatic pattern into three parts that can be observed and tested.">
   <ProcessLoop
-    className="block w-full"
+    className="block w-full min-w-[440px]"
     stages={["cue", "routine", "reward"]}
     compoundingEdge={2}
     centerLabel="learned pattern"

@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-15
 
@@ -60,3 +60,17 @@ verdict: revise
    lint, pipeline tests, 26 Vitest tests, TypeScript and Vite production build, and
    ESLint all completed successfully. The jsdom run emitted only the existing
    non-failing `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-15
+
+- Added chapter-local `min-w-[440px]` sizing to all six Power of Habit SVGs. Figure's
+  existing horizontal-overflow wrapper now preserves the authored label scale at a 360px
+  viewport without changing shared Figure or diagram components. At 440px, the 9.5-unit
+  labels in the 380-to-384-unit figures render at about 11 CSS pixels or larger.
+- Rebuilt Figure 11.2 as an in-vocabulary branching Flow: a specific cue now visibly
+  forks toward the learned routine and away from other possible actions, matching its
+  prose and caption's cue-selection claim rather than depicting the observation exercise.
+- Shortened Figure 11.3's left panel heading to `watch the routine`, which fits within
+  the Compare panel without colliding with its center gap or the opposing panel.
+- Preserved the existing chapter prose, model, exercises, caveat, links, and earlier
+  critique evidence. `npm run check` passes after these changes.
