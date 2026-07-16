@@ -24,19 +24,20 @@
 #       --no-check            skip the independent npm run check gate (not recommended)
 #       --allow-dirty         permit dirty state for --dry-run only
 #       --recover-only        recover a ready/committed transaction, then exit
-#       --health-check        verify exact Git access and a clean tree, then exit
+#       --health-check        read-only Git identity/tree/transaction check, then exit
 #       --dry-run             print the current action and commands, then exit
 #   -y, --yes                 do not confirm an unbounded run on a TTY
 #   -h, --help                show this help and exit
 #       --version             print the runner version and exit
 #
 # Exit status: 0 on success/drain; 1 on a safe deterministic halt; 2 on invalid
-# use or failed preflight; 75 when launchd should retry a transient failure; 130
-# on an interrupt. A transaction is never cleared until its commit is pushed.
+# use or failed preflight; 69 on synchronization infrastructure failure; 75 on
+# another transient failure; 130 on an interrupt. A transaction is never cleared
+# until its commit is synchronized.
 
 set -uo pipefail
 
-RUNQUEUE_VERSION='0.3.0'
+RUNQUEUE_VERSION='0.4.0'
 BUILD_MODEL='gpt-5.6-terra'
 CRITIC_MODEL='gpt-5.6-sol'
 EFFORT='high'
@@ -83,6 +84,11 @@ stop() {
 retry_later() {
   write_status retrying '' '' "$*"
   printf '\033[33m%s\033[0m\n' "runqueue: transient failure: $*" >&2; exit 75
+}
+sync_failure() {
+  write_status retrying "${TXN_ACTION:-}" "${TXN_SLUG:-}" "$*"
+  printf '\033[33m%s\033[0m\n' "runqueue: synchronization infrastructure failure: $*" >&2
+  exit 69
 }
 
 parse_positive() {
@@ -132,23 +138,43 @@ done
 [ "$DRY_RUN" -eq 0 ] || [ "$RECOVER_ONLY" -eq 0 ] || die "--dry-run and --recover-only cannot be combined"
 
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)" || die "cannot resolve script directory"
-resolve_git_dir() {
-  local dotgit="$SCRIPT_DIR/.git" record gitdir
-  if [ -d "$dotgit" ]; then printf '%s' "$dotgit"; return 0; fi
-  [ -f "$dotgit" ] || return 1
-  IFS= read -r record < "$dotgit" || return 1
-  case "$record" in 'gitdir: '*) gitdir="${record#gitdir: }" ;; *) return 1 ;; esac
-  case "$gitdir" in /*) ;; *) gitdir="$SCRIPT_DIR/$gitdir" ;; esac
-  [ -d "$gitdir" ] || return 1; printf '%s' "$gitdir"
+REPO_ROOT="$SCRIPT_DIR"
+SERVICE_BIN="$REPO_ROOT/scripts/service-bin"
+GIT_HELPER="$REPO_ROOT/scripts/pipeline-git.sh"
+export PIPELINE_GIT_BIN="${PIPELINE_GIT_BIN:-/usr/bin/git}"
+export PATH="$SERVICE_BIN:${PATH:-/usr/bin:/bin}"
+
+gitq() { "$GIT_HELPER" "$@"; }
+
+command -v python3 >/dev/null 2>&1 || die "python3 is required"
+[ -x "$PIPELINE_GIT_BIN" ] || die "operational Git is not executable: $PIPELINE_GIT_BIN"
+[ -x "$GIT_HELPER" ] || die "parent Git helper is not executable: $GIT_HELPER"
+[ -x "$SERVICE_BIN/git" ] || die "service Git shim is not executable: $SERVICE_BIN/git"
+gitq rev-parse --is-inside-work-tree >/dev/null 2>&1 || die "Git cannot access the configured worktree"
+
+tree_dirty() {
+  local status
+  status="$(gitq status --porcelain)" || return 2
+  [ -n "$status" ]
 }
-GIT_DIR_PATH="$(resolve_git_dir)" || die "cannot resolve Git metadata directory"
-gitq() (
-  cd / || return 1
-  GIT_DIR="$GIT_DIR_PATH" GIT_WORK_TREE="$SCRIPT_DIR" command git "$@"
-)
 
 RUNQUEUE_STATE_DIR="${RUNQUEUE_STATE_DIR:-${HOME:?HOME is required}/Library/Application Support/darvinyi-library/runqueue}"
 RUNQUEUE_LOCK_DIR="$RUNQUEUE_STATE_DIR/active.lock"
+
+if [ "$HEALTH_CHECK" -eq 1 ]; then
+  GIT_OPTIONAL_LOCKS=0 tree_dirty; health_dirty=$?
+  eval "$(python3 "$SCRIPT_DIR/scripts/runqueue_state.py" --dir "$RUNQUEUE_STATE_DIR" txn-env)" ||
+    die "cannot inspect recovery transaction during health check"
+  case "$health_dirty" in
+    0) [ "$TXN_PRESENT" -eq 1 ] || die "working tree has uncommitted changes" ;;
+    1) ;;
+    *) die "git status failed during health check" ;;
+  esac
+  printf 'runqueue health check OK: PATH git=%s; parent git=%s; neutral-cwd read-only probes passed.\n' \
+    "$(command -v git)" "$PIPELINE_GIT_BIN"
+  exit 0
+fi
+
 mkdir -p "$RUNQUEUE_STATE_DIR" || die "cannot create state directory $RUNQUEUE_STATE_DIR"
 chmod 700 "$RUNQUEUE_STATE_DIR" || die "cannot secure state directory $RUNQUEUE_STATE_DIR"
 STATE_READY=1
@@ -175,30 +201,8 @@ acquire_lock() {
 acquire_lock
 trap release_lock EXIT
 
-command -v git >/dev/null 2>&1 || die "git is required"
-command -v python3 >/dev/null 2>&1 || die "python3 is required"
 [ -f "$SCRIPT_DIR/scripts/runqueue_state.py" ] || die "scripts/runqueue_state.py not found"
 [ -f "$SCRIPT_DIR/scripts/run_with_timeout.py" ] || die "scripts/run_with_timeout.py not found"
-gitq rev-parse --is-inside-work-tree >/dev/null 2>&1 || die "Git cannot access the configured worktree"
-tree_dirty() {
-  local status
-  status="$(gitq status --porcelain)" || return 2
-  [ -n "$status" ]
-}
-if [ "$HEALTH_CHECK" -eq 1 ]; then
-  tree_dirty; health_dirty=$?
-  eval "$(python3 "$SCRIPT_DIR/scripts/runqueue_state.py" --dir "$RUNQUEUE_STATE_DIR" txn-env)" ||
-    die "cannot inspect recovery transaction during health check"
-  case "$health_dirty" in
-    0) [ "$TXN_PRESENT" -eq 1 ] || die "working tree has uncommitted changes" ;;
-    1) ;;
-    *) die "git status failed during health check" ;;
-  esac
-  gitq add --dry-run -A -- "$SCRIPT_DIR" >/dev/null || die "Git cannot stage the explicit worktree path"
-  write_status healthy '' '' "Git status and staging probe passed"
-  printf '%s\n' "runqueue health check OK: Git status, transaction, and explicit-path staging succeeded."
-  exit 0
-fi
 
 command -v codex >/dev/null 2>&1 || die "the 'codex' CLI is not on PATH"
 [ -f "$SCRIPT_DIR/prompts/queue.md" ] || die "prompts/queue.md not found"
@@ -378,17 +382,49 @@ failpoint() {
   [ "${RUNQUEUE_TEST_FAILPOINT:-}" = "$1" ] || return 0
   retry_later "test failpoint $1"
 }
+determine_upstream_ahead() {
+  local branch configured_remote configured_ref target_branch tracking_ref count
+  branch="$(gitq symbolic-ref --quiet --short HEAD)" || return 1
+  configured_remote="$(gitq config --get "branch.${branch}.remote" 2>/dev/null || true)"
+  configured_ref="$(gitq config --get "branch.${branch}.merge" 2>/dev/null || true)"
+  if [ "$configured_remote" = "$TXN_PUSH_REMOTE" ] && [ "$configured_ref" = "$TXN_PUSH_REF" ]; then
+    PUSH_UPSTREAM="$(gitq rev-parse --abbrev-ref --symbolic-full-name "${branch}@{upstream}")" || return 1
+  else
+    target_branch="${TXN_PUSH_REF#refs/heads/}"
+    [ "$target_branch" != "$TXN_PUSH_REF" ] || return 1
+    tracking_ref="refs/remotes/${TXN_PUSH_REMOTE}/${target_branch}"
+    if gitq show-ref --verify --quiet "$tracking_ref"; then
+      PUSH_UPSTREAM="$tracking_ref"
+    else
+      PUSH_UPSTREAM='<unpublished>'
+      count="$(gitq rev-list --count "$TXN_COMMIT_HEAD")" || return 1
+      case "$count" in ''|*[!0-9]*) return 1 ;; esac
+      PUSH_AHEAD="$count"
+      return 0
+    fi
+  fi
+  count="$(gitq rev-list --count "${PUSH_UPSTREAM}..${TXN_COMMIT_HEAD}")" || return 1
+  case "$count" in ''|*[!0-9]*) return 1 ;; esac
+  PUSH_AHEAD="$count"
+}
 push_committed_transaction() {
-  local attempt delay rc
+  local attempt delay rc current dirty_rc
   [ "$TXN_PUSH_REQUIRED" = 1 ] || return 0
   ensure_push_target
+  PUSH_UPSTREAM='' PUSH_AHEAD=''
+  determine_upstream_ahead || sync_failure "cannot determine upstream ahead count for $TXN_SLUG"
+  printf '%s\n' "runqueue: upstream $PUSH_UPSTREAM; ahead by $PUSH_AHEAD commit(s)."
+  if [ "$PUSH_AHEAD" -eq 0 ]; then
+    printf '%s\n' "runqueue: upstream is synchronized; skipping git push."
+    return 0
+  fi
   attempt="$TXN_PUSH_ATTEMPT"
-  if [ "$attempt" -gt 0 ] && remote_has_journaled_commit; then
+  if remote_has_journaled_commit; then
     printf '%s\n' "runqueue: remote already contains $TXN_COMMIT_HEAD; treating the journaled push as complete."
     return 0
   fi
   if [ "$attempt" -ge "$MAX_PUSH_ATTEMPTS" ]; then
-    stop "push attempts already exhausted for $TXN_ACTION $TXN_SLUG"
+    sync_failure "push attempts already exhausted for $TXN_ACTION $TXN_SLUG"
   fi
   while [ "$attempt" -lt "$MAX_PUSH_ATTEMPTS" ]; do
     attempt=$((attempt + 1))
@@ -396,20 +432,27 @@ push_committed_transaction() {
       retry_later "cannot journal push attempt $attempt"
     write_status pushing "$TXN_ACTION" "$TXN_SLUG" "push attempt $attempt of $MAX_PUSH_ATTEMPTS"
     rc=0
-    GIT_DIR="$GIT_DIR_PATH" GIT_WORK_TREE="$SCRIPT_DIR" \
-      python3 "$SCRIPT_DIR/scripts/run_with_timeout.py" "$PUSH_TIMEOUT" -- \
-      git -C / push -- "$TXN_PUSH_REMOTE" "${TXN_COMMIT_HEAD}:${TXN_PUSH_REF}" || rc=$?
+    python3 "$SCRIPT_DIR/scripts/run_with_timeout.py" "$PUSH_TIMEOUT" -- \
+      "$GIT_HELPER" push -- "$TXN_PUSH_REMOTE" "${TXN_COMMIT_HEAD}:${TXN_PUSH_REF}" || rc=$?
     if [ "$rc" -eq 0 ]; then return 0; fi
     if remote_has_journaled_commit; then
       printf '%s\n' "runqueue: remote received $TXN_COMMIT_HEAD despite push exit $rc; treating it as complete."
       return 0
     fi
+    current="$(gitq rev-parse HEAD)" || sync_failure "cannot inspect HEAD after failed push for $TXN_SLUG"
+    [ "$current" = "$TXN_COMMIT_HEAD" ] || stop "HEAD moved during failed push for $TXN_SLUG"
+    tree_dirty; dirty_rc=$?
+    case "$dirty_rc" in
+      0) stop "failed push for $TXN_SLUG mutated the worktree" ;;
+      1) ;;
+      *) sync_failure "cannot inspect worktree after failed push for $TXN_SLUG" ;;
+    esac
     [ "$attempt" -lt "$MAX_PUSH_ATTEMPTS" ] || break
     case "$attempt" in 1) delay=5 ;; 2) delay=15 ;; 3) delay=30 ;; *) delay=60 ;; esac
     printf '%s\n' "runqueue: push attempt $attempt failed; retrying in ${delay}s." >&2
     sleep "$delay"
   done
-  stop "push failed $MAX_PUSH_ATTEMPTS times for $TXN_ACTION $TXN_SLUG"
+  sync_failure "push failed $MAX_PUSH_ATTEMPTS times for $TXN_ACTION $TXN_SLUG"
 }
 
 remote_has_journaled_commit() {
@@ -421,9 +464,8 @@ remote_has_journaled_commit() {
   while IFS= read -r url; do
     [ -n "$url" ] || continue
     found=1; output=''; rc=0
-    output="$(GIT_DIR="$GIT_DIR_PATH" GIT_WORK_TREE="$SCRIPT_DIR" \
-      python3 "$SCRIPT_DIR/scripts/run_with_timeout.py" "$PUSH_TIMEOUT" -- \
-      git -C / ls-remote --exit-code "$url" "$TXN_PUSH_REF")" || rc=$?
+    output="$(python3 "$SCRIPT_DIR/scripts/run_with_timeout.py" "$PUSH_TIMEOUT" -- \
+      "$GIT_HELPER" ls-remote --exit-code "$url" "$TXN_PUSH_REF")" || rc=$?
     [ "$rc" -eq 0 ] || return 1
     remote_head="${output%%[[:space:]]*}"
     [ -n "$remote_head" ] && [ "$remote_head" = "$TXN_COMMIT_HEAD" ] || return 1

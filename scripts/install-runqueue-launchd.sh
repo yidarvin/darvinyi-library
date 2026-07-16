@@ -5,6 +5,8 @@ set -eu
 
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)"
+export PIPELINE_GIT_BIN='/usr/bin/git'
+export PATH="$REPO_ROOT/scripts/service-bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 LABEL='com.darvinyi.library.runqueue'
 TEMPLATE="$REPO_ROOT/ops/${LABEL}.plist.template"
 TARGET_DIR="$HOME/Library/LaunchAgents"
@@ -26,9 +28,6 @@ sed -e "s|__REPO_ROOT__|$REPO_ROOT|g" -e "s|__HOME__|$HOME|g" "$TEMPLATE" > "$TE
 plutil -lint "$TEMP" >/dev/null
 
 RUNQUEUE_STATE_DIR="$STATE_DIR" "$REPO_ROOT/runqueue.sh" --health-check
-python3 "$REPO_ROOT/scripts/runqueue_state.py" --dir "$STATE_DIR" reset-push-attempts
-mv "$TEMP" "$TARGET"
-trap - EXIT
 
 if launchctl print "gui/$UID_VALUE/$LABEL" >/dev/null 2>&1; then
   launchctl bootout "gui/$UID_VALUE/$LABEL"
@@ -37,6 +36,9 @@ if launchctl print "gui/$UID_VALUE/$LABEL" >/dev/null 2>&1; then
   echo "could not unload existing $LABEL" >&2
   exit 1
 fi
+python3 "$REPO_ROOT/scripts/runqueue_state.py" --dir "$STATE_DIR" reset-push-attempts
+mv "$TEMP" "$TARGET"
+trap - EXIT
 [ ! -e "$OUT_LOG" ] || mv "$OUT_LOG" "$OUT_LOG.$STAMP"
 [ ! -e "$ERR_LOG" ] || mv "$ERR_LOG" "$ERR_LOG.$STAMP"
 : > "$KEEPALIVE"

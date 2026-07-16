@@ -9,6 +9,13 @@
     <string>/bin/bash</string>
     <string>__REPO_ROOT__/scripts/runqueue-launchd.sh</string>
   </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>__REPO_ROOT__/scripts/service-bin:__HOME__/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+    <key>PIPELINE_GIT_BIN</key>
+    <string>/usr/bin/git</string>
+  </dict>
   <key>RunAtLoad</key>
   <true/>
   <key>KeepAlive</key>

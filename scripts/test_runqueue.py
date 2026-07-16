@@ -21,6 +21,9 @@ STATE_TOOL = ROOT / "scripts" / "runqueue_state.py"
 TIMEOUT_TOOL = ROOT / "scripts" / "run_with_timeout.py"
 PLIST_TEMPLATE = ROOT / "ops" / "com.darvinyi.library.runqueue.plist.template"
 INSTALLER = ROOT / "scripts" / "install-runqueue-launchd.sh"
+LAUNCH_SUPERVISOR = ROOT / "scripts" / "runqueue-launchd.sh"
+GIT_HELPER = ROOT / "scripts" / "pipeline-git.sh"
+SERVICE_GIT = ROOT / "scripts" / "service-bin" / "git"
 
 
 class RunqueueTests(unittest.TestCase):
@@ -49,6 +52,9 @@ class RunqueueTests(unittest.TestCase):
         repo = root / name
         (repo / "scripts").mkdir(parents=True)
         shutil.copy2(RUNNER, repo / "runqueue.sh")
+        shutil.copy2(GIT_HELPER, repo / "scripts" / GIT_HELPER.name)
+        (repo / "scripts" / "service-bin").mkdir()
+        shutil.copy2(SERVICE_GIT, repo / "scripts" / "service-bin" / "git")
         if STATE_TOOL.exists():
             shutil.copy2(STATE_TOOL, repo / "scripts" / STATE_TOOL.name)
         if TIMEOUT_TOOL.exists():
@@ -70,6 +76,8 @@ class RunqueueTests(unittest.TestCase):
             RUNNER,
             STATE_TOOL,
             TIMEOUT_TOOL,
+            GIT_HELPER,
+            SERVICE_GIT,
             ROOT / "scripts" / "decide.py",
             ROOT / "scripts" / "validate.py",
             ROOT / "scripts" / "mark.py",
@@ -276,6 +284,60 @@ class RunqueueTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("health check OK", result.stdout)
 
+    def test_parent_git_helper_uses_neutral_home_and_explicit_repo(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="pipeline-git-helper-") as temp:
+            home = Path(temp) / "home"
+            home.mkdir()
+            log = Path(temp) / "git-call.json"
+            fake_git = Path(temp) / "git"
+            fake_git.write_text(
+                "#!/bin/bash\n"
+                "python3 -c 'import json,os,sys; "
+                "json.dump({\"cwd\": os.getcwd(), \"args\": sys.argv[1:]}, "
+                "open(os.environ[\"GIT_CALL_LOG\"], \"w\"))' \"$@\"\n"
+                "exec /usr/bin/git \"$@\"\n",
+                encoding="utf-8",
+            )
+            fake_git.chmod(0o755)
+            env = os.environ.copy()
+            env["HOME"] = str(home)
+            env["PIPELINE_GIT_BIN"] = str(fake_git)
+            env["GIT_CALL_LOG"] = str(log)
+
+            result = self.run_command(str(GIT_HELPER), "rev-parse", "--show-toplevel", env=env)
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            call = json.loads(log.read_text(encoding="utf-8"))
+            self.assertEqual(Path(call["cwd"]).resolve(), home.resolve())
+            self.assertEqual(call["args"][:2], ["-C", str(ROOT)])
+
+    def test_service_path_resolves_shim_and_shim_executes_apple_git(self) -> None:
+        env = os.environ.copy()
+        env["PATH"] = f"{SERVICE_GIT.parent}:/usr/bin:/bin"
+        resolved = self.run_command("/bin/bash", "-c", "command -v git", env=env)
+        shim_version = self.run_command(str(SERVICE_GIT), "--version")
+        apple_version = self.run_command("/usr/bin/git", "--version")
+
+        self.assertEqual(resolved.returncode, 0, resolved.stderr)
+        self.assertEqual(resolved.stdout.strip(), str(SERVICE_GIT))
+        self.assertEqual(shim_version.returncode, 0, shim_version.stderr)
+        self.assertEqual(shim_version.stdout, apple_version.stdout)
+        self.assertEqual(
+            SERVICE_GIT.read_text(encoding="utf-8"),
+            '#!/bin/bash\nexec /usr/bin/git "$@"\n',
+        )
+
+    def test_health_check_does_not_create_or_update_service_state(self) -> None:
+        root, repo = self.make_git_fixture("doctor repo")
+        state = root / "missing state"
+        env = os.environ.copy()
+        env["RUNQUEUE_STATE_DIR"] = str(state)
+
+        result = self.run_command(str(repo / "runqueue.sh"), "--health-check", cwd=repo, env=env)
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertFalse(state.exists())
+
     def test_health_check_rejects_a_dirty_worktree(self) -> None:
         root, repo = self.make_git_fixture("dirty repo")
         (repo / "tracked.txt").write_text("dirty\n", encoding="utf-8")
@@ -326,10 +388,245 @@ class RunqueueTests(unittest.TestCase):
         marker = next(iter(paths))
         self.assertTrue(marker.endswith("/Library/Application Support/darvinyi-library/runqueue/keepalive"))
         self.assertNotIn("WorkingDirectory", plist)
+        environment = plist["EnvironmentVariables"]
+        self.assertEqual(environment["PIPELINE_GIT_BIN"], "/usr/bin/git")
+        self.assertTrue(environment["PATH"].startswith("__REPO_ROOT__/scripts/service-bin:"))
         installer = INSTALLER.read_text(encoding="utf-8")
         self.assertLess(installer.index("--health-check"), installer.index("launchctl bootout"))
         self.assertLess(installer.index("sed -e"), installer.index("launchctl bootout"))
         self.assertLess(installer.index("plutil -lint"), installer.index("launchctl bootout"))
+        self.assertLess(installer.index("launchctl bootout"), installer.index('mv "$TEMP" "$TARGET"'))
+
+    def test_supervisor_retries_three_sync_failures_without_model_recovery(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="runqueue-supervisor-") as temp:
+            root = Path(temp)
+            home = root / "home"
+            home.mkdir()
+            calls = root / "runner-calls"
+            model_calls = root / "model-calls"
+            fake_runner = root / "runner"
+            fake_runner.write_text(
+                "#!/bin/bash\n"
+                "count=0\n"
+                "[ ! -f \"$RUNNER_CALLS\" ] || read -r count < \"$RUNNER_CALLS\"\n"
+                "count=$((count + 1))\n"
+                "printf '%s\\n' \"$count\" > \"$RUNNER_CALLS\"\n"
+                "[ \"$count\" -gt 3 ] && exit 0\n"
+                "exit 69\n",
+                encoding="utf-8",
+            )
+            fake_runner.chmod(0o755)
+            env = os.environ.copy()
+            env.update(
+                {
+                    "HOME": str(home),
+                    "PIPELINE_RUNNER_BIN": str(fake_runner),
+                    "PIPELINE_INFRA_RETRY_BASE_SECONDS": "0",
+                    "PIPELINE_INFRA_RETRY_MAX_SECONDS": "0",
+                    "RUNNER_CALLS": str(calls),
+                    "MODEL_CALLS": str(model_calls),
+                }
+            )
+
+            result = self.run_command(str(LAUNCH_SUPERVISOR), env=env, timeout=10)
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(calls.read_text(encoding="utf-8").strip(), "4")
+            self.assertFalse(model_calls.exists())
+            self.assertGreaterEqual(result.stderr.count("synchronization infrastructure failure"), 3)
+
+    def test_supervisor_leaves_normal_stage_failure_to_existing_recovery(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="runqueue-supervisor-stage-") as temp:
+            root = Path(temp)
+            home = root / "home"
+            home.mkdir()
+            calls = root / "runner-calls"
+            fake_runner = root / "runner"
+            fake_runner.write_text(
+                "#!/bin/bash\n"
+                "printf 'called\\n' >> \"$RUNNER_CALLS\"\n"
+                "exit 1\n",
+                encoding="utf-8",
+            )
+            fake_runner.chmod(0o755)
+            env = os.environ.copy()
+            env.update(
+                {
+                    "HOME": str(home),
+                    "PIPELINE_RUNNER_BIN": str(fake_runner),
+                    "RUNNER_CALLS": str(calls),
+                }
+            )
+
+            result = self.run_command(str(LAUNCH_SUPERVISOR), env=env)
+
+            self.assertEqual(result.returncode, 1, result.stderr)
+            self.assertEqual(calls.read_text(encoding="utf-8").splitlines(), ["called"])
+
+    def test_synchronized_upstream_skips_git_push_entirely(self) -> None:
+        root, repo, state, env = self.make_pipeline_fixture()
+        remote = root / "remote.git"
+        self.assertEqual(self.run_command("git", "init", "--bare", "-q", str(remote)).returncode, 0)
+        self.assertEqual(self.git(repo, "remote", "add", "origin", str(remote)).returncode, 0)
+        self.assertEqual(self.git(repo, "push", "-qu", "origin", "main").returncode, 0)
+        head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        begin = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "begin",
+            "--action",
+            "record",
+            "--slug",
+            "sample",
+            "--title",
+            "Sample",
+            "--base-head",
+            head,
+            "--push-required",
+            "true",
+            "--push-remote",
+            "origin",
+            "--push-ref",
+            "refs/heads/main",
+            "--check-required",
+            "false",
+        )
+        self.assertEqual(begin.returncode, 0, begin.stderr)
+        committed = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "phase",
+            "committed",
+            "--commit-head",
+            head,
+        )
+        self.assertEqual(committed.returncode, 0, committed.stderr)
+        git_dir = Path(self.git(repo, "rev-parse", "--git-dir").stdout.strip())
+        if not git_dir.is_absolute():
+            git_dir = repo / git_dir
+        marker = root / "push-ran"
+        hook = git_dir / "hooks" / "pre-push"
+        hook.write_text(f"#!/bin/sh\nprintf ran > {marker!s}\nexit 1\n", encoding="utf-8")
+        hook.chmod(0o755)
+
+        recovered = self.run_command(
+            str(repo / "runqueue.sh"),
+            "--recover-only",
+            "--no-check",
+            cwd=repo,
+            env=env,
+        )
+
+        self.assertEqual(recovered.returncode, 0, recovered.stderr)
+        self.assertIn("ahead by 0 commit(s)", recovered.stdout)
+        self.assertIn("skipping git push", recovered.stdout)
+        self.assertFalse(marker.exists())
+        self.assertFalse((state / "transaction.json").exists())
+
+    def test_three_sync_failures_preserve_commit_and_never_invoke_codex(self) -> None:
+        root, repo, state, env = self.make_pipeline_fixture()
+        remote = root / "remote.git"
+        self.assertEqual(self.run_command("git", "init", "--bare", "-q", str(remote)).returncode, 0)
+        self.assertEqual(self.git(repo, "remote", "add", "origin", str(remote)).returncode, 0)
+        self.assertEqual(self.git(repo, "push", "-qu", "origin", "main").returncode, 0)
+        base_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        (repo / "local.txt").write_text("preserve me\n", encoding="utf-8")
+        self.assertEqual(self.git(repo, "add", "local.txt").returncode, 0)
+        self.assertEqual(self.git(repo, "commit", "-qm", "local only").returncode, 0)
+        commit_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        begin = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "begin",
+            "--action",
+            "record",
+            "--slug",
+            "sample",
+            "--title",
+            "Sample",
+            "--base-head",
+            base_head,
+            "--push-required",
+            "true",
+            "--push-remote",
+            "origin",
+            "--push-ref",
+            "refs/heads/main",
+            "--check-required",
+            "false",
+        )
+        self.assertEqual(begin.returncode, 0, begin.stderr)
+        committed = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "phase",
+            "committed",
+            "--commit-head",
+            commit_head,
+        )
+        self.assertEqual(committed.returncode, 0, committed.stderr)
+        sync_calls = root / "sync-calls"
+        model_calls = root / "model-calls"
+        fake_git = root / "git"
+        fake_git.write_text(
+            "#!/bin/bash\n"
+            "case \" $* \" in\n"
+            "  *' ls-remote '*|*' push '*) printf 'sync\\n' >> \"$SYNC_CALLS\"; exit 1 ;;\n"
+            "esac\n"
+            "exec /usr/bin/git \"$@\"\n",
+            encoding="utf-8",
+        )
+        fake_git.chmod(0o755)
+        fake_codex = Path(env["PATH"].split(os.pathsep)[0]) / "codex"
+        fake_codex.write_text(
+            "#!/bin/sh\nprintf 'model\\n' >> \"$MODEL_CALLS\"\nexit 99\n",
+            encoding="utf-8",
+        )
+        fake_codex.chmod(0o755)
+        env.update(
+            {
+                "PIPELINE_GIT_BIN": str(fake_git),
+                "SYNC_CALLS": str(sync_calls),
+                "MODEL_CALLS": str(model_calls),
+            }
+        )
+
+        for _ in range(3):
+            reset = self.run_command(
+                sys.executable,
+                str(repo / "scripts" / "runqueue_state.py"),
+                "--dir",
+                str(state),
+                "reset-push-attempts",
+            )
+            self.assertEqual(reset.returncode, 0, reset.stderr)
+            failed = self.run_command(
+                str(repo / "runqueue.sh"),
+                "--recover-only",
+                "--no-check",
+                "--max-push-attempts",
+                "1",
+                "--push-timeout",
+                "2",
+                cwd=repo,
+                env=env,
+            )
+            self.assertEqual(failed.returncode, 69, failed.stderr)
+
+        self.assertGreaterEqual(len(sync_calls.read_text(encoding="utf-8").splitlines()), 3)
+        self.assertFalse(model_calls.exists())
+        transaction = json.loads((state / "transaction.json").read_text(encoding="utf-8"))
+        self.assertEqual(transaction["phase"], "committed")
+        self.assertEqual(transaction["commit_head"], commit_head)
+        self.assertEqual(self.git(repo, "rev-parse", "HEAD").stdout.strip(), commit_head)
 
     def test_recover_only_commits_validated_ready_work_without_rerunning_codex(self) -> None:
         _root, repo, state, env = self.make_pipeline_fixture()
@@ -502,7 +799,7 @@ class RunqueueTests(unittest.TestCase):
             env=env,
         )
 
-        self.assertEqual(recovered.returncode, 1, recovered.stderr)
+        self.assertEqual(recovered.returncode, 69, recovered.stderr)
         transaction = json.loads((state / "transaction.json").read_text(encoding="utf-8"))
         self.assertEqual(transaction["push_attempt"], 1)
         self.assertEqual(transaction["phase"], "committed")
@@ -518,7 +815,7 @@ class RunqueueTests(unittest.TestCase):
             git_dir = repo / git_dir
         hook = git_dir / "hooks" / "pre-push"
         hook.write_text(
-            "#!/bin/sh\nprintf '\\n' >> \"$GIT_WORK_TREE/content/registry.json\"\n",
+            f"#!/bin/sh\nprintf '\\n' >> \"{repo}/content/registry.json\"\n",
             encoding="utf-8",
         )
         hook.chmod(0o755)
@@ -617,8 +914,8 @@ class RunqueueTests(unittest.TestCase):
             git_dir = repo / git_dir
         hook = git_dir / "hooks" / "pre-commit"
         hook.write_text(
-            "#!/bin/sh\nprintf 'injected\\n' > \"$GIT_WORK_TREE/unrelated.txt\"\n"
-            "git add -- \"$GIT_WORK_TREE/unrelated.txt\"\n",
+            f"#!/bin/sh\nprintf 'injected\\n' > \"{repo}/unrelated.txt\"\n"
+            f"git -C \"{repo}\" add -- \"{repo}/unrelated.txt\"\n",
             encoding="utf-8",
         )
         hook.chmod(0o755)
@@ -682,7 +979,7 @@ class RunqueueTests(unittest.TestCase):
             git_dir = repo / git_dir
         hook = git_dir / "hooks" / "pre-commit"
         hook.write_text(
-            "#!/bin/sh\ncd \"$GIT_WORK_TREE\"\n"
+            f"#!/bin/sh\ncd \"{repo}\"\n"
             "python3 scripts/mark.py sample pending >/dev/null\n"
             "git add -- content/registry.json prompts/queue.md\n",
             encoding="utf-8",
@@ -757,9 +1054,9 @@ class RunqueueTests(unittest.TestCase):
             git_dir = repo / git_dir
         hook = git_dir / "hooks" / "pre-push"
         hook.write_text(
-            "#!/bin/sh\nprintf '\\n' >> \"$GIT_WORK_TREE/content/registry.json\"\n"
-            "git add -- \"$GIT_WORK_TREE/content/registry.json\"\n"
-            "git commit -qm 'hook moved head'\n",
+            f"#!/bin/sh\nprintf '\\n' >> \"{repo}/content/registry.json\"\n"
+            f"git -C \"{repo}\" add -- \"{repo}/content/registry.json\"\n"
+            f"git -C \"{repo}\" commit -qm 'hook moved head'\n",
             encoding="utf-8",
         )
         hook.chmod(0o755)
@@ -1126,7 +1423,7 @@ class RunqueueTests(unittest.TestCase):
             env=env,
         )
 
-        self.assertEqual(recovered.returncode, 1, recovered.stderr)
+        self.assertEqual(recovered.returncode, 69, recovered.stderr)
         self.assertTrue((state / "transaction.json").exists())
         first_head = self.run_command("git", "--git-dir", str(first), "rev-parse", "refs/heads/main")
         self.assertEqual(first_head.stdout.strip(), commit_head)
