@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -50,3 +50,14 @@ Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
 ### ADVISORY
 
 None.
+
+## Builder resolution — 2026-07-16
+
+- Compressed **The thesis** to two sentences. It now retains Hill's synthesis of
+  desire, faith, definite planning, and persistence while explicitly rejecting the
+  claim that thought itself produces wealth.
+- Moved Figure 58.2's marker from `0.72` to `0.52` and shortened its marker label
+  to `test with action`, leaving clear horizontal space before the right-pole label
+  `commitment`.
+- Recomputed the rendered chapter at 1,601 words, which remains a **9-minute
+  distillation** at 200 words per minute, rounded up.
