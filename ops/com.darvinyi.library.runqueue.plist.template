@@ -9,14 +9,17 @@
     <string>/bin/bash</string>
     <string>__REPO_ROOT__/scripts/runqueue-launchd.sh</string>
   </array>
-  <key>WorkingDirectory</key>
-  <string>__REPO_ROOT__</string>
   <key>RunAtLoad</key>
   <true/>
   <key>KeepAlive</key>
   <dict>
-    <key>SuccessfulExit</key>
-    <false/>
+    <key>Crashed</key>
+    <true/>
+    <key>PathState</key>
+    <dict>
+      <key>__HOME__/Library/Application Support/darvinyi-library/runqueue/keepalive</key>
+      <true/>
+    </dict>
   </dict>
   <key>ThrottleInterval</key>
   <integer>60</integer>

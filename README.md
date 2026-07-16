@@ -42,27 +42,33 @@ Run the unattended queue with automatic commits and pushes:
 ./runqueue.sh --all --yes
 ```
 
-The driver stops on a model error, failed gate, unexpected edit, dirty worktree,
-timeout, push failure, or three unresolved critique rounds. Use `--dry-run` to inspect
-the active models and next action, and `--no-push` to retain commits locally.
+The driver journals each action before model work, retries incomplete model attempts,
+and recovers interrupted validated or committed work before starting anything new.
+Every model attempt has a two-hour hard timeout. Git, scope, project checks, commit,
+and push are mandatory gates. Push attempts and repeated critique cycles are bounded;
+the default critique ceiling is six revise rounds. Use `--dry-run` to inspect the
+active models and next action, and `--no-push` to retain commits locally.
 
 ## Keep the queue running on macOS
 
-Install the per-user LaunchAgent once to restart the queue after a crash, a reboot, or
-a recovered disk-full condition. It runs a single queue instance, restarts only after a
-nonzero exit, and waits 60 seconds between restart attempts. A clean queue drain exits
-successfully and does not restart.
+Install the per-user LaunchAgent once to run until the queue drains. A persistent marker
+keeps transient failures alive across restarts, while deterministic validation or scope
+failures halt with a durable status instead of looping. Crashes also restart. A clean
+queue drain removes the marker and stays stopped.
 
 ```bash
 bash scripts/install-runqueue-launchd.sh
 ```
 
-Check the service and its latest output:
+Check the service, transaction, queue, and worktree in one command:
 
 ```bash
-launchctl print "gui/$(id -u)/com.darvinyi.library.runqueue"
-tail -f ~/Library/Logs/darvinyi-library-runqueue.log
+bash scripts/runqueue-status.sh
 ```
+
+Agent transcripts and the durable transaction journal live under
+`~/Library/Application Support/darvinyi-library/runqueue/`. Launch logs live under
+`~/Library/Logs/` and are rotated whenever the service is reinstalled.
 
 Remove the service when you want the queue to stop:
 
