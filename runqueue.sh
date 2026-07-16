@@ -109,11 +109,11 @@ resolve_git_dir() {
   printf '%s' "$gitdir"
 }
 GIT_DIR_PATH="$(resolve_git_dir)" || die "cannot resolve Git metadata directory"
-# Git add resolves an all-pathspec from its current directory. Run from the worktree
-# while identifying the metadata explicitly, so the LaunchAgent stages the repository
-# rather than its own process directory.
+# A LaunchAgent may enter the repository but still be denied getcwd() for its
+# Documents ancestor. Run Git from a safe directory; callers that need paths must
+# pass the worktree explicitly.
 gitq() (
-  cd "$SCRIPT_DIR" || return 1
+  cd / || return 1
   GIT_DIR="$GIT_DIR_PATH" GIT_WORK_TREE="$SCRIPT_DIR" command git "$@"
 )
 
@@ -288,7 +288,7 @@ commit_action() {
     record) message="critique: ${slug} -- approve (recorded)" ;;
     *) stop "cannot commit unknown action '$action'" ;;
   esac
-  gitq add -A || return 1
+  gitq add -A -- "$SCRIPT_DIR" || return 1
   gitq commit -m "$message" || return 1
   if [ "$NO_PUSH" -eq 0 ]; then gitq push || return 1; fi
 }
