@@ -1,0 +1,224 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Spectrum, Venn } from "../components/diagrams";
+
+<Hero
+  slug="influence"
+  thesis="Persuasion often rides on a few learned shortcuts. Recognize the shortcut, and you can make a clearer choice or make an honest request without leaning on pressure."
+  minutes={8}
+/>
+
+## The thesis
+
+Cialdini's central claim is that people do not examine every request from first principles.
+They rely on quick social rules that are usually useful: return a favor, act in line with a
+commitment, follow credible peers, heed expertise, listen to people you trust, and protect
+an opportunity that may disappear. A request can attach itself to one of those rules and
+make agreement feel natural before its merits have been considered. The practical lesson is
+two-sided. Make requests in ways that respect the other person's judgment, and pause when a
+request seems to be borrowing its force from something beside the decision itself.
+
+## Why it matters
+
+Most consequential persuasion is ordinary. It happens in a sales conversation, a hiring
+meeting, a family favor, a fundraising email, or a product screen. The same shortcuts that
+save attention can also make a deadline, a title, a favor, or a crowd do more work than the
+actual offer deserves. Seeing the pattern creates a small but valuable gap between the cue
+and the answer.
+
+## A request can activate a shortcut
+
+No one can inspect every choice in full. When attention is thin or the answer is unclear,
+the mind uses familiar signals as evidence about what to do. That is sensible much of the
+time. A trusted expert may know more than you do, and a colleague's experience may be
+relevant. Trouble begins when the signal is real but irrelevant, or when it is staged to
+stand in for reasons that are missing.
+
+<Figure id="10.1" caption="The visible request can draw force from social rules operating below attention.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the request in front of you"
+    waterlineLabel="what the request makes salient"
+    below={["limited attention", "uncertainty", "learned social rules"]}
+  />
+</Figure>
+
+## A favor can create a social debt
+
+Reciprocity turns giving into a relationship rule. A genuinely helpful act can make a later
+request easier to hear because cooperation is easier to sustain when help is returned. The
+same rule can be recruited by an unwanted sample, an extravagant opening ask, or a gift that
+arrives before you have agreed to anything. The useful distinction is simple: gratitude is
+appropriate, but it does not make the eventual request a good one. Treat the favor and the
+decision as separate questions.
+
+<Figure id="10.2" caption="A gift can change the social context, but it should not settle the later decision.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["a favor", "felt obligation", "a later request", "a separate decision"]}
+    highlight={3}
+  />
+</Figure>
+
+## Small commitments can pull later choices into line
+
+People tend to prefer a story of themselves that hangs together. Once you have taken a
+position, especially one that is public or effortful, the next compatible action can feel
+like proof that the first one was sincere. This is useful when a small commitment supports a
+value you actually hold. It becomes a trap when the first step is trivial and the later one
+is not. Before extending a commitment, name the new cost, the new scope, and whether you
+would choose it if no earlier promise existed.
+
+<Figure id="10.3" caption="Each visible step can make the next, larger step feel more consistent with who you are.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["small public step", "self-story", "pressure to match it", "next commitment"]}
+    compoundingEdge={3}
+    centerLabel="consistency"
+  />
+</Figure>
+
+## Other people can become evidence
+
+Social proof is strongest when the situation is ambiguous and the people you see resemble
+you in a way that matters. A long queue, a set of peer testimonials, or a colleague's choice
+can provide information that you do not have. It can also create a loop in which everyone is
+copying everyone else. Ask what the group knows, whether the examples are genuinely similar,
+and whether the behavior is being presented honestly. A crowd is information, not a verdict.
+
+<Figure id="10.4" caption="Similar others are most persuasive when uncertainty makes their behavior look like evidence.">
+  <Venn
+    className="block w-full min-w-[380px]"
+    sets={[{ label: "an uncertain choice" }, { label: "similar people acting" }]}
+    intersectionLabel="an inferred norm"
+  />
+</Figure>
+
+## Source cues are not the same as reasons
+
+Liking and authority make a messenger easier to follow for different reasons. Liking rests
+on affinity, familiarity, warmth, and shared identity. Authority rests on relevant knowledge,
+responsibility, or demonstrated skill. Both can be useful filters. Neither is a substitute
+for checking the claim. A friendly person can be wrong, and a title can exceed the person's
+expertise. Separate the source's relationship to you from the evidence supporting the ask.
+
+<Figure id="10.5" caption="Trust in a person and trust in expertise are distinct cues, and both still need evidence.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="none"
+    left={{
+      title: "liking",
+      points: ["affinity and familiarity", "shared identity", "warmth and rapport", "asks: do I trust them?"],
+    }}
+    right={{
+      title: "authority",
+      points: ["relevant competence", "role or responsibility", "demonstrated expertise", "asks: do they know?"],
+    }}
+  />
+</Figure>
+
+## Loss can make an offer feel larger
+
+Scarcity changes attention by making the cost of missing out vivid. A genuine limit can be
+important: there may be one available seat, a real deadline, or a resource that cannot be
+replaced. Yet a timer, an exclusive label, or a shrinking stock count can also turn urgency
+into theater. The defense is a pause long enough to ask what is limited, why it is limited,
+and whether you would want the offer if it remained available tomorrow.
+
+<Figure id="10.6" caption="As access narrows, the fear of losing an option can crowd out its actual value.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="ordinary availability"
+    right="restricted access"
+    marker={0.76}
+    markerLabel="pause here"
+    zones={[
+      { from: 0, to: 0.42, label: "evaluate the offer" },
+      { from: 0.58, to: 1, label: "loss feels urgent", accent: true },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The original framework groups six common routes by which a request gains momentum:
+reciprocity, commitment and consistency, social proof, liking, authority, and scarcity. They
+are not six steps in a script, and a strong request need not use any of them. They are
+different kinds of cues that can tilt an evaluation toward agreement. The model is most
+useful as a diagnostic map. When you feel an automatic yes, identify which cue is carrying
+the weight, then return to the merits of the request.
+
+<Figure id="10.7" caption="Six social cues can pull a request toward agreement before its merits receive a full review.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "reciprocity", label: "reciprocity", x: 0.5, y: 0.03 },
+      { id: "commitment", label: "commitment + consistency", x: 0.91, y: 0.28 },
+      { id: "social", label: "social proof", x: 0.91, y: 0.74 },
+      { id: "scarcity", label: "scarcity", x: 0.5, y: 0.97 },
+      { id: "authority", label: "authority", x: 0.09, y: 0.74 },
+      { id: "liking", label: "liking", x: 0.09, y: 0.28 },
+      { id: "request", label: "request evaluated", x: 0.5, y: 0.5 },
+    ]}
+    edges={[
+      { from: "reciprocity", to: "request" },
+      { from: "commitment", to: "request" },
+      { from: "social", to: "request" },
+      { from: "scarcity", to: "request" },
+      { from: "authority", to: "request" },
+      { from: "liking", to: "request" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the cue before the answer">
+When a request feels unusually easy to accept, pause and write the cue you notice: a favor,
+a prior commitment, a crowd, a relationship, an expert, or a deadline. Then write one reason
+the request stands on its own. If you cannot find one, delay the decision.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Separate a favor from a purchase">
+If someone has done something for you, thank them plainly. Then evaluate any request that
+follows by your own criteria: need, price, alternatives, and timing. A favor can deserve
+appreciation without purchasing power over the next decision.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make social proof specific and true">
+When persuading ethically, use examples that are real, relevant, and close to the audience's
+actual situation. Do not pad a count, manufacture testimonials, or describe a harmful norm
+as if it were common. Evidence that cannot survive a follow-up question is not evidence.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Install a scarcity check">
+For any time-limited offer, ask three questions before acting: What exactly runs out? Who set
+the limit? What would I choose with a day to compare alternatives? A real constraint will
+still make sense after those questions.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+These principles describe tendencies, not buttons that guarantee compliance. Their force
+depends on context, the relationship, the stakes, and the evidence available to the person
+being asked. The original book's model has six principles; Cialdini's later work adds unity
+to a broader seven-principle formulation. More importantly, the framework can be used to
+recognize manipulation as easily as to improve a request. A persuasive act earns its place
+when the recipient would still judge it fair after seeing exactly how it was designed.
+</Callout>
+
+## If you remember one thing
+
+When a request feels compelling, find the social cue that made it feel that way. Then decide
+as if the favor, crowd, title, deadline, and friendly messenger were not doing the thinking
+for you.
+
+Thinking, Fast and Slow explains why quick judgments feel convincing; How to Win Friends and
+Influence People keeps the focus on relationships that remain worthwhile after the request.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "how-to-win-friends"]}
+  buyUrl="https://www.harpercollins.com/products/influence-robert-b-cialdini?variant=41027300945954"
+  buyLabel="Influence by Robert B. Cialdini"
+/>
