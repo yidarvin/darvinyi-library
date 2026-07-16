@@ -71,7 +71,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 054 | flow                            | Flow                                          | DONE    |
 | 055 | the-one-thing                   | The One Thing                                 | DONE    |
 | 056 | four-thousand-weeks             | Four Thousand Weeks                           | DONE    |
-| 057 | almanack-naval                  | The Almanack of Naval Ravikant                | PENDING |
+| 057 | almanack-naval                  | The Almanack of Naval Ravikant                | DONE    |
 | 058 | think-and-grow-rich             | Think and Grow Rich                           | PENDING |
 | 059 | random-walk                     | A Random Walk Down Wall Street                | PENDING |
 | 060 | millionaire-next-door           | The Millionaire Next Door                     | PENDING |

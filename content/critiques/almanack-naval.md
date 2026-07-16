@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-16
 
@@ -157,3 +157,39 @@ are complete, the caveat makes no unsupported attribution, the Bars label fits,
 the Curve describes decision impact coherently, and the Venn receives a real
 newline. `npm run check` passed on 2026-07-16. The chapter remains `draft`; no
 status, queue, commit, or push action was taken.
+
+## Critique round 3 — 2026-07-16
+
+### REQUIRED
+
+None.
+
+The two round-2 findings remain resolved. **The thesis** is a two-sentence
+compression of the financial-freedom and personal-freedom argument, and the wealth
+section consistently distinguishes durable assets or ownership from the
+capabilities, judgment, and relationships used to build and steward them. The five
+round-1 fixes also remain intact: the registry metadata and seven-form diagram
+inventory are complete, the caveat makes no unsupported attribution, the Bars value
+labels fit their viewport, the Curve describes decision impact coherently, and the
+Venn receives an actual newline rather than a visible escape sequence.
+
+The complete required anatomy is present and ordered correctly. Six key ideas each
+have a captioned diagram from the shared vocabulary, the signature leverage-and-
+specific-knowledge Model is distinct, the four practice cards are concrete, the
+caveat is appropriately bounded, the generated cover uses no real cover art, all
+four related slugs are done, and the outbound link points to a bookseller. The
+chapter brief and seed metadata support the core thesis and signature model. No
+separate chapter-specific evidence dossier or source excerpt is recorded, and this
+review began no external web search.
+
+`npm run check` passed on 2026-07-16 with normal filesystem access, including queue
+and registry validation, prose lint, 34 pipeline tests, 118 application tests,
+typecheck, production build, and ESLint. The initial sandboxed run failed only
+because two launchd tests were denied access to the keepalive path under
+`Library/Application Support`; both passed in the required unrestricted rerun.
+Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+The round-2 `ShelvedNearby` relationship-clause advisory remains open and
+non-blocking. No new advisory findings.
