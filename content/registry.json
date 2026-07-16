@@ -1146,7 +1146,18 @@
       "subtitle": "Napoleon Hill · 1937",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "A serious ambition becomes more useful when it is made specific, organized into a plan, tested in the world, and pursued with enough persistence to learn from resistance.",
+      "framework": "No single signature model; the key ideas supply the visual structure.",
+      "diagrams": [
+        "flow / sequence",
+        "spectrum / gradient",
+        "node graph",
+        "process loop",
+        "venn / overlap",
+        "annotated curve"
+      ]
     },
     {
       "num": 59,

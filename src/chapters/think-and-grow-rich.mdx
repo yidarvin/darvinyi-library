@@ -1,0 +1,230 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Curve, Flow, NodeGraph, ProcessLoop, Spectrum, Venn } from "../components/diagrams";
+
+<Hero
+  slug="think-and-grow-rich"
+  thesis="A serious ambition becomes more useful when it is made specific, organized into a plan, tested in the world, and pursued with enough persistence to learn from resistance."
+  minutes={9}
+/>
+
+## The thesis
+
+Hill's enduring claim is that desire needs an operating system. A vague wish for more money,
+status, or freedom does little on its own. Name the result, decide what you will give in return,
+make a plan, and keep returning to it when the first attempt stalls. The useful core is not that
+thoughts summon wealth. It is that a clear aim can concentrate attention, effort, learning, and
+other people's help long enough for work to become cumulative.
+
+## Why it matters
+
+Ambition often fails before ability has a chance to matter. The desired future stays fuzzy, the
+next move is never chosen, and a setback is mistaken for a verdict. Hill gave generations of
+readers a forceful alternative: treat an aim as something to organize around. Read with care,
+that is a better prompt for action than a promise of riches.
+
+## A desire needs terms
+
+Wanting a better life is a starting emotion, not yet a decision. Hill presses the reader to
+replace general longing with a defined result, a date, a contribution, and a first plan. That
+move has practical value because it exposes tradeoffs. If the aim is to earn more, what work,
+skill, risk, or service will make the income possible? If the deadline is real, what must happen
+this week? The answers can change. Writing them down keeps the ambition from changing shape
+every time work becomes uncomfortable.
+
+Specificity does not make the outcome controllable. Markets, luck, health, and other people
+still intervene. It does make the next action discussable and the plan revisable. An aim that
+cannot survive contact with a calendar is not ready to guide a day.
+
+<Figure id="58.1" caption="A stated aim becomes useful when it produces a next action that can be tested.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["name the result", "state the contribution", "choose a date", "take the first step"]}
+    highlight={3}
+  />
+</Figure>
+
+## Belief should increase your willingness to act
+
+Hill calls this quality faith and gives it an almost mystical role. A more grounded reading is
+confidence built through rehearsal. When you repeatedly return to a concrete aim, notice useful
+options, and keep appointments with the work, your self-description begins to change. You have
+evidence that you are participating rather than merely hoping.
+
+That evidence should stay open to correction. Feeling certain is not proof that an idea is good,
+that a customer wants it, or that an investment will pay. The useful direction runs from wish to
+commitment: less waiting for the right feeling, more small actions that generate information.
+Belief is at its best when it supplies courage for an experiment, not immunity from its result.
+
+<Figure id="58.2" caption="The useful form of belief moves from a private wish toward a commitment that creates evidence.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="wish"
+    right="commitment"
+    marker={0.72}
+    markerLabel="repeatable action"
+    zones={[
+      { from: 0.02, to: 0.38, label: "waiting for certainty" },
+      { from: 0.56, to: 0.98, label: "acting, observing, adjusting", accent: true },
+    ]}
+  />
+</Figure>
+
+## Knowledge pays only when it meets a problem
+
+The book distinguishes broad schooling from the particular knowledge needed for a chosen aim.
+That distinction still holds, with a caveat: specialized knowledge is not valuable because it is
+secret or impressive. It becomes valuable when it helps solve a problem for a person, team, or
+market. The accountant who can explain a cash-flow decision, the technician who can repair a
+critical system, and the manager who can coordinate a difficult handoff all connect knowledge to
+an outcome someone cares about.
+
+No one has to possess every piece alone. A practical plan maps the missing knowledge, identifies
+who can supply it, and asks how the pieces will be turned into a service or decision. Learning
+without an application can be pleasurable. Learning attached to a real problem has a clearer
+test.
+
+<Figure id="58.3" caption="Knowledge creates value when it is organized around a real problem and a useful outcome.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "problem", label: "real problem", x: 0.5, y: 0.08 },
+      { id: "knowledge", label: "specific knowledge", x: 0.14, y: 0.5 },
+      { id: "people", label: "people who know", x: 0.86, y: 0.5 },
+      { id: "plan", label: "organized plan", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "problem", to: "knowledge", label: "defines" },
+      { from: "problem", to: "people", label: "reveals gaps" },
+      { from: "knowledge", to: "plan" },
+      { from: "people", to: "plan" },
+      { from: "plan", to: "problem", kind: "reinforcing", label: "tests" },
+    ]}
+  />
+</Figure>
+
+## A plan is a hypothesis, not a declaration
+
+Hill's phrase "organized planning" is more durable than much of his surrounding rhetoric.
+Planning means deciding who will do what, in what order, with what resources, then exposing the
+arrangement to reality. A plan that produces no calls, prototypes, applications, offers, or
+conversations is still only a story about action.
+
+The correction matters as much as the first draft. An offer can be rejected, a skill can take
+longer than expected, and a partner can be unavailable. None of those facts require abandoning
+the larger aim. They require changing the route. Persistence becomes intelligent when it stays
+loyal to the problem while remaining flexible about the method.
+
+<Figure id="58.4" caption="Persistence works through a loop: act, learn, revise, then make the next attempt.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["make a plan", "try it", "read the result", "revise the route"]}
+    compoundingEdge={3}
+    centerLabel="organized persistence"
+  />
+</Figure>
+
+## A group can improve both judgment and follow-through
+
+Hill's "master mind" is a grand name for a practical condition: ambitious work benefits from
+people whose knowledge, standards, and incentives are not all the same. One person sees the
+technical flaw, another sees the customer, and another asks whether the plan survives the budget.
+The point is not a circle that agrees enthusiastically. It is a relationship that makes the work
+more accurate and harder to quietly abandon.
+
+Choose collaborators for a defined purpose. Share the aim, the current evidence, and the next
+commitment. Then make disagreement useful. A group that only amplifies confidence can turn an
+error into a larger error. A group that brings different evidence can improve the plan before the
+cost of being wrong becomes large.
+
+<Figure id="58.5" caption="A useful working group combines distinct knowledge, candid challenge, and a shared next move.">
+  <Venn
+    className="block w-full min-w-[380px]"
+    sets={[{ label: "different knowledge" }, { label: "candid challenge" }, { label: "shared follow-through" }]}
+    intersectionLabel="a stronger plan"
+  />
+</Figure>
+
+## Persistence needs a decision rule
+
+Hill treats persistence as a nearly unlimited virtue. In real work, stubbornness can waste a
+career, a relationship, or a savings account. The better version is conditional persistence:
+keep showing up for the aim, but set rules for when to pause, seek evidence, reduce the stake,
+or change the approach. A founder might commit to twenty customer conversations before judging
+an offer. A job seeker might revise the materials after ten silent applications. An investor
+should decide the loss limit before placing the trade.
+
+This changes setbacks from a referendum on identity into information. Results are often delayed,
+so quitting at the first flat stretch guarantees no learning. But continued effort needs a
+feedback signal and a boundary. Resolve is the willingness to keep testing, not the refusal to
+notice what the test says.
+
+<Figure id="58.6" caption="Results may lag early effort, which makes a review rule more useful than either panic or blind endurance.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="s"
+    axes={{ x: "cycles of work and review", y: "useful results" }}
+    annotations={[
+      { x: 0.2, y: 0.04, text: "review the evidence", labelPosition: "below" },
+      { x: 0.64, y: 0.82, text: "adjust, then continue" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write a one-page aim">
+Choose one result that matters over the next six to twelve months. State the result, the date,
+the contribution you intend to make, the constraint you cannot ignore, and one action due this
+week. Do not write a slogan. Write something that would let a trusted person tell whether you
+followed through.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Turn confidence into an experiment">
+Name a belief about the path ahead, then create the smallest action that could challenge it.
+If you think clients need a service, ask five prospective clients about the problem before
+building the service. If you think a new role fits, talk with someone doing it and compare the
+daily work with your assumption.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Build a small counsel">
+Ask two or three people for different kinds of help: one who knows the work, one who understands
+the audience, and one who will ask hard questions. Send a short update with the aim, evidence,
+and next commitment. Invite disagreement about the plan, not a verdict about you.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Set a persistence rule before the setback">
+For the next important project, decide the minimum number of attempts, the evidence you will
+collect, the maximum loss of time or money, and the condition that triggers a change of approach.
+Put the review date on the calendar. This protects you from both premature quitting and expensive
+denial.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Hill presents his philosophy as the product of a Carnegie commission and years of interviews with
+hundreds of wealthy people. The title page of the 1937 text makes that claim directly, but it is
+not a research method a reader can audit. The story is historically disputed: Carnegie biographer
+David Nasaw said he found no evidence that Carnegie and Hill met, as reported in this
+[historical account of Hill's claims](https://allthatsinteresting.com/napoleon-hill). More
+important for practice, desire, visualization, and persistence do not cause wealth by themselves.
+They cannot erase unequal starting points, economic conditions, chance, or the need for a sound
+financial method. Read this as a mindset classic about focused effort, not as evidence, a formula,
+or an investment plan. For Hill's own stated framing, see the [1937 title page](https://archive.sacred-texts.com/nth/tgr/tgr00.htm).
+</Callout>
+
+## If you remember one thing
+
+Make the ambition specific enough to act on, then build a cycle of work, evidence, and revision
+around it. Persistence earns its value when it keeps you learning rather than merely insisting.
+
+*The Psychology of Money* supplies the missing account of luck, risk, and financial behavior,
+while *Rich Dad Poor Dad* shares the emphasis on directing attention toward a practical financial
+system.
+
+<ShelvedNearby
+  related={["psychology-of-money", "rich-dad-poor-dad"]}
+  buyUrl="https://www.naphill.org/shop/books/paperback/think-and-grow-rich-the-1937-edition/"
+  buyLabel="Think and Grow Rich: The 1937 Edition by Napoleon Hill"
+/>
