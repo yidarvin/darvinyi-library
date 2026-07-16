@@ -1,0 +1,62 @@
+verdict: revise
+
+## Critique round 1 — 2026-07-16
+
+### REQUIRED
+
+1. **Complete the registry record before this chapter can be done.** The
+   `almanack-naval` entry contains only its identity, shelf, routes, and draft status
+   (`content/registry.json:1122-1128`). The authoring spec requires a complete entry
+   with `tier`, `thesis`, `framework`, and the rendered diagram inventory. Record the
+   brief-aligned tier and thesis, the leverage-and-specific-knowledge signature
+   framework, and all seven forms actually used by the page.
+
+2. **Remove or substantiate the caveat's attribution to Ravikant.** The sentence
+   "Ravikant has acknowledged that basic capacities and opportunity matter"
+   (`src/chapters/almanack-naval.mdx:233-234`) is a factual attribution that is not
+   supported by the chapter brief or by any chapter-specific evidence artifact in
+   the repository. It changes how the reader understands the relationship between
+   the author's position and the critique. Either add recorded evidence sufficient
+   to support that attribution or rewrite the caveat as the distiller's own bounded
+   criticism without assigning the concession to Ravikant.
+
+3. **Make Figure 57.4's highlighted value label fit its SVG viewport.** The page
+   gives `code or media` a value of `0.84` followed by the label `can reach many`
+   (`src/chapters/almanack-naval.mdx:121-130`). In the shared `Bars` geometry, that
+   places the label at about x=313 in a 380-unit viewBox, and the component renders
+   it as unwrapped, start-anchored 10px monospace text
+   (`src/components/diagrams/Bars.tsx:23-25,32,39,52-55`). The phrase extends beyond
+   the right edge and is clipped in the inline SVG, so the key leverage comparison
+   is not fully legible. Shorten or reposition the page's value label, or otherwise
+   make the complete label visible within the authored viewport.
+
+4. **Correct Figure 57.5's y-axis so it states the idea in the prose.** The section
+   says leverage magnifies error as well as insight, while the single rising curve's
+   y-axis reads `value or damage of being right`
+   (`src/chapters/almanack-naval.mdx:133-155`). Damage is not an outcome of "being
+   right," and the current label conflates the upside of sound judgment with the
+   downside of error. Use a coherent impact or decision-quality axis, or encode the
+   right-versus-wrong outcomes separately, so the diagram, caption, and prose agree.
+
+5. **Remove the literal escape sequence from the signature Model label.** Figure
+   57.7 passes `intersectionLabel="scalable value\nwith judgment"` as a quoted JSX
+   attribute (`src/chapters/almanack-naval.mdx:192-198`). MDX compiles that value as
+   `scalable value\\nwith judgment`, while `Venn` only splits labels on whitespace
+   (`src/components/diagrams/Venn.tsx:64`; `src/components/diagrams/_util.ts:41-53`).
+   The central label therefore renders a visible `\n` instead of a line break in the
+   book's signature diagram. Pass an actual newline through a JSX expression or use
+   ordinary whitespace so the shared wrapper can lay out the label correctly.
+
+The remaining required checks hold within the repository's bounded evidence. The
+brief supports the two-part wealth-and-happiness thesis and the signature combination
+of specific knowledge with leverage. The page has six diagrammed key ideas, a distinct
+Model figure, concrete practice cards, original thematic prose, a generated cover,
+completed nearby slugs, and a bookseller link. No separate chapter-specific evidence
+dossier or source excerpts are recorded, and this review began no external web search.
+`npm run check` passed on 2026-07-16, including validation, prose lint, pipeline tests,
+118 application tests, typecheck, production build, and lint; Vitest emitted only the
+existing non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+None.
