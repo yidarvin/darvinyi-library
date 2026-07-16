@@ -89,6 +89,7 @@ done
 
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)" || die "cannot resolve script directory"
 cd "$SCRIPT_DIR" || die "cannot cd to $SCRIPT_DIR"
+gitq() { command git -C "$SCRIPT_DIR" "$@"; }
 
 RUNQUEUE_STATE_DIR="${TMPDIR:-/tmp}/darvinyi-runqueue"
 RUNQUEUE_LOCK_DIR="$RUNQUEUE_STATE_DIR/active.lock"
@@ -131,8 +132,8 @@ if [ "$TIMEOUT" -gt 0 ]; then
 fi
 
 HAVE_GIT=0
-if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then HAVE_GIT=1; fi
-tree_dirty() { [ -n "$(git status --porcelain 2>/dev/null)" ]; }
+if gitq rev-parse --is-inside-work-tree >/dev/null 2>&1; then HAVE_GIT=1; fi
+tree_dirty() { [ -n "$(gitq status --porcelain 2>/dev/null)" ]; }
 if [ "$HAVE_GIT" -eq 1 ] && [ "$ALLOW_DIRTY" -eq 0 ] && tree_dirty; then
   die "working tree has uncommitted changes; commit or stash first, or pass --allow-dirty"
 fi
@@ -230,9 +231,9 @@ changed_paths_are_allowed() {
     esac
   done < <(
     {
-      git diff --name-only
-      git diff --cached --name-only
-      git ls-files --others --exclude-standard
+      gitq diff --name-only
+      gitq diff --cached --name-only
+      gitq ls-files --others --exclude-standard
     } | sort -u
   )
   return 0
@@ -247,9 +248,9 @@ commit_action() {
     record) message="critique: ${slug} -- approve (recorded)" ;;
     *) stop "cannot commit unknown action '$action'" ;;
   esac
-  git add -A || return 1
-  git commit -m "$message" || return 1
-  if [ "$NO_PUSH" -eq 0 ]; then git push || return 1; fi
+  gitq add -A || return 1
+  gitq commit -m "$message" || return 1
+  if [ "$NO_PUSH" -eq 0 ]; then gitq push || return 1; fi
 }
 
 on_signal() {
