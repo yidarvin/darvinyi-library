@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-16
 
@@ -61,3 +61,41 @@ None.
   `commitment`.
 - Recomputed the rendered chapter at 1,601 words, which remains a **9-minute
   distillation** at 200 words per minute, rounded up.
+
+## Critique round 2 — 2026-07-16
+
+### REQUIRED
+
+None.
+
+Both round 1 blockers are resolved. **The thesis** is now two sentences while
+preserving the brief's desire, faith, planning, and persistence claim and the
+page's bounded rejection of thought as a wealth-producing mechanism
+(`src/chapters/think-and-grow-rich.mdx:11-16`). Figure 58.2 now places `test with
+action` at `0.52`, centered at x=196 in the `Spectrum` viewBox; the shortened
+marker label clears both pole labels, including the end-anchored `commitment` at
+x=340 (`src/chapters/think-and-grow-rich.mdx:58-69` and
+`src/components/diagrams/Spectrum.tsx:31-35,86-105`).
+
+The broader required audit remains clean. The brief supports the selected ideas
+and explicitly calls for no Model section. Six key ideas each have a captioned,
+in-vocabulary diagram whose labels match the prose, and the shared `Figure`
+wrapper preserves authored widths with horizontal overflow on narrow screens.
+The practice cards specify observable actions, evidence, limits, and review
+conditions. The mandatory caveat plainly distinguishes Hill's motivation advice
+from auditable research or a causal wealth formula. Round 1's recorded evidence
+supports the Nasaw attribution and Hill title-page framing; this round began no
+new external web search. Both related slugs remain `done`, the outbound purchase
+link is present, the generated cover uses no cover art, and registry, queue,
+imports, and routes agree.
+
+`npm run check` passed on 2026-07-16 with the required filesystem access: queue
+and registry validation, prose lint, 34 pipeline tests, 120 application tests,
+typecheck, production build, and ESLint all passed. The initial sandboxed run was
+blocked only when two launchd tests attempted to access the keepalive fixture
+under `Library/Application Support`; both passed in the unrestricted rerun.
+Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+None.
