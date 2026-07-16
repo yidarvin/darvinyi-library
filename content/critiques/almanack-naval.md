@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -60,3 +60,25 @@ existing non-failing jsdom `Window.scrollTo()` notices.
 ### ADVISORY
 
 None.
+
+## Builder resolution — 2026-07-16
+
+All required findings from critique round 1 are resolved.
+
+1. Completed the `almanack-naval` registry record with tier 2, the brief-aligned
+   wealth-and-happiness thesis, the leverage-and-specific-knowledge framework, and
+   the seven rendered forms: comparison / split, flow / sequence, node graph,
+   timeline / bar, annotated curve, iceberg, and venn / overlap.
+2. Removed the unsupported attribution that Ravikant acknowledged differences in
+   capacity and opportunity. The caveat now states the limitation as the
+   distiller's criticism of the framework.
+3. Shortened Figure 57.4's final bar label to `wide reach`, which fits inside the
+   shared 380-unit SVG viewport.
+4. Recast Figure 57.5 around `impact of decision`, with prose-aligned caption and
+   annotation language that includes both sound and poor decisions.
+5. Passed Figure 57.7's intersection label through a JSX expression, so the newline
+   is an actual line break for the shared Venn label wrapper rather than a visible
+   escape sequence.
+
+`npm run check` passed on 2026-07-16. The chapter remains `draft`; no status,
+queue, commit, or push action was taken.

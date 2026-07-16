@@ -1125,7 +1125,19 @@
       "subtitle": "Eric Jorgenson · 2020",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Build wealth through leverage and specific knowledge, and pursue happiness as a skill, not a destination.",
+      "framework": "Leverage and specific knowledge",
+      "diagrams": [
+        "comparison / split",
+        "flow / sequence",
+        "node graph",
+        "timeline / bar",
+        "annotated curve",
+        "iceberg",
+        "venn / overlap"
+      ]
     },
     {
       "num": 58,
