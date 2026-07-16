@@ -46,6 +46,30 @@ The driver stops on a model error, failed gate, unexpected edit, dirty worktree,
 timeout, push failure, or three unresolved critique rounds. Use `--dry-run` to inspect
 the active models and next action, and `--no-push` to retain commits locally.
 
+## Keep the queue running on macOS
+
+Install the per-user LaunchAgent once to restart the queue after a crash, a reboot, or
+a recovered disk-full condition. It runs a single queue instance, restarts only after a
+nonzero exit, and waits 60 seconds between restart attempts. A clean queue drain exits
+successfully and does not restart.
+
+```bash
+bash scripts/install-runqueue-launchd.sh
+```
+
+Check the service and its latest output:
+
+```bash
+launchctl print "gui/$(id -u)/com.darvinyi.library.runqueue"
+tail -f ~/Library/Logs/darvinyi-library-runqueue.log
+```
+
+Remove the service when you want the queue to stop:
+
+```bash
+bash scripts/uninstall-runqueue-launchd.sh
+```
+
 ## State and tooling
 
 - `content/registry.json` and `prompts/queue.md` are the ordered source of truth.

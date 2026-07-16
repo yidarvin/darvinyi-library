@@ -45,6 +45,9 @@ TIMEOUT_BIN=''
 MAX=''
 MAX_REVIEW_ROUNDS=3
 CHILD_PID=''
+RUNQUEUE_STATE_DIR=''
+RUNQUEUE_LOCK_DIR=''
+LOCK_HELD=0
 
 usage() { sed -n '2,/^# Exit status/{/^# Exit status/d;s/^# \{0,1\}//;p;}' "$0"; }
 die() { printf '\033[31m%s\033[0m\n' "runqueue: $*" >&2; exit 2; }
@@ -86,6 +89,35 @@ done
 
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)" || die "cannot resolve script directory"
 cd "$SCRIPT_DIR" || die "cannot cd to $SCRIPT_DIR"
+
+RUNQUEUE_STATE_DIR="${TMPDIR:-/tmp}/darvinyi-runqueue"
+RUNQUEUE_LOCK_DIR="$RUNQUEUE_STATE_DIR/active.lock"
+
+release_lock() {
+  [ "$LOCK_HELD" -eq 1 ] || return 0
+  rm -f "$RUNQUEUE_LOCK_DIR/pid" 2>/dev/null || true
+  rmdir "$RUNQUEUE_LOCK_DIR" 2>/dev/null || true
+  LOCK_HELD=0
+}
+
+acquire_lock() {
+  mkdir -p "$RUNQUEUE_STATE_DIR" || die "cannot create state directory $RUNQUEUE_STATE_DIR"
+  if ! mkdir "$RUNQUEUE_LOCK_DIR" 2>/dev/null; then
+    local incumbent=''
+    if [ -r "$RUNQUEUE_LOCK_DIR/pid" ]; then read -r incumbent < "$RUNQUEUE_LOCK_DIR/pid" || true; fi
+    if case "$incumbent" in ''|*[!0-9]*) false ;; *) kill -0 "$incumbent" 2>/dev/null ;; esac; then
+      die "another runqueue process is active (pid $incumbent)"
+    fi
+    rm -f "$RUNQUEUE_LOCK_DIR/pid" || die "cannot clear stale lock file"
+    rmdir "$RUNQUEUE_LOCK_DIR" || die "cannot clear stale lock directory $RUNQUEUE_LOCK_DIR"
+    mkdir "$RUNQUEUE_LOCK_DIR" || die "cannot acquire queue lock"
+  fi
+  printf '%s\n' "$$" > "$RUNQUEUE_LOCK_DIR/pid" || { rmdir "$RUNQUEUE_LOCK_DIR"; die "cannot write queue lock"; }
+  LOCK_HELD=1
+}
+
+acquire_lock
+trap release_lock EXIT
 
 command -v codex >/dev/null 2>&1 || die "the 'codex' CLI is not on PATH"
 command -v python3 >/dev/null 2>&1 || die "python3 is required"
@@ -162,8 +194,7 @@ EOF
 run_agent() {
   local action="$1" slug="$2" title="$3" model="$4" prompt transcript final rc
   prompt="$(agent_prompt "$action" "$slug" "$title")"
-  mkdir -p "${TMPDIR:-/tmp}/darvinyi-runqueue" || return 1
-  transcript="${TMPDIR:-/tmp}/darvinyi-runqueue/${slug}-${action}-$(date +%Y%m%d-%H%M%S).log"
+  transcript="${RUNQUEUE_STATE_DIR}/${slug}-${action}-$(date +%Y%m%d-%H%M%S).log"
   final="${transcript}.final"
   local args=(codex)
   [ "$action" = build ] && args+=(--search)
