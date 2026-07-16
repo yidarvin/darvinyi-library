@@ -21,5 +21,5 @@ mv "$TEMP" "$TARGET"
 
 launchctl bootout "gui/$UID_VALUE/$LABEL" 2>/dev/null || true
 launchctl bootstrap "gui/$UID_VALUE" "$TARGET"
-launchctl kickstart -k "gui/$UID_VALUE/$LABEL"
+launchctl kickstart "gui/$UID_VALUE/$LABEL"
 printf 'Installed %s. Logs: %s/darvinyi-library-runqueue.log\n' "$LABEL" "$LOG_DIR"
