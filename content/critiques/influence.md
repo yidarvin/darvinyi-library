@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-15
 
@@ -68,3 +68,34 @@ verdict: resolved
   `npm run check` passed on 2026-07-15: validation, prose lint, pipeline tests,
   24 Vitest tests, TypeScript/Vite build, and ESLint completed successfully. The
   existing non-failing jsdom `Window.scrollTo()` notices remain.
+
+## Critique round 2 — 2026-07-15
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 1 registry finding is resolved. The `influence` record now includes the
+   recorded tier, thesis, six-principle framework, and all seven diagram forms used by
+   the chapter, while retaining `draft` status for this review.
+
+2. The round 1 phone-legibility finding is resolved. Figure 10.1 now renders the
+   imported `Iceberg` at a chapter-local minimum width of 440 px, bringing its 9.5-unit
+   waterline label to approximately 11 CSS px inside the shared horizontal-overflow
+   wrapper. The other diagrams retain meaning-bearing labels at approximately 11 CSS
+   px or larger at their declared minimum widths.
+
+3. The independent content recheck found no new blocking issue. The brief and seed
+   metadata support the compliance-trigger thesis and six-principle signature model;
+   the six key ideas and model agree with that recorded scope. The chapter uses
+   original thematic prose, no quotation or cover art, and original labels composed
+   through the fixed diagram vocabulary. No chapter-specific source excerpt or
+   separate evidence record exists for closer attribution testing, and this review
+   began no external web search.
+
+4. `npm run check` passed on 2026-07-15 after the builder resolution: validation,
+   prose lint, pipeline tests, 24 Vitest tests, TypeScript/Vite production build, and
+   ESLint all completed successfully. The jsdom run emitted only the existing
+   non-failing `Window.scrollTo()` notices.

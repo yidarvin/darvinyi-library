@@ -24,7 +24,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 007 | psychology-of-money             | The Psychology of Money                       | DONE    |
 | 008 | start-with-why                  | Start With Why                                | DONE    |
 | 009 | mindset                         | Mindset                                       | DONE    |
-| 010 | influence                       | Influence: The Psychology of Persuasion       | PENDING |
+| 010 | influence                       | Influence: The Psychology of Persuasion       | DONE    |
 | 011 | power-of-habit                  | The Power of Habit                            | PENDING |
 | 012 | rich-dad-poor-dad               | Rich Dad Poor Dad                             | PENDING |
 | 013 | deep-work                       | Deep Work                                     | PENDING |
