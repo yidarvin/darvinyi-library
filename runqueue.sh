@@ -89,7 +89,13 @@ done
 
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)" || die "cannot resolve script directory"
 cd "$SCRIPT_DIR" || die "cannot cd to $SCRIPT_DIR"
-gitq() { command git -C "$SCRIPT_DIR" "$@"; }
+# LaunchAgents can be allowed to enter the repository yet be denied getcwd() for its
+# Documents ancestor. Git calls getcwd() before it processes -C, so execute each Git
+# command from a safe directory and identify the repository explicitly.
+gitq() (
+  cd / || return 1
+  GIT_DIR="$SCRIPT_DIR/.git" GIT_WORK_TREE="$SCRIPT_DIR" command git "$@"
+)
 
 RUNQUEUE_STATE_DIR="${TMPDIR:-/tmp}/darvinyi-runqueue"
 RUNQUEUE_LOCK_DIR="$RUNQUEUE_STATE_DIR/active.lock"
@@ -133,9 +139,19 @@ fi
 
 HAVE_GIT=0
 if gitq rev-parse --is-inside-work-tree >/dev/null 2>&1; then HAVE_GIT=1; fi
-tree_dirty() { [ -n "$(gitq status --porcelain 2>/dev/null)" ]; }
-if [ "$HAVE_GIT" -eq 1 ] && [ "$ALLOW_DIRTY" -eq 0 ] && tree_dirty; then
-  die "working tree has uncommitted changes; commit or stash first, or pass --allow-dirty"
+tree_dirty() {
+  local status
+  status="$(gitq status --porcelain)" || return 2
+  [ -n "$status" ]
+}
+if [ "$HAVE_GIT" -eq 1 ] && [ "$ALLOW_DIRTY" -eq 0 ]; then
+  tree_dirty
+  dirty_rc=$?
+  case "$dirty_rc" in
+    0) die "working tree has uncommitted changes; commit or stash first, or pass --allow-dirty" ;;
+    1) ;;
+    *) die "git status failed during preflight" ;;
+  esac
 fi
 
 next_env() { python3 scripts/decide.py next --format env; }
@@ -218,8 +234,18 @@ run_agent() {
   return "$rc"
 }
 
+changed_paths() {
+  local unstaged staged untracked
+  unstaged="$(gitq diff --name-only)" || return 2
+  staged="$(gitq diff --cached --name-only)" || return 2
+  untracked="$(gitq ls-files --others --exclude-standard)" || return 2
+  printf '%s\n%s\n%s\n' "$unstaged" "$staged" "$untracked" | sed '/^$/d' | sort -u
+}
+
 changed_paths_are_allowed() {
-  local action="$1" slug="$2" path
+  local action="$1" slug="$2" path paths
+  paths="$(changed_paths)" || return 2
+  [ -n "$paths" ] || return 0
   while IFS= read -r path; do
     case "$action:$path" in
       build:src/chapters/"$slug".mdx|build:content/registry.json|build:prompts/queue.md) ;;
@@ -229,13 +255,7 @@ changed_paths_are_allowed() {
       record:content/registry.json|record:prompts/queue.md) ;;
       *) printf '%s\n' "$path"; return 1 ;;
     esac
-  done < <(
-    {
-      gitq diff --name-only
-      gitq diff --cached --name-only
-      gitq ls-files --others --exclude-standard
-    } | sort -u
-  )
+  done <<< "$paths"
   return 0
 }
 
@@ -312,7 +332,10 @@ while :; do
     fi
   fi
 
-  changed_paths_are_allowed "$ACTION" "$SLUG" || stop "unexpected changed path after $ACTION for $SLUG"
+  changed_paths_are_allowed "$ACTION" "$SLUG"
+  changed_rc=$?
+  [ "$changed_rc" -eq 2 ] && stop "could not inspect changed paths after $ACTION for $SLUG"
+  [ "$changed_rc" -eq 0 ] || stop "unexpected changed path after $ACTION for $SLUG"
   if [ "$RUN_CHECK" -eq 1 ] && ! npm run check; then stop "npm run check failed after $ACTION for $SLUG"; fi
 
   if [ "$ACTION" = build ] && [ "$(chapter_status "$SLUG")" != draft ]; then stop "$SLUG was not marked draft by the builder"; fi
@@ -327,9 +350,17 @@ while :; do
   if [ "$ACTION" = resolve ] && [ "$(chapter_verdict "$SLUG")" != resolved ]; then stop "$SLUG resolution did not set verdict: resolved"; fi
   if [ "$ACTION" = record ] && [ "$(chapter_status "$SLUG")" != done ]; then stop "$SLUG approval was not recorded as done"; fi
 
-  if ! tree_dirty; then stop "$ACTION for $SLUG made no changes"; fi
+  tree_dirty
+  dirty_rc=$?
+  [ "$dirty_rc" -eq 2 ] && stop "git status failed after $ACTION for $SLUG"
+  [ "$dirty_rc" -eq 0 ] || stop "$ACTION for $SLUG made no changes"
   commit_action "$ACTION" "$SLUG" "$TITLE" || stop "commit or push failed after $ACTION for $SLUG"
-  [ "$HAVE_GIT" -eq 0 ] || ! tree_dirty || stop "$ACTION for $SLUG left a dirty worktree"
+  if [ "$HAVE_GIT" -eq 1 ]; then
+    tree_dirty
+    dirty_rc=$?
+    [ "$dirty_rc" -eq 2 ] && stop "git status failed after committing $ACTION for $SLUG"
+    [ "$dirty_rc" -ne 0 ] || stop "$ACTION for $SLUG left a dirty worktree"
+  fi
 
   after_done="$(done_count)"
   if [ "$after_done" -gt "$before_done" ]; then completed=$((completed + after_done - before_done)); fi
