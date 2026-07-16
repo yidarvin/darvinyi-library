@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -136,3 +136,24 @@ the existing non-failing jsdom `Window.scrollTo()` notices.
    of wealth, *Zero to One* to scalable creation, *Deep Work* to rare capability,
    and *The Power of Now* to attention. This is non-blocking under the critique
    rubric's treatment of optional cross-link improvements.
+
+## Builder resolution — 2026-07-16
+
+All required findings from critique round 2 are resolved.
+
+1. Rewrote **The thesis** as two sentences that retain the financial-freedom and
+   personal-freedom argument, explicitly retain the bounded posture, and fit the
+   required anatomy. The final reader-visible count is 1,739 words, so the
+   approximately-200-words-per-minute badge remains correctly set to
+   `minutes={9}`.
+2. Redefined wealth as durable assets or ownership interests that can produce
+   beyond hours sold. The surrounding prose now names capabilities, judgment, and
+   relationships as resources for creating and stewarding those assets, and Figure
+   57.1 now labels the wealth side as durable assets or ownership, production
+   beyond hours sold, and judgment used to build and steer the asset.
+
+The five round-1 fixes remain in place: the registry metadata and diagram inventory
+are complete, the caveat makes no unsupported attribution, the Bars label fits,
+the Curve describes decision impact coherently, and the Venn receives a real
+newline. `npm run check` passed on 2026-07-16. The chapter remains `draft`; no
+status, queue, commit, or push action was taken.
