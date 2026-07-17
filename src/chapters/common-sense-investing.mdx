@@ -1,0 +1,232 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Curve, Flow, NodeGraph, ProcessLoop } from "../components/diagrams";
+
+<Hero
+  slug="common-sense-investing"
+  thesis="The investor who owns a broad market cheaply, keeps adding, and refuses to make every market move a decision gives compounding its best chance to work."
+  minutes={9}
+/>
+
+## The thesis
+
+Bogle's case for indexing starts with a plain fact: investors as a group already own the market.
+Before the costs of investing, the group can earn only the market's return. After fund fees,
+trading, advice, taxes, and the other machinery of trying to get ahead, the group receives less.
+An investor who accepts broad market ownership and keeps the machinery light has a structural
+advantage over the average dollar trying to outtrade it. The work is not to identify tomorrow's
+winner. It is to build a diversified, low-cost allocation that fits the job of the money, then
+stay with it long enough for ownership to matter.
+
+## Why it matters
+
+Markets make motion feel like progress. There is always a new fund, a sharper forecast, or a
+headline that appears to demand a response. The problem is not curiosity. It is that every extra
+move introduces a cost, a judgment, and a chance to abandon a sound plan when prices are most
+uncomfortable. Bogle asks an investor to make the simple alternative the baseline that any
+complex choice must beat after its full cost.
+
+## A fund is a claim on businesses, not a scorecard
+
+A broad stock index fund is a way to own small pieces of many public businesses through one
+vehicle. Its purpose is not to find the cleverest manager or to declare that every company is
+equally good. It is to capture the changing result of a defined market while avoiding the need
+to know, in advance, which firms will dominate and which will disappoint.
+
+That distinction changes the emotional texture of investing. A concentrated portfolio asks the
+owner to be right about a few stories. Broad ownership asks the owner to let successes and
+failures occur inside a larger collection. Some constituents will fail, new ones will emerge,
+and weights will change. The investor owns the system that sorts those outcomes rather than
+trying to stand outside it and predict them all.
+
+<Figure id="62.1" caption="Broad indexing makes each company one contributor to a market-wide ownership claim.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "fund", label: "broad index fund", x: 0.5, y: 0.08 },
+      { id: "leaders", label: "today's leaders", x: 0.12, y: 0.48 },
+      { id: "challengers", label: "new challengers", x: 0.5, y: 0.48 },
+      { id: "laggards", label: "companies in decline", x: 0.88, y: 0.48 },
+      { id: "market", label: "market result", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "fund", to: "leaders", label: "owns" },
+      { from: "fund", to: "challengers", label: "owns" },
+      { from: "fund", to: "laggards", label: "owns" },
+      { from: "leaders", to: "market" },
+      { from: "challengers", to: "market" },
+      { from: "laggards", to: "market" },
+    ]}
+  />
+</Figure>
+
+## Costs take a claim on every outcome
+
+The future market return is unknown. A fund's expense ratio, a sales charge, an advisory fee,
+and a trading spread are much easier to identify. Each is paid from the account whether markets
+rise or fall. That makes cost one of the few parts of an investing result that an ordinary
+investor can inspect before choosing.
+
+The annual difference can look too small to deserve attention. Over many years, however, a
+recurring charge leaves less capital in the account to participate in the next year's gain or
+loss. This is not an argument that the lowest price alone settles every choice. It is a demand
+that a more expensive route provide a clear benefit, rather than a prettier story, for the
+additional drag it creates.
+
+<Figure id="62.2" caption="A recurring fee removes capital before that capital can take part in later compounding.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="exp"
+    axes={{ x: "years of ownership", y: "cumulative cost drag" }}
+    annotations={[
+      { x: 0.2, y: 0.03, text: "easy to overlook", labelPosition: "below" },
+      { x: 0.8, y: 0.47, text: "less capital remains" },
+    ]}
+  />
+</Figure>
+
+## The average active dollar cannot outrun its own expenses
+
+This is the book's central arithmetic, and it is about the whole market, not any one manager.
+For every investor who holds more of a stock than the market portfolio, another holds less. Add
+everyone together before costs and their holdings are the market. Active investors can disagree
+about the path, but they cannot collectively earn more than the market they collectively own.
+
+Once the extra costs of selecting, researching, trading, and distributing active funds enter the
+picture, the average active dollar has a smaller net result to divide. Individual managers can
+outperform, especially over a particular period. Finding them beforehand, holding them through
+the difficult periods, and doing so after fees and taxes is another contest. Indexing declines
+to enter that second contest unless the investor has a reason stronger than past winners.
+
+<Figure id="62.3" caption="Before costs the group owns the market; added activity makes the average active result smaller after costs.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "active selection",
+      points: ["the group starts with market exposure", "research and trading add expense", "manager choice adds another decision", "net result varies around a lower group average"],
+    }}
+    right={{
+      title: "broad indexing",
+      points: ["tracks a defined market exposure", "uses limited ongoing trading", "makes the cost visible", "aims for market return less a smaller drag"],
+    }}
+  />
+</Figure>
+
+## Turnover makes the invisible bill larger
+
+The expense ratio is not the complete cost of a fund. Buying and selling can create bid-ask
+spreads, market impact, brokerage costs, and, in taxable accounts, realized gains. Some of those
+charges arrive inside the fund and never look like a separate invoice. A portfolio that changes
+its mind often has to pay for the change even when the new idea is no better than the old one.
+
+Bogle's preference for a patient fund is therefore operational as well as philosophical. A fund
+that mainly follows a market index does trade when the index changes, when cash flows arrive, or
+when it needs to keep close to its target. It does not need to trade simply because a manager has
+a new view. Lower turnover cannot remove every cost, but it reduces one source of friction that
+frequent selection can magnify.
+
+<Figure id="62.4" caption="More portfolio turnover can add layers of cost without adding a dependable source of return.">
+  <Bars
+    className="block w-full min-w-[440px]"
+    items={[
+      { label: "buy and hold", value: 0.22, valueLabel: "fewer trading frictions", accent: true },
+      { label: "occasional shifts", value: 0.48, valueLabel: "more decisions" },
+      { label: "frequent turnover", value: 0.86, valueLabel: "more frictions to clear" },
+    ]}
+  />
+</Figure>
+
+## Compounding needs time in the plan
+
+Compounding is often described as a curve, but its hard part is behavioral. A long-run return is
+made of short periods, some of which feel like evidence that the plan was foolish. A broad stock
+fund can lose value sharply. It can also lag a fashionable corner of the market for years.
+Owning it requires accepting that a diversified market return will be uneven and that no simple
+rule can schedule its recovery.
+
+The useful response is to separate the decision to set an allocation from the daily experience of
+watching it. Contributions, dividends, and rebalancing can be handled by a policy made in calm
+conditions. That policy does not protect the account from loss. It protects the investor from
+turning loss, excitement, or a persuasive prediction into a new strategy every few months.
+
+<Figure id="62.5" caption="A written policy turns recurring contributions and review into a loop, rather than a reaction to each market move.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["set the allocation", "contribute on schedule", "review by rule", "hold through noise"]}
+    compoundingEdge={3}
+    centerLabel="patient ownership"
+  />
+</Figure>
+
+## The Model
+
+Index investing is a deliberately modest system. First decide what the money must do and how
+much volatility its owner can genuinely carry. Then choose broad market exposures that serve that
+allocation, prefer a fund structure whose costs and index are understandable, contribute on a
+schedule, and rebalance only when the allocation itself needs repair. The model does not promise
+the market will cooperate. It replaces a chain of forecasts with a chain of decisions that can
+be checked in advance.
+
+<Figure id="62.6" caption="Index investing routes a personal goal through broad ownership, low friction, and a repeatable holding policy.">
+  <Flow
+    className="block w-full min-w-[720px]"
+    steps={["name the goal and horizon", "choose an allocation", "own broad market funds", "keep costs and turnover low", "contribute, rebalance, hold"]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Give each dollar a time horizon">
+Separate money needed in the next few years from money meant for a long-term goal. A broad stock
+index fund may be unsuitable for a near-term bill even when it is sensible for a distant goal.
+This is an education exercise, not a personal recommendation. If the consequences are large or
+the choices are unclear, get qualified advice.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Read the fund before you buy it">
+For each index fund under consideration, read its prospectus or summary. Write down the index it
+follows, the asset class it covers, its expense ratio, its trading structure, and the risks it
+names. “Index” describes a method, not a guarantee that two funds own the same market or carry
+the same risk.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Add up the full cost">
+List the fund expense ratio alongside any advisory charge, account fee, transaction cost, and
+tax consequence that applies to your situation. Compare like with like: a broad U.S. stock fund
+with another broad U.S. stock fund, not with a narrower product that happens to have a low
+headline fee.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Write a holding rule before the next headline">
+Choose a contribution rhythm and a review date. State what will make you change the allocation,
+such as a changed goal, time horizon, or ability to bear loss. Do not let a market prediction be
+enough on its own. A policy written before the emotion arrives is easier to follow when it does.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Indexing is not a promise of a positive return, a complete allocation, or a substitute for a
+financial plan. An index fund inherits the risks of the securities and index it tracks, may be
+concentrated, and can lag its benchmark because of fees, trading, or tracking differences. The
+SEC's [Investor Bulletin on index funds](https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-26)
+also advises investors to read the prospectus and shareholder reports before investing. Broad
+stock exposure can be a poor fit for money needed soon, for someone without a cash buffer, or
+for a person who will be forced to sell during a decline. Costs are controllable, but they are
+not the only question. Match the allocation to your goals, obligations, tax situation, and
+capacity for loss, and seek qualified help where the decision warrants it.
+</Callout>
+
+## If you remember one thing
+
+The market's return is uncertain, but the drag from unnecessary cost and turnover is not. Own a
+broad slice of productive businesses at a cost you understand, make the plan fit the money's job,
+and leave it alone often enough for time to do work that activity cannot.
+
+<ShelvedNearby
+  related={["intelligent-investor", "psychology-of-money", "random-walk"]}
+  buyUrl="https://bookshop.org/p/books/the-little-book-of-common-sense-investing-the-only-way-to-guarantee-your-fair-share-of-stock-market-returns-john-c-bogle/11430249?ean=9781119404507"
+  buyLabel="The Little Book of Common Sense Investing by John C. Bogle"
+/>

@@ -1227,7 +1227,18 @@
       "subtitle": "John Bogle · 2007",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Owning the whole market cheaply and holding with discipline gives an investor a stronger expected result than trying to outguess the market after costs.",
+      "framework": "Index investing: broad ownership, low costs, regular contributions, and a holding policy.",
+      "diagrams": [
+        "node graph",
+        "annotated curve",
+        "comparison",
+        "conceptual bars",
+        "process loop",
+        "flow"
+      ]
     },
     {
       "num": 63,
