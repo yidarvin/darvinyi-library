@@ -1,0 +1,225 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="e-myth"
+  thesis="A small business becomes durable when its owner stops being the indispensable doer and designs a system that other people can carry."
+  minutes={8}
+/>
+
+## The thesis
+
+Gerber's central diagnosis is simple: skill at a trade does not automatically create skill at
+building the business that sells that trade. When the owner remains the person who must solve,
+make, sell, check, and rescue everything, growth only adds demands to the same limited person.
+The alternative is to treat the business as a design problem. Define the result it should deliver,
+make the work teachable, and build the roles and routines that can deliver it without the founder
+at every hinge.
+
+## Why it matters
+
+Many businesses begin with a credible piece of competence: a baker can bake, a designer can
+design, a plumber can fix a pipe. That competence is necessary, but it can conceal a dangerous
+assumption. Each new customer introduces scheduling, follow-up, cash flow, quality control, and
+training questions alongside the craft itself. If every one returns to the founder, success turns
+into a faster, more exhausting version of self-employment. The book asks the owner to create an
+operation that can make a dependable promise to customers and a more livable role for its people.
+
+## Key ideas
+
+### The craft is only one layer of the work
+
+The technician sees the job in front of them and wants to do it well. That attention is valuable.
+It is also narrow. A business must attract the right customers, make a clear promise, price its
+work, coordinate people, collect payment, and learn from mistakes. None of those questions goes
+away because the owner is excellent at the technical task. The first useful change is to stop
+calling this extra work distraction. It is the work of making the craft available to customers
+reliably.
+
+<Figure id="68.1" caption="Technical skill is visible, while the systems that make it dependable sit underneath the service.">
+  <Iceberg
+    className="block w-full min-w-[400px]"
+    above="the craft the customer receives"
+    waterlineLabel="what the owner is trained to notice"
+    below={["a clear offer", "lead generation", "scheduling and payment", "training and quality checks"]}
+  />
+</Figure>
+
+### One owner carries three competing jobs
+
+Gerber separates three modes that show up in an owner. The technician wants to perform the work.
+The manager wants order, consistency, and a manageable plan. The entrepreneur wants to imagine a
+different future and pursue an opportunity. A small business needs all three. Trouble starts when
+one mode takes over completely: the technician improvises every day, the manager protects an old
+routine, or the entrepreneur creates more ideas than the operation can support. The point is not
+to become three personalities. It is to notice which job is being neglected and give it a place in
+the week.
+
+<Figure id="68.2" caption="The owner has to balance present delivery, repeatable operations, and a future worth building toward.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "owner", label: "the owner", x: 0.5, y: 0.5 },
+      { id: "tech", label: "technician\ndelivers today", x: 0.1, y: 0.14 },
+      { id: "manager", label: "manager\nmakes it repeatable", x: 0.9, y: 0.14 },
+      { id: "entrepreneur", label: "entrepreneur\nsets direction", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "owner", to: "tech", label: "serve" },
+      { from: "owner", to: "manager", label: "organize" },
+      { from: "owner", to: "entrepreneur", label: "design" },
+      { from: "manager", to: "tech", kind: "reinforcing", label: "supports" },
+      { from: "entrepreneur", to: "manager", kind: "reinforcing", label: "directs" },
+    ]}
+  />
+</Figure>
+
+### Dependence looks busy before it looks fragile
+
+An owner-dependent company can appear energetic. The owner knows every exception, makes every
+important decision, and reassures every unhappy customer. Yet that knowledge is trapped in one
+head. Vacation becomes risky, a new hire waits for answers, and a rush of work produces more
+interruptions rather than more capacity. A system-dependent company is not a company without
+people or judgment. It is one where routine decisions, customer handoffs, and quality standards
+are visible enough for capable people to carry them. The owner can then spend more time improving
+the system instead of continually substituting for it.
+
+<Figure id="68.3" caption="The aim is not to remove human judgment, but to stop making every ordinary result depend on one person.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="owner-dependent"
+    right="system-supported"
+    marker={0.76}
+    markerLabel="documented handoffs"
+    zones={[
+      { from: 0, to: 0.35, label: "every exception returns to the founder" },
+      { from: 0.58, to: 1, label: "people can deliver a shared promise", accent: true },
+    ]}
+  />
+</Figure>
+
+### Build the prototype before you need to scale it
+
+The franchise prototype is a way of thinking, not a demand that every local business become a
+franchise. Imagine that a new, capable owner had to open the next location using only what this
+business has made explicit. Could they identify the customer, recreate the experience, teach the
+work, and see whether it was being done well? That question exposes fuzzy handoffs. A prototype
+turns personal habits into operating choices: what happens first, who owns the next step, what
+standard applies, and where the result is recorded. The resulting process can still improve. It
+simply stops depending on memory and heroics.
+
+<Figure id="68.4" caption="A prototype makes the customer promise visible as a sequence another capable person can learn and improve.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["name the customer promise", "define the repeatable steps", "teach roles and handoffs", "inspect and improve the result"]}
+    highlight={1}
+  />
+</Figure>
+
+### Standardize the promise, then learn at the edges
+
+Systematizing is sometimes mistaken for making work robotic. The more useful purpose is to protect
+the part of the experience that should not vary: the customer knows what to expect, a new team
+member knows what good looks like, and errors become easier to locate. Once the dependable core
+exists, a business has a safer place to experiment. It can test a better script, timing, tool, or
+offer without changing five things at once. A standard is not the end of thought. It is the
+baseline that lets learning accumulate rather than disappear into a different improvisation each
+day.
+
+<Figure id="68.5" caption="A clear operating baseline makes a small experiment easier to judge, adopt, or reject.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["set the promise", "run the standard", "spot a recurring gap", "test one improvement", "teach the better method"]}
+    compoundingEdge={4}
+    centerLabel="repeatable learning"
+  />
+</Figure>
+
+## The Model
+
+Working on the business means moving deliberately between a desired customer result and the system
+that produces it. Begin with the promise and the kind of operation you want to own. Translate that
+into a few roles, documented steps, and checks that a trained person can perform. Observe where the
+actual experience breaks from the intended one, then revise the system rather than absorbing the
+failure as another private obligation. The model is a loop because a business is never finished.
+Each pass should make service more dependable and the owner less necessary to ordinary delivery.
+
+<Figure id="68.6" caption="Work on the business by turning a promise into a system, then using results to improve the system rather than carrying it alone.">
+  <div className="min-w-[800px] space-y-6">
+    <Flow
+      className="block w-full"
+      steps={["choose the customer promise", "design roles and routines", "train and run the work", "review the experience"]}
+      highlight={1}
+    />
+    <Compare
+      className="block w-full"
+      favor="right"
+      left={{
+        title: "work in it",
+        points: ["solve the urgent task", "keep key knowledge in your head", "become the default answer", "repeat the same rescue"],
+      }}
+      right={{
+        title: "work on it",
+        points: ["inspect the recurring problem", "make the decision rule visible", "teach a role to carry it", "improve the next repeat"],
+      }}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Find one promise that must be dependable">
+Choose a customer moment that regularly creates praise, confusion, delay, or rework. Write what a
+customer should reliably receive, in plain language. Do not start with a software tool or an
+internal preference. Start with the visible result the business is promising to deliver.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Map one recurring handoff">
+Follow one common request from first contact to completion. List the handoffs, decisions, and
+information needed at each step. Mark the place where people most often wait for you or ask you to
+repair an exception. That is a candidate for a clearer decision rule, checklist, or role boundary.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Write the first useful version of the procedure">
+Document the smallest repeatable process for that handoff: the trigger, the owner, the steps, the
+standard, and what gets recorded. Ask someone else to use it and watch where the document fails to
+answer a normal question. Improve it from the observation instead of trying to write a perfect
+manual in advance.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Protect an owner-design session">
+Reserve a weekly block for the entrepreneur and manager work: inspect one recurring breakdown,
+review one customer signal, or decide which system deserves attention next. Treat this appointment
+as operational work, not a luxury for after the urgent tasks disappear. Urgency rarely disappears
+on its own.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The franchise prototype is a useful thought experiment, not a universal recipe for copying a giant
+chain. A consulting practice, a repair shop, and a restaurant require different amounts of
+standardization, and some customer situations demand judgment rather than a script. Systems can
+also make a bad promise more efficient, so the customer result still needs scrutiny. Use the book
+to expose dependency and make routine work teachable. Do not use it to strip discretion from work
+where discretion is the service.
+</Callout>
+
+## If you remember one thing
+
+Your expertise starts the business, but it cannot be the only thing that keeps it alive. Build a
+clear promise and a repeatable way for other people to keep it, then spend your best attention
+improving that way of working.
+
+Good to Great examines how disciplined organizations sustain focus, while The Lean Startup supplies
+a complementary loop for testing a business idea before committing heavily to it.
+
+<ShelvedNearby
+  related={["good-to-great", "lean-startup", "built-to-last"]}
+  buyUrl="https://www.emyth.com/e-myth-revisited-book"
+  buyLabel="The E-Myth Revisited by Michael E. Gerber"
+/>
