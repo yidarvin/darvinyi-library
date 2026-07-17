@@ -38,7 +38,7 @@
 
 set -uo pipefail
 
-RUNQUEUE_VERSION='0.5.0'
+RUNQUEUE_VERSION='0.5.1'
 BUILD_MODEL='gpt-5.6-terra'
 CRITIC_MODEL='gpt-5.6-sol'
 EFFORT='high'
@@ -290,7 +290,9 @@ run_agent() {
   local args=(codex)
   [ "$action" = build ] && args+=(--search)
   args+=(-C "$SCRIPT_DIR" -m "$model" -c "model_reasoning_effort=\"${EFFORT}\"" -s workspace-write -a never exec --ephemeral -o "$final" "$prompt")
-  python3 "$SCRIPT_DIR/scripts/run_with_timeout.py" "$TIMEOUT" -- "${args[@]}" </dev/null >"$transcript" 2>&1 &
+  env -u RUNQUEUE_STATE_DIR -u RUNQUEUE_KEEPALIVE_FILE \
+    python3 "$SCRIPT_DIR/scripts/run_with_timeout.py" "$TIMEOUT" -- "${args[@]}" \
+    </dev/null >"$transcript" 2>&1 &
   CHILD_PID=$!
   wait "$CHILD_PID"; rc=$?; CHILD_PID=''
   if [ -s "$final" ]; then printf '\n%s\n' "agent summary:"; sed -n '1,80p' "$final"; fi
@@ -333,6 +335,13 @@ committed_paths_are_allowed() {
   local paths
   paths="$(gitq diff --name-only "$3" "$4")" || return 2
   paths_are_allowed "$1" "$2" "$paths"
+}
+
+index_matches_worktree() {
+  local untracked
+  gitq diff --quiet || return 1
+  untracked="$(gitq ls-files --others --exclude-standard)" || return 2
+  [ -z "$untracked" ]
 }
 
 validate_action() {
@@ -541,7 +550,9 @@ configure_transaction_publish() {
 }
 
 complete_transaction() {
-  local current dirty_rc message commit_head valid_rc parent_head actual_message limit_message
+  local already_validated="${1:-0}"
+  local current dirty_rc message commit_head commit_tree validated_tree valid_rc
+  local parent_head actual_message limit_message index_rc
   load_txn
   [ "$TXN_PRESENT" -eq 1 ] || die "transaction disappeared before completion"
   case "$TXN_PHASE" in
@@ -563,19 +574,28 @@ complete_transaction() {
         state_cmd phase committed --commit-head "$current" >/dev/null || retry_later "cannot adopt completed commit"
         load_txn
       else
-        validate_action "$TXN_ACTION" "$TXN_SLUG"; valid_rc=$?
-        [ "$valid_rc" -eq 0 ] || stop "validated transaction no longer passes for $TXN_SLUG"
-        configure_transaction_publish
         tree_dirty; dirty_rc=$?
         [ "$dirty_rc" -eq 0 ] || stop "$TXN_ACTION for $TXN_SLUG has no changes to commit"
+        if [ "$already_validated" -ne 1 ]; then
+          gitq add -A -- "$SCRIPT_DIR" || retry_later "git add failed for $TXN_ACTION $TXN_SLUG"
+          validate_action "$TXN_ACTION" "$TXN_SLUG"; valid_rc=$?
+          [ "$valid_rc" -eq 0 ] || stop "validated transaction no longer passes for $TXN_SLUG"
+        fi
+        index_matches_worktree; index_rc=$?
+        case "$index_rc" in
+          0) ;;
+          1) stop "worktree changed after validation for $TXN_ACTION $TXN_SLUG" ;;
+          *) retry_later "cannot compare the validated index and worktree for $TXN_SLUG" ;;
+        esac
+        validated_tree="$(gitq write-tree)" || retry_later "cannot record validated tree for $TXN_SLUG"
+        configure_transaction_publish
         write_status committing "$TXN_ACTION" "$TXN_SLUG" "$message"
-        gitq add -A -- "$SCRIPT_DIR" || retry_later "git add failed for $TXN_ACTION $TXN_SLUG"
-        gitq commit -m "$message" || retry_later "git commit failed for $TXN_ACTION $TXN_SLUG"
+        gitq commit --no-verify -m "$message" || retry_later "git commit failed for $TXN_ACTION $TXN_SLUG"
         commit_head="$(gitq rev-parse HEAD)" || retry_later "cannot read committed HEAD"
+        commit_tree="$(gitq rev-parse 'HEAD^{tree}')" || retry_later "cannot read committed tree for $TXN_SLUG"
+        [ "$commit_tree" = "$validated_tree" ] || stop "commit tree differs from validated tree for $TXN_SLUG"
         committed_paths_are_allowed "$TXN_ACTION" "$TXN_SLUG" "$TXN_BASE_HEAD" "$commit_head" ||
           stop "unexpected committed path after $TXN_ACTION for $TXN_SLUG"
-        validate_action "$TXN_ACTION" "$TXN_SLUG"; valid_rc=$?
-        [ "$valid_rc" -eq 0 ] || stop "committed $TXN_ACTION for $TXN_SLUG no longer passes validation"
         state_cmd phase committed --commit-head "$commit_head" >/dev/null || retry_later "cannot journal committed transaction"
         failpoint after_commit
         load_txn
@@ -638,10 +658,11 @@ recover_transaction() {
       esac
       changed_paths_are_allowed "$TXN_ACTION" "$TXN_SLUG"; scope_rc=$?
       [ "$scope_rc" -eq 0 ] || stop "interrupted $TXN_ACTION for $TXN_SLUG touched an unexpected path"
+      gitq add -A -- "$SCRIPT_DIR" || retry_later "git add failed during recovery for $TXN_ACTION $TXN_SLUG"
       validate_action "$TXN_ACTION" "$TXN_SLUG"; valid_rc=$?
       if [ "$valid_rc" -eq 0 ]; then
         state_cmd phase ready >/dev/null || retry_later "cannot journal recovered ready transaction"
-        complete_transaction
+        complete_transaction 1
       fi
       ;;
     *) stop "unknown transaction phase '$TXN_PHASE'" ;;
@@ -690,11 +711,14 @@ run_transaction() {
       tree_dirty; dirty_rc=$?
       [ "$dirty_rc" -ne 2 ] || retry_later "git status failed after $TXN_ACTION for $TXN_SLUG"
       valid_rc=1
-      if [ "$dirty_rc" -eq 0 ]; then validate_action "$TXN_ACTION" "$TXN_SLUG"; valid_rc=$?; fi
+      if [ "$dirty_rc" -eq 0 ]; then
+        gitq add -A -- "$SCRIPT_DIR" || retry_later "git add failed after $TXN_ACTION for $TXN_SLUG"
+        validate_action "$TXN_ACTION" "$TXN_SLUG"; valid_rc=$?
+      fi
       if [ "$valid_rc" -eq 0 ]; then
         state_cmd phase ready >/dev/null || retry_later "cannot journal ready transaction"
         failpoint after_ready
-        complete_transaction
+        complete_transaction 1
         return 0
       fi
       if [ "$attempt" -ge "$MAX_AGENT_ATTEMPTS" ]; then

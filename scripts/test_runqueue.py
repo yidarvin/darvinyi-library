@@ -32,7 +32,9 @@ class RunqueueTests(unittest.TestCase):
         *args: str,
         cwd: Path | str | None = None,
         env: dict[str, str] | None = None,
-        timeout: float = 10,
+        # This is a hang guard for process-level Git tests, not a latency assertion.
+        # Launchd validation can run under enough system load to exceed 10 seconds.
+        timeout: float = 30,
     ) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
             args,
@@ -424,6 +426,8 @@ class RunqueueTests(unittest.TestCase):
             env.update(
                 {
                     "HOME": str(home),
+                    "RUNQUEUE_STATE_DIR": str(root / "state"),
+                    "RUNQUEUE_KEEPALIVE_FILE": str(root / "state" / "keepalive"),
                     "PIPELINE_RUNNER_BIN": str(fake_runner),
                     "PIPELINE_INFRA_RETRY_BASE_SECONDS": "0",
                     "PIPELINE_INFRA_RETRY_MAX_SECONDS": "0",
@@ -462,6 +466,8 @@ class RunqueueTests(unittest.TestCase):
             env.update(
                 {
                     "HOME": str(home),
+                    "RUNQUEUE_STATE_DIR": str(root / "state"),
+                    "RUNQUEUE_KEEPALIVE_FILE": str(root / "state" / "keepalive"),
                     "PIPELINE_RUNNER_BIN": str(fake_runner),
                     "PIPELINE_INFRA_RETRY_BASE_SECONDS": "0",
                     "PIPELINE_INFRA_RETRY_MAX_SECONDS": "0",
@@ -495,6 +501,8 @@ class RunqueueTests(unittest.TestCase):
             env.update(
                 {
                     "HOME": str(home),
+                    "RUNQUEUE_STATE_DIR": str(root / "state"),
+                    "RUNQUEUE_KEEPALIVE_FILE": str(root / "state" / "keepalive"),
                     "PIPELINE_RUNNER_BIN": str(fake_runner),
                     "RUNNER_CALLS": str(calls),
                 }
@@ -564,6 +572,101 @@ class RunqueueTests(unittest.TestCase):
         self.assertEqual(transaction["phase"], "ready")
         self.assertEqual(self.git(repo, "rev-parse", "HEAD").stdout.strip(), base_head)
         self.assertNotEqual(self.git(repo, "status", "--porcelain").stdout.strip(), "")
+
+    def test_validated_ready_commit_runs_the_check_gate_once(self) -> None:
+        root, repo, state, env = self.make_pipeline_fixture()
+        base_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        registry_path = repo / "content" / "registry.json"
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        registry["chapters"][0]["status"] = "draft"
+        registry_path.write_text(json.dumps(registry), encoding="utf-8")
+        (repo / "src" / "chapters" / "sample.mdx").write_text("# Sample\n", encoding="utf-8")
+        begin = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "begin",
+            "--action",
+            "build",
+            "--slug",
+            "sample",
+            "--title",
+            "Sample",
+            "--base-head",
+            base_head,
+            "--push-required",
+            "false",
+            "--publish-enabled",
+            "false",
+            "--check-required",
+            "true",
+        )
+        self.assertEqual(begin.returncode, 0, begin.stderr)
+        ready = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "phase",
+            "ready",
+        )
+        self.assertEqual(ready.returncode, 0, ready.stderr)
+        calls = root / "check-calls"
+        fake_npm = Path(env["PATH"].split(":", 1)[0]) / "npm"
+        fake_npm.write_text(
+            "#!/bin/sh\n"
+            "count=0\n"
+            "[ ! -f \"$CHECK_CALLS\" ] || read -r count < \"$CHECK_CALLS\"\n"
+            "count=$((count + 1))\n"
+            "printf '%s\\n' \"$count\" > \"$CHECK_CALLS\"\n"
+            "[ \"$count\" -eq 1 ]\n",
+            encoding="utf-8",
+        )
+        fake_npm.chmod(0o755)
+        env["CHECK_CALLS"] = str(calls)
+
+        recovered = self.run_command(
+            str(repo / "runqueue.sh"),
+            "--recover-only",
+            "--no-push",
+            cwd="/",
+            env=env,
+        )
+
+        self.assertEqual(recovered.returncode, 0, recovered.stderr)
+        self.assertEqual(calls.read_text(encoding="utf-8").strip(), "1")
+        self.assertFalse((state / "transaction.json").exists())
+
+    def test_child_agent_does_not_inherit_parent_service_state_paths(self) -> None:
+        root, repo, state, env = self.make_pipeline_fixture()
+        agent_env = root / "agent-env"
+        fake_codex = Path(env["PATH"].split(":", 1)[0]) / "codex"
+        fake_codex.write_text(
+            "#!/bin/sh\n"
+            "printf '%s\\n%s\\n' \"${RUNQUEUE_STATE_DIR-unset}\" "
+            "\"${RUNQUEUE_KEEPALIVE_FILE-unset}\" > \"$AGENT_ENV_LOG\"\n"
+            "exit 99\n",
+            encoding="utf-8",
+        )
+        fake_codex.chmod(0o755)
+        env["AGENT_ENV_LOG"] = str(agent_env)
+        env["RUNQUEUE_KEEPALIVE_FILE"] = str(state / "keepalive")
+
+        result = self.run_command(
+            str(repo / "runqueue.sh"),
+            "--all",
+            "--yes",
+            "--no-check",
+            "--no-push",
+            "--max-agent-attempts",
+            "1",
+            cwd="/",
+            env=env,
+        )
+
+        self.assertEqual(result.returncode, 1, result.stderr)
+        self.assertEqual(agent_env.read_text(encoding="utf-8").splitlines(), ["unset", "unset"])
 
     def test_synchronized_upstream_skips_git_push_entirely(self) -> None:
         root, repo, state, env = self.make_pipeline_fixture()
@@ -1092,7 +1195,7 @@ class RunqueueTests(unittest.TestCase):
         self.assertIn("left a dirty worktree", recovered.stderr)
         self.assertTrue((state / "transaction.json").exists())
 
-    def test_pre_commit_hook_cannot_inject_an_unrelated_path(self) -> None:
+    def test_pipeline_commit_bypasses_pre_commit_hook_that_injects_an_unrelated_path(self) -> None:
         _root, repo, state, env = self.make_pipeline_fixture()
         base_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
         registry_path = repo / "content" / "registry.json"
@@ -1153,11 +1256,13 @@ class RunqueueTests(unittest.TestCase):
             env=env,
         )
 
-        self.assertEqual(recovered.returncode, 1, recovered.stderr)
-        self.assertIn("unexpected committed path", recovered.stderr)
-        self.assertTrue((state / "transaction.json").exists())
+        self.assertEqual(recovered.returncode, 0, recovered.stderr)
+        self.assertFalse((repo / "unrelated.txt").exists())
+        self.assertFalse((state / "transaction.json").exists())
+        committed_paths = self.git(repo, "show", "--format=", "--name-only", "HEAD")
+        self.assertNotIn("unrelated.txt", committed_paths.stdout.splitlines())
 
-    def test_pre_commit_hook_cannot_invalidate_an_allowed_path(self) -> None:
+    def test_pipeline_commit_bypasses_pre_commit_hook_that_invalidates_content(self) -> None:
         _root, repo, state, env = self.make_pipeline_fixture()
         base_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
         registry_path = repo / "content" / "registry.json"
@@ -1219,9 +1324,10 @@ class RunqueueTests(unittest.TestCase):
             env=env,
         )
 
-        self.assertEqual(recovered.returncode, 1, recovered.stderr)
-        self.assertIn("no longer passes", recovered.stderr)
-        self.assertTrue((state / "transaction.json").exists())
+        self.assertEqual(recovered.returncode, 0, recovered.stderr)
+        final_registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        self.assertEqual(final_registry["chapters"][0]["status"], "draft")
+        self.assertFalse((state / "transaction.json").exists())
 
     def test_pre_push_hook_cannot_move_head_without_being_detected(self) -> None:
         root, repo, state, env = self.make_pipeline_fixture()
