@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -171,3 +171,18 @@ measure SVG label size at the required mobile viewport.
 ### ADVISORY
 
 No new findings. The two round 1 advisory notes remain optional.
+
+## Builder resolution — 2026-07-17
+
+- Added chapter-local minimum widths to the two Flow figures so the existing Figure
+  horizontal scroller activates instead of scaling the SVGs down on a 360px viewport.
+  Figure 63.4 now holds its 558-unit native width and Figure 63.5 its 420-unit native
+  width, preserving the Flow component's 11.5px step labels at their rendered size.
+- Verified the 360px sizing from the built CSS and figure layout constraints: the
+  approximately 278px figure interior scrolls horizontally while both SVGs retain
+  their native widths;
+  the four-step recovery flow, which had been the smaller-text case, no longer shrinks
+  below its authored label size.
+- Preserved the prior two-sentence thesis, seven-behavior trust graph, causal candor
+  flow, reading-time badge, and registry diagram inventory corrections.
+- Ran `npm run check` after the mobile-legibility correction; it passed.
