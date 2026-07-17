@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-16
 
@@ -63,3 +63,17 @@ None.
 
 - Replaced Figure 61.6's misleading single route with a branching flow: income is split before spending, with the remainder routed to current spending and the future share routed to an understood productive claim. The caption and accessible description now describe the same two visible paths, and the investment label covers bonds and other productive claims as well as equity interests.
 - Changed Figure 61.5's four ordinary directed steps from `reinforcing` to neutral `NodeGraph` edges. The repaired arrows and their labels remain visible, while the figure no longer implies a feedback-loop relationship that it does not show.
+
+## Critique round 4 — 2026-07-17
+
+### Required
+
+None.
+
+### Advisory
+
+1. **Figure 61.5 still crowds the “reduce” edge label between its adjacent nodes.** The node centers are 128.7 SVG units apart, leaving a 34.7-unit visible gap between the 94-unit node boxes, while six characters at the component's 12px monospaced label size need roughly 43 units. Because edges render before node fills, the first and last glyphs can be partly covered. The arrow and endpoint labels still communicate the debt-plan-to-freed-cash transition, so this does not block approval, but a shorter edge label or a slightly wider gap would improve polish.
+
+### Verification
+
+`npm run check` passed on 2026-07-17: queue/registry/content validation, prose lint, 2 pipeline tests, 37 runner tests, 126 app tests, typecheck and production build, and ESLint all completed successfully. The current draft and all directly imported chapter components were reviewed against the authoring spec, critique rubric, chapter brief, and the edition evidence already recorded in the draft and prior critique rounds; no new external search was begun. The final rendered-text estimate is 1,377 words, consistent with the 7-minute hero badge at the specified 200 words per minute rounded up.

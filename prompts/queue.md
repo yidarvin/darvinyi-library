@@ -75,7 +75,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 058 | think-and-grow-rich             | Think and Grow Rich                           | DONE    |
 | 059 | random-walk                     | A Random Walk Down Wall Street                | DONE    |
 | 060 | millionaire-next-door           | The Millionaire Next Door                     | DONE    |
-| 061 | richest-man-babylon             | The Richest Man in Babylon                    | PENDING |
+| 061 | richest-man-babylon             | The Richest Man in Babylon                    | DONE    |
 | 062 | common-sense-investing          | The Little Book of Common Sense Investing     | PENDING |
 | 063 | dare-to-lead                    | Dare to Lead                                  | PENDING |
 | 064 | built-to-last                   | Built to Last                                 | PENDING |
