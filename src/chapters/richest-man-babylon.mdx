@@ -148,10 +148,10 @@ the book combines both moves: clear costly claims while becoming more able to ma
       { id: "future", label: "future claim", x: 0.95, y: 0.5 },
     ]}
     edges={[
-      { from: "debt", to: "cash", kind: "reinforcing", label: "reduce" },
-      { from: "skill", to: "power", kind: "reinforcing", label: "grow" },
-      { from: "cash", to: "future", kind: "reinforcing", label: "room" },
-      { from: "power", to: "future", kind: "reinforcing", label: "room" },
+      { from: "debt", to: "cash", label: "reduce" },
+      { from: "skill", to: "power", label: "grow" },
+      { from: "cash", to: "future", label: "room" },
+      { from: "power", to: "future", label: "room" },
     ]}
   />
 </Figure>
@@ -164,18 +164,19 @@ before the rest of the income is assigned. The system becomes durable when spend
 around that choice, investments are understood, and returns stay in the system long enough to
 help the next cycle.
 
-<Figure id="61.6" caption="The model routes part of income into future capacity before the remainder becomes current spending.">
+<Figure id="61.6" caption="Income splits before spending: the remainder supports life, while the future share buys an understood productive claim.">
   <Flow
-    className="block w-full min-w-[680px]"
+    className="block w-full min-w-[440px]"
     steps={[
       "income arrives",
-      "route a future share",
-      "live on the remainder",
-      "buy understood ownership",
-      "retain gains and repeat",
+      "split before spending",
     ]}
     highlight={1}
-    ariaLabel="Pay yourself first: income arrives, a future share is routed aside, the remainder supports life, the saved share buys understood ownership, and gains are retained for the next cycle."
+    branch={{
+      up: "future share: understood productive claim",
+      down: "remainder: current spending",
+    }}
+    ariaLabel="Pay yourself first: income arrives and is split before spending. The future share goes to an understood productive claim, while the remainder supports current spending."
   />
 </Figure>
 

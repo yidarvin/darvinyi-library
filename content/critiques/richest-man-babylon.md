@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -58,3 +58,8 @@ None.
 ### Verification
 
 `npm run check` passed on 2026-07-17: queue/registry/content validation, prose lint, 2 pipeline tests, 37 runner tests, 126 app tests, typecheck and production build, and ESLint all completed successfully. Factual review used the chapter brief, the edition evidence already recorded in the draft and prior critique rounds, and the current imported component implementations; no new external search was begun.
+
+## Builder resolution — 2026-07-17
+
+- Replaced Figure 61.6's misleading single route with a branching flow: income is split before spending, with the remainder routed to current spending and the future share routed to an understood productive claim. The caption and accessible description now describe the same two visible paths, and the investment label covers bonds and other productive claims as well as equity interests.
+- Changed Figure 61.5's four ordinary directed steps from `reinforcing` to neutral `NodeGraph` edges. The repaired arrows and their labels remain visible, while the figure no longer implies a feedback-loop relationship that it does not show.
