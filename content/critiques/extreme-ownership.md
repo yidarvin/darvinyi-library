@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-17
 
@@ -79,3 +79,36 @@ unrelated runner regression test `test_interrupted_validation_keeps_the_transact
 before the suite could report a final result. The individual chapter-relevant gates passed:
 queue/registry validation, prose lint, the direct `extreme-ownership` MDX render test, production
 build, and ESLint.
+
+## Critique round 2 — 2026-07-17
+
+### REQUIRED
+
+1. **Update the registry diagram inventory to match the revised Figure 69.4.** The
+   builder replaced that figure with a second `NodeGraph`, and the chapter now renders
+   the forms `iceberg`, `node graph`, `comparison`, `node graph`, `flow`, `pyramid`,
+   and `process loop` (`src/chapters/extreme-ownership.mdx:6,48,72,107,137,169,191,213`).
+   The registry still records the fourth form as `concentric circles`
+   (`content/registry.json:1376-1384`). Technical integrity requires the registry's
+   diagram list to agree with the chapter on disk. Replace that stale entry with
+   `node graph`; do not change the revised figure back.
+
+The four round 1 findings are otherwise resolved. The thesis is two sentences, Figure
+69.4 now encodes distinct teams and labeled handoffs, the Hero shows the builder's
+recomputed 10-minute badge, and the footer links to Macmillan's page for the book. The
+chapter brief and seed record remain the only recorded source evidence in the repository;
+no chapter-specific evidence dossier or source excerpt was found, and this round began no
+external web search. Within that evidence boundary, no new copyright, factual, anatomy,
+practice, caveat, figure-semantics, mobile-legibility, import, route, or related-link defect
+was found.
+
+`npm run check` passed on 2026-07-17: queue/registry/content validation, prose lint, 2
+pipeline tests, 37 runner tests, 142 application tests, TypeScript, production build, and
+ESLint all completed successfully. Vitest emitted only the existing non-failing jsdom
+`Window.scrollTo()` notices. The validator does not compare the registry's diagram names
+with the component forms rendered by the MDX chapter, so this stale inventory survives the
+mechanical gate.
+
+### ADVISORY
+
+None.
