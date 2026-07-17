@@ -5,16 +5,14 @@ import { Compare, Flow, Iceberg, Matrix, NodeGraph, Spectrum } from "../componen
 <Hero
   slug="good-strategy"
   thesis="Strategy begins by naming the hard problem, choosing an approach to meet it, and aligning the work so each move strengthens the next."
-  minutes={7}
+  minutes={8}
 />
 
 ## The thesis
 
-Strategy is not a wish list, a revenue target, or a polished statement of values. It is a
-coherent response to a consequential difficulty. Richard Rumelt's test is demanding and
-useful: make a diagnosis that brings the pivotal challenge into view, choose a guiding
-policy for dealing with it, then take mutually reinforcing action. If any link is absent,
-the organization may still be busy, but it has not yet made a strategy.
+Strategy is not a wish list, a revenue target, or a polished statement of values; it is a
+coherent response to a consequential difficulty. It diagnoses the pivotal challenge, chooses
+a guiding policy for dealing with it, and takes mutually reinforcing action.
 
 ## Why it matters
 
@@ -57,13 +55,14 @@ This is where strategy becomes uncomfortable. A policy that tries to preserve ev
 usually spreads effort across too many fronts. A useful policy narrows the field, not because
 narrowness is virtuous, but because attention and resources have limits.
 
-<Figure id="65.2" caption="A guiding policy shifts the organization from broad activity toward a chosen point of pressure.">
+<Figure id="65.2" caption="A guiding policy shifts the organization from broad activity toward a chosen approach that coordinates the work.">
   <Spectrum
     className="block w-full min-w-[440px]"
     left="every option stays open"
-    right="one chosen approach"
+    right="chosen approach"
     marker={0.76}
     markerLabel="guiding policy"
+    markerLabelPlacement="top"
     zones={[
       { from: 0, to: 0.38, label: "effort spreads across unrelated work" },
       { from: 0.6, to: 1, label: "resources reinforce one approach", accent: true },
@@ -115,9 +114,10 @@ overwhelming ambition into the next solvable problem without pretending that the
 has disappeared.
 
 A good proximate objective is concrete enough to assign, observe, and learn from. It is not
-just an easier goal. It is the constraint whose removal opens the next move. For a company
-with poor onboarding, that might be getting a new customer to a first successful outcome in
-one session, before spending on broader acquisition.
+just an easier goal. It identifies a strategically useful target that is feasible enough to
+pursue amid uncertainty. Removing a constraint can be the right target when it opens the next
+move. For a company with poor onboarding, that might be getting a new customer to a first
+successful outcome in one session, before spending on broader acquisition.
 
 <Figure id="65.4" caption="A proximate objective turns a distant aspiration into a problem the team can solve and learn from now.">
   <Compare
@@ -129,7 +129,7 @@ one session, before spending on broader acquisition.
     }}
     right={{
       title: "proximate objective",
-      points: ["names the next constraint", "fits present evidence", "concentrates the work", "produces a result to study"],
+      points: ["names a testable next target", "fits present evidence", "concentrates the work", "produces a result to study"],
     }}
   />
 </Figure>
@@ -197,11 +197,11 @@ that cannot make that connection. A shorter list with clear reinforcement is str
 longer list with private conflicts.
 </ExerciseCard>
 
-<ExerciseCard n="04" title="Choose the nearest hard objective">
-Name the obstacle that must move before the larger ambition can become realistic. Set a result
-to reach in the next six to twelve weeks, appoint an owner, and decide what evidence will
-show that the obstacle really moved. When the result arrives, diagnose again before extending
-the plan.
+<ExerciseCard n="04" title="Choose a workable next objective">
+Name a nearer hard target that would make the larger ambition more realistic. It may remove an
+obstacle, improve a capability, or test an uncertain assumption. Set a result to reach in the
+next six to twelve weeks, appoint an owner, and decide what evidence will show what changed.
+When the result arrives, diagnose again before extending the plan.
 </ExerciseCard>
 
 ## Where people get it wrong

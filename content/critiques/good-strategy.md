@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -66,3 +66,18 @@ limit, test conceptual scope, detect SVG label collisions, or recompute reading 
    explain how `good-to-great` and `zero-to-one` connect to this framework; the links
    themselves resolve, so this remains optional enrichment.
 
+## Builder resolution — 2026-07-17
+
+- Compressed **The thesis** to two sentences while retaining the consequential-
+  difficulty contrast and the diagnosis, guiding-policy, coherent-action kernel.
+- Reframed the proximate objective as a feasible, strategically useful nearer target
+  amid uncertainty. Constraint removal is now one possible target, and the Figure
+  65.4 comparison and exercise use the same broader framing.
+- Added the reusable `Spectrum` `markerLabelPlacement` option and used its top
+  placement in Figure 65.2. The `guiding policy` marker now has its own vertical
+  space above the pole labels; the right pole now reads `chosen approach`, and the
+  caption makes clear that this approach coordinates multiple actions.
+- Changed the Hero from `minutes={7}` to `minutes={8}`. The critique's recorded
+  1,459 visible-word direct render already rounds up to eight minutes at the house
+  rate, and the required edits reduce that total rather than crossing the 1,600-word
+  threshold for nine minutes.

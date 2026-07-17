@@ -18,6 +18,8 @@ export interface SpectrumProps extends DiagramBase {
   marker?: number;
   /** Optional marker caption. */
   markerLabel?: string;
+  /** Put a marker caption above the pole labels when the two would otherwise collide. */
+  markerLabelPlacement?: "near-marker" | "top";
   /** Optional labeled bands along the axis. */
   zones?: SpectrumZone[];
 }
@@ -32,6 +34,7 @@ export function Spectrum({
   right = "more",
   marker,
   markerLabel,
+  markerLabelPlacement = "near-marker",
   zones = [],
   ariaLabel,
   className,
@@ -106,7 +109,14 @@ export function Spectrum({
           />
           <line x1={at(marker)} y1={trackY - 12} x2={at(marker)} y2={trackY + 12} stroke={C.accent} strokeWidth="2" />
           {markerLabel && (
-            <text x={at(marker)} y={trackY - 30} textAnchor="middle" fontFamily={MONO} fontSize="10" fill={C.accent}>
+            <text
+              x={at(marker)}
+              y={markerLabelPlacement === "top" ? 24 : trackY - 30}
+              textAnchor="middle"
+              fontFamily={MONO}
+              fontSize="10"
+              fill={C.accent}
+            >
               {markerLabel}
             </text>
           )}
