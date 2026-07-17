@@ -8,16 +8,15 @@ import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagr
 <Hero
   slug="hard-thing"
   thesis="When a company has no clean answer, leadership means seeing the facts clearly, saying what they require, and carrying out the painful decision with care."
-  minutes={10}
+  minutes={9}
 />
 
 ## The thesis
 
-The hardest leadership problems do not arrive with a correct option and a mistaken one. They
-arrive when every available move hurts someone, the information is incomplete, and delay has a
-cost of its own. Horowitz's contribution is an operating stance for that terrain: face the
-problem without disguise, decide before avoidance makes the choice for you, and give people the
-clarity and dignity the moment permits.
+The hardest leadership calls have no painless formula: they require clear facts, timely
+judgment, and humane execution when every available move has a cost. Leadership means naming the
+constraint, choosing before delay chooses for you, and treating the people affected with clarity
+and dignity.
 
 ## Why it matters
 
@@ -145,8 +144,9 @@ act before the signals are buried.
 
 The CEO remains responsible for the quality of this system. That does not mean personally
 approving every message. It means making the direction legible, keeping decision rights visible,
-and closing the loop when evidence changes a plan. In a difficult period, people can bear bad
-news better than they can bear a vacuum in which everyone guesses what matters.
+and closing the loop when evidence changes a plan. The resulting plan should return an updated
+constraint and direction to the people working on the problem. In a difficult period, people can
+bear bad news better than they can bear a vacuum in which everyone guesses what matters.
 
 <Figure id="66.5" caption="A company responds faster when signals, decisions, and feedback form a visible operating network.">
   <NodeGraph
@@ -165,8 +165,8 @@ news better than they can bear a vacuum in which everyone guesses what matters.
       { from: "problem", to: "owner" },
       { from: "owner", to: "work" },
       { from: "work", to: "evidence" },
-      { from: "evidence", to: "plan", kind: "reinforcing" },
-      { from: "plan", to: "problem", kind: "reinforcing" },
+      { from: "evidence", to: "plan", label: "evidence" },
+      { from: "plan", to: "problem", label: "updated constraint" },
     ]}
   />
 </Figure>
@@ -225,6 +225,6 @@ is the companion for the strategic bet a company may need to protect.
 
 <ShelvedNearby
   related={["good-strategy", "built-to-last", "zero-to-one"]}
-  buyUrl="https://a16z.com/books/the-hard-thing-about-hard-things/"
+  buyUrl="https://www.harpercollins.com/products/the-hard-thing-about-hard-things-ben-horowitz"
   buyLabel="The Hard Thing About Hard Things by Ben Horowitz"
 />

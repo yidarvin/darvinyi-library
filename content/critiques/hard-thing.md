@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -74,3 +74,19 @@ metadata, or classify an outbound vendor.
    institutional comparison. A future evidence pass should record the source used or
    recast the passage explicitly as this page's applicability judgment rather than an
    evidenced characterization of the book.
+
+## Builder resolution — 2026-07-17
+
+1. Compressed **The thesis** to two sentences while retaining the no-formula claim and
+   the need for clear facts, timely judgment, and humane execution.
+2. Replaced Figure 66.5's two reinforcing edges and plus signs with neutral directed
+   edges labeled `evidence` and `updated constraint`; the surrounding prose now states
+   that an updated plan returns constraint and direction to the people working on the
+   problem.
+3. Recounted the final rendered page after these edits and changed the Hero badge to a
+   9-minute distillation.
+4. Completed the `hard-thing` registry record with tier 2, the brief-supported thesis,
+   the deliberate absence of a single signature framework, and the five rendered
+   diagram forms: iceberg, comparison, flow, spectrum, and node graph.
+5. Replaced the Andreessen Horowitz promotional URL with the direct HarperCollins
+   publisher page for the book.

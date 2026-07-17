@@ -1306,7 +1306,17 @@
       "subtitle": "Ben Horowitz · 2014",
       "part": "Leadership & Business",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "There is no formula for the hardest calls in building a company; there is only honesty, nerve, and doing the brutal thing well.",
+      "framework": "No single signature framework; the Model section is deliberately omitted, with five key-idea diagrams carrying the visual load.",
+      "diagrams": [
+        "iceberg",
+        "comparison",
+        "flow",
+        "spectrum",
+        "node graph"
+      ]
     },
     {
       "num": 67,
