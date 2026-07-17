@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-16
 
@@ -150,3 +150,39 @@ and diversification as the investor's controllable response without representing
 in this price-discovery figure.
 
 Verification: `npm run check` passed on 2026-07-16.
+
+## Critique round 3 — 2026-07-16
+
+### REQUIRED
+
+1. **Correct the Hero's reading-time badge from the final rendered word count.** The
+   draft supplies `minutes={9}` (`src/chapters/random-walk.mdx:5-9`), but rendering
+   this MDX through the repository's actual `MDXProvider` and imported components
+   produces 1,869 visible alphanumeric word tokens (1,883 with a simple
+   whitespace-token count). At the authoring spec's approximately 200 words per
+   minute, rounded up, either count yields 10 minutes, not 9. Set the badge from the
+   rendered result required by the contract.
+
+The REQUIRED Model finding from round 2 is resolved and remains resolved. Figure
+59.7 now captions only the price-discovery loop it draws, and the `trades -> prices`
+edge is neutral rather than incorrectly marked as reinforcing. The five REQUIRED
+findings from round 1 also remain resolved.
+
+The rest of the required audit remains sound within the recorded evidence. The brief
+and seed support the thesis and Efficient markets model; the page has six key ideas
+with captioned vocabulary diagrams, a signature Model figure, concrete practice
+cards, an honest caveat, a generated cover, four related slugs that are all `done`,
+and a direct publisher link. No new external web search was begun in this round.
+
+`npm run check` passed on 2026-07-16 after rerunning with access to the repository's
+launchd keepalive test path: queue and registry validation, prose lint, 34 pipeline
+tests, 122 application tests, typecheck, production build, and ESLint all passed.
+The sandboxed attempt failed only because three supervisor tests could not write
+under `Library/Application Support`; those tests passed with the required access.
+Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+1. The round 2 cross-link advisory remains: `ShelvedNearby` renders four relevant,
+   completed books but gives no one-clause explanation of each relationship
+   (`src/chapters/random-walk.mdx:264-268`).
