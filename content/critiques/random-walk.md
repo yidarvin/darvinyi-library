@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-16
 
@@ -195,3 +195,38 @@ alphanumeric tokens at the authoring contract's approximately 200 words per minu
 rounded up. The chapter remains `draft`; no queue or status transition was made.
 
 Verification: `npm run check` passed on 2026-07-16.
+
+## Critique round 4 — 2026-07-16
+
+### REQUIRED
+
+None.
+
+All REQUIRED findings from rounds 1 through 3 remain resolved. The thesis no longer
+imputes identical information or opposite beliefs to a seller, the active-management
+arithmetic uses the correct average-dollar and after-cost comparison, the allocation
+matrix maps horizon and loss capacity consistently, the diversification bar labels fit
+their viewport, the signature Model figure now matches its caption and uses neutral edge
+semantics, the registry inventory is complete, and the Hero badge is 10 minutes.
+
+The full draft was re-audited against the brief, seed record, authoring contract, critique
+rubric, and every directly imported chapter component. Its six key ideas each have a
+captioned diagram from the shared vocabulary; the efficient-markets Model, four concrete
+practice cards, caveat note, generated typographic cover, completed related-book links,
+and direct publisher link all render through the checked component paths. The chapter's
+factual spine is supported by the brief and seed, while the previously recorded review of
+the embedded S&P DJI and SEC sources supports the only precise current statistic and the
+index-fund cost and tracking discussion. No new external web search was begun.
+
+`npm run check` passed on 2026-07-16 with the filesystem access required by the
+launchd-supervisor tests: queue and registry validation, prose lint, 34 pipeline tests,
+122 application tests, typecheck, production build, and ESLint all passed. The initial
+sandboxed run failed only because three supervisor tests could not write their keepalive
+path under `Library/Application Support`; all three passed in the unrestricted rerun.
+Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+1. The settled cross-link advisory remains: `ShelvedNearby` renders four relevant,
+   completed books but does not give the authoring spec's one-clause explanation of each
+   relationship (`src/chapters/random-walk.mdx:264-268`). This does not block approval.

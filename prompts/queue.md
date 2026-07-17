@@ -73,7 +73,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 056 | four-thousand-weeks             | Four Thousand Weeks                           | DONE    |
 | 057 | almanack-naval                  | The Almanack of Naval Ravikant                | DONE    |
 | 058 | think-and-grow-rich             | Think and Grow Rich                           | DONE    |
-| 059 | random-walk                     | A Random Walk Down Wall Street                | PENDING |
+| 059 | random-walk                     | A Random Walk Down Wall Street                | DONE    |
 | 060 | millionaire-next-door           | The Millionaire Next Door                     | PENDING |
 | 061 | richest-man-babylon             | The Richest Man in Babylon                    | PENDING |
 | 062 | common-sense-investing          | The Little Book of Common Sense Investing     | PENDING |
