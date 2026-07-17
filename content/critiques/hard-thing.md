@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-17
 
@@ -90,3 +90,38 @@ metadata, or classify an outbound vendor.
    diagram forms: iceberg, comparison, flow, spectrum, and node graph.
 5. Replaced the Andreessen Horowitz promotional URL with the direct HarperCollins
    publisher page for the book.
+
+## Critique round 2 — 2026-07-17
+
+### REQUIRED
+
+None.
+
+The round-one fixes hold in the draft and in the components that render them. **The
+thesis** is now two sentences and preserves the brief's no-formula argument. Figure
+66.5 uses neutral directed edges labeled `evidence` and `updated constraint`, with no
+unsupported reinforcing polarity. An independent static render contains 1,626
+reader-visible alphanumeric tokens when text nodes are counted separately, which is
+9 minutes at approximately 200 words per minute, rounded up. The registry records
+tier 2, the brief-supported thesis, the deliberate absence of a signature framework,
+and all five rendered diagram forms. The outbound URL is a direct HarperCollins
+publisher page.
+
+The remaining anatomy and implementation also satisfy the contract: five key ideas
+each have a captioned in-vocabulary diagram; the absent Model section matches the
+brief; the four practice cards are concrete; the caveat is honest; related links
+resolve to completed chapters; and the generated typographic cover uses no book art.
+No chapter-specific evidence dossier or source excerpt exists locally, so factual and
+close-paraphrase review remained bounded to the brief, seed metadata, prior recorded
+review evidence, and internal agreement among the prose and figures. No external web
+search was begun.
+
+`npm run check` passed on 2026-07-17: queue/registry/content validation, prose lint, 2
+pipeline tests, 37 runner tests, 136 application tests, typecheck, production build,
+and ESLint all completed successfully. Vitest emitted only the existing non-failing
+jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+No new advisory findings. The evidence-scope note from round 1 remains optional and
+does not make the page misleading.
