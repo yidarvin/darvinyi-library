@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-17
 
@@ -134,3 +134,40 @@ None.
   seven-behavior trust graph, the causal candor Flow, and the seven-minute
   direct-render reading-time badge.
 - Ran `npm run check` after the metadata correction; it passed.
+
+## Critique round 3 — 2026-07-17
+
+### REQUIRED
+
+1. **Make Figures 63.4 and 63.5 legible at the required 360px mobile width.** At a
+   360px viewport, the layout's horizontal padding leaves a 320px article column and
+   `<Figure>` leaves approximately 278px inside its own padding. The two `Flow`
+   instances have 558-unit and 420-unit viewBox widths, respectively
+   (`src/chapters/dare-to-lead.mdx:129-160`; `src/components/diagrams/Flow.tsx:25-35`).
+   With the chapter's `className="block w-full"`, their 11.5-unit labels therefore
+   render at only about 5.7px and 7.6px. The `overflow-x-auto` wrapper cannot preserve
+   label size because `w-full` makes each SVG shrink to the wrapper instead of
+   overflowing (`src/components/Figure.tsx:17-19`). Give these chapter-local figures
+   a minimum width that activates the existing horizontal scroller, or use another
+   mobile composition that keeps every step readable. Verify both figures at 360px;
+   the four-step recovery flow is the more severe case.
+
+The round 2 registry finding is resolved: the registry now records comparison,
+concentric circles, node graph, flow, and flow, matching the five rendered figures.
+The prior thesis, trust-graph, causal-flow, and reading-time corrections also remain
+intact. A fresh direct server render contains approximately 1,334 reader-visible
+words, supporting the seven-minute badge at approximately 200 words per minute,
+rounded up. All four related slugs resolve to completed chapters. The brief and
+registry support the core thesis and the deliberate absence of a Model section; no
+separate chapter-specific evidence artifact exists, and this review began no external
+web search.
+
+`npm run check` passed on 2026-07-17: queue/registry/content validation, prose lint, 2
+pipeline tests, 37 runner tests, 130 application tests, typecheck, production build,
+and ESLint all passed. Vitest emitted only the existing non-failing jsdom
+`Window.scrollTo()` notices. The gate checks successful rendering, but it does not
+measure SVG label size at the required mobile viewport.
+
+### ADVISORY
+
+No new findings. The two round 1 advisory notes remain optional.
