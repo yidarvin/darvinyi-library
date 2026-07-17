@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Bars, Flow, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="millionaire-next-door"
@@ -107,13 +107,16 @@ or eventual freedom, some portion of cash has to be reserved for it. A simple re
 is often more useful than a complicated plan that is never opened again.
 
 <Figure id="60.4" caption="A plan gives each part of income a role before consumption takes the whole amount.">
-  <Bars
-    className="block w-full min-w-[380px]"
-    items={[
-      { label: "current needs", value: 0.72, valueLabel: "keep life running" },
-      { label: "future costs", value: 0.4, valueLabel: "prepare" },
-      { label: "saving and ownership", value: 0.58, accent: true, valueLabel: "retain" },
-    ]}
+  <Compare
+    className="block w-full"
+    left={{
+      title: "unassigned",
+      points: ["small choices claim cash", "future gets what remains", "spending sets the plan"],
+    }}
+    right={{
+      title: "planned roles",
+      points: ["current needs", "future costs", "saving and ownership"],
+    }}
   />
 </Figure>
 
@@ -162,11 +165,14 @@ aid is intended to build independence, its terms should make that outcome more l
 than quietly financing a dependency that neither side chose.
 
 <Figure id="60.6" caption="Support can reinforce capability, or it can quietly turn into a recurring obligation.">
-  <ProcessLoop
-    className="block w-full min-w-[380px]"
-    stages={["defined help", "new capability", "greater self-support", "more family latitude"]}
-    compoundingEdge={3}
-    centerLabel="independence loop"
+  <Flow
+    className="block w-full"
+    steps={["family support"]}
+    highlight={0}
+    branch={{
+      up: "defined help builds capability",
+      down: "repeat rescue builds dependence",
+    }}
   />
 </Figure>
 
@@ -199,15 +205,13 @@ people from assumptions that become hard to unwind.
 ## Where people get it wrong
 
 <Callout kind="note">
-This is a portrait of a particular group, not a universal law of wealth. The authors' research
-grew from consumer studies and included a survey conducted from 1995 to 1996 of about 1,000 people, according to
-William Danko's contemporaneous University at Albany account. It identifies associations in
-that sample; it cannot prove that frugality or self-employment alone caused anyone's wealth.
-The dollar threshold, housing market, tax rules, and access to secure work have changed since
-1996. More importantly, saving behavior does not cancel unequal starting wealth, discrimination,
-health costs, caregiving demands, debt, or low wages. Treat the book as a corrective to status
-confusion and a prompt for household choices, not as an explanation for every financial outcome
-or a substitute for personal financial advice.
+This is a portrait of a particular group, not a universal law of wealth. The book presents
+patterns and associations, not a test of whether frugality or self-employment alone caused
+anyone's wealth. Its dollar threshold, housing market, tax rules, and access to secure work have
+changed since 1996. More importantly, saving behavior does not cancel unequal starting wealth,
+discrimination, health costs, caregiving demands, debt, or low wages. Treat the book as a
+corrective to status confusion and a prompt for household choices, not as an explanation for
+every financial outcome or a substitute for personal financial advice.
 </Callout>
 
 ## If you remember one thing

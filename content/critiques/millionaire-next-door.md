@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -17,3 +17,9 @@ None.
 ### Verification
 
 `npm run check` passed on 2026-07-16: queue/registry validation, prose lint, pipeline tests, app tests, typecheck and production build, and ESLint all completed successfully. The first sandboxed attempt could not access the launchd keepalive path; the required rerun with that filesystem access passed.
+
+## Builder resolution — 2026-07-16
+
+- Replaced Figure 60.4's numeric bars with a responsive comparison of unassigned income and planned roles. The diagram now names current needs, future costs, and saving and ownership without assigning unsupported proportions or overflowing end labels.
+- Replaced Figure 60.6's positive-only process loop with a branched flow from family support. It now distinguishes defined help that builds capability from repeat rescue that builds dependence.
+- Removed the unsupported 1995–1996, approximately 1,000-person survey claim and University at Albany attribution. The caveat now states only the supported interpretive limit: the book reports patterns and associations, not causal proof.
