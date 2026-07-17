@@ -1,0 +1,230 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="hard-thing"
+  thesis="When a company has no clean answer, leadership means seeing the facts clearly, saying what they require, and carrying out the painful decision with care."
+  minutes={10}
+/>
+
+## The thesis
+
+The hardest leadership problems do not arrive with a correct option and a mistaken one. They
+arrive when every available move hurts someone, the information is incomplete, and delay has a
+cost of its own. Horowitz's contribution is an operating stance for that terrain: face the
+problem without disguise, decide before avoidance makes the choice for you, and give people the
+clarity and dignity the moment permits.
+
+## Why it matters
+
+Most management advice describes conditions in which goals are stable, talent is plentiful, and
+a reasonable process can find agreement. A young company can lose those conditions quickly. A
+missed forecast can turn into a cash crisis; an executive hire can stop fitting the job; a
+competitor or market shift can narrow the company to one remaining bet. In those moments,
+leadership is less about displaying confidence than about converting bad news into coordinated
+work.
+
+## Key ideas
+
+### Start with the facts people would rather avoid
+
+A leader can make a difficult situation worse by protecting morale with a story everyone knows
+is incomplete. People notice missing revenue, a shrinking runway, a weak product, or a stalled
+decision even when no one names it. Silence makes the organization spend energy interpreting
+signals and protecting itself. A clear account does the opposite. It separates what is known
+from what is uncertain, states the consequence if nothing changes, and gives the team a real
+problem to work on.
+
+Candor is not theatrical pessimism. It does not mean broadcasting every private detail or
+pretending to know more than the evidence supports. It means refusing to call a solvency problem
+a temporary inconvenience, or a repeated performance failure a personality mismatch. The useful
+standard is simple: could the people responsible for the next move describe the constraint in
+the same plain terms as the person at the top?
+
+<Figure id="66.1" caption="The visible setback matters, but the decision depends on the constraints beneath it.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="missed plan or sudden threat"
+    waterlineLabel="the visible event"
+    below={["cash and time remaining", "what customers are actually doing", "capabilities that are missing", "the decision that cannot wait"]}
+  />
+</Figure>
+
+### Treat a hard people decision as a responsibility, not an escape
+
+The book is unusually direct about firing, demoting, and changing leadership. Those decisions
+are easy to postpone because the person may be loyal, talented in another role, or central to
+the company's history. But the job is not preserved by refusing to look at its requirements.
+The question is whether the person can succeed at the work the company needs now, with clear
+expectations and meaningful support. If the answer remains no, delay transfers the cost to their
+team, their peers, and eventually the person themselves.
+
+This does not turn people into interchangeable inputs. A decision can be firm and still be
+specific, private, and humane. Give feedback while there is time to act on it. Define the role
+before judging performance against it. If a change is required, explain the business reason
+without inventing a flattering fiction. Respect shows up in the clarity of the process, not in
+leaving someone to infer their future from a calendar invitation.
+
+<Figure id="66.2" caption="Delay protects discomfort in the moment; clear expectations create a fairer decision path.">
+  <Compare
+    className="block w-full min-w-[384px]"
+    favor="right"
+    left={{
+      title: "avoid the call",
+      points: ["vague role and feedback", "the mismatch continues", "the team absorbs the cost", "the eventual conversation surprises"],
+    }}
+    right={{
+      title: "own the call",
+      points: ["define the work required", "give direct, timely feedback", "decide from evidence", "handle the transition with dignity"],
+    }}
+  />
+</Figure>
+
+### Pay management debt before it compounds
+
+Small exceptions can be sensible when a company is tiny. An improvised title, an unclear
+reporting line, or a skipped performance conversation may seem cheaper than formalizing the
+system. The hidden bill arrives as the company grows. People cannot tell who decides, rewards
+feel arbitrary, weak work becomes harder to address, and every new hire has to learn the rules
+through rumor.
+
+Horowitz's useful analogy is debt: postponing an organizational repair buys time now and adds
+interest later. The remedy is not bureaucracy for its own sake. It is to install just enough
+structure for a recurring problem to stop consuming attention. A written decision owner, a
+regular one-on-one, an explicit level, or a performance standard can free a growing team to do
+the work rather than negotiate the operating system each week.
+
+<Figure id="66.3" caption="An ignored operating exception can become a wider coordination failure as the company grows.">
+  <Flow
+    className="block w-full min-w-[540px]"
+    steps={["make a one-time exception", "repeat it without a rule", "people infer different rules", "coordination cost spreads"]}
+    highlight={2}
+    ariaLabel="A flow from a one-time management exception to spreading coordination cost."
+  />
+</Figure>
+
+### Match the management style to the situation
+
+The book's wartime and peacetime contrast is a reminder that a method can be sound and still
+be wrong for the moment. When a company has room to explore, leaders can broaden participation,
+develop people, and make many experiments possible. When survival hinges on a near-term threat,
+the work may need a narrower target, faster decisions, and unusually explicit coordination.
+
+The contrast is not a license for permanent emergency or cruelty. A leader who treats every
+quarter as an existential battle will exhaust the organization and hide ordinary problems behind
+drama. The discipline is diagnostic: identify the actual threat, decide how much freedom the
+situation can afford, and move back toward a sustainable rhythm when the threat has passed.
+
+<Figure id="66.4" caption="The threat level should change the degree of focus and control, not excuse a permanent crisis culture.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="room to explore"
+    right="survival at stake"
+    marker={0.77}
+    markerLabel="tighten the mission"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.02, to: 0.4, label: "broaden learning and initiative" },
+      { from: 0.64, to: 0.98, label: "focus, decide, coordinate", accent: true },
+    ]}
+  />
+</Figure>
+
+### Build communication that lets bad news travel
+
+An organization does not learn from a problem merely because someone at the top knows it.
+Information has to move across teams, decisions need owners, and people need a way to raise a
+risk before it becomes a public emergency. That communication architecture is a management
+system, not an all-hands speech. Its value appears when a support agent can surface a customer
+pattern, an engineer can explain a technical constraint, and the person making the tradeoff can
+act before the signals are buried.
+
+The CEO remains responsible for the quality of this system. That does not mean personally
+approving every message. It means making the direction legible, keeping decision rights visible,
+and closing the loop when evidence changes a plan. In a difficult period, people can bear bad
+news better than they can bear a vacuum in which everyone guesses what matters.
+
+<Figure id="66.5" caption="A company responds faster when signals, decisions, and feedback form a visible operating network.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    ariaLabel="A network linking frontline signals, an explicit problem, a decision owner, coordinated work, customer evidence, and a revised plan."
+    nodes={[
+      { id: "signal", label: "frontline signal", x: 0.14, y: 0.18 },
+      { id: "problem", label: "explicit problem", x: 0.52, y: 0.08 },
+      { id: "owner", label: "decision owner", x: 0.86, y: 0.3 },
+      { id: "work", label: "coordinated work", x: 0.72, y: 0.76 },
+      { id: "evidence", label: "customer evidence", x: 0.28, y: 0.84 },
+      { id: "plan", label: "revised plan", x: 0.2, y: 0.48 },
+    ]}
+    edges={[
+      { from: "signal", to: "problem" },
+      { from: "problem", to: "owner" },
+      { from: "owner", to: "work" },
+      { from: "work", to: "evidence" },
+      { from: "evidence", to: "plan", kind: "reinforcing" },
+      { from: "plan", to: "problem", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the problem without its euphemism">
+Choose one issue your team has been discussing vaguely. Write four lines: the observable fact,
+the constraint it creates, what will happen if nothing changes, and what remains uncertain.
+Read it to someone close to the work. If they cannot tell what decision is needed, make the
+problem more concrete before scheduling another meeting.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Run the role test before the person test">
+For a difficult performance or leadership question, define the job first: the outcomes,
+decisions, and behaviors the role requires over the next six months. Then collect specific
+examples of where the current fit is strong or weak. Give direct feedback while a course
+correction is still possible. Do not wait for the situation to make the conversation harsher.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Find one piece of management debt">
+Ask three people where they regularly lose time to ambiguity. Pick one repeated answer, such as
+unclear ownership, an unwritten promotion rule, or a missing meeting rhythm. Install the
+smallest durable mechanism that addresses it, assign an owner, and revisit it in thirty days.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Calibrate the operating mode">
+At the start of the week, state whether the organization is exploring, executing a focused
+plan, or responding to a threat. Name the evidence that supports the classification and the
+date when it will be reconsidered. This creates urgency when it is earned and prevents urgency
+from becoming the default mood.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The wartime metaphor is memorable, and it can be misused. A real existential threat may call
+for concentrated authority and uncomfortable cuts, but it does not erase obligations to people
+or turn intimidation into good management. The book is also rooted in the experience of a
+venture-backed technology founder, where speed, financing, and founder control can dominate the
+story. Public institutions, mature companies, and teams with less power to absorb risk may need
+more consultation and stronger procedural safeguards. Treat the advice as a demand for clear
+judgment under pressure, not a general excuse to govern through fear.
+</Callout>
+
+## If you remember one thing
+
+When there is no painless answer, do not hide behind optimism, process, or delay. Tell the
+truth about the constraint, make the decision the situation requires, and carry it out in a way
+that leaves people clear about what happened and what comes next.
+
+[Good Strategy Bad Strategy](/good-strategy) supplies a way to diagnose the pivotal obstacle
+and align a response. [Built to Last](/built-to-last) takes the longer view, asking which
+organizational principles should survive after the immediate emergency. [Zero to One](/zero-to-one)
+is the companion for the strategic bet a company may need to protect.
+
+<ShelvedNearby
+  related={["good-strategy", "built-to-last", "zero-to-one"]}
+  buyUrl="https://a16z.com/books/the-hard-thing-about-hard-things/"
+  buyLabel="The Hard Thing About Hard Things by Ben Horowitz"
+/>
