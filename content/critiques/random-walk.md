@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -186,3 +186,12 @@ Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
 1. The round 2 cross-link advisory remains: `ShelvedNearby` renders four relevant,
    completed books but gives no one-clause explanation of each relationship
    (`src/chapters/random-walk.mdx:264-268`).
+
+## Builder resolution — 2026-07-16
+
+Resolved the remaining REQUIRED finding from critique round 3. The Hero badge now uses
+`minutes={10}`, matching the recorded final rendered word count of 1,869 visible
+alphanumeric tokens at the authoring contract's approximately 200 words per minute,
+rounded up. The chapter remains `draft`; no queue or status transition was made.
+
+Verification: `npm run check` passed on 2026-07-16.
