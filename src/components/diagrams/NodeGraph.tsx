@@ -17,6 +17,8 @@ export interface GraphEdge {
   kind?: "reinforcing" | "balancing";
   /** A short neutral label for what travels along the connection. */
   label?: string;
+  /** Move a connection label away from nearby nodes when the network needs more clearance. */
+  labelOffset?: { x?: number; y?: number };
 }
 
 export interface NodeGraphProps extends DiagramBase {
@@ -82,6 +84,8 @@ export function NodeGraph({ nodes = [], edges = [], ariaLabel, className }: Node
         const ey = b[1] - uy * 26;
         const rein = e.kind === "reinforcing";
         const bal = e.kind === "balancing";
+        const labelX = (sx + ex) / 2 + (e.labelOffset?.x ?? 0);
+        const labelY = (sy + ey) / 2 - 4 + (e.labelOffset?.y ?? 0);
         return (
           <g key={`edge-${i}`}>
             <line
@@ -96,8 +100,8 @@ export function NodeGraph({ nodes = [], edges = [], ariaLabel, className }: Node
             />
             {(rein || bal || e.label) && (
               <text
-                x={(sx + ex) / 2}
-                y={(sy + ey) / 2 - 4}
+                x={labelX}
+                y={labelY}
                 textAnchor="middle"
                 fontFamily={MONO}
                 fontSize="12"

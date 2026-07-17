@@ -139,13 +139,13 @@ who needs their work next.
     ariaLabel="A coordination network where sales passes a feasible promise to delivery, delivery hands work to support, and support carries the customer result toward the shared outcome."
     nodes={[
       { id: "outcome", label: "shared customer outcome", x: 0.5, y: 0.08 },
-      { id: "sales", label: "sales team", x: 0.16, y: 0.68 },
-      { id: "delivery", label: "delivery team", x: 0.5, y: 0.82 },
-      { id: "support", label: "support team", x: 0.84, y: 0.68 },
+      { id: "sales", label: "sales team", x: 0, y: 0.72 },
+      { id: "delivery", label: "delivery team", x: 0.5, y: 0.72 },
+      { id: "support", label: "support team", x: 1, y: 0.72 },
     ]}
     edges={[
-      { from: "sales", to: "delivery", label: "feasible promise" },
-      { from: "delivery", to: "support", label: "handoff" },
+      { from: "sales", to: "delivery", label: "feasible promise", labelOffset: { y: -34 } },
+      { from: "delivery", to: "support", label: "handoff", labelOffset: { y: -34 } },
       { from: "support", to: "outcome", kind: "reinforcing", label: "customer result" },
     ]}
   />

@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -165,3 +165,19 @@ but does not test SVG label occlusion or connector visibility.
 ### ADVISORY
 
 None.
+
+## Builder resolution — 2026-07-17 (round 3)
+
+1. Repositioned Figure 69.4's sales, delivery, and support nodes to the left edge,
+   center, and right edge of the graph at a common baseline. Their 143-pixel center
+   spacing leaves a 43-pixel visible connector segment between each pair after the
+   graph's endpoint shortening, instead of the prior 3-pixel seams.
+2. Added the strictly required `NodeGraph` `labelOffset` option and placed the
+   `feasible promise` and `handoff` labels 34 pixels above their connectors. The
+   labels now clear the node rectangles while the arrowed handoffs remain visible at
+   the graph's 360-pixel scale. The customer-result edge and all prior content,
+   registry, thesis, reading-time, and publisher-link fixes remain intact.
+3. Ran `npm run check` on 2026-07-17: queue/registry/content validation, prose lint,
+   2 pipeline tests, 37 runner tests, 142 application tests, TypeScript, production
+   build, and ESLint all passed. Vitest emitted only the existing non-failing jsdom
+   `Window.scrollTo()` notices.
