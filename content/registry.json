@@ -1266,7 +1266,18 @@
       "subtitle": "Jim Collins and Jerry Porras · 1994",
       "part": "Leadership & Business",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Enduring great companies are built on a core ideology and audacious goals, not a single great leader or product.",
+      "framework": "BHAG",
+      "diagrams": [
+        "comparison / split",
+        "core / context",
+        "two-by-two matrix",
+        "process loop",
+        "flow / sequence",
+        "comparison / split"
+      ]
     },
     {
       "num": 65,

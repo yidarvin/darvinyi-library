@@ -3,7 +3,7 @@ import { ExerciseCard } from "../components/ExerciseCard";
 import { Figure } from "../components/Figure";
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, Flow, Matrix, ProcessLoop, Pyramid } from "../components/diagrams";
+import { Compare, CoreContext, Flow, Matrix, ProcessLoop } from "../components/diagrams";
 
 <Hero
   slug="built-to-last"
@@ -13,11 +13,9 @@ import { Compare, Concentric, Flow, Matrix, ProcessLoop, Pyramid } from "../comp
 
 ## The thesis
 
-An enduring company is not the extended shadow of a gifted founder, a celebrated product, or
-a single successful strategy. Collins and Porras argue that it is an institution designed to
-carry a core ideology across generations, while repeatedly finding new ways to make progress.
-The task is to build something that can remember what it stands for and still alter its
-products, structure, and methods when the world changes.
+An enduring company is not the extended shadow of a gifted founder, a celebrated product, or a
+single successful strategy. It is an institution designed to carry a core ideology across
+generations while repeatedly finding new ways to make progress.
 
 ## Why it matters
 
@@ -38,7 +36,7 @@ helps other people carry the work without waiting for their next insight.
 
 <Figure id="64.1" caption="A durable institution relies on repeatable conditions, not one person's continuing insight.">
   <Compare
-    className="block w-full"
+    className="block w-full min-w-[384px]"
     favor="right"
     left={{
       title: "the heroic answer",
@@ -67,11 +65,12 @@ to identify the small center that must endure, then let the surrounding layers e
 place again and again.
 
 <Figure id="64.2" caption="The center holds values and purpose; operating choices belong in the changeable outer layers.">
-  <Concentric
-    className="block w-full"
-    rings={[{ label: "core values" }, { label: "enduring purpose" }, { label: "strategies and practices" }]}
-    highlight={0}
-    externalLabel="new markets, technology, and leadership"
+  <CoreContext
+    className="block w-full min-w-[440px]"
+    coreTitle="enduring core"
+    coreItems={["core values", "core purpose"]}
+    contextItems={["strategies", "practices", "markets and technology"]}
+    contextTitle="changeable outer layers"
   />
 </Figure>
 
@@ -90,7 +89,7 @@ both axes: a clear core, and serious adaptation outside it.
 
 <Figure id="64.3" caption="The durable position combines a stable identity with a willingness to revise how the work is done.">
   <Matrix
-    className="block w-full"
+    className="block w-full min-w-[384px]"
     xAxis={{ left: "rigid methods", right: "adaptive methods", label: "operating change" }}
     yAxis={{ low: "thin identity", high: "clear identity", label: "core commitment" }}
     quadrants={[
@@ -119,7 +118,7 @@ having to be reinvented after every discovery.
 
 <Figure id="64.4" caption="Experiments become progress when a team turns evidence into the next repeatable practice.">
   <ProcessLoop
-    className="block w-full"
+    className="block w-full min-w-[380px]"
     stages={["protect the core", "test a better method", "learn from the evidence", "embed what works"]}
     compoundingEdge={3}
     centerLabel="renewal by design"
@@ -140,41 +139,34 @@ choices: what talent is developed, what capability is built, which opportunities
 and which experiments deserve patience. Without those changes, an audacious statement is
 decoration. With them, it becomes a practical test of whether the organization is moving.
 
-<Figure id="64.5" caption="A long-horizon challenge is useful when it changes the next set of concrete choices.">
+<Figure id="64.5" caption="A BHAG and a vivid description travel together when they change the next set of concrete choices.">
   <Flow
     className="block w-full min-w-[558px]"
-    steps={["name a demanding destination", "describe a credible future", "make harder choices now", "build the capability to reach it"]}
+    steps={["set a 10-to-30-year BHAG", "write a vivid description alongside it", "make harder choices now", "build the capability to reach it"]}
     highlight={2}
   />
 </Figure>
 
 ## The Model
 
-The BHAG is the visible summit of a larger design. It works best when the goal grows from an
-existing purpose, is supported by values that limit how it will be pursued, and is carried by
-mechanisms that turn urgency into learning. The vivid future gives the goal emotional force;
-the operating system gives it a route. This prevents the common failure in which a dramatic
-goal is announced above an organization that has no way to change its behavior.
+An envisioned future has two linked parts: a 10-to-30-year BHAG and a vivid description of
+what reaching it would mean. That chosen future sits alongside core ideology, whose purpose and
+values state what should endure. Together they let an organization pursue major change without
+mistaking a current product, strategy, or leader for its identity.
 
-<Figure id="64.6" caption="A BHAG sits on a purpose, values, and operating mechanisms that make the distant goal actionable.">
-  <div className="min-w-[440px] space-y-6">
-    <Pyramid
-      className="block w-full"
-      tiers={[
-        { label: "core purpose", note: "why the organization exists" },
-        { label: "core values", note: "how it will act" },
-        { label: "mechanisms for learning", note: "how progress becomes repeatable" },
-        { label: "BHAG", note: "a demanding, time-bound destination" },
-      ]}
-      highlight={3}
-    />
-    <Flow
-      className="block w-full"
-      steps={["distant destination", "vivid shared picture", "present decisions"]}
-      highlight={2}
-      ariaLabel="A big, hairy, audacious goal becomes a vivid shared picture, which guides present decisions."
-    />
-  </div>
+<Figure id="64.6" caption="Core ideology names what endures; an envisioned future pairs a 10-to-30-year BHAG with a vivid description.">
+  <Compare
+    className="block w-full min-w-[384px]"
+    favor="right"
+    left={{
+      title: "core ideology",
+      points: ["core values", "core purpose"],
+    }}
+    right={{
+      title: "envisioned future",
+      points: ["10-to-30-year BHAG", "vivid description"],
+    }}
+  />
 </Figure>
 
 ## Put it to work
@@ -198,9 +190,9 @@ training, a checklist, or a regular meeting. Learning is not finished when the t
 </ExerciseCard>
 
 <ExerciseCard n="04" title="Draft a goal with a present-tense consequence">
-Write a three-to-ten-year challenge in plain language. Add a short description of what success
+Write a 10-to-30-year challenge in plain language. Add a vivid description of what success
 would look like to the people doing the work. Then name one choice that must change in the next
-ninety days for the goal to be more than a slogan.
+ninety days for the envisioned future to be more than a slogan.
 </ExerciseCard>
 
 ## Where people get it wrong

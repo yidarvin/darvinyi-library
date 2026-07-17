@@ -36,6 +36,12 @@ Nested rings, core outward. For center-and-layers ideas.
 - Use for: the Golden Circle (why/how/what), circle of control vs. concern, core-values models.
 - Component: `<Concentric rings={[...]} labelFrom="inside" />`
 
+### 5a. Core / context
+A grouped enduring center with two or more peer elements, surrounded by changeable context.
+For models where the core's parts are parallel, not successive rings or prerequisite tiers.
+- Use for: core values plus purpose, constitutional principles plus evolving policy, or any stable identity with revisable practices around it.
+- Component: `<CoreContext coreTitle="..." coreItems={[...]} contextItems={[...]} />`
+
 ### 6. Flow / sequence
 Directed left-to-right (or top-down) stages, non-cyclic. For processes with a start and an end.
 - Use for: pipelines, decision procedures, staged methods, cause→effect chains.
@@ -85,6 +91,7 @@ Rough defaults from concept shape to form:
 - Levels that build on each other → **pyramid**.
 - A matter of degree → **spectrum**; a matter of degree with a curve → **annotated curve**.
 - Center and layers → **concentric circles**.
+- Parallel elements inside a stable center, with changeable elements outside → **core / context**.
 - A start-to-end procedure → **flow**.
 - Two contrasting things → **comparison** (or **spectrum** if they are two poles of one axis).
 - Surface vs. depth → **iceberg**.

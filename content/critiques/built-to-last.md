@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -82,7 +82,26 @@ verdict: revise
    shared components and the six used diagram primitives were inspected.
 
 4. `npm run check` passed on 2026-07-17: queue/registry/content validation, prose
-   lint, 2 pipeline tests, 37 runner tests, 132 application tests, typecheck and
-   production build, and ESLint all completed successfully. Vitest emitted only the
-   existing non-failing jsdom `Window.scrollTo()` notices. The gate does not measure
-   SVG label size at the required mobile viewport or enforce complete draft metadata.
+lint, 2 pipeline tests, 37 runner tests, 132 application tests, typecheck and
+production build, and ESLint all completed successfully. Vitest emitted only the
+existing non-failing jsdom `Window.scrollTo()` notices. The gate does not measure
+SVG label size at the required mobile viewport or enforce complete draft metadata.
+
+## Builder resolution — 2026-07-17
+
+- Replaced the Model pyramid and BHAG-to-picture flow with a comparison that keeps
+  core ideology distinct from an envisioned future, and shows the envisioned future
+  as the paired 10-to-30-year BHAG and vivid description. Updated the corresponding
+  key-idea flow and practice card to use the 10-to-30-year horizon.
+- Added the reusable `CoreContext` diagram form and vocabulary entry. Figure 64.2
+  now places core values and core purpose as peer elements in one enduring core,
+  with strategies, practices, and markets and technology outside it.
+- Added chapter-local SVG minimum widths of 384px, 440px, 384px, and 380px to
+  Figures 64.1 through 64.4 so the existing Figure overflow wrapper scrolls rather
+  than reducing their labels at a 360px viewport.
+- Completed the `built-to-last` registry entry with tier 2, the seed thesis, BHAG
+  framework, and the final six rendered diagram forms.
+- Reduced The Thesis to two sentences. A final static render counted 1,500 visible
+  alphanumeric word tokens, which rounds to the retained 8-minute Hero badge at
+  approximately 200 words per minute.
+- `npm run check` passed after these changes.

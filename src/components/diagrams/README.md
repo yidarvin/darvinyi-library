@@ -34,6 +34,7 @@ Every form also takes `ariaLabel?` and `className?` (from `DiagramBase`).
 | Pyramid / hierarchy | `Pyramid` | `tiers: {label,note?}[]` (base first), `highlight?: number` |
 | Spectrum / gradient | `Spectrum` | `left`, `right`, `marker?: 0..1`, `markerLabel?`, `zones?: {from,to,label,accent?}[]` |
 | Concentric circles | `Concentric` | `rings: {label}[]` (core first), `highlight?: number` |
+| Core / context | `CoreContext` | `coreTitle`, `coreItems: string[]`, `contextItems: string[]`, `contextTitle?: string` |
 | Flow / sequence | `Flow` | `steps: string[]`, `highlight?: number`, `branch?: {up,down}` |
 | Annotated curve | `Curve` | `shape: "exp"\|"log"\|"s"\|"u"\|"bell"\|"channel"`, `axes?: {x?,y?}`, `annotations?: {x,y,text}[]` |
 | Comparison / split | `Compare` | `left: {title,points[]}`, `right: {title,points[]}`, `favor?: "left"\|"right"\|"none"` |

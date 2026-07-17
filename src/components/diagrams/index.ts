@@ -8,6 +8,7 @@ export { Matrix, type MatrixProps, type MatrixQuadrant } from "./Matrix";
 export { Pyramid, type PyramidProps, type PyramidTier } from "./Pyramid";
 export { Spectrum, type SpectrumProps, type SpectrumZone } from "./Spectrum";
 export { Concentric, type ConcentricProps, type ConcentricRing } from "./Concentric";
+export { CoreContext, type CoreContextProps } from "./CoreContext";
 export { Flow, type FlowProps } from "./Flow";
 export { Curve, type CurveProps, type CurveShape, type CurveAnnotation } from "./Curve";
 export { Compare, type CompareProps, type ComparePanel } from "./Compare";
