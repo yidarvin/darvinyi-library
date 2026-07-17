@@ -1,0 +1,268 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Flow, Iceberg, NodeGraph, ProcessLoop, Pyramid } from "../components/diagrams";
+
+<Hero
+  slug="extreme-ownership"
+  thesis="Leadership starts when the person responsible for the outcome stops searching for someone to fault and starts finding the next move the team can make."
+  minutes={9}
+/>
+
+## The thesis
+
+Willink and Babin make responsibility unusually concrete. The leader accepts that the team's
+result, its clarity, its preparation, and its coordination are part of their problem to solve.
+That does not make every setback their personal fault. It makes blame a poor stopping point.
+Once a leader asks what they can change, explain, remove, or decide, the team has a path back
+to action. Ownership travels upward, downward, and sideways through the organization, because
+the person closest to a problem rarely has every condition needed to fix it alone.
+
+## Why it matters
+
+Pressure makes organizations narrower. People protect their own scope, tell a more favorable
+version of events, and wait for a senior person to settle a conflict. The immediate work slows,
+while the important information arrives late or not at all. The book's military setting gives
+the stakes an intense form, but the organizational claim is familiar: teams perform better when
+people can identify the shared aim, state a problem without hiding behind an excuse, and make
+decisions close enough to the work for action to keep moving.
+
+## Key ideas
+
+### Blame explains the past; ownership changes the next attempt
+
+After a miss, an explanation can be accurate and still be useless. A vendor may have failed, a
+peer team may have withheld information, and a market may have changed. Those facts matter.
+The ownership question comes after them: what was within our reach that would have made the
+outcome less fragile? Perhaps the team needed an earlier warning, a clearer check, a second
+source, or a plan for the exception. This is a demanding question because it removes the comfort
+of being merely right about someone else's failure.
+
+It also has a boundary. Taking ownership means looking for influence, not inventing control. A
+leader who treats a systemic constraint as a private moral failure will exhaust people and hide
+the constraint. The useful move is to name the condition plainly, then own the response the team
+can actually make. Responsibility becomes operational when it produces a changed decision or a
+better preparation for the next round.
+
+<Figure id="69.1" caption="The visible failure is only the start; the leader searches below it for a response the team can own.">
+  <Iceberg
+    className="block w-full min-w-[400px]"
+    above="the missed result"
+    waterlineLabel="the question that changes the next attempt"
+    below={["what did we fail to clarify?", "what warning did we miss?", "what can we change next time?"]}
+  />
+</Figure>
+
+### A leader translates in both directions
+
+Leading down is more than handing out tasks. People need the outcome, the reason it matters,
+the boundaries of their judgment, and enough context to adapt when the plan meets reality.
+Leading up is the reciprocal duty: give the person above you a clear picture of the situation,
+the risk, the tradeoff, and the recommendation. Complaining that leadership does not understand
+the work may describe a real gap, but it leaves the gap intact if no one has made the work
+understandable.
+
+This is not a license to manipulate or to conceal disagreement. It is an obligation to improve
+the information moving through the chain. A team member can ask what success looks like, explain
+the obstacle in concrete terms, and propose the decision that would unblock them. A manager can
+turn a distant objective into local priorities and carry frontline signals back upward. The chain
+works when translation happens in both directions, not when orders only travel downhill.
+
+<Figure id="69.2" caption="Direction becomes usable when intent moves down and ground truth moves back up.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "intent", label: "shared intent", x: 0.5, y: 0.08 },
+      { id: "leader", label: "team leader", x: 0.5, y: 0.45 },
+      { id: "team", label: "team at the work", x: 0.5, y: 0.86 },
+      { id: "context", label: "constraints", x: 0.12, y: 0.64 },
+      { id: "signal", label: "ground truth", x: 0.88, y: 0.64 },
+    ]}
+    edges={[
+      { from: "intent", to: "leader", kind: "reinforcing", label: "purpose" },
+      { from: "leader", to: "team", kind: "reinforcing", label: "priorities" },
+      { from: "team", to: "signal", label: "reports" },
+      { from: "signal", to: "leader", kind: "reinforcing", label: "updates" },
+      { from: "context", to: "leader", label: "limits" },
+    ]}
+  />
+</Figure>
+
+### Simple plans survive contact with a busy team
+
+Complexity is tempting because it can look like thoroughness. Under pressure, though, a plan
+with too many dependencies, exceptions, and specialist terms turns into a guessing exercise.
+People remember different versions of it, and nobody can tell which detail is safe to discard
+when conditions change. A simple plan does not ignore reality. It makes the few commitments that
+must be shared unmistakable: the objective, the sequence, the decision owner, the signals that
+require a change, and the limit beyond which the team should stop.
+
+Simplicity must be earned. The leader has to understand the work well enough to remove clutter,
+test whether an explanation makes sense to the people doing it, and revise it when it does not.
+If the team cannot repeat the plan in ordinary language, the leader has not yet made it usable.
+Clarity protects judgment. It leaves attention available for the part of the situation that no
+plan could predict.
+
+<Figure id="69.3" caption="A usable plan preserves the few facts a team needs to coordinate while conditions change.">
+  <Compare
+    className="block w-full min-w-[384px]"
+    favor="right"
+    left={{
+      title: "complicated plan",
+      points: ["many hidden dependencies", "specialist language", "unclear exceptions", "memory fails under pressure"],
+    }}
+    right={{
+      title: "simple plan",
+      points: ["one shared objective", "visible decision owners", "plain handoffs", "clear signals to adapt"],
+    }}
+  />
+</Figure>
+
+### Mutual support is a design choice, not a slogan
+
+The book calls its teamwork principle cover and move. In a civilian setting, the underlying idea
+is that one group cannot treat its own local metric as the whole mission. A sales team that sells
+work the delivery team cannot sustain, a product team that ships without support capacity, or a
+finance group that blocks every exception may each be acting rationally inside a narrow frame.
+Together they create failure at the customer boundary.
+
+The leader's job is to make those dependencies visible and to settle conflicts by returning to
+the larger aim. That may require changing a target, coordinating timing, or lending capacity to
+another team before it becomes urgent. It does not mean every team must agree on every tradeoff.
+It means disagreement should be resolved against the common outcome, rather than by the loudest
+local interest. Teams cooperate more reliably when they can see both what they contribute and
+who needs their work next.
+
+<Figure id="69.4" caption="Separate teams help the mission when their handoffs point toward one shared outcome.">
+  <Concentric
+    className="block w-full min-w-[400px]"
+    rings={[{ label: "shared outcome" }, { label: "team priorities" }, { label: "local tasks" }]}
+    highlight={0}
+    externalLabel="pressure: local targets, time, and scarce capacity"
+  />
+</Figure>
+
+### Prioritize the decisive problem, then act
+
+When several problems arrive at once, trying to solve them all at equal intensity is a form of
+avoidance. The team needs a short pause to identify the issue that most threatens the objective,
+assign attention to it, and move. Once that problem is contained, the next one becomes clearer.
+This is not a promise that the first choice will be perfect. It is a way to prevent overload from
+turning into paralysis.
+
+Priority is a judgment about consequence, not merely urgency. A loud request may wait while a
+quiet failure mode can destroy the whole effort. Good leaders make the tradeoff legible: this is
+the threat we are handling first, this is who owns it, and this is what the rest of the team
+should continue doing. The practice couples thought with action. Analysis that never produces a
+move is not prioritization, and frantic action without a stated priority only scatters the team.
+
+<Figure id="69.5" caption="Under pressure, select the threat that matters most, give it an owner, act, and reassess.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["name the objective", "find the decisive threat", "assign the next move", "act and reassess"]}
+    highlight={1}
+  />
+</Figure>
+
+### Decentralized command needs shared intent and prepared people
+
+Central control feels safe when the stakes rise, but a single decision-maker eventually becomes
+the slowest link. Information travels up, a choice travels down, and conditions have already
+changed. Decentralized command moves decisions toward the people who can see the situation,
+while holding them to the same intent and boundaries. It is delegation with more preparation,
+not less leadership.
+
+That preparation has layers. The leader sets a comprehensible mission, defines what must not be
+compromised, teaches people enough context to make tradeoffs, and confirms that they understand
+the plan. Team members then decide within that frame and report what they learn. If either side
+skips its part, decentralization decays into abandonment or improvisation. The aim is not maximum
+independence. It is timely judgment that still serves the whole team.
+
+<Figure id="69.6" caption="Authority can move outward only when a shared mission and clear boundaries support local judgment.">
+  <Pyramid
+    className="block w-full min-w-[380px]"
+    tiers={[
+      { label: "shared mission and boundaries" },
+      { label: "context and practiced judgment" },
+      { label: "local decisions close to the work" },
+      { label: "fast adaptation" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## The Model
+
+Extreme ownership is a recovery loop for leadership, not a claim that leaders control every
+variable. Start with the outcome, including the inconvenient parts. Refuse the first impulse to
+locate fault outside the team. Identify the contribution, condition, or missing clarity that the
+team can address. Then state the intent, give people the authority and information to act, and
+review the result without returning to excuses. The review begins the next loop, where a better
+team and a better plan can replace a familiar explanation.
+
+<Figure id="69.7" caption="Extreme ownership turns a setback into a repeatable cycle of responsibility, clarity, action, and learning.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["face the outcome", "find our influence", "clarify intent", "act through the team", "review and improve"]}
+    compoundingEdge={4}
+    centerLabel="extreme ownership"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Rewrite one complaint as a leadership question">
+Take a complaint you have repeated about another person, team, or constraint. Write the facts
+without the conclusion about who is to blame. Then write three questions: what did we fail to
+make clear, what signal could we surface earlier, and what response is available to us now?
+Choose one response that changes the next attempt.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Brief the intent, not only the task">
+Before a consequential piece of work, state the objective, the reason it matters, the two or
+three constraints that cannot be violated, and what a person should do if the original plan no
+longer fits. Ask someone to repeat the intent in their own words. Repair the briefing if they
+cannot.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Run a short priority reset">
+When work becomes noisy, gather the necessary people for ten minutes. Name the objective, list
+the live threats, select the one that most endangers it, assign a next action and an owner, then
+set a time to reassess. Do not use the meeting to solve every problem at once.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make one handoff jointly owned">
+Pick a point where two teams regularly frustrate one another. Map what the receiving team needs,
+what the sending team can realistically provide, and the signal that says the handoff is failing.
+Agree on one shared measure of success. Revisit it after a week with examples from the work.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Extreme ownership is not a reason to deny power differences, unsafe conditions, discrimination,
+or failures of organizational design. A person can own an honest response to a harmful system
+without accepting personal blame for creating it. Nor should a manager use the idea to push every
+failure downward while claiming that employees should own more. The standard has force only when
+the person with authority takes responsibility for clarity, resources, incentives, and their own
+decisions. Accountability without the ability to change conditions is often just blame in a more
+disciplined vocabulary.
+</Callout>
+
+## If you remember one thing
+
+When an outcome goes wrong, begin with the part of the situation you can influence. Turn that
+answer into clearer intent and a concrete next move for the team, then review without excuses so
+the next attempt starts stronger.
+
+Good Strategy Bad Strategy also asks leaders to focus scarce attention on the critical obstacle.
+Dare to Lead supplies a more relational account of making bad news discussable, while The E-Myth
+Revisited shows how responsibility can be made durable through roles and repeatable systems.
+
+<ShelvedNearby
+  related={["good-strategy", "dare-to-lead", "e-myth"]}
+  buyUrl="https://echelonfront.com/what-is-extreme-ownership/"
+  buyLabel="Extreme Ownership by Jocko Willink and Leif Babin"
+/>
