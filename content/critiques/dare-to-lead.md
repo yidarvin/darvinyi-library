@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-17
 
@@ -91,3 +91,35 @@ and ESLint all passed. Vitest emitted only the existing non-failing jsdom
   `7-min distillation`.
 - Ran `npm run check` before recording this resolution. It passed validation, prose
   lint, pipeline tests, application tests, typecheck, production build, and ESLint.
+
+## Critique round 2 — 2026-07-17
+
+### REQUIRED
+
+1. **Update the registry diagram inventory to match the resolved chapter.** The round 1
+   resolution replaced Figure 63.5's spectrum with a `Flow`, and the current page now
+   renders `Compare`, `Concentric`, `NodeGraph`, `Flow`, and `Flow`
+   (`src/chapters/dare-to-lead.mdx:40-160`). The registry still records the five forms
+   as comparison, concentric circles, node graph, flow, and spectrum
+   (`content/registry.json:1255-1261`). This leaves the chapter's required registry
+   metadata factually stale. Replace the spectrum entry with a second flow entry, using
+   the registry's existing form naming, so the inventory agrees with the rendered page.
+
+The four required findings from round 1 are resolved. The thesis is now two sentences;
+Figure 63.3 includes all seven trust behaviors named in the prose; Figure 63.5 encodes
+the stated leader-response-to-future-candor sequence without a quantitative marker; and
+the recorded 1,331-word direct render supports the seven-minute badge at approximately
+200 words per minute, rounded up. The brief and registry support the core thesis and the
+deliberate absence of a Model section. No separate chapter-specific evidence artifact
+exists, and this re-review began no external web search.
+
+`npm run check` passed on 2026-07-17: queue/registry/content validation, prose lint, 2
+pipeline tests, 37 runner tests, 130 application tests, typecheck, production build,
+and ESLint all passed. Vitest emitted only the existing non-failing jsdom
+`Window.scrollTo()` notices. The mechanical validator does not compare the registry's
+diagram list with the components rendered by the chapter, so that green gate does not
+resolve the metadata defect above.
+
+### ADVISORY
+
+None.
