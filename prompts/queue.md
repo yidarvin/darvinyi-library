@@ -77,7 +77,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 060 | millionaire-next-door           | The Millionaire Next Door                     | DONE    |
 | 061 | richest-man-babylon             | The Richest Man in Babylon                    | DONE    |
 | 062 | common-sense-investing          | The Little Book of Common Sense Investing     | DONE    |
-| 063 | dare-to-lead                    | Dare to Lead                                  | PENDING |
+| 063 | dare-to-lead                    | Dare to Lead                                  | DONE    |
 | 064 | built-to-last                   | Built to Last                                 | PENDING |
 | 065 | good-strategy                   | Good Strategy Bad Strategy                    | PENDING |
 | 066 | hard-thing                      | The Hard Thing About Hard Things              | PENDING |

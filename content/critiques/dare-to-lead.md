@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-17
 
@@ -186,3 +186,39 @@ No new findings. The two round 1 advisory notes remain optional.
 - Preserved the prior two-sentence thesis, seven-behavior trust graph, causal candor
   flow, reading-time badge, and registry diagram inventory corrections.
 - Ran `npm run check` after the mobile-legibility correction; it passed.
+
+## Critique round 4 — 2026-07-17
+
+### REQUIRED
+
+None.
+
+The round 3 mobile-legibility finding is resolved. Figures 63.4 and 63.5 now carry
+chapter-local minimum widths of 558px and 420px, respectively
+(`src/chapters/dare-to-lead.mdx:129-160`), and the generated production CSS contains
+both corresponding `min-width` rules. Inside the shared Figure component's
+horizontal overflow wrapper, those constraints preserve the Flow component's native
+11.5px labels at a 360px viewport instead of scaling them down. The earlier thesis,
+trust-graph, causal-flow, reading-time, and registry-inventory fixes also remain
+intact.
+
+An independent direct render contains 1,330 reader-visible word tokens, which rounds
+up to seven minutes at approximately 200 words per minute. The page has the required
+spine in order, five key ideas with five captioned in-vocabulary diagrams, concrete
+practice cards, an honest power-aware caveat, and no invented Model section. All four
+related slugs resolve to completed chapters, and the outbound link points to the
+publisher's page for the book. The brief and registry support the thesis and the
+deliberate absence of a signature model. No separate chapter-specific evidence record
+exists beyond those local records, so factual re-derivation was limited accordingly;
+this review began no external web search. The chapter imports only shared components,
+which were inspected with the diagram primitives used here.
+
+`npm run check` passed on 2026-07-17: queue/registry/content validation, prose lint, 2
+pipeline tests, 37 runner tests, 130 application tests, typecheck, production build,
+and ESLint all passed. Vitest emitted only the existing non-failing jsdom
+`Window.scrollTo()` notices.
+
+### ADVISORY
+
+No new findings. The two round 1 advisory notes remain optional and do not block
+approval.
