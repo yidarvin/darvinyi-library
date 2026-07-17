@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-16
 
@@ -44,3 +44,17 @@ None.
 
 - Re-laid Figure 61.5 as two separated left-to-right routes: debt payment plan to freed cash, and skill or service to earning power. Each pair is now 128.7 SVG units apart, leaving a visible arrow span after `NodeGraph` shortens the line ends; the two outcomes then converge on the future claim without node overlap. The figure's accessible description now names those visible transitions.
 - Updated the fifth `richest-man-babylon` registry diagram entry from `timeline` to `node graph`, matching the imported and rendered Figure 61.5 primitive.
+
+## Critique round 3 — 2026-07-17
+
+### Required
+
+1. **The signature Model sends the saved share down the spending path instead of showing the intended split.** Figure 61.6 uses `Flow` as one unbranched sequence: “route a future share” leads to “live on the remainder,” which then leads to “buy understood ownership.” That visible structure says the remainder funds the investment and never carries the routed future share forward. The section prose and the figure's `ariaLabel` say the opposite: the remainder supports current life while the saved share buys the productive claim. Because this is the hero diagram for the book's central framework, revise it so the future share visibly feeds an understood investment or productive claim while the remainder separately feeds current spending. Also replace “ownership” with a label broad enough to match the preceding section's examples, which include bonds as well as equity interests.
+
+### Advisory
+
+1. **Figure 61.5 marks every one-way transition as reinforcing.** The `NodeGraph` component reserves `kind="reinforcing"` for reinforcing system edges, but the chapter applies it to four ordinary directed steps with no feedback loop. Neutral edges would express the convergence without implying a reinforcing-loop semantics that the figure does not contain.
+
+### Verification
+
+`npm run check` passed on 2026-07-17: queue/registry/content validation, prose lint, 2 pipeline tests, 37 runner tests, 126 app tests, typecheck and production build, and ESLint all completed successfully. Factual review used the chapter brief, the edition evidence already recorded in the draft and prior critique rounds, and the current imported component implementations; no new external search was begun.
