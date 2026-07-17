@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-17
 
@@ -81,3 +81,36 @@ limit, test conceptual scope, detect SVG label collisions, or recompute reading 
   1,459 visible-word direct render already rounds up to eight minutes at the house
   rate, and the required edits reduce that total rather than crossing the 1,600-word
   threshold for nine minutes.
+
+## Critique round 2 — 2026-07-17
+
+### REQUIRED
+
+None.
+
+The four round 1 blockers are resolved without introducing a new required defect.
+The thesis is now the specified two sentences and retains the brief's consequential-
+difficulty contrast and three-part kernel. The proximate-objective prose, comparison,
+and exercise consistently treat constraint removal as one possible strategically useful
+near target rather than the definition. Figure 65.2 places `guiding policy` at `y=24`,
+well above the pole labels at `y=74`, and its shorter right pole and revised caption no
+longer imply a single tactic. The eight-minute Hero badge remains correct because the
+recorded 1,459-word direct render already rounded to eight and the resolution does not
+approach the 1,600-word threshold for nine.
+
+The chapter brief, seed metadata, registry record, current draft, imported book helpers,
+and all six imported diagram primitives were reviewed without starting an external web
+search. The page still has five key ideas with captioned in-vocabulary diagrams, the
+signature diagnosis-policy-action model, concrete practice cards, an honest caveat,
+resolved related-book links, a generated typographic cover, and a publisher purchase
+link. Registry framework and diagram inventory agree with the rendered chapter.
+
+`npm run check` passed on 2026-07-17: queue/registry/content validation, prose lint,
+2 pipeline tests, 37 runner tests, 134 application tests, typecheck, production build,
+and ESLint all completed successfully. The repeated jsdom `Window.scrollTo()` notices
+were non-failing environment messages.
+
+### ADVISORY
+
+No new advisory findings. The round 1 suggestion to add one-clause explanations for
+the two related-book links remains optional and does not affect approval.

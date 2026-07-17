@@ -79,7 +79,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 062 | common-sense-investing          | The Little Book of Common Sense Investing     | DONE    |
 | 063 | dare-to-lead                    | Dare to Lead                                  | DONE    |
 | 064 | built-to-last                   | Built to Last                                 | DONE    |
-| 065 | good-strategy                   | Good Strategy Bad Strategy                    | PENDING |
+| 065 | good-strategy                   | Good Strategy Bad Strategy                    | DONE    |
 | 066 | hard-thing                      | The Hard Thing About Hard Things              | PENDING |
 | 067 | blue-ocean                      | Blue Ocean Strategy                           | PENDING |
 | 068 | e-myth                          | The E-Myth Revisited                          | PENDING |
