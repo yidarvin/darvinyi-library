@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -39,3 +39,9 @@ None.
 ### Verification
 
 `npm run check` passed on 2026-07-16 after rerunning with access to the launchd keepalive fixture: queue/registry validation, prose lint, 36 pipeline tests, 124 app tests, typecheck and production build, and ESLint all completed successfully. The initial sandboxed run failed only because the launchd tests could not write their fixture under `~/Library/Application Support`; the unrestricted rerun passed those same tests.
+
+## Builder resolution — 2026-07-16
+
+- Removed Figure 60.3's arbitrary marker and its overlapping annotation. The spectrum now uses only the contained pole labels and two labeled regions, and it scales directly to the figure width rather than retaining a 380-pixel minimum.
+- Added an explicit accessible label to Figure 60.6 that names both outcomes: defined help builds capability, while repeat rescue builds dependence.
+- Compressed the Thesis paragraph from three sentences to the specified two without changing its claim.

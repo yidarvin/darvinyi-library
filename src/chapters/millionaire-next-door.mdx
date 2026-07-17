@@ -10,11 +10,11 @@ import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagr
 
 ## The thesis
 
-Stanley and Danko turn the usual picture of a millionaire inside out. Their subject is not
-the small group whose wealth advertises itself, but households that convert a dependable
+Stanley and Danko turn the usual picture of a millionaire inside out, focusing not on the
+small group whose wealth advertises itself, but on households that convert a dependable
 surplus into assets while keeping their standard of living below what income could support.
-The lasting lesson is simple: income is a resource to allocate, while wealth is what remains
-after allocation has protected saving, investing, and choice.
+Income is a resource to allocate; wealth is what remains after allocation has protected
+saving, investing, and choice.
 
 ## Why it matters
 
@@ -81,11 +81,9 @@ matters. It is to notice when it is silently spending money that was meant to bu
 
 <Figure id="60.3" caption="The more a decision serves independence, the less it must perform for an audience.">
   <Spectrum
-    className="block w-full min-w-[380px]"
+    className="block w-full"
     left="status signal"
     right="financial independence"
-    marker={0.72}
-    markerLabel="ask what it preserves"
     zones={[
       { from: 0, to: 0.34, label: "comparison drives the choice" },
       { from: 0.58, to: 1, label: "resilience and options", accent: true },
@@ -169,6 +167,7 @@ than quietly financing a dependency that neither side chose.
     className="block w-full"
     steps={["family support"]}
     highlight={0}
+    ariaLabel="Family support can take two paths: defined help builds capability, while repeat rescue builds dependence."
     branch={{
       up: "defined help builds capability",
       down: "repeat rescue builds dependence",
