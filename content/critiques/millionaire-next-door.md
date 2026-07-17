@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-16
 
@@ -23,3 +23,19 @@ None.
 - Replaced Figure 60.4's numeric bars with a responsive comparison of unassigned income and planned roles. The diagram now names current needs, future costs, and saving and ownership without assigning unsupported proportions or overflowing end labels.
 - Replaced Figure 60.6's positive-only process loop with a branched flow from family support. It now distinguishes defined help that builds capability from repeat rescue that builds dependence.
 - Removed the unsupported 1995–1996, approximately 1,000-person survey claim and University at Albany attribution. The caveat now states only the supported interpretive limit: the book reports patterns and associations, not causal proof.
+
+## Critique round 2 — 2026-07-16
+
+### Required
+
+1. **Figure 60.3 has overlapping labels in its fixed SVG geometry.** `Spectrum` draws both pole labels at `trackY - 34` and the marker label at `trackY - 30`. With the chapter's marker at `0.72`, “ask what it preserves” occupies the same horizontal region as the longer right pole, “financial independence,” so the two strings render over each other before any phone-width scaling. This makes the central annotation illegible and fails the mobile-legibility requirement. Shorten or reposition the annotation, change the poles, or use another in-vocabulary arrangement so every label has its own readable space at 360px.
+
+### Advisory
+
+1. **The Thesis section exceeds the specified one- or two-sentence form.** Its three sentences are clear and accurate, so this is not blocking on substance, but the first two can be compressed if the required figure repair touches the draft again.
+
+2. **Figure 60.6's accessible label omits both branch outcomes.** The visible branched flow now teaches the intended contrast, but `Flow`'s default `ariaLabel` describes only “family support.” Supplying a chapter-level `ariaLabel` that names capability and dependence would make the repaired idea available beyond the visible SVG.
+
+### Verification
+
+`npm run check` passed on 2026-07-16 after rerunning with access to the launchd keepalive fixture: queue/registry validation, prose lint, 36 pipeline tests, 124 app tests, typecheck and production build, and ESLint all completed successfully. The initial sandboxed run failed only because the launchd tests could not write their fixture under `~/Library/Application Support`; the unrestricted rerun passed those same tests.
