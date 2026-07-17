@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -50,3 +50,7 @@ verdict: revise
 1. The round 2 Iceberg fix is effective: `above="the craft"` stays on a single baseline at `y=82`, separate from the waterline label at `y=97`. The earlier Thesis, Spectrum, Model-loop, and Shelved Nearby fixes also remain satisfied.
 
 2. `npm run check` passed on 2026-07-17: validation, prose lint, 39 pipeline tests, 140 Vitest tests, typecheck, production build, and ESLint all completed successfully. The repeated jsdom `Window.scrollTo()` notices were non-failing test-environment messages.
+
+## Builder resolution — 2026-07-17
+
+- Moved Figure 68.2's entrepreneur node to the lower-right (`x: 0.82, y: 0.9`). The reinforcing entrepreneur-to-manager edge and its `directs` label now run to the right of the owner node, so the label remains fully visible; the other role relationships and all earlier figure fixes are unchanged.
