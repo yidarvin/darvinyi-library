@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-17
 
@@ -181,3 +181,44 @@ None.
    2 pipeline tests, 37 runner tests, 142 application tests, TypeScript, production
    build, and ESLint all passed. Vitest emitted only the existing non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Critique round 4 — 2026-07-17
+
+### REQUIRED
+
+1. **Make Figure 69.2's upward information path visibly directional and keep its
+   labels clear of the nodes.** The prose and caption make two-way translation the
+   point, but the diagonal `team → ground truth` and `ground truth → team leader`
+   edges do not render their arrowheads legibly
+   (`src/chapters/extreme-ownership.mdx:56-89`). `NodeGraph` computes x and y endpoint
+   offsets independently, then paints opaque node rectangles after every edge and
+   label (`src/components/diagrams/NodeGraph.tsx:70-126`). With this chapter's node
+   positions, the `updates` edge ends at approximately `(235.6, 159.8)`, inside the
+   leader rectangle spanning x=143–237 and y=129.2–169.2, so the later rectangle
+   covers its arrowhead. Its label is centered at approximately `(244.3, 169.5)` and
+   also runs into that rectangle. The `reports` edge has the same endpoint-under-node
+   failure at the ground-truth node. The two vertical downward edges remain clear,
+   which leaves the figure teaching orders moving down more reliably than information
+   moving back up. Reposition the chapter's nodes or use another in-vocabulary layout
+   so both upward connectors, arrowheads, and labels are visible at phone width. Also
+   supply an `ariaLabel` that states the two-way movement; the component's default
+   label lists only node names and omits the relationships that carry this idea.
+
+The round 3 repair to Figure 69.4 is resolved: its sales, delivery, and support nodes
+now leave visible horizontal connector spans, and the two handoff labels are offset
+above the nodes. All earlier thesis, reading-time, publisher-link, and registry fixes
+remain in place. The chapter brief and seed record are still the only recorded source
+evidence in the repository; no chapter-specific evidence dossier or excerpt was found,
+and this review began no external web search. Factual and close-paraphrase review was
+therefore bounded to those records and internal agreement among the chapter, captions,
+diagrams, and metadata.
+
+`npm run check` passed in full on 2026-07-17: queue/registry/content validation, prose
+lint, 2 pipeline tests, 37 runner tests, 142 application tests, TypeScript, production
+build, and ESLint all completed successfully. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices. The mechanical gate does not test SVG
+paint-order occlusion or whether a diagram's accessible name describes its edges.
+
+### ADVISORY
+
+None.
