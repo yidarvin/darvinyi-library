@@ -1,0 +1,228 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Matrix, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="good-strategy"
+  thesis="Strategy begins by naming the hard problem, choosing an approach to meet it, and aligning the work so each move strengthens the next."
+  minutes={7}
+/>
+
+## The thesis
+
+Strategy is not a wish list, a revenue target, or a polished statement of values. It is a
+coherent response to a consequential difficulty. Richard Rumelt's test is demanding and
+useful: make a diagnosis that brings the pivotal challenge into view, choose a guiding
+policy for dealing with it, then take mutually reinforcing action. If any link is absent,
+the organization may still be busy, but it has not yet made a strategy.
+
+## Why it matters
+
+Plans often fail before execution starts because they avoid the uncomfortable part: deciding
+what the actual obstacle is and what will be left aside. Broad ambitions can gather support,
+but they do not tell a team where to put scarce attention, money, or authority. A strategy
+creates that focus. It gives people a shared reason to decline attractive work that does not
+help with the problem at hand.
+
+## Start with the difficulty, not the desired ending
+
+An aspiration names a destination. A diagnosis explains the terrain between here and there.
+That explanation does not need to capture every fact. Its job is to simplify a messy setting
+enough to identify the obstacle that matters most. A hospital's challenge may be unreliable
+handoffs, not merely a desire for better care. A software company's challenge may be slow
+activation for a specific customer group, not a generic need to grow.
+
+A diagnosis is provisional, so it should be exposed to evidence and revised when the facts
+change. What it cannot be is decorative. If the description of the problem would fit every
+organization in the industry, it is too vague to guide a choice.
+
+<Figure id="65.1" caption="The stated ambition is visible; the diagnosis has to locate the drivers beneath it.">
+  <Iceberg
+    className="block w-full min-w-[400px]"
+    above="the ambition: grow faster"
+    waterlineLabel="what the plan says"
+    below={["where customers stall", "the capability that is missing", "the constraint that sets the pace", "the decisive obstacle"]}
+  />
+</Figure>
+
+## A guiding policy makes a choice about where to press
+
+Once the difficulty is clear, a guiding policy supplies an approach. It is neither a detailed
+task list nor a slogan. It says how the organization will gain traction: concentrate on one
+segment, simplify the product, protect a scarce capability, change the sequence of work, or
+otherwise exploit the shape of the situation. The test is whether the policy helps people
+make a hard tradeoff without waiting for another meeting.
+
+This is where strategy becomes uncomfortable. A policy that tries to preserve every option
+usually spreads effort across too many fronts. A useful policy narrows the field, not because
+narrowness is virtuous, but because attention and resources have limits.
+
+<Figure id="65.2" caption="A guiding policy shifts the organization from broad activity toward a chosen point of pressure.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="every option stays open"
+    right="one chosen approach"
+    marker={0.76}
+    markerLabel="guiding policy"
+    zones={[
+      { from: 0, to: 0.38, label: "effort spreads across unrelated work" },
+      { from: 0.6, to: 1, label: "resources reinforce one approach", accent: true },
+    ]}
+  />
+</Figure>
+
+## Coherence is a design problem
+
+Actions become strategic when they work together. A new pricing model, an incentive plan,
+and a service promise can each sound sensible on their own while pulling the organization in
+different directions. Coherence asks a stricter question: does each action make the others
+more likely to succeed? The answer should be visible in the operating design, not merely in
+the presentation that describes it.
+
+Coherence does not mean every decision is centrally controlled. It means local choices share
+an organizing logic. Teams can adapt to what they learn while still recognizing which
+dependencies they must protect and which actions would cancel the rest.
+
+<Figure id="65.3" caption="Coherent action forms a reinforcing system instead of a pile of independent initiatives.">
+  <NodeGraph
+    className="block w-full min-w-[400px]"
+    ariaLabel="A strategy links a chosen customer, a focused offer, a built capability, an operating measure, and feedback from customers into a reinforcing system."
+    nodes={[
+      { id: "customer", label: "chosen customer", x: 0.5, y: 0.08 },
+      { id: "offer", label: "focused offer", x: 0.16, y: 0.4 },
+      { id: "capability", label: "build the capability", x: 0.82, y: 0.4 },
+      { id: "measure", label: "operating measure", x: 0.8, y: 0.8 },
+      { id: "feedback", label: "customer feedback", x: 0.22, y: 0.8 },
+    ]}
+    edges={[
+      { from: "customer", to: "offer" },
+      { from: "customer", to: "capability" },
+      { from: "offer", to: "feedback" },
+      { from: "capability", to: "measure" },
+      { from: "measure", to: "feedback" },
+      { from: "feedback", to: "offer" },
+      { from: "feedback", to: "capability" },
+    ]}
+  />
+</Figure>
+
+## Bring a distant ambition into working range
+
+Long-term aims are important, but a team cannot act directly on "become the category leader"
+or "transform the service." Rumelt's useful move is the proximate objective: a demanding
+nearer target that sits within reach of current knowledge and resources. It turns an
+overwhelming ambition into the next solvable problem without pretending that the larger aim
+has disappeared.
+
+A good proximate objective is concrete enough to assign, observe, and learn from. It is not
+just an easier goal. It is the constraint whose removal opens the next move. For a company
+with poor onboarding, that might be getting a new customer to a first successful outcome in
+one session, before spending on broader acquisition.
+
+<Figure id="65.4" caption="A proximate objective turns a distant aspiration into a problem the team can solve and learn from now.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "distant ambition",
+      points: ["sets a direction", "contains many unknowns", "invites broad activity", "is hard to assign this week"],
+    }}
+    right={{
+      title: "proximate objective",
+      points: ["names the next constraint", "fits present evidence", "concentrates the work", "produces a result to study"],
+    }}
+  />
+</Figure>
+
+## Look for leverage before adding effort
+
+Leverage is a place where a limited intervention changes the situation more than the same
+effort elsewhere. It may come from timing, a bottleneck, an underused capability, an
+asymmetric cost, or the fact that one decision controls several downstream outcomes. Finding
+it requires judgment about the system, not optimism about working harder.
+
+The practical implication is to rank possible initiatives by their connection to the
+diagnosis. A visible project can still be peripheral. A less glamorous fix can be pivotal if
+it removes the constraint that holds several important activities back.
+
+<Figure id="65.5" caption="The strongest move addresses the diagnosed constraint and improves several linked outcomes.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "weak link", right: "strong link", label: "connection to the diagnosis" }}
+    yAxis={{ low: "isolated", high: "many", label: "outcomes improved" }}
+    quadrants={[
+      { title: "interesting, not strategic", note: "many effects, wrong problem" },
+      { title: "leverage point", note: "the move to test first" },
+      { title: "routine work", note: "little strategic effect" },
+      { title: "useful support", note: "helps, but does not shift much" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## The Model
+
+The strategy kernel is an argument in motion. Diagnosis identifies the challenge that calls
+for attention. Guiding policy selects the broad way of dealing with it. Coherent actions turn
+that choice into coordinated work. The order matters because actions without a policy become
+a list, and a policy without a diagnosis has no reason to be the right one.
+
+<Figure id="65.6" caption="The kernel moves from a clear reading of the challenge to a chosen approach and coordinated work.">
+  <Flow
+    className="block w-full min-w-[460px]"
+    steps={["diagnosis: name the pivotal challenge", "guiding policy: choose an approach", "coherent action: align the moves"]}
+    highlight={1}
+    ariaLabel="A strategy kernel: diagnose the pivotal challenge, choose a guiding policy, then align coherent actions."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write the diagnosis in plain language">
+Choose one decision that needs a strategy. Write three sentences: what outcome is at risk,
+what constraint is causing the risk, and what evidence makes that constraint more plausible
+than the alternatives. Ask someone close to the work where the diagnosis is vague or false.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Make one policy choice">
+Complete this sentence: "For the next ninety days, we will address [challenge] by
+[approach], rather than [two plausible alternatives]." The alternatives matter. They show
+what the policy commits resources away from, and they expose whether the choice is real.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Test the action set for contradiction">
+List the five most consequential actions already underway. For each, state which part of the
+guiding policy it serves and what other action it depends on. Pause, change, or end anything
+that cannot make that connection. A shorter list with clear reinforcement is stronger than a
+longer list with private conflicts.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Choose the nearest hard objective">
+Name the obstacle that must move before the larger ambition can become realistic. Set a result
+to reach in the next six to twelve weeks, appoint an owner, and decide what evidence will
+show that the obstacle really moved. When the result arrives, diagnose again before extending
+the plan.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The kernel is a discipline for thinking, not a substitute for knowledge of a market,
+technology, or institution. A neat diagnosis can still be wrong, and coherence can make a
+team efficiently pursue the wrong policy. Treat the framework as a set of claims to test with
+customers, operators, and evidence. It also does not settle every legitimate objective. A
+strategy can describe how to pursue a choice; leaders still need judgment about whose
+interests the choice serves and which constraints should not be traded away.
+</Callout>
+
+## If you remember one thing
+
+Strategy earns the name when it confronts a real obstacle, makes a consequential choice about
+how to meet it, and organizes action so the pieces reinforce one another. Everything else may
+be useful planning, but it is not the same thing.
+
+<ShelvedNearby
+  related={["good-to-great", "zero-to-one"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/208668/good-strategy-bad-strategy-by-richard-rumelt/"
+  buyLabel="Good Strategy Bad Strategy by Richard Rumelt"
+/>
