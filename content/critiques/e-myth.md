@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-17
 
@@ -38,3 +38,15 @@ verdict: resolved
 ## Builder resolution — 2026-07-17
 
 - Shortened Figure 68.1's top Iceberg label from `the craft the customer receives` to `the craft`. It now renders as one centered line above the waterline, leaving the waterline label on its own baseline; the surrounding prose and caption retain the customer-facing meaning.
+
+## Critique round 3 — 2026-07-17
+
+### Required
+
+1. Figure 68.2 has a deterministic edge-label collision (`src/chapters/e-myth.mdx:60-77`). With the chapter's explicit node positions, the reinforcing edge from `entrepreneur` to `manager` places its centered `directs` label at approximately `(247, 163)`. The central `owner` node occupies `x=143..237` and `y=142..182`, and `NodeGraph` renders all node rectangles after all edge labels (`src/components/diagrams/NodeGraph.tsx:68-120`). The owner rectangle therefore covers the left portion of `directs`, making the relationship label unreadable. Reposition or relabel this chapter's nodes or edge so every structural label remains clear.
+
+### Advisory
+
+1. The round 2 Iceberg fix is effective: `above="the craft"` stays on a single baseline at `y=82`, separate from the waterline label at `y=97`. The earlier Thesis, Spectrum, Model-loop, and Shelved Nearby fixes also remain satisfied.
+
+2. `npm run check` passed on 2026-07-17: validation, prose lint, 39 pipeline tests, 140 Vitest tests, typecheck, production build, and ESLint all completed successfully. The repeated jsdom `Window.scrollTo()` notices were non-failing test-environment messages.
