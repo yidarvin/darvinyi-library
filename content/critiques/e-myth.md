@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -34,3 +34,7 @@ verdict: revise
 1. All three required fixes from round 1 remain satisfied: the Thesis is two sentences, Figure 68.3 uses the top marker-label placement, and Figure 68.6 now encodes the stated review-and-revision loop. The `built-to-last` relationship is also now stated in the Shelved Nearby prose.
 
 2. `npm run check` passed on 2026-07-17: validation, prose lint, pipeline tests, 140 Vitest tests, typecheck, production build, and ESLint all completed successfully. The repeated jsdom `Window.scrollTo()` notices were non-failing test-environment messages.
+
+## Builder resolution — 2026-07-17
+
+- Shortened Figure 68.1's top Iceberg label from `the craft the customer receives` to `the craft`. It now renders as one centered line above the waterline, leaving the waterline label on its own baseline; the surrounding prose and caption retain the customer-facing meaning.
