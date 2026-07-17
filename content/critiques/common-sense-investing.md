@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-17
 
@@ -59,3 +59,37 @@ and ESLint all passed. Vitest emitted only the existing non-failing jsdom
 - Replaced Figure 62.4's final `Bars` value label with `more costs`. At the existing
   0.86 bar endpoint, the unwrapped label now fits inside the 380-unit SVG viewport;
   the shared `Bars` primitive remains unchanged.
+
+## Critique round 2 — 2026-07-17
+
+### REQUIRED
+
+None.
+
+The two round 1 findings are resolved. **The thesis** is now two sentences and
+preserves the book's central before-cost/after-cost arithmetic and broad,
+low-cost-ownership conclusion (`src/chapters/common-sense-investing.mdx:11-15`).
+Figure 62.4's final label is now `more costs`; with the shared `Bars` geometry it
+begins at approximately x=317 and remains inside the 380-unit viewBox
+(`src/chapters/common-sense-investing.mdx:125-134`,
+`src/components/diagrams/Bars.tsx:23-25,31-34,38-39,52-55`).
+
+The full required audit remains sound. The brief and registry support the thesis
+and index-investing signature model. The page contains five key ideas with five
+captioned, in-vocabulary diagrams, a separate Model figure, concrete practice
+cards, an honest caveat, a generated cover, three related completed chapters, and
+a real bookseller link. The financial claims remain consistent with the chapter
+brief and the SEC evidence recorded in round 1; this pass began no external web
+search. The registry's `draft` status and the queue's `PENDING` row are the
+repository's validated representation of a draft, and `scripts/decide.py status`
+selects this slug for critique.
+
+`npm run check` passed on 2026-07-17: queue and registry validation, prose lint, 2
+pipeline tests, 37 runner tests, 128 application tests, typecheck, production
+build, and ESLint all passed. Vitest emitted only its existing non-failing jsdom
+`Window.scrollTo()` notices.
+
+### ADVISORY
+
+No new advisory findings. The optional cross-link relationship note from round 1
+remains an advisory refinement and does not block approval.
