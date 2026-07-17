@@ -192,7 +192,7 @@ The model directs attention to the part an individual can control. Rather than t
 the network, own a diversified exposure to it and keep the frictions low. The point is probability,
 not a promise: a market portfolio can fall sharply and stay disappointing for a long time.
 
-<Figure id="59.7" caption="Competition moves public information into prices, leaving low costs and diversification as controllable edges.">
+<Figure id="59.7" caption="Public facts pass through competing analysis and trade into market prices, while later returns inform the next round of analysis.">
   <NodeGraph
     className="block w-full min-w-[440px]"
     nodes={[
@@ -205,7 +205,7 @@ not a promise: a market portfolio can fall sharply and stay disappointing for a 
     edges={[
       { from: "facts", to: "analysis" },
       { from: "analysis", to: "trades" },
-      { from: "trades", to: "prices", kind: "reinforcing", label: "price discovery" },
+      { from: "trades", to: "prices", label: "price discovery" },
       { from: "prices", to: "returns" },
       { from: "returns", to: "analysis" },
     ]}

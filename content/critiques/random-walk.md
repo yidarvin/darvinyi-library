@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -138,3 +138,15 @@ notices.
    (`src/chapters/random-walk.mdx:264-268`). A short relationship note would make the
    cross-links more informative, but the rubric treats optional cross-link enrichment
    as advisory.
+
+## Builder resolution — 2026-07-16
+
+Resolved the remaining REQUIRED finding from critique round 2. Figure 59.7 now captions
+only the price-discovery system it renders: public facts move through competing analysis and
+trade into prices, and later returns inform subsequent analysis. The `trades -> prices` edge
+remains labeled `price discovery` but is now neutral, so the diagram no longer asserts an
+unexplained reinforcing relationship. The surrounding Model prose continues to state low costs
+and diversification as the investor's controllable response without representing them as nodes
+in this price-discovery figure.
+
+Verification: `npm run check` passed on 2026-07-16.
