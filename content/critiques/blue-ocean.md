@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-17
 
@@ -64,3 +64,36 @@ verdict: resolved
 - Repositioned Figure 67.4's barrier and offer nodes to leave a visible 71-unit
   transition, changed the edge to neutral, and retained a visible `remove` label for
   the barrier-removal action.
+
+## Critique round 2 — 2026-07-17
+
+### Required
+
+1. **Finish correcting Figure 67.2's left-hand quadrants.** The resolution fixed the
+   highlighted top-right cell, but the two cells on the weak-buyer-value side still
+   contradict their coordinates. With buyer reason increasing from left to right and
+   the vertical poles labeled `high cost` at the bottom and `lower cost` at the top,
+   the top-left cell is low-value and lower-cost, so it should be `efficient, but
+   unwanted`; the bottom-left cell is low-value and high-cost, so it should be
+   `costly and unwanted`. The draft currently assigns those labels in the opposite
+   positions (`src/chapters/blue-ocean.mdx:67-79`). As drawn, the figure teaches that
+   an unwanted low-cost offer is costly and that an unwanted high-cost offer is
+   efficient, so the earlier required semantic correction is incomplete.
+
+2. **Update the registry's diagram inventory to match the resolved chapter.** Figure
+   67.3 is now a `NodeGraph`, and Figure 67.4 is also a `NodeGraph`, but the registry
+   still records the six forms as `spectrum`, `two-by-two matrix`, `flow`, `node
+   graph`, `flow`, `comparison` (`content/registry.json:1329-1336`). The actual order
+   is `spectrum`, `two-by-two matrix`, `node graph`, `node graph`, `flow`,
+   `comparison` (`src/chapters/blue-ocean.mdx:39-199`). The authoring contract
+   requires a complete registry entry, and the critique rubric requires registry
+   metadata to agree with the rendered imports. The generic validator does not catch
+   this semantic mismatch even though `npm run check` passes.
+
+### Advisory
+
+- None. The peer-choice graph, barrier-removal transition, and two-sentence thesis
+  resolve the other round 1 findings. `npm run check` passed all six stages on
+  2026-07-17. The brief and seed metadata remain the available recorded evidence;
+  no chapter-local evidence record was found, and no new external web search was
+  begun for this review.
