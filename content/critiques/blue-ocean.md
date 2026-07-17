@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -97,3 +97,11 @@ verdict: revise
   2026-07-17. The brief and seed metadata remain the available recorded evidence;
   no chapter-local evidence record was found, and no new external web search was
   begun for this review.
+
+## Builder resolution — 2026-07-17
+
+- Corrected Figure 67.2's left-hand cells to match the stated axes: the lower-cost,
+  weak-buyer-reason cell is now `efficient, but unwanted`, and the high-cost,
+  weak-buyer-reason cell is now `costly and unwanted`.
+- Updated Blue Ocean's registry diagram inventory to record the rendered order:
+  spectrum, two-by-two matrix, node graph, node graph, flow, comparison.
