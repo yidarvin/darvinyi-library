@@ -13,12 +13,10 @@ import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../com
 
 ## The thesis
 
-Gerber's central diagnosis is simple: skill at a trade does not automatically create skill at
-building the business that sells that trade. When the owner remains the person who must solve,
-make, sell, check, and rescue everything, growth only adds demands to the same limited person.
-The alternative is to treat the business as a design problem. Define the result it should deliver,
-make the work teachable, and build the roles and routines that can deliver it without the founder
-at every hinge.
+Skill at a trade is not the same as skill at building the business that sells it: when the owner
+must solve, make, sell, check, and rescue every detail, growth only multiplies demand on one
+person. A durable small business defines its customer result and builds teachable roles and
+routines that can deliver it without the founder at every hinge.
 
 ## Why it matters
 
@@ -95,6 +93,7 @@ the system instead of continually substituting for it.
     right="system-supported"
     marker={0.76}
     markerLabel="documented handoffs"
+    markerLabelPlacement="top"
     zones={[
       { from: 0, to: 0.35, label: "every exception returns to the founder" },
       { from: 0.58, to: 1, label: "people can deliver a shared promise", accent: true },
@@ -149,14 +148,15 @@ failure as another private obligation. The model is a loop because a business is
 Each pass should make service more dependable and the owner less necessary to ordinary delivery.
 
 <Figure id="68.6" caption="Work on the business by turning a promise into a system, then using results to improve the system rather than carrying it alone.">
-  <div className="min-w-[800px] space-y-6">
-    <Flow
-      className="block w-full"
-      steps={["choose the customer promise", "design roles and routines", "train and run the work", "review the experience"]}
-      highlight={1}
+  <div className="space-y-6">
+    <ProcessLoop
+      className="block w-full min-w-[440px]"
+      stages={["choose the customer promise", "design roles and routines", "train and run the work", "review and revise the system"]}
+      compoundingEdge={3}
+      centerLabel="work on the business"
     />
     <Compare
-      className="block w-full"
+      className="block w-full min-w-[384px]"
       favor="right"
       left={{
         title: "work in it",
@@ -216,7 +216,9 @@ clear promise and a repeatable way for other people to keep it, then spend your 
 improving that way of working.
 
 Good to Great examines how disciplined organizations sustain focus, while The Lean Startup supplies
-a complementary loop for testing a business idea before committing heavily to it.
+a complementary loop for testing a business idea before committing heavily to it. Built to Last
+considers the longer-lived institutional version of the same question: how an organization can
+remain coherent while it changes.
 
 <ShelvedNearby
   related={["good-to-great", "lean-startup", "built-to-last"]}

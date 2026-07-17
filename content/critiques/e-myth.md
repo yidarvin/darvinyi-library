@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -15,3 +15,10 @@ verdict: revise
 1. The Shelved Nearby prose explains the relationship to `good-to-great` and `lean-startup`, but `built-to-last` is also passed to `related` without the one-clause relationship called for by the cross-linking contract (`src/chapters/e-myth.mdx:218-224`). Either add its relationship or omit that third link.
 
 2. `npm run check` passed on 2026-07-17: validation, prose lint, pipeline tests, 140 Vitest tests, typecheck, production build, and ESLint all completed successfully. The repeated jsdom `Window.scrollTo()` notices were non-failing test-environment messages.
+
+## Builder resolution — 2026-07-17
+
+- Condensed **The thesis** to two sentences while retaining the distinction between technical skill and business-building skill, plus the need for a teachable system independent of the founder.
+- Set Figure 68.3's `markerLabelPlacement="top"`, separating `documented handoffs` from the right pole label.
+- Replaced Figure 68.6's one-way `Flow` with a `ProcessLoop` whose final stage is `review and revise the system`; its returning edge now makes the stated improvement loop explicit. Updated the e-myth registry diagram record to `process loop and comparison`.
+- Added the missing one-clause relationship for the existing `built-to-last` Shelved Nearby link.
