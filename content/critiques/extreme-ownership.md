@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-17
 
@@ -125,3 +125,43 @@ None.
    the foreground terminal was interrupted during the existing runner regression test
    `test_interrupted_validation_keeps_the_transaction_restartable` before the suite reported a
    final result. No chapter-specific gate reported a failure.
+
+## Critique round 3 — 2026-07-17
+
+### REQUIRED
+
+1. **Make Figure 69.4's two team-to-team handoffs visible rather than placing them
+   underneath the nodes.** The replacement graph puts sales, delivery, and support at
+   normalized x positions `0.16`, `0.5`, and `0.84`
+   (`src/chapters/extreme-ownership.mdx:136-150`). Under `NodeGraph`'s placement math,
+   sales and delivery therefore have centers at x=92.76 and x=190; their 94-pixel
+   node rectangles end and begin at x=139.76 and x=143, leaving only a 3.24-pixel
+   horizontal seam. Delivery and support have the same geometry. The component then
+   centers each edge label in that seam, shortens both ends of the connector, and
+   renders all opaque node rectangles after the edges and labels
+   (`src/components/diagrams/NodeGraph.tsx:39-51,68-122`). Consequently, the later
+   rectangles cover substantial portions of `feasible promise` and `handoff`, as well
+   as the connectors and arrowheads. The figure still does not visibly teach the two
+   dependencies that justified replacing the original concentric diagram. Space the
+   nodes far enough apart, or use another in-vocabulary layout, so both directional
+   handoffs and their labels remain unobscured at phone width.
+
+The round 2 registry correction is resolved, and the other round 1 fixes remain in
+place: the thesis is two sentences, the Hero badge is 10 minutes, and the footer uses
+Macmillan's publisher page. The chapter brief and seed record remain the only recorded
+source evidence in the repository; no chapter-specific evidence dossier or excerpt was
+found, and this review began no external web search. Factual and close-paraphrase review
+was therefore bounded to those records and internal agreement among the chapter,
+captions, diagrams, and metadata. A browser-backed screenshot was unavailable in this
+session, so the Figure 69.4 finding is based on the component's deterministic SVG
+coordinates and paint order, not a claimed screenshot observation.
+
+`npm run check` passed in full on 2026-07-17: queue/registry/content validation, prose
+lint, 2 pipeline tests, 37 runner tests, 142 application tests, TypeScript, production
+build, and ESLint all completed successfully. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices. The mechanical gate renders the chapter
+but does not test SVG label occlusion or connector visibility.
+
+### ADVISORY
+
+None.
