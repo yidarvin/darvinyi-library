@@ -1187,7 +1187,18 @@
       "subtitle": "Thomas Stanley and William Danko · 1996",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Wealth is the margin between what a household earns and what it consumes, kept and directed long enough to create independence rather than display.",
+      "framework": "No single signature model; six patterns of wealth accumulation are synthesized as key ideas.",
+      "diagrams": [
+        "iceberg",
+        "flow",
+        "spectrum",
+        "conceptual bars",
+        "node graph",
+        "process loop"
+      ]
     },
     {
       "num": 61,

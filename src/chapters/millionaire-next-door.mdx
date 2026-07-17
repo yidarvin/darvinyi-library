@@ -1,0 +1,227 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Flow, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="millionaire-next-door"
+  thesis="Wealth is the margin between what a household earns and what it consumes, kept and directed long enough to create independence rather than display."
+  minutes={8}
+/>
+
+## The thesis
+
+Stanley and Danko turn the usual picture of a millionaire inside out. Their subject is not
+the small group whose wealth advertises itself, but households that convert a dependable
+surplus into assets while keeping their standard of living below what income could support.
+The lasting lesson is simple: income is a resource to allocate, while wealth is what remains
+after allocation has protected saving, investing, and choice.
+
+## Why it matters
+
+High income can create a convincing appearance of prosperity without creating much financial
+room. A bigger house, newer car, and fuller calendar of expensive obligations may all be
+affordable this month, yet make the next month less flexible. The book matters because it
+asks a harder question than whether a household can buy something: what does the purchase
+leave available for the future?
+
+## Wealth is mostly invisible
+
+What other people can see is spending. They can see a car, a neighborhood, a watch, or a
+vacation. They cannot see the emergency reserve, the paid-down debt, the diversified account,
+or the ability to walk away from a bad job. The book's central correction is to stop treating
+visible consumption as evidence of financial strength. A purchase can be enjoyable and still
+be a use of capital, not proof that capital is abundant.
+
+This is not an argument for a joyless life or for judging another household's choices. It is a
+measurement rule. When comparing two households, do not infer the balance sheet from the
+display. Look instead for the resources that keep creating options after the display is gone.
+
+<Figure id="60.1" caption="Status is easy to observe; the reserves that create freedom usually are not.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the lifestyle on display"
+    waterlineLabel="what other people can see"
+    below={["cash reserve", "owned investments", "low recurring obligations"]}
+  />
+</Figure>
+
+## A high income needs a job before it disappears
+
+Earning more helps, but it does not by itself settle the wealth question. Without a prior plan,
+new income tends to be claimed by new choices: a higher fixed payment, a more expensive habit,
+or a purchase that now feels normal. Stanley and Danko emphasize the households that decide
+where money goes before the market gives it another destination. They give time, spending,
+and investing deliberate boundaries.
+
+The useful unit is the surplus, however modest it starts. It can first make a household safer,
+then reduce costly debt, then fund long-term ownership. The sequence varies with income,
+obligations, and local costs. Its logic does not: money set aside on purpose has a chance to
+become capital; money left unassigned is easy to spend by accident.
+
+<Figure id="60.2" caption="Income becomes wealth only when a planned surplus is kept in the path.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["earn income", "set spending bounds", "protect a surplus", "own productive assets"]}
+    highlight={2}
+  />
+</Figure>
+
+## Financial independence is a better target than status
+
+The book contrasts two motives that can pull the same income in opposite directions. Status
+spending asks how a choice will read to other people. Financial independence asks how a choice
+will change the household's ability to withstand a shock, change work, or support a value it
+cares about. The first motive has no natural finish line because the comparison group can
+always spend more. The second can be named in practical terms: fewer fixed costs, a reserve,
+and assets that make a paycheck less tyrannical.
+
+Most real decisions contain both motives. A home can be a place to belong and a large
+commitment. A car can be useful and expressive. The point is not to pretend status never
+matters. It is to notice when it is silently spending money that was meant to buy latitude.
+
+<Figure id="60.3" caption="The more a decision serves independence, the less it must perform for an audience.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="status signal"
+    right="financial independence"
+    marker={0.72}
+    markerLabel="ask what it preserves"
+    zones={[
+      { from: 0, to: 0.34, label: "comparison drives the choice" },
+      { from: 0.58, to: 1, label: "resilience and options", accent: true },
+    ]}
+  />
+</Figure>
+
+## Budgeting is allocation, not deprivation
+
+In this book, a budget is not a punishment for spending. It is the device that lets a household
+put scarce money behind its priorities before small decisions consume it. The authors found a
+pattern of deliberate allocation among the affluent people they studied: they knew what they
+spent, made room for investment, and did not confuse a large income with permission to leave
+the numbers vague.
+
+For a reader, the productive question is not whether every dollar is optimized. It is whether
+the major categories match the life being built. If a household says it wants mobility, safety,
+or eventual freedom, some portion of cash has to be reserved for it. A simple recurring review
+is often more useful than a complicated plan that is never opened again.
+
+<Figure id="60.4" caption="A plan gives each part of income a role before consumption takes the whole amount.">
+  <Bars
+    className="block w-full min-w-[380px]"
+    items={[
+      { label: "current needs", value: 0.72, valueLabel: "keep life running" },
+      { label: "future costs", value: 0.4, valueLabel: "prepare" },
+      { label: "saving and ownership", value: 0.58, accent: true, valueLabel: "retain" },
+    ]}
+  />
+</Figure>
+
+## Ownership rewards a useful niche
+
+The authors also noticed how often wealth in their sample was tied to owning a business or a
+stake in one. The lesson is not that every reader should become an entrepreneur. Starting a
+business concentrates risk, and employment can be an excellent route to a stable surplus. The
+more portable idea is to seek work whose value is clear to a customer, then turn its proceeds
+into ownership rather than treating every increase as a cue to upgrade the lifestyle.
+
+A useful niche can be unglamorous. It may be a local service, a specialized trade, or a small
+operation that solves a recurring problem. What matters is the connection between value
+delivered, income received, and the disciplined retention of some of that income. Entrepreneurship
+is one route through the map, not the map itself.
+
+<Figure id="60.5" caption="Useful work can create income, but retention is what connects income to durable ownership.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "need", label: "a customer need", x: 0.5, y: 0.08 },
+      { id: "work", label: "useful niche", x: 0.15, y: 0.48 },
+      { id: "income", label: "income", x: 0.85, y: 0.48 },
+      { id: "ownership", label: "retained ownership", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "need", to: "work" },
+      { from: "work", to: "income" },
+      { from: "income", to: "ownership", kind: "reinforcing", label: "retain" },
+      { from: "ownership", to: "work", kind: "reinforcing", label: "room to choose" },
+    ]}
+  />
+</Figure>
+
+## Help should build capability, not a permanent claim
+
+One of the book's sharper arguments concerns parents and adult children. Large or open-ended
+subsidies can make a lifestyle feel normal before the recipient can support it, while reducing
+the parents' own capacity to save. The authors call attention to the incentives created by
+recurring rescue. Their practical preference is help that supports competence, such as
+education, a defined launch expense, or guidance with a clear boundary.
+
+Families are not balance sheets, and care is not a mistake. Illness, disability, caregiving,
+and unequal opportunity can make support necessary and loving. The insight is narrower: when
+aid is intended to build independence, its terms should make that outcome more likely rather
+than quietly financing a dependency that neither side chose.
+
+<Figure id="60.6" caption="Support can reinforce capability, or it can quietly turn into a recurring obligation.">
+  <ProcessLoop
+    className="block w-full min-w-[380px]"
+    stages={["defined help", "new capability", "greater self-support", "more family latitude"]}
+    compoundingEdge={3}
+    centerLabel="independence loop"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Take one private measure">
+Write down the number that would make your next work decision less desperate: a month of
+essential expenses, a debt balance paid off, or a first investment contribution. Choose a
+measure that reflects flexibility, not how prosperous the household appears from outside.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Give the next raise a destination">
+Before more income arrives, decide what fraction will cover a genuine need, what fraction will
+improve safety, and what fraction will go to long-term ownership. Put the decision on the
+calendar with the first paycheck, when it is still easy to keep.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Review the commitments, not just the purchases">
+List the recurring costs created by three recent decisions. For each one, ask what future
+option it narrows. Keep the commitments that serve a real priority, and identify one that can
+be reduced without making life smaller in a way you would regret.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make family help explicit">
+If you give or receive support within a family, discuss its purpose, amount, duration, and
+what would signal that it has worked. The conversation can be kind and still protect both
+people from assumptions that become hard to unwind.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+This is a portrait of a particular group, not a universal law of wealth. The authors' research
+grew from consumer studies and included a survey conducted from 1995 to 1996 of about 1,000 people, according to
+William Danko's contemporaneous University at Albany account. It identifies associations in
+that sample; it cannot prove that frugality or self-employment alone caused anyone's wealth.
+The dollar threshold, housing market, tax rules, and access to secure work have changed since
+1996. More importantly, saving behavior does not cancel unequal starting wealth, discrimination,
+health costs, caregiving demands, debt, or low wages. Treat the book as a corrective to status
+confusion and a prompt for household choices, not as an explanation for every financial outcome
+or a substitute for personal financial advice.
+</Callout>
+
+## If you remember one thing
+
+Wealth is not the life you can display. It is the portion of your resources you keep, direct,
+and protect until it gives you more choices than your monthly income alone can provide.
+
+For more on the behavior behind saving, see [The Psychology of Money](/psychology-of-money).
+[Rich Dad Poor Dad](/rich-dad-poor-dad) supplies a contrasting cash-flow lens, while [The
+Intelligent Investor](/intelligent-investor) carries the question from household surplus into
+investment discipline.
+
+<ShelvedNearby
+  related={["psychology-of-money", "rich-dad-poor-dad", "intelligent-investor"]}
+  buyUrl="https://www.simonandschuster.com/books/The-Millionaire-Next-Door/Thomas-J-Stanley/9781630762506"
+  buyLabel="The Millionaire Next Door by Thomas J. Stanley and William D. Danko"
+/>
