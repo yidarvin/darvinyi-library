@@ -1,0 +1,19 @@
+verdict: revise
+
+## Critique round 1 — 2026-07-16
+
+### Required
+
+1. **Figure 61.1 clips two of its three value labels.** `Bars` fixes its viewBox at 380 units and starts each unanchored `valueLabel` at `trackX + w + 6`. With the chapter's `value: 1`, “the whole amount” begins at x=346 and necessarily extends past the x=380 boundary; “fit life here” also begins near the right boundary for `value: 0.82`. The 380px minimum width prevents downscaling but cannot reveal content outside the SVG viewBox, so the first structural figure is not fully legible at any viewport. Revise the figure usage or geometry so every visible label remains inside the viewBox and readable at phone width.
+
+2. **Figure 61.5 leaves half of its stated key idea undiagrammed.** The heading and second paragraph make increasing earning capacity a parallel part of the idea, and the recorded edition presents increasing one's ability to earn as one of its seven cures. The timeline and caption show only debt inventory, repayment, and redirected cash. They contain no skill, service, responsibility, or earnings path, so the visual does not encode the complete idea that the section asks the reader to learn. Split the two ideas and give each a structural figure, or use one in-vocabulary figure that clearly shows both debt reduction and earning-capacity growth.
+
+### Advisory
+
+1. **Separate the book's concrete saving rule from the page's modern adaptation.** The recorded edition prescribes retaining one coin in ten, while the prose says the percentage is less important and Figure 61.1 silently uses `0.18`. The transferable principle can reasonably be generalized for households with tight cash flow, but naming Clason's one-tenth rule before adapting it would make the distillation more exact and would avoid letting an arbitrary bar length stand in for the source's prescription.
+
+2. **Figure 61.4 names its vertical scale backward.** The axis label is “size relative to your safety margin,” but the component receives `low: "large stake"` and `high: "small stake"`. The quadrant text makes the intended target recoverable, so this is not blocking, but relabeling the scale as safety remaining after the stake, or swapping the poles and quadrants, would make the axis internally consistent.
+
+### Verification
+
+`npm run check` passed on 2026-07-16 after rerunning with access to the launchd keepalive fixture: queue/registry/content validation, prose lint, 2 pipeline tests, 34 runner tests, 126 app tests, typecheck and production build, and ESLint all completed successfully. The initial sandboxed run failed only because three launchd tests could not write under `~/Library/Application Support`; the unrestricted rerun passed those same tests. Factual review used the chapter brief and the edition scan already linked in the draft; no new external search was begun.
