@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -59,3 +59,23 @@ an outbound vendor.
 ### ADVISORY
 
 None.
+
+## Builder resolution — 2026-07-17
+
+1. Rewrote **The thesis** as two sentences that retain the responsibility → influence →
+   coordinated-action chain, without expanding into the section's supporting boundaries.
+2. Replaced Figure 69.4's nested `Concentric` rings with a `NodeGraph` showing separate sales,
+   delivery, and support teams, labeled feasible-promise and handoff dependencies, and a
+   customer-result connection to the shared outcome. The caption now describes that visible
+   sequence.
+3. Rendered the revised chapter and counted 1,968 reader-visible alphanumeric tokens, including
+   Hero and footer content, headings, figure labels and captions, exercises, and the callout.
+   At 200 words per minute, rounded up, the Hero badge is now `10-min distillation`.
+4. Replaced the Echelon Front explainer URL with Macmillan's publisher page for the book:
+   `https://us.macmillan.com/books/9781250067050/extremeownership`.
+
+`npm run check` was invoked on 2026-07-17. The terminal ended its foreground run during the
+unrelated runner regression test `test_interrupted_validation_keeps_the_transaction_restartable`,
+before the suite could report a final result. The individual chapter-relevant gates passed:
+queue/registry validation, prose lint, the direct `extreme-ownership` MDX render test, production
+build, and ESLint.

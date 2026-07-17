@@ -3,22 +3,20 @@ import { ExerciseCard } from "../components/ExerciseCard";
 import { Figure } from "../components/Figure";
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, Flow, Iceberg, NodeGraph, ProcessLoop, Pyramid } from "../components/diagrams";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Pyramid } from "../components/diagrams";
 
 <Hero
   slug="extreme-ownership"
   thesis="Leadership starts when the person responsible for the outcome stops searching for someone to fault and starts finding the next move the team can make."
-  minutes={9}
+  minutes={10}
 />
 
 ## The thesis
 
-Willink and Babin make responsibility unusually concrete. The leader accepts that the team's
-result, its clarity, its preparation, and its coordination are part of their problem to solve.
-That does not make every setback their personal fault. It makes blame a poor stopping point.
-Once a leader asks what they can change, explain, remove, or decide, the team has a path back
-to action. Ownership travels upward, downward, and sideways through the organization, because
-the person closest to a problem rarely has every condition needed to fix it alone.
+Extreme ownership asks leaders to treat every part of their team's result as a problem they must
+help solve, rather than a reason to locate fault elsewhere. By finding their sphere of influence,
+clarifying intent, and coordinating the next move, they turn responsibility into action the whole
+team can take.
 
 ## Why it matters
 
@@ -135,12 +133,21 @@ It means disagreement should be resolved against the common outcome, rather than
 local interest. Teams cooperate more reliably when they can see both what they contribute and
 who needs their work next.
 
-<Figure id="69.4" caption="Separate teams help the mission when their handoffs point toward one shared outcome.">
-  <Concentric
+<Figure id="69.4" caption="Sales, delivery, and support pass an achievable promise toward one shared customer outcome.">
+  <NodeGraph
     className="block w-full min-w-[400px]"
-    rings={[{ label: "shared outcome" }, { label: "team priorities" }, { label: "local tasks" }]}
-    highlight={0}
-    externalLabel="pressure: local targets, time, and scarce capacity"
+    ariaLabel="A coordination network where sales passes a feasible promise to delivery, delivery hands work to support, and support carries the customer result toward the shared outcome."
+    nodes={[
+      { id: "outcome", label: "shared customer outcome", x: 0.5, y: 0.08 },
+      { id: "sales", label: "sales team", x: 0.16, y: 0.68 },
+      { id: "delivery", label: "delivery team", x: 0.5, y: 0.82 },
+      { id: "support", label: "support team", x: 0.84, y: 0.68 },
+    ]}
+    edges={[
+      { from: "sales", to: "delivery", label: "feasible promise" },
+      { from: "delivery", to: "support", label: "handoff" },
+      { from: "support", to: "outcome", kind: "reinforcing", label: "customer result" },
+    ]}
   />
 </Figure>
 
@@ -263,6 +270,6 @@ Revisited shows how responsibility can be made durable through roles and repeata
 
 <ShelvedNearby
   related={["good-strategy", "dare-to-lead", "e-myth"]}
-  buyUrl="https://echelonfront.com/what-is-extreme-ownership/"
+  buyUrl="https://us.macmillan.com/books/9781250067050/extremeownership"
   buyLabel="Extreme Ownership by Jocko Willink and Leif Babin"
 />
