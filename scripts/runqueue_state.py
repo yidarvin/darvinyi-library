@@ -76,10 +76,13 @@ def command_begin(args: argparse.Namespace, root: Path) -> None:
     path = transaction_path(root)
     if path.exists():
         raise SystemExit(f"transaction already exists: {path}")
+    publish_enabled = args.publish_enabled
+    if publish_enabled is None:
+        publish_enabled = args.push_required
     atomic_write(
         path,
         {
-            "version": 1,
+            "version": 2,
             "phase": "agent",
             "action": args.action,
             "slug": args.slug,
@@ -87,6 +90,7 @@ def command_begin(args: argparse.Namespace, root: Path) -> None:
             "base_head": args.base_head,
             "commit_head": "",
             "push_required": args.push_required == "true",
+            "publish_enabled": publish_enabled == "true",
             "push_remote": args.push_remote,
             "push_ref": args.push_ref,
             "check_required": args.check_required == "true",
@@ -111,6 +115,8 @@ def command_phase(args: argparse.Namespace, root: Path) -> None:
         value["attempt"] = args.attempt
     if args.push_attempt is not None:
         value["push_attempt"] = args.push_attempt
+    if args.push_required is not None:
+        value["push_required"] = args.push_required == "true"
     if args.push_remote is not None:
         value["push_remote"] = args.push_remote
     if args.push_ref is not None:
@@ -174,6 +180,7 @@ def command_txn_env(_args: argparse.Namespace, root: Path) -> None:
     print("TXN_PRESENT=1")
     defaults: dict[str, Any] = {
         "push_required": True,
+        "publish_enabled": value.get("push_required", True),
         "check_required": True,
         "attempt": 0,
         "push_attempt": 0,
@@ -189,6 +196,7 @@ def command_txn_env(_args: argparse.Namespace, root: Path) -> None:
         ("base_head", "TXN_BASE_HEAD"),
         ("commit_head", "TXN_COMMIT_HEAD"),
         ("push_required", "TXN_PUSH_REQUIRED"),
+        ("publish_enabled", "TXN_PUBLISH_ENABLED"),
         ("check_required", "TXN_CHECK_REQUIRED"),
         ("attempt", "TXN_ATTEMPT"),
         ("push_attempt", "TXN_PUSH_ATTEMPT"),
@@ -231,6 +239,7 @@ def parser() -> argparse.ArgumentParser:
     begin.add_argument("--title", required=True)
     begin.add_argument("--base-head", required=True)
     begin.add_argument("--push-required", choices=("true", "false"), default="true")
+    begin.add_argument("--publish-enabled", choices=("true", "false"))
     begin.add_argument("--push-remote", default="")
     begin.add_argument("--push-ref", default="")
     begin.add_argument("--check-required", choices=("true", "false"), default="true")
@@ -241,6 +250,7 @@ def parser() -> argparse.ArgumentParser:
     phase.add_argument("--commit-head")
     phase.add_argument("--attempt", type=int)
     phase.add_argument("--push-attempt", type=int)
+    phase.add_argument("--push-required", choices=("true", "false"))
     phase.add_argument("--push-remote")
     phase.add_argument("--push-ref")
     phase.add_argument("--halt-reason")

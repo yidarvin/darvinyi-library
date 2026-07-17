@@ -2,8 +2,9 @@
 # runqueue.sh -- durable Codex build, critique, and resolution loop.
 #
 # Terra builds and resolves. Sol independently critiques. The driver journals
-# every action before model work, validates it, commits it, and pushes it before
-# beginning another action. Interrupted ready/committed work is recovered first.
+# every action before model work, validates it, and commits it before beginning
+# another action. It pushes the accumulated chapter commits only after approval.
+# Interrupted ready/committed work is recovered first.
 #
 # Usage:
 #   ./runqueue.sh [-a] [-n N] [options]
@@ -20,7 +21,7 @@
 #       --max-review-rounds N halt after N revise verdicts (default: 6; 0 unlimited)
 #       --max-push-attempts N cap persisted push attempts (default: 8)
 #       --push-timeout SEC    hard limit for one git push (default: 300)
-#       --no-push             commit locally but do not push
+#       --no-push             disable the push after chapter approval
 #       --no-check            skip the independent npm run check gate (not recommended)
 #       --allow-dirty         permit dirty state for --dry-run only
 #       --recover-only        recover a ready/committed transaction, then exit
@@ -33,11 +34,11 @@
 # Exit status: 0 on success/drain; 1 on a safe deterministic halt; 2 on invalid
 # use or failed preflight; 69 on synchronization infrastructure failure; 75 on
 # another transient failure; 130 on an interrupt. A transaction is never cleared
-# until its commit is synchronized.
+# until any required approval push is synchronized.
 
 set -uo pipefail
 
-RUNQUEUE_VERSION='0.4.1'
+RUNQUEUE_VERSION='0.5.0'
 BUILD_MODEL='gpt-5.6-terra'
 CRITIC_MODEL='gpt-5.6-sol'
 EFFORT='high'
@@ -218,7 +219,8 @@ cd "$SCRIPT_DIR" || die "cannot cd to $SCRIPT_DIR"
 state_cmd() { python3 "$SCRIPT_DIR/scripts/runqueue_state.py" --dir "$RUNQUEUE_STATE_DIR" "$@"; }
 load_txn() {
   TXN_PRESENT=0 TXN_PHASE='' TXN_ACTION='' TXN_SLUG='' TXN_TITLE='' TXN_BASE_HEAD=''
-  TXN_COMMIT_HEAD='' TXN_PUSH_REQUIRED='' TXN_CHECK_REQUIRED='' TXN_ATTEMPT=0 TXN_PUSH_ATTEMPT=0
+  TXN_COMMIT_HEAD='' TXN_PUSH_REQUIRED='' TXN_PUBLISH_ENABLED='' TXN_CHECK_REQUIRED=''
+  TXN_ATTEMPT=0 TXN_PUSH_ATTEMPT=0
   TXN_PUSH_REMOTE='' TXN_PUSH_REF='' TXN_HALT_REASON=''
   eval "$(state_cmd txn-env)" || die "cannot read transaction journal"
 }
@@ -523,6 +525,21 @@ ensure_push_target() {
   load_txn
 }
 
+configure_transaction_publish() {
+  local push_required=false push_remote='' push_ref=''
+  [ "$TXN_PHASE" = ready ] || stop "cannot configure publishing in phase '$TXN_PHASE'"
+  if [ "$TXN_PUBLISH_ENABLED" = 1 ] && [ "$(chapter_status "$TXN_SLUG")" = done ]; then
+    resolve_push_target || stop "cannot resolve one explicit push target for approved chapter $TXN_SLUG"
+    push_required=true
+    push_remote="$PUSH_REMOTE_RESOLVED"
+    push_ref="$PUSH_REF_RESOLVED"
+  fi
+  state_cmd phase ready --push-required "$push_required" \
+    --push-remote "$push_remote" --push-ref "$push_ref" >/dev/null ||
+    retry_later "cannot journal publish policy for $TXN_ACTION $TXN_SLUG"
+  load_txn
+}
+
 complete_transaction() {
   local current dirty_rc message commit_head valid_rc parent_head actual_message limit_message
   load_txn
@@ -542,11 +559,13 @@ complete_transaction() {
           stop "unexpected committed path while recovering $TXN_ACTION for $TXN_SLUG"
         validate_action "$TXN_ACTION" "$TXN_SLUG"; valid_rc=$?
         [ "$valid_rc" -eq 0 ] || stop "recovered commit no longer passes for $TXN_SLUG"
+        configure_transaction_publish
         state_cmd phase committed --commit-head "$current" >/dev/null || retry_later "cannot adopt completed commit"
         load_txn
       else
         validate_action "$TXN_ACTION" "$TXN_SLUG"; valid_rc=$?
         [ "$valid_rc" -eq 0 ] || stop "validated transaction no longer passes for $TXN_SLUG"
+        configure_transaction_publish
         tree_dirty; dirty_rc=$?
         [ "$dirty_rc" -eq 0 ] || stop "$TXN_ACTION for $TXN_SLUG has no changes to commit"
         write_status committing "$TXN_ACTION" "$TXN_SLUG" "$message"
@@ -582,7 +601,13 @@ complete_transaction() {
     stop "$limit_message"
   fi
   state_cmd clear >/dev/null || retry_later "cannot clear completed transaction"
-  write_status running "$TXN_ACTION" "$TXN_SLUG" "committed and pushed"
+  if [ "$TXN_PUSH_REQUIRED" = 1 ]; then
+    printf '%s\n' "runqueue: committed and published approved chapter $TXN_SLUG."
+    write_status running "$TXN_ACTION" "$TXN_SLUG" "committed and published approved chapter"
+  else
+    printf '%s\n' "runqueue: committed $TXN_ACTION for $TXN_SLUG locally; publish deferred until approval."
+    write_status running "$TXN_ACTION" "$TXN_SLUG" "committed locally; publish deferred until approval"
+  fi
 }
 
 recover_transaction() {
@@ -624,19 +649,16 @@ recover_transaction() {
 }
 
 begin_transaction() {
-  local push_required check_required base_head push_remote push_ref
+  local publish_enabled check_required base_head
   base_head="$(gitq rev-parse HEAD)" || retry_later "cannot read HEAD before $1"
-  push_remote=''; push_ref=''
   if [ "$NO_PUSH" -eq 0 ]; then
-    push_required=true
-    resolve_push_target || stop "cannot resolve one explicit push target before $1 for $2"
-    push_remote="$PUSH_REMOTE_RESOLVED"; push_ref="$PUSH_REF_RESOLVED"
+    publish_enabled=true
   else
-    push_required=false
+    publish_enabled=false
   fi
   [ "$RUN_CHECK" -eq 1 ] && check_required=true || check_required=false
   state_cmd begin --action "$1" --slug "$2" --title "$3" --base-head "$base_head" \
-    --push-required "$push_required" --push-remote "$push_remote" --push-ref "$push_ref" \
+    --push-required false --publish-enabled "$publish_enabled" \
     --check-required "$check_required" >/dev/null ||
     die "cannot create transaction journal"
 }
@@ -738,7 +760,7 @@ if [ "$RECOVER_ONLY" -eq 1 ]; then
 fi
 
 if [ -z "$MAX" ] && [ "$ASSUME_YES" -eq 0 ] && [ -t 0 ]; then
-  printf '\n%s ' "About to run all actionable chapters with automatic commits and pushes. Continue? [y/N]"
+  printf '\n%s ' "About to run all actionable chapters with automatic stage commits and one push per approved chapter. Continue? [y/N]"
   read -r reply
   case "$reply" in [Yy]|[Yy][Ee][Ss]) ;; *) echo "aborted."; exit 0 ;; esac
 fi

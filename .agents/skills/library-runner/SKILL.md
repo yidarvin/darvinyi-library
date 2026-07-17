@@ -28,8 +28,9 @@ When Sol returns `verdict: revise`, Terra fixes the required findings and sets
    are no required findings.
 4. For `resolve`, apply every required finding, verify previous fixes still hold, pass
    the gate, and append a concrete builder resolution.
-5. Use `./runqueue.sh --count 1` to run a full action loop. It commits and pushes each
-   clean state transition; use `--no-push` for local-only work.
+5. Use `./runqueue.sh --count 1` to run a full action loop. It commits each clean state
+   transition locally, then pushes the accumulated chapter commits once Sol approves
+   the chapter as done. Use `--no-push` to keep even approved chapters local.
 
 ## Worked example
 

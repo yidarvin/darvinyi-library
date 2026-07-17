@@ -148,12 +148,16 @@ class RunqueueTests(unittest.TestCase):
                 str(state_dir),
                 "phase",
                 "ready",
+                "--push-required",
+                "false",
             )
             self.assertEqual(update.returncode, 0, update.stderr)
 
             transaction = json.loads((state_dir / "transaction.json").read_text(encoding="utf-8"))
             self.assertEqual(transaction["phase"], "ready")
             self.assertEqual(transaction["title"], "Sample Title")
+            self.assertFalse(transaction["push_required"])
+            self.assertTrue(transaction["publish_enabled"])
             self.assertFalse((state_dir / "transaction.json.tmp").exists())
 
             status = self.run_command(
@@ -623,6 +627,128 @@ class RunqueueTests(unittest.TestCase):
         self.assertIn("ahead by 0 commit(s)", recovered.stdout)
         self.assertIn("skipping git push", recovered.stdout)
         self.assertFalse(marker.exists())
+        self.assertFalse((state / "transaction.json").exists())
+
+    def test_intermediate_commit_stays_local_until_approval_publishes_chapter(self) -> None:
+        root, repo, state, env = self.make_pipeline_fixture()
+        remote = root / "remote.git"
+        self.assertEqual(self.run_command("git", "init", "--bare", "-q", str(remote)).returncode, 0)
+        self.assertEqual(self.git(repo, "remote", "add", "origin", str(remote)).returncode, 0)
+        self.assertEqual(self.git(repo, "push", "-qu", "origin", "main").returncode, 0)
+        remote_base = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+
+        registry_path = repo / "content" / "registry.json"
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        registry["chapters"][0]["status"] = "draft"
+        registry_path.write_text(json.dumps(registry), encoding="utf-8")
+        (repo / "src" / "chapters" / "sample.mdx").write_text("# Sample\n", encoding="utf-8")
+        begin_build = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "begin",
+            "--action",
+            "build",
+            "--slug",
+            "sample",
+            "--title",
+            "Sample",
+            "--base-head",
+            remote_base,
+            "--push-required",
+            "false",
+            "--publish-enabled",
+            "true",
+            "--check-required",
+            "false",
+        )
+        self.assertEqual(begin_build.returncode, 0, begin_build.stderr)
+        ready_build = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "phase",
+            "ready",
+        )
+        self.assertEqual(ready_build.returncode, 0, ready_build.stderr)
+
+        built = self.run_command(
+            str(repo / "runqueue.sh"),
+            "--recover-only",
+            "--no-check",
+            cwd="/",
+            env=env,
+        )
+
+        self.assertEqual(built.returncode, 0, built.stderr)
+        self.assertIn("publish deferred until approval", built.stdout)
+        build_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        remote_after_build = self.run_command(
+            "git", "--git-dir", str(remote), "rev-parse", "refs/heads/main"
+        )
+        self.assertEqual(remote_after_build.stdout.strip(), remote_base)
+        self.assertNotEqual(build_head, remote_base)
+
+        registry["chapters"][0]["status"] = "done"
+        registry_path.write_text(json.dumps(registry), encoding="utf-8")
+        (repo / "prompts" / "queue.md").write_text(
+            "| # | slug | item | status |\n"
+            "|---|---|---|---|\n"
+            "| 1 | sample | Sample | DONE |\n",
+            encoding="utf-8",
+        )
+        critique = repo / "content" / "critiques" / "sample.md"
+        critique.parent.mkdir(parents=True)
+        critique.write_text("verdict: approve\n\n## Critique round 1\n", encoding="utf-8")
+        begin_approval = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "begin",
+            "--action",
+            "critique",
+            "--slug",
+            "sample",
+            "--title",
+            "Sample",
+            "--base-head",
+            build_head,
+            "--push-required",
+            "false",
+            "--publish-enabled",
+            "true",
+            "--check-required",
+            "false",
+        )
+        self.assertEqual(begin_approval.returncode, 0, begin_approval.stderr)
+        ready_approval = self.run_command(
+            sys.executable,
+            str(repo / "scripts" / "runqueue_state.py"),
+            "--dir",
+            str(state),
+            "phase",
+            "ready",
+        )
+        self.assertEqual(ready_approval.returncode, 0, ready_approval.stderr)
+
+        approved = self.run_command(
+            str(repo / "runqueue.sh"),
+            "--recover-only",
+            "--no-check",
+            cwd="/",
+            env=env,
+        )
+
+        self.assertEqual(approved.returncode, 0, approved.stderr)
+        self.assertIn("ahead by 2 commit(s)", approved.stdout)
+        approval_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        remote_after_approval = self.run_command(
+            "git", "--git-dir", str(remote), "rev-parse", "refs/heads/main"
+        )
+        self.assertEqual(remote_after_approval.stdout.strip(), approval_head)
         self.assertFalse((state / "transaction.json").exists())
 
     def test_three_sync_failures_preserve_commit_and_never_invoke_codex(self) -> None:

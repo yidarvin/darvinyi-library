@@ -36,7 +36,8 @@ Run one completed lifecycle locally:
 ./runqueue.sh --count 1 --no-push
 ```
 
-Run the unattended queue with automatic commits and pushes:
+Run the unattended queue with automatic stage commits and one push per approved
+chapter:
 
 ```bash
 ./runqueue.sh --all --yes
@@ -44,10 +45,13 @@ Run the unattended queue with automatic commits and pushes:
 
 The driver journals each action before model work, retries incomplete model attempts,
 and recovers interrupted validated or committed work before starting anything new.
-Every model attempt has a two-hour hard timeout. Git, scope, project checks, commit,
-and push are mandatory gates. Push attempts and repeated critique cycles are bounded;
-the default critique ceiling is six revise rounds. Use `--dry-run` to inspect the
-active models and next action, and `--no-push` to retain commits locally.
+Every model attempt has a two-hour hard timeout. Git, scope, project checks, and commit
+are mandatory stage gates. Build, revise, and intermediate critique commits remain
+local. The approving critique pushes their accumulated chapter history once, which
+avoids deploying unfinished drafts. Push attempts and repeated critique cycles are
+bounded; the default critique ceiling is six revise rounds. Use `--dry-run` to inspect
+the active models and next action, and `--no-push` to retain even approved chapters
+locally.
 
 ## Keep the queue running on macOS
 

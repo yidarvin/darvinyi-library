@@ -43,8 +43,8 @@ The next item is the first `PENDING` row in `prompts/queue.md`.
 
 A Terra builder may mark an item `draft` only after `npm run check` passes. A separate
 Sol critic grants `done` through an approving critique and `scripts/mark.py`. The
-headless runner owns per-stage commits and pushes; interactive work does not push unless
-explicitly asked.
+headless runner owns per-stage commits and pushes the accumulated commits only when the
+chapter is approved as done; interactive work does not push unless explicitly asked.
 
 ## The content contract (project-specific, in docs/)
 
