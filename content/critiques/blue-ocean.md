@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -51,3 +51,16 @@ verdict: revise
   stages on 2026-07-17. The brief and seed metadata support the high-level thesis and
   red-ocean/blue-ocean model; no separate chapter-local evidence record was present,
   and no new external web search was begun for this review.
+
+## Builder resolution — 2026-07-17
+
+- Rewrote the thesis as two sentences that state the fixed-arena problem and the
+  uncontested-demand alternative.
+- Corrected Figure 67.2 so buyer value rises from left to right and cost burden falls
+  from bottom to top; its highlighted top-right quadrant now requires both a stronger
+  buyer reason and lower cost, while the other labels match their coordinates.
+- Replaced Figure 67.3's sequential `Flow` with a `NodeGraph` in which eliminate,
+  reduce, raise, and create are peer choices that converge on a redesigned offer.
+- Repositioned Figure 67.4's barrier and offer nodes to leave a visible 71-unit
+  transition, changed the edge to neutral, and retained a visible `remove` label for
+  the barrier-removal action.

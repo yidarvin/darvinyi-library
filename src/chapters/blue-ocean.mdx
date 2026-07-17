@@ -10,13 +10,10 @@ import { ShelvedNearby } from "../components/book/ShelvedNearby";
 
 ## The thesis
 
-Kim and Mauborgne argue that strategy gets cramped when a company treats its industry as a
-fixed arena and its rivals as the only reference point. That frame encourages a familiar
-race: add features, cut price, copy the winner, and spend more to defend a shrinking
-difference. Their alternative is to search for a sharp increase in buyer value that also
-removes work and cost the industry has learned to accept. The goal is not a better position
-inside the current contest. It is an offer that makes the old basis of comparison less
-important.
+Kim and Mauborgne argue that strategy stalls when a company treats its industry as a fixed
+arena and rivals as its only reference point. Instead of fighting harder for existing demand,
+redesign the offer around an unmet buyer problem so it creates new demand while raising buyer
+value and lowering cost.
 
 ## Why it matters
 
@@ -56,27 +53,27 @@ the industry has normalized.
 
 ## New value has to improve the tradeoff, not decorate it
 
-The book calls its central move value innovation: pursue a meaningful improvement for buyers
-and a different cost structure together. That pairing matters. A lavish new feature that
-raises cost without solving an important problem is not a strategic breakthrough. A cheaper
-offer that strips out what buyers need is merely a thinner version of the same category.
+The book calls its central move value innovation: raise buyer value while lowering cost. That
+pairing matters. A lavish new feature that raises cost without solving an important problem is
+not a strategic breakthrough. A cheaper offer that strips out what buyers need is merely a
+thinner version of the same category.
 
 The difficult work is deciding which parts of the experience truly matter and which parts
 are expensive conventions. A simpler service can be more valuable when it removes a source
 of time, confusion, risk, or coordination. The relevant question is not whether an idea is
 novel. It is whether a large enough group gets a clear new reason to choose it while the
-organization can actually provide it sustainably.
+offer's cost burden falls enough to make the proposition viable.
 
-<Figure id="67.2" caption="A promising move earns both a stronger buyer reason and a workable cost structure.">
+<Figure id="67.2" caption="Value innovation gives buyers a stronger reason to choose while reducing the offer's cost burden.">
   <Matrix
     className="block w-full min-w-[440px]"
     xAxis={{ left: "weak", right: "strong", label: "buyer reason to choose" }}
-    yAxis={{ low: "hard to sustain", high: "workable", label: "cost structure" }}
+    yAxis={{ low: "high cost", high: "lower cost", label: "cost burden" }}
     quadrants={[
-      { title: "valuable, but costly", note: "redesign before scaling" },
+      { title: "costly and unwanted", note: "do not scale it" },
       { title: "value innovation", note: "test the full proposition" },
-      { title: "neither", note: "do not confuse novelty with progress" },
       { title: "efficient, but unwanted", note: "cost savings alone are not demand" },
+      { title: "valuable, but costly", note: "redesign the tradeoff" },
     ]}
     highlight={1}
   />
@@ -95,16 +92,22 @@ not a longer list of improvements. The most revealing answers usually force a sa
 something familiar has to lose status so something more useful can gain it.
 
 <Figure id="67.3" caption="The four questions turn a new market idea into explicit choices about the offer.">
-  <Flow
-    className="block w-full min-w-[600px]"
-    steps={[
-      "eliminate low-value baggage",
-      "reduce industry excess",
-      "raise what buyers value",
-      "create a missing benefit",
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    ariaLabel="Four peer offer-design choices, eliminate, reduce, raise, and create, converge on a redesigned offer."
+    nodes={[
+      { id: "eliminate", label: "eliminate low-value baggage", x: 0.1, y: 0.18 },
+      { id: "reduce", label: "reduce industry excess", x: 0.1, y: 0.82 },
+      { id: "raise", label: "raise what buyers value", x: 0.62, y: 0.12 },
+      { id: "create", label: "create a missing benefit", x: 0.62, y: 0.88 },
+      { id: "offer", label: "redesigned offer", x: 0.5, y: 0.5 },
     ]}
-    highlight={3}
-    ariaLabel="Four offer-design questions: eliminate low-value baggage, reduce industry excess, raise what buyers value, and create a missing benefit."
+    edges={[
+      { from: "eliminate", to: "offer" },
+      { from: "reduce", to: "offer" },
+      { from: "raise", to: "offer" },
+      { from: "create", to: "offer" },
+    ]}
   />
 </Figure>
 
@@ -127,17 +130,17 @@ ever-finer tailoring for people who already buy.
     className="block w-full min-w-[400px]"
     ariaLabel="Three nonbuyer signals, people leaving the category, people using substitutes, and people excluded from the category, connect to a shared barrier and then a new offer."
     nodes={[
-      { id: "leaving", label: "people about to leave", x: 0.12, y: 0.18 },
-      { id: "substitute", label: "people using a substitute", x: 0.12, y: 0.78 },
-      { id: "excluded", label: "people never served", x: 0.52, y: 0.08 },
-      { id: "barrier", label: "shared barrier", x: 0.52, y: 0.54 },
-      { id: "offer", label: "new offer", x: 0.88, y: 0.54 },
+      { id: "leaving", label: "people about to leave", x: 0.1, y: 0.18 },
+      { id: "substitute", label: "people using a substitute", x: 0.1, y: 0.82 },
+      { id: "excluded", label: "people never served", x: 0.5, y: 0.08 },
+      { id: "barrier", label: "shared barrier", x: 0.31, y: 0.54 },
+      { id: "offer", label: "new offer", x: 0.91, y: 0.54 },
     ]}
     edges={[
       { from: "leaving", to: "barrier" },
       { from: "substitute", to: "barrier" },
       { from: "excluded", to: "barrier" },
-      { from: "barrier", to: "offer", kind: "reinforcing", label: "remove it" },
+      { from: "barrier", to: "offer", label: "remove" },
     ]}
   />
 </Figure>
