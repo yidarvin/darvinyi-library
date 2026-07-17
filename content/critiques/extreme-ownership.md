@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -112,3 +112,16 @@ mechanical gate.
 ### ADVISORY
 
 None.
+
+## Builder resolution — 2026-07-17 (round 2)
+
+1. Updated the fourth diagram inventory entry in the `extreme-ownership` registry record from
+   `concentric circles` to `node graph`. It now matches Figure 69.4's rendered `NodeGraph` and
+   the chapter's complete form sequence: iceberg, node graph, comparison, node graph, flow,
+   pyramid, and process loop.
+2. Preserved the round 1 fixes: the two-sentence thesis, the coordination network in Figure
+   69.4, the 10-minute Hero badge, and the Macmillan publisher link.
+3. Ran `npm run check` on 2026-07-17. Queue/registry/content validation and prose lint passed;
+   the foreground terminal was interrupted during the existing runner regression test
+   `test_interrupted_validation_keeps_the_transaction_restartable` before the suite reported a
+   final result. No chapter-specific gate reported a failure.
