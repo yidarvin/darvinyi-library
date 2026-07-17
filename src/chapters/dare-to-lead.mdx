@@ -3,21 +3,19 @@ import { ExerciseCard } from "../components/ExerciseCard";
 import { Figure } from "../components/Figure";
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, Flow, NodeGraph, Spectrum } from "../components/diagrams";
+import { Compare, Concentric, Flow, NodeGraph } from "../components/diagrams";
 
 <Hero
   slug="dare-to-lead"
   thesis="Courageous leadership treats vulnerability, values, trust, and recovery as practices that can be learned, rather than as traits reserved for naturally fearless people."
-  minutes={8}
+  minutes={7}
 />
 
 ## The thesis
 
-Brown's central claim is that leadership does not become courageous when a leader feels no
-fear. It becomes courageous when a leader can name what is at stake, stay present through
-uncertainty, and act by a standard that others can see. Authority can enforce compliance for a
-while. It cannot create the trust, candor, and repair that difficult work requires. Those are
-built through repeatable behaviors.
+Courageous leadership makes uncertainty discussable by practicing vulnerability, visible
+values, trust, and repair. Authority may produce compliance, but only repeatable behaviors
+create the candor a team needs for difficult work.
 
 ## Why it matters
 
@@ -94,11 +92,13 @@ change. Trust returns through small, repeated evidence, not through a single dec
   <NodeGraph
     className="block w-full"
     nodes={[
-      { id: "limits", label: "clear limits", x: 0.5, y: 0.06 },
-      { id: "follow", label: "follow through", x: 0.88, y: 0.28 },
-      { id: "own", label: "own errors", x: 0.79, y: 0.76 },
-      { id: "protect", label: "protect confidence", x: 0.21, y: 0.76 },
-      { id: "intent", label: "generous reading", x: 0.12, y: 0.28 },
+      { id: "limits", label: "clear limits", x: 0.5, y: 0.05 },
+      { id: "follow", label: "follow through", x: 0.86, y: 0.22 },
+      { id: "own", label: "own an error", x: 0.9, y: 0.58 },
+      { id: "protect", label: "protect confidences", x: 0.68, y: 0.88 },
+      { id: "standards", label: "act by a stated standard", x: 0.32, y: 0.88 },
+      { id: "help", label: "ask for help without shame", x: 0.1, y: 0.58 },
+      { id: "intent", label: "assume decent intent", x: 0.14, y: 0.22 },
       { id: "trust", label: "trust", x: 0.5, y: 0.46 },
     ]}
     edges={[
@@ -106,6 +106,8 @@ change. Trust returns through small, repeated evidence, not through a single dec
       { from: "follow", to: "trust", kind: "reinforcing" },
       { from: "own", to: "trust", kind: "reinforcing" },
       { from: "protect", to: "trust", kind: "reinforcing" },
+      { from: "standards", to: "trust", kind: "reinforcing" },
+      { from: "help", to: "trust", kind: "reinforcing" },
       { from: "intent", to: "trust", kind: "reinforcing" },
     ]}
   />
@@ -146,16 +148,14 @@ will be met with attention instead of retaliation. Repeated across a team, that 
 changes what information arrives before a decision is irreversible.
 
 <Figure id="63.5" caption="The leader's response teaches the team whether candor is safe enough to repeat.">
-  <Spectrum
+  <Flow
     className="block w-full"
-    left="self-protection"
-    right="shared courage"
-    marker={0.72}
-    markerLabel="visible repair"
-    zones={[
-      { from: 0, to: 0.35, label: "silence and careful appearances" },
-      { from: 0.57, to: 1, label: "bad news travels early", accent: true },
+    steps={[
+      "leader responds to candor",
+      "team learns the cost of speaking",
+      "future candor brings information earlier",
     ]}
+    highlight={1}
   />
 </Figure>
 

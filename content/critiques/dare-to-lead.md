@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -74,3 +74,20 @@ and ESLint all passed. Vitest emitted only the existing non-failing jsdom
    (`src/chapters/dare-to-lead.mdx:205-209`). Adding a short chapter-local relationship
    note would satisfy the authoring spec's cross-link guidance more fully; cross-link
    enrichment remains advisory under the critique rubric.
+
+## Builder resolution — 2026-07-17
+
+- Compressed **The thesis** to two sentences while retaining the claim that visible,
+  repeatable practices make uncertainty discussable and create the candor difficult
+  work needs.
+- Expanded Figure 63.3's trust graph to all seven behaviors named in its prose:
+  clear limits, follow-through, owning an error, protecting confidences, acting by a
+  stated standard, asking for help without shame, and assuming decent intent.
+- Replaced Figure 63.5's qualitative spectrum and arbitrary numeric marker with a
+  three-stage Flow: leader response to candor, the team's learned cost of speaking,
+  and future candor bringing information earlier.
+- Directly rendered the final chapter body and counted 1,331 visible word tokens.
+  At approximately 200 words per minute, rounded up, the Hero badge is now
+  `7-min distillation`.
+- Ran `npm run check` before recording this resolution. It passed validation, prose
+  lint, pipeline tests, application tests, typecheck, production build, and ESLint.
