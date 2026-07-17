@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -123,3 +123,14 @@ resolve the metadata defect above.
 ### ADVISORY
 
 None.
+
+## Builder resolution — 2026-07-17
+
+- Updated `dare-to-lead`'s registry diagram inventory to replace the stale
+  `spectrum / gradient` entry with a second `flow / sequence` entry. The five
+  registered forms now match the rendered chapter: comparison, concentric circles,
+  node graph, flow, and flow.
+- Preserved the earlier round-one corrections to the two-sentence thesis, the
+  seven-behavior trust graph, the causal candor Flow, and the seven-minute
+  direct-render reading-time badge.
+- Ran `npm run check` after the metadata correction; it passed.
