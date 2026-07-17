@@ -1,0 +1,209 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Flow, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="dare-to-lead"
+  thesis="Courageous leadership treats vulnerability, values, trust, and recovery as practices that can be learned, rather than as traits reserved for naturally fearless people."
+  minutes={8}
+/>
+
+## The thesis
+
+Brown's central claim is that leadership does not become courageous when a leader feels no
+fear. It becomes courageous when a leader can name what is at stake, stay present through
+uncertainty, and act by a standard that others can see. Authority can enforce compliance for a
+while. It cannot create the trust, candor, and repair that difficult work requires. Those are
+built through repeatable behaviors.
+
+## Why it matters
+
+Many workplaces treat the human side of work as a distraction from execution. That leaves
+people to guess at expectations, hide bad news, and protect themselves when a conversation
+gets uncomfortable. The cost arrives later as slow decisions, private resentment, and problems
+that become expensive before anyone states them plainly. This book makes a different wager:
+the conversations that feel exposed are often the ones that let a team do its real work.
+
+## Vulnerability is the entry cost of honest work
+
+Brown uses vulnerability to mean the exposure that comes with uncertainty, risk, and an
+outcome you cannot control. In a leadership setting, it can look like admitting that a plan has
+a weak assumption, asking for help, giving direct feedback, or saying that a decision caused
+harm. None of those moves guarantees a pleasant response. That is why they take courage.
+
+The alternative is armor: certainty performed too early, blame used to regain distance, or
+perfectionism used to avoid being judged. Armor may calm the person wearing it for a moment,
+but it makes useful information harder to surface. A team needs a way to stay in the
+uncomfortable middle long enough to understand the problem together.
+
+<Figure id="63.1" caption="Armor closes a hard conversation; curiosity keeps the work open long enough to learn.">
+  <Compare
+    className="block w-full"
+    left={{
+      title: "armor",
+      points: ["perform certainty", "deflect or blame", "protect the self", "lose the signal"],
+    }}
+    right={{
+      title: "a rumble",
+      points: ["name the uncertainty", "ask what is true", "own a contribution", "work the problem"],
+    }}
+  />
+</Figure>
+
+## Values only guide when they become visible choices
+
+A value on a wall is an aspiration. A value in a team is a decision rule that changes what
+people do when the faster, easier, or more popular move pulls another way. Brown asks leaders
+to choose a small number of values, then state the behaviors that count as living them. That
+turns a vague claim like respect into things colleagues can recognize: prepare for the meeting,
+give the person the information they need, and say directly when a commitment cannot be met.
+
+This specificity matters most under pressure. A leader cannot use a value to decide every
+question, but it can narrow the field. If candor is named, withholding material information is
+not a neutral option. If stewardship is named, a shortcut that pushes a hidden cost onto the
+next team deserves scrutiny. Values become useful when they survive contact with a calendar,
+a budget, and a difficult conversation.
+
+<Figure id="63.2" caption="A stated value earns force only when it is translated into observable choices.">
+  <Concentric
+    className="block w-full"
+    rings={[{ label: "named value" }, { label: "observable behavior" }, { label: "daily choices" }]}
+    highlight={0}
+    externalLabel="pressure: speed, conflict, and competing incentives"
+  />
+</Figure>
+
+## Trust is a pattern, not a personality judgment
+
+Trust often gets discussed as if it were a warm feeling toward a person. Brown makes it more
+practical by breaking it into behaviors that can be noticed and discussed. A colleague can be
+clear about limits, follow through on commitments, own an error, protect confidences, act by a
+stated standard, ask for help without shame, and assume decent intent until evidence says
+otherwise. The familiar BRAVING acronym gives these behaviors a shared name, but its value is
+the precision it brings to repair.
+
+When trust thins, “I do not trust you” is too broad to help. A more useful question is which
+behavior is missing. Did a deadline slip without warning? Was a private detail repeated? Did
+someone avoid accountability? A specific answer gives both people a chance to make a specific
+change. Trust returns through small, repeated evidence, not through a single declaration.
+
+<Figure id="63.3" caption="Trust becomes discussable when a team can point to the behavior that needs repair.">
+  <NodeGraph
+    className="block w-full"
+    nodes={[
+      { id: "limits", label: "clear limits", x: 0.5, y: 0.06 },
+      { id: "follow", label: "follow through", x: 0.88, y: 0.28 },
+      { id: "own", label: "own errors", x: 0.79, y: 0.76 },
+      { id: "protect", label: "protect confidence", x: 0.21, y: 0.76 },
+      { id: "intent", label: "generous reading", x: 0.12, y: 0.28 },
+      { id: "trust", label: "trust", x: 0.5, y: 0.46 },
+    ]}
+    edges={[
+      { from: "limits", to: "trust", kind: "reinforcing" },
+      { from: "follow", to: "trust", kind: "reinforcing" },
+      { from: "own", to: "trust", kind: "reinforcing" },
+      { from: "protect", to: "trust", kind: "reinforcing" },
+      { from: "intent", to: "trust", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## The story in your head is a hypothesis
+
+After a setback, people rapidly make a story about what happened and what it says about them.
+The story may be accurate, but it often arrives before the facts. A missed target becomes “they
+do not respect me.” A short reply becomes “I have failed.” The book's recovery practice asks a
+leader to slow that jump down: recognize the emotion, separate observations from the meaning
+assigned to them, and test the story with the people involved.
+
+That is not a demand to deny intuition or explain away a real wrong. It is a way to keep an
+emotion from silently turning into a verdict. The eventual conversation can still include a
+boundary, an apology, or a hard decision. It simply begins with a better account of what
+actually occurred, which gives learning a place to start.
+
+<Figure id="63.4" caption="Recovery turns a first interpretation into a question before it hardens into a verdict.">
+  <Flow
+    className="block w-full"
+    steps={["notice the reaction", "separate facts from story", "test the story", "choose the next repair"]}
+    highlight={2}
+  />
+</Figure>
+
+## Courage spreads through the conditions people can see
+
+A leader's behavior is not private when it sets the cost of speaking. When a manager welcomes
+bad news, names their own miss, and responds to disagreement without punishment, people learn
+that candor is survivable. When the manager rewards polish, certainty, and silence, people
+learn to bring only safe information. Culture is built from those repeated lessons, not from a
+statement about psychological safety.
+
+This makes courage contagious in a modest, practical sense. A single brave conversation does
+not transform an organization. It can, however, give the next person evidence that directness
+will be met with attention instead of retaliation. Repeated across a team, that evidence
+changes what information arrives before a decision is irreversible.
+
+<Figure id="63.5" caption="The leader's response teaches the team whether candor is safe enough to repeat.">
+  <Spectrum
+    className="block w-full"
+    left="self-protection"
+    right="shared courage"
+    marker={0.72}
+    markerLabel="visible repair"
+    zones={[
+      { from: 0, to: 0.35, label: "silence and careful appearances" },
+      { from: 0.57, to: 1, label: "bad news travels early", accent: true },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Make one hard conversation concrete">
+Before a conversation you have been postponing, write three lines: the observable facts, the
+story you are telling yourself about them, and the question you need answered. Open with the
+facts and the question. Do not lead with the conclusion.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Turn a value into a team behavior">
+Choose one value the team already claims. Name one behavior that demonstrates it in a meeting,
+one that demonstrates it under deadline, and one that violates it. Use those examples the next
+time the team decides how to proceed.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Repair one specific trust gap">
+Think of a relationship that feels less reliable than it should. Do not diagnose the person's
+character. Identify one observable gap, such as an unclear boundary or an unowned mistake, and
+ask for a short conversation about that behavior.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Practice a visible recovery">
+After your next mistake, state what happened, the effect it had, and the action you will take
+to repair it. This is not a performance of humility. It is evidence that accountability is
+part of how the team works.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Vulnerability is not indiscriminate disclosure, and it is not a substitute for competence,
+clear roles, or material fairness. A leader has power that an employee may not share, so asking
+people to be open without protecting them from retaliation can create more risk, not more
+trust. Use the practices to make expectations and repairs clearer. Do not use the language of
+courage to extract personal stories, rush forgiveness, or make a structural problem sound like
+an individual confidence problem.
+</Callout>
+
+## If you remember one thing
+
+Leadership earns trust when it makes hard reality discussable. Name the uncertainty, act by a
+visible value, repair a specific breach, and show people through your response that candor has
+a place here.
+
+<ShelvedNearby
+  related={["seven-habits", "emotional-intelligence", "crucial-conversations", "good-to-great"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/557595/dare-to-lead-by-brene-brown-phd-msw/"
+  buyLabel="Dare to Lead by Brené Brown"
+/>
