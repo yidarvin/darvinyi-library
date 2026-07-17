@@ -1,0 +1,228 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Flow, Matrix, ProcessLoop, Pyramid } from "../components/diagrams";
+
+<Hero
+  slug="built-to-last"
+  thesis="Organizations outlive their founders when a durable purpose and a few nonnegotiable values guide an institution that keeps changing everything else."
+  minutes={8}
+/>
+
+## The thesis
+
+An enduring company is not the extended shadow of a gifted founder, a celebrated product, or
+a single successful strategy. Collins and Porras argue that it is an institution designed to
+carry a core ideology across generations, while repeatedly finding new ways to make progress.
+The task is to build something that can remember what it stands for and still alter its
+products, structure, and methods when the world changes.
+
+## Why it matters
+
+Business stories often give the starring role to a person or a breakthrough. That makes a
+good story, but it leaves a hard question unanswered: what remains when that person leaves or
+the breakthrough becomes ordinary? A company that depends on one source of foresight has made
+itself fragile. The book moves attention from the hero to the conditions that let many people
+make good decisions over a long stretch of time.
+
+## Build a clock, not a legend
+
+The first shift is from producing a brilliant answer to building an organization that can
+produce answers after the original visionary is gone. A charismatic leader can choose a
+direction quickly. A durable institution makes its purpose, decision rules, talent practices,
+and feedback habits visible enough that the next generation can keep choosing. This does not
+make leaders unimportant. It changes their job. Their lasting contribution is the system that
+helps other people carry the work without waiting for their next insight.
+
+<Figure id="64.1" caption="A durable institution relies on repeatable conditions, not one person's continuing insight.">
+  <Compare
+    className="block w-full"
+    favor="right"
+    left={{
+      title: "the heroic answer",
+      points: ["one leader supplies direction", "the product carries the story", "success depends on a person staying central", "the handoff is uncertain"],
+    }}
+    right={{
+      title: "the working institution",
+      points: ["purpose directs many choices", "practices make judgment repeatable", "leaders develop successors", "the organization can renew itself"],
+    }}
+  />
+</Figure>
+
+## A core is more useful than a list of preferences
+
+Core ideology has two parts: values that describe the kind of organization this is, and a
+purpose that gives its effort a reason beyond the money required to sustain it. Neither is a
+catalog of every good thing a company might want. If every value is equally sacred, none can
+settle a real tradeoff. The test is whether the organization would keep the value when it made
+the next quarter harder, or carry the purpose into a business it had not imagined when it was
+founded.
+
+The outer layers must remain negotiable. A core value can persist while a sales model, an
+office ritual, or a product line disappears. Confusing a practice with a principle produces a
+museum. Confusing a value with a marketing phrase produces a poster. The useful discipline is
+to identify the small center that must endure, then let the surrounding layers earn their
+place again and again.
+
+<Figure id="64.2" caption="The center holds values and purpose; operating choices belong in the changeable outer layers.">
+  <Concentric
+    className="block w-full"
+    rings={[{ label: "core values" }, { label: "enduring purpose" }, { label: "strategies and practices" }]}
+    highlight={0}
+    externalLabel="new markets, technology, and leadership"
+  />
+</Figure>
+
+## Preserve the identity and stimulate the change
+
+The book's most useful idea is a refusal to treat continuity and reinvention as opposing
+options. A company can be exacting about its identity and restless about its methods. In
+practice, this means asking two questions whenever a major decision appears: does this honor
+what we are here to do, and what should we change so that we can keep doing it well? The first
+question prevents fashionable drift. The second prevents loyalty to an obsolete method.
+
+This is harder than choosing one side. A company that protects every old practice becomes
+stiff. A company that changes its identity whenever the market moves becomes unrecognizable to
+its own people. The point is not a mild compromise at the middle. It is high commitment on
+both axes: a clear core, and serious adaptation outside it.
+
+<Figure id="64.3" caption="The durable position combines a stable identity with a willingness to revise how the work is done.">
+  <Matrix
+    className="block w-full"
+    xAxis={{ left: "rigid methods", right: "adaptive methods", label: "operating change" }}
+    yAxis={{ low: "thin identity", high: "clear identity", label: "core commitment" }}
+    quadrants={[
+      { title: "museum", note: "a core mistaken for old habits" },
+      { title: "enduring renewal", note: "protect the core, revise the work" },
+      { title: "drift", note: "neither a stable core nor useful change" },
+      { title: "restless but unmoored", note: "change without a reason to cohere" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Progress needs mechanisms, not wishes
+
+Aspiration does not turn into an institution by being announced. It needs mechanisms that
+recruit people who fit the core, give them room to test ideas, expose weak results early, and
+turn what is learned into the next operating practice. The book describes cultures with a
+strong internal identity. Read narrowly, that can sound like a demand for sameness. Read more
+carefully, the useful lesson is alignment: people should know what the organization protects,
+which experiments they can run, and how a promising experiment becomes normal work.
+
+That cycle gives innovation a home. An experiment that fails can still sharpen a judgment. An
+experiment that works needs a path into training, incentives, and routines, or it remains an
+interesting exception. Progress becomes durable only when the organization can learn without
+having to be reinvented after every discovery.
+
+<Figure id="64.4" caption="Experiments become progress when a team turns evidence into the next repeatable practice.">
+  <ProcessLoop
+    className="block w-full"
+    stages={["protect the core", "test a better method", "learn from the evidence", "embed what works"]}
+    compoundingEdge={3}
+    centerLabel="renewal by design"
+  />
+</Figure>
+
+## A large goal makes the future concrete
+
+A BHAG, short for a big, hairy, audacious goal, is meant to create a long-horizon commitment
+that ordinary annual targets cannot. It should be clear enough that people understand the
+destination, demanding enough that current routines will not reach it, and bounded enough to
+call for a real answer rather than permanent inspiration. A large goal is not a prediction and
+not a revenue number chosen because it sounds impressive. It is a chosen challenge that
+requires an organization to become more capable.
+
+The present tense matters. A faraway goal earns its place only if it changes this year's
+choices: what talent is developed, what capability is built, which opportunities are declined,
+and which experiments deserve patience. Without those changes, an audacious statement is
+decoration. With them, it becomes a practical test of whether the organization is moving.
+
+<Figure id="64.5" caption="A long-horizon challenge is useful when it changes the next set of concrete choices.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["name a demanding destination", "describe a credible future", "make harder choices now", "build the capability to reach it"]}
+    highlight={2}
+  />
+</Figure>
+
+## The Model
+
+The BHAG is the visible summit of a larger design. It works best when the goal grows from an
+existing purpose, is supported by values that limit how it will be pursued, and is carried by
+mechanisms that turn urgency into learning. The vivid future gives the goal emotional force;
+the operating system gives it a route. This prevents the common failure in which a dramatic
+goal is announced above an organization that has no way to change its behavior.
+
+<Figure id="64.6" caption="A BHAG sits on a purpose, values, and operating mechanisms that make the distant goal actionable.">
+  <div className="min-w-[440px] space-y-6">
+    <Pyramid
+      className="block w-full"
+      tiers={[
+        { label: "core purpose", note: "why the organization exists" },
+        { label: "core values", note: "how it will act" },
+        { label: "mechanisms for learning", note: "how progress becomes repeatable" },
+        { label: "BHAG", note: "a demanding, time-bound destination" },
+      ]}
+      highlight={3}
+    />
+    <Flow
+      className="block w-full"
+      steps={["distant destination", "vivid shared picture", "present decisions"]}
+      highlight={2}
+      ariaLabel="A big, hairy, audacious goal becomes a vivid shared picture, which guides present decisions."
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Separate the core from the current practice">
+Choose one habit the organization defends fiercely. Write the value or purpose it is meant to
+serve. Then list two very different ways that same principle could be honored. If no principle
+appears, treat the habit as a candidate for retirement rather than a sacred tradition.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Test a value against a tradeoff">
+Take one stated value and one pending decision that involves cost, speed, or revenue. Ask what
+choice the value rules out, even if that choice would make the next month easier. If it rules
+out nothing, rewrite it until the team can use it as a decision rule.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Choose one experiment that can become a practice">
+Find a recurring problem close to the work. Run a small test with a named owner, a success
+signal, and a review date. Before the test starts, decide how a positive result would enter
+training, a checklist, or a regular meeting. Learning is not finished when the trial ends.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Draft a goal with a present-tense consequence">
+Write a three-to-ten-year challenge in plain language. Add a short description of what success
+would look like to the people doing the work. Then name one choice that must change in the next
+ninety days for the goal to be more than a slogan.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Built to Last is a comparative study of selected companies, not a controlled experiment that
+proves a universal recipe for corporate endurance. Several celebrated examples later faced
+serious setbacks, and a surviving company can look more coherent in retrospect than it felt
+from inside the uncertainty. Core ideology also deserves ethical scrutiny. A tightly aligned
+culture can give people clarity, but it can also exclude dissent or protect harmful norms if
+leaders treat loyalty as agreement. Use the framework as a design question: what should endure,
+what must change, and who gets to challenge the answer? Do not use it to baptize the present
+organization as permanent.
+</Callout>
+
+## If you remember one thing
+
+Build an organization that can outgrow any one leader. Give it a small, durable core, make the
+rest open to revision, and set a demanding future that changes what people do now.
+
+<ShelvedNearby
+  related={["start-with-why", "good-to-great", "dare-to-lead", "seven-habits"]}
+  buyUrl="https://www.harpercollins.com/products/built-to-last-jim-collinsjerry-i-porras"
+  buyLabel="Built to Last by Jim Collins and Jerry I. Porras"
+/>
