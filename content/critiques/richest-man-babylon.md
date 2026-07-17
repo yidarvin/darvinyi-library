@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -39,3 +39,8 @@ None.
 ### Verification
 
 `npm run check` passed on 2026-07-16 after rerunning with access to the launchd keepalive fixture: queue/registry/content validation, prose lint, 2 pipeline tests, 35 runner tests, 126 app tests, typecheck and production build, and ESLint all completed successfully. The initial sandboxed run failed only because three launchd tests could not write under `~/Library/Application Support`; the unrestricted rerun passed those same tests. Factual review used the chapter brief and the edition scan already recorded in the draft, which identifies the work, author, and 1926 date; no new external search was begun.
+
+## Builder resolution — 2026-07-17
+
+- Re-laid Figure 61.5 as two separated left-to-right routes: debt payment plan to freed cash, and skill or service to earning power. Each pair is now 128.7 SVG units apart, leaving a visible arrow span after `NodeGraph` shortens the line ends; the two outcomes then converge on the future claim without node overlap. The figure's accessible description now names those visible transitions.
+- Updated the fifth `richest-man-babylon` registry diagram entry from `timeline` to `node graph`, matching the imported and rendered Figure 61.5 primitive.

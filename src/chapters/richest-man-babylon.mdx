@@ -139,18 +139,15 @@ the book combines both moves: clear costly claims while becoming more able to ma
 <Figure id="61.5" caption="Debt reduction and stronger earning power both create more room for a future claim.">
   <NodeGraph
     className="block w-full min-w-[380px]"
-    ariaLabel="A system map in which current income supports a debt payment plan and skill practice. Reducing debt creates freed cash, and stronger skills create earning power. Both increase room for a future claim."
+    ariaLabel="Two routes converge on a future claim. A debt payment plan reduces debt and creates freed cash. Skill or service practice grows earning power. Both outcomes create room for a future claim."
     nodes={[
-      { id: "income", label: "current income", x: 0.08, y: 0.5 },
-      { id: "debt", label: "debt payment plan", x: 0.36, y: 0.22 },
-      { id: "skill", label: "skill or service", x: 0.36, y: 0.78 },
-      { id: "cash", label: "freed cash", x: 0.66, y: 0.22 },
-      { id: "power", label: "earning power", x: 0.66, y: 0.78 },
-      { id: "future", label: "future claim", x: 0.92, y: 0.5 },
+      { id: "debt", label: "debt payment plan", x: 0.05, y: 0.22 },
+      { id: "cash", label: "freed cash", x: 0.5, y: 0.22 },
+      { id: "skill", label: "skill or service", x: 0.05, y: 0.78 },
+      { id: "power", label: "earning power", x: 0.5, y: 0.78 },
+      { id: "future", label: "future claim", x: 0.95, y: 0.5 },
     ]}
     edges={[
-      { from: "income", to: "debt", label: "schedule" },
-      { from: "income", to: "skill", label: "practice" },
       { from: "debt", to: "cash", kind: "reinforcing", label: "reduce" },
       { from: "skill", to: "power", kind: "reinforcing", label: "grow" },
       { from: "cash", to: "future", kind: "reinforcing", label: "room" },
