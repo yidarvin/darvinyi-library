@@ -1,0 +1,254 @@
+import { Compare, Flow, Matrix, NodeGraph, Spectrum } from "../components/diagrams";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+
+<Hero
+  slug="blue-ocean"
+  thesis="When an industry turns every offer into the same contest, the better move is to solve a buyer problem in a way that changes what the contest is about."
+  minutes={8}
+/>
+
+## The thesis
+
+Kim and Mauborgne argue that strategy gets cramped when a company treats its industry as a
+fixed arena and its rivals as the only reference point. That frame encourages a familiar
+race: add features, cut price, copy the winner, and spend more to defend a shrinking
+difference. Their alternative is to search for a sharp increase in buyer value that also
+removes work and cost the industry has learned to accept. The goal is not a better position
+inside the current contest. It is an offer that makes the old basis of comparison less
+important.
+
+## Why it matters
+
+Competition is real, and established markets still deserve competent execution. The problem
+appears when competitive analysis becomes a form of tunnel vision. Teams get unusually good
+at serving the people who already buy, then keep improving the details those people have
+come to expect. Meanwhile, the frictions that keep everyone else away can remain invisible.
+Blue Ocean Strategy is a prompt to widen the question: what would make the larger set of
+potential buyers care, and what inherited parts of the offer would they gladly do without?
+
+## A rival is a reference point, not the problem to solve
+
+An industry can make its customary factors feel inevitable. If every competitor offers more
+choice, faster delivery, more specialists, or a longer feature list, each company learns to
+talk about the same things. The buyer's actual problem may sit somewhere else: fewer
+decisions, lower anxiety, a simpler handoff, or access that does not demand expert knowledge.
+
+Moving attention from the rival to the buyer's unfinished job does not mean ignoring rivals.
+It means treating them as evidence of the existing recipe, not as a specification for the
+next one. A useful discovery often starts with a plain observation about inconvenience that
+the industry has normalized.
+
+<Figure id="67.1" caption="Strategy opens up when the buyer's unresolved problem matters more than matching a rival.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="rival reference"
+    right="buyer problem"
+    marker={0.78}
+    markerLabel="look here first"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.0, to: 0.38, label: "match familiar factors" },
+      { from: 0.6, to: 1.0, label: "reframe the job to be done", accent: true },
+    ]}
+  />
+</Figure>
+
+## New value has to improve the tradeoff, not decorate it
+
+The book calls its central move value innovation: pursue a meaningful improvement for buyers
+and a different cost structure together. That pairing matters. A lavish new feature that
+raises cost without solving an important problem is not a strategic breakthrough. A cheaper
+offer that strips out what buyers need is merely a thinner version of the same category.
+
+The difficult work is deciding which parts of the experience truly matter and which parts
+are expensive conventions. A simpler service can be more valuable when it removes a source
+of time, confusion, risk, or coordination. The relevant question is not whether an idea is
+novel. It is whether a large enough group gets a clear new reason to choose it while the
+organization can actually provide it sustainably.
+
+<Figure id="67.2" caption="A promising move earns both a stronger buyer reason and a workable cost structure.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "weak", right: "strong", label: "buyer reason to choose" }}
+    yAxis={{ low: "hard to sustain", high: "workable", label: "cost structure" }}
+    quadrants={[
+      { title: "valuable, but costly", note: "redesign before scaling" },
+      { title: "value innovation", note: "test the full proposition" },
+      { title: "neither", note: "do not confuse novelty with progress" },
+      { title: "efficient, but unwanted", note: "cost savings alone are not demand" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Change the offer with four hard questions
+
+The eliminate-reduce-raise-create framework gives a team a way to turn a vague ambition
+into design choices. What can disappear because it adds cost but little value? What can be
+cut back because the industry overdelivers on it? What deserves a higher standard? What does
+the buyer need that the current category does not supply at all?
+
+The first two questions protect the work from becoming feature accumulation. The last two
+protect it from becoming austerity. Taken together, they demand a new shape for the offer,
+not a longer list of improvements. The most revealing answers usually force a sacrifice:
+something familiar has to lose status so something more useful can gain it.
+
+<Figure id="67.3" caption="The four questions turn a new market idea into explicit choices about the offer.">
+  <Flow
+    className="block w-full min-w-[600px]"
+    steps={[
+      "eliminate low-value baggage",
+      "reduce industry excess",
+      "raise what buyers value",
+      "create a missing benefit",
+    ]}
+    highlight={3}
+    ariaLabel="Four offer-design questions: eliminate low-value baggage, reduce industry excess, raise what buyers value, and create a missing benefit."
+  />
+</Figure>
+
+## The largest demand may be outside the customer file
+
+Existing customers can explain how well an offer works for people who have already crossed
+the category's threshold. They cannot, on their own, explain why others have chosen an
+alternative, tolerated an inferior workaround, or never considered the category at all.
+Those groups are not a single segment. Still, they may share a barrier that current buyers
+have simply learned to live with.
+
+This is why the book asks teams to look toward noncustomers. Talk with the person who is
+about to leave the category, the person using a substitute, and the person for whom the
+category has never been practical. Look for the common reason underneath their different
+stories. A solution that removes that shared barrier can create demand more effectively than
+ever-finer tailoring for people who already buy.
+
+<Figure id="67.4" caption="Different kinds of nonbuyers can point back to one shared barrier worth removing.">
+  <NodeGraph
+    className="block w-full min-w-[400px]"
+    ariaLabel="Three nonbuyer signals, people leaving the category, people using substitutes, and people excluded from the category, connect to a shared barrier and then a new offer."
+    nodes={[
+      { id: "leaving", label: "people about to leave", x: 0.12, y: 0.18 },
+      { id: "substitute", label: "people using a substitute", x: 0.12, y: 0.78 },
+      { id: "excluded", label: "people never served", x: 0.52, y: 0.08 },
+      { id: "barrier", label: "shared barrier", x: 0.52, y: 0.54 },
+      { id: "offer", label: "new offer", x: 0.88, y: 0.54 },
+    ]}
+    edges={[
+      { from: "leaving", to: "barrier" },
+      { from: "substitute", to: "barrier" },
+      { from: "excluded", to: "barrier" },
+      { from: "barrier", to: "offer", kind: "reinforcing", label: "remove it" },
+    ]}
+  />
+</Figure>
+
+## A compelling concept still has to pass through reality
+
+An appealing offer is the beginning of strategy, not its completion. The authors' later
+tools make this practical by asking whether the concept creates exceptional utility, reaches
+buyers at a plausible price, can be delivered at a viable cost, and will meet adoption
+barriers. This order helps expose a common mistake: celebrating a differentiated concept
+before checking whether people can use it, pay for it, produce it, or accept the change it
+requires.
+
+Each question is a hypothesis to test in the field. The buyer must feel the improvement, not
+merely understand a presentation about it. The price must invite the intended audience. The
+operating model must not depend on hidden heroics. Partners, employees, and regulators may
+also need a reason to cooperate. A new market is built through those conditions, not named
+into existence.
+
+<Figure id="67.5" caption="A strategic concept gets stronger only when value, economics, and adoption can hold together.">
+  <Flow
+    className="block w-full min-w-[600px]"
+    steps={[
+      "buyer utility: solve a real friction",
+      "price: reach the intended audience",
+      "cost: deliver sustainably",
+      "adoption: clear the practical hurdles",
+    ]}
+    highlight={0}
+    ariaLabel="Test a concept through buyer utility, accessible price, sustainable cost, and adoption hurdles."
+  />
+</Figure>
+
+## The Model
+
+Red and blue oceans are not two permanent types of company. They are two strategic
+conditions. A red ocean is an established field where rivals largely agree on the rules and
+fight over the available demand. A blue ocean appears when an offer changes the value
+equation enough to bring in new demand or redraw the boundaries of the field. It will not
+stay uncontested forever. The point is to create a period in which the organization is not
+winning by being the closest copy of an incumbent.
+
+<Figure id="67.6" caption="The contrast is between fighting over existing demand and changing the offer so new demand can appear.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "red ocean",
+      points: ["industry boundaries set the frame", "rivals chase existing demand", "offers converge on familiar factors", "price and features intensify the fight"],
+    }}
+    right={{
+      title: "blue ocean",
+      points: ["a buyer problem redraws the frame", "new demand becomes the target", "tradeoffs reshape the offer", "value and cost change together"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="List the rules your industry treats as natural">
+Choose one offer and write down the five factors everyone in the field seems to compete on.
+For each, ask which buyer problem it solves, what it costs to provide, and what would happen
+if it vanished. Do not decide from the conference room. Bring the list to recent buyers,
+lost buyers, and people who chose an alternative.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Interview people outside the category">
+Speak with one person who uses the category reluctantly, one who uses a substitute, and one
+who has never considered it. Ask them to describe the last time the underlying need arose.
+Listen for the point where time, effort, risk, price, or complexity made the current path
+unappealing. Write the barrier in their concrete terms, without translating it into an
+internal feature request too soon.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make a four-question offer sketch">
+On one page, name one factor to eliminate, one to reduce, one to raise, and one benefit to
+create. Then describe the resulting offer in a sentence a buyer would understand. If the
+only changes are raises and creates, return to the first two questions. The cost side has
+not yet been designed.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Run a viability check before the launch plan">
+Test the sketch with a narrow group of the people you hope to reach. Record where they feel
+the new value, what price makes it credible, what delivery step breaks, and who would resist
+the change. Treat a negative answer as useful information. Revise the offer before spending
+heavily to persuade the market to accept a weak one.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Blue ocean is often misread as a promise that competition can be escaped permanently, or
+that a novel idea automatically creates a market. Neither is true. Attractive spaces draw
+imitation, and many new offers fail because their value is too small, their price misses the
+audience, or their delivery depends on capabilities they do not have. The framework can also
+make past successes look cleaner than real decisions were. Use it to surface assumptions and
+design tests, not as a label for every product launch or a substitute for evidence, execution,
+and judgment about the harms a new market may create.
+</Callout>
+
+## If you remember one thing
+
+Do not begin with the question, "How do we beat the rivals at their game?" Begin with the
+buyer friction the game has taught everyone to tolerate, then redesign the offer so solving
+that friction is valuable and viable.
+
+Good Strategy Bad Strategy supplies the discipline of choosing and coordinating a response,
+while Start With Why helps clarify the belief an offer should make visible.
+
+<ShelvedNearby
+  related={["good-strategy", "start-with-why"]}
+  buyUrl="https://store.hbr.org/product/blue-ocean-strategy-expanded-edition/10065"
+  buyLabel="Blue Ocean Strategy by W. Chan Kim and Renée Mauborgne"
+/>
