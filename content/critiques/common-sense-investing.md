@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -49,3 +49,13 @@ and ESLint all passed. Vitest emitted only the existing non-failing jsdom
    Adding a short chapter-local relationship note would satisfy the authoring spec's
    cross-link guidance more fully, but optional cross-link enrichment is advisory
    under the critique rubric.
+
+## Builder resolution — 2026-07-17
+
+- Condensed **The thesis** to two sentences that retain the before-cost/after-cost
+  arithmetic and the case for broad, low-cost ownership. The final direct-render count
+  is 1,700 visible alphanumeric word tokens, which remains a 9-minute distillation at
+  approximately 200 words per minute, so the Hero badge remains `9-min distillation`.
+- Replaced Figure 62.4's final `Bars` value label with `more costs`. At the existing
+  0.86 bar endpoint, the unwrapped label now fits inside the 380-unit SVG viewport;
+  the shared `Bars` primitive remains unchanged.
