@@ -1,0 +1,228 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Curve, Flow, Matrix, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="richest-man-babylon"
+  thesis="A modest surplus becomes useful only when it is claimed before spending, guarded from preventable loss, and put to work with patience and judgment."
+  minutes={7}
+/>
+
+## The thesis
+
+Clason's parables make personal finance feel like a sequence of choices rather than a mystery of
+income. Keep a deliberate share of what comes in, make the rest fit the life you can actually
+support, and direct the saved share toward work that can produce more. The arithmetic is simple;
+the discipline is choosing the future before the present has spent its claim.
+
+## Why it matters
+
+Money often disappears through individually reasonable decisions. Each meal out, upgrade, gift,
+or payment can make sense on its own, while the total leaves no reserve for a repair, a chance,
+or a bad month. The book has lasted because it starts before investing jargon. A household needs
+some money that is not already promised before it can make a serious investment decision.
+
+## Give your future a claim before spending begins
+
+The book's best-known rule is not an instruction to ignore bills or responsibilities. It is an
+ordering rule. When income arrives, move a chosen portion toward savings or long-term ownership
+before the month's wants compete for it. What remains is then the amount available for ordinary
+living. That reversal makes saving a commitment rather than the hopeful residue of a month.
+
+The percentage is less important than the repeatable behavior. Someone paying high-interest debt
+or dealing with a shortfall may need a tiny first transfer, a bill calendar, or emergency help
+before investing. The useful beginning is a visible claim on each inflow, sized so it can survive
+the next ordinary month.
+
+<Figure id="61.1" caption="A future allocation has to be taken from income before ordinary spending fills the space.">
+  <Bars
+    className="block w-full min-w-[380px]"
+    items={[
+      { label: "income received", value: 1, valueLabel: "the whole amount" },
+      { label: "future claim", value: 0.18, accent: true, valueLabel: "chosen first" },
+      { label: "available to spend", value: 0.82, valueLabel: "fit life here" },
+    ]}
+  />
+</Figure>
+
+## Make desires negotiate with a real limit
+
+Clason does not treat every want as a need. That distinction is less severe than it sounds. A
+spending limit asks which pleasures, obligations, and comforts matter enough to keep, given the
+resources available after the future share is protected. It turns a vague feeling of restraint
+into an allocation problem that can be discussed with a partner or tested against a calendar.
+
+The limit should be honest, not performative. Cutting every pleasure may make a plan brittle;
+pretending every recurring expense is unavoidable makes it invisible. Review the large commitments
+first, then make room for spending that is genuinely valued. A plan works when it can be followed
+without needing a fresh act of will at every purchase.
+
+<Figure id="61.2" caption="A spending limit protects choices made in advance from choices made at the counter.">
+  <Compare
+    className="block w-full min-w-[384px]"
+    left={{
+      title: "spend by impulse",
+      points: ["each want arrives first", "saving waits for leftovers", "fixed costs become visible late"],
+    }}
+    right={{
+      title: "spend within a limit",
+      points: ["future share moves first", "needs and pleasures have room", "commitments are reviewed"],
+    }}
+  />
+</Figure>
+
+## Let retained money buy productive claims
+
+Savings give a household resilience. Investments add a second job: they may produce income or
+growth without requiring another hour of labor for every dollar. The book's central image is of
+money earning more money. In modern terms, that can mean a diversified fund, a bond, a business
+interest, or another claim whose risks and costs you understand. It does not mean any asset with
+an exciting story.
+
+The curve is conceptual, not a promise. Returns can be uneven, fees and taxes matter, and an
+investment can lose value. Still, money repeatedly removed from consumption gets more time to
+compound than money that is always restarted at zero. Patience is doing practical work here:
+keeping a reasonable plan in place long enough for growth to have a chance to matter.
+
+<Figure id="61.3" caption="Time gives a retained surplus more chances to produce gains that can themselves stay invested.">
+  <Curve
+    className="block w-full min-w-[380px]"
+    shape="exp"
+    axes={{ x: "time and repeated contributions", y: "potential invested value" }}
+    annotations={[
+      { x: 0.24, y: 0.04, text: "build the habit", labelPosition: "below" },
+      { x: 0.78, y: 0.49, text: "growth can add to growth" },
+    ]}
+  />
+</Figure>
+
+## Protect capital from confidence you have not earned
+
+The parables repeatedly warn against handing savings to someone who cannot explain the work or
+the risk. That warning remains sound. A tip from a friend, a persuasive promoter, or a fashionable
+asset is not a substitute for knowing how the return is supposed to arise, what could go wrong,
+and how much loss the household can absorb.
+
+Understanding has limits, so protection also comes from sizing. Keep an emergency reserve for
+near-term shocks, use appropriate insurance, avoid putting a necessary goal into one uncertain
+bet, and ask an independent qualified professional when the decision is beyond your knowledge.
+The aim is not to eliminate risk. It is to avoid a loss that can erase the ability to recover.
+
+<Figure id="61.4" caption="The safest place to learn is where both the stake and the unanswered questions are small.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "unclear", right: "understood", label: "how well you can explain the investment" }}
+    yAxis={{ low: "large stake", high: "small stake", label: "size relative to your safety margin" }}
+    quadrants={[
+      { title: "small unknown", note: "learn before adding" },
+      { title: "small, understood", note: "a manageable start" },
+      { title: "large unknown", note: "do not fund a story" },
+      { title: "large, understood", note: "still needs a risk plan" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Give debt a route out, and earnings room to grow
+
+Debt turns part of future income into an old obligation. Avoiding it entirely is not always
+possible or wise, but vague repayment lets it keep choosing for you. The book's debt lesson is
+to face each claim, set a payment rhythm, and live within the remainder while the balance is
+reduced. A written order of payments is more useful than guilt, especially when interest is
+expensive or income is irregular.
+
+The parallel task is to increase earning capacity. Ask what skill, responsibility, credential,
+or reliable service would make your work more valuable. More income does not guarantee wealth,
+but it can widen the room between necessary spending and a future claim. The strongest version of
+the book combines both moves: clear costly claims while becoming more able to make new ones.
+
+<Figure id="61.5" caption="A debt plan turns a recurring claim on income into a sequence with a visible end.">
+  <Timeline
+    className="block w-full min-w-[520px]"
+    segments={[
+      { label: "list each claim", sub: "balance, rate, due date" },
+      { label: "set the payment order", sub: "protect essentials first" },
+      { label: "pay on schedule", sub: "review after each month" },
+      { label: "redirect freed cash", sub: "reserve, then ownership" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## The Model
+
+Pay yourself first is a routing rule for every inflow. It does not claim that all households have
+the same room to save. It says that whenever there is room, the future share needs a destination
+before the rest of the income is assigned. The system becomes durable when spending is designed
+around that choice, investments are understood, and returns stay in the system long enough to
+help the next cycle.
+
+<Figure id="61.6" caption="The model routes part of income into future capacity before the remainder becomes current spending.">
+  <Flow
+    className="block w-full min-w-[680px]"
+    steps={[
+      "income arrives",
+      "route a future share",
+      "live on the remainder",
+      "buy understood ownership",
+      "retain gains and repeat",
+    ]}
+    highlight={1}
+    ariaLabel="Pay yourself first: income arrives, a future share is routed aside, the remainder supports life, the saved share buys understood ownership, and gains are retained for the next cycle."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose a first claim">
+On the next payday, choose a fixed dollar amount or percentage that can move automatically to a
+separate savings account. If cash is tight, begin with an amount small enough to keep. Name what
+the account is for, such as a first emergency buffer or a specific near-term expense.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Make the remainder visible">
+List this month's required payments, then list the spending that makes life better but can change.
+Compare the total with income after the future transfer. Adjust one recurring cost or one flexible
+category so the plan has room before the month begins.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Write an investment rule before the offer appears">
+For any money beyond a short-term reserve, write what you will invest in, why you understand it,
+how diversified it is, what costs it carries, and the maximum share of your savings it may use.
+If you cannot answer those questions, keep learning rather than buying urgency.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Turn one debt into a schedule">
+Pick the balance whose interest or stress deserves attention. Record its rate, minimum payment,
+and a realistic extra payment. Set the payment date, then decide where that payment will go once
+the balance reaches zero.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+These are durable behavioral rules, not a complete financial plan. The original work is a 1926
+collection of fictional Babylonian parables, as the [surviving edition scan](https://en.wikisource.org/wiki/File:The_Richest_Man_In_Babylon.pdf)
+shows, rather than evidence that thrift alone determines wealth. Wages, housing, health, family
+care, inherited resources, discrimination, taxes, and access to safe financial products shape
+what a person can save. Modern investing also requires details the parables do not supply:
+diversification, liquidity, fees, inflation, consumer protections, and professional advice where
+appropriate. Use the book to set a financial habit, not to blame people for constraints or to
+choose an investment without research.
+</Callout>
+
+## If you remember one thing
+
+The decisive financial habit is not waiting to see what survives the month. Give a modest part of
+each inflow a future job first, then build the rest of the plan around keeping that promise.
+
+For the behavioral side of this choice, see [The Psychology of Money](/psychology-of-money). [The
+Millionaire Next Door](/millionaire-next-door) examines the same gap between income and visible
+consumption, while [The Intelligent Investor](/intelligent-investor) gives the saved surplus a
+more rigorous investment discipline.
+
+<ShelvedNearby
+  related={["psychology-of-money", "millionaire-next-door", "intelligent-investor"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/294317/the-richest-man-in-babylon-by-george-s-clason/9780452267251/"
+  buyLabel="The Richest Man in Babylon by George S. Clason"
+/>
