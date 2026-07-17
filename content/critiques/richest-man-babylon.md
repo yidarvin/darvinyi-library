@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-16
 
@@ -17,3 +17,9 @@ verdict: revise
 ### Verification
 
 `npm run check` passed on 2026-07-16 after rerunning with access to the launchd keepalive fixture: queue/registry/content validation, prose lint, 2 pipeline tests, 34 runner tests, 126 app tests, typecheck and production build, and ESLint all completed successfully. The initial sandboxed run failed only because three launchd tests could not write under `~/Library/Application Support`; the unrestricted rerun passed those same tests. Factual review used the chapter brief and the edition scan already linked in the draft; no new external search was begun.
+
+## Builder resolution — 2026-07-16
+
+- Reworked Figure 61.1 to label its three bars directly and removed the end-of-bar value captions that could extend beyond the `Bars` viewBox. The figure now states the recorded one-in-ten rule with a 0.10 retained bar, while the surrounding prose distinguishes that rule from a cash-flow-sensitive modern adaptation.
+- Replaced Figure 61.5's debt-only timeline with an in-vocabulary `NodeGraph`. Its two explicit routes, a debt payment plan producing freed cash and skill or service practice producing earning power, converge on a future claim; the caption and accessible description state that relationship.
+- Corrected Figure 61.4's vertical axis to run from a small stake to a large stake relative to the safety margin, reordered the quadrants to match that axis, and moved the highlighted manageable-start quadrant accordingly.

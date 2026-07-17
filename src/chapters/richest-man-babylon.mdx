@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Bars, Compare, Curve, Flow, Matrix, Timeline } from "../components/diagrams";
+import { Bars, Compare, Curve, Flow, Matrix, NodeGraph } from "../components/diagrams";
 
 <Hero
   slug="richest-man-babylon"
@@ -29,18 +29,18 @@ ordering rule. When income arrives, move a chosen portion toward savings or long
 before the month's wants compete for it. What remains is then the amount available for ordinary
 living. That reversal makes saving a commitment rather than the hopeful residue of a month.
 
-The percentage is less important than the repeatable behavior. Someone paying high-interest debt
-or dealing with a shortfall may need a tiny first transfer, a bill calendar, or emergency help
-before investing. The useful beginning is a visible claim on each inflow, sized so it can survive
-the next ordinary month.
+Clason's concrete rule is to keep one coin in ten. The transferable lesson is the repeatable
+behavior behind it. Someone paying high-interest debt or dealing with a shortfall may need a tiny
+first transfer, a bill calendar, or emergency help before investing. The useful beginning is a
+visible claim on each inflow, sized so it can survive the next ordinary month.
 
-<Figure id="61.1" caption="A future allocation has to be taken from income before ordinary spending fills the space.">
+<Figure id="61.1" caption="Keeping one tenth first leaves the remaining nine tenths to fit the life you can support.">
   <Bars
     className="block w-full min-w-[380px]"
     items={[
-      { label: "income received", value: 1, valueLabel: "the whole amount" },
-      { label: "future claim", value: 0.18, accent: true, valueLabel: "chosen first" },
-      { label: "available to spend", value: 0.82, valueLabel: "fit life here" },
+      { label: "income received", value: 1 },
+      { label: "retain one in ten", value: 0.1, accent: true },
+      { label: "fit life into the rest", value: 0.9 },
     ]}
   />
 </Figure>
@@ -112,14 +112,14 @@ The aim is not to eliminate risk. It is to avoid a loss that can erase the abili
   <Matrix
     className="block w-full min-w-[384px]"
     xAxis={{ left: "unclear", right: "understood", label: "how well you can explain the investment" }}
-    yAxis={{ low: "large stake", high: "small stake", label: "size relative to your safety margin" }}
+    yAxis={{ low: "small stake", high: "large stake", label: "stake relative to your safety margin" }}
     quadrants={[
-      { title: "small unknown", note: "learn before adding" },
-      { title: "small, understood", note: "a manageable start" },
       { title: "large unknown", note: "do not fund a story" },
       { title: "large, understood", note: "still needs a risk plan" },
+      { title: "small unknown", note: "learn before adding" },
+      { title: "small, understood", note: "a manageable start" },
     ]}
-    highlight={1}
+    highlight={3}
   />
 </Figure>
 
@@ -136,16 +136,26 @@ or reliable service would make your work more valuable. More income does not gua
 but it can widen the room between necessary spending and a future claim. The strongest version of
 the book combines both moves: clear costly claims while becoming more able to make new ones.
 
-<Figure id="61.5" caption="A debt plan turns a recurring claim on income into a sequence with a visible end.">
-  <Timeline
-    className="block w-full min-w-[520px]"
-    segments={[
-      { label: "list each claim", sub: "balance, rate, due date" },
-      { label: "set the payment order", sub: "protect essentials first" },
-      { label: "pay on schedule", sub: "review after each month" },
-      { label: "redirect freed cash", sub: "reserve, then ownership" },
+<Figure id="61.5" caption="Debt reduction and stronger earning power both create more room for a future claim.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    ariaLabel="A system map in which current income supports a debt payment plan and skill practice. Reducing debt creates freed cash, and stronger skills create earning power. Both increase room for a future claim."
+    nodes={[
+      { id: "income", label: "current income", x: 0.08, y: 0.5 },
+      { id: "debt", label: "debt payment plan", x: 0.36, y: 0.22 },
+      { id: "skill", label: "skill or service", x: 0.36, y: 0.78 },
+      { id: "cash", label: "freed cash", x: 0.66, y: 0.22 },
+      { id: "power", label: "earning power", x: 0.66, y: 0.78 },
+      { id: "future", label: "future claim", x: 0.92, y: 0.5 },
     ]}
-    highlight={3}
+    edges={[
+      { from: "income", to: "debt", label: "schedule" },
+      { from: "income", to: "skill", label: "practice" },
+      { from: "debt", to: "cash", kind: "reinforcing", label: "reduce" },
+      { from: "skill", to: "power", kind: "reinforcing", label: "grow" },
+      { from: "cash", to: "future", kind: "reinforcing", label: "room" },
+      { from: "power", to: "future", kind: "reinforcing", label: "room" },
+    ]}
   />
 </Figure>
 
