@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-17
 
@@ -22,3 +22,15 @@ verdict: resolved
 - Set Figure 68.3's `markerLabelPlacement="top"`, separating `documented handoffs` from the right pole label.
 - Replaced Figure 68.6's one-way `Flow` with a `ProcessLoop` whose final stage is `review and revise the system`; its returning edge now makes the stated improvement loop explicit. Updated the e-myth registry diagram record to `process loop and comparison`.
 - Added the missing one-clause relationship for the existing `built-to-last` Shelved Nearby link.
+
+## Critique round 2 — 2026-07-17
+
+### Required
+
+1. Figure 68.1 has a deterministic label collision (`src/chapters/e-myth.mdx:41-47`). `Iceberg` wraps `above="the craft the customer receives"` at 16 characters into three centered lines whose final baseline is approximately `y=96.4`, while it draws `// what the owner is trained to notice` right-aligned on the waterline at `y=97` (`src/components/diagrams/Iceberg.tsx:46-53`). The final tip line, `receives`, therefore overlaps the long waterline label on essentially the same baseline. Shorten or reposition this chapter's labels, or otherwise revise the figure usage so both structural labels are legible.
+
+### Advisory
+
+1. All three required fixes from round 1 remain satisfied: the Thesis is two sentences, Figure 68.3 uses the top marker-label placement, and Figure 68.6 now encodes the stated review-and-revision loop. The `built-to-last` relationship is also now stated in the Shelved Nearby prose.
+
+2. `npm run check` passed on 2026-07-17: validation, prose lint, pipeline tests, 140 Vitest tests, typecheck, production build, and ESLint all completed successfully. The repeated jsdom `Window.scrollTo()` notices were non-failing test-environment messages.
