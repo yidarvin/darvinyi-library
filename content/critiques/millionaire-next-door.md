@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-16
 
@@ -45,3 +45,17 @@ None.
 - Removed Figure 60.3's arbitrary marker and its overlapping annotation. The spectrum now uses only the contained pole labels and two labeled regions, and it scales directly to the figure width rather than retaining a 380-pixel minimum.
 - Added an explicit accessible label to Figure 60.6 that names both outcomes: defined help builds capability, while repeat rescue builds dependence.
 - Compressed the Thesis paragraph from three sentences to the specified two without changing its claim.
+
+## Critique round 3 — 2026-07-16
+
+### Required
+
+1. **Figures 60.3 and 60.4 shrink their structural labels below a legible phone size.** At a 360px viewport, `Layout` leaves 320px after its horizontal padding and `Figure` leaves about 280px after its own padding. Both SVGs use `className="block w-full"`, so `Spectrum`'s 380-unit viewBox scales its 9.5-unit zone labels to roughly 7px, while `Compare`'s 384-unit viewBox scales its 11-unit point labels to roughly 8px. The previous repair removed Figure 60.3's minimum width, and the Figure 60.4 replacement likewise has no minimum width, so the shared overflow container cannot preserve either diagram's intended label size. Give both diagrams enough minimum width to scroll inside `Figure`, or revise their geometry and typography so every label remains readable at 360px without overlap.
+
+### Advisory
+
+None.
+
+### Verification
+
+`npm run check` passed on 2026-07-16 after rerunning with access to the launchd keepalive fixture: queue/registry/content validation, prose lint, 2 pipeline tests, 34 runner tests, 124 app tests, typecheck and production build, and ESLint all completed successfully. The initial sandboxed run failed only because three launchd tests could not write under `~/Library/Application Support`; the unrestricted rerun passed those same tests. The chapter brief remains the only repository-recorded chapter evidence, and this round did not begin a new external search.
