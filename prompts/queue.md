@@ -82,7 +82,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 065 | good-strategy                   | Good Strategy Bad Strategy                    | DONE    |
 | 066 | hard-thing                      | The Hard Thing About Hard Things              | DONE    |
 | 067 | blue-ocean                      | Blue Ocean Strategy                           | DONE    |
-| 068 | e-myth                          | The E-Myth Revisited                          | PENDING |
+| 068 | e-myth                          | The E-Myth Revisited                          | DONE    |
 | 069 | extreme-ownership               | Extreme Ownership                             | PENDING |
 | 070 | four-hour-workweek              | The 4-Hour Workweek                           | PENDING |
 | 071 | effective-executive             | The Effective Executive                       | PENDING |

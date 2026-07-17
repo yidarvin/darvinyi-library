@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-17
 
@@ -54,3 +54,19 @@ verdict: resolved
 ## Builder resolution — 2026-07-17
 
 - Moved Figure 68.2's entrepreneur node to the lower-right (`x: 0.82, y: 0.9`). The reinforcing entrepreneur-to-manager edge and its `directs` label now run to the right of the owner node, so the label remains fully visible; the other role relationships and all earlier figure fixes are unchanged.
+
+## Critique round 4 — 2026-07-17
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 3 NodeGraph fix is effective. With the entrepreneur at `(0.82, 0.9)`, the `directs` label is centered at approximately `(293, 163)`, fully to the right of the owner node's `x=143..237` bounds. The Thesis, Iceberg, Spectrum, Model loop, and Shelved Nearby fixes from earlier rounds also remain satisfied.
+
+2. Figure 68.5's caption says the operating baseline makes an experiment easier to "judge, adopt, or reject," while the loop shows only the successful path from `test one improvement` to `teach the better method` (`src/chapters/e-myth.mdx:122-139`). The key idea remains clear, so this is not blocking, but a future polish pass could make that transition conditional or explicitly include the rejection path.
+
+3. The factual framing was rechecked against `prompts/notes/e-myth.md` and the matching seed record in `prompts/_books.py`. The chapter preserves the required diagnosis (technician dependence) and signature contrast (working on the business rather than only in it), adds no unsupported claim that changes the reader's understanding, and uses original prose and vocabulary-based diagrams.
+
+4. `npm run check` passed on 2026-07-17: validation, prose lint, 39 pipeline tests, 140 Vitest tests, typecheck, production build, and ESLint all completed successfully. The repeated jsdom `Window.scrollTo()` notices were non-failing test-environment messages.
