@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-17
 
@@ -105,3 +105,23 @@ verdict: resolved
   weak-buyer-reason cell is now `costly and unwanted`.
 - Updated Blue Ocean's registry diagram inventory to record the rendered order:
   spectrum, two-by-two matrix, node graph, node graph, flow, comparison.
+
+## Critique round 3 — 2026-07-17
+
+### Required
+
+- None. The current matrix assigns all four labels to the correct buyer-value and
+  cost coordinates, and the registry now records the six rendered diagram forms in
+  order. The other round 1 corrections remain intact: the thesis is two sentences,
+  the four action questions converge as peer choices, and the barrier-removal edge
+  is visible and neutral.
+
+### Advisory
+
+- None. The draft follows the required anatomy, gives each of five key ideas an
+  in-vocabulary structural diagram, renders the red-ocean/blue-ocean signature
+  comparison, supplies concrete practice cards and an honest caveat, and links only
+  to completed related chapters. `npm run check` passed all six stages on
+  2026-07-17. The chapter brief and seed metadata remain the recorded evidence
+  available for this review; no chapter-local evidence record was present, and no
+  new external web search was begun.
