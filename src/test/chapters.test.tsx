@@ -5,6 +5,7 @@ import { MemoryRouter } from "react-router";
 import { MDXProvider } from "@mdx-js/react";
 import { mdxComponents } from "../components/mdxComponents";
 import { AppRoutes } from "../App";
+import { NodeGraph } from "../components/diagrams";
 import { registry } from "../lib/registry";
 
 // Every MDX module on disk, regardless of registry status. The chapter being built
@@ -89,4 +90,24 @@ describe("registry and modules line up", () => {
       expect(await screen.findAllByText(chapter.title)).not.toHaveLength(0);
     }
   }, 15_000);
+});
+
+describe("NodeGraph", () => {
+  it("keeps arrow endpoints clear of the cards they connect", () => {
+    const { container } = render(
+      <NodeGraph
+        ariaLabel="A directional handoff."
+        nodes={[
+          { id: "from", label: "from", x: 0, y: 0.5 },
+          { id: "to", label: "to", x: 1, y: 0.5 },
+        ]}
+        edges={[{ from: "from", to: "to", label: "handoff" }]}
+      />,
+    );
+
+    const edge = container.querySelector("line");
+    expect(edge).not.toBeNull();
+    expect(Number(edge!.getAttribute("x1"))).toBeGreaterThan(94);
+    expect(Number(edge!.getAttribute("x2"))).toBeLessThan(286);
+  });
 });

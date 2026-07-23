@@ -71,18 +71,19 @@ works when translation happens in both directions, not when orders only travel d
 <Figure id="69.2" caption="Direction becomes usable when intent moves down and ground truth moves back up.">
   <NodeGraph
     className="block w-full min-w-[440px]"
+    ariaLabel="Shared intent moves from leadership to the team, while reports move from the team to ground truth and updates move back to the team leader. Constraints also inform the leader's decisions."
     nodes={[
-      { id: "intent", label: "shared intent", x: 0.5, y: 0.08 },
-      { id: "leader", label: "team leader", x: 0.5, y: 0.45 },
-      { id: "team", label: "team at the work", x: 0.5, y: 0.86 },
-      { id: "context", label: "constraints", x: 0.12, y: 0.64 },
-      { id: "signal", label: "ground truth", x: 0.88, y: 0.64 },
+      { id: "intent", label: "shared intent", x: 0.15, y: 0.08 },
+      { id: "leader", label: "team leader", x: 0.3, y: 0.5 },
+      { id: "team", label: "team at the work", x: 0, y: 0.9 },
+      { id: "context", label: "constraints", x: 0.9, y: 0.15 },
+      { id: "signal", label: "ground truth", x: 1, y: 0.9 },
     ]}
     edges={[
       { from: "intent", to: "leader", kind: "reinforcing", label: "purpose" },
       { from: "leader", to: "team", kind: "reinforcing", label: "priorities" },
-      { from: "team", to: "signal", label: "reports" },
-      { from: "signal", to: "leader", kind: "reinforcing", label: "updates" },
+      { from: "team", to: "signal", label: "reports", labelOffset: { y: -10 } },
+      { from: "signal", to: "leader", kind: "reinforcing", label: "updates", labelOffset: { y: -8 } },
       { from: "context", to: "leader", label: "limits" },
     ]}
   />

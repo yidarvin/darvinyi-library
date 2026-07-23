@@ -51,6 +51,9 @@ export function NodeGraph({ nodes = [], edges = [], ariaLabel, className }: Node
 
   const nodeW = 94;
   const nodeH = 40;
+  // Leave a small gap beyond each card. A marker's tip otherwise extends back into
+  // the card and is painted over when nodes render after their connections.
+  const arrowClearance = 7;
 
   return (
     <Svg
@@ -77,11 +80,15 @@ export function NodeGraph({ nodes = [], edges = [], ariaLabel, className }: Node
         const len = Math.hypot(dx, dy) || 1;
         const ux = dx / len;
         const uy = dy / len;
-        // shorten both ends so the line meets node edges, not centers
-        const sx = a[0] + ux * 50;
-        const sy = a[1] + uy * 26;
-        const ex = b[0] - ux * 50;
-        const ey = b[1] - uy * 26;
+        // Intersect the connection with each rectangular node rather than applying
+        // independent x/y offsets. This keeps diagonal arrowheads outside cards.
+        const horizontalEdgeDistance = Math.abs(ux) > 0 ? nodeW / 2 / Math.abs(ux) : Number.POSITIVE_INFINITY;
+        const verticalEdgeDistance = Math.abs(uy) > 0 ? nodeH / 2 / Math.abs(uy) : Number.POSITIVE_INFINITY;
+        const nodeEdgeDistance = Math.min(horizontalEdgeDistance, verticalEdgeDistance);
+        const sx = a[0] + ux * (nodeEdgeDistance + arrowClearance);
+        const sy = a[1] + uy * (nodeEdgeDistance + arrowClearance);
+        const ex = b[0] - ux * (nodeEdgeDistance + arrowClearance);
+        const ey = b[1] - uy * (nodeEdgeDistance + arrowClearance);
         const rein = e.kind === "reinforcing";
         const bal = e.kind === "balancing";
         const labelX = (sx + ex) / 2 + (e.labelOffset?.x ?? 0);

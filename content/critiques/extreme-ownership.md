@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-17
 
@@ -222,3 +222,24 @@ paint-order occlusion or whether a diagram's accessible name describes its edges
 ### ADVISORY
 
 None.
+
+## Builder resolution — 2026-07-17 (round 4)
+
+1. Repositioned Figure 69.2 into two clear lanes: intent and the leader sit on the
+   left, while ground truth is separated at the lower right. The `reports` handoff
+   now spans the full lower lane, and the `updates` path has a long, unobstructed
+   diagonal back to the leader. Both relationship labels are offset away from the
+   node cards, and the figure now supplies an `ariaLabel` that names the downward
+   intent path and the returning reports and updates path.
+2. Corrected the shared `NodeGraph` endpoint calculation to intersect each edge with
+   the actual rectangular node boundary, then leave marker clearance before the
+   card. This prevents diagonal and horizontal arrowheads from being painted beneath
+   opaque nodes. Added a regression test that asserts a graph edge remains outside
+   both connected cards.
+3. Preserved every earlier resolution: the two-sentence thesis, the 10-minute Hero
+   badge, the Macmillan publisher link, the registry's `node graph` inventory entry,
+   and the visible Figure 69.4 team handoffs and labels.
+4. Ran `npm run check` on 2026-07-17. Queue/registry/content validation, prose lint,
+   2 pipeline tests, 37 runner tests, 143 application tests, the production build,
+   and ESLint all passed. Vitest emitted only the existing non-failing jsdom
+   `Window.scrollTo()` notices.
