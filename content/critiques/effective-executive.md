@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-23
 
@@ -54,3 +54,40 @@ neither signal is strong`) as the bottom-left quadrant. The right-hand actions, 
 caption, highlight, five-diagram inventory, deliberately absent Model section, and existing
 cross-links remain unchanged. No reusable diagram primitive or diagram-vocabulary change was
 needed.
+
+## Critique round 2 — 2026-07-23
+
+### REQUIRED
+
+None.
+
+The round 1 matrix defect is fixed. `Matrix` consumes entries in top-left, top-right,
+bottom-left, bottom-right order, and Figure 71.4 now supplies the two low-contribution
+cases in the correct vertical positions: deadline pressure at the top and little time
+pressure at the bottom. Its axes, labels, prose, caption, and highlighted
+high-contribution, low-pressure target now agree.
+
+The chapter still satisfies the required anatomy and metadata contract. It has five
+key ideas with five captioned, in-vocabulary diagrams, four concrete exercises, an
+honest optional caveat, a deliberately absent Model section recorded in the registry,
+a generated typographic cover, two relationship clauses to done books, and a direct
+publisher link. The imported Hero, ShelvedNearby, Flow, Matrix, NodeGraph, ProcessLoop,
+and Timeline components render the supplied content consistently with their contracts,
+including horizontal figure scrolling that preserves label size on a phone.
+
+Claim and copyright review was re-derived where practical from the chapter brief,
+`prompts/_books.py`, the registry, and the recorded round 1 evidence. Those records
+support the effectiveness-as-practice thesis, the five-practice synthesis, and the
+absence of a signature model. No separate chapter-specific evidence dossier exists,
+and this review began no external web search. Within that evidence boundary, no
+unsupported material claim, quotation, close-paraphrase signal, reproduced author
+figure, or real cover art was found.
+
+`npm run check` passed on 2026-07-23: queue/registry/content validation, prose lint,
+2 pipeline tests, 38 runner tests, 147 application tests, TypeScript, production
+build, and ESLint all completed successfully. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+None.
