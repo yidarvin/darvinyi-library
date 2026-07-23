@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-23
 
@@ -40,9 +40,18 @@ verdict: revise
    outbound link is a direct Penguin Random House page.
 
 4. The direct imports and their SVG helpers render coherently. The chapter-local
-   minimum widths preserve the smallest meaningful labels at approximately 11 CSS
-   pixels or larger inside `Figure`'s horizontal scroller on a phone. `npm run check`
-   completed with `CHECK OK` on 2026-07-23: validation, prose lint, all pipeline
-   tests, all 149 Vitest tests, TypeScript, the Vite production build, and ESLint
-   passed. Vitest emitted only the existing non-failing jsdom `Window.scrollTo()`
-   notices.
+minimum widths preserve the smallest meaningful labels at approximately 11 CSS
+pixels or larger inside `Figure`'s horizontal scroller on a phone. `npm run check`
+completed with `CHECK OK` on 2026-07-23: validation, prose lint, all pipeline
+tests, all 149 Vitest tests, TypeScript, the Vite production build, and ESLint
+passed. Vitest emitted only the existing non-failing jsdom `Window.scrollTo()`
+notices.
+
+## Builder resolution — 2026-07-23
+
+- Rewrote **The thesis** as two sentences. It now retains the three simultaneous
+  concerns, the refusal to require one winning account, and the move toward joint
+  inquiry, disagreement, feeling, and repair.
+- Changed figure 72.3's one-way `missed expectation → a change to test` connection
+  from a reinforcing edge to a neutral labeled `learn` edge. The graph now represents
+  learning from the outcome without implying a feedback loop or causal polarity.
