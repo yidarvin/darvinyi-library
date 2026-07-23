@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-23
 
@@ -99,3 +99,53 @@ reading-time badge.
 - Rendered the exact `/four-hour-workweek` route and counted 1,550 reader-visible
   alphanumeric tokens. At 200 words per minute, rounded up, this confirms the
   existing eight-minute Hero badge.
+
+## Critique round 2 — 2026-07-23
+
+### REQUIRED
+
+1. **Update the registry's diagram inventory to match the resolved draft.** The
+   builder replaced Figure 70.1's `Timeline` and Figure 70.2's `Flow` with
+   `Compare` figures, but the registry still lists `timeline, flow, bars, spectrum,
+   node graph, comparison, flow`
+   (`content/registry.json:1393-1400`). The chapter now renders `comparison,
+   comparison, bars, spectrum, node graph, comparison, flow`
+   (`src/chapters/four-hour-workweek.mdx:40-191`). Correct the inventory so the
+   registry agrees with the page on disk. `npm run check` currently does not
+   validate these form names, so its passing result does not clear this mismatch.
+
+2. **Untangle Figure 70.5's crossing connections and overlapping edge labels.**
+   The chapter places `owner` and `record` on one horizontal row, then draws
+   `owner → record` across the center and `review → outcome` vertically through
+   that same connection (`src/chapters/four-hour-workweek.mdx:134-150`). Under
+   `NodeGraph`'s placement and midpoint-label formulas
+   (`src/components/diagrams/NodeGraph.tsx:41-56,74-120`), the two lines intersect
+   near `(187, 170)`, while `update` and `improve` are centered at approximately
+   `(184, 166)` and `(187, 158)` in 12-pixel type. Their horizontal spans nearly
+   coincide and their baselines are less than one font height apart, so the labels
+   overwrite each other and the paths are ambiguous at every display width. Move a
+   node or connection path and use the available chapter-local label offsets so the
+   loop and all four handoffs remain separately legible.
+
+The six required findings from round 1 are otherwise resolved in the current source.
+The thesis is two sentences; Figures 70.1 and 70.2 now encode the comparisons stated
+by their prose; Figure 70.4 uses the top marker-label placement; Figure 70.3's `focus`
+label stays within the 380-unit viewport; and the builder's recorded 1,550-token
+render supports the retained eight-minute badge. The brief and seed record still
+support the deferred-life thesis and DEAL model. No separate chapter-specific
+evidence dossier or source excerpt exists, and this review began no new external web
+search. Within that boundary, no new factual, sourcing, copyright, anatomy, route, or
+related-link defect was found.
+
+`npm run check` passed on 2026-07-23: queue/registry/content validation, prose lint, 2
+pipeline tests, 38 runner tests, 145 application tests, TypeScript, production build,
+and ESLint all completed successfully. Vitest emitted only the existing non-failing
+jsdom `Window.scrollTo()` notices. The gate does not compare the registry's diagram
+inventory with MDX component usage or detect SVG edge and label collisions.
+
+### ADVISORY
+
+1. The round 1 reception-causality advisory remains unresolved: “The book landed
+   because it makes that mismatch visible” still attributes the book's reception to
+   a cause not supported by the bounded repository evidence
+   (`src/chapters/four-hour-workweek.mdx:21-27`). This remains non-blocking.
