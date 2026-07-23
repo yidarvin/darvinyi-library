@@ -86,7 +86,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 069 | extreme-ownership               | Extreme Ownership                             | DONE    |
 | 070 | four-hour-workweek              | The 4-Hour Workweek                           | DONE    |
 | 071 | effective-executive             | The Effective Executive                       | DONE    |
-| 072 | difficult-conversations         | Difficult Conversations                       | PENDING |
+| 072 | difficult-conversations         | Difficult Conversations                       | DONE    |
 | 073 | seven-principles-marriage       | The Seven Principles for Making Marriage Work | PENDING |
 | 074 | made-to-stick                   | Made to Stick                                 | PENDING |
 | 075 | quiet                           | Quiet                                         | PENDING |

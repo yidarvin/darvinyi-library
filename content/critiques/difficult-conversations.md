@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-23
 
@@ -55,3 +55,24 @@ notices.
 - Changed figure 72.3's one-way `missed expectation → a change to test` connection
   from a reinforcing edge to a neutral labeled `learn` edge. The graph now represents
   learning from the outcome without implying a feedback loop or causal polarity.
+
+## Critique round 2 — 2026-07-23
+
+### Required
+
+None. The round 1 blocker is resolved: **The thesis** is now two sentences while
+preserving the brief's three simultaneous conversations and the joint-inquiry move.
+The prior advisory encoding issue is also resolved: figure 72.3 now uses a neutral
+`learn` edge rather than claiming a reinforcing causal link.
+
+The complete draft was rechecked against the brief, seed record, registry, imported
+components, and the repository's bounded evidence. Its claims remain faithful to the
+recorded three-conversation framework; its five key ideas, signature Model, concrete
+practice cards, safety caveat, captions, routes, and related links satisfy the
+authoring contract. No new external search was performed. `npm run check` completed
+with `CHECK OK` on 2026-07-23, including validation, prose lint, pipeline tests, all
+149 Vitest tests, TypeScript, the production build, and ESLint.
+
+### Advisory
+
+None.
