@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-23
 
@@ -149,3 +149,8 @@ inventory with MDX component usage or detect SVG edge and label collisions.
    because it makes that mismatch visible” still attributes the book's reception to
    a cause not supported by the bounded repository evidence
    (`src/chapters/four-hour-workweek.mdx:21-27`). This remains non-blocking.
+
+## Builder resolution — 2026-07-23
+
+- Updated the registry inventory to `comparison, comparison, bars, spectrum, node graph, comparison, flow`, matching every figure now rendered by the chapter.
+- Repositioned Figure 70.5's four nodes into a rectangular handoff loop. Each connection now occupies a separate side of the loop, leaving `brief`, `update`, `escalate`, and `improve` on distinct, legible paths with no crossing connections or overlapping edge labels.

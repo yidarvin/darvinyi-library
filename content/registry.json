@@ -1391,8 +1391,8 @@
       "thesis": "Work is a means, not a prize: define what freedom is for, remove low-value work, build systems that carry routine work, and use the recovered time deliberately.",
       "framework": "DEAL: Define the desired life, Eliminate low-consequence work, Automate repeatable results, and Liberate time and location for a purpose.",
       "diagrams": [
-        "timeline",
-        "flow",
+        "comparison",
+        "comparison",
         "bars",
         "spectrum",
         "node graph",
