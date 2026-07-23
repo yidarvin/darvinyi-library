@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-17
 
@@ -243,3 +243,43 @@ None.
    2 pipeline tests, 37 runner tests, 143 application tests, the production build,
    and ESLint all passed. Vitest emitted only the existing non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Critique round 5 — 2026-07-23
+
+### REQUIRED
+
+None.
+
+The round 4 repair is resolved. Figure 69.2 now gives its downward intent path and
+returning information path enough separation for the connectors, arrowheads, and
+labels to remain outside the opaque node cards. Its explicit accessible label also
+states the purpose, reports, updates, and constraints relationships rather than only
+listing nodes. The shared `NodeGraph` now intersects each connection with the actual
+rectangular card boundary and leaves marker clearance, and its regression test checks
+that a representative directional edge ends outside both cards. Figure 69.4 retains
+its separated team nodes, visible handoffs, offset labels, and shared-outcome path.
+
+All earlier resolutions remain in place: the thesis is two sentences; the Hero badge
+is the builder's recomputed 10 minutes; the Macmillan link is a direct publisher page;
+the registry records the seven rendered forms in order; the six key ideas and the
+signature model each have a captioned, in-vocabulary diagram; and all three related
+slugs are done chapters with relationship clauses. The practice cards are concrete,
+the caveat distinguishes responsibility from blame under constrained authority, and
+the page uses original prose and diagrams without a quotation or real cover art.
+
+The chapter brief and seed record remain the only chapter-specific source evidence in
+the repository. No evidence dossier or source excerpt was found, and this round began
+no external web search. Factual and close-paraphrase review was therefore bounded to
+those records, the critic's re-derivation of the book's core leadership principles,
+and internal agreement among the prose, diagrams, captions, and metadata. Within that
+boundary, no unsupported claim that changes the reader's understanding and no
+copyright defect was found.
+
+`npm run check` passed in full on 2026-07-23: queue/registry/content validation, prose
+lint, 2 pipeline tests, 38 runner tests, 143 application tests, TypeScript, production
+build, and ESLint all completed successfully. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+None.
