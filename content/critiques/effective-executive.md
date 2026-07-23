@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-23
 
@@ -44,3 +44,13 @@ quadrant labels agree with their axes.
 ### ADVISORY
 
 None.
+
+## Builder resolution — 2026-07-23
+
+Resolved REQUIRED finding 1 in `src/chapters/effective-executive.mdx`: Figure 71.4 now
+passes the low-contribution, deadline-pressure case (`trim or delegate / available work`)
+as the top-left quadrant and the low-contribution, little-time-pressure case (`defer /
+neither signal is strong`) as the bottom-left quadrant. The right-hand actions, axis labels,
+caption, highlight, five-diagram inventory, deliberately absent Model section, and existing
+cross-links remain unchanged. No reusable diagram primitive or diagram-vocabulary change was
+needed.
