@@ -1,0 +1,225 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Flow, Matrix, NodeGraph, ProcessLoop } from "../components/diagrams";
+
+<Hero
+  slug="seven-principles-marriage"
+  thesis="A durable marriage depends less on never fighting than on keeping friendship, respect, and repair strong enough to carry the fights that will recur."
+  minutes={7}
+/>
+
+## The thesis
+
+Gottman's argument is practical: a relationship is made in its ordinary moments. Partners need
+an up-to-date knowledge of one another, a climate of appreciation, and a habit of answering
+small invitations for connection. Conflict will still arrive. What separates a manageable
+disagreement from a damaging pattern is how it begins, whether each person can hear influence,
+and whether they can repair the conversation when it goes off course.
+
+## Why it matters
+
+Marriage advice often concentrates on finding the right person or solving the right issue.
+This book directs attention to observable interaction instead. That shift matters because many
+of the moments that build trust or distance are short and repeatable: a question after work, a
+bid met with attention, a complaint framed as a need, an apology accepted. They are small
+enough to practice before resentment becomes the only thing either person can see.
+
+## Friendship needs current information
+
+The book calls a partner's working knowledge of the other person's inner world a love map. The
+phrase can sound sentimental, but the task is concrete. What is consuming their attention
+right now? Which person at work is difficult? What are they looking forward to, worrying
+about, or trying to decide? A map goes stale because people change under pressure, through new
+responsibilities, and with time. Asking again is not a quiz. It is a way to keep meeting the
+person who is actually there rather than the version you last understood.
+
+<Figure id="73.1" caption="An up-to-date picture of a partner connects the pressures, hopes, and people shaping their present life.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "partner", label: "partner today", x: 0.5, y: 0.48 },
+      { id: "pressure", label: "current pressure", x: 0.15, y: 0.15 },
+      { id: "hope", label: "current hope", x: 0.85, y: 0.15 },
+      { id: "people", label: "important people", x: 0.15, y: 0.82 },
+      { id: "history", label: "shared history", x: 0.85, y: 0.82 },
+    ]}
+    edges={[
+      { from: "pressure", to: "partner", label: "ask" },
+      { from: "hope", to: "partner", label: "ask" },
+      { from: "people", to: "partner", label: "notice" },
+      { from: "history", to: "partner", label: "remember" },
+    ]}
+  />
+</Figure>
+
+## Small bids set the relational weather
+
+Connection is often requested indirectly: a comment about a headline, a sigh from the next
+room, a photo held out to see. These are bids, small openings that ask, in effect, "Will you
+join me for a moment?" The useful response is not constant availability. It is a reliable
+pattern of turning toward when attention is possible, and of naming when it is not. An ignored
+bid can be ordinary life. A long run of ignored bids can teach a person that reaching out is
+pointless. Acknowledgment, curiosity, and a promised return create a different lesson.
+
+<Figure id="73.2" caption="Each small bid is a chance to reinforce the expectation that reaching out will meet a response.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["a bid", "attention", "feeling received", "more reaching out"]}
+    compoundingEdge={3}
+    centerLabel="connection"
+  />
+</Figure>
+
+## Respect needs a daily supply
+
+Affection is easier to access when partners keep evidence of what they value in one another
+within reach. That does not require forced praise or a ban on annoyance. It means refusing to
+let irritation become the only lens. A specific thanks, a remembered strength, or a fair
+retelling of a hard day gives conflict less room to become a case against the other person's
+character. This reserve of fondness does not erase a real grievance. It gives the grievance a
+relationship inside which it can be heard.
+
+<Figure id="73.3" caption="Daily appreciation creates a center of respect that can hold a specific complaint without turning it into a verdict.">
+  <Concentric
+    className="block w-full min-w-[440px]"
+    rings={[{ label: "respect" }, { label: "specific complaint" }, { label: "a difficult day" }]}
+    highlight={0}
+    externalLabel="the conflict in front of us"
+  />
+</Figure>
+
+## Learn which problems need solving and which need living with
+
+Some disputes have a practical answer: change a schedule, set a budget, divide a task. Others
+return because they arise from durable differences in temperament, family expectations, work,
+money, sex, or the shape of a meaningful life. The book asks couples to stop treating every
+recurring disagreement as a puzzle that must yield one final answer. A workable conversation
+can name the underlying wish on each side, make room for the difference, and find a temporary
+arrangement that both can live with. Gridlock is less about a disagreement's existence than
+about contempt, silence, or rigid demands taking over the disagreement.
+
+<Figure id="73.4" caption="A conflict is easier to handle when its practical and enduring parts are distinguished before choosing a response.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "one-time", right: "recurs", label: "how often it returns" }}
+    yAxis={{ low: "logistical", high: "meaning-laden", label: "what is at stake" }}
+    quadrants={[
+      { title: "solve", note: "make a plan" },
+      { title: "returning task", note: "revise the system" },
+      { title: "name the value", note: "hear the wish" },
+      { title: "live with difference", note: "seek a workable rhythm" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Repair matters more than a spotless conversation
+
+Even thoughtful couples get flooded, mishear one another, or begin too sharply. Repair is the
+move that interrupts the slide: slowing down, saying "I started that badly," accepting a small
+point, taking a break with a time to return, or asking to try the opening again. A repair is
+not a magic phrase that cancels harm. It is an invitation to restore enough cooperation for
+the issue to become discussable. Its success depends on both people recognizing the attempt and
+making some room for it.
+
+<Figure id="73.5" caption="Repair turns a rough opening into another chance to state the concern, hear the response, and make a next move.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["notice escalation", "name the break", "settle or pause", "restart gently"]}
+    highlight={3}
+  />
+</Figure>
+
+## The Model
+
+The Four Horsemen are a diagnostic vocabulary for communication patterns that can turn conflict
+corrosive. Criticism makes a person's character the problem rather than describing a specific
+event. Contempt adds disgust or superiority. Defensiveness answers a concern with excuses,
+counterattack, or a refusal of responsibility. Stonewalling withdraws from the exchange, often
+when a person is overwhelmed. They do not operate as a fixed sequence, and a single appearance
+does not determine a marriage. The warning is their repeated presence, especially when repair
+and respect have become hard to find.
+
+<Figure id="73.6" caption="The Four Horsemen name distinct ways a conflict can become unsafe for connection, and each calls for a more constructive replacement.">
+  <div className="min-w-[440px] space-y-6">
+    <NodeGraph
+      className="block w-full"
+      nodes={[
+        { id: "moment", label: "conflict moment", x: 0.5, y: 0.48 },
+        { id: "criticism", label: "criticism", x: 0.5, y: 0.05 },
+        { id: "contempt", label: "contempt", x: 0.89, y: 0.48 },
+        { id: "defensive", label: "defensiveness", x: 0.5, y: 0.91 },
+        { id: "wall", label: "stonewalling", x: 0.11, y: 0.48 },
+      ]}
+      edges={[
+        { from: "moment", to: "criticism" },
+        { from: "moment", to: "contempt" },
+        { from: "moment", to: "defensive" },
+        { from: "moment", to: "wall" },
+      ]}
+    />
+    <Compare
+      className="block w-full"
+      favor="right"
+      left={{ title: "the slide", points: ["attack a character", "claim superiority", "return blame", "shut down"] }}
+      right={{ title: "a repair path", points: ["state a need", "show respect", "own one part", "pause and return"] }}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Refresh one part of the map">
+Set aside ten minutes this week and ask questions that have current answers: What has been
+taking the most energy lately? What are you looking forward to? What would make next week
+easier? Do not solve the answer unless help is requested. The point is accurate attention.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Answer one bid on purpose">
+When your partner makes a small comment or reaches for your attention, pause before replying.
+Ask one follow-up question, reflect what you heard, or say when you can come back to it. Choose
+one ordinary opening rather than waiting for a grand moment of closeness.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Bring one complaint without a character judgment">
+Write the issue in this order: what happened, how it affected you, and what you need next.
+Keep it about an observable event. Replace "you always" with the actual situation, then make a
+request your partner could accept, decline, or help revise.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Plan the pause before the next argument">
+Agree on a sentence that means, "I am too flooded to do this well, and I will come back." Decide
+where each person will go, how long the break will be, and when the conversation resumes. A
+pause without a return time can feel like abandonment. A planned return makes space for both
+regulation and accountability.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The Four Horsemen are warning signs, not a home diagnosis or a score that predicts any one
+couple's future. The research behind Gottman's claims comes from particular samples and
+laboratory observations, so headline prediction percentages should not be treated as a
+personal verdict. Context matters: stress, depression, trauma, illness, financial strain,
+unequal power, and discrimination shape how conflict appears and what help is possible.
+Communication skills also do not make abuse safe. When there is coercion, fear, violence, or
+retaliation, the priority is safety, specialized support, and boundaries rather than improving
+the conversation.
+</Callout>
+
+## If you remember one thing
+
+Protect the friendship that lets two people stay interested in one another, then treat conflict
+as a problem to manage together. A specific complaint, a little respect, and a repair made in
+action are more useful than winning the exchange.
+
+Nonviolent Communication offers language for turning a charged complaint into an observation,
+feeling, need, and request. Difficult Conversations adds a companion method for holding
+different accounts of the same event without making either person the whole problem.
+
+<ShelvedNearby
+  related={["nonviolent-communication", "difficult-conversations", "five-love-languages"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/248395/the-seven-principles-for-making-marriage-work-by-john-gottman-phd-and-nan-silver/"
+  buyLabel="The Seven Principles for Making Marriage Work by John Gottman and Nan Silver"
+/>
+
