@@ -1,0 +1,238 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Flow, NodeGraph, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="four-hour-workweek"
+  thesis="Work is a means, not a prize. Define what freedom is for, cut low-value work, build systems that carry routine work, and use the recovered time deliberately."
+  minutes={8}
+/>
+
+## The thesis
+
+Ferriss challenges the deferred-life bargain: tolerate a life organized around work now, then
+start living after enough money or status arrives. His alternative is lifestyle design. Decide
+what time, income, and location would let you live well in the nearer term, remove work that
+does not serve that aim, and replace personal upkeep with systems, delegation, and clear rules.
+The result is not literally four hours of work for everyone. It is a more demanding question:
+what work needs your judgment, and what is merely occupying the space where a life could go?
+
+## Why it matters
+
+Busy can feel like proof of importance, especially when a job, a business, and an inbox all
+offer immediate ways to demonstrate effort. Yet effort has an opportunity cost. A calendar can
+be full while the things a person claims to value remain permanently scheduled for later. The
+book landed because it makes that mismatch visible, then treats attention and autonomy as things
+that can be designed rather than rewards granted at the end of a career.
+
+## Key ideas
+
+### A postponed life is still a choice
+
+The usual story is linear: work hard, accumulate security, and eventually earn the right to
+travel, learn, make art, spend time with family, or simply slow down. Ferriss disputes the order,
+not the value of security. He asks what parts of the imagined future could be tried in smaller,
+more frequent stretches now. That question exposes whether a goal is genuinely expensive or has
+been held at a respectful distance because it feels unsafe to want. A trial is useful precisely
+because it replaces a grand fantasy with information.
+
+<Figure id="70.1" caption="A life need not wait for one distant finish line; meaningful experiments can happen along the way.">
+  <Timeline
+    className="block w-full min-w-[440px]"
+    segments={[
+      { label: "defer", sub: "work first" },
+      { label: "save", sub: "wait for enough" },
+      { label: "retire", sub: "live later" },
+      { label: "try now", sub: "short, real experiments" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+### Define the target before optimizing toward it
+
+More income, more free time, and more career prestige are not interchangeable goals. A person
+who wants a month to care for a parent needs a different plan from one who wants to start a
+business, travel slowly, or make a difficult career change. Definition means giving the desired
+life enough shape to calculate its cost, test its assumptions, and see what it displaces. It also
+means confronting fear directly. Name the bad outcome, estimate how likely it is, describe how
+you would repair it, and compare that cost with the cost of staying put. Anxiety tends to shrink
+when it is made specific.
+
+<Figure id="70.2" caption="Specific fears can be examined, repaired, and weighed against the cost of never testing the alternative.">
+  <Flow
+    className="block w-full min-w-[520px]"
+    steps={["name the desired change", "describe the feared outcome", "plan a repair", "run a bounded test"]}
+    highlight={3}
+  />
+</Figure>
+
+### Attention should follow consequences, not arrivals
+
+An inbox presents every request with the same visual urgency. That is a poor way to rank work.
+Ferriss borrows the broad insight often associated with the 80/20 rule: a small portion of
+customers, tasks, meetings, or channels can account for most of the value or most of the trouble.
+The numbers are a prompt to inspect the distribution, not a law to recite. Which work produces a
+real result? Which work merely proves that you were available? Measure where attention goes,
+then protect the few activities whose absence would actually be noticed.
+
+<Figure id="70.3" caption="A small set of activities often deserves much more attention than the long tail of visible busyness.">
+  <Bars
+    className="block w-full min-w-[440px]"
+    items={[
+      { label: "routine requests", value: 0.34, valueLabel: "many, low consequence" },
+      { label: "maintenance work", value: 0.52, valueLabel: "necessary, contain it" },
+      { label: "high-consequence work", value: 0.91, accent: true, valueLabel: "protect it" },
+    ]}
+  />
+</Figure>
+
+### Reduce the demand for your immediate response
+
+Interruption creates a false economy. A fast reply can feel efficient while repeatedly breaking
+the concentration needed for work that takes longer than a few minutes. The book favors
+batching, limits on availability, and a low-information diet: receive, review, and respond on a
+cadence suited to the consequence of the message. This is not an argument for ignoring people.
+It is an argument for making expectations explicit, choosing channels that fit the work, and
+reserving immediate response for matters that are truly time-sensitive.
+
+<Figure id="70.4" caption="The useful choice is not permanent availability or permanent silence, but a response rhythm matched to consequence.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="always interruptible"
+    right="never reachable"
+    marker={0.55}
+    markerLabel="clear response windows"
+    zones={[
+      { from: 0, to: 0.3, label: "attention fragments" },
+      { from: 0.42, to: 0.68, label: "batch, signal, and follow through", accent: true },
+      { from: 0.8, to: 1, label: "coordination breaks" },
+    ]}
+  />
+</Figure>
+
+### Delegate a result, not a cloud of chores
+
+Outsourcing only creates freedom when a task can leave your head without returning as a stream
+of questions. That requires a defined outcome, constraints, examples of acceptable quality, a
+place to record progress, and a clear decision about what should come back for approval. The
+purpose is not to hand off responsibility or to treat another person as invisible. It is to move
+repeatable work to a capable owner while keeping accountability for the result. If the task
+cannot be described well enough to delegate, it may be too vague to perform well yourself.
+
+<Figure id="70.5" caption="A good handoff connects a clear result, a capable owner, visible progress, and an explicit approval boundary.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "outcome", label: "defined\noutcome", x: 0.48, y: 0.1 },
+      { id: "owner", label: "capable\nowner", x: 0.12, y: 0.53 },
+      { id: "record", label: "shared\nrecord", x: 0.84, y: 0.53 },
+      { id: "review", label: "approval\nboundary", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "outcome", to: "owner", label: "brief" },
+      { from: "owner", to: "record", label: "update" },
+      { from: "record", to: "review", label: "escalate" },
+      { from: "review", to: "outcome", kind: "reinforcing", label: "improve" },
+    ]}
+  />
+</Figure>
+
+### Prove a system before you make it bigger
+
+Automation is not a synonym for buying software. It is the removal of routine decisions from
+the person who should be doing higher-value work. For a business, that can mean testing a narrow
+offer before inventory, defining the path from customer question to payment, assigning recurring
+exceptions, and watching whether the system holds without constant rescue. For an employee, it
+can mean showing that results improve when work is measured by output rather than desk time. In
+both cases, start with a small, observable experiment. Scale is expensive feedback.
+
+<Figure id="70.6" caption="Test a small promise and its handoffs before committing money, reputation, or a larger team to the system.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "scale first",
+      points: ["large commitment", "assumptions stay hidden", "expensive correction", "founder rescues the gaps"],
+    }}
+    right={{
+      title: "test, then scale",
+      points: ["narrow offer", "real customer signal", "repair one weak handoff", "expand what works"],
+    }}
+  />
+</Figure>
+
+## The Model
+
+The book's central sequence is DEAL: Define, Eliminate, Automate, Liberate. Definition makes a
+desired life concrete enough to evaluate. Elimination removes activities whose cost exceeds their
+contribution. Automation builds income and operational systems that need less direct upkeep.
+Liberation uses the resulting room to change where and when work happens, then puts that freedom
+to a purpose. The steps are ordered, but they are not a one-time graduation ceremony. A new goal
+or a system that starts consuming too much attention sends you back to define and cut again.
+
+<Figure id="70.7" caption="DEAL turns a vague wish for freedom into a sequence of decisions about purpose, attention, systems, and mobility.">
+  <Flow
+    className="block w-full min-w-[580px]"
+    steps={["define\nthe purpose", "eliminate\nlow-value work", "automate\nroutine results", "liberate\ntime and location"]}
+    highlight={3}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Price one near-term freedom">
+Choose one experience or condition you have placed in a vague future: a three-week trip, a
+reduced schedule, a course, a move, or regular time with someone you love. Write what it would
+cost in money, time, and obligations. Find one smaller version you could test within ninety days.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Run a consequence audit">
+For five workdays, record the recurring tasks, requests, and meetings that take your attention.
+At the end of the week, circle the few that create a customer result, reduce a meaningful risk,
+or move an important project. Stop, shorten, batch, or renegotiate one low-consequence item.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Write a humane handoff">
+Pick one repeatable task. State the expected result, deadline, available information, quality
+standard, and decisions the other person can make without asking. Agree on pay, workload,
+communication, and escalation before work begins. Delegate the task, not the uncertainty.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Ask for an output experiment">
+If your work is location-dependent by habit more than necessity, propose a small remote or
+asynchronous trial with a manager or team. Define the output, the response expectations, the
+check-in points, and the date to review it. Bring evidence, not an abstract request for freedom.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The title is a provocation, not a baseline anyone should promise. Many jobs require presence,
+care work cannot simply be automated, and location freedom depends on immigration rules, income,
+health coverage, disability, family obligations, and an employer's bargaining power. The book's
+advice on outsourcing also needs an ethical standard that the productivity frame can obscure:
+fair pay, consent, reasonable hours, privacy, and clear scope are part of a good delegation
+system, not overhead to minimize. Use the framework to inspect wasteful work and build more
+choice. Do not use it to avoid responsibility, abandon a team, or convert another person's
+precarity into your convenience.
+</Callout>
+
+## If you remember one thing
+
+Do not wait for work to become lighter by accident. Decide what the recovered time is for, remove
+the work that does not support it, and build fair systems that let routine work move without
+making your life, or someone else's, more fragile.
+
+The E-Myth Revisited takes the business-systems side further, while Essentialism supplies a
+stricter test for deciding what deserves attention. Deep Work is the concentration counterpart:
+it explains what the reclaimed, protected time is good for.
+
+<ShelvedNearby
+  related={["e-myth", "essentialism", "deep-work"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/49081/the-4-hour-workweek-expanded-and-updated-by-timothy-ferriss/"
+  buyLabel="The 4-Hour Workweek by Timothy Ferriss"
+/>
