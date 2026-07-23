@@ -3,7 +3,7 @@ import { ExerciseCard } from "../components/ExerciseCard";
 import { Figure } from "../components/Figure";
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Bars, Compare, Flow, NodeGraph, Spectrum, Timeline } from "../components/diagrams";
+import { Bars, Compare, Flow, NodeGraph, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="four-hour-workweek"
@@ -13,12 +13,10 @@ import { Bars, Compare, Flow, NodeGraph, Spectrum, Timeline } from "../component
 
 ## The thesis
 
-Ferriss challenges the deferred-life bargain: tolerate a life organized around work now, then
-start living after enough money or status arrives. His alternative is lifestyle design. Decide
-what time, income, and location would let you live well in the nearer term, remove work that
-does not serve that aim, and replace personal upkeep with systems, delegation, and clear rules.
-The result is not literally four hours of work for everyone. It is a more demanding question:
-what work needs your judgment, and what is merely occupying the space where a life could go?
+Ferriss rejects the deferred-life bargain: decide what freedom requires soon enough to test,
+remove work that does not serve it, and build systems that reduce personal upkeep. The point is
+not a literal four-hour schedule, but more room to use judgment where it matters and to live
+before a distant finish line.
 
 ## Why it matters
 
@@ -39,16 +37,18 @@ more frequent stretches now. That question exposes whether a goal is genuinely e
 been held at a respectful distance because it feels unsafe to want. A trial is useful precisely
 because it replaces a grand fantasy with information.
 
-<Figure id="70.1" caption="A life need not wait for one distant finish line; meaningful experiments can happen along the way.">
-  <Timeline
+<Figure id="70.1" caption="Instead of delaying a whole life until retirement, test a valued piece now and repeat what the experiment teaches.">
+  <Compare
     className="block w-full min-w-[440px]"
-    segments={[
-      { label: "defer", sub: "work first" },
-      { label: "save", sub: "wait for enough" },
-      { label: "retire", sub: "live later" },
-      { label: "try now", sub: "short, real experiments" },
-    ]}
-    highlight={3}
+    favor="right"
+    left={{
+      title: "defer the life",
+      points: ["work before living", "wait for enough", "try it after retirement"],
+    }}
+    right={{
+      title: "test it now",
+      points: ["try one small piece", "learn what it costs", "repeat before the next plan"],
+    }}
   />
 </Figure>
 
@@ -62,11 +62,18 @@ means confronting fear directly. Name the bad outcome, estimate how likely it is
 you would repair it, and compare that cost with the cost of staying put. Anxiety tends to shrink
 when it is made specific.
 
-<Figure id="70.2" caption="Specific fears can be examined, repaired, and weighed against the cost of never testing the alternative.">
-  <Flow
+<Figure id="70.2" caption="A specified fear and repair can be compared with the cost of leaving a desired change permanently untested.">
+  <Compare
     className="block w-full min-w-[520px]"
-    steps={["name the desired change", "describe the feared outcome", "plan a repair", "run a bounded test"]}
-    highlight={3}
+    favor="none"
+    left={{
+      title: "fear and repair",
+      points: ["describe the feared outcome", "estimate its likelihood", "plan how to repair it"],
+    }}
+    right={{
+      title: "cost of inaction",
+      points: ["name what stays postponed", "estimate the ongoing cost", "compare before a bounded test"],
+    }}
   />
 </Figure>
 
@@ -85,7 +92,7 @@ then protect the few activities whose absence would actually be noticed.
     items={[
       { label: "routine requests", value: 0.34, valueLabel: "many, low consequence" },
       { label: "maintenance work", value: 0.52, valueLabel: "necessary, contain it" },
-      { label: "high-consequence work", value: 0.91, accent: true, valueLabel: "protect it" },
+      { label: "high-consequence work", value: 0.91, accent: true, valueLabel: "focus" },
     ]}
   />
 </Figure>
@@ -106,6 +113,7 @@ reserving immediate response for matters that are truly time-sensitive.
     right="never reachable"
     marker={0.55}
     markerLabel="clear response windows"
+    markerLabelPlacement="top"
     zones={[
       { from: 0, to: 0.3, label: "attention fragments" },
       { from: 0.42, to: 0.68, label: "batch, signal, and follow through", accent: true },

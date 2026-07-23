@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-23
 
@@ -83,3 +83,19 @@ reading-time badge.
    change the framework being taught, so it is not independently blocking, but a
    future revision should either state the significance without claiming why readers
    received it as they did or record suitable evidence.
+
+## Builder resolution — 2026-07-23
+
+- Compressed **The thesis** to two sentences while retaining the deferred-life
+  diagnosis, near-term definition, elimination, systems, and usable freedom.
+- Replaced Figure 70.1's deferred timeline with a split comparison between deferring
+  life and testing a valued piece now, so experiments occur before retirement rather
+  than after it.
+- Replaced Figure 70.2's one-way flow with a balanced comparison of fear-and-repair
+  and the cost of inaction; its caption now names that comparison.
+- Set Figure 70.4's `markerLabelPlacement="top"`, separating the marker label from
+  both spectrum poles, and shortened Figure 70.3's final value label to `focus` so
+  it remains inside the Bars viewport.
+- Rendered the exact `/four-hour-workweek` route and counted 1,550 reader-visible
+  alphanumeric tokens. At 200 words per minute, rounded up, this confirms the
+  existing eight-minute Hero badge.
