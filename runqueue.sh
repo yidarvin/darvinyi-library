@@ -319,7 +319,7 @@ paths_are_allowed() {
       build:src/chapters/_figures/*|build:src/chapters/_widgets/*|build:src/components/diagrams/*|build:docs/diagram-vocabulary.md) ;;
       critique:content/critiques/"$slug".md|critique:content/registry.json|critique:prompts/queue.md) ;;
       resolve:src/chapters/"$slug".mdx|resolve:src/chapters/_figures/*|resolve:src/chapters/_widgets/*) ;;
-      resolve:src/components/diagrams/*|resolve:docs/diagram-vocabulary.md|resolve:content/critiques/"$slug".md|resolve:content/registry.json) ;;
+      resolve:src/components/diagrams/*|resolve:src/test/chapters.test.tsx|resolve:docs/diagram-vocabulary.md|resolve:content/critiques/"$slug".md|resolve:content/registry.json) ;;
       record:content/registry.json|record:prompts/queue.md) ;;
       *) printf '%s\n' "$path"; return 1 ;;
     esac

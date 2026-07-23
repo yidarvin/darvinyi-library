@@ -2038,6 +2038,66 @@ class RunqueueTests(unittest.TestCase):
         self.assertIn("unexpected committed path", recovered.stderr)
         self.assertTrue((state / "transaction.json").exists())
 
+    def test_resolve_recovery_accepts_a_shared_diagram_regression_test(self) -> None:
+        _root, repo, state, env = self.make_pipeline_fixture()
+        registry_path = repo / "content" / "registry.json"
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        registry["chapters"][0]["status"] = "draft"
+        registry_path.write_text(json.dumps(registry), encoding="utf-8")
+        (repo / "src" / "chapters" / "sample.mdx").write_text("# Sample\n", encoding="utf-8")
+        critiques = repo / "content" / "critiques"
+        critiques.mkdir()
+        critique = critiques / "sample.md"
+        critique.write_text("verdict: revise\n", encoding="utf-8")
+        self.assertEqual(self.git(repo, "add", "-A").returncode, 0)
+        self.assertEqual(self.git(repo, "commit", "-qm", "draft fixture").returncode, 0)
+        base_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        self.assertEqual(
+            self.run_command(
+                sys.executable,
+                str(repo / "scripts" / "runqueue_state.py"),
+                "--dir",
+                str(state),
+                "begin",
+                "--action",
+                "resolve",
+                "--slug",
+                "sample",
+                "--title",
+                "Sample",
+                "--base-head",
+                base_head,
+                "--push-required",
+                "false",
+                "--check-required",
+                "false",
+            ).returncode,
+            0,
+        )
+        critique.write_text("verdict: resolved\n", encoding="utf-8")
+        diagram = repo / "src" / "components" / "diagrams" / "NodeGraph.tsx"
+        diagram.parent.mkdir(parents=True)
+        diagram.write_text("export const NodeGraph = true;\n", encoding="utf-8")
+        regression_test = repo / "src" / "test" / "chapters.test.tsx"
+        regression_test.parent.mkdir(parents=True)
+        regression_test.write_text("// shared diagram regression\n", encoding="utf-8")
+
+        recovered = self.run_command(
+            str(repo / "runqueue.sh"),
+            "--recover-only",
+            "--no-check",
+            "--no-push",
+            cwd="/",
+            env=env,
+        )
+
+        self.assertEqual(recovered.returncode, 0, recovered.stderr)
+        self.assertFalse((state / "transaction.json").exists())
+        committed_paths = self.git(repo, "show", "--format=", "--name-only", "HEAD")
+        self.assertEqual(committed_paths.returncode, 0, committed_paths.stderr)
+        self.assertIn("src/components/diagrams/NodeGraph.tsx", committed_paths.stdout)
+        self.assertIn("src/test/chapters.test.tsx", committed_paths.stdout)
+
     def test_resumed_transaction_with_exhausted_attempts_halts_instead_of_spinning(self) -> None:
         _root, repo, state, env = self.make_pipeline_fixture()
         base_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
