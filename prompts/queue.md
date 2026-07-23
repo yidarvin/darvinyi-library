@@ -84,7 +84,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 067 | blue-ocean                      | Blue Ocean Strategy                           | DONE    |
 | 068 | e-myth                          | The E-Myth Revisited                          | DONE    |
 | 069 | extreme-ownership               | Extreme Ownership                             | DONE    |
-| 070 | four-hour-workweek              | The 4-Hour Workweek                           | PENDING |
+| 070 | four-hour-workweek              | The 4-Hour Workweek                           | DONE    |
 | 071 | effective-executive             | The Effective Executive                       | PENDING |
 | 072 | difficult-conversations         | Difficult Conversations                       | PENDING |
 | 073 | seven-principles-marriage       | The Seven Principles for Making Marriage Work | PENDING |

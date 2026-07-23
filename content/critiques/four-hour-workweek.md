@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-23
 
@@ -154,3 +154,42 @@ inventory with MDX component usage or detect SVG edge and label collisions.
 
 - Updated the registry inventory to `comparison, comparison, bars, spectrum, node graph, comparison, flow`, matching every figure now rendered by the chapter.
 - Repositioned Figure 70.5's four nodes into a rectangular handoff loop. Each connection now occupies a separate side of the loop, leaving `brief`, `update`, `escalate`, and `improve` on distinct, legible paths with no crossing connections or overlapping edge labels.
+
+## Critique round 3 — 2026-07-23
+
+### REQUIRED
+
+None.
+
+The two round 2 findings are resolved. The registry's seven-form inventory now
+matches the chapter's rendered sequence: three comparisons, bars, spectrum, node
+graph, and flow. Figure 70.5 now places the outcome, owner, shared record, and
+approval boundary at the four corners of a rectangle. Its four connections occupy
+separate sides, and the `brief`, `update`, `escalate`, and `improve` labels have
+distinct positions without crossed paths or overlapping text.
+
+The round 1 fixes remain intact: The thesis is two sentences; Figures 70.1 and 70.2
+show the comparisons claimed by their prose and captions; the Bars value labels
+remain inside the viewport; the Spectrum marker label is separated from its pole
+labels; and the recorded 1,550-token rendered count supports the eight-minute badge.
+The page retains six key ideas with captioned in-vocabulary diagrams, the DEAL
+signature model, four concrete exercises, a substantive caveat, valid related-book
+links, and a direct publisher link.
+
+The chapter brief and seed record support the deferred-life thesis and DEAL model.
+No separate chapter-specific evidence dossier or source excerpt exists, so factual
+and close-paraphrase review remains bounded to those records and internal agreement
+among the prose, metadata, captions, and diagrams. This round began no external web
+search.
+
+`npm run check` passed on 2026-07-23: queue/registry/content validation, prose lint,
+2 pipeline tests, 38 runner tests, 145 application tests, TypeScript, production
+build, and ESLint all completed successfully. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+1. The round 1 reception-causality advisory remains: “The book landed because it
+   makes that mismatch visible” attributes the book's reception to a cause not
+   supported by the bounded repository evidence. It does not alter the framework
+   being taught and remains non-blocking.
