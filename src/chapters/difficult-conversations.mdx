@@ -1,0 +1,219 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, CoreContext, Iceberg, NodeGraph, Spectrum, Venn } from "../components/diagrams";
+
+<Hero
+  slug="difficult-conversations"
+  thesis="A hard talk becomes workable when you stop trying to prove one story, make room for feeling, and protect each person's ability to stay whole while learning."
+  minutes={6}
+/>
+
+## The thesis
+
+Stone, Patton, and Heen argue that the argument on the table is rarely the whole
+conversation. A dispute about a late report, an unreturned call, or a broken promise also
+contains an argument about what happened, an emotional reaction to it, and a private fear
+about what the episode says about each person. Progress begins when neither side has to win
+one official account of events before the other concerns can be named. The task is to turn a
+collision of certainties into a joint inquiry that can hold disagreement, feeling, and repair.
+
+## Why it matters
+
+Avoidance has a cost. The issue stays active, but it gets expressed indirectly through
+distance, sharpness, guessing, or a decision made without the other person. Starting badly
+has a cost too: a charge about motive invites a defense before the real problem has been
+described. This framework makes a demanding conversation more useful without promising that
+the people involved will agree or that a relationship should continue unchanged.
+
+## Begin with the gap between stories
+
+In a tense exchange, each person usually arrives with a coherent account. Mine has the
+important facts, sensible motives, and a conclusion that feels obvious. Yours does the same
+for you. Treating either account as the whole truth turns the opening into a prosecution.
+The better opening is the gap itself: we see this differently, and the difference has begun
+to affect our work or relationship. That sentence does not erase responsibility. It creates
+enough room to ask what each person noticed, inferred, and needs to address.
+
+<Figure id="72.1" caption="A shared puzzle starts with the difference between two accounts, not a verdict about either person.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "a charge",
+      points: ["states one story as fact", "assigns motive early", "asks for a defense", "narrows what can be learned"],
+    }}
+    right={{
+      title: "a shared puzzle",
+      points: ["names the difference", "keeps assumptions testable", "asks for both accounts", "opens a joint inquiry"],
+    }}
+  />
+</Figure>
+
+## Separate impact from intention
+
+The effect of an action is real even when the actor did not mean to cause it. A manager may
+intend efficiency and leave a colleague feeling excluded. A partner may intend to cool down
+and leave the other person frightened by silence. Insisting on good intent does not undo the
+impact, while insisting that impact proves hostile intent prevents learning. Put both on the
+table. Say what landed and why it mattered, then ask what was happening on the other side.
+That makes an apology or a changed plan possible without requiring either person to pretend
+they can read minds.
+
+<Figure id="72.2" caption="The visible effect can be named clearly while the unseen intention is still investigated.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the impact I felt"
+    waterlineLabel="what the action produced"
+    below={["the intention I assumed", "the intention they describe", "context neither of us saw"]}
+  />
+</Figure>
+
+## Trade blame for a contribution map
+
+Blame looks for a single cause and a person to carry it. Contribution asks a more useful,
+harder question: how did each of us, along with the conditions around us, help produce this
+outcome? Your contribution may be much larger than mine. The point is not to divide fault
+evenly or excuse harmful behavior. It is to locate the choices, silences, incentives, habits,
+and misunderstandings that can actually be changed. A one-sided accusation makes people
+defend the past. A contribution map gives them handles on the next attempt.
+
+<Figure id="72.3" caption="A bad outcome often has several contributing paths, which gives both people something concrete to change.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "assumption", label: "untested assumption", x: 0.5, y: 0.04 },
+      { id: "ask", label: "unclear ask", x: 0.12, y: 0.32 },
+      { id: "silence", label: "silence about concern", x: 0.88, y: 0.32 },
+      { id: "pressure", label: "deadline pressure", x: 0.18, y: 0.78 },
+      { id: "outcome", label: "missed expectation", x: 0.5, y: 0.5 },
+      { id: "repair", label: "a change to test", x: 0.82, y: 0.78 },
+    ]}
+    edges={[
+      { from: "assumption", to: "outcome" },
+      { from: "ask", to: "outcome" },
+      { from: "silence", to: "outcome" },
+      { from: "pressure", to: "outcome" },
+      { from: "outcome", to: "repair", kind: "reinforcing", label: "learn" },
+    ]}
+  />
+</Figure>
+
+## Let feeling carry information, not the verdict
+
+Strong feeling is not a detour from the conversation. It is part of what the conversation is
+about. Suppressing it often makes it leak out as sarcasm, withdrawal, or disproportionate
+certainty. Dumping it can make the other person responsible for regulating it. The middle
+move is to describe the feeling and its source without presenting it as proof of guilt: “I
+felt anxious when I did not hear from you, because I did not know whether the plan had
+changed.” The sentence gives the other person information they can respond to and leaves room
+for them to say what the situation was like for them.
+
+<Figure id="72.4" caption="Naming a feeling and its source creates more room than either burying it or using it as a weapon.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="bury it"
+    right="unload it"
+    marker={0.5}
+    markerLabel="name it clearly"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.0, to: 0.3, label: "it leaks out sideways" },
+      { from: 0.4, to: 0.6, label: "feeling as information", accent: true },
+      { from: 0.7, to: 1.0, label: "the other person must absorb it" },
+    ]}
+  />
+</Figure>
+
+## Steady the part of you that feels judged
+
+Hard talks can feel dangerous because they touch a self-image: competent, fair, caring,
+independent, or worthy of respect. When one of those identities feels under attack, the mind
+often chooses a quick defense, such as denial, counterattack, or retreat. A steadier stance
+accepts a more complete picture. You can have made a mistake and still be capable. You can
+have caused harm without becoming only harmful. You can hear criticism without deciding it
+settles your worth. That internal flexibility makes it easier to listen without surrendering
+your boundaries.
+
+<Figure id="72.5" caption="A flexible identity holds several true qualities at once, while a single episode stays in its proper context.">
+  <CoreContext
+    className="block w-full min-w-[480px]"
+    coreTitle="a whole self"
+    coreItems={["capable", "caring", "still learning"]}
+    contextTitle="one difficult episode"
+    contextItems={["a mistake", "another view", "a repair", "a boundary"]}
+  />
+</Figure>
+
+## The Model
+
+The three conversations happen together, not in a tidy sequence. The “what happened”
+conversation concerns observations, interpretations, and intention. The feelings
+conversation concerns the emotions that have been pushed aside or made too loud. The identity
+conversation concerns the conclusion each person fears the conflict will force them to draw
+about themselves. A useful response can touch all three: describe the gap in accounts, name
+the impact, and make it safe enough for both people to remain learners. Neglect any one of
+them and it tends to reappear through the others.
+
+<Figure id="72.6" caption="A difficult exchange becomes workable when the account, feeling, and identity concerns can be handled together.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[{ label: "what happened" }, { label: "feelings" }, { label: "identity" }]}
+    intersectionLabel="the hard talk"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write a neutral opening">
+Before the conversation, draft two sentences that describe the gap without declaring a
+winner. Name the decision, event, or pattern that needs attention and the effect it is having.
+Then add one honest question about how the other person sees it. If your opening claims to
+know their motive, rewrite it.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Make an impact-and-intent pair">
+Write the impact in one sentence: “When ___ happened, I felt ___ because ___.” Beside it,
+write two possible intentions or constraints the other person might describe. Take the impact
+seriously, but hold those guesses lightly until you hear their account.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Find your contribution before theirs">
+List every choice, assumption, silence, or condition that helped create the problem. Circle
+the part you can change next time. This is not an admission that you caused everything. It is
+preparation to speak about your own part without waiting for the other person to go first.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Prepare for the identity hit">
+Finish this sentence privately: “If this goes badly, I am afraid it means I am ___.” Then add
+two balancing truths, including one responsibility you can accept and one quality the episode
+cannot erase. Enter the talk ready to learn rather than ready to prove you are blameless.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Curiosity is not a requirement to tolerate abuse, coercion, or repeated bad faith. A shared
+inquiry works only when there is enough safety and reciprocity for both people to participate.
+When there is a power imbalance, a policy violation, harassment, or a threat to safety,
+documentation, boundaries, formal support, and distance may matter more than a better
+conversation. The contribution frame is also not a command to split responsibility equally.
+It is a way to find changeable causes while keeping accountability clear.
+</Callout>
+
+## If you remember one thing
+
+When a conversation feels impossible, assume there is more than one problem in the room.
+Make space for different accounts, acknowledge the feeling underneath them, and protect both
+people's ability to learn without turning one difficult moment into a final judgment of who
+they are.
+
+Getting to Yes offers a related way to separate people from the problem in negotiation.
+Nonviolent Communication provides a more explicit language for observations, feelings, and
+requests, while Crucial Conversations focuses on preserving enough safety for people to keep
+adding their perspective.
+
+<ShelvedNearby
+  related={["getting-to-yes", "nonviolent-communication", "crucial-conversations"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/722989/difficult-conversations-by-douglas-stone-bruce-patton-and-sheila-heen-foreword-by-roger-fisher/"
+  buyLabel="Difficult Conversations by Douglas Stone, Bruce Patton, and Sheila Heen"
+/>
