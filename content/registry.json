@@ -1407,7 +1407,17 @@
       "subtitle": "Peter Drucker · 1966",
       "part": "Leadership & Business",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Effectiveness is learned through disciplined practices that direct time, strengths, priorities, and decisions toward contributions that matter.",
+      "framework": "No single signature model; five practices are synthesized as key ideas, so the Model section is deliberately absent.",
+      "diagrams": [
+        "timeline",
+        "flow",
+        "node graph",
+        "two-by-two matrix",
+        "process loop"
+      ]
     },
     {
       "num": 72,

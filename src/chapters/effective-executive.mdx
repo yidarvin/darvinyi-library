@@ -1,0 +1,184 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Flow, Matrix, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="effective-executive"
+  thesis="Effectiveness is learned through a few disciplined practices: see where time goes, aim work at contribution, make strengths useful, protect priorities, and turn judgment into decisions."
+  minutes={7}
+/>
+
+## The thesis
+
+Drucker treats effectiveness as a practice, not a personality trait or a job title. People
+with responsibility for results can improve it by observing their actual use of time,
+asking what outcome they can contribute, organizing work around strengths, saying no to
+the merely available, and making decisions that can be tested in the world.
+
+## Why it matters
+
+Knowledge work makes activity easy to confuse with accomplishment. Messages, meetings,
+and small requests arrive with their own urgency, while the work that changes a result
+usually needs uninterrupted attention and a clear owner. The book is a compact answer to
+that mismatch: manage yourself so your judgment reaches the work that matters.
+
+## Start with evidence about your time
+
+Plans describe the week we hope to have. A time record describes the week we actually
+have. That difference matters because fragmented minutes disappear into handoffs, status
+updates, and interruptions that feel necessary in isolation. Record the work for long
+enough to see the pattern, remove recurring demands that do not earn their place, then
+gather the remaining important work into usable blocks. A calendar filled with appointments
+is not proof that priorities received attention.
+
+<Figure id="71.1" caption="A time record turns a vague complaint about busyness into a sequence that can be changed.">
+  <Timeline
+    className="block w-full min-w-[536px]"
+    segments={[
+      { label: "record", sub: "what happened" },
+      { label: "find drains", sub: "what produces little" },
+      { label: "remove or delegate", sub: "clear the calendar" },
+      { label: "protect a block", sub: "work that changes a result" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Define contribution before choosing tasks
+
+Work becomes easier to judge when it begins with the result another person, team, or
+customer needs. That question changes a to-do list. Instead of asking which requests can
+be completed, ask which contribution would make the greatest difference to a shared aim.
+The answer might be a decision made clear, a risk surfaced early, a colleague developed,
+or a customer problem resolved. Contribution is outward-looking, so it gives independent
+work a connection to the larger result.
+
+<Figure id="71.2" caption="The useful unit of work is a contribution that reaches a shared result, not a completed motion.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["notice the need", "name the result", "choose a contribution", "align the work"]}
+    highlight={2}
+  />
+</Figure>
+
+## Build work around strengths
+
+Every serious task has limits, and no team is assembled from complete people. Effectiveness
+does not wait for those limits to disappear. It asks where each person can create unusual
+value, then makes that capability useful to the task. This is not permission to ignore
+weaknesses. A weakness that endangers the work needs a safeguard, a partner, or a different
+role. The larger point is practical: improvement has more return when it develops a real
+strength than when it tries to make every rough edge average.
+
+<Figure id="71.3" caption="Results appear when a real demand, a person's strength, and the job design reinforce one another.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "demand", label: "real demand", x: 0.5, y: 0.08 },
+      { id: "strength", label: "usable strength", x: 0.12, y: 0.58 },
+      { id: "design", label: "job design", x: 0.86, y: 0.58 },
+      { id: "result", label: "contribution", x: 0.5, y: 0.92 },
+    ]}
+    edges={[
+      { from: "demand", to: "design", label: "defines" },
+      { from: "strength", to: "design", label: "fits" },
+      { from: "design", to: "result", kind: "reinforcing", label: "enables" },
+      { from: "result", to: "demand", kind: "reinforcing", label: "clarifies", labelOffset: { x: -42, y: 2 } },
+    ]}
+  />
+</Figure>
+
+## Let priorities displace priorities
+
+Priority is not a decorative ranking on top of an unchanged workload. If the most useful
+work is to receive time, something else must lose it. That means choosing a small number of
+commitments, sequencing them, and declining work that has neither a meaningful contribution
+nor an immediate obligation. Urgency can be real, but it should not be allowed to erase the
+work whose absence will matter next quarter. Concentration is a decision about what will
+not be done now.
+
+<Figure id="71.4" caption="Deadlines matter, but high-contribution work without one still needs a protected place on the calendar.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "low contribution", right: "high contribution", label: "expected effect" }}
+    yAxis={{ low: "little time pressure", high: "deadline pressure", label: "urgency" }}
+    quadrants={[
+      { title: "defer", note: "neither signal is strong" },
+      { title: "act now", note: "an urgent result" },
+      { title: "trim or delegate", note: "available work" },
+      { title: "schedule and protect", note: "important before urgent" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Make decisions designed for feedback
+
+Good decisions are not guesses delivered with confidence. They begin by deciding what kind
+of problem is present, then identifying the conditions a sound answer must satisfy. Genuine
+disagreement is useful here, because it exposes assumptions and alternatives before the
+choice hardens. Once a decision is made, it needs a clear action, a responsible person, and
+a date to compare the expected result with what happened. A decision without that final
+comparison becomes an opinion preserved by habit.
+
+<Figure id="71.5" caption="A decision earns trust when its expected result is checked and the next judgment learns from the gap.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["classify the problem", "test alternatives", "act with an owner", "compare result"]}
+    compoundingEdge={3}
+    centerLabel="decision practice"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Run a two-week time record">
+For ten working days, note each meaningful block of time as it ends. Keep the labels plain:
+meeting, review, production, support, interruption. At the end, circle the blocks that
+produced a result someone else could name. Remove, shorten, delegate, or batch one recurring
+drain before adding a new productivity system.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Write one contribution sentence">
+Choose the work that matters most this month. Finish this sentence in a way another person
+could recognize: “My contribution is to help [who] achieve [result] by [specific work].”
+Use it to decline or reshape one request that does not serve the result.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Design around a strength">
+For one project, name the strength you or a collaborator bring that is unusually useful.
+Change the division of work so that strength reaches the decisive part of the task. Then name
+the risk it does not cover and add a check, partner, or constraint for it.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Put one decision on a feedback date">
+Before a consequential choice is announced, write the expected result, the conditions that
+must hold, the action owner, and a review date. At the review, compare the expectation with
+the evidence. Adjust the decision or its execution rather than defending the original call.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Effectiveness can become a harsh individual scorecard when it ignores authority, staffing,
+care obligations, or a workplace designed around constant interruption. A personal time log
+can reveal waste, but it cannot repair an organization that rewards performative busyness.
+The book also reflects a mid-century executive setting and gives limited attention to how
+power shapes whose contribution is heard. Use the practices to make responsibilities clear
+and work more humane, not to demand that people solve structural problems through better
+personal discipline.
+</Callout>
+
+## If you remember one thing
+
+Effectiveness begins when you direct scarce attention toward a contribution that matters,
+then protect the time, strengths, priorities, and feedback needed to make it real.
+
+The 7 Habits of Highly Effective People develops the same case for intentional priorities,
+while Deep Work concentrates on the conditions that make sustained attention possible.
+
+<ShelvedNearby
+  related={["seven-habits", "deep-work"]}
+  buyUrl="https://www.routledge.com/The-Effective-Executive-1st-Edition/Drucker/p/book/9781138470101"
+  buyLabel="The Effective Executive by Peter F. Drucker"
+/>
