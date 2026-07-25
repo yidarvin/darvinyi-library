@@ -93,7 +93,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 076 | happiness-hypothesis            | The Happiness Hypothesis                      | DONE    |
 | 077 | flourish                        | Flourish                                      | DONE    |
 | 078 | four-agreements                 | The Four Agreements                           | DONE    |
-| 079 | twelve-rules                    | 12 Rules for Life                             | PENDING |
+| 079 | twelve-rules                    | 12 Rules for Life                             | DONE    |
 | 080 | feeling-good                    | Feeling Good                                  | PENDING |
 | 081 | homo-deus                       | Homo Deus                                     | PENDING |
 | 082 | cosmos                          | Cosmos                                        | PENDING |

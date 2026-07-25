@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-25
 
@@ -110,3 +110,29 @@ jsdom `Window.scrollTo()` notices.
    as a flow, preserving the prior substantive fixes.
 
 `npm run check` passed on 2026-07-25.
+
+## Critique round 3 — 2026-07-25
+
+### Required
+
+None.
+
+### Advisory
+
+None.
+
+The round 2 registry finding is resolved. The diagram inventory now matches the
+rendered page order: comparison, comparison, flow, iceberg, concentric circles,
+spectrum, spectrum. The earlier reading-time and diagram-semantics fixes remain in
+place. The chapter follows the required anatomy with six diagrammed key ideas, the
+order-and-chaos model, concrete exercises, an honest caveat, resolved related-book
+links, and a publisher link to the original book. Review of the chapter brief, seed
+metadata, registry record, prior recorded evidence assessment, and current imported
+components found no unsupported claim that changes the reader's understanding, no
+close paraphrase, no reproduced source figure, and no real cover art. No new external
+web search was begun.
+
+`npm run check` passed on 2026-07-25: queue and registry validation, prose lint,
+2 pipeline tests, 38 runner tests, 163 Vitest tests, TypeScript and production build,
+and ESLint all completed successfully. Vitest emitted only the existing non-failing
+jsdom `Window.scrollTo()` notices.
