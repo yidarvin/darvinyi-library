@@ -1,11 +1,11 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, CoreContext, Curve, NodeGraph, Timeline } from "../components/diagrams";
+import { Compare, CoreContext, Curve, NodeGraph, Timeline } from "../components/diagrams";
 
 <Hero
   slug="flourish"
   thesis="Well-being is not a mood to maximize. It is a life with room for positive feeling, absorbing effort, close ties, a purpose beyond the self, and progress you can respect."
-  minutes={8}
+  minutes={7}
 />
 
 ## The thesis
@@ -60,7 +60,8 @@ is not whether work is comfortable. It is whether the next step is clear enough 
     className="block w-full min-w-[440px]"
     shape="channel"
     axes={{ x: "current skill", y: "task demand" }}
-    annotations={[{ x: 0.56, y: 0.51, text: "a clear next move" }]}
+    annotations={[{ x: 0.56, y: 0.28, text: "a clear next move" }]}
+    ariaLabel="A flow channel: task demand rises with current skill. The highlighted band marks demand close enough to usable skill to support engagement. A marker inside the band identifies a clear next move."
   />
 </Figure>
 
@@ -74,11 +75,23 @@ the truth, enough attention to notice change, and enough repair to survive ordin
 This is why a crowded calendar or a large contact list is a poor substitute for a few places
 where mutual concern is credible.
 
-<Figure id="77.3" caption="A close tie develops from shared attention toward trust, repair, and mutual care.">
-  <Concentric
+<Figure id="77.3" caption="A close tie is held together by attention, trust and candor, repair, and mutual care.">
+  <NodeGraph
     className="block w-full min-w-[440px]"
-    rings={[{ label: "shared attention" }, { label: "trust and candor" }, { label: "repair and mutual care" }]}
-    highlight={0}
+    ariaLabel="A non-hierarchical relationship map. Shared attention, trust and candor, repair, and mutual care each connect to a close tie."
+    nodes={[
+      { id: "tie", label: "a close tie", x: 0.5, y: 0.5 },
+      { id: "attention", label: "shared attention", x: 0.5, y: 0.1 },
+      { id: "trust", label: "trust and candor", x: 0.86, y: 0.48 },
+      { id: "repair", label: "repair", x: 0.62, y: 0.88 },
+      { id: "care", label: "mutual care", x: 0.14, y: 0.48 },
+    ]}
+    edges={[
+      { from: "attention", to: "tie" },
+      { from: "trust", to: "tie" },
+      { from: "repair", to: "tie" },
+      { from: "care", to: "tie" },
+    ]}
   />
 </Figure>
 
@@ -183,11 +196,10 @@ respect without an audience.
 <Callout kind="note">
 PERMA is a useful framework, not a settled inventory of everything a human being needs. Its
 five elements overlap strongly, and a dashboard cannot establish what caused a change in a
-person's life. Seligman later acknowledged that candidates such as health, vitality, and
-responsibility raise questions about whether the list is complete. The model also does not turn
-poverty, discrimination, illness, grief, or unsafe conditions into a personal project of better
-attitude. Use it to notice neglected sources of well-being and to choose a small next action,
-while keeping the material and social conditions of a life in view.
+person's life. The model also does not turn poverty, discrimination, illness, grief, or unsafe
+conditions into a personal project of better attitude. Use it to notice neglected sources of
+well-being and to choose a small next action, while keeping the material and social conditions
+of a life in view.
 </Callout>
 
 ## If you remember one thing
@@ -208,4 +220,3 @@ relationships, and commitments.
   buyUrl="https://www.simonandschuster.com/books/Flourish/Martin-E-P-Seligman/9781439190760"
   buyLabel="Flourish by Martin E. P. Seligman"
 />
-

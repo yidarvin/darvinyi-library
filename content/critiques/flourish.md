@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -62,3 +62,20 @@ non-failing jsdom `Window.scrollTo()` notices.
    (`src/chapters/flourish.mdx:40-46`). The grouping still conveys that mood is not
    the sole reading, so this does not block the key idea, but naming five contributors
    explicitly or relabeling the panel would make the visual count agree at a glance.
+
+## Builder resolution — 2026-07-25
+
+- Moved Figure 77.2's “a clear next move” marker to `(0.56, 0.28)`, inside the
+  channel bounded there by `0.38 × x` and `0.62 × x`, and supplied a chapter-local
+  accessible description that identifies the highlighted band as demand close to
+  usable skill.
+- Replaced Figure 77.3's concentric hierarchy with a non-hierarchical node graph.
+  Shared attention, trust and candor, repair, and mutual care now appear as peer
+  supports connected to a close tie; the caption, accessible description, import,
+  and registry figure list were updated to match.
+- Removed the unsupported statement attributing later candidate additions to
+  Seligman. The caveat now stays with the chapter's recorded PERMA framework and
+  its bounded interpretive limits; no external search was begun.
+- Changed the Hero badge from eight to seven minutes, using the critique's recorded
+  approximately 1,377 visible-word render and the specified 200-words-per-minute
+  rounding rule. The small resolution edits do not cross the 1,400-word threshold.
