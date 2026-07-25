@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-25
 
@@ -109,3 +109,51 @@ verdict: resolved
   flow, comparison, comparison, bars, and node graph.
 - **Advisory applied:** Demoted the four key-idea headings to `###` so they are
   children of “Key ideas.”
+
+## Critique round 2 — 2026-07-25
+
+### REQUIRED
+
+1. **Keep Figure 78.4's final effort label inside the Bars viewBox.** The resolved
+   figure gives the “well-resourced day” item a value of `0.88` followed by the
+   label “wider effort” (`src/chapters/four-agreements.mdx:123-131`). `Bars`
+   starts a value label at `trackX + w + 6` inside a 380-unit viewBox
+   (`src/components/diagrams/Bars.tsx:23-25,31-33,36-39,52-55`). For this item,
+   that start position is x=321.52; the 12-character label at the component's
+   10-unit mono size extends to approximately x=394, beyond the x=380 boundary.
+   The chapter's `min-w-[440px]` scales the same clipped viewBox and does not
+   recover the missing text. Shorten, move, or omit that call-site label, or use
+   another in-vocabulary composition that keeps every visible label inside its
+   SVG. Figure labels must remain legible on a phone, and this newly introduced
+   label is currently cut off at every rendered size.
+
+### ADVISORY
+
+1. Consider removing `accent: true` from only the “well-resourced day” bar
+   (`src/chapters/four-agreements.mdx:127-131`). The prose and caption teach that
+   honest effort is matched to changing capacity, so all three days are valid
+   instances of the agreement; singling out the highest-capacity day can weakly
+   imply that it is the preferred outcome.
+
+### Evidence checked
+
+- Re-read the brief and seed record. They support the four commitments concerning
+  speech, personalization, assumptions, and doing one's best, with the four
+  agreements as the signature model. No chapter-specific evidence dossier exists,
+  and this round began no external web search.
+- Re-read the draft, the authoring and critique contracts, the diagram vocabulary,
+  all direct imports, and the transitive cover, registry, and SVG helpers. The page
+  uses original prose and generated cover treatment; its four key ideas, Model,
+  concrete exercises, caveat, takeaway, completed related links, and publisher
+  link otherwise satisfy the fixed anatomy.
+- Verified every round 1 resolution: “The thesis” is now two sentences; Figure
+  78.2 separates actionable detail from speaker context; Figure 78.4 now encodes
+  changing capacity; Figure 78.5 uses neutral directed edges; the registry has the
+  required metadata and diagram inventory; and the key-idea headings are nested
+  under “Key ideas.” The required finding above is new evidence about the rendered
+  bounds of the replacement Bars composition, not a reopening of the settled
+  moving-standard finding.
+- `npm run check` passed on 2026-07-25: queue/registry/content validation, prose
+  lint, 2 pipeline tests, 38 runner tests, 161 app tests, TypeScript and the Vite
+  production build, and ESLint all completed successfully. Vitest emitted only
+  the existing non-failing jsdom `Window.scrollTo()` notices.
