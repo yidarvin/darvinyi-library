@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-25
 
@@ -164,3 +164,44 @@ verdict: resolved
   “higher,” keeping it within the Bars SVG viewBox at the well-resourced value.
 - **Advisory applied:** Removed the accent from the well-resourced bar so depleted,
   ordinary, and well-resourced days read as equally valid capacity-matched efforts.
+
+## Critique round 3 — 2026-07-25
+
+### REQUIRED
+
+None. Figure 78.4's final value label now fits within the shared `Bars` viewBox, and
+all round 1 resolutions remain intact. The page satisfies the required anatomy,
+diagram, sourcing, and technical-integrity checks.
+
+### ADVISORY
+
+None. Removing the final bar's accent also resolves the prior optional concern
+without introducing a new visual hierarchy.
+
+### Evidence checked
+
+- Re-derived the central claim from `prompts/notes/four-agreements.md` and the seed
+  record in `prompts/_books.py`. They support four commitments concerning speech,
+  personalization, assumptions, and doing one's best, with the four agreements as
+  the signature framework. No separate chapter-specific evidence dossier or source
+  excerpt is recorded, and this review began no external web search.
+- Re-read the draft, all direct component imports, the relevant transitive cover,
+  registry, and SVG helpers, the authoring and critique contracts, the diagram
+  vocabulary, the registry entry, and the complete critique history. The prose is
+  original synthesis within the bounded evidence, the generated cover uses no real
+  cover art, and the figures use shared vocabulary forms rather than reproducing a
+  source figure.
+- Verified the revised `higher` label geometrically. At `value={0.88}`, it begins at
+  x=321.52 in the 380-unit `Bars` viewBox and occupies approximately 36 units at the
+  component's 10-unit mono size, ending near x=357.52. The other two value labels
+  also remain within bounds. All five figures encode their surrounding claims,
+  preserve phone-width overflow behavior, and have captions and accessible labels.
+- The thesis is two sentences; the four key ideas are nested beneath “Key ideas”;
+  the exercises are concrete; the caveat preserves safety and power qualifications;
+  all three related slugs resolve to completed chapters; and the outbound link
+  targets the publisher's book page. Registry metadata and diagram order match the
+  chapter.
+- `npm run check` passed on 2026-07-25: queue/registry/content validation, prose
+  lint, 2 pipeline tests, 38 runner tests, 161 app tests, TypeScript and the Vite
+  production build, and ESLint all completed successfully. Vitest emitted only the
+  existing non-failing jsdom `Window.scrollTo()` notices.
