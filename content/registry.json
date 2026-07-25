@@ -1466,7 +1466,19 @@
       "subtitle": "Chip Heath and Dan Heath · 2007",
       "part": "Communication & Relationships",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Ideas that stick share a recognizable set of traits, and you can engineer those traits on purpose.",
+      "framework": "SUCCESs",
+      "diagrams": [
+        "iceberg",
+        "flow",
+        "spectrum",
+        "comparison",
+        "venn overlap",
+        "timeline",
+        "node graph"
+      ]
     },
     {
       "num": 75,

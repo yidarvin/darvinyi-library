@@ -1,0 +1,235 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum, Timeline, Venn } from "../components/diagrams";
+
+<Hero
+  slug="made-to-stick"
+  thesis="A message earns a place in memory when it gives people one clear point, a reason to attend, evidence they can grasp, and a scene they can carry into action."
+  minutes={9}
+/>
+
+## The thesis
+
+Messages disappear less often because they are false or badly delivered than because they
+ask the audience to retain an expert's whole mental model. Chip and Dan Heath argue that an
+idea becomes easier to remember and repeat when its structure respects how attention and
+memory work. Give people a compact center, interrupt their expectations, make the claim
+touchable and testable, connect it to a human concern, and let a story show the next move.
+The framework is a craft tool: it helps a useful idea survive the trip from the person who
+knows it to the person who must understand it.
+
+## Why it matters
+
+Most important work begins with an information imbalance. The person explaining a policy,
+proposal, diagnosis, or design has spent hours inside its details. The listener has not. A
+deck can be accurate, a meeting can be polished, and the core idea can still leave the room
+without changing a later choice. The problem is not a shortage of information. It is the gap
+between knowing a subject deeply and giving another person a usable way into it.
+
+## Find the point that can travel without you
+
+Simplicity is not the same as stripping away every qualification. It means deciding what the
+audience should retain if all the supporting material falls away. A useful message has a
+center of gravity: one priority, one contrast, or one decision rule that can guide judgment
+when the expert is absent. The details still matter, but they should serve that center rather
+than compete with it. If a sentence cannot survive a hurried retelling, it may be background
+masquerading as the point.
+
+<Figure id="74.1" caption="The listener needs a clear point above the expert context that supports it.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the point to remember"
+    waterlineLabel="what travels in conversation"
+    below={["research and context", "exceptions and tradeoffs", "the expert's working model"]}
+  />
+</Figure>
+
+## Use surprise to open an honest question
+
+Attention wakes up when a pattern breaks. The useful move is not a stunt or a random twist.
+It is a detail that exposes a gap between what someone assumes and what they need to know.
+That gap creates a question, and a good explanation earns the attention it borrowed by
+answering it. In practice, lead with a counterintuitive result, a revealing comparison, or a
+concrete consequence. Then resolve the tension with the idea that changes how the audience
+sees the problem.
+
+<Figure id="74.2" caption="A useful surprise creates a question, then gives the listener a reason to follow the answer.">
+  <Flow
+    className="block w-full min-w-[440px]"
+    steps={["name the expected pattern", "show the break", "make the question plain", "resolve it with the idea"]}
+    highlight={2}
+  />
+</Figure>
+
+## Replace category words with things people can picture
+
+Abstract language travels badly because different people supply different meanings. Terms
+such as quality, alignment, safety, or innovation can sound agreeable while leaving no shared
+image of what to do. Concrete language gives the claim handles. Name the customer who waits,
+the screen where the choice happens, the count that changes, or the behavior a teammate can
+observe. Concrete does not mean simplistic. It gives a complicated idea a stable reference
+point so people can discuss and apply it without guessing at the vocabulary.
+
+<Figure id="74.3" caption="A message becomes easier to act on as it moves from category language toward observable detail.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="abstract label"
+    right="observable detail"
+    marker={0.77}
+    markerLabel="a usable handle"
+    zones={[
+      { from: 0.0, to: 0.36, label: "many possible meanings" },
+      { from: 0.62, to: 1.0, label: "shared reference point", accent: true },
+    ]}
+  />
+</Figure>
+
+## Build belief from evidence the audience can inspect
+
+A claim becomes more credible when the listener can see why it should be trusted. Sometimes
+that means an independent source or a recognized expert. Often it means a demonstration,
+plain numbers, a before-and-after comparison, or a test that someone can run for themselves.
+The strongest choice depends on the decision at hand. The point is to move beyond asking for
+faith. Give people a way to check the claim against something outside the speaker's confidence.
+
+<Figure id="74.4" caption="Authority can establish standing; inspectable evidence lets people test the claim for themselves.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "borrowed trust",
+      points: ["recognized source", "reputation carries weight", "useful when expertise matters", "can remain distant"],
+    }}
+    right={{
+      title: "inspectable proof",
+      points: ["visible demonstration", "specific comparison", "test someone can repeat", "makes belief easier to examine"],
+    }}
+  />
+</Figure>
+
+## Make the stakes human and specific
+
+People rarely care about a category in the abstract for very long. They care when they can
+locate a consequence in a person, a relationship, a responsibility, or a value they already
+hold. This is not permission to manipulate sentiment. It is a demand for precision. Instead
+of saying a delay affects service quality, show what a delay costs the person waiting. Instead
+of saying a policy supports fairness, identify the choice that becomes fairer and for whom.
+Feeling is most useful when it clarifies what is at stake and points toward a responsible act.
+
+<Figure id="74.5" caption="Concern grows where a concrete person, a valued stake, and a possible action meet.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[
+      { label: "a specific person" },
+      { label: "a valued stake" },
+      { label: "a possible action" },
+    ]}
+    intersectionLabel="reason to care now"
+  />
+</Figure>
+
+## Let a story rehearse the next choice
+
+Stories do more than decorate a message. A well-chosen scene lets people mentally try a
+response before the situation arrives. It has a person facing a recognizable obstacle, a
+choice under pressure, and a result that makes the consequence visible. That structure
+teaches without turning the lesson into a slogan. When listeners later meet a similar moment,
+the story can supply both a memory cue and a possible course of action.
+
+<Figure id="74.6" caption="A story carries an idea through a situation, a choice, and a consequence the listener can rehearse.">
+  <Timeline
+    className="block w-full min-w-[480px]"
+    segments={[
+      { label: "a recognizable situation", sub: "someone faces a real constraint" },
+      { label: "a consequential choice", sub: "the idea changes what happens next" },
+      { label: "a visible result", sub: "the lesson gains a memory cue" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## The Model
+
+SUCCESs is a checklist for shaping a message before it has to compete for attention. The six
+qualities are simple, unexpected, concrete, credible, emotional, and story-based. They are
+not six steps to apply in a rigid order, nor must every message maximize every quality. Read
+them as connected questions. What is the point? What will make someone pause? What can they
+picture, trust, care about, and retell? A stronger answer on one spoke can support the others.
+
+<Figure id="74.7" caption="SUCCESs connects six ways of making an idea easier to notice, believe, care about, and repeat.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    ariaLabel="The SUCCESs framework connects a memorable message with six qualities: simple, unexpected, concrete, credible, emotional, and story-based."
+    nodes={[
+      { id: "message", label: "a memorable message", x: 0.5, y: 0.5 },
+      { id: "simple", label: "S · simple", x: 0.5, y: 0.03 },
+      { id: "unexpected", label: "U · unexpected", x: 0.1, y: 0.23 },
+      { id: "concrete", label: "C · concrete", x: 0.1, y: 0.77 },
+      { id: "credible", label: "C · credible", x: 0.5, y: 0.97 },
+      { id: "emotional", label: "E · emotional", x: 0.9, y: 0.77 },
+      { id: "story", label: "S · story-based", x: 0.9, y: 0.23 },
+    ]}
+    edges={[
+      { from: "simple", to: "message", kind: "reinforcing" },
+      { from: "unexpected", to: "message" },
+      { from: "concrete", to: "message" },
+      { from: "credible", to: "message", kind: "reinforcing" },
+      { from: "emotional", to: "message" },
+      { from: "story", to: "message", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write the one-line center">
+Choose a message you need another person to remember. Write the decision, contrast, or rule
+in one sentence of ordinary language. Put the supporting details on a separate page. If the
+sentence tries to cover every objection, shorten it until someone could repeat it after one
+hearing.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Trade one abstraction for an observation">
+Circle the broadest word in your draft: perhaps trust, efficiency, quality, or growth. Replace
+it with one observable event, person, number, or choice. Read the new sentence to someone
+outside the project and ask what they picture. Revise until the answer is close to the scene
+you intended.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Create a question worth answering">
+List the assumption your audience is likely to bring. Find one truthful fact that complicates
+it. Use that fact near the opening, then make sure the next paragraph answers the question it
+creates. Surprise that never resolves into understanding is only noise.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Add one check and one scene">
+For the central claim, name the evidence a skeptical listener could inspect. Then write a
+three-sentence scene in which a real person faces the relevant choice. The first builds trust;
+the second gives the message a situation in which to live.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Stickiness is a communication property, not a moral one. Rumors and sensational claims can be
+simple, vivid, emotional, and easy to repeat while still being false or harmful. The framework
+therefore needs an ethical gate before a craft pass: check the claim, show uncertainty where
+it belongs, and do not use a person's fear or grief as a device. It is also a diagnostic, not
+a formula. A high-stakes legal, medical, or technical message may need more qualification than
+a slogan can carry. The aim is a clear entry point, not the disappearance of nuance.
+</Callout>
+
+## If you remember one thing
+
+Do not begin by asking how to say everything you know. Find the one idea another person needs
+to carry, then give it a concrete, credible, human shape that can guide a later choice.
+
+Start With Why helps supply the purpose behind a message, How to Win Friends and Influence
+People focuses on the respect that helps it be heard, and Crucial Conversations applies that
+discipline when the stakes make attention fragile.
+
+<ShelvedNearby
+  related={["start-with-why", "how-to-win-friends", "crucial-conversations"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/77687/made-to-stick-by-chip-heath-and-dan-heath/"
+  buyLabel="Made to Stick by Chip Heath and Dan Heath"
+/>
