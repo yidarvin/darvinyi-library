@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-25
 
@@ -68,3 +68,31 @@ app tests emitted only the existing non-failing jsdom `Window.scrollTo()` notice
 - Preserved the round 1 diagram corrections: Figure 75.1 keeps its marker caption in
   the top position, and Figure 75.5 remains a supported one-way sequence with clear
   connections.
+
+## Critique round 3 — 2026-07-25
+
+### Required
+
+None. The round 1 diagram findings remain resolved: Figure 75.1 uses the
+non-colliding top marker-caption placement, and Figure 75.5 contains only the
+supported one-way connections with clear routes between node cards. The round 2
+reading-time finding also remains resolved: `minutes={7}` agrees with the recorded
+1,229 reader-visible words at approximately 200 words per minute, rounded up.
+
+The chapter follows the required anatomy, with five key ideas and five distinct
+in-vocabulary diagrams, concrete practice cards, an appropriately bounded caveat,
+and the Model section deliberately absent as required by the brief and registry.
+The related slugs are all `done`, the publisher link is present, and the generated
+cover uses registry metadata rather than real cover art. Against the repository's
+recorded brief, seed metadata, registry entry, and prior critique evidence, the
+chapter's factual framing is supported; no separate source dossier is recorded, and
+this review began no new external search.
+
+`npm run check` passed on 2026-07-25: validation, prose lint, 2 pipeline tests, 38
+runner tests, 155 app tests, typecheck, production build, and ESLint all completed
+successfully. The app tests emitted only the existing non-failing jsdom
+`Window.scrollTo()` notices.
+
+### Advisory
+
+None.

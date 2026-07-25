@@ -89,7 +89,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 072 | difficult-conversations         | Difficult Conversations                       | DONE    |
 | 073 | seven-principles-marriage       | The Seven Principles for Making Marriage Work | DONE    |
 | 074 | made-to-stick                   | Made to Stick                                 | DONE    |
-| 075 | quiet                           | Quiet                                         | PENDING |
+| 075 | quiet                           | Quiet                                         | DONE    |
 | 076 | happiness-hypothesis            | The Happiness Hypothesis                      | PENDING |
 | 077 | flourish                        | Flourish                                      | PENDING |
 | 078 | four-agreements                 | The Four Agreements                           | PENDING |
