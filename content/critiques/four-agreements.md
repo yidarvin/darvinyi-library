@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -157,3 +157,10 @@ verdict: revise
   lint, 2 pipeline tests, 38 runner tests, 161 app tests, TypeScript and the Vite
   production build, and ESLint all completed successfully. Vitest emitted only
   the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-25
+
+- **Required 1:** Shortened Figure 78.4's final bar label from “wider effort” to
+  “higher,” keeping it within the Bars SVG viewBox at the well-resourced value.
+- **Advisory applied:** Removed the accent from the well-resourced bar so depleted,
+  ordinary, and well-resourced days read as equally valid capacity-matched efforts.
