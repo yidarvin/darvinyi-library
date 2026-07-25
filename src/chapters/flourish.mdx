@@ -1,0 +1,211 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, CoreContext, Curve, NodeGraph, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="flourish"
+  thesis="Well-being is not a mood to maximize. It is a life with room for positive feeling, absorbing effort, close ties, a purpose beyond the self, and progress you can respect."
+  minutes={8}
+/>
+
+## The thesis
+
+Seligman's useful break with the language of happiness is that a good life cannot be
+reduced to how cheerful it feels. Positive feeling matters, but so do being absorbed in
+something difficult, belonging to other people, serving a concern larger than private
+comfort, and bringing worthwhile efforts to a close. PERMA makes those five things visible
+so a person can notice what is thin, then strengthen it without treating one bright feeling
+as the verdict on an entire life.
+
+## Why it matters
+
+The word "happy" asks too much of one answer. It can name a passing emotion, a judgment
+about a whole life, a social performance, or an outcome on a survey. That makes it hard to
+use when a person is tired, grieving, working toward a demanding goal, or caring for someone
+else. PERMA offers a more practical dashboard. It does not promise a life without pain. It
+gives pain fewer opportunities to erase everything else that can still be going well.
+
+## Key ideas
+
+## Positive emotion belongs in the picture, not on the throne
+
+Enjoyment, gratitude, hope, relief, and affection make life better from the inside. The point
+is not to manufacture a permanent smile. Positive emotion is one way a day can contain
+warmth, ease, or anticipation, and it is worth noticing rather than dismissing as trivial.
+It cannot carry the whole theory alone. A parent can be exhausted while doing something
+deeply meaningful. An artist can be frustrated and fully engaged. A promotion can feel good
+and still leave relationships unattended. Treating mood as the only score turns those ordinary
+facts into apparent failures.
+
+<Figure id="77.1" caption="A mood check is useful, but a life needs more than one reading.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{ title: "one question", points: ["do I feel good now?", "quick to answer", "easy to overread"] }}
+    right={{ title: "five questions", points: ["feeling", "engagement and ties", "meaning and progress"] }}
+  />
+</Figure>
+
+## Engagement gives attention a demanding home
+
+Engagement is the experience of being so involved in an activity that attention has less
+space for self-monitoring and distraction. It is not the same as being busy, and it cannot be
+ordered on command. It is more likely when the task is intelligible, feedback arrives soon
+enough to guide the next move, and the demand is near the edge of current ability. A task far
+below skill becomes vacant. A task far above it becomes hard to enter. The practical question
+is not whether work is comfortable. It is whether the next step is clear enough to meet.
+
+<Figure id="77.2" caption="Absorption is more likely when a task's demand rises with usable skill.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="channel"
+    axes={{ x: "current skill", y: "task demand" }}
+    annotations={[{ x: 0.56, y: 0.51, text: "a clear next move" }]}
+  />
+</Figure>
+
+## Relationships are an end, not only a support system
+
+People often describe relationships as useful because they reduce stress or make achievement
+easier. Those benefits are real, but the relationship itself is part of what makes a life go
+well. Friendship, family, partnership, and membership give care somewhere to travel in both
+directions. A strong tie does not require constant agreement. It needs enough trust to tell
+the truth, enough attention to notice change, and enough repair to survive ordinary failures.
+This is why a crowded calendar or a large contact list is a poor substitute for a few places
+where mutual concern is credible.
+
+<Figure id="77.3" caption="A close tie develops from shared attention toward trust, repair, and mutual care.">
+  <Concentric
+    className="block w-full min-w-[440px]"
+    rings={[{ label: "shared attention" }, { label: "trust and candor" }, { label: "repair and mutual care" }]}
+    highlight={0}
+  />
+</Figure>
+
+## Meaning changes what effort is for
+
+Meaning arrives when a person belongs to and serves something they regard as larger than the
+self. The larger thing can be a family, a craft, a neighborhood, a faith, a body of knowledge,
+or a cause. It is not a demand to find one grand mission or to make every chore noble. It is a
+test of direction: does this commitment connect effort to a concern that would still matter
+if no one applauded it? The answer can be modest and local. Meaning gains force when it is
+expressed in a role, a promise, or a recurring contribution, rather than held only as a slogan.
+
+<Figure id="77.4" caption="Meaning holds a durable concern at the center and gives it expression in changing roles.">
+  <CoreContext
+    className="block w-full min-w-[440px]"
+    coreTitle="a concern beyond the self"
+    coreItems={["care", "contribution", "belonging"]}
+    contextTitle="ways to serve it"
+    contextItems={["family role", "serious craft", "community work"]}
+  />
+</Figure>
+
+## Accomplishment gives effort a record
+
+Accomplishment is distinct from applause. It includes setting a standard, practicing long
+enough to meet it, and recognizing that something real was completed or improved. The standard
+can be private and humane: finishing a course of treatment, learning a hard passage, keeping
+a promise, or helping a team deliver its work. This element guards against a misleading
+version of well-being in which every demand is abandoned as soon as it becomes uncomfortable.
+Achievement is valuable when the target is chosen with care, not when a person turns life into
+an endless contest for credentials.
+
+<Figure id="77.5" caption="Achievement turns effort into evidence through a standard, repeated practice, and review.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "choose a standard", sub: "what would count?" },
+      { label: "practice", sub: "make the next attempt" },
+      { label: "review", sub: "notice real progress" },
+      { label: "set the next aim", sub: "without moving the goal blindly" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## The model
+
+PERMA names five contributors to well-being: positive emotion, engagement, relationships,
+meaning, and accomplishment. The model is a map for attention, not a recipe that demands an
+equal amount of each element every day. The elements overlap in lived experience. A demanding
+project can bring engagement, meaning, and accomplishment at once; a meal with a friend can
+bring positive feeling and relationship. Their separation is still useful because one strong
+area can hide a neglected one. Someone with purpose may need more connection. Someone who
+achieves constantly may need more delight or absorption.
+
+<Figure id="77.6" caption="PERMA treats well-being as five connected contributors, not one mood with five synonyms.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "emotion", label: "positive emotion", x: 0.5, y: 0.08 },
+      { id: "engagement", label: "engagement", x: 0.85, y: 0.3 },
+      { id: "relationships", label: "relationships", x: 0.75, y: 0.84 },
+      { id: "meaning", label: "meaning", x: 0.25, y: 0.84 },
+      { id: "accomplishment", label: "accomplishment", x: 0.15, y: 0.3 },
+      { id: "wellbeing", label: "well-being", x: 0.5, y: 0.5 },
+    ]}
+    edges={[
+      { from: "emotion", to: "wellbeing" },
+      { from: "engagement", to: "wellbeing" },
+      { from: "relationships", to: "wellbeing" },
+      { from: "meaning", to: "wellbeing" },
+      { from: "accomplishment", to: "wellbeing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Take a five-part inventory">
+For one week, spend five minutes at the end of the day writing one concrete observation for
+each PERMA element. Name a feeling you noticed, the activity that held your attention, a real
+moment of connection, a contribution or commitment, and one piece of progress. Leave a blank
+when an element was absent. The blank is information, not a grade.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Repair the thinnest area with one appointment">
+At the end of the week, choose the area that felt least supported. Make one dated, specific
+appointment for it: ask a friend to walk, block ninety minutes for a demanding craft, volunteer
+for a useful shift, or define the smallest finishable milestone. Do not try to improve all five
+at once. A calendar entry gives the chosen element a fair chance to exist.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make the goal answer to a value">
+Before committing to a new target, write two sentences: what will count as progress, and whom
+or what the effort will serve. If the second answer is only status, keep looking. Achievement
+is sturdier when its standard fits a relationship, a responsibility, or a craft you would
+respect without an audience.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+PERMA is a useful framework, not a settled inventory of everything a human being needs. Its
+five elements overlap strongly, and a dashboard cannot establish what caused a change in a
+person's life. Seligman later acknowledged that candidates such as health, vitality, and
+responsibility raise questions about whether the list is complete. The model also does not turn
+poverty, discrimination, illness, grief, or unsafe conditions into a personal project of better
+attitude. Use it to notice neglected sources of well-being and to choose a small next action,
+while keeping the material and social conditions of a life in view.
+</Callout>
+
+## If you remember one thing
+
+Do not ask a whole life to answer with one feeling. Look for positive emotion, engagement,
+relationships, meaning, and accomplishment, then give the neglected part a concrete place in
+the week ahead.
+
+## Shelved nearby
+
+*Flow* examines the absorbed engagement that PERMA treats as one contributor to well-being.
+*Man's Search for Meaning* tests purpose under conditions far harsher than a personal
+dashboard can capture. *The Happiness Hypothesis* connects well-being to practiced attention,
+relationships, and commitments.
+
+<ShelvedNearby
+  related={["flow", "mans-search-for-meaning", "happiness-hypothesis"]}
+  buyUrl="https://www.simonandschuster.com/books/Flourish/Martin-E-P-Seligman/9781439190760"
+  buyLabel="Flourish by Martin E. P. Seligman"
+/>
+

@@ -1527,7 +1527,18 @@
       "subtitle": "Martin Seligman · 2011",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Well-being is more than happiness; it grows through positive emotion, engagement, relationships, meaning, and accomplishment.",
+      "framework": "PERMA: positive emotion, engagement, relationships, meaning, and accomplishment.",
+      "diagrams": [
+        "comparison",
+        "annotated curve",
+        "concentric circles",
+        "core / context",
+        "timeline",
+        "node graph"
+      ]
     },
     {
       "num": 78,
