@@ -1,0 +1,239 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Curve, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="twelve-rules"
+  thesis="A life can become more bearable when you accept a manageable responsibility, tell the truth about what needs attention, and meet uncertainty without trying to abolish it."
+  minutes={9}
+/>
+
+## The thesis
+
+Jordan Peterson's central argument is that meaning is not a mood to chase. It is an
+orientation built through responsibility: put one corner of your life in order, face
+the next problem voluntarily, and carry a burden that connects you to other people.
+The book treats a good life as a moving balance between enough structure to stand on
+and enough uncertainty to keep learning possible.
+
+## Why it matters
+
+The appeal is easy to understand. When life feels too large, a demand to solve
+everything can make action less likely, not more. A bounded responsibility is smaller
+and more concrete: make the call, finish the repair, clarify the promise, stop
+avoiding the conversation. The book offers a moral vocabulary for that next step,
+including the claim that small acts of order can restore agency before grand plans do.
+
+## Key ideas
+
+## Agency starts with how you carry yourself
+
+The first rule is often reduced to a slogan about posture. Its larger point concerns
+feedback. How you present yourself influences how others respond, and those responses
+alter what you expect from the next encounter. A person who makes room, speaks plainly,
+and attends to basic self-care can interrupt a loop of withdrawal and diminished
+expectation. This is not a command to perform confidence or ignore real danger. It is
+a reminder that behavior can give the mind evidence that it is allowed to participate.
+
+<Figure id="79.1" caption="A small outward adjustment can change the social feedback available to the next attempt.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "withdrawal loop",
+      points: ["make yourself smaller", "expect dismissal", "avoid the next bid", "lose useful feedback"],
+    }}
+    right={{
+      title: "agency loop",
+      points: ["take up ordinary space", "invite a response", "make the next bid", "gain usable feedback"],
+    }}
+  />
+</Figure>
+
+## Compare against your own last step
+
+Status comparisons are hungry machines. There is always someone with more money,
+status, beauty, freedom, or recognition, and the comparison says little about the
+next action available to you. Peterson redirects the comparison backward: use a
+recent version of yourself as the reference point. The useful question is not whether
+you have won a global ranking. It is whether one practice, responsibility, or
+relationship is in better repair than it was last week. Small improvements make a
+life legible because they show which actions helped.
+
+<Figure id="79.2" caption="Progress becomes easier to inspect when the reference point is your own prior position.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="s"
+    axes={{ x: "successive attempts", y: "condition of the work" }}
+    annotations={[
+      { x: 0.18, y: 0.03, text: "starting point", labelPosition: "above" },
+      { x: 0.58, y: 0.71, text: "adjust after feedback" },
+      { x: 0.9, y: 0.98, text: "next local gain" },
+    ]}
+  />
+</Figure>
+
+## Care needs boundaries, not only warmth
+
+The book argues that children need adults who are kind and willing to set limits.
+That does not make severity a virtue. A boundary has a job when it makes expectations
+clear, protects other people, and is proportionate to the situation. Vague rules and
+unpredictable enforcement make a household harder to read. Clear limits, explained
+and followed through, turn care into a structure a child can learn from. The same
+logic applies to teams and friendships: resentment often grows where expectations
+were never named.
+
+<Figure id="79.3" caption="Care becomes reliable when expectations, consequences, and repair are connected.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "care", label: "care", x: 0.5, y: 0.1 },
+      { id: "limit", label: "clear limit", x: 0.15, y: 0.48 },
+      { id: "follow", label: "consistent follow-through", x: 0.5, y: 0.83 },
+      { id: "trust", label: "predictable trust", x: 0.85, y: 0.48 },
+    ]}
+    edges={[
+      { from: "care", to: "limit" },
+      { from: "limit", to: "follow" },
+      { from: "follow", to: "trust", kind: "reinforcing" },
+      { from: "trust", to: "care", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Truth is a way of keeping reality editable
+
+Peterson treats truthfulness as more than factual accuracy. It also means refusing
+to cooperate with a story you know is hiding a problem. A small omission can preserve
+comfort today while making the real situation harder to change tomorrow. Naming what
+is wrong gives a person, a family, or a workplace something shared to work on. This
+does not require blurting every thought. It asks for speech that is careful, specific,
+and oriented toward the actual situation rather than a convenient fiction.
+
+<Figure id="79.4" caption="The visible statement matters because it either exposes or conceals the conditions beneath it.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="what is said aloud"
+    waterlineLabel="what the statement leaves reachable"
+    below={["the problem as it is", "the costs already accumulating", "the repair still possible"]}
+  />
+</Figure>
+
+## Put your own room in order before prosecuting the world
+
+The familiar rule is best read as a sequence of scale, not an order to ignore public
+wrongs. Start where you have direct knowledge and direct responsibility. A neglected
+obligation, a debt, a harmful habit, or an untreated conflict offers a concrete place
+to practice judgment. That practice can make later criticism more accurate and less
+performative. Personal repair is not a substitute for collective action. It is a test
+of whether the standards demanded of others can survive contact with your own life.
+
+<Figure id="79.5" caption="The circle of action begins with what you can directly inspect, then expands with competence.">
+  <Concentric
+    className="block w-full min-w-[440px]"
+    rings={[{ label: "my next obligation" }, { label: "household and close ties" }, { label: "work and community" }, { label: "public judgment" }]}
+    highlight={0}
+    externalLabel="a problem you want to condemn"
+  />
+</Figure>
+
+## Attend to the small good while carrying the hard thing
+
+The book does not promise that responsibility removes suffering. Its more modest
+claim is that a chosen burden can keep suffering from becoming the only thing in view.
+The rule about noticing a cat on a difficult day belongs here. Attention is not denial.
+It is a refusal to let pain erase every sign of affection, beauty, humor, or relief.
+That narrower field of vision can support endurance, especially when the next useful
+action is too small to feel heroic.
+
+<Figure id="79.6" caption="A difficult day can contain a burden and a small restorative fact at the same time.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="overwhelmed by pain"
+    right="alert to small good"
+    marker={0.62}
+    markerLabel="notice one concrete good"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.0, to: 0.38, label: "pain fills the frame" },
+      { from: 0.48, to: 0.88, label: "burden plus relief", accent: true },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The framework beneath the rules is the tension between order and chaos. Order means
+the routines, roles, skills, and agreements that make a day navigable. Chaos means
+the unfamiliar, the unplanned, and the information that does not fit what you
+expected. Too much order hardens into sterile certainty. Too much chaos overwhelms
+the capacity to act. Peterson places meaning at the edge where a person has enough
+stability to meet a real unknown and enough openness to learn from it. The model is a
+directional metaphor, not a measurement device or a scientific map of every problem.
+
+<Figure id="79.7" caption="Meaning sits near the workable edge: stable enough to act, open enough to learn.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="rigid order"
+    right="overwhelming chaos"
+    marker={0.52}
+    markerLabel="workable edge"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.0, to: 0.34, label: "certainty without learning" },
+      { from: 0.4, to: 0.62, label: "meaningful responsibility", accent: true },
+      { from: 0.7, to: 1.0, label: "change without footing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose one repair within reach">
+Write down one problem you can influence this week: an overdue message, a messy desk,
+a bill you have not opened, or a promise that needs renegotiating. Make the first step
+small enough to complete today, then decide the next visible step before you stop.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Run the honest description test">
+For one recurring frustration, describe the facts without assigning a villain. Name
+what happened, what you did, what you avoided, and what outcome you want. Then ask one
+person involved whether the description misses something important.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Set one boundary you can keep">
+Pick an expectation that is currently vague. State the behavior, the limit, and the
+consequence in plain language. Do not choose a punishment you will not follow through
+on. Consistency is more useful than intensity.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Keep a record of local progress">
+At the end of each week, note one obligation handled better than the week before and
+one difficulty that needs a different approach. The point is not to manufacture
+optimism. It is to keep the next adjustment visible.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book is most useful as a set of prompts for attention, responsibility, and
+conduct, not as a settled account of psychology, biology, or politics. Its movement
+between clinical observation, myth, evolutionary claims, and moral prescription is
+often suggestive rather than demonstrated. Some readers also turn its language of
+order into permission for rigid hierarchy, or use personal responsibility to dismiss
+material constraints and collective duties. That reverses the best practical insight:
+start with a responsibility you can actually carry, while keeping your claims about
+other people modest and open to correction.
+</Callout>
+
+## If you remember one thing
+
+Do not wait for life to become fully orderly before acting, and do not demand that
+uncertainty disappear. Take responsibility for one honest repair at the edge of what
+you already know how to do.
+
+<ShelvedNearby
+  related={["mans-search-for-meaning", "seven-habits", "mindset", "extreme-ownership"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/258237/12-rules-for-life-by-jordan-b-peterson--foreword-by-norman-doige-md-illustrated-by-ethan-van-sciver/"
+  buyLabel="12 Rules for Life by Jordan B. Peterson"
+/>

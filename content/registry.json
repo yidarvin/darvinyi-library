@@ -1566,7 +1566,19 @@
       "subtitle": "Jordan Peterson · 2018",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Meaning is found by taking on responsibility and imposing order at the edge of chaos, one rule at a time.",
+      "framework": "Order and chaos",
+      "diagrams": [
+        "comparison",
+        "annotated curve",
+        "node graph",
+        "iceberg",
+        "concentric circles",
+        "spectrum",
+        "spectrum"
+      ]
     },
     {
       "num": 80,
