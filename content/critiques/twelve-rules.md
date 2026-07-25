@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-25
 
@@ -66,6 +66,36 @@ jsdom `Window.scrollTo()` notices.
    repair restores predictability. The surrounding prose now states the same
    expectation, consequence, and repair sequence, and the diagram contains no
    unexplained feedback edge or reinforcing-polarity claim.
+
+`npm run check` passed on 2026-07-25: queue and registry validation, prose lint,
+2 pipeline tests, 38 runner tests, 163 Vitest tests, TypeScript and production build,
+and ESLint all completed successfully. Vitest emitted only the existing non-failing
+jsdom `Window.scrollTo()` notices.
+
+## Critique round 2 — 2026-07-25
+
+### Required
+
+1. **Update the registry diagram inventory to match the resolved chapter.** The
+   builder replaced Figure 79.2's annotated curve with `Compare` and Figure 79.3's
+   node graph with `Flow` (`src/chapters/twelve-rules.mdx:63-95`), but the registry
+   still lists `"annotated curve"` and `"node graph"` in those positions
+   (`content/registry.json:1573-1580`). Record the actual page-order forms:
+   comparison, comparison, flow, iceberg, concentric circles, spectrum, spectrum.
+   The stale inventory violates the definition-of-done requirement that the registry
+   entry be complete and the critique rubric's requirement that registry metadata
+   agree with the rendered draft.
+
+### Advisory
+
+None.
+
+The three round 1 findings are otherwise resolved. An independent static render of
+this exact draft produced approximately 1,420 visible alphanumeric word tokens, which
+still rounds up to the declared eight-minute badge at approximately 200 words per
+minute. The brief, seed metadata, and registry remain the only chapter-specific
+recorded evidence, so this review began no external web search and did not reopen the
+settled evidence advisory.
 
 `npm run check` passed on 2026-07-25: queue and registry validation, prose lint,
 2 pipeline tests, 38 runner tests, 163 Vitest tests, TypeScript and production build,
