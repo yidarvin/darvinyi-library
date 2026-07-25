@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-25
 
@@ -79,3 +79,36 @@ non-failing jsdom `Window.scrollTo()` notices.
 - Changed the Hero badge from eight to seven minutes, using the critique's recorded
   approximately 1,377 visible-word render and the specified 200-words-per-minute
   rounding rule. The small resolution edits do not cross the 1,400-word threshold.
+
+## Critique round 2 — 2026-07-25
+
+### REQUIRED
+
+1. **Figure 77.3 reverses two of the four visible connections that are declared to
+   lead into “a close tie.”** The replacement graph places `trust` and `care` only
+   about 103.09 viewBox units from the center node
+   (`src/chapters/flourish.mdx:79-94`). For either nearly horizontal edge, the shared
+   primitive removes about 54.06 units at each end for the card boundary and arrow
+   clearance (`src/components/diagrams/NodeGraph.tsx:78-91`). That leaves a signed
+   line length of about -5.03 units: `x2` falls beyond `x1` in the opposite direction,
+   so each `markerEnd` arrow points back toward “trust and candor” or “mutual care”
+   instead of toward the declared target. “Shared attention” and “repair” render
+   forward, making the same four-way relationship map internally inconsistent. Move
+   the side nodes far enough from the center, choose placements with adequate edge
+   length, or otherwise make all four visible connections agree with the caption,
+   accessible description, and edge declarations. This can be resolved in the
+   chapter without changing the shared primitive.
+
+The four findings from round 1 remain resolved. The chapter's recorded brief, anatomy,
+registry metadata, generated cover, related links, publisher link, captions, and the
+other five figure compositions remain sound within the recorded evidence. This review
+began no new external web search.
+
+`npm run check` passed on 2026-07-25: queue/registry/content validation, prose lint,
+2 pipeline tests, 38 runner tests, 159 UI tests, TypeScript and the Vite production
+build, and ESLint all completed successfully. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+No new advisory findings. The round 1 advisory remains non-blocking.
