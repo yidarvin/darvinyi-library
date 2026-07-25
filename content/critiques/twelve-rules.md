@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -101,3 +101,12 @@ settled evidence advisory.
 2 pipeline tests, 38 runner tests, 163 Vitest tests, TypeScript and production build,
 and ESLint all completed successfully. Vitest emitted only the existing non-failing
 jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-25
+
+1. Updated the `twelve-rules` registry diagram inventory to match the rendered
+   figures in page order: comparison, comparison, flow, iceberg, concentric circles,
+   spectrum, spectrum. Figure 79.2 is now recorded as a comparison and Figure 79.3
+   as a flow, preserving the prior substantive fixes.
+
+`npm run check` passed on 2026-07-25.

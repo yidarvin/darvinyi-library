@@ -1572,8 +1572,8 @@
       "framework": "Order and chaos",
       "diagrams": [
         "comparison",
-        "annotated curve",
-        "node graph",
+        "comparison",
+        "flow",
         "iceberg",
         "concentric circles",
         "spectrum",
