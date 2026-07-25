@@ -10,11 +10,10 @@ import { Compare, Concentric, Flow, Matrix, NodeGraph, ProcessLoop } from "../co
 
 ## The thesis
 
-Gottman's argument is practical: a relationship is made in its ordinary moments. Partners need
-an up-to-date knowledge of one another, a climate of appreciation, and a habit of answering
-small invitations for connection. Conflict will still arrive. What separates a manageable
-disagreement from a damaging pattern is how it begins, whether each person can hear influence,
-and whether they can repair the conversation when it goes off course.
+Marriage is made in ordinary moments: partners keep learning one another, express appreciation,
+and answer small bids for connection. The conflicts that inevitably recur stay manageable when
+both people accept influence, begin gently, and repair a conversation before disrespect or
+withdrawal takes hold.
 
 ## Why it matters
 
@@ -44,10 +43,10 @@ person who is actually there rather than the version you last understood.
       { id: "history", label: "shared history", x: 0.85, y: 0.82 },
     ]}
     edges={[
-      { from: "pressure", to: "partner", label: "ask" },
-      { from: "hope", to: "partner", label: "ask" },
-      { from: "people", to: "partner", label: "notice" },
-      { from: "history", to: "partner", label: "remember" },
+      { from: "pressure", to: "partner" },
+      { from: "hope", to: "partner" },
+      { from: "people", to: "partner" },
+      { from: "history", to: "partner" },
     ]}
   />
 </Figure>
@@ -98,18 +97,24 @@ can name the underlying wish on each side, make room for the difference, and fin
 arrangement that both can live with. Gridlock is less about a disagreement's existence than
 about contempt, silence, or rigid demands taking over the disagreement.
 
+Accepting influence does not mean giving up a preference or agreeing that the other person is
+right about everything. It means treating a partner's concern as information that can change the
+next move: acknowledge the part that makes sense, adjust a plan when possible, or explain a real
+limit while looking for a smaller accommodation. The point is shared authorship of the life
+together, not a winner and a loser.
+
 <Figure id="73.4" caption="A conflict is easier to handle when its practical and enduring parts are distinguished before choosing a response.">
   <Matrix
     className="block w-full min-w-[440px]"
     xAxis={{ left: "one-time", right: "recurs", label: "how often it returns" }}
     yAxis={{ low: "logistical", high: "meaning-laden", label: "what is at stake" }}
     quadrants={[
+      { title: "hear influence", note: "name each wish" },
+      { title: "live with difference", note: "seek a workable rhythm" },
       { title: "solve", note: "make a plan" },
       { title: "returning task", note: "revise the system" },
-      { title: "name the value", note: "hear the wish" },
-      { title: "live with difference", note: "seek a workable rhythm" },
     ]}
-    highlight={3}
+    highlight={1}
   />
 </Figure>
 
@@ -181,13 +186,20 @@ Ask one follow-up question, reflect what you heard, or say when you can come bac
 one ordinary opening rather than waiting for a grand moment of closeness.
 </ExerciseCard>
 
-<ExerciseCard n="03" title="Bring one complaint without a character judgment">
+<ExerciseCard n="03" title="Let one concern change the plan">
+Choose one ordinary decision that affects both of you. One person names a specific concern and a
+request; the other first says what they heard, then makes one concrete adjustment or explains a
+limit and proposes a smaller accommodation. Switch roles. The aim is not matching preferences,
+but showing that each person's concern can shape the next move.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Bring one complaint without a character judgment">
 Write the issue in this order: what happened, how it affected you, and what you need next.
 Keep it about an observable event. Replace "you always" with the actual situation, then make a
 request your partner could accept, decline, or help revise.
 </ExerciseCard>
 
-<ExerciseCard n="04" title="Plan the pause before the next argument">
+<ExerciseCard n="05" title="Plan the pause before the next argument">
 Agree on a sentence that means, "I am too flooded to do this well, and I will come back." Decide
 where each person will go, how long the break will be, and when the conversation resumes. A
 pause without a return time can feel like abandonment. A planned return makes space for both
@@ -215,11 +227,11 @@ action are more useful than winning the exchange.
 
 Nonviolent Communication offers language for turning a charged complaint into an observation,
 feeling, need, and request. Difficult Conversations adds a companion method for holding
-different accounts of the same event without making either person the whole problem.
+different accounts of the same event without making either person the whole problem. Five Love
+Languages offers a narrower lens on the gestures a partner may recognize as care.
 
 <ShelvedNearby
   related={["nonviolent-communication", "difficult-conversations", "five-love-languages"]}
   buyUrl="https://www.penguinrandomhouse.com/books/248395/the-seven-principles-for-making-marriage-work-by-john-gottman-phd-and-nan-silver/"
   buyLabel="The Seven Principles for Making Marriage Work by John Gottman and Nan Silver"
 />
-

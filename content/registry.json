@@ -1443,10 +1443,21 @@
       "num": 73,
       "slug": "seven-principles-marriage",
       "title": "The Seven Principles for Making Marriage Work",
-      "subtitle": "John Gottman · 1999",
+      "subtitle": "John Gottman and Nan Silver · 1999",
       "part": "Communication & Relationships",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Lasting marriages are built on friendship, respect, and repair, and the warning signs of failure are measurable.",
+      "framework": "The Four Horsemen",
+      "diagrams": [
+        "node graph",
+        "process loop",
+        "concentric circles",
+        "matrix",
+        "flow",
+        "comparison"
+      ]
     },
     {
       "num": 74,

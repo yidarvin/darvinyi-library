@@ -295,7 +295,7 @@ BOOKS = [
          shelf="Communication & Relationships", tier=2,
          thesis="Every hard conversation is really three at once: what happened, the feelings involved, and what it says about identity.",
          model="The three conversations", flag=""),
-    dict(id="seven-principles-marriage", title="The Seven Principles for Making Marriage Work", author="John Gottman", year=1999,
+    dict(id="seven-principles-marriage", title="The Seven Principles for Making Marriage Work", author="John Gottman and Nan Silver", year=1999,
          shelf="Communication & Relationships", tier=2,
          thesis="Lasting marriages are built on friendship, respect, and repair, and the warning signs of failure are measurable.",
          model="The Four Horsemen", flag=""),

@@ -1,6 +1,6 @@
 # The Seven Principles for Making Marriage Work
 
-- **Author:** John Gottman
+- **Author:** John Gottman and Nan Silver
 - **Year:** 1999
 - **Shelf:** Communication & Relationships
 - **Tier:** 2

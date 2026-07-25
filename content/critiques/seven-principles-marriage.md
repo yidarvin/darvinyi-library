@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-23
 
@@ -80,3 +80,21 @@ verdict: revise
    `CHECK OK` on 2026-07-23: validation, prose lint, all pipeline tests, all 151
    Vitest tests, TypeScript, the Vite production build, and ESLint passed. Vitest
    emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-23
+
+- Compressed `The thesis` to two sentences while retaining ordinary moments,
+  friendship, recurring conflict, accepting influence, and repair.
+- Corrected figure 73.4 to Matrix reading order: the top, meaning-laden row now
+  contains `hear influence` and `live with difference`; the bottom, logistical row
+  contains `solve` and `returning task`. The highlighted cell is now the recurring,
+  meaning-laden response, `live with difference`.
+- Defined accepting influence in the recurring-conflict key idea, made it visible in
+  figure 73.4, and added exercise 03, `Let one concern change the plan`, for both
+  partners to practice it. The pre-existing complaint and planned-pause exercises
+  remain as exercises 04 and 05.
+- Removed misleading action labels from figure 73.1's inward context edges and added
+  the missing Five Love Languages relationship clause before `ShelvedNearby`.
+- Updated the durable seed, brief, and registry byline to credit John Gottman and Nan
+  Silver. Completed the registry entry with tier, thesis, framework, and the six
+  vocabulary diagram forms rendered by the chapter; the chapter remains `draft`.
