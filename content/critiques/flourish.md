@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-25
 
@@ -124,3 +124,38 @@ No new advisory findings. The round 1 advisory remains non-blocking.
 - Preserved the round 1 resolutions: the flow marker remains inside its channel, the
   relationship diagram remains a peer-node graph, the unsupported attribution remains
   removed, and the Hero remains a seven-minute distillation.
+
+## Critique round 3 — 2026-07-25
+
+### REQUIRED
+
+None.
+
+The round 2 relationship-graph defect is resolved. Applying the shared `NodeGraph`
+placement and rectangular-card intersection calculations to the current chapter
+positions leaves positive forward line lengths of approximately 48.4, 20.4, 46.7,
+and 20.4 viewBox units for the arrows from shared attention, trust and candor,
+repair, and mutual care respectively. Every marker therefore points toward `a close
+tie`, in agreement with the visible labels, caption, accessible description, and
+edge declarations (`src/chapters/flourish.mdx:78-95`;
+`src/components/diagrams/NodeGraph.tsx:41-56,73-107`).
+
+The earlier resolutions also remain intact. The flow annotation is inside its
+highlighted channel; the unsupported later-attribution claim remains absent; the
+seven-minute badge remains below the 1,400-word rounding threshold recorded in
+round 1; the chapter and registry name the same five PERMA elements and six diagram
+forms; and all three nearby slugs resolve to completed chapters. The Hero, thesis,
+five key ideas, distinct Model, three concrete practice cards, caveat, final
+takeaway, and nearby-book footer follow the required anatomy. No chapter-specific
+evidence dossier exists beyond the brief and seed metadata, so this pass began no
+new external web search and did not infer additional source claims.
+
+`npm run check` passed on 2026-07-25: queue/registry/content validation, prose lint,
+2 pipeline tests, 38 runner tests, 159 UI tests, TypeScript and the Vite production
+build, and ESLint all completed successfully. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.
+
+### ADVISORY
+
+No new advisory findings. The round 1 comparison-label advisory remains
+non-blocking.

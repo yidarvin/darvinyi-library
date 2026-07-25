@@ -91,7 +91,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 074 | made-to-stick                   | Made to Stick                                 | DONE    |
 | 075 | quiet                           | Quiet                                         | DONE    |
 | 076 | happiness-hypothesis            | The Happiness Hypothesis                      | DONE    |
-| 077 | flourish                        | Flourish                                      | PENDING |
+| 077 | flourish                        | Flourish                                      | DONE    |
 | 078 | four-agreements                 | The Four Agreements                           | PENDING |
 | 079 | twelve-rules                    | 12 Rules for Life                             | PENDING |
 | 080 | feeling-good                    | Feeling Good                                  | PENDING |
