@@ -1,0 +1,237 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Flow, Iceberg, NodeGraph, Pyramid, Venn } from "../components/diagrams";
+
+<Hero
+  slug="happiness-hypothesis"
+  thesis="A good life is less a prize you capture than a fit you build, between an emotional mind, the people around you, and commitments that give your attention somewhere to go."
+  minutes={8}
+/>
+
+## The thesis
+
+Jonathan Haidt tests old advice about living well against psychology instead of treating it as
+either sacred or obsolete. His most useful conclusion is that happiness is not a possession
+waiting inside the individual. It emerges when a partly automatic mind is trained and
+supported by fitting conditions, durable relationships, and worthwhile commitments. Reason
+matters, but it does not get to issue orders from an empty room.
+
+## Why it matters
+
+Advice about happiness often swings between two thin answers. One says to change your inner
+attitude and leave the world alone. The other says to acquire enough of the right external
+things and the feeling will arrive. Haidt's framework makes the problem wider and more
+practical. A person has temperamental tendencies and emotional habits, but also rooms,
+routines, friendships, work, institutions, and obligations that can either support or
+undermine a good life.
+
+## Key ideas
+
+## Conscious reasons are only part of the mind
+
+People can explain a choice, make a plan, and notice a contradiction. They also react before
+they have words, follow habits they disapprove of, and find themselves drawn or repelled by
+things they did not consciously select. Haidt's metaphor gives this split a memorable shape:
+the rider is the deliberating, verbal part, while the elephant is the larger field of
+automatic feeling, motivation, and learned response. The point is not that reason is fake. It
+is that a good argument alone rarely settles a conflict with fear, appetite, exhaustion, or a
+well-rehearsed habit.
+
+<Figure id="76.1" caption="A stated intention is visible, while much of the force behind action operates below deliberate awareness.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the plan you can explain"
+    waterlineLabel="deliberate awareness"
+    below={["automatic reactions", "emotion and bodily state", "habits learned through repetition"]}
+  />
+</Figure>
+
+## Change works by training, not commanding
+
+If the automatic side keeps winning, the response is not merely to repeat a better command.
+Change has to reach the conditions under which a reaction fires. A different cue, a smaller
+step, repeated practice, a calmer body, or a setting that makes the desired response easier
+can gradually alter what feels natural. Haidt discusses routes such as cognitive therapy and
+meditation because they work on patterns of attention and interpretation, not only on the
+contents of a pep talk. The rider is most useful as a trainer: it chooses practice, arranges
+the environment, and returns often enough for the elephant to learn.
+
+<Figure id="76.2" caption="A deliberate plan helps when it becomes repeated experience that changes the automatic response.">
+  <Flow
+    className="block w-full min-w-[600px]"
+    steps={["notice the trigger", "choose a smaller response", "repeat in a fitting setting", "make the new response familiar"]}
+    highlight={2}
+  />
+</Figure>
+
+## Happiness is a relation, not a direct target
+
+Haidt pushes back on the idea that happiness comes wholly from within. Material conditions,
+health, safety, freedom from chronic strain, and the structure of a day all matter. So do the
+ways a person uses attention and effort. The same promotion, move, or purchase can have a
+different effect on two people because it meets different needs and enters different lives.
+That does not make external improvements trivial. It means the useful question is not, "What
+single thing will make me happy?" It is, "What would make my capacities and my circumstances
+fit better?"
+
+<Figure id="76.3" caption="Well-being is shaped where a person's tendencies, daily conditions, and chosen practices meet.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[{ label: "temperament and learned patterns" }, { label: "conditions of life" }, { label: "chosen practices" }]}
+    intersectionLabel="a better fit"
+  />
+</Figure>
+
+## Reciprocity turns a group into a place to live
+
+Human beings are built for cooperation, yet cooperation is fragile when people expect to be
+used. Reciprocity supplies a practical social rule: contribute, notice who follows through,
+repair small breaches, and be wary of people who take without returning. This is more than a
+transaction ledger. Reliable give-and-take lets people plan together, ask for help without
+humiliation, and spend less energy on constant defense. The book's warning is useful too:
+people are quick to see another person's unfairness and slow to notice their own. A fair
+relationship needs both boundaries and a readiness to inspect one's side of the exchange.
+
+<Figure id="76.4" caption="Reciprocity creates trust when contribution, response, and repair keep reinforcing one another.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "help", label: "offer help", x: 0.18, y: 0.5 },
+      { id: "response", label: "a fair response", x: 0.48, y: 0.2 },
+      { id: "trust", label: "trust", x: 0.5, y: 0.78 },
+      { id: "cooperate", label: "cooperate again", x: 0.82, y: 0.5 },
+    ]}
+    edges={[
+      { from: "help", to: "response" },
+      { from: "response", to: "trust", kind: "reinforcing" },
+      { from: "trust", to: "cooperate", kind: "reinforcing" },
+      { from: "cooperate", to: "help" },
+    ]}
+  />
+</Figure>
+
+## Attachment can make courage possible
+
+Love is often described as a force that makes people dependent. Haidt's account gives it a
+different role. A trustworthy bond can become a secure base: somewhere to return for care,
+honest feedback, and repair. That security can make it easier to take a risk, tolerate a
+setback, or care for someone else. A relationship becomes constraining when it demands that
+one person shrink, submit, or provide constant proof. The distinction is not whether a bond
+needs you. It is whether the connection helps both people move through the world with more
+steadiness.
+
+<Figure id="76.5" caption="A secure connection can support exploration, repair, and care without becoming a cage.">
+  <Concentric
+    className="block w-full min-w-[440px]"
+    rings={[{ label: "secure connection" }, { label: "trust and repair" }, { label: "exploration and care" }]}
+    highlight={0}
+  />
+</Figure>
+
+## Meaning grows through commitments that hold
+
+A life gets thin when every choice stays reversible and every activity is judged only by the
+feeling it produces today. Haidt calls the fuller alternative vital engagement: becoming
+absorbed in people, projects, and practices that matter enough to organize effort over time.
+Commitment narrows some options, but that narrowing can be the condition for depth. A craft
+needs patient skill. Friendship needs reliability. Citizenship needs participation. These are
+not interchangeable sources of pleasure, nor are they guarantees against loss. They give
+attention a place to accumulate and turn a series of moments into a life with shape.
+
+<Figure id="76.6" caption="Meaningful engagement rests on stable supports and grows into participation beyond the self.">
+  <Pyramid
+    className="block w-full min-w-[440px]"
+    tiers={[
+      { label: "enough safety and stability" },
+      { label: "trusted people" },
+      { label: "a practice or project" },
+      { label: "participation that matters" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## The Model
+
+The rider and elephant are a metaphor for coordination, not a map of two separate organs.
+The rider can name a direction, compare options, and create conditions for change. The
+elephant supplies the momentum, attention, emotion, and learned tendencies that make action
+possible. Lasting change asks the two to cooperate. A plan that ignores feeling and context
+will often stall; an impulse that never receives reflection can carry a person somewhere they
+did not mean to go.
+
+<Figure id="76.7" caption="The rider can steer and train; the elephant supplies the force that makes a direction real.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="none"
+    left={{
+      title: "the rider",
+      points: ["plans and explains", "compares possible paths", "sets up practice", "cannot compel by argument alone"],
+    }}
+    right={{
+      title: "the elephant",
+      points: ["feels and reacts quickly", "carries habit and motivation", "learns from repeated experience", "supplies momentum"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Find the elephant in one stuck pattern">
+Choose one behavior that keeps defeating a sensible plan. For a week, record what happens
+immediately before it: the place, time, body state, people present, and feeling you want to
+change. Do not diagnose your character. Look for the cue and the payoff that make the pattern
+easy to repeat.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Design one training session">
+Make the desired response smaller than your ambition. If you want to handle a tense
+conversation better, rehearse one opening sentence before the meeting. If you want to spend
+less automatically, remove the saved payment step from one store. Repeat the small adjustment
+where the old response normally appears, then decide what actually changed.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Repair one piece of reciprocity">
+Think of a relationship where the exchange feels vague or lopsided. Name one specific thing
+you can contribute, one boundary you need, or one misunderstanding you can clear up. Say it
+plainly and make room for the other person's account. Trust does not require perfect balance
+in every moment, but it does need a credible path back to fairness.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make one commitment concrete">
+Pick a person, project, or community you want to engage more deeply. Give it a recurring slot
+in the next two weeks and define the action: call your sibling on Thursday, show up for the
+shift, finish the first draft, or attend the local meeting. A commitment becomes real when it
+appears in a calendar and asks something of you.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The elephant and rider are a teaching metaphor, not a claim that the brain contains two cleanly
+separate agents. They can help identify a mismatch between intentions and habits, but they do
+not explain every difficulty or make structural hardship a personal training problem. The book
+also gathers results from a fast-moving era of positive psychology. Treat neat claims about a
+personal happiness baseline or a universal path to growth as prompts for inquiry, not as fixed
+measurements of a life. Adversity can produce growth for some people and trauma for others. A
+good framework leaves room for material conditions, culture, disability, loss, and help from
+other people.
+</Callout>
+
+## If you remember one thing
+
+Do not chase happiness as a feeling to capture. Build conditions in which your automatic mind,
+your relationships, and your commitments can pull in a direction you can stand behind.
+
+## Shelved nearby
+
+Thinking, Fast and Slow offers a sharper account of fast judgment and deliberate review.
+Flow examines the absorbed engagement that can make a demanding activity rewarding from
+inside. Man's Search for Meaning asks how commitment can survive even when circumstances
+cannot be chosen.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "flow", "mans-search-for-meaning"]}
+  buyUrl="https://www.hachettebookgroup.com/titles/jonathan-haidt/the-happiness-hypothesis/9780465003686/?lens=basic-books"
+  buyLabel="The Happiness Hypothesis by Jonathan Haidt"
+/>
