@@ -3,7 +3,7 @@ import { ExerciseCard } from "../components/ExerciseCard";
 import { Figure } from "../components/Figure";
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+import { Bars, Compare, Flow, NodeGraph } from "../components/diagrams";
 
 <Hero
   slug="four-agreements"
@@ -13,13 +13,11 @@ import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagr
 
 ## The thesis
 
-Ruiz proposes that much ordinary suffering is manufactured in the gap between an event and
-our response to it. We speak carelessly, turn another person's behavior into a verdict on
-us, fill missing information with a story, and grade ourselves by an impossible standard.
-The four agreements offer a compact counter-practice: use language with care, resist making
-everything about yourself, test a story before treating it as fact, and meet the day with
-the capacity you actually have. They do not make life painless. They make fewer painful
-moments needlessly self-reinforcing.
+Ruiz argues that much ordinary suffering grows in the gap between an event and our response:
+careless speech, personalizing, untested stories, and demands that ignore the day's capacity
+can turn manageable moments into avoidable pain. The four agreements counter that chain by
+treating language carefully, separating another person's behavior from identity, checking
+assumptions, and meeting the day with honest effort.
 
 ## Why it matters
 
@@ -32,7 +30,7 @@ repeat in the next conversation.
 
 ## Key ideas
 
-## Treat speech as an action with consequences
+### Treat speech as an action with consequences
 
 Words do more than report what we think. They commit us, invite trust, define a situation,
 and can turn a passing judgment into someone else's inner soundtrack. Care with language is
@@ -53,7 +51,7 @@ person something they can do next.
   />
 </Figure>
 
-## Another person's behavior is information, not your identity
+### Another person's behavior is information, not your identity
 
 People react from their own pressures, habits, fears, loyalties, and limited view of a
 situation. That does not make every reaction reasonable, and it does not make cruelty
@@ -66,16 +64,22 @@ into it, and you can set a boundary without needing to win an argument about you
 critic may identify a real flaw in a proposal while still speaking with contempt. Take the
 useful detail, reject the contempt, and decide what comes next.
 
-<Figure id="78.2" caption="A visible reaction may carry a useful signal, but it also carries the other person's context.">
-  <Iceberg
+<Figure id="78.2" caption="A comment can offer a specific detail to examine without making its speaker's context a verdict about you.">
+  <Compare
     className="block w-full min-w-[440px]"
-    above="the comment or behavior"
-    waterlineLabel="what it might mean"
-    below={["their pressure and history", "their interpretation", "a possible signal for you"]}
+    favor="left"
+    left={{
+      title: "use or ask about",
+      points: ["a specific detail", "an observable impact", "a question to clarify"],
+    }}
+    right={{
+      title: "leave with them",
+      points: ["pressure and history", "their interpretation", "contempt or style"],
+    }}
   />
 </Figure>
 
-## Do not let a blank space write the whole story
+### Do not let a blank space write the whole story
 
 An assumption often starts with a real gap. A colleague is quiet. A partner is late. An email
 gets no reply. The mind dislikes an unfinished pattern, so it supplies an explanation and
@@ -103,7 +107,7 @@ person involved.
   />
 </Figure>
 
-## Your best is a moving standard, not a maximum setting
+### Your best is a moving standard, not a maximum setting
 
 The fourth agreement changes the score from perfect performance to honest effort under the
 conditions of a particular day. Capacity shifts with sleep, illness, grief, experience,
@@ -116,18 +120,14 @@ for an accurate review. If you could have prepared better, name that. If your en
 truly depleted, name that too. Then choose the smallest responsible next step. Consistency is
 not doing the same amount every day. It is returning to the agreement after the day you had.
 
-<Figure id="78.4" caption="The useful target is an honest effort matched to today's real capacity, not a permanent maximum.">
-  <Spectrum
+<Figure id="78.4" caption="The same agreement scales the effort that counts with the capacity available on each day.">
+  <Bars
     className="block w-full min-w-[440px]"
-    left="self-excusing"
-    right="self-punishing"
-    marker={0.52}
-    markerLabel="honest review"
-    markerLabelPlacement="top"
-    zones={[
-      { from: 0.0, to: 0.28, label: "avoid the repair" },
-      { from: 0.4, to: 0.64, label: "name capacity and act", accent: true },
-      { from: 0.76, to: 1.0, label: "demand the impossible" },
+    ariaLabel="A conceptual comparison showing that the effort that counts today rises and falls with available capacity."
+    items={[
+      { label: "depleted day", value: 0.34, valueLabel: "smaller responsible effort" },
+      { label: "ordinary day", value: 0.62, valueLabel: "fuller effort" },
+      { label: "well-resourced day", value: 0.88, accent: true, valueLabel: "wider effort" },
     ]}
   />
 </Figure>
@@ -152,10 +152,10 @@ meaning than the facts can support.
       { id: "effort", label: "honest effort", x: 0.5, y: 0.96 },
     ]}
     edges={[
-      { from: "speech", to: "freedom", kind: "reinforcing" },
-      { from: "personal", to: "freedom", kind: "reinforcing" },
-      { from: "assume", to: "freedom", kind: "reinforcing" },
-      { from: "effort", to: "freedom", kind: "reinforcing" },
+      { from: "speech", to: "freedom" },
+      { from: "personal", to: "freedom" },
+      { from: "assume", to: "freedom" },
+      { from: "effort", to: "freedom" },
     ]}
   />
 </Figure>

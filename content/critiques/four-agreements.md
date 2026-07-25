@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -89,3 +89,23 @@ verdict: revise
   lint, 2 pipeline tests, 38 runner tests, 161 app tests, TypeScript and the Vite
   production build, and ESLint all completed successfully. Vitest emitted only the
   existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-25
+
+- **Required 1:** Reduced “The thesis” to two sentences while retaining the chain
+  from careless speech, personalization, untested stories, and capacity-blind
+  demands to avoidable pain, followed by the four-part counter-practice.
+- **Required 2:** Replaced Figure 78.2's iceberg with a comparison that separates
+  actionable details to use or clarify from the speaker's pressure, interpretation,
+  and contempt or style.
+- **Required 3:** Replaced Figure 78.4's fixed spectrum with conceptual bars for a
+  depleted, ordinary, and well-resourced day, each pairing available capacity with
+  the corresponding honest effort.
+- **Required 4:** Changed all Figure 78.5 connections to neutral directed edges;
+  the model now shows four peer checks converging on a chosen response without
+  asserting causal reinforcement.
+- **Required 5:** Completed the `four-agreements` registry record with tier 2, the
+  brief-supported thesis and framework, and the final page-order diagram inventory:
+  flow, comparison, comparison, bars, and node graph.
+- **Advisory applied:** Demoted the four key-idea headings to `###` so they are
+  children of “Key ideas.”
