@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-23
 
@@ -140,3 +140,34 @@ verdict: resolved
   so `minutes` now reads `9`.
 - Preserved the previously resolved thesis, matrix, accepting-influence, metadata,
   diagram-label, and Shelved Nearby fixes. The chapter remains `draft`.
+
+## Critique round 3 — 2026-07-25
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 2 reading-time finding is resolved: the Hero now declares
+   `minutes={9}`, which matches the recorded 1,609-word rendered count at roughly 200
+   words per minute, rounded up. All earlier required and advisory findings remain
+   resolved.
+
+2. Re-derivation stayed within the repository evidence as requested. The brief and
+   durable seed support the friendship, respect, repair, measurable-warning-pattern
+   thesis and the Four Horsemen signature model. No chapter evidence dossier or
+   source excerpts are recorded, so source-level close-paraphrase comparison remains
+   unavailable; no external search was started.
+
+3. The final draft has the required anatomy in order, five key ideas with captioned
+   vocabulary diagrams, an original composite signature-model figure, five concrete
+   exercises, an honest research and safety caveat, complete registry metadata,
+   resolving related links, and a publisher purchase link. The imported components
+   and their SVG helpers agree with the prose and retain the phone-width scrolling
+   behavior accepted in the prior rounds.
+
+4. `npm run check` completed with `CHECK OK` on 2026-07-25: validation, prose lint,
+   all pipeline tests, all 151 Vitest tests, TypeScript, the Vite production build,
+   and ESLint passed. Vitest emitted only the existing non-failing jsdom
+   `Window.scrollTo()` notices.
