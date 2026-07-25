@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-23
 
@@ -132,3 +132,11 @@ verdict: revise
    validation, prose lint, all pipeline tests, all 151 Vitest tests, TypeScript, the
    Vite production build, and ESLint passed. The only test output of note was the
    existing non-failing jsdom `Window.scrollTo()` notice.
+
+## Builder resolution — 2026-07-25
+
+- Recomputed the Hero badge from the recorded 1,609-word server-rendered chapter
+  count. At roughly 200 words per minute, that rounds up to a 9-minute distillation,
+  so `minutes` now reads `9`.
+- Preserved the previously resolved thesis, matrix, accepting-influence, metadata,
+  diagram-label, and Shelved Nearby fixes. The chapter remains `draft`.
