@@ -1,0 +1,217 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="four-agreements"
+  thesis="Four small commitments can put a little space between what happens, the story you tell about it, and the way you choose to respond."
+  minutes={7}
+/>
+
+## The thesis
+
+Ruiz proposes that much ordinary suffering is manufactured in the gap between an event and
+our response to it. We speak carelessly, turn another person's behavior into a verdict on
+us, fill missing information with a story, and grade ourselves by an impossible standard.
+The four agreements offer a compact counter-practice: use language with care, resist making
+everything about yourself, test a story before treating it as fact, and meet the day with
+the capacity you actually have. They do not make life painless. They make fewer painful
+moments needlessly self-reinforcing.
+
+## Why it matters
+
+The advice has endured because it can be used before a situation has become a theory about
+your character. An unanswered message, a sharp comment in a meeting, or a promise you did
+not keep can all trigger a fast private narrative. The book asks for a pause at that point.
+What was said? What is known? What belongs to someone else? What response would be fair to
+make now? Its ambition is modest and demanding: replace reflex with a practice you can
+repeat in the next conversation.
+
+## Key ideas
+
+## Treat speech as an action with consequences
+
+Words do more than report what we think. They commit us, invite trust, define a situation,
+and can turn a passing judgment into someone else's inner soundtrack. Care with language is
+therefore not a demand to be relentlessly pleasant. Sometimes the most careful sentence is a
+clear refusal, a correction, or an apology. The test is whether the words are accurate,
+necessary, and directed at the situation rather than used to injure or inflate.
+
+This applies inward as well. Calling yourself useless after a mistake may feel like honest
+self-criticism, but it is usually a broad verdict that hides the useful detail. A better
+sentence identifies what happened and the repair it calls for. Specific language gives a
+person something they can do next.
+
+<Figure id="78.1" caption="Careful speech moves from a charged reaction toward a clear, repairable statement.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["notice the charge", "name the facts", "choose the aim", "speak or pause"]}
+    highlight={2}
+  />
+</Figure>
+
+## Another person's behavior is information, not your identity
+
+People react from their own pressures, habits, fears, loyalties, and limited view of a
+situation. That does not make every reaction reasonable, and it does not make cruelty
+harmless. It does mean that a comment is not automatically a reliable measurement of who you
+are. The useful question is narrower: is there specific information here that I should use,
+or is this mostly evidence of the other person's state and style?
+
+Keeping that distinction allows two things at once. You can hear feedback without collapsing
+into it, and you can set a boundary without needing to win an argument about your worth. A
+critic may identify a real flaw in a proposal while still speaking with contempt. Take the
+useful detail, reject the contempt, and decide what comes next.
+
+<Figure id="78.2" caption="A visible reaction may carry a useful signal, but it also carries the other person's context.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the comment or behavior"
+    waterlineLabel="what it might mean"
+    below={["their pressure and history", "their interpretation", "a possible signal for you"]}
+  />
+</Figure>
+
+## Do not let a blank space write the whole story
+
+An assumption often starts with a real gap. A colleague is quiet. A partner is late. An email
+gets no reply. The mind dislikes an unfinished pattern, so it supplies an explanation and
+then begins responding to that explanation as if it were evidence. The story may be right.
+The problem is the silent promotion from guess to fact.
+
+Clarifying is a way to keep a relationship in contact with reality. Ask what happened, state
+what you observed, make a request, or say what you need. The point is not endless certainty.
+Many decisions still require judgment under incomplete information. The point is to know
+which parts are observed, which parts are inferred, and which parts must be checked with the
+person involved.
+
+<Figure id="78.3" caption="A gap in information can produce a private story or a question that brings in evidence.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "fill the gap",
+      points: ["notice a fragment", "invent an explanation", "react to the explanation", "distance grows"],
+    }}
+    right={{
+      title: "clarify the gap",
+      points: ["notice a fragment", "separate fact from story", "ask or state a need", "respond to what is learned"],
+    }}
+  />
+</Figure>
+
+## Your best is a moving standard, not a maximum setting
+
+The fourth agreement changes the score from perfect performance to honest effort under the
+conditions of a particular day. Capacity shifts with sleep, illness, grief, experience,
+resources, and the difficulty of the task. A standard that ignores those shifts converts an
+ambitious practice into a permanent prosecution. A standard that notices them can still ask
+for care, preparation, and repair.
+
+This is not permission to call every avoidable lapse inevitable. It is a way to trade shame
+for an accurate review. If you could have prepared better, name that. If your energy was
+truly depleted, name that too. Then choose the smallest responsible next step. Consistency is
+not doing the same amount every day. It is returning to the agreement after the day you had.
+
+<Figure id="78.4" caption="The useful target is an honest effort matched to today's real capacity, not a permanent maximum.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="self-excusing"
+    right="self-punishing"
+    marker={0.52}
+    markerLabel="honest review"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.0, to: 0.28, label: "avoid the repair" },
+      { from: 0.4, to: 0.64, label: "name capacity and act", accent: true },
+      { from: 0.76, to: 1.0, label: "demand the impossible" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The agreements work as four linked checks on a familiar chain. Language affects what happens
+between people. Personalizing turns another person's action into a statement about the self.
+Assumptions turn uncertainty into apparent certainty. Perfectionism turns one imperfect day
+into a reason to abandon the practice. None of the checks is a switch that stays on. They are
+places to return whenever a conversation, a judgment, or a hard day starts gathering more
+meaning than the facts can support.
+
+<Figure id="78.5" caption="The four agreements are peer practices that protect attention, contact, and self-direction.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "speech", label: "careful speech", x: 0.5, y: 0.04 },
+      { id: "personal", label: "do not personalize", x: 0.92, y: 0.5 },
+      { id: "freedom", label: "chosen response", x: 0.5, y: 0.5 },
+      { id: "assume", label: "test assumptions", x: 0.08, y: 0.5 },
+      { id: "effort", label: "honest effort", x: 0.5, y: 0.96 },
+    ]}
+    edges={[
+      { from: "speech", to: "freedom", kind: "reinforcing" },
+      { from: "personal", to: "freedom", kind: "reinforcing" },
+      { from: "assume", to: "freedom", kind: "reinforcing" },
+      { from: "effort", to: "freedom", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Rewrite one charged sentence">
+When you catch a broad accusation, whether aimed at yourself or someone else, replace it
+with one sentence that names the observable event and one sentence that names the request or
+repair. Keep both sentences short enough to say aloud without rehearsing a case.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Sort a difficult comment">
+After feedback or conflict, make two columns: “specific signal” and “their interpretation.”
+Put only actionable details in the first column. Decide what to use, what to ask about, and
+what boundary the second column may require.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Ask the question before the story hardens">
+Choose one uncertainty you have been carrying about another person. Write the fact you
+actually observed, then write the story you added. Turn the gap into one plain question or
+one direct request, and ask it at a time when you can listen to the answer.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Set a daily definition of enough">
+Each morning, choose the smallest version of one responsibility that would count as a real
+effort given today's conditions. At day's end, review it without exaggeration. If it was not
+enough, choose a repair for tomorrow instead of using the miss as a character judgment.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+“Do not take it personally” is not a reason to minimize abuse, discrimination, manipulation,
+or a legitimate grievance. Harm can be real even when it says nothing final about a person's
+worth. Likewise, checking assumptions is not a demand to doubt every perception or to keep
+giving someone access after a boundary has been crossed. These agreements are practices for
+clearer agency and communication, not a clinical treatment, a substitute for safety, or an
+excuse to ignore unequal power.
+</Callout>
+
+## If you remember one thing
+
+When a moment starts to tighten around you, separate the fact from the story, the other
+person's reaction from your identity, and the next repair from a demand to be flawless. That
+small separation is where a more deliberate response becomes possible.
+
+## Shelved nearby
+
+Man's Search for Meaning examines the small but consequential space between circumstances and
+a chosen response. Mindset shows how a setback can become information rather than an identity
+verdict. Nonviolent Communication offers a more detailed practice for turning observation,
+feeling, need, and request into a difficult conversation.
+
+<ShelvedNearby
+  related={["mans-search-for-meaning", "mindset", "nonviolent-communication"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/601838/the-four-agreements-by-don-miguel-ruiz-and-janet-mills/"
+  buyLabel="The Four Agreements by Don Miguel Ruiz"
+/>
