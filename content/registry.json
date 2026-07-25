@@ -1506,7 +1506,19 @@
       "subtitle": "Jonathan Haidt · 2006",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Ancient wisdom about the good life holds up surprisingly well against modern psychology, once you see the mind as a rider on an elephant.",
+      "framework": "The elephant and the rider",
+      "diagrams": [
+        "iceberg",
+        "flow",
+        "venn",
+        "process loop",
+        "concentric circles",
+        "core / context",
+        "node graph"
+      ]
     },
     {
       "num": 77,

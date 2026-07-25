@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -68,3 +68,29 @@ verdict: revise
    runner tests, 157 app tests, TypeScript and Vite production build, and ESLint all
    completed successfully. The app tests emitted only the existing non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-25
+
+1. Rewrote the Hero and Thesis to make the recorded comparison concrete: the ancient
+   advice to train attention and character in relation to other people is tested
+   against psychology's account of automatic emotion and habit. The revised thesis
+   states the resulting qualification that reasons alone cannot command the elephant,
+   so practice, conditions, relationships, and commitments must help the two move
+   together.
+
+2. Replaced Figure 76.7's comparison with a chapter-local `NodeGraph`. It now shows
+   the rider choosing a direction and arranging cues and practice, the elephant
+   supplying momentum, and feedback returning to the rider for adjustment. This is an
+   original directed coordination model, not an opposition between two panels.
+
+3. Replaced Figure 76.6's prerequisite pyramid with `CoreContext`. Craft, friendship,
+   and citizenship now appear as parallel forms of commitment within attention over
+   time, so the visual no longer asserts an unsupported ascent or apex.
+
+4. Replaced Figure 76.4's selectively accented node graph with a neutral
+   `ProcessLoop` containing contribution, fair response, repair, and renewed
+   cooperation. Its caption now describes the repeatable sequence shown rather than
+   assigning unsupported edge polarity.
+
+5. Completed the draft registry entry with the brief-supported tier, thesis,
+   elephant-and-rider framework, and all seven rendered diagram forms in page order.

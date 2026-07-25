@@ -1,20 +1,21 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, Flow, Iceberg, NodeGraph, Pyramid, Venn } from "../components/diagrams";
+import { Concentric, CoreContext, Flow, Iceberg, NodeGraph, ProcessLoop, Venn } from "../components/diagrams";
 
 <Hero
   slug="happiness-hypothesis"
-  thesis="A good life is less a prize you capture than a fit you build, between an emotional mind, the people around you, and commitments that give your attention somewhere to go."
+  thesis="Ancient advice to train attention and live well with others holds up in psychology, once a rider learns to guide an elephant through practice, conditions, and relationships."
   minutes={8}
 />
 
 ## The thesis
 
-Jonathan Haidt tests old advice about living well against psychology instead of treating it as
-either sacred or obsolete. His most useful conclusion is that happiness is not a possession
-waiting inside the individual. It emerges when a partly automatic mind is trained and
-supported by fitting conditions, durable relationships, and worthwhile commitments. Reason
-matters, but it does not get to issue orders from an empty room.
+One ancient lesson about the good life is that a correct opinion is not enough: attention and
+character need training, and a life is lived with other people. Haidt tests that lesson against
+psychology's account of automatic emotion and habit. Conscious reasons share control with
+forces that do not wait for an argument. The qualification is practical: a rider cannot command
+an elephant by argument alone, so durable happiness needs repeated practice and conditions,
+relationships, and commitments that help the two move together.
 
 ## Why it matters
 
@@ -92,21 +93,11 @@ humiliation, and spend less energy on constant defense. The book's warning is us
 people are quick to see another person's unfairness and slow to notice their own. A fair
 relationship needs both boundaries and a readiness to inspect one's side of the exchange.
 
-<Figure id="76.4" caption="Reciprocity creates trust when contribution, response, and repair keep reinforcing one another.">
-  <NodeGraph
+<Figure id="76.4" caption="Reciprocity is maintained by a repeatable loop of contribution, response, repair, and renewed cooperation.">
+  <ProcessLoop
     className="block w-full min-w-[440px]"
-    nodes={[
-      { id: "help", label: "offer help", x: 0.18, y: 0.5 },
-      { id: "response", label: "a fair response", x: 0.48, y: 0.2 },
-      { id: "trust", label: "trust", x: 0.5, y: 0.78 },
-      { id: "cooperate", label: "cooperate again", x: 0.82, y: 0.5 },
-    ]}
-    edges={[
-      { from: "help", to: "response" },
-      { from: "response", to: "trust", kind: "reinforcing" },
-      { from: "trust", to: "cooperate", kind: "reinforcing" },
-      { from: "cooperate", to: "help" },
-    ]}
+    stages={["contribute", "respond fairly", "repair a breach", "cooperate again"]}
+    centerLabel="reciprocity"
   />
 </Figure>
 
@@ -138,16 +129,13 @@ needs patient skill. Friendship needs reliability. Citizenship needs participati
 not interchangeable sources of pleasure, nor are they guarantees against loss. They give
 attention a place to accumulate and turn a series of moments into a life with shape.
 
-<Figure id="76.6" caption="Meaningful engagement rests on stable supports and grows into participation beyond the self.">
-  <Pyramid
+<Figure id="76.6" caption="Commitments can accumulate depth across several domains, without needing to form a ladder.">
+  <CoreContext
     className="block w-full min-w-[440px]"
-    tiers={[
-      { label: "enough safety and stability" },
-      { label: "trusted people" },
-      { label: "a practice or project" },
-      { label: "participation that matters" },
-    ]}
-    highlight={3}
+    coreTitle="commitments that hold"
+    coreItems={["craft", "friendship", "citizenship"]}
+    contextTitle="attention over time"
+    contextItems={["recurring practice", "reliability", "participation"]}
   />
 </Figure>
 
@@ -160,18 +148,21 @@ possible. Lasting change asks the two to cooperate. A plan that ignores feeling 
 will often stall; an impulse that never receives reflection can carry a person somewhere they
 did not mean to go.
 
-<Figure id="76.7" caption="The rider can steer and train; the elephant supplies the force that makes a direction real.">
-  <Compare
+<Figure id="76.7" caption="The rider sets conditions, the elephant supplies momentum, and feedback lets both adjust direction.">
+  <NodeGraph
     className="block w-full min-w-[440px]"
-    favor="none"
-    left={{
-      title: "the rider",
-      points: ["plans and explains", "compares possible paths", "sets up practice", "cannot compel by argument alone"],
-    }}
-    right={{
-      title: "the elephant",
-      points: ["feels and reacts quickly", "carries habit and motivation", "learns from repeated experience", "supplies momentum"],
-    }}
+    nodes={[
+      { id: "rider", label: "rider: choose direction", x: 0.18, y: 0.5 },
+      { id: "conditions", label: "shape cues and practice", x: 0.5, y: 0.18 },
+      { id: "elephant", label: "elephant: supply momentum", x: 0.82, y: 0.5 },
+      { id: "feedback", label: "notice what happened", x: 0.5, y: 0.82 },
+    ]}
+    edges={[
+      { from: "rider", to: "conditions", label: "arrange", labelOffset: { x: -10, y: -5 } },
+      { from: "conditions", to: "elephant", label: "repeat", labelOffset: { x: 10, y: -5 } },
+      { from: "elephant", to: "feedback", label: "act", labelOffset: { x: 10, y: 10 } },
+      { from: "feedback", to: "rider", label: "adjust", labelOffset: { x: -10, y: 10 } },
+    ]}
   />
 </Figure>
 
