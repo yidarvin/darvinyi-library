@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -59,3 +59,12 @@ and deliberately absent Model section otherwise satisfy the content contract.
 `npm run check` passed on 2026-07-25, including validation, prose lint, 2 pipeline
 tests, 38 runner tests, 155 app tests, typecheck, production build, and ESLint; the
 app tests emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-25
+
+- Recomputed the Hero badge from the recorded 1,229 reader-visible words. At roughly
+  200 words per minute, rounded up, the page is a seven-minute distillation; changed
+  `src/chapters/quiet.mdx` from `minutes={6}` to `minutes={7}`.
+- Preserved the round 1 diagram corrections: Figure 75.1 keeps its marker caption in
+  the top position, and Figure 75.5 remains a supported one-way sequence with clear
+  connections.
