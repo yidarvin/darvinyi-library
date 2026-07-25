@@ -5,18 +5,17 @@ import { Compare, Flow, Iceberg, NodeGraph, Spectrum, Timeline, Venn } from "../
 <Hero
   slug="made-to-stick"
   thesis="A message earns a place in memory when it gives people one clear point, a reason to attend, evidence they can grasp, and a scene they can carry into action."
-  minutes={9}
+  minutes={8}
 />
 
 ## The thesis
 
-Messages disappear less often because they are false or badly delivered than because they
-ask the audience to retain an expert's whole mental model. Chip and Dan Heath argue that an
-idea becomes easier to remember and repeat when its structure respects how attention and
-memory work. Give people a compact center, interrupt their expectations, make the claim
-touchable and testable, connect it to a human concern, and let a story show the next move.
-The framework is a craft tool: it helps a useful idea survive the trip from the person who
-knows it to the person who must understand it.
+Messages often ask an audience to retain more of an expert's mental model than the audience
+can use. Chip and Dan Heath argue that an idea becomes easier to remember and repeat when its
+structure respects how attention and memory work. Give people a compact center, interrupt
+their expectations, make the claim touchable and testable, connect it to a human concern, and
+let a story show the next move. The framework is a craft tool: it helps a useful idea survive
+the trip from the person who knows it to the person who must understand it.
 
 ## Why it matters
 
@@ -95,7 +94,7 @@ faith. Give people a way to check the claim against something outside the speake
 <Figure id="74.4" caption="Authority can establish standing; inspectable evidence lets people test the claim for themselves.">
   <Compare
     className="block w-full min-w-[440px]"
-    favor="right"
+    favor="none"
     left={{
       title: "borrowed trust",
       points: ["recognized source", "reputation carries weight", "useful when expertise matters", "can remain distant"],
@@ -170,12 +169,12 @@ picture, trust, care about, and retell? A stronger answer on one spoke can suppo
       { id: "story", label: "S · story-based", x: 0.9, y: 0.23 },
     ]}
     edges={[
-      { from: "simple", to: "message", kind: "reinforcing" },
+      { from: "simple", to: "message" },
       { from: "unexpected", to: "message" },
       { from: "concrete", to: "message" },
-      { from: "credible", to: "message", kind: "reinforcing" },
+      { from: "credible", to: "message" },
       { from: "emotional", to: "message" },
-      { from: "story", to: "message", kind: "reinforcing" },
+      { from: "story", to: "message" },
     ]}
   />
 </Figure>

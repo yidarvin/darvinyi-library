@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -37,3 +37,10 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-25
+
+- Recast the thesis as the book's message-design problem, removing the unsupported comparison with false or poorly delivered messages.
+- Set Figure 74.4 to neutral emphasis (`favor="none"`) so authority and inspectable evidence remain parallel choices.
+- Removed the selective `reinforcing` edge kinds from Figure 74.7; all six SUCCESs qualities now connect neutrally to the central message.
+- Corrected the Hero reading-time badge from 9 to 8 minutes to match the recorded rendered-word count and the specified rounding rule.
