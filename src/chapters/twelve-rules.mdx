@@ -1,11 +1,11 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, Curve, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+import { Compare, Concentric, Flow, Iceberg, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="twelve-rules"
   thesis="A life can become more bearable when you accept a manageable responsibility, tell the truth about what needs attention, and meet uncertainty without trying to abolish it."
-  minutes={9}
+  minutes={8}
 />
 
 ## The thesis
@@ -61,15 +61,17 @@ relationship is in better repair than it was last week. Small improvements make 
 life legible because they show which actions helped.
 
 <Figure id="79.2" caption="Progress becomes easier to inspect when the reference point is your own prior position.">
-  <Curve
+  <Compare
     className="block w-full min-w-[440px]"
-    shape="s"
-    axes={{ x: "successive attempts", y: "condition of the work" }}
-    annotations={[
-      { x: 0.18, y: 0.03, text: "starting point", labelPosition: "above" },
-      { x: 0.58, y: 0.71, text: "adjust after feedback" },
-      { x: 0.9, y: 0.98, text: "next local gain" },
-    ]}
+    favor="right"
+    left={{
+      title: "last week",
+      points: ["practice: not started", "responsibility: deferred", "relationship: expectation vague"],
+    }}
+    right={{
+      title: "this week",
+      points: ["practice: one next step", "responsibility: handled today", "relationship: expectation named"],
+    }}
   />
 </Figure>
 
@@ -78,26 +80,17 @@ life legible because they show which actions helped.
 The book argues that children need adults who are kind and willing to set limits.
 That does not make severity a virtue. A boundary has a job when it makes expectations
 clear, protects other people, and is proportionate to the situation. Vague rules and
-unpredictable enforcement make a household harder to read. Clear limits, explained
-and followed through, turn care into a structure a child can learn from. The same
-logic applies to teams and friendships: resentment often grows where expectations
-were never named.
+unpredictable enforcement make a household harder to read. Care names the expectation,
+then follows through proportionately when it is crossed, and leaves room to repair the
+relationship afterward. Repeated this way, the limit becomes a structure a child can
+learn from. The same logic applies to teams and friendships: resentment often grows
+where expectations were never named.
 
 <Figure id="79.3" caption="Care becomes reliable when expectations, consequences, and repair are connected.">
-  <NodeGraph
+  <Flow
     className="block w-full min-w-[440px]"
-    nodes={[
-      { id: "care", label: "care", x: 0.5, y: 0.1 },
-      { id: "limit", label: "clear limit", x: 0.15, y: 0.48 },
-      { id: "follow", label: "consistent follow-through", x: 0.5, y: 0.83 },
-      { id: "trust", label: "predictable trust", x: 0.85, y: 0.48 },
-    ]}
-    edges={[
-      { from: "care", to: "limit" },
-      { from: "limit", to: "follow" },
-      { from: "follow", to: "trust", kind: "reinforcing" },
-      { from: "trust", to: "care", kind: "reinforcing" },
-    ]}
+    highlight={3}
+    steps={["care notices the need", "name a clear expectation", "follow through proportionately", "repair and restore predictability"]}
   />
 </Figure>
 

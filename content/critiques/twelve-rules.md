@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -46,6 +46,26 @@ verdict: revise
    A future evidence pass could record the basis for the caveat's broader
    characterization of the book's movement among clinical observation, myth,
    evolutionary claims, and moral prescription.
+
+`npm run check` passed on 2026-07-25: queue and registry validation, prose lint,
+2 pipeline tests, 38 runner tests, 163 Vitest tests, TypeScript and production build,
+and ESLint all completed successfully. Vitest emitted only the existing non-failing
+jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-25
+
+1. Recomputed the revised page from a static render: it has 1,500 visible word
+   tokens, including the Hero, headings, captions, diagram labels, exercise titles,
+   and nearby-book footer. At approximately 200 words per minute, rounded up, the
+   Hero now correctly declares `minutes={8}`.
+2. Replaced Figure 79.2's unsupported sigmoid with the existing comparison form.
+   Its parallel `last week` and `this week` panels pair the same three domains,
+   making each local self-comparison visible without implying a universal growth path.
+3. Replaced Figure 79.3's feedback graph with a neutral four-step flow: care notices
+   the need, a clear expectation is named, follow-through is proportionate, then
+   repair restores predictability. The surrounding prose now states the same
+   expectation, consequence, and repair sequence, and the diagram contains no
+   unexplained feedback edge or reinforcing-polarity claim.
 
 `npm run check` passed on 2026-07-25: queue and registry validation, prose lint,
 2 pipeline tests, 38 runner tests, 163 Vitest tests, TypeScript and production build,
