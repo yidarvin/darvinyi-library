@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -26,3 +26,12 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-25
+
+- Figure 75.1 now sets `markerLabelPlacement="top"`, placing the marker caption at
+  the top of the Spectrum graphic and leaving the two pole labels unobstructed.
+- Figure 75.5 now shows only the supported one-way sequence: purpose and preparation
+  support a chosen stretch, which leads to recovery and then sustainable contribution.
+  Removed the unsupported contribution-to-purpose feedback edge and its reinforcing
+  markers; no remaining edge passes through the central stretch node.
