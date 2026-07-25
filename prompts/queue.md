@@ -88,7 +88,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 071 | effective-executive             | The Effective Executive                       | DONE    |
 | 072 | difficult-conversations         | Difficult Conversations                       | DONE    |
 | 073 | seven-principles-marriage       | The Seven Principles for Making Marriage Work | DONE    |
-| 074 | made-to-stick                   | Made to Stick                                 | PENDING |
+| 074 | made-to-stick                   | Made to Stick                                 | DONE    |
 | 075 | quiet                           | Quiet                                         | PENDING |
 | 076 | happiness-hypothesis            | The Happiness Hypothesis                      | PENDING |
 | 077 | flourish                        | Flourish                                      | PENDING |
