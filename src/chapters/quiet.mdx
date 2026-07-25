@@ -1,0 +1,197 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="quiet"
+  thesis="A culture that mistakes visibility for value wastes talent. Better work and fuller lives make room for people to think, speak, and recover in the ways that suit them."
+  minutes={6}
+/>
+
+## The thesis
+
+Susan Cain asks a culture built around display to reconsider what it calls strength. An
+introverted temperament is not a defect to correct, nor a promise of hidden genius. It is
+one way of managing stimulation, often accompanied by a preference for reflection,
+smaller settings, and time alone to reset. When schools, workplaces, and social life treat
+constant participation as the only sign of engagement, they discard useful judgment along
+with the people most likely to offer it after a pause.
+
+## Why it matters
+
+Many ordinary arrangements reward the quickest voice: the open office, the brainstorm
+where ideas are spoken before they are formed, the classroom grade for visible
+participation, the manager who confuses ease on a stage with readiness to lead. None of
+these settings is inherently wrong. The trouble begins when one style becomes a universal
+test of ability. A team then measures presence more reliably than insight, and a person
+spends energy performing a role instead of doing the work that matters.
+
+## Key ideas
+
+## Introversion is a preference for a level of stimulation
+
+Introversion is commonly confused with shyness, silence, dislike of people, or a lack of
+confidence. Those are separate things. The useful question is what kind of social and
+sensory intensity leaves someone alert, and what kind leaves them depleted. One person
+comes alive in a crowded room and thinks more clearly through rapid exchange. Another
+enjoys people deeply, yet needs a quieter setting or a stretch of solitude before their
+best attention returns. Neither pole is a moral rank. The point is fit.
+
+<Figure id="75.1" caption="Temperament concerns the level of stimulation that helps a person do their best work.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="lower stimulation"
+    right="higher stimulation"
+    marker={0.34}
+    markerLabel="a preference, not a label"
+    zones={[
+      { from: 0.0, to: 0.4, label: "quiet focus and smaller groups", accent: true },
+      { from: 0.6, to: 1.0, label: "energy from active exchange" },
+    ]}
+  />
+</Figure>
+
+## Quiet behavior does not explain itself
+
+The visible fact is simple: someone has not spoken, joined the group, or answered at once.
+The story people attach to it is often careless. They may be concentrating, unconvinced,
+waiting for more information, tired, anxious, or simply choosing not to compete for the
+floor. Introversion can be part of the picture, but it is not a mind-reading shortcut.
+Cain's larger lesson is to slow the diagnosis. Make a route for contribution before
+turning a quiet moment into a verdict about ambition or ability.
+
+<Figure id="75.2" caption="A quiet moment is visible; its cause requires curiosity rather than a snap explanation.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="did not speak yet"
+    waterlineLabel="what an observer cannot see"
+    below={["thinking time", "energy and context", "confidence, information, or concern"]}
+  />
+</Figure>
+
+## The first voice is not always the best idea
+
+Groups need conversation, but conversation has a predictable hazard: once a confident
+proposal enters the room, later thinking can organize around it. That makes speed and
+status unusually influential. Solitude is not a cure for bad ideas, and group work is not a
+curse. They do different jobs. Independent time lets a person notice what they actually
+think. Structured exchange then tests, sharpens, and combines those thoughts. The useful
+design is not silence instead of collaboration. It is reflection before the loudest answer
+sets the terms.
+
+<Figure id="75.3" caption="Private thought creates more than one starting point before the group converges.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "speak first",
+      points: ["one early frame", "status can set the direction", "quiet dissent arrives late", "fast agreement can feel like progress"],
+    }}
+    right={{
+      title: "think, then compare",
+      points: ["several starting points", "ideas arrive prepared", "differences become visible", "the group can test the work"],
+    }}
+  />
+</Figure>
+
+## Inclusion needs more than an open invitation
+
+"Any thoughts?" rewards people ready to speak at that exact second. A better invitation
+changes the sequence. Send the question ahead of time. Give people a quiet minute to
+write. Take the round in a predictable order. Accept a note after the meeting as part of
+the decision, rather than as a lesser contribution. These moves help introverts, but they
+also improve the quality of a group decision by separating idea generation from the contest
+for airtime. Inclusion is an operating choice, not a request for everyone to become bolder.
+
+<Figure id="75.4" caption="A small change in meeting order gives reflection and conversation distinct roles.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["share the question", "write alone", "hear each view", "decide and follow up"]}
+    highlight={1}
+  />
+</Figure>
+
+## A valued purpose can justify a stretch
+
+Self-acceptance does not mean never entering a demanding room. Many quieter people teach,
+lead, perform, sell, or advocate with real force when the cause matters enough. The effort
+costs something, so recovery and preparation are part of the design, not proof that the
+person is failing. This is a more generous standard than asking whether someone can mimic
+the most outgoing person nearby. Ask what they care about, what form of contribution suits
+the moment, and what conditions let them sustain it.
+
+<Figure id="75.5" caption="Purpose, preparation, and recovery can support a stretch without erasing temperament.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "purpose", label: "a purpose that matters", x: 0.18, y: 0.2 },
+      { id: "prepare", label: "preparation", x: 0.18, y: 0.78 },
+      { id: "stretch", label: "a chosen stretch", x: 0.58, y: 0.5 },
+      { id: "recover", label: "recovery", x: 0.88, y: 0.2 },
+      { id: "contribute", label: "sustainable contribution", x: 0.88, y: 0.78 },
+    ]}
+    edges={[
+      { from: "purpose", to: "stretch" },
+      { from: "prepare", to: "stretch" },
+      { from: "stretch", to: "recover" },
+      { from: "recover", to: "contribute", kind: "reinforcing" },
+      { from: "contribute", to: "purpose", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Audit one energy pattern">
+For five workdays, note which settings leave you focused, flat, or unusually alert. Record
+the room, the task, the number of people, and whether you had time alone beforehand. Look
+for a repeatable condition, not a personality verdict. Then protect one useful condition in
+next week's calendar.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Redesign one meeting">
+Choose a decision that normally begins with open discussion. Send the question a day early,
+ask for two written thoughts before the meeting, and reserve the first five minutes for
+silent notes. During the conversation, invite reactions to the ideas, not a performance of
+spontaneity. Compare the resulting decision with the usual format.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Prepare for one necessary stretch">
+Pick a conversation, presentation, or event that serves a purpose you care about. Decide
+what you want to say, practice the opening once, and book recovery time afterward. The aim
+is not to become louder. It is to spend your energy deliberately when the work deserves it.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Ask a better question about quiet">
+When someone contributes less than expected, replace "Why are they so disengaged?" with
+"What would make it easier to hear their view?" Offer a written channel, a smaller follow
+up, or advance notice. Do not assume the answer. Make room for the person to tell you.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Quiet is a corrective to an extroversion bias, not a case for reversing the bias. Extroverts
+are not shallow, reckless, or incapable of deep work, and introverts are not automatically
+wise, sensitive, or creative. The terms describe broad tendencies that overlap with many
+other traits and shift with context. Shyness and social anxiety also deserve their own names
+and, when they cause suffering, their own forms of support. Use the book to question a
+narrow standard of participation, not to turn a spectrum into two competing identity camps.
+</Callout>
+
+## If you remember one thing
+
+Do not use volume as a proxy for value. Build settings where people can prepare, contribute
+in more than one way, and recover, then judge the work by the clarity and care it brings.
+
+## Shelved nearby
+
+Deep Work makes the case for protecting undistracted concentration. Flow examines the
+conditions under which attention becomes fully absorbed. Mindset helps separate a preference
+for quiet from a fixed story about what someone is capable of becoming.
+
+<ShelvedNearby
+  related={["deep-work", "flow", "mindset"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/22821/quiet-by-susan-cain/9780307352156/"
+  buyLabel="Quiet by Susan Cain"
+/>
