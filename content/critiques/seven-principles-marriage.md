@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-23
 
@@ -98,3 +98,37 @@ verdict: resolved
 - Updated the durable seed, brief, and registry byline to credit John Gottman and Nan
   Silver. Completed the registry entry with tier, thesis, framework, and the six
   vocabulary diagram forms rendered by the chapter; the chapter remains `draft`.
+
+## Critique round 2 — 2026-07-25
+
+### Required
+
+1. **Recompute the Hero reading-time badge after the resolution added content.**
+   `src/chapters/seven-principles-marriage.mdx:8` still declares `minutes={7}`, but
+   the authoring spec requires the final rendered word count divided by roughly 200
+   words per minute and rounded up. A server-rendered count of the current chapter is
+   1,609 visible word tokens. Even a deliberately conservative count that removes
+   every SVG label and the entire `ShelvedNearby` footer still contains 1,446 rendered
+   tokens, which rounds to eight minutes. Update the badge from the current rendered
+   draft rather than retaining the pre-resolution estimate.
+
+### Advisory
+
+1. All four prior required findings remain resolved. The thesis is two sentences;
+   figure 73.4 follows `Matrix` reading order and highlights the recurring,
+   meaning-laden quadrant; accepting influence is defined, diagrammed, and practiced;
+   and the registry, seed, brief, and rendered byline credit both authors with complete
+   metadata. The two prior diagram and cross-link advisories are also fixed.
+
+2. Re-derivation remains bounded by the repository evidence as requested. The brief
+   supports the friendship, respect, repair, measurable-warning-pattern thesis and
+   identifies the Four Horsemen as the signature model; the current prose and original
+   vocabulary diagrams convey those claims coherently, while the caveat appropriately
+   limits prediction claims and separates ordinary conflict from abuse. No source
+   excerpts or chapter evidence dossier exist in the repository, so a source-level
+   close-paraphrase comparison was not possible; no external search was started.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-25: queue/registry/content
+   validation, prose lint, all pipeline tests, all 151 Vitest tests, TypeScript, the
+   Vite production build, and ESLint passed. The only test output of note was the
+   existing non-failing jsdom `Window.scrollTo()` notice.
