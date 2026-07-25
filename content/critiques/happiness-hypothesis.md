@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-25
 
@@ -94,3 +94,39 @@ verdict: resolved
 
 5. Completed the draft registry entry with the brief-supported tier, thesis,
    elephant-and-rider framework, and all seven rendered diagram forms in page order.
+
+## Critique round 2 — 2026-07-25
+
+### Required
+
+None.
+
+### Advisory
+
+1. The five required findings from round 1 are settled. The Hero and thesis now make
+   the brief's ancient-wisdom-versus-psychology comparison explicit and state the
+   practical qualification (`src/chapters/happiness-hypothesis.mdx:5-18`). Figure
+   76.4 includes contribution, fair response, repair, and renewed cooperation in one
+   neutral process loop (`src/chapters/happiness-hypothesis.mdx:96-102`). Figure 76.6
+   renders craft, friendship, and citizenship as peer commitments rather than a
+   prerequisite hierarchy (`src/chapters/happiness-hypothesis.mdx:132-140`). Figure
+   76.7 renders a directed coordination-and-feedback cycle rather than an opposition
+   (`src/chapters/happiness-hypothesis.mdx:151-167`). The registry now records the
+   brief-supported tier, thesis, framework, and all seven diagram forms
+   (`content/registry.json:1502-1522`).
+
+2. Within the recorded evidence, the chapter brief, seed metadata, prior critique,
+   and builder resolution agree with the current claims. No separate research
+   dossier or source excerpts are present for this chapter, and this review began no
+   external web search. The draft contains no quotation or real cover art and shows
+   no evident close paraphrase or source-figure reproduction in the materials
+   available here.
+
+3. The 8-minute badge is consistent with 1,579 visible words when the chapter prose,
+   Hero text, exercise titles, captions, diagram labels, and nearby-book labels are
+   rendered and rounded up at 200 words per minute.
+
+4. `npm run check` passed on 2026-07-25: queue/registry/content validation, prose
+   lint, 2 pipeline tests, 38 runner tests, 157 app tests, TypeScript and Vite
+   production build, and ESLint all completed successfully. The app tests emitted
+   only the existing non-failing jsdom `Window.scrollTo()` notices.
