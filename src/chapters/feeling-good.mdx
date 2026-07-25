@@ -1,0 +1,147 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Matrix, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="feeling-good"
+  thesis="A low mood can make a harsh interpretation feel like a fact. Catch the interpretation, test it carefully, and a little room opens for a truer response."
+  minutes={7}
+/>
+
+## The thesis
+
+Burns gives depression a practical cognitive handle: the mind does not simply receive an event and report a mood. It also supplies a fast interpretation, often a punitive one, and that interpretation can intensify despair, shame, or anxiety. Writing the thought down, naming its error, and answering it with evidence is not forced optimism. It is a way to stop treating a verdict produced under distress as the whole truth.
+
+## Why it matters
+
+Low mood is persuasive. A missed call becomes proof that nobody cares; a mistake at work becomes a judgment on the whole self. The book made a therapy-derived skill available as an ordinary practice: inspect the sentence that arrived with the feeling. That small shift matters because it turns a vague emotional fog into something specific enough to examine.
+
+## Key ideas
+
+### The event is not the whole story
+
+An event can be painful, unfair, or dangerous. The point is not to deny that. Between what happens and what follows sits an interpretation: “I failed this task” can quietly become “I am a failure.” The first statement identifies a problem. The second turns one moment into an identity. When the interpretation changes, the emotion may change too, even though the event stays put.
+
+<Figure id="80.1" caption="Mood follows the meaning assigned to an event, not only the event itself.">
+  <Flow
+    className="block w-full min-w-[440px]"
+    steps={["an event", "the instant meaning", "a feeling", "the next action"]}
+    highlight={1}
+  />
+</Figure>
+
+### Find the sentence beneath the feeling
+
+Feelings arrive as a whole-body state, while the thought attached to them is often fast, familiar, and half-hidden. That makes it easy to mistake the feeling for evidence. A useful first question is plain: what did I just tell myself? The answer might be a prediction, a label, or a rule about what “should” have happened. Put it in one sentence before trying to improve it. Vague dread is hard to test; a claimed fact can be checked.
+
+<Figure id="80.2" caption="The visible feeling often has a quick inner sentence beneath it.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="heavy, ashamed, anxious"
+    waterlineLabel="what reaches awareness first"
+    below={["“I disappointed everyone”", "“this will always happen”", "“I should have known better”"]}
+  />
+</Figure>
+
+### Distortions stretch a small fact into a large judgment
+
+The book's cognitive distortions are recurring ways a thought outruns its evidence. Some turn a particular setback into a permanent pattern. Some guess at another person's mind. Some use a feeling as proof. Some reduce a person to a label. The names are less important than the move: notice when a conclusion is broader, more certain, or more final than the facts can support.
+
+<Figure id="80.3" caption="The farther a thought travels from a specific observation, the more carefully it needs checking.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="specific observation"
+    right="global verdict"
+    marker={0.5}
+    markerLabel="pause and test"
+    zones={[
+      { from: 0.0, to: 0.34, label: "“I missed the deadline”" },
+      { from: 0.62, to: 1.0, label: "“I ruin everything”", accent: true },
+    ]}
+  />
+</Figure>
+
+### Answer a thought like an investigator
+
+The replacement for a distorted thought is not a cheerful slogan. It is a more complete account. What facts support the claim? What facts point the other way? Is there another explanation? What would I say to a friend in the same position? A balanced answer can still admit disappointment, uncertainty, or responsibility. It simply refuses to smuggle an absolute conclusion into the evidence.
+
+<Figure id="80.4" caption="A tested thought holds both the evidence for a claim and the evidence against it.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "the inner prosecutor",
+      points: ["collects one painful detail", "treats feeling as proof", "announces a final verdict"],
+    }}
+    right={{
+      title: "the careful investigator",
+      points: ["separates facts from guesses", "looks for missing evidence", "writes a limited conclusion"],
+    }}
+  />
+</Figure>
+
+### Action can interrupt the downward loop
+
+Depression often asks for withdrawal: cancel the plan, avoid the task, stay in bed, wait until motivation returns. Withdrawal can bring momentary relief, but it also removes contact, accomplishment, and pleasure, then supplies fresh material for the original bleak story. One modest, scheduled action can cut into that loop. The action need not prove happiness. Its job is to create a new piece of evidence.
+
+<Figure id="80.5" caption="Withdrawal can reinforce low mood; one planned action gives the loop a different input.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["low mood", "withdraw", "fewer rewarding moments", "bleaker conclusion"]}
+    compoundingEdge={3}
+    centerLabel="the downward loop"
+  />
+</Figure>
+
+## The Model
+
+Cognitive distortions are not a diagnosis and they are not a list to memorize perfectly. They are warning signs that an interpretation may have become too sweeping or too sure of itself. The most useful version of the model asks two questions: how far does this thought reach beyond the immediate facts, and how certain am I without direct evidence? A thought in the high-certainty, wide-scope corner deserves the closest inspection.
+
+<Figure id="80.6" caption="Distorted thoughts tend to claim too much, too certainly, from too little evidence.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "one event", right: "whole self or future", label: "scope of the claim" }}
+    yAxis={{ low: "tentative", high: "certain", label: "confidence without evidence" }}
+    quadrants={[
+      { title: "a question to check", note: "“Could they be upset?”" },
+      { title: "mind reading", note: "“They all dislike me”" },
+      { title: "a specific review", note: "“What went wrong here?”" },
+      { title: "global verdict", note: "“I will always fail”" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Catch one hot thought">
+When your mood shifts sharply, write the situation in a few factual words, then write the exact sentence your mind supplied. Do not edit it yet. The goal is to turn an atmosphere into a claim.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Mark the leap">
+Underline the part of the sentence that goes beyond what you know. Is it a prediction, a label, a guess about someone else's mind, or a demand written as a rule? Give the leap a name if that helps, but keep your attention on the evidence.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Write the fuller account">
+Make two short columns: evidence that supports the thought and evidence it leaves out. Then write one sentence that is accurate enough to believe and kind enough to act on. “I made an error, and I can repair this part” is stronger than either self-attack or denial.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Schedule one contrary action">
+Choose an action that creates contact, competence, or care within the next day: send the message, take the short walk, wash the dishes, attend the appointment. Keep it small enough to finish. Record what happened, not what you hoped to feel first.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+This method is not a command to think happy thoughts, and it should not be used to explain away grief, prejudice, danger, poverty, illness, or any other real source of pain. A sad or fearful feeling can fit the facts. The task is to test the extra conclusion, not to erase the feeling. Feeling Good also should not be treated as a substitute for care: depression is commonly treated with psychotherapy, medication, or both. If symptoms are severe, persistent, or include thoughts of self-harm, seek urgent professional help. In the United States, call or text 988 for immediate crisis support.
+</Callout>
+
+## If you remember one thing
+
+When a painful mood makes a harsh thought sound final, write the thought down and ask what it actually proves. A more accurate sentence will not solve every problem, but it can give you enough room to take the next useful action.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "mindset", "meditations", "four-agreements"]}
+  buyUrl="https://www.harpercollins.com/products/feeling-good-david-d-burns?variant=41009210331170"
+  buyLabel="Feeling Good by David D. Burns"
+/>
