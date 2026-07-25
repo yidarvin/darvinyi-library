@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -112,3 +112,15 @@ non-failing jsdom `Window.scrollTo()` notices.
 ### ADVISORY
 
 No new advisory findings. The round 1 advisory remains non-blocking.
+
+## Builder resolution — 2026-07-25
+
+- Moved Figure 77.3's `trust and candor` and `mutual care` nodes from the nearly
+  horizontal positions beside the center to mirrored upper-side positions `(0.94,
+  0.30)` and `(0.06, 0.30)`. Each arrow to `a close tie` now has positive visible
+  line length after the primitive's rectangular-card intersection and 7-unit arrow
+  clearance at both ends, so all four arrows point toward the close-tie node as the
+  caption, accessible description, and edge declarations state.
+- Preserved the round 1 resolutions: the flow marker remains inside its channel, the
+  relationship diagram remains a peer-node graph, the unsupported attribution remains
+  removed, and the Hero remains a seven-minute distillation.
