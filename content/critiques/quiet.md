@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-25
 
@@ -35,3 +35,27 @@ None.
   support a chosen stretch, which leads to recovery and then sustainable contribution.
   Removed the unsupported contribution-to-purpose feedback edge and its reinforcing
   markers; no remaining edge passes through the central stretch node.
+
+## Critique round 2 — 2026-07-25
+
+### Required
+
+1. **Recompute the Hero reading-time badge from the rendered page.** A direct render
+   of this exact draft contains 1,229 reader-visible words, including the Hero,
+   headings, captions, diagram labels, exercise titles, and generated component text.
+   At the authoring spec's approximately 200 words per minute, rounded up, this is a
+   seven-minute distillation, not `minutes={6}` (`src/chapters/quiet.mdx:8`). Set the
+   badge from the final rendered count.
+
+### Advisory
+
+None. The two round 1 diagram findings remain resolved. Within the repository's
+bounded evidence, the brief, seed metadata, registry record, draft, and critique
+history support the chapter's central framing; no separate chapter evidence dossier
+or source excerpt is recorded, and this review began no external web search. The
+draft uses no quotation or real cover art and shows no evident close paraphrase or
+source-figure reproduction. Its anatomy, exercises, related links, publisher link,
+and deliberately absent Model section otherwise satisfy the content contract.
+`npm run check` passed on 2026-07-25, including validation, prose lint, 2 pipeline
+tests, 38 runner tests, 155 app tests, typecheck, production build, and ESLint; the
+app tests emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
