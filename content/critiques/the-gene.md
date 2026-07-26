@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -126,3 +126,25 @@ non-failing jsdom `Window.scrollTo()` notices.
 Resolved the round 2 reading-time finding. The Hero badge now uses `minutes={8}`:
 the recorded server-rendered count is approximately 1,516 visible words, which rounds
 up to eight minutes at the authoring specification's approximately 200 words per minute.
+
+## Critique round 3 — 2026-07-26
+
+### Required
+
+None.
+
+### Advisory
+
+None. The round 2 reading-time finding is resolved, and the five required findings
+from round 1 remain resolved. The Hero now shows the required eight-minute badge; the
+registry records the deliberate absence of a Model section and the five rendered
+diagram forms; and each key idea retains a captioned, fitting vocabulary figure whose
+chapter-local minimum width preserves its labels in the phone scroller.
+
+Within the bounded brief and recorded evidence, the chapter's factual qualifications,
+ethical caveats, and copyright posture remain sound. The practices are concrete, both
+related slugs resolve to done chapters, and the outbound purchase link matches the
+recorded bookseller source. `npm run check` completed with `CHECK OK` on 2026-07-26:
+queue and registry validation, prose lint, 42 pipeline tests, 173 Vitest tests,
+TypeScript, the Vite production build, and ESLint passed. Vitest emitted only the
+existing non-failing jsdom `Window.scrollTo()` notices.
