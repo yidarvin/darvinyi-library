@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -31,3 +31,13 @@ verdict: revise
 - `npm run check` passed on 2026-07-26: queue/registry validation, prose lint,
   pipeline tests, 169 Vitest tests, typecheck and production build, and ESLint all
   completed successfully.
+
+## Builder resolution — 2026-07-26
+
+- Replaced Figure 82.1's generic timeline with an in-vocabulary node graph showing
+  light from a nearby star, Andromeda, and a distant galaxy travelling for different
+  durations toward one observer on Earth. The diagram now makes distance, light-travel
+  time, and different lookback eras visible in the figure itself.
+- Completed the `cosmos` registry record with tier, thesis, an explicit statement that
+  the book has no single signature framework and therefore no Model section, and the
+  five diagram forms rendered by the chapter. Its status remains `draft`.

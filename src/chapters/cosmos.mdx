@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, Flow, NodeGraph, Timeline } from "../components/diagrams";
+import { Compare, Concentric, Flow, NodeGraph } from "../components/diagrams";
 
 <Hero
   slug="cosmos"
@@ -32,15 +32,20 @@ species, a star, and a galaxy do not need the same clock. The question is not wh
 human lifetime is small. It is which process is changing, and how long that process needs.
 
 <Figure id="82.1" caption="A single view of the sky can carry light from very different eras.">
-  <Timeline
-    className="block min-w-[480px]"
-    segments={[
-      { label: "hot early universe", sub: "about 13.8 billion years ago" },
-      { label: "first stars and galaxies", sub: "matter gathers and changes" },
-      { label: "solar system forms", sub: "about 4.6 billion years ago" },
-      { label: "human observers", sub: "a very recent arrival" },
+  <NodeGraph
+    className="block min-w-[420px]"
+    ariaLabel="Light from a nearby star, the Andromeda galaxy, and a distant galaxy travels for different lengths of time to one observer on Earth."
+    nodes={[
+      { id: "near", label: "near star\n4 ly away", x: 0.1, y: 0.14 },
+      { id: "andromeda", label: "Andromeda\n2.5m ly away", x: 0.5, y: 0.04 },
+      { id: "far", label: "far galaxy\n10b ly away", x: 0.9, y: 0.14 },
+      { id: "earth", label: "Earth observer\nnow", x: 0.5, y: 0.88 },
     ]}
-    highlight={3}
+    edges={[
+      { from: "near", to: "earth", label: "light: 4 y", labelOffset: { x: -8, y: 0 } },
+      { from: "andromeda", to: "earth", label: "light: 2.5m y", labelOffset: { x: 0, y: -8 } },
+      { from: "far", to: "earth", label: "light: 10b y", labelOffset: { x: 8, y: 0 } },
+    ]}
   />
 </Figure>
 
