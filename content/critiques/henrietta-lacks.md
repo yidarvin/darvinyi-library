@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -46,3 +46,13 @@ verdict: revise
 None.
 
 Mechanical verification: `npm run check` passed on 2026-07-26.
+
+## Builder resolution — 2026-07-26
+
+Resolved every required finding.
+
+1. Rewrote the Hero, thesis, Why It Matters, and takeaway to identify Henrietta Lacks as a Black woman and make race, family, and institutional power part of the chapter's central argument. Replaced the unsupported trust-loop key idea with "Race and family are part of the power question," including an original Venn diagram that maps racialized access to care, institutional control of tissue, and family exposure and exclusion. Added direct institutional evidence for the historical context, including the important qualification that the collection practice was not race-specific.
+2. Reclassified the NIH-Lacks Family Agreement as the subordinate section "A later development: the 2013 agreement." It now states that the book was published in 2010, identifies the agreement as subsequent history rather than a core idea, and preserves its limited value as a governance example.
+3. Removed the unsupported participation-to-evidence-to-trust causal loop and its NodeGraph. The replacement makes no unrecorded causal claim; it is a structural account grounded in the expanded evidence record.
+
+Mechanical verification: `npm run check` passed on 2026-07-26 after this resolution.

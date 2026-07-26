@@ -1745,13 +1745,13 @@
       "routes": [],
       "status": "draft",
       "tier": 2,
-      "thesis": "Henrietta Lacks's cells changed medicine, and the way they were taken asks science to treat consent, privacy, and recognition as part of good research.",
-      "framework": "No single signature framework; the Model section is deliberately absent, and five key-idea diagrams trace scientific utility, consent, privacy, trust, and governance.",
+      "thesis": "Henrietta Lacks was a Black woman whose cells changed medicine, and their use without consent shows how scientific power can reach into a family.",
+      "framework": "No single signature framework; the Model section is deliberately absent. Four key-idea diagrams trace scientific utility, consent, racialized institutional power and family consequences, and privacy. A fifth diagram labels the 2013 governance agreement as post-book history.",
       "diagrams": [
         "timeline",
         "comparison",
         "iceberg",
-        "node graph",
+        "venn",
         "flow"
       ]
     },
