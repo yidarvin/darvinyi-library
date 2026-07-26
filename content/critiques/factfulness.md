@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-26
 
@@ -63,3 +63,21 @@ None.
    instincts framework, and the six rendered diagram forms in page order: spectrum,
    iceberg, annotated curve, flow, node graph, and comparison. The chapter remains
    `draft`; it has not been marked done.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+1. **The `9-min distillation` badge overstates the rendered reading time.** The
+   authoring spec requires the badge to be computed from final rendered word count at
+   roughly 200 words per minute, rounded up. The chapter has 1,077 words after imports
+   and JSX tags are removed. Even a deliberately generous upper bound that adds every
+   quoted JSX string, including non-rendered class names, URLs, slugs, and prop values,
+   reaches only 1,469 words before a small amount of registry-derived Hero and cover
+   text is added. That remains below the 1,601-word minimum for nine minutes. Recount
+   the text a reader actually sees and set `minutes` to the resulting rounded-up
+   value.
+
+### Advisory
+
+None.
