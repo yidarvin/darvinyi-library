@@ -1,0 +1,33 @@
+verdict: revise
+
+## Critique round 1 — 2026-07-26
+
+### Required
+
+1. Figure 82.1 does not encode the key idea or its caption. The section explains that
+   greater distance means greater lookback time and that one view of the sky combines
+   light from differently distant eras, but `src/chapters/cosmos.mdx:34-45` renders
+   only an equal-spaced chronology from the early universe to human observers. It
+   shows neither differently distant sources, light travelling toward an observer,
+   nor the relationship between distance and the age of the view. Replace or
+   recompose it with an in-vocabulary diagram that makes that relationship visible;
+   a generic history timeline cannot carry this major idea.
+
+2. The `cosmos` registry record is incomplete. At
+   `content/registry.json:1623-1631` it ends after `status` and omits the required
+   `tier`, `thesis`, `framework`, and `diagrams` fields. Populate them, explicitly
+   recording that the book has no single signature framework and listing the forms
+   actually rendered after Figure 82.1 is corrected. The authoring spec's definition
+   of done requires this metadata even though the current validator accepts the
+   draft.
+
+### Advisory
+
+- Figure 82.4's `Compare` primitive inserts “vs” and visually favors evidence, while
+  the prose describes imagination and evidence as complementary stages with distinct
+  jobs. The point remains recoverable from the panel text, so this is not blocking,
+  but a sequence or a neutral treatment would match the stated pairing more exactly.
+
+- `npm run check` passed on 2026-07-26: queue/registry validation, prose lint,
+  pipeline tests, 169 Vitest tests, typecheck and production build, and ESLint all
+  completed successfully.
