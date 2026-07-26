@@ -5,16 +5,15 @@ import { Compare, Flow, Iceberg, NodeGraph, Timeline } from "../components/diagr
 <Hero
   slug="brief-history-time"
   thesis="The universe can be understood as a changing spacetime, even though its beginning, black-hole interiors, and quantum gravity still keep decisive questions open."
-  minutes={6}
+  minutes={7}
 />
 
 ## The thesis
 
-<em>A Brief History of Time</em> makes modern cosmology intelligible by asking a small set of
-large questions: what are space and time, how did the universe develop, what makes a black hole
-black, and where do our best theories stop agreeing? Hawking's central lesson is not that the
-cosmos is solved. It is that a theory earns its reach by connecting an abstract picture to
-observable consequences, then admitting the places where the picture fails.
+<em>A Brief History of Time</em> makes modern cosmology intelligible through a small set of large
+questions: what are space and time, how did the universe develop, what makes a black hole black,
+and where do our best theories stop agreeing? Its central lesson is that a theory earns its reach
+by connecting an abstract picture to observable consequences and naming where the picture fails.
 
 ## Why it matters
 
@@ -110,19 +109,19 @@ Black holes force the two descriptions into the same conversation. Hawking's wor
 quantum effects near a horizon allow black holes to lose energy, a result commonly called Hawking
 radiation. In the far future of an isolated black hole, that loss would matter.
 
-The importance of the idea is structural. If black holes can evaporate, then a complete account
-must explain what happens to the physical information carried by what fell in. The tempting
-cartoon of a particle pair at the horizon is a teaching aid, not the mechanism itself. The real
-result comes from quantum fields in curved spacetime.
+The importance of the idea is structural. Hawking radiation puts a horizon, quantum theory, and
+gravity in the same problem. NASA describes it as a theoretical proposal in which black holes lose
+energy and, in principle, eventually evaporate. A complete account must bring gravity and quantum
+physics into the same picture where they meet.
 
-<Figure id="83.4" caption="Hawking radiation links a horizon to quantum fields, energy loss, and a long-term question about information.">
+<Figure id="83.4" caption="Hawking radiation links a horizon to quantum fields, energy loss, and an unresolved quantum-gravity problem.">
   <Flow
     className="block min-w-[558px]"
     steps={[
       "quantum field near a horizon",
       "outgoing radiation carries energy",
       "black hole loses mass extremely slowly",
-      "information question remains",
+      "quantum-gravity question remains",
     ]}
     highlight={3}
   />
@@ -152,7 +151,7 @@ moments of cosmology remain unusually productive places to test ideas.
     edges={[
       { from: "relativity", to: "blackhole", label: "strong gravity" },
       { from: "quantum", to: "blackhole", label: "quantum fields" },
-      { from: "blackhole", to: "open", kind: "reinforcing", label: "tests the overlap" },
+      { from: "blackhole", to: "open", label: "tests the overlap" },
       { from: "early", to: "open", label: "extreme conditions" },
     ]}
   />
@@ -185,12 +184,9 @@ quantity rather than a background assumption.
 
 <Callout kind="note">
 The book remains a lucid gateway, not a current map of every frontier. Its 1988 account predates
-the first directly detected gravitational waves, black-hole images, and decades of cosmological
-measurements. It also treats some speculative possibilities with a confidence that later work has
-not converted into settled fact. In particular, black-hole evaporation has not been observed, and
-inflation is a powerful explanation with unresolved details. NASA continues to describe general
-relativity as incomplete without a quantum foundation, which is exactly the open junction the
-book helps readers see.
+later black-hole imaging and gravitational-wave observations. NASA continues to describe general
+relativity as incomplete without a quantum foundation, which is exactly the open junction the book
+helps readers see.
 </Callout>
 
 ## If you remember one thing

@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -74,3 +74,22 @@ verdict: revise
    validation, prose lint, 42 pipeline tests, 171 Vitest tests, TypeScript, the Vite
    production build, and ESLint all passed. Vitest emitted only the existing
    non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+- Compressed **The thesis** to two sentences while retaining the large cosmological
+  questions, observable consequences, and explicit limits.
+- Re-rendered the completed MDX page and counted 1,336 reader-visible word tokens;
+  at roughly 200 words per minute, rounded up, the Hero badge is now `minutes={7}`.
+- Completed the registry record with tier 2, the Hero thesis, the deliberately absent
+  signature framework, and the five rendered forms: comparison, timeline, iceberg,
+  flow, and node graph.
+- Changed Figure 83.5's black-hole-to-open-question connection to an unsigned
+  relationship edge. Its label now describes the supported testing relationship
+  without implying a feedback loop.
+- Removed the unsupported information-paradox and particle-pair-mechanism corrections.
+  The Hawking-radiation explanation and its figure now stay with the recorded account
+  of a theoretical proposal for black holes to lose energy. The caveat no longer makes
+  unsupported judgments about Hawking's confidence, observed evaporation, or the
+  present status of inflation; it retains only the recorded later observations and the
+  missing quantum foundation.
