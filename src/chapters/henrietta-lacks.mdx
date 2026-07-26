@@ -1,0 +1,223 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="henrietta-lacks"
+  thesis="Henrietta Lacks's cells changed medicine, and the way they were taken asks science to treat consent, privacy, and recognition as part of good research."
+  minutes={7}
+/>
+
+## The thesis
+
+Rebecca Skloot's account begins with a scientific achievement and refuses to let it float
+free of the person behind it. In 1951, cells taken during Henrietta Lacks's cancer treatment
+were grown into the HeLa cell line without her knowledge or consent. They became an unusually
+durable tool for research. The book's argument is not that their value is suspect. It is that
+value creates a larger obligation: people whose bodies and families make research possible
+must have meaningful say, respect, and protection.
+
+## Why it matters
+
+Research often turns a human encounter into something that travels far from the clinic: a
+sample, a record, a cell line, a sequence, a dataset. Distance can make the person who made
+that work possible disappear. This story puts the person back in view. It also shows why trust
+is not a public-relations extra. A system that asks people to share intimate material has to
+give them reasons to believe that its power will be used responsibly.
+
+## A cell line can make questions testable
+
+Most cells removed from a body do not keep dividing indefinitely in a dish. HeLa did. That
+made it possible for laboratories to work with a consistent human cell line, repeat an
+experiment, compare results, and send material between institutions. The cells helped make
+many kinds of research practical, from testing the polio vaccine to studying cancer, viruses,
+and cell biology.
+
+This is the scientific side of the story, and it deserves plain credit. A cell line is not a
+tiny person in a flask. It is a research model with strengths and limits. Its usefulness came
+from being shareable and reproducible, which is exactly why one patient's cells could become
+part of a vast scientific commons.
+
+<Figure id="88.1" caption="HeLa turned one clinical sample into a tool that many laboratories could use.">
+  <Timeline
+    className="block min-w-[660px]"
+    segments={[
+      { label: "1951 treatment", sub: "a cervical-cancer biopsy" },
+      { label: "cells cultured", sub: "continued growth in the lab" },
+      { label: "cells shared", sub: "a repeatable research tool" },
+      { label: "questions tested", sub: "work across many fields" },
+      { label: "knowledge travels", sub: "papers, methods, and care" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Scientific usefulness does not create permission
+
+The same fact can be true in two different moral registers: the cells were extraordinarily
+useful, and Henrietta Lacks did not choose their research use. One fact does not cancel the
+other. Confusing them produces an easy but damaging story in which a good outcome excuses the
+way it was obtained.
+
+Consent is not a ceremonial signature added after a decision has already been made. It is a
+person's chance to understand what is being requested, ask questions, decline, and decide
+under conditions that do not punish them for saying no. In 1951, established practices and
+rules did not require the kind of research consent expected in many settings now. That history
+explains what happened. It does not turn the absence of a choice into a morally neutral detail.
+
+<Figure id="88.2" caption="Research value and a person's authority to decide are separate questions.">
+  <Compare
+    className="block min-w-[420px]"
+    favor="none"
+    left={{
+      title: "scientific value",
+      points: ["can make a question testable", "can support repeatable work", "can benefit many people", "does not answer who chose"],
+    }}
+    right={{
+      title: "informed permission",
+      points: ["explains what is requested", "leaves room to refuse", "treats the person as a decision-maker", "does not depend on a useful result"],
+    }}
+  />
+</Figure>
+
+## A specimen can carry information beyond the specimen
+
+A labeled vial may look anonymous, but biological material can contain information about a
+person's health, ancestry, and relatives. The stakes grew sharper when the HeLa genome was
+sequenced. Genome data can be scientifically valuable while also revealing probabilistic clues
+about people connected to the donor, especially when the family's identity is already public.
+
+Privacy is therefore not solved simply by removing a name from a tube. It is a continuing
+question about what can be inferred, who can connect records, what gets released, and who
+bears the exposure if a promise of anonymity fails. The book makes the abstract word
+"biospecimen" feel less abstract: a sample may be separated from a body, but not always from
+the relationships and history around it.
+
+<Figure id="88.3" caption="A biological sample can expose more than the material visible in a vial.">
+  <Iceberg
+    className="block min-w-[420px]"
+    above="a coded sample"
+    waterlineLabel="what a lab can see first"
+    below={["health information", "genetic clues", "family connections", "identity and history"]}
+  />
+</Figure>
+
+## Trust is a condition for better science
+
+The Lacks story is often told as one tragic exception. It is also a lesson about institutions.
+Past medical exploitation, racial inequality, and opaque research practices shape whether a
+community can reasonably trust an invitation to participate. A request for samples or data is
+never made on blank ground.
+
+Trust changes what science can learn. When people can ask questions, understand risks, see
+their choices honored, and expect accountability, participation becomes more plausible. Better
+participation can support broader evidence, which can produce research that serves more people.
+This is not a promise that one respectful conversation repairs a long history. It is a systems
+claim: scientific rigor and fair relationships reinforce each other.
+
+<Figure id="88.4" caption="Respectful relationships can support participation, broader evidence, and earned trust.">
+  <NodeGraph
+    className="block min-w-[420px]"
+    nodes={[
+      { id: "respect", label: "clear choice\nand respect", x: 0.5, y: 0.08 },
+      { id: "participation", label: "willing\nparticipation", x: 0.84, y: 0.38 },
+      { id: "evidence", label: "broader\nevidence", x: 0.7, y: 0.8 },
+      { id: "benefit", label: "more relevant\nresearch", x: 0.3, y: 0.8 },
+      { id: "trust", label: "earned\ntrust", x: 0.16, y: 0.38 },
+    ]}
+    edges={[
+      { from: "respect", to: "participation", kind: "reinforcing", label: "makes possible" },
+      { from: "participation", to: "evidence", kind: "reinforcing", label: "widens" },
+      { from: "evidence", to: "benefit", kind: "reinforcing", label: "can improve" },
+      { from: "benefit", to: "trust", kind: "reinforcing", label: "earns" },
+      { from: "trust", to: "respect", kind: "reinforcing", label: "demands" },
+    ]}
+  />
+</Figure>
+
+## Governance can turn gratitude into responsibility
+
+Recognition matters, but a thank-you in a paper cannot restore a missing choice or protect
+data by itself. The more durable question is how an institution changes its rules when it
+recognizes a harm. In 2013, the National Institutes of Health and members of the Lacks family
+formed an agreement for controlled access to HeLa genome data. The arrangement gave family
+members a role in the access process and called for acknowledgment of Henrietta Lacks and her
+family in resulting work.
+
+That agreement is not a universal repair kit. It is a useful example of governance as an
+ongoing practice rather than a one-time apology. A responsible project specifies what it will
+collect, who can use it, how requests are reviewed, what happens when risks change, and how
+the people connected to the material will be treated when the work reaches the public.
+
+<Figure id="88.5" caption="Responsible stewardship keeps decision, access, review, and accountability connected.">
+  <Flow
+    className="block min-w-[620px]"
+    steps={[
+      "explain the proposed use",
+      "offer a real choice",
+      "set access conditions",
+      "review requests and risks",
+      "report and acknowledge",
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Read a medical-research claim with two questions">
+When a headline celebrates a discovery, ask what material or data made it possible and whether
+the people connected to it had a meaningful chance to decide. This does not diminish the
+science. It makes the human terms of the science visible.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Ask what happens after the sample leaves">
+If you are invited into a research study, ask who can use the sample or data, whether future
+uses are anticipated, how identifying links are protected, and whom to contact if your wishes
+or the study's risks change. The right answer depends on the study. A clear answer is a basic
+sign of respect.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Treat privacy as more than a name tag">
+For health and genetic data, consider what might be inferred about you and people close to you.
+Ask how access is limited, whether data can be shared onward, and what public results may
+reveal. De-identification can reduce risk, but it is not the same as impossibility of
+re-identification.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Look for accountability, not only praise">
+When an organization honors a research contributor, look for the accompanying practices:
+transparent access rules, independent review, participant communication, and remedies when a
+commitment is broken. Recognition has weight when it changes how power is used.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Henrietta Lacks's case is not a shortcut to the claim that every use of stored clinical tissue
+today requires new, specific consent. Current U.S. rules distinguish among identifiable
+materials, coded materials, research purpose, and approved secondary uses. The details vary by
+institution and jurisdiction. The deeper lesson is not a simple legal rule. It is that legal
+permission, scientific benefit, privacy, family impact, and public trust are different
+questions, and responsible research must face all of them. Nor should a later agreement be
+treated as if it erases the original wrong. Governance can change present practice without
+rewriting the past.
+</Callout>
+
+## If you remember one thing
+
+HeLa cells show how far one person's biological material can travel. The lasting obligation is
+to make sure scientific ambition never travels farther than respect for the people who make it
+possible.
+
+## Shelved nearby
+
+<em>The Gene</em> extends the privacy question from one cell line to inherited information,
+while <em>The Emperor of All Maladies</em> gives the cancer history that made Henrietta Lacks's
+treatment and cells scientifically consequential.
+
+<ShelvedNearby
+  related={["the-gene", "emperor-maladies"]}
+  buyUrl="https://bookshop.org/p/books/the-immortal-life-of-henrietta-lacks-rebecca-skloot/12230379"
+  buyLabel="The Immortal Life of Henrietta Lacks by Rebecca Skloot"
+/>

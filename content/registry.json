@@ -1743,7 +1743,17 @@
       "subtitle": "Rebecca Skloot · 2010",
       "part": "Big Ideas: Science, History & Society",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Henrietta Lacks's cells changed medicine, and the way they were taken asks science to treat consent, privacy, and recognition as part of good research.",
+      "framework": "No single signature framework; the Model section is deliberately absent, and five key-idea diagrams trace scientific utility, consent, privacy, trust, and governance.",
+      "diagrams": [
+        "timeline",
+        "comparison",
+        "iceberg",
+        "node graph",
+        "flow"
+      ]
     },
     {
       "num": 89,
