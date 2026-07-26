@@ -1,0 +1,240 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Curve, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="factfulness"
+  thesis="A clear view of the world asks for more than a pile of facts. It asks us to notice the mental shortcuts that make drama feel typical, then check scale, trend, distribution, and uncertainty before deciding what is true."
+  minutes={9}
+/>
+
+## The thesis
+
+Rosling's argument is not that the world is fine. It is that a world with real suffering
+and real progress cannot be understood through alarm alone. Our attention is drawn to
+threats, clean divisions, villains, and sudden turns. That makes vivid stories feel like
+a representative sample. Factfulness is the discipline of pausing before that feeling
+becomes a conclusion, then asking what the broader evidence actually shows.
+
+## Why it matters
+
+Bad information does more than make a quiz score embarrassing. It can make improvement look
+impossible, make risks look interchangeable, and direct attention toward the loudest problem
+instead of the largest one. A factual worldview is not cheerfulness. It is a better way to
+choose where concern, money, and effort belong.
+
+## Key ideas
+
+## The world is usually a distribution, not a duel
+
+The easiest global picture divides people into a rich world and a poor world. It is also a
+stale picture. Conditions differ sharply, and injustice is not erased by that fact, but most
+people do not sit at either extreme. A more useful first question is how people live: what
+they can reliably eat, whether transport and electricity are ordinary, how much choice a
+household has after basic needs are met. That shifts attention from a moral cartoon to a
+distribution with a large middle and important variation inside every country.
+
+<Figure id="86.1" caption="Four living-condition bands reveal a range that a rich-versus-poor split hides.">
+  <Spectrum
+    className="block w-full min-w-[400px]"
+    left="survival"
+    right="high consumption"
+    marker={0.54}
+    markerLabel="look for the middle"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0, to: 0.2, label: "level 1\nfragile basics" },
+      { from: 0.2, to: 0.48, label: "level 2\nreliable essentials" },
+      { from: 0.48, to: 0.76, label: "level 3\nmore choices", accent: true },
+      { from: 0.76, to: 1, label: "level 4\nexpansive options" },
+    ]}
+  />
+</Figure>
+
+## Headlines show events; trends show movement
+
+News is built around what has just happened, especially when it is frightening or cruel. That
+is appropriate for reporting an event, but a feed of events is a poor instrument for judging a
+decade. Improvements in child survival, schooling, vaccination, or income arrive one clinic,
+one cohort, and one household at a time. They rarely produce a single unforgettable image.
+Meanwhile, every disaster supplies one. The corrective is not to ignore the disaster. It is to
+put the event beside a long series and ask both questions: what happened now, and what has been
+changing over time?
+
+<Figure id="86.2" caption="A dramatic event is visible immediately; a trend needs a longer window to become visible.">
+  <Iceberg
+    className="block w-full min-w-[400px]"
+    above="today's alarming event"
+    below={["long-run rates", "quiet gains and losses", "who is still excluded"]}
+    waterlineLabel="what the news cycle can show"
+  />
+</Figure>
+
+## A trend is not a promise of the same shape forever
+
+Once people see change, they often extend it in a straight line. Population is a good test of
+this habit. More people can be alive at once even while average family size is falling, because
+large younger generations are reaching adulthood. The United Nations reports that global
+fertility fell from 3.31 births per woman in 1990 to 2.25 in 2024, and projects population to
+peak around the middle of the 2080s. The lesson is not to replace one forecast with a comforting
+one. It is to ask what mechanism bends the line: age structure, incentives, technology,
+capacity, or a physical limit.
+
+<Figure id="86.3" caption="Many social changes bend, level off, or reverse; a straight-line guess is only a starting hypothesis.">
+  <Curve
+    className="block w-full min-w-[400px]"
+    shape="s"
+    axes={{ x: "time", y: "total population" }}
+    annotations={[
+      { x: 0.2, y: 0.04, text: "slow start" },
+      { x: 0.53, y: 0.58, text: "rapid change" },
+      { x: 0.88, y: 0.99, text: "check for a ceiling", labelPosition: "below" },
+    ]}
+  />
+</Figure>
+
+## A number gets meaning from its denominator
+
+A large total can be urgent, trivial, improving, or worsening depending on what it is compared
+with. A death count needs a population and a time period. A budget needs the size of the program
+and its alternatives. A country total may tell the opposite story from a per-person rate. This
+is the book's practical answer to a number that arrives without context: compare it, divide it,
+and find the largest contributors before assigning it importance.
+
+<Figure id="86.4" caption="The same count becomes interpretable only after a comparison, a denominator, and a trend are added.">
+  <Bars
+    className="block w-full min-w-[400px]"
+    items={[
+      { label: "raw count", value: 0.9, valueLabel: "attention" },
+      { label: "per person", value: 0.52, valueLabel: "scale" },
+      { label: "share of total", value: 0.31, valueLabel: "priority", accent: true },
+      { label: "change over time", value: 0.68, valueLabel: "direction" },
+    ]}
+  />
+</Figure>
+
+## Systems explain more than a single culprit
+
+When something goes badly, a named villain supplies emotional closure. When it goes well, a
+hero does the same. Both stories can contain a grain of truth while hiding the system that made
+the outcome likely: incentives, institutions, staffing, supply chains, public trust, and the
+accumulation of earlier choices. Factfulness asks for causes before blame. That does not excuse
+anyone who is responsible. It makes prevention more plausible, because a system can be changed
+in several places rather than only by replacing one visible person.
+
+<Figure id="86.5" caption="Outcomes emerge from interacting conditions, so prevention needs more than a culprit.">
+  <NodeGraph
+    className="block w-full min-w-[400px]"
+    nodes={[
+      { id: "rules", label: "rules and incentives", x: 0.5, y: 0.08 },
+      { id: "capacity", label: "capacity", x: 0.86, y: 0.45 },
+      { id: "trust", label: "public trust", x: 0.66, y: 0.86 },
+      { id: "outcome", label: "outcome", x: 0.18, y: 0.68 },
+      { id: "choices", label: "individual choices", x: 0.12, y: 0.24 },
+    ]}
+    edges={[
+      { from: "rules", to: "capacity", kind: "reinforcing" },
+      { from: "capacity", to: "outcome" },
+      { from: "trust", to: "capacity", kind: "reinforcing" },
+      { from: "outcome", to: "trust", kind: "reinforcing" },
+      { from: "choices", to: "outcome" },
+      { from: "rules", to: "choices" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The ten instincts are not a personality test. They are a small set of alarms to recognize
+while forming an opinion. Five make a pattern look more dramatic than it is: a false divide,
+bad-news weighting, a straight-line projection, fear taking the lead, and an unscaled number.
+Five make a story look simpler than it is: a broad brush, fixed destiny, one favored lens, a
+scapegoat, and an artificial deadline. The response is a matched check. Notice the impulse,
+then make the evidence carry more than the story.
+
+<Figure id="86.6" caption="Each dramatic instinct has a corresponding question that slows a premature conclusion.">
+  <div className="min-w-[400px] space-y-6">
+    <Compare
+      className="block w-full"
+      favor="right"
+      left={{
+        title: "pattern feels dramatic",
+        points: ["false divide", "bad-news weighting", "straight-line projection", "fear takes the lead", "an unscaled number"],
+      }}
+      right={{
+        title: "first correction",
+        points: ["map the distribution", "inspect the long trend", "look for a curve", "compare actual risks", "divide and compare"],
+      }}
+    />
+    <Compare
+      className="block w-full"
+      favor="right"
+      left={{
+        title: "story feels simple",
+        points: ["a broad brush", "fixed destiny", "one favored lens", "a scapegoat", "an artificial deadline"],
+      }}
+      right={{
+        title: "second correction",
+        points: ["look for variation", "notice slow change", "use several lenses", "trace the system", "take small steps first"],
+      }}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Turn one headline into four questions">
+Choose a claim that made you angry or afraid. Before sharing it, ask: compared with what, per
+whom, over what period, and how certain is the measurement? If the claim cannot survive those
+questions, it is not yet evidence for a conclusion.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Draw the missing distribution">
+When someone describes two opposing groups, sketch a line with the alleged extremes at either
+end. Then look for the people, cases, or countries in between. Ask what the average hides and
+which variation still matters.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Separate an event from a rate">
+For a problem you care about, find one recent event and one source that reports a multi-year
+series. Keep both in view. The event may demand attention, while the rate helps decide whether
+the response is working.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Write a systems explanation">
+Take an outcome that has been pinned on one person. Name at least three surrounding conditions
+that made it easier or harder to occur. Then identify one intervention that changes a condition
+rather than only replacing the person in the story.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book can be misread as permission to relax. It is better read as a demand for accurate
+attention. Global averages can improve while a region, a class, or a community is left behind,
+and the underlying measurements are revised as methods and purchasing-power data improve. The
+World Bank's 2025 revision kept the long reduction in extreme poverty but also reported that
+progress had slowed sharply and that poverty remained concentrated in Sub-Saharan Africa and
+fragile settings. Nor can every risk be put on a reassuring historical curve. The IPCC finds
+that climate change has already caused widespread losses and damages, with risks rising at each
+increment of warming. Factfulness should sharpen urgency where evidence warrants it, not drain
+urgency from the world.
+</Callout>
+
+## If you remember one thing
+
+Do not choose between optimism and alarm. When a story makes the world seem obvious, pause and
+ask what is missing: the distribution, the denominator, the trend, the uncertainty, or the
+system. Better facts make both hope and concern more useful.
+
+## Shelved nearby
+
+Thinking, Fast and Slow gives the cognitive background for the fast judgments this book asks us
+to interrupt. Superforecasting is its practical neighbor for turning uncertainty into calibrated
+estimates instead of confident guesses.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "superforecasting"]}
+  buyUrl="https://us.macmillan.com/books/9781250107817/factfulness/"
+  buyLabel="Factfulness by Hans Rosling, Ola Rosling, and Anna Rosling Rönnlund"
+/>
