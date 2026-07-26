@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -120,3 +120,9 @@ chapters. `npm run check` completed with `CHECK OK` on 2026-07-26, including que
 and registry validation, prose lint, 42 pipeline tests, 173 Vitest tests,
 TypeScript, the Vite production build, and ESLint; Vitest emitted only the existing
 non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+Resolved the round 2 reading-time finding. The Hero badge now uses `minutes={8}`:
+the recorded server-rendered count is approximately 1,516 visible words, which rounds
+up to eight minutes at the authoring specification's approximately 200 words per minute.
