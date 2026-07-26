@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -46,3 +46,20 @@ The existing evidence record's NCI milestones source is annotated to support thi
 Also compressed The Thesis to two sentences and narrowed the *The Gene* cross-link to say that
 molecular information underpins much modern cancer research. Updated the registry framework and
 diagram list to reflect the historical timeline. No status change was made.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+None. The revised historical key idea and Figure 87.2 now make the book's defining
+change-over-time argument legible without mirroring its chapter order. The remaining medical,
+historical, screening, resistance, trial, prevention, and disparity claims are consistent with
+the chapter brief and recorded institutional evidence. The five key-idea figures use the shared
+diagram vocabulary, agree with their prose and captions, and render through inspected shared
+components with mobile overflow behavior.
+
+### Advisory
+
+None.
+
+Mechanical verification: `npm run check` passed on 2026-07-26.
