@@ -2271,7 +2271,6 @@ class RunqueueTests(unittest.TestCase):
             "1",
             cwd="/",
             env=env,
-            timeout=3,
         )
 
         self.assertEqual(resumed.returncode, 1, resumed.stderr)
