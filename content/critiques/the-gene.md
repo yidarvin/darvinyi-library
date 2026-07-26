@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-26
 
@@ -96,3 +96,27 @@ reference human genome, from the 2003 approximately 92-percent sequence to later
 completion, and keeps the recorded testing limits. The non-blocking Figure 84.3 advisory
 was also addressed by describing the rendered independent edges as converging influences,
 rather than depicting unsupported interactions.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+1. **Recompute the Hero reading-time badge from the rendered page.** A direct server
+   render contains approximately 1,516 visible words, including the Hero, headings,
+   captions, diagram labels, exercise titles, and generated component text. At the
+   authoring spec's approximately 200 words per minute, rounded up, this is an
+   eight-minute distillation, not `minutes={9}` (`src/chapters/the-gene.mdx:5-9`).
+   Set the badge from the final rendered count.
+
+### Advisory
+
+None. The five REQUIRED findings from round 1 remain resolved. Within the bounded
+brief and recorded evidence, the current prose makes no unsupported factual claim
+that changes the reader's understanding, and the copyright posture remains sound.
+The five captioned figures use fitting vocabulary forms with readable chapter-local
+minimum widths, the deliberate absence of a Model still matches the brief and
+registry, the practices are concrete, and the related links resolve to completed
+chapters. `npm run check` completed with `CHECK OK` on 2026-07-26, including queue
+and registry validation, prose lint, 42 pipeline tests, 173 Vitest tests,
+TypeScript, the Vite production build, and ESLint; Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.
