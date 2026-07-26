@@ -1,0 +1,211 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="brief-history-time"
+  thesis="The universe can be understood as a changing spacetime, even though its beginning, black-hole interiors, and quantum gravity still keep decisive questions open."
+  minutes={6}
+/>
+
+## The thesis
+
+<em>A Brief History of Time</em> makes modern cosmology intelligible by asking a small set of
+large questions: what are space and time, how did the universe develop, what makes a black hole
+black, and where do our best theories stop agreeing? Hawking's central lesson is not that the
+cosmos is solved. It is that a theory earns its reach by connecting an abstract picture to
+observable consequences, then admitting the places where the picture fails.
+
+## Why it matters
+
+Cosmology can sound like a collection of grand nouns with no way to check them. This book made a
+different habit possible: translate the grand noun into a claim about motion, light, clocks, or
+the history recorded in radiation. That habit matters well beyond astronomy. It keeps awe from
+becoming fog, and it keeps technical confidence from pretending that uncertainty has disappeared.
+
+## Key ideas
+
+### Space and time form one changing setting
+
+In ordinary life, space seems like a fixed container and time like one universal ticking clock.
+Relativity replaces both intuitions. Measurements of distance and duration depend on motion and
+gravity, while events belong to one four-dimensional spacetime. Gravity is not simply a pull
+added to this setting. Matter and energy affect its geometry, and that geometry shapes the paths
+of planets, light, and freely falling objects.
+
+The useful picture is not a rubber sheet with a literal dent in it. It is a rule for relating
+measurements. Different observers can disagree about elapsed time or separation and still agree
+on the physical laws that connect their observations.
+
+<Figure id="83.1" caption="Relativity joins clock readings and positions into spacetime, where gravity changes the possible paths.">
+  <Compare
+    className="block min-w-[380px]"
+    favor="right"
+    left={{
+      title: "everyday picture",
+      points: ["space is a fixed stage", "one time for everyone", "gravity is a pull across it"],
+    }}
+    right={{
+      title: "relativistic picture",
+      points: ["space and time are linked", "clocks depend on motion and gravity", "geometry guides motion"],
+    }}
+  />
+</Figure>
+
+### An expanding universe leaves a record
+
+The Big Bang is not best pictured as matter exploding into an empty room from one central point.
+It is the history of a hot, dense universe whose distances have expanded and whose temperature has
+fallen. That history is accessible because light carries a timestamp. The cosmic microwave
+background is ancient radiation released once the early universe cooled enough for light to move
+freely. Its present microwave wavelength reflects the stretching of space during the journey.
+
+This is why a cosmic origin story can be scientific rather than merely dramatic. Expansion,
+element abundances, and the background radiation are different traces that must fit the same
+account. They do not tell us what caused the earliest state, but they strongly constrain what the
+later universe was like.
+
+<Figure id="83.2" caption="As the early universe expanded and cooled, formerly trapped light began a journey we can still detect.">
+  <Timeline
+    className="block min-w-[480px]"
+    segments={[
+      { label: "hot, dense early universe", sub: "light repeatedly scatters" },
+      { label: "atoms form", sub: "about 380,000 years later" },
+      { label: "light travels freely", sub: "the cosmic background" },
+      { label: "today", sub: "light stretched to microwaves" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+### A horizon is a limit on what can return
+
+A black hole is not an empty tunnel. It is a region where enough mass is compressed that the
+event horizon becomes a causal boundary: once a signal passes inward, no outward route can carry
+it back to a distant observer. The horizon is therefore more important than an imagined physical
+surface. It separates what can still send news outward from what cannot.
+
+This distinction also clarifies why black holes can be investigated. Astronomers observe light,
+orbits, hot gas, and gravitational waves outside the horizon. Those observations test the theory
+at its most extreme without giving anyone a direct view of an interior.
+
+<Figure id="83.3" caption="The horizon is a boundary of return: outside signals may escape, while inside information cannot reach a distant observer.">
+  <Iceberg
+    className="block min-w-[380px]"
+    above="observable surroundings"
+    waterlineLabel="event horizon"
+    below={[
+      "signals no longer return",
+      "interior physics remains unknown",
+      "not a literal hole or tunnel",
+    ]}
+  />
+</Figure>
+
+### Quantum theory changes the final question
+
+General relativity describes gravity and the large-scale universe with extraordinary success.
+Quantum physics describes matter and the other fundamental interactions at very small scales.
+Black holes force the two descriptions into the same conversation. Hawking's work proposed that
+quantum effects near a horizon allow black holes to lose energy, a result commonly called Hawking
+radiation. In the far future of an isolated black hole, that loss would matter.
+
+The importance of the idea is structural. If black holes can evaporate, then a complete account
+must explain what happens to the physical information carried by what fell in. The tempting
+cartoon of a particle pair at the horizon is a teaching aid, not the mechanism itself. The real
+result comes from quantum fields in curved spacetime.
+
+<Figure id="83.4" caption="Hawking radiation links a horizon to quantum fields, energy loss, and a long-term question about information.">
+  <Flow
+    className="block min-w-[558px]"
+    steps={[
+      "quantum field near a horizon",
+      "outgoing radiation carries energy",
+      "black hole loses mass extremely slowly",
+      "information question remains",
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+### A theory of everything is a boundary, not a finish line
+
+Hawking presents the search for a unified description as a serious scientific goal. The phrase
+can mislead if it sounds like a final answer to every human question. In physics, unification
+means finding a framework whose principles work where current theories overlap, especially where
+strong gravity and quantum effects coexist. It would explain more with fewer incompatible rules.
+
+That goal remains unfinished. The absence of a settled quantum theory of gravity is not a defect
+to conceal. It tells us where current knowledge ends, and why black holes and the earliest
+moments of cosmology remain unusually productive places to test ideas.
+
+<Figure id="83.5" caption="Cosmology draws on theories that work exceptionally well in their domains, while the overlap remains an open research problem.">
+  <NodeGraph
+    className="block min-w-[380px]"
+    nodes={[
+      { id: "relativity", label: "general\nrelativity", x: 0.18, y: 0.24 },
+      { id: "quantum", label: "quantum\nphysics", x: 0.82, y: 0.24 },
+      { id: "blackhole", label: "black holes", x: 0.5, y: 0.59 },
+      { id: "early", label: "early\nuniverse", x: 0.18, y: 0.9 },
+      { id: "open", label: "quantum gravity\nopen question", x: 0.82, y: 0.9 },
+    ]}
+    edges={[
+      { from: "relativity", to: "blackhole", label: "strong gravity" },
+      { from: "quantum", to: "blackhole", label: "quantum fields" },
+      { from: "blackhole", to: "open", kind: "reinforcing", label: "tests the overlap" },
+      { from: "early", to: "open", label: "extreme conditions" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Turn a cosmic phrase into an observation">
+Choose a phrase such as "the universe is expanding" or "black holes bend light." Find the
+mission, observatory, or experiment that supports it. Write one sentence naming what was
+measured, then a separate sentence naming the larger inference. Keep the instrument and the
+story distinct.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Draw the boundary of a claim">
+Take a science explanation you admire and add two labels: what it explains well, and what it does
+not settle. For relativity, strong gravitational effects belong in the first box; a full quantum
+description of gravity belongs in the second. Precision becomes more useful when its edge is
+visible.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Use a clock as a thought experiment">
+Imagine two precise clocks, one on a satellite and one on Earth. Ask what each clock measures,
+what must be accounted for before comparing them, and which prediction could be checked. The aim
+is not to calculate a correction. It is to practice treating time as a measurable physical
+quantity rather than a background assumption.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book remains a lucid gateway, not a current map of every frontier. Its 1988 account predates
+the first directly detected gravitational waves, black-hole images, and decades of cosmological
+measurements. It also treats some speculative possibilities with a confidence that later work has
+not converted into settled fact. In particular, black-hole evaporation has not been observed, and
+inflation is a powerful explanation with unresolved details. NASA continues to describe general
+relativity as incomplete without a quantum foundation, which is exactly the open junction the
+book helps readers see.
+</Callout>
+
+## If you remember one thing
+
+The universe is not beyond explanation, but explanation earns its authority by meeting evidence
+and marking its limits. The deepest questions about time and gravity are valuable partly because
+they show both how far physics has reached and where it has not yet arrived.
+
+## Shelved nearby
+
+<em>Cosmos</em> supplies the wider human perspective on scientific inquiry, while <em>A Short
+History of Nearly Everything</em> follows the evidence behind a broader history of nature.
+
+<ShelvedNearby
+  related={["cosmos", "short-history-nearly-everything"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/116467/a-brief-history-of-time-by-stephen-hawking/"
+  buyLabel="A Brief History of Time by Stephen Hawking"
+/>
