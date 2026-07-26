@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, NodeGraph, Spectrum, Timeline } from "../components/diagrams";
+import { Compare, Flow, NodeGraph, Timeline } from "../components/diagrams";
 
 <Hero
   slug="the-gene"
@@ -10,12 +10,10 @@ import { Compare, Flow, NodeGraph, Spectrum, Timeline } from "../components/diag
 
 ## The thesis
 
-<em>The Gene</em> follows a scientific idea as it becomes a social fact. Heredity moved from
-countable patterns in breeding experiments to molecules that can be read, compared, and in
-some cases altered. Mukherjee's central warning travels with the achievement: a gene can
-shape a trait or a risk, but it does not settle identity, worth, or fate. The closer biology
-gets to intervention, the more carefully knowledge, consent, access, and restraint have to
-be designed around it.
+<em>The Gene</em> follows a scientific idea from inheritance patterns to molecular biology
+and editable DNA. Mukherjee's central warning travels with that achievement: genes shape
+traits and risks without fixing identity, worth, or fate, and intervention demands care with
+knowledge, consent, access, and restraint.
 
 ## Why it matters
 
@@ -40,7 +38,7 @@ it connects transmission across generations to activity inside a cell.
 
 <Figure id="84.1" caption="The idea of inheritance became progressively more physical, measurable, and actionable.">
   <Timeline
-    className="block min-w-[480px]"
+    className="block min-w-[720px]"
     segments={[
       { label: "inheritance patterns", sub: "Mendel's crosses" },
       { label: "chromosomes", sub: "a cellular location" },
@@ -79,7 +77,7 @@ under what conditions?"
   />
 </Figure>
 
-## Inheritance is a network, not a verdict
+## Inheritance is a set of influences, not a verdict
 
 Some conditions arise from a single altered gene with a strong and predictable effect. Many
 human traits and common diseases do not. They emerge from many genetic variants, development,
@@ -93,7 +91,7 @@ test result for screening or treatment while refusing the familiar slide from bi
 difference to a ranking of people. Genes contribute to a life. They do not contain the whole
 of one.
 
-<Figure id="84.3" caption="An observed trait comes from interacting influences, not from a gene acting alone.">
+<Figure id="84.3" caption="An observed trait reflects converging influences, not a gene acting alone.">
   <NodeGraph
     className="block min-w-[420px]"
     nodes={[
@@ -114,11 +112,11 @@ of one.
 
 ## Reading a genome creates evidence, not certainty
 
-Sequencing made it possible to inspect enormous stretches of DNA at once. That is a genuine
-change in capability. It can identify variants behind rare disorders, guide some cancer care,
-and make research across populations more detailed. It can also produce a finding whose
-meaning is unknown, a risk estimate that is modest, or a result that matters only alongside
-family history and clinical evidence.
+Sequencing made it possible to inspect long stretches of DNA together and build a reference
+human genome. The 2003 reference covered about 92 percent of the genome, and later work
+filled its remaining gaps. That is a genuine change in what can be read, yet a test can still
+produce a finding whose meaning is unknown, a modest risk estimate, or a result that matters
+only alongside family history and clinical evidence.
 
 The mature use of a genetic result is therefore interpretive. It asks how reliable the test
 is, what the variant is known to do, who was represented in the research, and what decision
@@ -145,28 +143,37 @@ decision, not when it merely makes a person feel categorized.
 
 The ability to edit DNA makes the earlier history feel immediate. The most defensible uses
 begin with a concrete disease problem in a consenting patient, a plausible biological target,
-and careful follow-up. Some treatments alter a person's own cells and return them to that
-person. Their effects are limited to that patient, even when the procedure is demanding and
-risky. Alterations intended for eggs, sperm, or embryos raise a different question because a
-change could be inherited by people who could not consent.
+and careful follow-up. An approved treatment, for example, edits a patient's own blood-forming
+stem cells outside the body, then returns them after demanding preparation. Such somatic edits
+are not intended to be inherited, but treatment burden, long-term follow-up, and wider
+consequences still matter. Changes involving eggs, sperm, or embryos raise another question
+because they could be inherited by people who could not consent.
 
 The boundary is not a slogan about being for or against technology. It is a way to keep
 several questions visible at once: what outcome is sought, how confident is the biology, who
 bears the risk, who chooses, and who gains access. Treatment and enhancement can blur at the
 edges, but they should never be allowed to blur accountability.
 
-<Figure id="84.5" caption="Editing one patient's cells and altering an inherited lineage create different circles of consequence.">
-  <Spectrum
+<Figure id="84.5" caption="Somatic and heritable editing differ in scope: one is not intended to be inherited, while the other can affect descendants.">
+  <Compare
     className="block min-w-[420px]"
-    left="somatic treatment"
-    right="heritable alteration"
-    marker={0.28}
-    markerLabel="patient cells"
-    markerLabelPlacement="top"
-    zones={[
-      { from: 0.0, to: 0.42, label: "effects stay with the treated person", accent: true },
-      { from: 0.58, to: 1.0, label: "effects may reach future people" },
-    ]}
+    favor="none"
+    left={{
+      title: "somatic editing",
+      points: [
+        "targets a patient's cells",
+        "not intended to be inherited",
+        "can require conditioning, monitoring, and follow-up",
+      ],
+    }}
+    right={{
+      title: "heritable editing",
+      points: [
+        "involves eggs, sperm, or embryos",
+        "could affect descendants",
+        "future people cannot consent and outcomes are difficult to predict",
+      ],
+    }}
   />
 </Figure>
 

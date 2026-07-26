@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -77,3 +77,22 @@ verdict: revise
    validation, prose lint, 42 pipeline tests, 173 Vitest tests, TypeScript, the Vite
    production build, and ESLint all passed. Vitest emitted only the existing
    non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+Resolved every required finding from round 1. The registry record now includes tier 2,
+the rendered chapter thesis, the deliberate absence of a signature framework and Model
+section, and the five rendered diagram forms. The Thesis is now two sentences.
+
+Figure 84.1 now renders at a 720px minimum width in its horizontal scroller, preserving
+the Timeline labels at or above their SVG font sizes. Figure 84.5 now uses a Comparison,
+not a Spectrum: it distinguishes somatic edits not intended to be inherited from edits
+involving eggs, sperm, or embryos that could affect descendants. Its text retains the
+documented conditioning, monitoring, follow-up, consent, and outcome-uncertainty concerns
+without claiming somatic effects are confined to one person.
+
+The genome-reading section now limits its positive claim to the recorded history of a
+reference human genome, from the 2003 approximately 92-percent sequence to later gap-free
+completion, and keeps the recorded testing limits. The non-blocking Figure 84.3 advisory
+was also addressed by describing the rendered independent edges as converging influences,
+rather than depicting unsupported interactions.
