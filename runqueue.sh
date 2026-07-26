@@ -18,7 +18,7 @@
 #   -p, --prompt TEXT         append instructions to every agent role
 #   -t, --timeout SEC         hard limit for one Codex attempt (default: 7200)
 #       --max-agent-attempts N retry one action at most N times (default: 3)
-#       --max-review-rounds N halt after N revise verdicts (default: 6; 0 unlimited)
+#       --max-review-rounds N optionally halt after N revise verdicts (default: 0; unlimited)
 #       --max-push-attempts N cap persisted push attempts (default: 8)
 #       --push-timeout SEC    hard limit for one git push (default: 300)
 #       --no-push             disable the push after chapter approval
@@ -38,7 +38,7 @@
 
 set -uo pipefail
 
-RUNQUEUE_VERSION='0.5.1'
+RUNQUEUE_VERSION='0.5.2'
 BUILD_MODEL='gpt-5.6-terra'
 CRITIC_MODEL='gpt-5.6-sol'
 EFFORT='high'
@@ -52,7 +52,7 @@ RECOVER_ONLY=0
 ASSUME_YES=0
 TIMEOUT=7200
 MAX_AGENT_ATTEMPTS=3
-MAX_REVIEW_ROUNDS=6
+MAX_REVIEW_ROUNDS=0
 MAX_PUSH_ATTEMPTS=8
 PUSH_TIMEOUT=300
 MAX=''
@@ -254,13 +254,13 @@ You are the Terra builder for darvinyi-library. Build exactly one pending book: 
 
 Read AGENTS.md, prompts/notes/${slug}.md, docs/authoring-spec.md, and docs/diagram-vocabulary.md before editing. Research primary sources with web search. Write original prose and original in-vocabulary diagrams; do not reproduce book text, figures, or cover art. Follow the fixed page anatomy and house prose rules. Run npm run check and fix failures. Then run: python3 scripts/mark.py ${slug} draft.
 
-Do not critique, do not mark done, do not commit, and do not push. Touch only this chapter, its registry/queue status, and any strictly required reusable diagram primitive or diagram-vocabulary update.
+Do not critique, do not mark done, do not commit, and do not push. Allowed edits are this chapter, content/evidence/${slug}.md, prompts/notes/${slug}.md, its registry/queue status, and any strictly required reusable diagram primitive, shared diagram regression test, or diagram-vocabulary update. Edit prompts/_books.py only to correct this book's source metadata. Do not touch unrelated chapters or pipeline/build tooling.
 EOF
       ;;
     critique) cat <<EOF
 You are the independent Sol critic for darvinyi-library. Critique exactly this draft: ${slug} (${title}).
 
-Your job is to find defects, not to approve. A wrong approval is the worst outcome. Read AGENTS.md, docs/authoring-spec.md, prompts/critique-rubric.md, src/chapters/${slug}.mdx, and every chapter-specific component it imports. Re-derive factual claims from the chapter brief and recorded evidence where practical; do not begin a new external web search in this review. Run npm run check. Do not edit page content, shared components, or build tooling.
+Your job is to find defects, not to approve. A wrong approval is the worst outcome. Read AGENTS.md, docs/authoring-spec.md, prompts/critique-rubric.md, src/chapters/${slug}.mdx, content/evidence/${slug}.md when present, and every chapter-specific component it imports. Re-derive factual claims from the chapter brief and recorded evidence where practical; do not begin a new external web search in this review. Run npm run check. Do not edit page content, shared components, evidence, or build tooling.
 
 Create or append content/critiques/${slug}.md. Its first line must be verdict: approve or verdict: revise. Add a dated Critique round with REQUIRED findings first and optional ADVISORY findings after. Approve only when there are no REQUIRED findings; on approve, run: python3 scripts/mark.py ${slug} done. Do not commit or push.
 EOF
@@ -270,7 +270,7 @@ You are the Terra resolver for darvinyi-library. Resolve the current REQUIRED cr
 
 Read AGENTS.md, the full content/critiques/${slug}.md history, prompts/notes/${slug}.md, docs/authoring-spec.md, and every current chapter artifact. Apply every REQUIRED finding, preserve prior fixes, run npm run check, then append a dated Builder resolution section naming the concrete changes. Set the first line of the critique file to verdict: resolved. Use the recorded evidence; do not begin a new external web search unless a required finding cannot be resolved otherwise.
 
-Do not mark the chapter done, do not change unrelated chapters, and do not commit or push. A strictly required reusable diagram primitive or diagram-vocabulary update is allowed.
+Do not mark the chapter done, do not commit, and do not push. Allowed edits are this chapter, its critique, content/evidence/${slug}.md, prompts/notes/${slug}.md, its registry status, and any strictly required reusable diagram primitive, shared diagram regression test, or diagram-vocabulary update. Edit prompts/_books.py only to correct this book's source metadata. Do not touch unrelated chapters or pipeline/build tooling.
 EOF
       ;;
     *) die "unknown action '$action'" ;;
@@ -316,10 +316,12 @@ paths_are_allowed() {
   while IFS= read -r path; do
     case "$action:$path" in
       build:src/chapters/"$slug".mdx|build:content/registry.json|build:prompts/queue.md) ;;
-      build:src/chapters/_figures/*|build:src/chapters/_widgets/*|build:src/components/diagrams/*|build:docs/diagram-vocabulary.md) ;;
+      build:content/evidence/"$slug".md|build:prompts/notes/"$slug".md|build:prompts/_books.py) ;;
+      build:src/chapters/_figures/*|build:src/chapters/_widgets/*|build:src/components/diagrams/*|build:src/test/chapters.test.tsx|build:docs/diagram-vocabulary.md) ;;
       critique:content/critiques/"$slug".md|critique:content/registry.json|critique:prompts/queue.md) ;;
       resolve:src/chapters/"$slug".mdx|resolve:src/chapters/_figures/*|resolve:src/chapters/_widgets/*) ;;
       resolve:src/components/diagrams/*|resolve:src/test/chapters.test.tsx|resolve:docs/diagram-vocabulary.md|resolve:content/critiques/"$slug".md|resolve:content/registry.json) ;;
+      resolve:content/evidence/"$slug".md|resolve:prompts/notes/"$slug".md|resolve:prompts/_books.py) ;;
       record:content/registry.json|record:prompts/queue.md) ;;
       *) printf '%s\n' "$path"; return 1 ;;
     esac

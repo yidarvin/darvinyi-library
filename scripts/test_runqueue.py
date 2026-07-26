@@ -1842,6 +1842,73 @@ class RunqueueTests(unittest.TestCase):
         self.assertEqual(repeated.returncode, 1, repeated.stderr)
         self.assertIn("configured limit", repeated.stderr)
 
+    def test_default_review_rounds_are_unlimited(self) -> None:
+        _root, repo, state, env = self.make_pipeline_fixture()
+        registry_path = repo / "content" / "registry.json"
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        registry["chapters"][0]["status"] = "draft"
+        registry_path.write_text(json.dumps(registry), encoding="utf-8")
+        (repo / "src" / "chapters" / "sample.mdx").write_text("# Sample\n", encoding="utf-8")
+        self.assertEqual(self.git(repo, "add", "-A").returncode, 0)
+        self.assertEqual(self.git(repo, "commit", "-qm", "draft setup").returncode, 0)
+        base_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        critique = repo / "content" / "critiques" / "sample.md"
+        critique.parent.mkdir(parents=True)
+        critique.write_text(
+            "verdict: revise\n\n" + "\n".join(f"## Critique round {n}" for n in range(1, 7)) + "\n",
+            encoding="utf-8",
+        )
+        self.assertEqual(
+            self.run_command(
+                sys.executable,
+                str(repo / "scripts" / "runqueue_state.py"),
+                "--dir",
+                str(state),
+                "begin",
+                "--action",
+                "critique",
+                "--slug",
+                "sample",
+                "--title",
+                "Sample",
+                "--base-head",
+                base_head,
+                "--push-required",
+                "false",
+                "--check-required",
+                "false",
+            ).returncode,
+            0,
+        )
+        self.assertEqual(self.git(repo, "add", "-A").returncode, 0)
+        self.assertEqual(self.git(repo, "commit", "-qm", "critique: sample -- revise").returncode, 0)
+        commit_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        self.assertEqual(
+            self.run_command(
+                sys.executable,
+                str(repo / "scripts" / "runqueue_state.py"),
+                "--dir",
+                str(state),
+                "phase",
+                "committed",
+                "--commit-head",
+                commit_head,
+            ).returncode,
+            0,
+        )
+
+        recovered = self.run_command(
+            str(repo / "runqueue.sh"),
+            "--recover-only",
+            "--no-check",
+            "--no-push",
+            cwd="/",
+            env=env,
+        )
+
+        self.assertEqual(recovered.returncode, 0, recovered.stderr)
+        self.assertFalse((state / "transaction.json").exists())
+
     def test_recovered_completion_counts_toward_count_limit(self) -> None:
         _root, repo, state, env = self.make_pipeline_fixture()
         registry_path = repo / "content" / "registry.json"
@@ -2097,6 +2164,68 @@ class RunqueueTests(unittest.TestCase):
         self.assertEqual(committed_paths.returncode, 0, committed_paths.stderr)
         self.assertIn("src/components/diagrams/NodeGraph.tsx", committed_paths.stdout)
         self.assertIn("src/test/chapters.test.tsx", committed_paths.stdout)
+
+    def test_resolve_recovery_accepts_chapter_scoped_support_artifacts(self) -> None:
+        _root, repo, state, env = self.make_pipeline_fixture()
+        registry_path = repo / "content" / "registry.json"
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        registry["chapters"][0]["status"] = "draft"
+        registry_path.write_text(json.dumps(registry), encoding="utf-8")
+        (repo / "src" / "chapters" / "sample.mdx").write_text("# Sample\n", encoding="utf-8")
+        critiques = repo / "content" / "critiques"
+        critiques.mkdir()
+        critique = critiques / "sample.md"
+        critique.write_text("verdict: revise\n", encoding="utf-8")
+        self.assertEqual(self.git(repo, "add", "-A").returncode, 0)
+        self.assertEqual(self.git(repo, "commit", "-qm", "draft fixture").returncode, 0)
+        base_head = self.git(repo, "rev-parse", "HEAD").stdout.strip()
+        self.assertEqual(
+            self.run_command(
+                sys.executable,
+                str(repo / "scripts" / "runqueue_state.py"),
+                "--dir",
+                str(state),
+                "begin",
+                "--action",
+                "resolve",
+                "--slug",
+                "sample",
+                "--title",
+                "Sample",
+                "--base-head",
+                base_head,
+                "--push-required",
+                "false",
+                "--check-required",
+                "false",
+            ).returncode,
+            0,
+        )
+        critique.write_text("verdict: resolved\n", encoding="utf-8")
+        evidence = repo / "content" / "evidence" / "sample.md"
+        evidence.parent.mkdir(parents=True)
+        evidence.write_text("# Evidence\n", encoding="utf-8")
+        note = repo / "prompts" / "notes" / "sample.md"
+        note.parent.mkdir(parents=True)
+        note.write_text("# Corrected brief\n", encoding="utf-8")
+        (repo / "prompts" / "_books.py").write_text("BOOKS = {}\n", encoding="utf-8")
+
+        recovered = self.run_command(
+            str(repo / "runqueue.sh"),
+            "--recover-only",
+            "--no-check",
+            "--no-push",
+            cwd="/",
+            env=env,
+        )
+
+        self.assertEqual(recovered.returncode, 0, recovered.stderr)
+        self.assertFalse((state / "transaction.json").exists())
+        committed_paths = self.git(repo, "show", "--format=", "--name-only", "HEAD")
+        self.assertEqual(committed_paths.returncode, 0, committed_paths.stderr)
+        self.assertIn("content/evidence/sample.md", committed_paths.stdout)
+        self.assertIn("prompts/notes/sample.md", committed_paths.stdout)
+        self.assertIn("prompts/_books.py", committed_paths.stdout)
 
     def test_resumed_transaction_with_exhausted_attempts_halts_instead_of_spinning(self) -> None:
         _root, repo, state, env = self.make_pipeline_fixture()
