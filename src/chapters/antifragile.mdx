@@ -1,0 +1,234 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="antifragile"
+  thesis="When the future cannot be modeled well, the useful question is not how to remove every shock. It is how to limit what can break you and leave room for variation to teach, select, and improve."
+  minutes={7}
+/>
+
+## The thesis
+
+Taleb gives a name to a response that is neither breakage nor mere endurance. A fragile thing
+is damaged by volatility. A robust thing absorbs it and remains roughly unchanged. An
+antifragile arrangement can improve because variation exposes it to information, selection, or
+upside that a quiet environment would withhold. The practical aim is not to invite chaos into
+everything. It is to keep irreversible losses out of the system while making small trials,
+recovery, and choice possible.
+
+## Why it matters
+
+Plans are often built around a forecast of normal conditions. That can work in a narrow,
+well-measured setting. It breaks down when dependencies are hidden, feedback arrives late, or
+one surprise can dominate the result. Antifragile shifts attention from the story about what
+will happen to the shape of the payoff when the story is wrong. A system that can continue
+after a bad surprise has more time to learn from the next one.
+
+## Key ideas
+
+### Calm can conceal the weak point
+
+A long quiet stretch does not prove that a system is safe. It may only mean that the stress it
+cannot tolerate has not arrived. Debt, a single supplier, a narrow skill set, or a process
+with no human review can look efficient while conditions remain familiar. Fragility often sits
+below the surface as dependence on one assumption. The first useful audit asks what must stay
+true for this arrangement to keep working, then asks what happens if it does not.
+
+<Figure id="89.1" caption="The visible routine can rest on dependencies that only a disruption reveals.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="smooth daily output"
+    waterlineLabel="what calm conditions hide"
+    below={["one critical supplier", "thin reserves", "untested assumptions"]}
+  />
+</Figure>
+
+### Stress helps only inside a recoverable range
+
+The book uses a broad family of examples in which a system responds to a challenge, rests,
+and returns with more capacity or better information. The pattern is not an instruction to
+maximize stress. A load that is too small may teach little; a load that exceeds recovery can
+injure, exhaust, or end the experiment. The design question is whether the exposure is bounded
+and whether the system gets a chance to respond before the next demand arrives.
+
+<Figure id="89.2" caption="A useful challenge is bounded and followed by recovery; more stress is not automatically better.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="too little variation"
+    right="too much exposure"
+    marker={0.52}
+    markerLabel="bounded challenge"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.34, to: 0.66, label: "test, recover, adjust", accent: true },
+    ]}
+  />
+</Figure>
+
+### Small losses can buy information
+
+Trial and error is useful only when an error is small enough to survive. Run a modest test,
+observe what it reveals, keep the part that works, and discard the rest. That sequence turns a
+mistake from a verdict into tuition. The danger is treating every experiment as harmless. A
+test that can cause ruin is not learning by trial and error. It is one large wager wearing the
+language of experimentation.
+
+<Figure id="89.3" caption="A bounded trial becomes useful when its result changes the next attempt without ending the work.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["make a small trial", "observe the result", "keep or discard", "adjust the next trial"]}
+    compoundingEdge={3}
+    centerLabel="learning loop"
+  />
+</Figure>
+
+### Optionality beats a forced forecast
+
+An option is valuable because it permits a response without requiring one. You can preserve
+time, cash, a second route, or a small pilot until reality supplies better information. The
+benefit is asymmetric: a failed pilot can cost a known amount, while a promising result can be
+expanded. This does not mean every open door is worth paying for. It means that when knowledge
+is thin, a reversible choice can be more valuable than a confident but binding plan.
+
+<Figure id="89.4" caption="A forced bet owns the downside; an option can cap a trial and retain the promising branch.">
+  <Compare
+    className="block w-full min-w-[380px]"
+    favor="right"
+    left={{
+      title: "forced commitment",
+      points: ["act before evidence arrives", "one path carries the whole cost", "reversal may be expensive"],
+    }}
+    right={{
+      title: "option-rich approach",
+      points: ["test before scaling", "limit the loss per trial", "keep the favorable branch open"],
+    }}
+  />
+</Figure>
+
+### Keep a protected base and a field of experiments
+
+Taleb's barbell image separates what must be protected from what can be exposed to variation.
+The protected side is deliberately dull: reserves, redundancy, proven work, or commitments
+that keep a bad outcome from becoming terminal. The experimental side is varied and limited:
+small prototypes, conversations, applications, or investments whose upside can exceed the
+amount at risk. The point is separation. Mixing a fragile core with a speculative edge makes
+the whole structure a single bet.
+
+<Figure id="89.5" caption="The barbell keeps the core conservative while a smaller edge explores uneven upside.">
+  <Bars
+    className="block w-full min-w-[380px]"
+    items={[
+      { label: "protected base", value: 0.82, accent: true, valueLabel: "survival and reserves" },
+      { label: "limited experiments", value: 0.3, valueLabel: "many small tries" },
+    ]}
+  />
+</Figure>
+
+### Consequences should travel with decisions
+
+Antifragility is weakened when the person taking upside can pass a large downside to someone
+else. A manager who cannot be affected by a failure, a vendor paid before a system works, or a
+planner insulated from the cost of a bad forecast has little reason to notice fragility early.
+Put feedback and accountability near the decision. The goal is not punishment. It is to make
+the cost of a brittle choice visible to the people who can still change it.
+
+<Figure id="89.6" caption="When feedback reaches the decision maker, weak assumptions are harder to ignore.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "decision", label: "decision", x: 0.18, y: 0.5 },
+      { id: "exposure", label: "real exposure", x: 0.5, y: 0.2 },
+      { id: "outcome", label: "outcome", x: 0.82, y: 0.5 },
+      { id: "review", label: "review and repair", x: 0.5, y: 0.8 },
+    ]}
+    edges={[
+      { from: "decision", to: "exposure", label: "creates" },
+      { from: "exposure", to: "outcome", label: "shapes" },
+      { from: "outcome", to: "review", label: "reveals" },
+      { from: "review", to: "decision", kind: "reinforcing", label: "improves" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+Fragile, robust, and antifragile describe different responses to the same kind of disturbance.
+Fragility means that variation produces a loss larger than the system can absorb. Robustness
+means the system resists the disturbance and returns near where it began. Antifragility means
+the arrangement has a way to gain from the variation, usually through a bounded loss, a
+selection mechanism, or an option it can exercise after learning. The categories are local,
+not permanent labels. A person, organization, or tool can be antifragile in one exposure and
+dangerously fragile in another.
+
+<Figure id="89.7" caption="The same shock can damage, leave unchanged, or improve a system, depending on its exposure and response.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="fragile"
+    right="antifragile"
+    marker={0.5}
+    markerLabel="robust: absorbs the shock"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0, to: 0.32, label: "loses from disorder" },
+      { from: 0.68, to: 1, label: "can gain from variation", accent: true },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the nonrecoverable loss">
+For one consequential plan, write the outcome that would end your ability to continue: depleted
+cash, an unsafe release, a damaged relationship, or a contract with no exit. Add a limit,
+reserve, backup, or review point that prevents that outcome from being the price of one wrong
+assumption.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Turn one forecast into a small test">
+Choose a decision you are currently trying to predict. Replace one part of the prediction with
+a reversible trial that can be completed in days or weeks. Decide in advance what the loss limit
+is, what you will observe, and what result would justify a second, slightly larger attempt.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Build one option before you need it">
+Create a second route while the first route still works: meet another supplier, save a modest
+buffer, learn the first step of an adjacent skill, or draft an exit clause. The option need not
+be used. Its value is the room it creates when conditions change.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Separate the base from the experiment">
+Mark which commitments must remain dependable and which can be exploratory. Protect the first
+group from the volatility of the second. Then make the experimental group small enough that a
+failed attempt produces a lesson rather than a crisis.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Antifragile is not a license to seek danger, reject expertise, or call preventable harm a useful
+lesson. Many systems do not recover from stress, and the person exposed to the downside may not
+be the person celebrating the upside. Health, safety, and public policy need domain evidence,
+not a borrowed metaphor about useful stress. The framework is strongest as a question about
+exposure: who bears the loss, how large can it be, and does the arrangement preserve the chance
+to learn? It is weakest when it turns uncertainty into a romantic story or treats every
+intervention as suspect.
+</Callout>
+
+## If you remember one thing
+
+You cannot make an uncertain world predictable. You can make your important commitments harder
+to break, your experiments smaller and more informative, and your good surprises easier to keep.
+
+## Shelved nearby
+
+[Fooled by Randomness](/fooled-by-randomness) explains why a visible success may conceal the
+full field of losses. [The Black Swan](/black-swan) carries the same attention to ruin and
+unpredictable extremes. [The Lean Startup](/lean-startup) offers a practical loop for running
+small tests when the larger answer is still unknown.
+
+<ShelvedNearby
+  related={["fooled-by-randomness", "black-swan", "lean-startup"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/176227/antifragile-by-nassim-nicholas-taleb/hardcover/"
+  buyLabel="Antifragile by Nassim Nicholas Taleb"
+/>
