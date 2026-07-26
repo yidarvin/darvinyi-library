@@ -96,7 +96,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 079 | twelve-rules                    | 12 Rules for Life                             | DONE    |
 | 080 | feeling-good                    | Feeling Good                                  | DONE    |
 | 081 | homo-deus                       | Homo Deus                                     | DONE    |
-| 082 | cosmos                          | Cosmos                                        | PENDING |
+| 082 | cosmos                          | Cosmos                                        | DONE    |
 | 083 | brief-history-time              | A Brief History of Time                       | PENDING |
 | 084 | the-gene                        | The Gene                                      | PENDING |
 | 085 | why-nations-fail                | Why Nations Fail                              | PENDING |
