@@ -1,0 +1,225 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="emperor-maladies"
+  thesis="Cancer is not one enemy with one cure. It is a family of evolving diseases, and durable progress comes from learning how each one grows, testing care honestly, and making prevention and treatment reachable."
+  minutes={8}
+/>
+
+## The thesis
+
+<em>The Emperor of All Maladies</em> treats cancer as a long argument between an adaptable
+biological process and the people trying to understand it. Mukherjee's history does not end
+in a decisive victory. It shows why gains arrive through a patient mix of basic science,
+careful trials, prevention, earlier detection, and treatments fitted to particular cancers.
+The enduring lesson is humility with momentum: cancer can be controlled or cured in some
+settings, but every advance has to be earned against the disease in front of us.
+
+## Why it matters
+
+Cancer compresses several hard problems into one diagnosis. It is molecular biology inside
+a cell, uncertainty at a clinic visit, a test of whether research can learn from patients,
+and a public question about who can avoid risk or reach care in time. A history that keeps
+those layers together makes the subject less mysterious and makes easy promises harder to
+believe.
+
+## Cancer is a related family, not a single thing
+
+The singular word hides an unruly collection. Cancers begin in different tissues, acquire
+different changes, spread by different routes, and can respond very differently to the same
+treatment. What they share is a breakdown in the controls that normally govern cell growth,
+repair, and survival. That shared logic made cancer a scientific category. Its variation is
+why a universal cure has remained the wrong expectation.
+
+The useful question is therefore specific: what kind of cancer is this, what changes are
+driving it, how far has it spread, and what does that combination suggest about the next
+move? Molecular findings can unite cancers from different organs around one target, while
+two tumors from the same organ may demand different strategies. Precision begins by
+respecting the difference between a category and an individual case.
+
+<Figure id="87.1" caption="A cancer diagnosis sits where tissue, cell changes, local conditions, and time meet.">
+  <NodeGraph
+    className="block min-w-[420px]"
+    nodes={[
+      { id: "tissue", label: "tissue of origin", x: 0.13, y: 0.2 },
+      { id: "changes", label: "cell changes", x: 0.8, y: 0.18 },
+      { id: "context", label: "local environment", x: 0.82, y: 0.73 },
+      { id: "time", label: "time and spread", x: 0.15, y: 0.76 },
+      { id: "cancer", label: "this cancer\nright now", x: 0.5, y: 0.47 },
+    ]}
+    edges={[
+      { from: "tissue", to: "cancer", label: "shapes" },
+      { from: "changes", to: "cancer", label: "drives" },
+      { from: "context", to: "cancer", label: "influences" },
+      { from: "time", to: "cancer", label: "changes" },
+    ]}
+  />
+</Figure>
+
+## Treatment became a sequence of testable choices
+
+For much of history, cancer care meant cutting out what could be reached or easing symptoms
+when it could not. Surgery and radiation remain essential, but the twentieth century added
+drugs that could move through the body. Early chemotherapy was often brutal and frequently
+failed. Its importance was not a clean first success. It established that a systemic disease
+could sometimes be pushed into remission and that treatment had to be compared, measured,
+and revised rather than merely asserted.
+
+That shift created a discipline of combination and sequence. A treatment plan may use local
+control, drug therapy, radiation, surgery, monitoring, or newer targeted and immune-based
+approaches in an order suited to the cancer and the person. Each step has a purpose and a
+cost. The central achievement is not a catalog of therapies. It is a way of testing whether
+a proposed benefit is real and whether the harm is acceptable.
+
+<Figure id="87.2" caption="Cancer care turns a clinical question into an observed result, then updates the next decision.">
+  <Flow
+    className="block min-w-[620px]"
+    steps={[
+      "define the cancer and goal",
+      "choose a supported option",
+      "treat and watch response",
+      "learn from outcome",
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Progress depends on institutions that can learn
+
+The book's medical stories are also stories about organization. A promising observation in a
+ward becomes durable knowledge only when many people can test it, compare it with current
+care, share results, and change practice when the evidence holds. Randomized trials help
+separate a treatment effect from the understandable tendency to give the seemingly better
+option to the people who appear most likely to do well.
+
+This is why the history belongs to patients, nurses, statisticians, laboratory teams,
+community clinicians, advocates, and public institutions as much as celebrated doctors.
+Cooperative trial networks can enroll people in many places and answer questions too large
+for one hospital. Research is not an abstract race for a breakthrough. It is a social system
+for turning uncertainty into better care, with consent and safety as part of its design.
+
+<Figure id="87.3" caption="A medical advance becomes reliable through a loop of questions, trials, shared evidence, and changed care.">
+  <ProcessLoop
+    className="block min-w-[420px]"
+    stages={["clinical question", "study with safeguards", "shared evidence", "revised standard"]}
+    compoundingEdge={3}
+    centerLabel="learning system"
+  />
+</Figure>
+
+## Cancer evolves under pressure
+
+Treatment can produce a dramatic response while leaving behind a small population that can
+survive it. Some resistant cells were present before treatment. Others gain an advantage as
+the tumor changes, the drug reaches cells unevenly, or the surrounding tissue alters the
+conditions. The visible tumor can shrink while a harder problem is being selected in the
+background. Recurrence is not proof that treatment was pointless. It is evidence that the
+remaining cells differed in a way that matters.
+
+This evolutionary view explains why combinations, dose schedules, repeat testing, and new
+targets matter. It also sets a boundary on triumphal language. A response is meaningful, but
+it is not automatically a cure. The best plan does not simply hit the most cells today. It
+uses the best available evidence to pursue a durable benefit while taking toxicity and the
+person's goals seriously.
+
+<Figure id="87.4" caption="A treatment can reduce the visible tumor while resistant cells create the next problem.">
+  <Timeline
+    className="block min-w-[620px]"
+    segments={[
+      { label: "mixed tumor", sub: "cells differ" },
+      { label: "treatment", sub: "many cells stop growing" },
+      { label: "resistant remainder", sub: "some cells persist" },
+      { label: "next strategy", sub: "test, combine, adapt" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Winning is larger than a cure in the clinic
+
+The metaphor of a war makes a single final victory sound like the only result that counts.
+Cancer history argues for a broader ledger. Preventing an exposure, removing a precancerous
+lesion, detecting a cancer when a treatment can work, extending life with good quality, and
+reducing treatment harm are different forms of progress. They are also distributed unevenly.
+A powerful therapy has limited public value if cost, distance, insurance, distrust, or a
+missing specialist keeps it out of reach.
+
+The comparison changes what progress asks of a society. Biology is necessary, yet so are
+screening programs, tobacco control, data that reveal unequal outcomes, and care that people
+can actually use. The disease is cellular. The burden is shared.
+
+<Figure id="87.5" caption="The work of reducing cancer reaches beyond treatment into prevention, early detection, and equitable care.">
+  <Compare
+    className="block min-w-[420px]"
+    favor="right"
+    left={{
+      title: "a narrow scorecard",
+      points: ["a cure in one clinic", "one drug's response", "one moment of treatment"],
+    }}
+    right={{
+      title: "a durable scorecard",
+      points: ["fewer avoidable cancers", "earlier and fairer detection", "effective care and survivorship"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Ask a cancer claim to name its target">
+When a headline announces a cancer breakthrough, ask which cancer, which stage, which people,
+and what outcome changed. A trial can be important without applying to every diagnosis. A
+specific question keeps hope connected to evidence.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Use screening guidance that fits you">
+At a routine medical visit, ask which proven screening tests fit your age, history, and risk
+factors, and what the possible benefits and downsides are. Do not turn a general article into
+a personal schedule. Screening decisions belong with a qualified clinician who knows your
+context.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make prevention a systems question">
+Look beyond personal resolve. Support smoke-free spaces, vaccination and screening access,
+and workplaces that reduce known exposures. Prevention works best when the safer choice is
+also the easier one to make.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Bring a written question to a hard appointment">
+If you or someone close to you is facing cancer care, write down the diagnosis, the goal of
+each proposed treatment, the expected benefit, the main harms, and what would change the
+plan. Ask permission to record the answers or bring another person. Clear questions help a
+conversation carry more than anyone can remember under stress.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Cancer is neither one uniform enemy nor a contest won by effort alone. Many cancers cannot be
+prevented, and a diagnosis is not evidence that someone failed to live correctly. Screening
+can reduce deaths for certain cancers, but it also carries false-positive results,
+overdiagnosis, and overtreatment risks. Treatment can cure, control, or ease symptoms,
+depending on the disease and situation, and no page can choose a plan for an individual.
+Cancer outcomes also reflect unequal access to prevention, screening, diagnosis, treatment,
+and follow-up. Read a historical account as a guide to better questions, then take personal
+medical decisions to an oncology team or another qualified clinician.
+</Callout>
+
+## If you remember one thing
+
+Cancer has resisted a single final answer because it is many evolving diseases at once.
+Progress comes from refusing both despair and easy victory, then building the science, care,
+and public conditions that let more people benefit from what we learn.
+
+## Shelved nearby
+
+<em>The Gene</em> follows the molecular information that makes cancer research possible,
+while <em>Factfulness</em> offers a useful discipline for reading health progress without
+mistaking a real gain for a finished problem.
+
+<ShelvedNearby
+  related={["the-gene", "factfulness"]}
+  buyUrl="https://www.simonandschuster.com/books/The-Emperor-of-All-Maladies/Siddhartha-Mukherjee/9781439181713"
+  buyLabel="The Emperor of All Maladies by Siddhartha Mukherjee"
+/>

@@ -45,4 +45,5 @@ Every spine section present and in order; 4 to 7 key ideas each with an in-vocab
 diagram; the signature model rendered as the hero Model diagram (or Model section
 deliberately absent, noted in the registry); house voice with no em dashes and no AI
 tells; diagrams legible at 360px and captioned; cross-links resolve; `npm run check`
-passes; then flip `emperor-maladies` to done in the registry and DONE in the queue.
+passes; then mark `emperor-maladies` draft through `scripts/mark.py`. An independent
+critic may later approve it as done.
