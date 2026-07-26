@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, Iceberg, NodeGraph, Pyramid, Timeline } from "../components/diagrams";
+import { Compare, Iceberg, NodeGraph, ProcessLoop, Pyramid, Timeline } from "../components/diagrams";
 
 <Hero
   slug="homo-deus"
@@ -123,11 +123,12 @@ also concentrates influence in the choice of target, the data allowed in, and th
 for correction. The person affected by a loop needs more than a result. They need a way to
 see it, contest it, and change it.
 
-<Figure id="81.5" caption="Data matters politically when it repeatedly guides action and produces the next signal.">
-  <Flow
-    className="block min-w-[680px]"
-    steps={["collect signals", "build a model", "make a decision", "change conditions"]}
-    highlight={2}
+<Figure id="81.5" caption="A decision changes conditions, creating the signals collected in the next pass.">
+  <ProcessLoop
+    className="block min-w-[380px]"
+    stages={["collect signals", "build a model", "make a decision", "change conditions"]}
+    compoundingEdge={3}
+    centerLabel="feedback loop"
   />
 </Figure>
 
@@ -194,7 +195,7 @@ from novelty to the conditions of a fair public choice.
 <Callout kind="note">
 Read <em>Homo Deus</em> as a deliberately sharp future scenario, not as a timetable. Its
 opening contrast between old threats and new ambitions can make famine and infectious disease
-sound finished when their burdens remain grave and uneven. The 2025 <a href="https://www.fao.org/agrifood-economics/publications/detail/en/c/1740904/" target="_blank" rel="noopener noreferrer">UN food-security report</a> says the world is not on track to end hunger by 2030, and the World Health Organization reports that communicable diseases still kill millions each year. Nor is Dataism a scientific law or a settled description of mind. It is Harari's name for a tendency worth resisting or redirecting. His own <a href="https://www.ynharari.com/book/homo-deus/" target="_blank" rel="noopener noreferrer">book page</a> carries an errata notice. The lasting question is narrower and more useful: when a system knows a great deal, what authority should it have over a person?
+sound finished when their burdens remain grave and uneven. The 2025 <a href="https://www.fao.org/agrifood-economics/publications/detail/en/c/1740904/" target="_blank" rel="noopener noreferrer">UN food-security report</a> says the world is not on track to end hunger by 2030, and the <a href="https://apps.who.int/gb/ebwha/pdf_files/WHA77/A77_16-en.pdf" target="_blank" rel="noopener noreferrer">World Health Organization</a> reports that communicable diseases still kill millions each year. Nor is Dataism a scientific law or a settled description of mind. It is Harari's name for a tendency worth resisting or redirecting. His own <a href="https://www.ynharari.com/book/homo-deus/" target="_blank" rel="noopener noreferrer">book page</a> carries an errata notice. The lasting question is narrower and more useful: when a system knows a great deal, what authority should it have over a person?
 </Callout>
 
 ## If you remember one thing
@@ -210,6 +211,6 @@ Fast and Slow</em> explains why an apparently confident judgment still needs scr
 
 <ShelvedNearby
   related={["sapiens", "thinking-fast-and-slow"]}
-  buyUrl="https://www.ynharari.com/book/homo-deus/"
+  buyUrl="https://www.harpercollins.com/products/homo-deus-yuval-noah-harari"
   buyLabel="Homo Deus by Yuval Noah Harari"
 />

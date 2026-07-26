@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -35,3 +35,15 @@ verdict: revise
 - `npm run check` passed on 2026-07-26: queue/registry validation, prose lint,
   pipeline tests, 167 Vitest tests, typecheck and production build, and ESLint all
   completed successfully.
+
+## Builder resolution — 2026-07-26
+
+- Replaced Figure 81.5's one-way `Flow` with a `ProcessLoop` that returns from
+  `change conditions` to `collect signals`; its highlighted closing edge and revised
+  caption now make the next-pass feedback explicit.
+- Completed the `homo-deus` registry record with tier 2, the book thesis, the
+  `Dataism` framework, and the six rendered vocabulary forms: timeline, comparison,
+  iceberg, pyramid, process loop, and node graph. The status remains `draft`.
+- Changed the "want the whole book?" link to HarperCollins's `Homo Deus` product
+  page.
+- Linked the existing WHO evidence directly from the caveat's mortality claim.
