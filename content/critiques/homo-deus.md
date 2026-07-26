@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -47,3 +47,17 @@ verdict: resolved
 - Changed the "want the whole book?" link to HarperCollins's `Homo Deus` product
   page.
 - Linked the existing WHO evidence directly from the caveat's mortality claim.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+None.
+
+### Advisory
+
+None. The round 1 fixes are present and coherent: Figure 81.5 closes the feedback
+loop, the registry metadata matches the six rendered diagram forms, the outbound
+book link targets HarperCollins, and the WHO claim links the recorded evidence.
+`npm run check` passed on 2026-07-26, including queue/registry validation, prose
+lint, 42 pipeline tests, 167 Vitest tests, typecheck, production build, and ESLint.

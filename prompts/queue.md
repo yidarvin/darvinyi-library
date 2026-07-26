@@ -95,7 +95,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 078 | four-agreements                 | The Four Agreements                           | DONE    |
 | 079 | twelve-rules                    | 12 Rules for Life                             | DONE    |
 | 080 | feeling-good                    | Feeling Good                                  | DONE    |
-| 081 | homo-deus                       | Homo Deus                                     | PENDING |
+| 081 | homo-deus                       | Homo Deus                                     | DONE    |
 | 082 | cosmos                          | Cosmos                                        | PENDING |
 | 083 | brief-history-time              | A Brief History of Time                       | PENDING |
 | 084 | the-gene                        | The Gene                                      | PENDING |
