@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -88,3 +88,12 @@ Mechanical verification: `npm run check` passed on 2026-07-26 after this resolut
 None.
 
 Mechanical verification: `npm run check` passed on 2026-07-26.
+
+## Builder resolution — 2026-07-26
+
+Resolved every required finding from critique round 2.
+
+1. Compressed **The thesis** from six sentences to two. The revised carry-away keeps the scientific achievement, Henrietta Lacks's lack of consent, her identity as a Black woman, the family dimension, and racial and institutional power in one argument.
+2. Re-anchored the main privacy explanation in the book's human-scale question of how a specimen remains connected to a person and family. Added the explicit subheading **Post-book context: the HeLa genome**, which states that the 2013 genome-data release and descendant-privacy issue are subsequent history, not part of Skloot's 2010 account. The existing, separately labeled 2013 agreement remains a later-development example.
+
+Mechanical verification: `npm run check` passed on 2026-07-26 after this resolution.
