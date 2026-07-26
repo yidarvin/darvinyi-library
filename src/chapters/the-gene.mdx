@@ -1,0 +1,234 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="the-gene"
+  thesis="A gene is a durable source of biological information, not a complete script for a life, and learning to change it gives society both new remedies and new duties."
+  minutes={9}
+/>
+
+## The thesis
+
+<em>The Gene</em> follows a scientific idea as it becomes a social fact. Heredity moved from
+countable patterns in breeding experiments to molecules that can be read, compared, and in
+some cases altered. Mukherjee's central warning travels with the achievement: a gene can
+shape a trait or a risk, but it does not settle identity, worth, or fate. The closer biology
+gets to intervention, the more carefully knowledge, consent, access, and restraint have to
+be designed around it.
+
+## Why it matters
+
+Genetic information reaches beyond the person who receives it. A result can concern family
+members, future children, an insurer's interest, a clinician's next move, and a person's
+picture of themselves. That makes genomics more than a laboratory topic. It is a practical
+lesson in how a powerful explanation can be both illuminating and dangerously overextended.
+
+## The gene became a physical explanation
+
+Mendel could show that inherited traits sometimes follow regular patterns without seeing the
+thing being inherited. Later work tied those patterns to chromosomes, then to DNA, and then
+to a sequence that a cell can copy and use. Each step changed the question. Inheritance was
+no longer only a resemblance between generations. It became a material process that could be
+located, measured, and eventually sequenced.
+
+The history matters because it shows science replacing a useful abstraction with a more
+testable account, not arriving at a finished definition in one leap. A gene is still a
+working biological concept. Many genes help make proteins, some make functional RNA, and
+surrounding DNA helps determine when a sequence is used. The word remains powerful because
+it connects transmission across generations to activity inside a cell.
+
+<Figure id="84.1" caption="The idea of inheritance became progressively more physical, measurable, and actionable.">
+  <Timeline
+    className="block min-w-[480px]"
+    segments={[
+      { label: "inheritance patterns", sub: "Mendel's crosses" },
+      { label: "chromosomes", sub: "a cellular location" },
+      { label: "DNA sequence", sub: "a molecular record" },
+      { label: "genome reading", sub: "many variants at once" },
+      { label: "targeted editing", sub: "a possible intervention" },
+    ]}
+    highlight={4}
+  />
+</Figure>
+
+## A sequence works only when a cell uses it
+
+DNA is often described as a blueprint, which is useful until it suggests that every cell is
+following one fixed construction plan. A cell carries DNA, but it also decides, through a
+crowd of molecular controls, which pieces to copy into RNA and which proteins or functional
+RNAs to make. A liver cell and a neuron largely share a genome while doing very different
+work. Timing, location, and amount matter as much as the letters in a sequence.
+
+This turns the gene from a lone command into one participant in a living process. A sequence
+can alter a protein, a regulatory region can alter its production, and the resulting change
+can matter differently in different tissues and circumstances. The right question is rarely
+"Which gene made this happen?" More often it is, "Which biological path changed, where, and
+under what conditions?"
+
+<Figure id="84.2" caption="DNA supplies information, while gene expression determines when that information does work in a cell.">
+  <Flow
+    className="block min-w-[520px]"
+    steps={[
+      "DNA sequence",
+      "RNA copied in this cell",
+      "protein or functional RNA",
+      "cell activity",
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Inheritance is a network, not a verdict
+
+Some conditions arise from a single altered gene with a strong and predictable effect. Many
+human traits and common diseases do not. They emerge from many genetic variants, development,
+environment, chance, and the way those influences meet over time. A genetic association can
+be medically useful without becoming a prophecy. Risk is a change in odds, and even a result
+with a clear biological meaning may leave open when symptoms appear, how severe they are, or
+what will help.
+
+That distinction protects both precision and humility. It lets a family use a well-supported
+test result for screening or treatment while refusing the familiar slide from biological
+difference to a ranking of people. Genes contribute to a life. They do not contain the whole
+of one.
+
+<Figure id="84.3" caption="An observed trait comes from interacting influences, not from a gene acting alone.">
+  <NodeGraph
+    className="block min-w-[420px]"
+    nodes={[
+      { id: "genes", label: "genetic variants", x: 0.16, y: 0.16 },
+      { id: "development", label: "development", x: 0.78, y: 0.15 },
+      { id: "environment", label: "environment", x: 0.84, y: 0.7 },
+      { id: "chance", label: "chance events", x: 0.17, y: 0.75 },
+      { id: "trait", label: "observed trait\nor health outcome", x: 0.5, y: 0.47 },
+    ]}
+    edges={[
+      { from: "genes", to: "trait", label: "contributes" },
+      { from: "development", to: "trait", label: "shapes" },
+      { from: "environment", to: "trait", label: "changes conditions" },
+      { from: "chance", to: "trait", label: "adds variation" },
+    ]}
+  />
+</Figure>
+
+## Reading a genome creates evidence, not certainty
+
+Sequencing made it possible to inspect enormous stretches of DNA at once. That is a genuine
+change in capability. It can identify variants behind rare disorders, guide some cancer care,
+and make research across populations more detailed. It can also produce a finding whose
+meaning is unknown, a risk estimate that is modest, or a result that matters only alongside
+family history and clinical evidence.
+
+The mature use of a genetic result is therefore interpretive. It asks how reliable the test
+is, what the variant is known to do, who was represented in the research, and what decision
+the information could reasonably change. The result belongs beside symptoms, records,
+relatives' histories, and a person's own priorities. Data becomes useful when it improves a
+decision, not when it merely makes a person feel categorized.
+
+<Figure id="84.4" caption="A genetic result can inform a decision, but it is not a complete prediction of a person's future.">
+  <Compare
+    className="block min-w-[420px]"
+    favor="left"
+    left={{
+      title: "a useful result",
+      points: ["has a defined question", "fits clinical and family context", "can guide a next step", "states its uncertainty"],
+    }}
+    right={{
+      title: "a genetic verdict",
+      points: ["claims to explain a whole person", "ignores other evidence", "pretends risk is fate", "hides who may be harmed"],
+    }}
+  />
+</Figure>
+
+## Editing changes the moral boundary of an intervention
+
+The ability to edit DNA makes the earlier history feel immediate. The most defensible uses
+begin with a concrete disease problem in a consenting patient, a plausible biological target,
+and careful follow-up. Some treatments alter a person's own cells and return them to that
+person. Their effects are limited to that patient, even when the procedure is demanding and
+risky. Alterations intended for eggs, sperm, or embryos raise a different question because a
+change could be inherited by people who could not consent.
+
+The boundary is not a slogan about being for or against technology. It is a way to keep
+several questions visible at once: what outcome is sought, how confident is the biology, who
+bears the risk, who chooses, and who gains access. Treatment and enhancement can blur at the
+edges, but they should never be allowed to blur accountability.
+
+<Figure id="84.5" caption="Editing one patient's cells and altering an inherited lineage create different circles of consequence.">
+  <Spectrum
+    className="block min-w-[420px]"
+    left="somatic treatment"
+    right="heritable alteration"
+    marker={0.28}
+    markerLabel="patient cells"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.0, to: 0.42, label: "effects stay with the treated person", accent: true },
+      { from: 0.58, to: 1.0, label: "effects may reach future people" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Turn a genetic claim into a precise question">
+When you see a headline about a "gene for" a behavior or condition, rewrite it as a question.
+Is this a single-gene disorder, a variant associated with risk, or a result found in a small
+study? Then ask what the result actually predicts and for whom. Specificity is the quickest
+antidote to genetic fatalism.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Decide what information could change">
+Before seeking a genetic test, name the decision it might affect: screening, treatment,
+family planning, or simply whether to learn a fact. If the answer is unclear, pause. A
+clinician or genetic counselor can help set expectations about what a particular result can
+and cannot answer.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Treat family data as shared information">
+Your DNA is personal, but it can reveal something about relatives. Before sharing a result,
+consider who may be affected, what they have consented to know, and how securely the data is
+being stored. Privacy is part of the scientific question, not paperwork after it.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Ask who is protected before applauding an edit">
+When a new gene-editing treatment appears, list the disease target, the people who can
+receive it, the harms being monitored, the cost, and the appeals or oversight available.
+Technical elegance is not enough. A medical advance earns trust through its safeguards and
+its distribution.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Genes are neither destiny nor a blank slate. Some genetic findings have strong consequences,
+while many traits and common conditions involve many variants and non-genetic influences.
+That uncertainty has ethical force. The history of eugenics shows how an inaccurate,
+prejudiced reading of inheritance was used to rank people and justify coercion. Genetic
+testing also has practical limits: a positive result may not predict whether a disease will
+appear or how severe it will be, and U.S. protections against genetic discrimination do not
+cover every kind of insurance. Genome editing deserves the same care. The World Health
+Organization notes that exact outcomes can be difficult to predict in both somatic and
+heritable applications, while current gene therapies can involve substantial preparatory
+treatment and follow-up. Read the science as a source of questions and possible care, never
+as permission to reduce a person to a sequence.
+</Callout>
+
+## If you remember one thing
+
+The gene is one of biology's most powerful explanations because it links generations to
+cells. It becomes dangerous when explanation is mistaken for destiny, or when the power to
+change DNA outruns the duties owed to the people living with the consequences.
+
+## Shelved nearby
+
+<em>Homo Deus</em> extends the question from genetic intervention to the politics of human
+enhancement, while <em>Cosmos</em> offers the wider scientific perspective in which biology
+is one local, living chapter.
+
+<ShelvedNearby
+  related={["homo-deus", "cosmos"]}
+  buyUrl="https://bookshop.org/p/books/the-gene-an-intimate-history-siddhartha-mukherjee/12241880"
+  buyLabel="The Gene by Siddhartha Mukherjee"
+/>
