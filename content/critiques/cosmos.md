@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-26
 
@@ -41,3 +41,24 @@ verdict: resolved
 - Completed the `cosmos` registry record with tier, thesis, an explicit statement that
   the book has no single signature framework and therefore no Model section, and the
   five diagram forms rendered by the chapter. Its status remains `draft`.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+1. Figure 82.1 now has the right structure, but its far-galaxy labels teach an
+   inaccurate distance-to-lookback conversion. At `src/chapters/cosmos.mdx:41-47`,
+   “10b ly away” is paired with “light: 10b y.” That near one-to-one conversion is a
+   useful approximation for the nearby star and Andromeda, but it is not generally
+   valid at cosmological distances because space expands while the light travels.
+   The evidence record also does not identify a distance convention or source for
+   this exact pair. Since the figure exists to teach how distance relates to the age
+   of the view, the ambiguity changes the reader's understanding rather than merely
+   simplifying a side detail. Replace the far example with labels that state
+   lookback time without equating it to present distance, use an example where the
+   approximation is defensible, or document and label the intended cosmological
+   distance measure precisely.
+
+### Advisory
+
+- None.
