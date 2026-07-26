@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -40,3 +40,26 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-26
+
+1. Corrected the credited author line everywhere this book's metadata is maintained:
+   the registry subtitle now supplies the Hero byline as Hans Rosling, Ola Rosling, and
+   Anna Rosling Rönnlund; the brief and `_books.py` source metadata match it; and the
+   existing publisher evidence now records the full credit explicitly.
+
+2. Replaced Figure 86.3's S-curve with the reusable annotated-curve `peak` variant.
+   Its labels show slowing growth, the recorded UN projection of a mid-2080s peak, and
+   the subsequent modest decline. The caption identifies it as an illustrative
+   trajectory rather than a data plot. The vocabulary now documents the new variant.
+
+3. Replaced Figure 86.4's arbitrary magnitude bars with an in-vocabulary flow. It
+   keeps one reported count intact and shows the actual contextualizing operations:
+   compare another case, divide by the relevant denominator, then check the trend and
+   largest contributors. The wide intrinsic flow is preserved by the figure's mobile
+   overflow wrapper rather than shrinking its labels.
+
+4. Completed the draft registry entry with the brief-supported tier, thesis, ten-
+   instincts framework, and the six rendered diagram forms in page order: spectrum,
+   iceberg, annotated curve, flow, node graph, and comparison. The chapter remains
+   `draft`; it has not been marked done.

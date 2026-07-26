@@ -1,6 +1,6 @@
 # Factfulness
 
-- **Author:** Hans Rosling
+- **Author:** Hans Rosling, Ola Rosling, and Anna Rosling Rönnlund
 - **Year:** 2018
 - **Shelf:** Big Ideas: Science, History & Society
 - **Tier:** 2

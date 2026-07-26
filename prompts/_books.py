@@ -447,7 +447,7 @@ BOOKS = [
          shelf="Big Ideas: Science, History & Society", tier=2,
          thesis="Prosperity depends on inclusive institutions that share power and opportunity, while extractive ones keep nations poor.",
          model="Inclusive vs. extractive institutions", flag=""),
-    dict(id="factfulness", title="Factfulness", author="Hans Rosling", year=2018,
+    dict(id="factfulness", title="Factfulness", author="Hans Rosling, Ola Rosling, and Anna Rosling Rönnlund", year=2018,
          shelf="Big Ideas: Science, History & Society", tier=2,
          thesis="The world is better than we think, and our gloom comes from instincts that a fact-based worldview can correct.",
          model="Ten instincts", flag=""),

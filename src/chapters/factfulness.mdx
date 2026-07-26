@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Bars, Compare, Curve, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+import { Compare, Curve, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="factfulness"
@@ -80,15 +80,15 @@ peak around the middle of the 2080s. The lesson is not to replace one forecast w
 one. It is to ask what mechanism bends the line: age structure, incentives, technology,
 capacity, or a physical limit.
 
-<Figure id="86.3" caption="Many social changes bend, level off, or reverse; a straight-line guess is only a starting hypothesis.">
+<Figure id="86.3" caption="The UN projection peaks in the mid-2080s and then turns slightly downward; this is an illustrative trajectory, not a data plot.">
   <Curve
     className="block w-full min-w-[400px]"
-    shape="s"
+    shape="peak"
     axes={{ x: "time", y: "total population" }}
     annotations={[
-      { x: 0.2, y: 0.04, text: "slow start" },
-      { x: 0.53, y: 0.58, text: "rapid change" },
-      { x: 0.88, y: 0.99, text: "check for a ceiling", labelPosition: "below" },
+      { x: 0.45, y: 0.79, text: "growth slows" },
+      { x: 0.72, y: 0.92, text: "projected peak: mid-2080s" },
+      { x: 0.93, y: 0.85, text: "then a modest decline", labelPosition: "below" },
     ]}
   />
 </Figure>
@@ -102,14 +102,15 @@ is the book's practical answer to a number that arrives without context: compare
 and find the largest contributors before assigning it importance.
 
 <Figure id="86.4" caption="The same count becomes interpretable only after a comparison, a denominator, and a trend are added.">
-  <Bars
-    className="block w-full min-w-[400px]"
-    items={[
-      { label: "raw count", value: 0.9, valueLabel: "attention" },
-      { label: "per person", value: 0.52, valueLabel: "scale" },
-      { label: "share of total", value: 0.31, valueLabel: "priority", accent: true },
-      { label: "change over time", value: 0.68, valueLabel: "direction" },
+  <Flow
+    className="block w-full min-w-[538px]"
+    steps={[
+      "reported count",
+      "compare with another case",
+      "divide by the relevant denominator",
+      "check the trend and largest contributors",
     ]}
+    highlight={2}
   />
 </Figure>
 
