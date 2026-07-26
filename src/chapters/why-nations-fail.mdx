@@ -1,0 +1,240 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Matrix, NodeGraph, Timeline, Venn } from "../components/diagrams";
+
+<Hero
+  slug="why-nations-fail"
+  thesis="Prosperity lasts when power is broad enough to protect opportunity and constrained enough that no small group can turn the economy into its private preserve."
+  minutes={9}
+/>
+
+## The thesis
+
+Acemoglu and Robinson argue that national prosperity is political before it is technical.
+A society can have fertile land, talented people, useful inventions, and access to trade, then
+still leave most of that potential idle when a narrow group can take the gains and block
+rivals. Institutions that distribute political power, uphold predictable rules, and leave
+room for people to enter, compete, and invent make broad-based growth more likely. Institutions
+that concentrate power can produce wealth for a time, but they give powerful people a reason to
+preserve control even when the wider economy pays the price.
+
+## Why it matters
+
+The question sounds like an argument about poor countries, but it is really about the rules
+behind every economy. A factory, a new business, or a school system does not work in a vacuum.
+Someone decides who can own assets, enforce a contract, start a firm, organize politically, or
+challenge a bad decision. The book redirects attention from a country's apparent traits to the
+institutions that shape those choices. That does not turn history into a one-variable story. It
+does make power visible in explanations that otherwise sound neutral.
+
+## Key ideas
+
+## Economic rules follow political power
+
+Economic institutions are the practical rules of a society: who may work, own, trade, borrow,
+and build. Political institutions determine who gets to write and enforce those rules. The two
+are related, but they are not identical. A constitution can offer elections while a connected
+few still control permits, credit, land, or courts. Conversely, an open market without durable
+limits on political power remains exposed to capture. The book's central move is to begin with
+this connection. Ask who has power, how they keep it, and what economic rules that power makes
+likely.
+
+<Figure id="85.1" caption="Political rules allocate decision-making power; economic rules allocate access to opportunity.">
+  <Compare
+    className="block w-full min-w-[400px]"
+    favor="none"
+    left={{
+      title: "political institutions",
+      points: ["who can participate", "who can check leaders", "how authority changes hands", "which claims courts enforce"],
+    }}
+    right={{
+      title: "economic institutions",
+      points: ["who can own and trade", "who may enter a market", "how contracts are protected", "who receives the gains"],
+    }}
+  />
+</Figure>
+
+## Extraction can become self-protecting
+
+An extractive arrangement is not simply an unfair outcome. It is a system in which power lets a
+narrow group direct resources toward itself, then use the resulting wealth, offices, coercion,
+or patronage to secure more power. That feedback explains persistence. If a reform threatens a
+monopoly, a labor system, or an elite's political position, the people benefiting from the old
+arrangement may rationally oppose a change that would raise total prosperity. The issue is not
+whether the change has value for society. It is whether the people able to stop it would lose
+their privileged position.
+
+<Figure id="85.2" caption="When concentrated power finances its own defense, extraction can reproduce itself.">
+  <NodeGraph
+    className="block w-full min-w-[400px]"
+    nodes={[
+      { id: "power", label: "concentrated political power", x: 0.5, y: 0.08 },
+      { id: "rules", label: "rules favor insiders", x: 0.88, y: 0.46 },
+      { id: "rents", label: "rents and patronage", x: 0.5, y: 0.9 },
+      { id: "voice", label: "weakened outside voice", x: 0.12, y: 0.46 },
+    ]}
+    edges={[
+      { from: "power", to: "rules", kind: "reinforcing" },
+      { from: "rules", to: "rents", kind: "reinforcing" },
+      { from: "rents", to: "power", kind: "reinforcing" },
+      { from: "power", to: "voice", kind: "balancing", label: "limits" },
+    ]}
+  />
+</Figure>
+
+## Inclusion needs both access and a referee
+
+Calling an institution inclusive does not mean every result is equal or every decision is
+popular. It means people beyond a narrow ruling circle can use their abilities under rules that
+are sufficiently secure and widely applied. Property rights matter here, but so do public goods,
+competition, education, and a state capable of enforcing ordinary rules. A weak state cannot
+reliably protect a contract or prevent local predation. An unchecked state can become the
+predator. The useful target is neither absence of power nor unlimited power. It is authority
+that can do common work and can be contested when it overreaches.
+
+<Figure id="85.3" caption="Broad opportunity depends on a capable state and constraints that keep its power answerable.">
+  <Matrix
+    className="block w-full min-w-[400px]"
+    xAxis={{ left: "narrow power", right: "broad power", label: "who can influence rules" }}
+    yAxis={{ low: "weak capacity", high: "strong capacity", label: "ability to enforce rules" }}
+    quadrants={[
+      { title: "despotic state", note: "rules can be imposed, not checked" },
+      { title: "inclusive potential", note: "capacity joined to constraints" },
+      { title: "fragmented capture", note: "few checks and little reach" },
+      { title: "contested weakness", note: "voice without reliable enforcement" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Innovation has political losers
+
+New tools and businesses create gains, but they also rearrange status, profits, and control.
+The book calls this creative destruction: the process by which a new way of doing something
+displaces an old one. An incumbent whose wealth or authority depends on the old arrangement may
+block the new one even when many people would benefit. Inclusive institutions do not make this
+conflict disappear. They make it harder for one threatened group to veto change for everyone
+else. That is why the authors treat political pluralism as an economic condition, not a civic
+ornament.
+
+<Figure id="85.4" caption="New capability becomes durable growth only when a threatened incumbent cannot veto it alone.">
+  <Venn
+    className="block w-full min-w-[380px]"
+    sets={[
+      { label: "new ideas\nand entrants" },
+      { label: "rules that limit\nprivate vetoes" },
+    ]}
+    intersectionLabel="room for\nproductive change"
+  />
+</Figure>
+
+## History opens windows, not destinies
+
+Wars, trade shifts, technological changes, epidemics, revolutions, and colonial encounters can
+all disrupt an existing order. The authors call such periods critical junctures because small
+differences in organization and power can then send societies along different paths. A disruption
+does not automatically create better institutions. It creates a contest over the new rules.
+Past arrangements matter because they shape who has resources, allies, and legitimacy when the
+window opens. The lesson is path dependence, not fatalism: inherited institutions tilt the odds,
+while conflict and coalition-building still decide what happens next.
+
+<Figure id="85.5" caption="A disruption opens a contest over rules; the resulting path can reinforce either broader access or renewed extraction.">
+  <Timeline
+    className="block w-full min-w-[520px]"
+    segments={[
+      { label: "existing power", sub: "rules and coalitions already in place" },
+      { label: "disruption", sub: "a critical juncture" },
+      { label: "contest over rules", sub: "who can organize and bargain" },
+      { label: "new path", sub: "institutions then shape the next contest" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## The Model
+
+The inclusive versus extractive distinction is a way to inspect a system, not a country label
+to stamp on forever. Start with political institutions: are power and enforcement concentrated,
+or are they plural and constrained? Then inspect economic institutions: do the rules make room
+for many people to invest, exchange, and create, or do they channel opportunity toward insiders?
+The two sides tend to support themselves. Inclusive political rules make broad economic access
+more defensible. Extractive political rules make selective economic privilege easier to maintain.
+The model's value is diagnostic. It tells you to look for the feedback between power, rules, and
+opportunity rather than treating an outcome as self-explaining.
+
+<Figure id="85.6" caption="The model contrasts two reinforcing arrangements: one spreads power and opportunity, the other concentrates both.">
+  <Compare
+    className="block w-full min-w-[400px]"
+    favor="left"
+    left={{
+      title: "inclusive institutions",
+      points: ["power is contested and bounded", "rules reach beyond insiders", "entry and experimentation are possible", "gains can support wider participation"],
+    }}
+    right={{
+      title: "extractive institutions",
+      points: ["power is concentrated", "rules protect favored groups", "entry threatens incumbents", "rents help preserve control"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Map who writes the rules">
+Choose one outcome you care about, such as housing supply, school access, licensing, or a
+workplace promotion process. List the people who make the rules, those who enforce them, and
+those who bear the result. A gap between the last group and the first two is a place to look for
+extraction or exclusion.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Follow one barrier to entry">
+Pick a field where new people or new firms struggle to enter. Trace one barrier backward: a
+permit, exclusive contract, financing rule, zoning decision, credential, or informal network.
+Ask what purpose it serves, who benefits from it, and who has the authority to change it. The
+point is not to assume every rule is corrupt. It is to make its distributional effects visible.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Test a reform against the veto question">
+For a proposed reform, name the broad benefit, then name the group that might lose money,
+status, or control. What formal and informal power does that group hold? A plan that ignores
+this question may describe a good policy while missing the politics that determines whether it
+survives.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Look for capacity and accountability together">
+When evaluating a public institution, avoid asking only whether it is large or small. Can it
+enforce fair rules and deliver basic services? Can people challenge abuse, organize, and replace
+leaders without violence? Capacity without accountability can extract. Accountability without
+capacity can leave rights on paper.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The framework is strongest as a way to ask political questions, not as a universal scorecard.
+Institutions are difficult to measure, and they interact with geography, disease, technology,
+war, international power, and local history. One influential empirical route behind the argument
+uses historical European settler mortality to study colonial institutions. David Albouy identified
+substantial problems in parts of those mortality data and argued that the resulting estimates were
+not robust; Acemoglu, Johnson, and Robinson replied with different data decisions and robustness
+tests. That exchange does not make institutions irrelevant. It shows why a large historical claim
+should rest on multiple kinds of evidence and why a national label should never replace close
+attention to a particular place and period.
+</Callout>
+
+## If you remember one thing
+
+Prosperity is more durable when people can take part in making and challenging the rules that
+govern opportunity. The decisive question is not simply whether an economy grows, but who has
+the power to keep its gains, block its changes, and rewrite its rules.
+
+## Shelved nearby
+
+Guns, Germs, and Steel examines the ecological and historical conditions that shape unequal
+power, where this book emphasizes the political institutions that direct it. Sapiens is nearby
+for its account of the shared stories and institutions that let large groups coordinate.
+
+<ShelvedNearby
+  related={["guns-germs-steel", "sapiens"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/205014/why-nations-fail-by-daron-acemoglu-and-james-a-robinson/"
+  buyLabel="Why Nations Fail by Daron Acemoglu and James A. Robinson"
+/>
