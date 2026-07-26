@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -81,3 +81,11 @@ None.
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-26
+
+1. Recounted the final rendered chapter using the recorded critique evidence: 1,077
+   reader-visible words after imports and JSX are removed. At approximately 200 words
+   per minute, rounding up yields a 6-minute distillation, so the Factfulness Hero
+   badge now uses `minutes={6}`. The chapter remains `draft`; it has not been marked
+   done.
