@@ -100,7 +100,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 083 | brief-history-time              | A Brief History of Time                       | DONE    |
 | 084 | the-gene                        | The Gene                                      | DONE    |
 | 085 | why-nations-fail                | Why Nations Fail                              | DONE    |
-| 086 | factfulness                     | Factfulness                                   | PENDING |
+| 086 | factfulness                     | Factfulness                                   | DONE    |
 | 087 | emperor-maladies                | The Emperor of All Maladies                   | PENDING |
 | 088 | henrietta-lacks                 | The Immortal Life of Henrietta Lacks          | PENDING |
 | 089 | antifragile                     | Antifragile                                   | PENDING |

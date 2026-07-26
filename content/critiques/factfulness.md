@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -89,3 +89,13 @@ None.
    per minute, rounding up yields a 6-minute distillation, so the Factfulness Hero
    badge now uses `minutes={6}`. The chapter remains `draft`; it has not been marked
    done.
+
+## Critique round 3 — 2026-07-26
+
+### Required
+
+None.
+
+### Advisory
+
+None.
