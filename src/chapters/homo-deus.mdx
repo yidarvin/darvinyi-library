@@ -1,0 +1,215 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Pyramid, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="homo-deus"
+  thesis="When humans can alter bodies, delegate judgment, and organize life through data, the urgent question is not what technology can do, but who gets to decide what it should do."
+  minutes={8}
+/>
+
+## The thesis
+
+Harari treats the decline of some old mass threats as a change in the human agenda. A
+species that once concentrated on surviving hunger, infection, and violence may turn its
+resources toward longer lives, engineered bodies, greater pleasure, and more capable
+machines. The book's unsettling claim is that these projects can also displace the human
+being as the final judge. If algorithms become better at prediction and allocation, a
+culture organized around human feelings and choices may begin to hand authority to systems
+that process more data than any person can hold.
+
+## Why it matters
+
+This is not a manual for predicting a date when machines take over. It is a way to notice
+where decisions are already being delegated: a recommendation decides what appears next, a
+score opens or closes an opportunity, and a medical model changes which question a clinician
+asks. The book makes power visible at the point where convenience becomes authority.
+
+## Success changes the list of problems
+
+A society's ambitions are shaped by what it has learned to manage. Harari begins from a
+historical shift: famine, epidemics, and war remain grave realities, but many states now
+treat them as risks to contain rather than fixed laws of life. That success can redirect
+attention. The new projects are enhancement projects, such as extending healthy life,
+raising cognitive capacity, and designing organisms rather than merely adapting to them.
+They are not automatically humane because they sound medical or technical. The same
+capacity can repair a body, sort bodies into classes, or make a costly preference feel
+inevitable.
+
+<Figure id="81.1" caption="As some dangers become more manageable, attention can move from survival toward enhancement.">
+  <Timeline
+    className="block min-w-[480px]"
+    segments={[
+      { label: "survive", sub: "food, disease, security" },
+      { label: "manage risk", sub: "public systems and science" },
+      { label: "enhance", sub: "longevity, capability, design" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Humanism puts experience in the judge's chair
+
+The book calls the modern authority of inner experience humanism. In this picture, a good
+life is not found by obedience to a cosmic order. It is assessed through felt experience,
+individual choice, and human rights. Harari's point is that this arrangement made sense
+when people were the most capable interpreters of their own preferences. A system that can
+infer a person's sleep, health, taste, attention, and habits may claim it can decide better.
+The shift is dangerous precisely because it can arrive as help. Advice becomes default;
+the default becomes a decision made elsewhere.
+
+<Figure id="81.2" caption="The tension is over the final judge: lived experience or an optimizing system.">
+  <Compare
+    className="block min-w-[400px]"
+    favor="none"
+    left={{
+      title: "humanist authority",
+      points: ["experience is evidence", "choice carries moral weight", "institutions answer to people"],
+    }}
+    right={{
+      title: "algorithmic authority",
+      points: ["prediction draws on many signals", "defaults can steer choice", "systems can set the terms"],
+    }}
+  />
+</Figure>
+
+## The self can be measured without being settled
+
+Harari presses a reductionist metaphor: organisms can be studied as information-processing
+systems. Biology does use signals, feedback, and chemical mechanisms, and measurement can
+reveal patterns a person misses. But a useful description is not a complete moral account.
+A biometric trace may register stress without explaining its cause. A preference model can
+predict a click without deciding whether the click was wise, free, or worth pursuing. The
+book is strongest here as a prompt to separate what a system can measure from what it is
+entitled to decide.
+
+<Figure id="81.3" caption="A measured signal is visible, while meaning and consent remain beneath the reading.">
+  <Iceberg
+    className="block min-w-[440px]"
+    above="a score or prediction"
+    waterlineLabel="what a system can record"
+    below={["context and history", "values and purposes", "consent and accountability"]}
+  />
+</Figure>
+
+## Enhancement can turn equality into a distribution problem
+
+New capabilities do not spread by magic. They depend on capital, institutions, expertise,
+and political choices. Harari worries that a technology that improves bodies or minds could
+create a sharper divide than earlier economic gaps, especially if a small group controls
+the tools and their benefits accumulate. The relevant question is not whether an advance is
+good in the abstract. Ask who can access it, who is exposed to its mistakes, who owns the
+resulting data, and what recourse exists when a classification harms someone.
+
+<Figure id="81.4" caption="A capability rests on access, governance, and accountability, not on the device alone.">
+  <Pyramid
+    className="block min-w-[380px]"
+    tiers={[
+      { label: "public access", note: "who can benefit" },
+      { label: "rules and oversight", note: "who sets limits" },
+      { label: "technical capability", note: "what can be built" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+## Data gains force when it joins a feedback loop
+
+Data is not power because a spreadsheet exists. It becomes power when collection feeds a
+model, the model guides a decision, and that decision changes the behavior that produces the
+next round of data. A map can route a driver, a feed can shape attention, and a risk score
+can change who receives a loan or a visit from an inspector. Each loop can be useful. It
+also concentrates influence in the choice of target, the data allowed in, and the mechanism
+for correction. The person affected by a loop needs more than a result. They need a way to
+see it, contest it, and change it.
+
+<Figure id="81.5" caption="Data matters politically when it repeatedly guides action and produces the next signal.">
+  <Flow
+    className="block min-w-[680px]"
+    steps={["collect signals", "build a model", "make a decision", "change conditions"]}
+    highlight={2}
+  />
+</Figure>
+
+## The Model
+
+Dataism is Harari's name for a possible reversal of authority. Instead of treating human
+experience as the source of meaning and systems as tools, it treats the efficient movement
+and analysis of information as the central good. That is a diagnosis of a cultural tendency,
+not an instruction to obey data. The model helps locate the point of responsibility: people
+choose the sensors, the categories, the objective, the action, and the appeals process.
+Leaving any of those choices unnamed makes an institution look more neutral than it is.
+
+<Figure id="81.6" caption="Dataism turns a chain of human choices into a loop that can begin to govern its own inputs.">
+  <NodeGraph
+    className="block min-w-[380px]"
+    nodes={[
+      { id: "signals", label: "tracked signals", x: 0.5, y: 0.08 },
+      { id: "model", label: "model", x: 0.85, y: 0.42 },
+      { id: "decision", label: "decision", x: 0.7, y: 0.86 },
+      { id: "behavior", label: "changed behavior", x: 0.18, y: 0.78 },
+      { id: "values", label: "human values", x: 0.1, y: 0.34 },
+    ]}
+    edges={[
+      { from: "signals", to: "model", kind: "reinforcing" },
+      { from: "model", to: "decision", kind: "reinforcing" },
+      { from: "decision", to: "behavior", kind: "reinforcing" },
+      { from: "behavior", to: "signals", kind: "reinforcing" },
+      { from: "values", to: "model", label: "sets the goal", labelOffset: { x: 0, y: -10 } },
+      { from: "values", to: "decision", label: "sets limits", labelOffset: { x: -8, y: 8 } },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the decision behind the recommendation">
+The next time an app recommends, ranks, routes, or filters something for you, write down
+the actual decision it is making. Then ask which outcome it appears to optimize: speed,
+revenue, engagement, safety, or something else. A recommendation is easier to evaluate when
+its target is stated plainly.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Trace one feedback loop">
+Pick a system at work, school, or home that collects information. Identify what it records,
+what action follows, and how that action changes future records. Look for the missing voice:
+the person affected who cannot see, correct, or appeal the process.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Keep a human checkpoint">
+For a consequential choice, decide in advance what should never be delegated without review.
+It might be a hiring rejection, a medical recommendation, a credit decision, or a classroom
+placement. Define the evidence a person should inspect and the reason they must be able to
+give.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Ask an access question before an enhancement question">
+When you hear about a new health, education, or AI capability, start with distribution. Who
+can use it, who pays for it, who bears errors, and who can opt out? This moves the discussion
+from novelty to the conditions of a fair public choice.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Read <em>Homo Deus</em> as a deliberately sharp future scenario, not as a timetable. Its
+opening contrast between old threats and new ambitions can make famine and infectious disease
+sound finished when their burdens remain grave and uneven. The 2025 <a href="https://www.fao.org/agrifood-economics/publications/detail/en/c/1740904/" target="_blank" rel="noopener noreferrer">UN food-security report</a> says the world is not on track to end hunger by 2030, and the World Health Organization reports that communicable diseases still kill millions each year. Nor is Dataism a scientific law or a settled description of mind. It is Harari's name for a tendency worth resisting or redirecting. His own <a href="https://www.ynharari.com/book/homo-deus/" target="_blank" rel="noopener noreferrer">book page</a> carries an errata notice. The lasting question is narrower and more useful: when a system knows a great deal, what authority should it have over a person?
+</Callout>
+
+## If you remember one thing
+
+Power does not move to data by itself. It moves when people treat a measurement or prediction
+as a reason to decide without naming the values, limits, and accountability that should still
+belong to people.
+
+## Shelved nearby
+
+<em>Sapiens</em> supplies the earlier story of shared human systems, while <em>Thinking,
+Fast and Slow</em> explains why an apparently confident judgment still needs scrutiny.
+
+<ShelvedNearby
+  related={["sapiens", "thinking-fast-and-slow"]}
+  buyUrl="https://www.ynharari.com/book/homo-deus/"
+  buyLabel="Homo Deus by Yuval Noah Harari"
+/>
