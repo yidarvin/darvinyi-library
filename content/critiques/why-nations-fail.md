@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -52,3 +52,15 @@ verdict: revise
    validation, prose lint, 42 pipeline tests, 175 Vitest tests, TypeScript, the Vite
    production build, and ESLint all passed. Vitest emitted only the existing
    non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+- Recomputed 1,542 final reader-visible alphanumeric tokens at approximately 200
+  words per minute, rounded up, and changed the Hero from `9-min` to `8-min`.
+- Corrected Figure 85.2's signed relationship by renaming the target node to
+  `outside voice`. The existing dashed balancing edge, labeled `limits`, now shows
+  that concentrated political power reduces outside voice, while the three
+  reinforcing edges continue to show the self-protecting extraction loop described
+  in the caption and prose.
+- Preserved the caveat and made its recorded evidence directly traceable by linking
+  the Albouy comment and the Acemoglu, Johnson, and Robinson reply at the claims.
