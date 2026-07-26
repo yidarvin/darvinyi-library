@@ -1,0 +1,205 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Flow, NodeGraph, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="cosmos"
+  thesis="The universe becomes less alien when we learn how it changes, how we know it, and how one small living planet belongs within it."
+  minutes={7}
+/>
+
+## The thesis
+
+<em>Cosmos</em> makes an argument about perspective. The universe is vast enough to shrink
+every familiar map, but it is not beyond understanding. Its history is written in light,
+matter, motion, and change, and people have learned to read parts of that record by asking
+questions that observations can answer. Sagan's larger point is human rather than merely
+astronomical: knowing where Earth sits in space and time should make us more curious, more
+careful with evidence, and more responsible to the only world whose life we know.
+
+## Distance is also history
+
+Looking outward is a way of looking back. Light takes time to cross space, so a telescope
+does not show distant objects as they are this instant. It shows light that has been
+travelling since an earlier moment. The night sky therefore folds many eras into one field
+of view: nearby planets, stars at different distances, and galaxies whose light began its
+trip long before humans existed. This is the first mental adjustment <em>Cosmos</em> asks
+for. The universe is not a backdrop frozen behind daily life. It has a history, and Earth
+occupies a late, local chapter of it.
+
+The timescale matters because it changes what counts as an explanation. A mountain, a
+species, a star, and a galaxy do not need the same clock. The question is not whether a
+human lifetime is small. It is which process is changing, and how long that process needs.
+
+<Figure id="82.1" caption="A single view of the sky can carry light from very different eras.">
+  <Timeline
+    className="block min-w-[480px]"
+    segments={[
+      { label: "hot early universe", sub: "about 13.8 billion years ago" },
+      { label: "first stars and galaxies", sub: "matter gathers and changes" },
+      { label: "solar system forms", sub: "about 4.6 billion years ago" },
+      { label: "human observers", sub: "a very recent arrival" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Life inherits a stellar past
+
+The materials of a body did not begin as a body. The early universe supplied mostly the
+lightest elements. Inside stars, fusion made heavier ones; violent stellar deaths dispersed
+many of those ingredients into space. Later clouds gathered, new stars and planets formed,
+and chemistry had richer material to work with. Carbon, oxygen, and other familiar atoms
+are ordinary matter with a long prior history.
+
+This is more than a poetic association between people and stars. It joins biology to
+astronomy without reducing either one to the other. A cell remains a cell, with its own
+remarkable organization. Its ingredients also carry a material genealogy that reaches
+beyond Earth. The useful habit is to see continuity without flattening differences: life is
+locally organized, while its raw material belongs to a much older cosmic cycle.
+
+<Figure id="82.2" caption="Stellar cycles make and distribute material that later worlds can use.">
+  <Flow
+    className="block min-w-[480px]"
+    steps={[
+      "light elements",
+      "stars make elements",
+      "ejected material",
+      "new systems",
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Science is an argument with a way to lose
+
+Sagan is interested in discoveries, but also in the social discipline behind them. A good
+idea is not protected from scrutiny because it is elegant, familiar, or comforting. It
+earns confidence by making contact with the world. A measurement may expose a mistake. A
+new instrument may reveal a feature an old model could not explain. Other people must be
+able to inspect the method, challenge the conclusion, and try again.
+
+That makes science neither a catalogue of final answers nor a vote among preferences. It is
+a public process for reducing error. Its strength is not that scientists never bring
+assumptions. They do. Its strength is that observations can push back, and that a result
+can be revised when better evidence arrives. The dignity of changing one's mind is central
+to the story.
+
+<Figure id="82.3" caption="A claim gains standing by surviving contact with evidence and other investigators.">
+  <NodeGraph
+    className="block min-w-[420px]"
+    nodes={[
+      { id: "question", label: "question", x: 0.12, y: 0.23 },
+      { id: "claim", label: "testable claim", x: 0.5, y: 0.07 },
+      { id: "observe", label: "observation", x: 0.86, y: 0.28 },
+      { id: "review", label: "public checking", x: 0.77, y: 0.78 },
+      { id: "revise", label: "revised model", x: 0.27, y: 0.82 },
+    ]}
+    edges={[
+      { from: "question", to: "claim", kind: "reinforcing" },
+      { from: "claim", to: "observe", kind: "reinforcing" },
+      { from: "observe", to: "review", kind: "reinforcing" },
+      { from: "review", to: "revise", kind: "reinforcing" },
+      { from: "revise", to: "question", kind: "reinforcing", label: "new questions" },
+    ]}
+  />
+</Figure>
+
+## Imagination starts the search; evidence chooses among answers
+
+The book gives imagination a serious job. It lets a person picture an unseen planet,
+reconstruct a vanished world, or ask what a strange signal might mean. Without that reach,
+many useful questions would never be posed. But imagination cannot settle its own case.
+Several explanations can be vivid at once. Evidence is what gives one of them a better
+claim on belief.
+
+This pairing prevents two opposite mistakes. Dry fact collecting can miss the questions
+that make a field move. Unchecked speculation can treat an attractive story as a discovery.
+The more surprising the claim, the more it needs a clear path from observation to
+conclusion. Wonder stays alive here because reality is allowed to correct the picture.
+
+<Figure id="82.4" caption="Imagination opens possible paths; evidence narrows them to the ones the world supports.">
+  <Compare
+    className="block min-w-[420px]"
+    favor="right"
+    left={{
+      title: "imagination",
+      points: ["poses a possibility", "connects distant clues", "suggests an experiment"],
+    }}
+    right={{
+      title: "evidence",
+      points: ["measures what happened", "rules out poor fits", "keeps a conclusion provisional"],
+    }}
+  />
+</Figure>
+
+## A planetary view changes the frame, not the stakes
+
+Earth is not the center of the universe, yet it is the center of every human obligation.
+Those are compatible statements. The planet belongs to a solar system, the solar system to
+one galaxy, and that galaxy to a universe far beyond direct travel. This nesting can cure a
+habit of treating local divisions as the whole picture. Borders and rivalries are real in
+their consequences, but they sit inside one atmosphere, one climate system, and one shared
+home.
+
+Cosmic scale does not make human suffering trivial. It makes claims of permanent
+importance look less secure, and it makes stewardship more urgent. We have no evidence of
+another inhabited refuge nearby. Humility is therefore not resignation. It is a reason to
+take the conditions of life seriously.
+
+<Figure id="82.5" caption="Earth is small in the nested map of space, but it remains the place where our choices land.">
+  <Concentric
+    className="block min-w-[420px]"
+    rings={[
+      { label: "Earth: shared home" },
+      { label: "solar system" },
+      { label: "Milky Way" },
+      { label: "observable universe" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Turn one night-sky fact into a question">
+Choose a visible object, a planet, a bright star, or a faint patch of sky. Find out what it
+is, how far away it is, and what the light is telling you about it. Then write one question
+the fact does not answer. The aim is to replace a label with an investigation.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Separate the image from the inference">
+The next time a striking science image appears in your feed, find the mission or observatory
+that made it. Identify what the instrument actually recorded, then identify the inference
+in the headline. Both can be valuable, but they are not the same kind of claim.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Give a belief a test">
+Pick a confident claim you hold about a topic you care about. Write down what observation
+would make you revise it, and where someone else could check that observation. A belief that
+cannot lose has stopped being an inquiry.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Use the wide frame on a local decision">
+Take one dispute about a shared resource, such as water, public space, or energy. List the
+groups affected now, the people affected later, and the ecological conditions that make the
+choice possible. The larger frame should make the practical question sharper, not vaguer.
+</ExerciseCard>
+
+## If you remember one thing
+
+The cosmos does not diminish human life. It gives human life a truer setting: a brief,
+capable form of matter that can investigate the universe and choose how to care for its
+small, irreplaceable home.
+
+## Shelved nearby
+
+<em>A Short History of Nearly Everything</em> follows the scientific story closer to Earth,
+while <em>Sapiens</em> asks how one recently arrived species came to organize a planetary
+world.
+
+<ShelvedNearby
+  related={["short-history-nearly-everything", "sapiens"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/159730/cosmos-by-carl-sagan/"
+  buyLabel="Cosmos by Carl Sagan"
+/>
