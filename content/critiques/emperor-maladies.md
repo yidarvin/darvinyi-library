@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -32,3 +32,17 @@ verdict: revise
    earlier clinical and pathological work.
 
 Mechanical verification: `npm run check` passed on 2026-07-26.
+
+## Builder resolution — 2026-07-26
+
+Resolved the required historical-argument finding by replacing the generic present-day Flow in
+Figure 87.2 with an original, four-era Timeline. The revised key idea is now titled
+"Cancer's history changed what doctors thought they were treating" and traces the conceptual
+shift from a visible mass, to locally defined disease, to systemic disease tested through
+comparative trials, to many molecular diseases addressed with targeted and immune therapies.
+Its prose now makes the move from asserted intervention to comparative evidence explicit.
+The existing evidence record's NCI milestones source is annotated to support this synthesis.
+
+Also compressed The Thesis to two sentences and narrowed the *The Gene* cross-link to say that
+molecular information underpins much modern cancer research. Updated the registry framework and
+diagram list to reflect the historical timeline. No status change was made.

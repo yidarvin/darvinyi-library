@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+import { Compare, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
 
 <Hero
   slug="emperor-maladies"
@@ -11,11 +11,9 @@ import { Compare, Flow, NodeGraph, ProcessLoop, Timeline } from "../components/d
 ## The thesis
 
 <em>The Emperor of All Maladies</em> treats cancer as a long argument between an adaptable
-biological process and the people trying to understand it. Mukherjee's history does not end
-in a decisive victory. It shows why gains arrive through a patient mix of basic science,
-careful trials, prevention, earlier detection, and treatments fitted to particular cancers.
-The enduring lesson is humility with momentum: cancer can be controlled or cured in some
-settings, but every advance has to be earned against the disease in front of us.
+biological process and the people trying to understand it. Its history shows why gains arrive
+through basic science, comparative trials, prevention, earlier detection, and treatments fitted
+to particular cancers, not through one final victory.
 
 ## Why it matters
 
@@ -58,29 +56,30 @@ respecting the difference between a category and an individual case.
   />
 </Figure>
 
-## Treatment became a sequence of testable choices
+## Cancer's history changed what doctors thought they were treating
 
-For much of history, cancer care meant cutting out what could be reached or easing symptoms
-when it could not. Surgery and radiation remain essential, but the twentieth century added
-drugs that could move through the body. Early chemotherapy was often brutal and frequently
-failed. Its importance was not a clean first success. It established that a systemic disease
-could sometimes be pushed into remission and that treatment had to be compared, measured,
-and revised rather than merely asserted.
+For much of history, cancer was encountered as a visible or painful mass. The practical response
+was to remove what could be reached, or to ease symptoms when it could not. Pathology and
+radiation then gave clinicians a more precise local target. The twentieth century changed the
+problem again: drugs could travel through the body, and some blood cancers could enter remission.
+Cancer was no longer only a lesion in one place. It could be a systemic disease that required a
+systemic response.
 
-That shift created a discipline of combination and sequence. A treatment plan may use local
-control, drug therapy, radiation, surgery, monitoring, or newer targeted and immune-based
-approaches in an order suited to the cancer and the person. Each step has a purpose and a
-cost. The central achievement is not a catalog of therapies. It is a way of testing whether
-a proposed benefit is real and whether the harm is acceptable.
+That possibility made evidence matter differently. A dramatic response in one patient could
+suggest a path, but it could not establish a standard. Comparative trials turned proposed cures
+into questions that could be measured against current care. Later molecular research divided the
+old singular noun into many diseases with different drivers. Modern surgery, radiation, drugs,
+targeted therapies, and immunotherapies belong to that longer history: each is a claim tested
+against a particular cancer, a particular outcome, and an acceptable level of harm.
 
-<Figure id="87.2" caption="Cancer care turns a clinical question into an observed result, then updates the next decision.">
-  <Flow
+<Figure id="87.2" caption="Cancer history moved from treating a visible mass to testing therapies for diverse, evolving diseases.">
+  <Timeline
     className="block min-w-[620px]"
-    steps={[
-      "define the cancer and goal",
-      "choose a supported option",
-      "treat and watch response",
-      "learn from outcome",
+    segments={[
+      { label: "before modern pathology", sub: "a visible mass\nsurgery or comfort" },
+      { label: "late 19th century", sub: "local disease\npathology and radiation" },
+      { label: "mid 20th century", sub: "systemic disease\ndrugs and comparative trials" },
+      { label: "late 20th century onward", sub: "many molecular diseases\ntargeted and immune therapies" },
     ]}
     highlight={3}
   />
@@ -214,7 +213,7 @@ and public conditions that let more people benefit from what we learn.
 
 ## Shelved nearby
 
-<em>The Gene</em> follows the molecular information that makes cancer research possible,
+<em>The Gene</em> follows the molecular information that underpins much modern cancer research,
 while <em>Factfulness</em> offers a useful discipline for reading health progress without
 mistaking a real gain for a finished problem.
 
