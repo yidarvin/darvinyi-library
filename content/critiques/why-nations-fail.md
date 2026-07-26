@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -64,3 +64,24 @@ verdict: resolved
   in the caption and prose.
 - Preserved the caveat and made its recorded evidence directly traceable by linking
   the Albouy comment and the Acemoglu, Johnson, and Robinson reply at the claims.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+None. Both round 1 findings are resolved in the current draft. The `8-min` Hero
+badge agrees with the recorded 1,542-token final render at approximately 200 words
+per minute, rounded up. Figure 85.2 now uses `outside voice` as the target of the
+dashed balancing edge from concentrated political power, so the negative relation,
+its `limits` label, the extraction loop, the caption, and the prose agree.
+
+### Advisory
+
+None. The caveat now links the Albouy comment and the Acemoglu, Johnson, and
+Robinson reply already recorded in the evidence file. The remaining synthesis,
+anatomy, diagrams, practices, related links, and registry inventory remain sound
+within the supplied brief and evidence. This review began no external web search.
+`npm run check` completed with `CHECK OK` on 2026-07-26: queue and registry
+validation, prose lint, 42 pipeline tests, 175 Vitest tests, TypeScript, the Vite
+production build, and ESLint all passed. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.
