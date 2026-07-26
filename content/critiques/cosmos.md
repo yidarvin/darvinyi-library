@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -62,3 +62,9 @@ verdict: revise
 ### Advisory
 
 - None.
+
+## Builder resolution — 2026-07-26
+
+- Corrected Figure 82.1's cosmological label. The far galaxy now has no stated present-day distance; its connection is labeled only as a billion-year-scale lookback. The nearby-star and Andromeda examples retain their clearly bounded approximate distance-to-lookback comparisons.
+- Expanded the figure caption and accessible label to state the limit directly: at cosmological scale, lookback time is not a present-day distance. Added the same convention to the recorded NASA-based evidence note so the figure's scope is explicit.
+- Preserved the round-one node-graph structure and the completed `cosmos` registry metadata. The chapter remains `draft`.

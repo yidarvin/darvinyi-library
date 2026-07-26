@@ -31,20 +31,20 @@ The timescale matters because it changes what counts as an explanation. A mounta
 species, a star, and a galaxy do not need the same clock. The question is not whether a
 human lifetime is small. It is which process is changing, and how long that process needs.
 
-<Figure id="82.1" caption="A single view of the sky can carry light from very different eras.">
+<Figure id="82.1" caption="A single view of the sky carries light from different eras; at cosmological scale, lookback time is not a present-day distance.">
   <NodeGraph
     className="block min-w-[420px]"
-    ariaLabel="Light from a nearby star, the Andromeda galaxy, and a distant galaxy travels for different lengths of time to one observer on Earth."
+    ariaLabel="Light from a nearby star, Andromeda, and a far galaxy reaches one observer on Earth after different lookback times. The far galaxy's lookback time is not labeled as a present-day distance."
     nodes={[
       { id: "near", label: "near star\n4 ly away", x: 0.1, y: 0.14 },
       { id: "andromeda", label: "Andromeda\n2.5m ly away", x: 0.5, y: 0.04 },
-      { id: "far", label: "far galaxy\n10b ly away", x: 0.9, y: 0.14 },
+      { id: "far", label: "far galaxy\ncosmic scale", x: 0.9, y: 0.14 },
       { id: "earth", label: "Earth observer\nnow", x: 0.5, y: 0.88 },
     ]}
     edges={[
-      { from: "near", to: "earth", label: "light: 4 y", labelOffset: { x: -8, y: 0 } },
-      { from: "andromeda", to: "earth", label: "light: 2.5m y", labelOffset: { x: 0, y: -8 } },
-      { from: "far", to: "earth", label: "light: 10b y", labelOffset: { x: 8, y: 0 } },
+      { from: "near", to: "earth", label: "lookback: 4 y", labelOffset: { x: -8, y: 0 } },
+      { from: "andromeda", to: "earth", label: "lookback: 2.5m y", labelOffset: { x: 0, y: -8 } },
+      { from: "far", to: "earth", label: "lookback: billions of years", labelOffset: { x: 8, y: 0 } },
     ]}
   />
 </Figure>
