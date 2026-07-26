@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -97,3 +97,25 @@ Resolved every required finding from critique round 2.
 2. Re-anchored the main privacy explanation in the book's human-scale question of how a specimen remains connected to a person and family. Added the explicit subheading **Post-book context: the HeLa genome**, which states that the 2013 genome-data release and descendant-privacy issue are subsequent history, not part of Skloot's 2010 account. The existing, separately labeled 2013 agreement remains a later-development example.
 
 Mechanical verification: `npm run check` passed on 2026-07-26 after this resolution.
+
+## Critique round 3 — 2026-07-26
+
+### Required
+
+None.
+
+### Advisory
+
+None.
+
+The round 2 resolution is complete. The thesis is now the required two-sentence
+carry-away, race and family consequences receive structural treatment, and both
+2013 developments are explicitly separated from Skloot's 2010 account. The five
+key-idea figures use distinct forms from the shared vocabulary, match their
+captions and prose, and preserve readable label sizes through horizontally
+scrollable minimum-width SVGs. The factual claims that shape the reader's
+understanding can be re-derived from the chapter brief and recorded institutional
+evidence, including the qualifications around Johns Hopkins's tissue practice and
+current U.S. biospecimen rules.
+
+Mechanical verification: `npm run check` passed on 2026-07-26.
