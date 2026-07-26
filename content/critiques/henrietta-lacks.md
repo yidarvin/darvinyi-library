@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-26
 
@@ -56,3 +56,35 @@ Resolved every required finding.
 3. Removed the unsupported participation-to-evidence-to-trust causal loop and its NodeGraph. The replacement makes no unrecorded causal claim; it is a structural account grounded in the expanded evidence record.
 
 Mechanical verification: `npm run check` passed on 2026-07-26 after this resolution.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+1. **A second post-publication development still appears inside the book's core
+   idea spine without a chronology boundary.** The privacy section says that the
+   stakes sharpened when the HeLa genome was sequenced, then attributes the
+   section's lesson to the book (lines 84-95). The recorded evidence supports the
+   later genome-data privacy issue and ties its governance response to 2013, while
+   the brief and the page identify the book as a 2010 publication. Unlike the
+   agreement section, this core section does not tell the reader that the genomic
+   development is subsequent history. The result preserves the provenance problem
+   from round 1 in a different key idea: a reader can reasonably take later
+   genomic history as part of Skloot's original account. Mark the sequencing and
+   descendant-privacy discussion explicitly as post-book context, or re-anchor the
+   core privacy idea in material that the recorded evidence and brief support as
+   part of the book, while keeping later history clearly separated.
+
+2. **The rewritten thesis block violates the required thesis anatomy.** The
+   authoring spec defines "The Thesis" as one or two sentences, the single
+   carry-away paragraph for a reader who reads nothing else. Lines 13-19 now use
+   six sentences to move through achievement, chronology, race, scientific value,
+   and obligation. The argument is present, but it is no longer the required
+   compressed thesis. Reduce this block to one or two sentences that retain the
+   book's scientific, racial, family, and consent dimensions.
+
+### Advisory
+
+None.
+
+Mechanical verification: `npm run check` passed on 2026-07-26.
