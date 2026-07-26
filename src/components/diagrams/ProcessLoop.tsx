@@ -11,6 +11,8 @@ export interface ProcessLoopProps extends DiagramBase {
   compoundingEdge?: number;
   /** A short label for the loop's center, e.g. "the habit loop". */
   centerLabel?: string;
+  /** An alternate action that branches from one stage instead of following the loop. */
+  interruption?: { fromStage: number; label: string };
 }
 
 const polar = (cx: number, cy: number, r: number, deg: number): [number, number] => {
@@ -35,6 +37,7 @@ export function ProcessLoop({
   direction = "cw",
   compoundingEdge,
   centerLabel,
+  interruption,
   ariaLabel,
   className,
 }: ProcessLoopProps) {
@@ -84,9 +87,50 @@ export function ProcessLoop({
       })}
 
       {/* center label */}
-      {centerLabel && (
+      {centerLabel && !interruption && (
         <CenteredText x={cx} y={cy} lines={wrapLabel(centerLabel, 14)} fill={C.comment} size={11} />
       )}
+
+      {/* alternate action branch */}
+      {interruption && stages[interruption.fromStage] && (() => {
+        const [fromX, fromY] = polar(cx, cy, r, angleOf(interruption.fromStage));
+        const dx = cx - fromX;
+        const dy = cy - fromY;
+        const length = Math.hypot(dx, dy) || 1;
+        const ux = dx / length;
+        const uy = dy / length;
+        const boxW = 122;
+        const boxH = 48;
+        const startX = fromX + ux * 61;
+        const startY = fromY + uy * 30;
+        const endX = cx - ux * (boxW / 2 + 7);
+        const endY = cy - uy * (boxH / 2 + 7);
+        return (
+          <g>
+            <line
+              x1={startX}
+              y1={startY}
+              x2={endX}
+              y2={endY}
+              stroke={C.accent}
+              strokeWidth="2"
+              markerEnd={`url(#pl-arwA-${uid})`}
+            />
+            <rect
+              x={cx - boxW / 2}
+              y={cy - boxH / 2}
+              width={boxW}
+              height={boxH}
+              rx="7"
+              fill={C.accent}
+              fillOpacity="0.14"
+              stroke={C.accent}
+              strokeOpacity="0.7"
+            />
+            <CenteredText x={cx} y={cy} lines={wrapLabel(interruption.label, 18)} fill={C.accent} size={11} font={MONO} weight={600} />
+          </g>
+        );
+      })()}
 
       {/* stage nodes */}
       {stages.map((label, i) => {

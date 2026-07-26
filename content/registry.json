@@ -1587,7 +1587,18 @@
       "subtitle": "David Burns · 1980",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Moods follow thoughts, and learning to catch and correct distorted thinking can lift depression without drugs.",
+      "framework": "Cognitive distortions",
+      "diagrams": [
+        "flow",
+        "iceberg",
+        "spectrum",
+        "comparison",
+        "process loop",
+        "node graph"
+      ]
     },
     {
       "num": 81,

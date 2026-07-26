@@ -30,10 +30,21 @@ export function Compare({
   const x0 = 8;
   const x1 = x0 + panelW + gapX;
   const top = 12;
+  const titleLines = [wrapLabel(left.title, 18), wrapLabel(right.title, 18)];
+  const headerH = 22 + Math.max(...titleLines.map((lines) => lines.length)) * 14;
   const rows = Math.max(left.points.length, right.points.length);
-  const headerH = 40;
-  const rowH = 34;
-  const height = top * 2 + headerH + rows * rowH + 6;
+  const rowHeights = Array.from({ length: rows }, (_, i) => {
+    const leftLines = left.points[i] ? wrapLabel(left.points[i], 24).length : 0;
+    const rightLines = right.points[i] ? wrapLabel(right.points[i], 24).length : 0;
+    return Math.max(34, Math.max(leftLines, rightLines) * 12 + 16);
+  });
+  const rowOffsets: number[] = [];
+  let bodyH = 0;
+  rowHeights.forEach((rowHeight) => {
+    rowOffsets.push(bodyH);
+    bodyH += rowHeight;
+  });
+  const height = top * 2 + headerH + bodyH + 6;
 
   const panel = (p: ComparePanel, x: number, accent: boolean) => (
     <g>
@@ -41,23 +52,28 @@ export function Compare({
         x={x}
         y={top}
         width={panelW}
-        height={headerH + rows * rowH + 6}
+        height={headerH + bodyH + 6}
         rx="8"
         fill={accent ? C.accent : C.surface2}
         fillOpacity={accent ? 0.1 : 1}
         stroke={accent ? C.accent : C.border}
         strokeOpacity={accent ? 0.5 : 1}
       />
-      <text x={x + 14} y={top + 25} fontFamily={MONO} fontSize="13" fontWeight={600} fill={accent ? C.accent : C.fg}>
-        {p.title}
+      <text x={x + 14} y={top + 19} fontFamily={MONO} fontSize="13" fontWeight={600} fill={accent ? C.accent : C.fg}>
+        {wrapLabel(p.title, 18).map((line, i) => (
+          <tspan key={line} x={x + 14} dy={i === 0 ? 0 : 14}>
+            {line}
+          </tspan>
+        ))}
       </text>
       <line x1={x + 12} y1={top + headerH} x2={x + panelW - 12} y2={top + headerH} stroke={C.border} />
       {p.points.map((pt, i) => {
         const lines = wrapLabel(pt, 24);
+        const rowY = top + headerH + rowOffsets[i];
         return (
           <g key={i}>
-            <circle cx={x + 18} cy={top + headerH + i * rowH + 15} r="2.5" fill={accent ? C.accent : C.comment} />
-            <text x={x + 28} y={top + headerH + i * rowH + 19} fontFamily={SANS} fontSize="11" fill={accent ? C.fg : C.muted}>
+            <circle cx={x + 18} cy={rowY + 15} r="2.5" fill={accent ? C.accent : C.comment} />
+            <text x={x + 28} y={rowY + 19} fontFamily={SANS} fontSize="11" fill={accent ? C.fg : C.muted}>
               {lines.map((ln, li) => (
                 <tspan key={li} x={x + 28} dy={li === 0 ? 0 : 12}>
                   {ln}

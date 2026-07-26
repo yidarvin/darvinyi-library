@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, Iceberg, Matrix, ProcessLoop, Spectrum } from "../components/diagrams";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="feeling-good"
@@ -70,12 +70,12 @@ The replacement for a distorted thought is not a cheerful slogan. It is a more c
     className="block w-full min-w-[440px]"
     favor="right"
     left={{
-      title: "the inner prosecutor",
-      points: ["collects one painful detail", "treats feeling as proof", "announces a final verdict"],
+      title: "evidence for the claim",
+      points: ["I missed this deadline", "this task needs repair", "I feel embarrassed"],
     }}
     right={{
-      title: "the careful investigator",
-      points: ["separates facts from guesses", "looks for missing evidence", "writes a limited conclusion"],
+      title: "evidence against the claim",
+      points: ["I have met other deadlines", "one error is not every task", "I can repair this part"],
     }}
   />
 </Figure>
@@ -84,31 +84,41 @@ The replacement for a distorted thought is not a cheerful slogan. It is a more c
 
 Depression often asks for withdrawal: cancel the plan, avoid the task, stay in bed, wait until motivation returns. Withdrawal can bring momentary relief, but it also removes contact, accomplishment, and pleasure, then supplies fresh material for the original bleak story. One modest, scheduled action can cut into that loop. The action need not prove happiness. Its job is to create a new piece of evidence.
 
-<Figure id="80.5" caption="Withdrawal can reinforce low mood; one planned action gives the loop a different input.">
+<Figure id="80.5" caption="Withdrawal can reinforce low mood; a scheduled contact or task creates a different input.">
   <ProcessLoop
     className="block w-full min-w-[440px]"
     stages={["low mood", "withdraw", "fewer rewarding moments", "bleaker conclusion"]}
     compoundingEdge={3}
-    centerLabel="the downward loop"
+    interruption={{ fromStage: 0, label: "schedule contact or a task" }}
+    ariaLabel="Low mood can lead to withdrawal, fewer rewarding moments, and a bleaker conclusion that reinforces low mood. An accent branch from low mood shows a scheduled contact or task as an alternate input."
   />
 </Figure>
 
 ## The Model
 
-Cognitive distortions are not a diagnosis and they are not a list to memorize perfectly. They are warning signs that an interpretation may have become too sweeping or too sure of itself. The most useful version of the model asks two questions: how far does this thought reach beyond the immediate facts, and how certain am I without direct evidence? A thought in the high-certainty, wide-scope corner deserves the closest inspection.
+Cognitive distortions are not a diagnosis and they are not a list to memorize perfectly. They are recurring moves that can make a thought sound more conclusive than the available facts. The model includes patterns such as all-or-nothing thinking, overgeneralizing, mind reading, emotional reasoning, should statements, and labeling. A name is useful when it helps you notice the move. It is not a verdict on you, and it does not settle whether the underlying feeling or problem is real.
 
-<Figure id="80.6" caption="Distorted thoughts tend to claim too much, too certainly, from too little evidence.">
-  <Matrix
+<Figure id="80.6" caption="Cognitive distortions are recognizable moves that turn a thought into a conclusion too quickly.">
+  <NodeGraph
     className="block w-full min-w-[440px]"
-    xAxis={{ left: "one event", right: "whole self or future", label: "scope of the claim" }}
-    yAxis={{ low: "tentative", high: "certain", label: "confidence without evidence" }}
-    quadrants={[
-      { title: "a question to check", note: "“Could they be upset?”" },
-      { title: "mind reading", note: "“They all dislike me”" },
-      { title: "a specific review", note: "“What went wrong here?”" },
-      { title: "global verdict", note: "“I will always fail”" },
+    ariaLabel="A concept map of cognitive distortions. Around the central idea are all-or-nothing thinking, overgeneralizing, mind reading, emotional reasoning, should statements, and labeling. Each is a thought pattern to notice and test, not a diagnosis."
+    nodes={[
+      { id: "distortions", label: "cognitive distortions", x: 0.5, y: 0.5 },
+      { id: "either", label: "either or", x: 0.17, y: 0.14 },
+      { id: "general", label: "one setback, always", x: 0.5, y: 0.05 },
+      { id: "mind", label: "mind reading", x: 0.83, y: 0.14 },
+      { id: "feeling", label: "feeling equals fact", x: 0.17, y: 0.86 },
+      { id: "should", label: "should statements", x: 0.5, y: 0.95 },
+      { id: "label", label: "labeling", x: 0.83, y: 0.86 },
     ]}
-    highlight={3}
+    edges={[
+      { from: "distortions", to: "either" },
+      { from: "distortions", to: "general" },
+      { from: "distortions", to: "mind" },
+      { from: "distortions", to: "feeling" },
+      { from: "distortions", to: "should" },
+      { from: "distortions", to: "label" },
+    ]}
   />
 </Figure>
 
@@ -133,7 +143,7 @@ Choose an action that creates contact, competence, or care within the next day: 
 ## Where people get it wrong
 
 <Callout kind="note">
-This method is not a command to think happy thoughts, and it should not be used to explain away grief, prejudice, danger, poverty, illness, or any other real source of pain. A sad or fearful feeling can fit the facts. The task is to test the extra conclusion, not to erase the feeling. Feeling Good also should not be treated as a substitute for care: depression is commonly treated with psychotherapy, medication, or both. If symptoms are severe, persistent, or include thoughts of self-harm, seek urgent professional help. In the United States, call or text 988 for immediate crisis support.
+This method is not a command to think happy thoughts, and it should not be used to explain away grief, prejudice, danger, poverty, illness, or any other real source of pain. A sad or fearful feeling can fit the facts. The task is to test the extra conclusion, not to erase the feeling. Feeling Good also is not a substitute for care: the [National Institute of Mental Health](https://www.nimh.nih.gov/sites/default/files/documents/health/publications/depression/depression.pdf) says depression treatment typically involves psychotherapy, medication, or both, with choices made alongside a health care professional. If you are thinking about self-harm, seek immediate help. In the United States and its territories, the [988 Suicide & Crisis Lifeline](https://988lifeline.org/get-help/) offers free, confidential support by call or text at 988, or by chat.
 </Callout>
 
 ## If you remember one thing

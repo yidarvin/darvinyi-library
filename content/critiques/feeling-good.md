@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-25
 
@@ -75,3 +75,14 @@ materials available here.
 2 pipeline tests, 38 runner tests, 165 Vitest tests, TypeScript and the Vite
 production build, and ESLint all completed successfully. Vitest emitted only the
 existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-25
+
+Resolved every required finding while leaving `feeling-good` at `draft`.
+
+1. Replaced Figure 80.6's unsupported scope-by-certainty matrix with an in-vocabulary `NodeGraph` that renders cognitive distortions directly: all-or-nothing thinking, overgeneralizing, mind reading, emotional reasoning, should statements, and labeling. The revised prose, caption, and explicit accessible description all present these as thought patterns to notice and test, not as a new taxonomy or diagnosis.
+2. Extended the reusable `ProcessLoop` primitive with an optional accent alternate-action branch. Figure 80.5 now branches from low mood to a scheduled contact or task, and its caption and accessible description explain that this supplies an alternate input to the withdrawal loop.
+3. Made the reusable `Compare` primitive calculate wrapped header and body heights. Figure 80.4 now puts evidence for and evidence against one concrete claim in its two panels, matching the key idea and caption without clipping its headings.
+4. Replaced the unsupported treatment and crisis wording with linked, attributable guidance from the National Institute of Mental Health and the official 988 Suicide & Crisis Lifeline. Recorded the verified source claims in `content/evidence/feeling-good.md`.
+5. Completed the `feeling-good` registry record with its tier, brief-supported thesis and framework, and the six final figure forms in page order. Its status remains `draft`.
+6. `npm run check` completed with `CHECK OK` on 2026-07-25: queue/registry/content validation, prose lint, 2 pipeline tests, 38 runner tests, 165 Vitest tests, TypeScript, the Vite production build, and ESLint all passed. Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
