@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -49,3 +49,21 @@ verdict: resolved
 - Adjusted the lived-report exercise to describe seeking a few comparable people as a
   practical check, rather than presenting a two-or-three-person threshold as an
   evidence-calibrated rule.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+1. The impact-bias section still overstates the recorded result. The heading at
+   `src/chapters/stumbling-on-happiness.mdx:68`, the claim that the feeling is expected
+   to “remain as strong” at line 71, and the “permanent future” language at line 166
+   say that people commonly forecast an unchanged or permanent reaction. The recorded
+   Wilson and Gilbert evidence supports the narrower claim already stated at lines
+   74–75 and 190–191: forecasts can overestimate intensity, duration, or both. It does
+   not support permanence as the characteristic error. Calibrate those three passages
+   to the documented overestimate so the reader learns impact bias rather than a
+   stronger categorical claim.
+
+### Advisory
+
+None.
