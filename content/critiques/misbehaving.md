@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -37,3 +37,21 @@ Its parallel panels now show the supported before-ownership and after-ownership 
 points, including the corresponding willingness-to-pay and willingness-to-accept questions.
 Updated the figure caption, diagram registry entry, and evidence note to record that the
 available sources do not support collapsing the two effects.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+None. The round 1 defect is resolved in the prose, diagram, registry, and evidence note.
+The remaining claims are supported by the recorded evidence at the level needed for this
+distillation, the six key ideas each have an accurate in-vocabulary diagram, the omitted
+Model section matches the brief, and the technical gate passes.
+
+### Advisory
+
+1. In the opening anomaly examples, “pay more to keep a mug” is slightly imprecise.
+   Endowment-effect demonstrations compare what an owner demands to give the mug up with
+   what a non-owner will pay to acquire it; the owner does not literally pay to keep it.
+   The later ownership prose and comparison diagram state that distinction correctly, so
+   this does not change the chapter’s account. If the example is revisited, “demand more
+   to give up a mug than another person will pay to acquire it” would be exact.

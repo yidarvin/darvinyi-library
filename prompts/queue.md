@@ -118,7 +118,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 101 | artists-way                     | The Artist's Way                              | DONE    |
 | 102 | breath                          | Breath                                        | DONE    |
 | 103 | outlive                         | Outlive                                       | DONE    |
-| 104 | misbehaving                     | Misbehaving                                   | PENDING |
+| 104 | misbehaving                     | Misbehaving                                   | DONE    |
 | 105 | stumbling-on-happiness          | Stumbling on Happiness                        | PENDING |
 | 106 | noise                           | Noise                                         | PENDING |
 | 107 | make-time                       | Make Time                                     | PENDING |
