@@ -149,6 +149,28 @@ describe("Bars", () => {
   });
 });
 
+describe("Noise audit flow", () => {
+  it("keeps the four-step audit at its readable width instead of shrinking on a phone", async () => {
+    const mod = await mdxModules["../chapters/noise.mdx"]();
+    const Noise = mod.default;
+    render(
+      <MemoryRouter>
+        <MDXProvider components={mdxComponents}>
+          <Noise />
+        </MDXProvider>
+      </MemoryRouter>,
+    );
+
+    const caption = screen.getByText(/A noise audit turns an impression of inconsistency/i);
+    const figure = caption.closest("figure");
+    const flow = figure?.querySelector("svg");
+
+    expect(flow).not.toBeNull();
+    expect(flow?.getAttribute("viewBox")).toBe("0 0 558 180");
+    expect(flow?.getAttribute("class")).toContain("min-w-[558px]");
+  });
+});
+
 describe("CoreContext", () => {
   it("keeps three peer core items inside the inner frame", () => {
     const { container } = render(

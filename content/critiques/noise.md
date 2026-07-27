@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -66,3 +66,11 @@ verdict: revise
 ### Advisory
 
 - None.
+
+## Builder resolution — 2026-07-27
+
+- Set Figure 106.4's four-step `Flow` to a 558px minimum width, matching its SVG
+  viewBox. The existing Figure overflow wrapper now scrolls the diagram on a 360px
+  phone instead of compressing its labels.
+- Added a chapter-level regression test that renders Noise and asserts that the audit
+  flow retains both its 558-unit viewBox and its 558px scrollable minimum width.
