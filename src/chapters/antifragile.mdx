@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Bars, Compare, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+import { Compare, Iceberg, ProcessLoop, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="antifragile"
@@ -106,47 +106,24 @@ is thin, a reversible choice can be more valuable than a confident but binding p
   />
 </Figure>
 
-### Keep a protected base and a field of experiments
+### Keep a protected base separate from experiments
 
-Taleb's barbell image separates what must be protected from what can be exposed to variation.
-The protected side is deliberately dull: reserves, redundancy, proven work, or commitments
-that keep a bad outcome from becoming terminal. The experimental side is varied and limited:
-small prototypes, conversations, applications, or investments whose upside can exceed the
-amount at risk. The point is separation. Mixing a fragile core with a speculative edge makes
-the whole structure a single bet.
+One way to put bounded trial into practice is to separate what must keep working from what can
+be exposed to variation. The protected side is deliberately dull: reserves, redundancy, proven
+work, or commitments that keep a bad outcome from becoming terminal. The experimental side is
+varied and limited: small prototypes, conversations, applications, or investments whose upside
+can exceed the amount at risk. The point is separation. Mixing a fragile core with a speculative
+edge makes the whole structure a single bet.
 
-<Figure id="89.5" caption="The barbell keeps the core conservative while a smaller edge explores uneven upside.">
-  <Bars
+<Figure id="89.5" caption="A protected base and bounded trials stay separate, avoiding a single blended bet between them.">
+  <Spectrum
     className="block w-full min-w-[380px]"
-    items={[
-      { label: "protected base", value: 0.82, accent: true, valueLabel: "survival and reserves" },
-      { label: "limited experiments", value: 0.3, valueLabel: "many small tries" },
-    ]}
-  />
-</Figure>
-
-### Consequences should travel with decisions
-
-Antifragility is weakened when the person taking upside can pass a large downside to someone
-else. A manager who cannot be affected by a failure, a vendor paid before a system works, or a
-planner insulated from the cost of a bad forecast has little reason to notice fragility early.
-Put feedback and accountability near the decision. The goal is not punishment. It is to make
-the cost of a brittle choice visible to the people who can still change it.
-
-<Figure id="89.6" caption="When feedback reaches the decision maker, weak assumptions are harder to ignore.">
-  <NodeGraph
-    className="block w-full min-w-[380px]"
-    nodes={[
-      { id: "decision", label: "decision", x: 0.18, y: 0.5 },
-      { id: "exposure", label: "real exposure", x: 0.5, y: 0.2 },
-      { id: "outcome", label: "outcome", x: 0.82, y: 0.5 },
-      { id: "review", label: "review and repair", x: 0.5, y: 0.8 },
-    ]}
-    edges={[
-      { from: "decision", to: "exposure", label: "creates" },
-      { from: "exposure", to: "outcome", label: "shapes" },
-      { from: "outcome", to: "review", label: "reveals" },
-      { from: "review", to: "decision", kind: "reinforcing", label: "improves" },
+    left="protected base"
+    right="bounded experiments"
+    zones={[
+      { from: 0, to: 0.27, label: "reserves and redundancy", accent: true },
+      { from: 0.37, to: 0.63, label: "avoid: one blended bet" },
+      { from: 0.73, to: 1, label: "small trials, uneven upside", accent: true },
     ]}
   />
 </Figure>
@@ -154,12 +131,12 @@ the cost of a brittle choice visible to the people who can still change it.
 ## The Model
 
 Fragile, robust, and antifragile describe different responses to the same kind of disturbance.
-Fragility means that variation produces a loss larger than the system can absorb. Robustness
-means the system resists the disturbance and returns near where it began. Antifragility means
-the arrangement has a way to gain from the variation, usually through a bounded loss, a
-selection mechanism, or an option it can exercise after learning. The categories are local,
-not permanent labels. A person, organization, or tool can be antifragile in one exposure and
-dangerously fragile in another.
+Fragility means the system loses from variation, a locally concave response, even when any one
+loss remains survivable. Robustness means the system resists variation and stays roughly where
+it began. Antifragility means the arrangement has a way to gain from variation, usually through
+a bounded loss, a selection mechanism, or an option it can exercise after learning. The
+categories are local, not permanent labels. A person, organization, or tool can be antifragile
+in one exposure and dangerously fragile in another.
 
 <Figure id="89.7" caption="The same shock can damage, leave unchanged, or improve a system, depending on its exposure and response.">
   <Spectrum
@@ -207,12 +184,11 @@ failed attempt produces a lesson rather than a crisis.
 
 <Callout kind="note">
 Antifragile is not a license to seek danger, reject expertise, or call preventable harm a useful
-lesson. Many systems do not recover from stress, and the person exposed to the downside may not
-be the person celebrating the upside. Health, safety, and public policy need domain evidence,
-not a borrowed metaphor about useful stress. The framework is strongest as a question about
-exposure: who bears the loss, how large can it be, and does the arrangement preserve the chance
-to learn? It is weakest when it turns uncertainty into a romantic story or treats every
-intervention as suspect.
+lesson. Many systems do not recover from stress. Health, safety, and public policy need domain
+evidence, not a borrowed metaphor about useful stress. The framework is strongest as a question
+about exposure: which losses must be avoided, how large can they be, and does the arrangement
+preserve the chance to learn? It is weakest when it turns uncertainty into a romantic story or
+treats every intervention as suspect.
 </Callout>
 
 ## If you remember one thing

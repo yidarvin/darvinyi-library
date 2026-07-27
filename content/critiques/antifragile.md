@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -46,3 +46,11 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-26
+
+- Rewrote the Model definition so fragility is a local loss from variation, or concave response, rather than an unabsorbable or terminal loss. The survivability of an individual loss is now explicitly separate from the response shape.
+- Replaced Figure 89.5's quantitative bars with an in-vocabulary spectrum that visibly separates a protected base from bounded experiments and labels the avoided middle as “one blended bet.” This removes the unsupported allocation values and the clipped bar-end label.
+- Removed the unsupported consequence-alignment key idea and its generic Figure 89.6 rather than presenting it as a core *Antifragile* claim without recorded source support. The related consequence-bearing language in the caveat was also removed.
+- Narrowed the protected-base material to a practical synthesis of the recorded support for bounded trials and optionality. It no longer calls the arrangement Taleb's barbell image.
+- Completed the `antifragile` registry record with tier, thesis, signature framework, and the six diagram forms actually rendered. Status remains `draft`.
