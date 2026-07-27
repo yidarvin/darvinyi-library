@@ -1822,7 +1822,18 @@
       "subtitle": "Lao Tzu · c. 400 BCE",
       "part": "Philosophy & Wisdom",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "A life goes better when it follows the grain of a situation: use less force, leave room for what is emerging, and let enough be enough.",
+      "framework": "Wu wei: read the conditions, take the fitting action at the needed scale, and adjust without unnecessary force.",
+      "diagrams": [
+        "iceberg",
+        "spectrum",
+        "flow",
+        "node graph",
+        "comparison",
+        "process loop"
+      ]
     },
     {
       "num": 93,

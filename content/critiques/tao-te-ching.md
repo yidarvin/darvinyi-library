@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -72,3 +72,21 @@ verdict: revise
    lint passed; all 40 pipeline and runner tests and all 191 Vitest tests passed;
    TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
    the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+Resolved all required findings without new external research.
+
+1. Completed the `tao-te-ching` registry record with tier 2, the final reader-facing
+   thesis, the practical *wu wei* framework, and the six rendered diagram forms in
+   figure order: iceberg, spectrum, flow, node graph, comparison, and process loop.
+2. Replaced the leadership figure's unsupported causal loop with an undirected node
+   graph. It now maps the stated relationships among clear purpose, restrained
+   leadership, room to act, and shared work, with no feedback edge or reinforcing
+   polarity.
+3. Corrected the linked edition's translator credit to D. C. Lau in both the outbound
+   reader label and the evidence record.
+4. Narrowed the caveat to the recorded publisher facts: traditional attribution to
+   Lao Tzu and fourth-century BCE compilation. It retains the recorded caution that
+   translation is interpretive without claiming manuscript discoveries or layered
+   transmission.
