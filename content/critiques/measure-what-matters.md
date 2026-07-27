@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -82,3 +82,20 @@ verdict: resolved
 - Updated the registry diagram list from `spectrum` to `comparison` so it matches
   the six forms rendered by the chapter. The chapter remains `draft`; this
   resolution does not mark it done.
+
+## Critique round 3 — 2026-07-27
+
+### Required
+
+1. Figure 113.5 still puts the committed-versus-aspirational distinction on the
+   wrong object. Its panels and accessible label say "committed result" and
+   "aspirational result," language that reads as a classification of key results in
+   a chapter that consistently uses "result" that way. The chapter prose instead
+   classifies goals, and the recorded evidence specifically distinguishes committed
+   from aspirational OKRs. Relabel both panels and the accessible description as
+   goals or OKRs so the categorical diagram agrees with the prose and does not teach
+   that individual key results carry the type.
+
+### Advisory
+
+- None.
