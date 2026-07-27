@@ -1,0 +1,208 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="war-of-art"
+  thesis="Creative work gets traction when avoidance is recognized as part of the job, and a regular practice carries the work past it."
+  minutes={6}
+/>
+
+## The thesis
+
+Pressfield gives a name to the many ways a person evades work that matters to them:
+Resistance. It can look like distraction, perfectionism, self-doubt, research without an
+end, or a sudden urge to reorganize the desk. The book's useful move is not to promise that
+this pressure disappears. It asks for a professional response: choose a practice, return to
+it on schedule, learn the craft, and judge the session by whether you did the work rather
+than whether it felt easy.
+
+## Why it matters
+
+A creative block is easy to mistake for evidence that the project is wrong or that its maker
+is incapable. That interpretation turns a hard afternoon into a verdict on an entire
+ambition. The book makes a less personal diagnosis. If avoidance is a predictable response
+to exposure and uncertainty, it can be met with a concrete arrangement of time, tools, and
+next actions. The work may still be difficult. It no longer has to wait for a better mood.
+
+## Resistance rarely announces itself
+
+Resistance is not one emotion. It is a catchall for evasions that sound sensible in the
+moment: wait until you know more, begin once you feel confident, polish the opening before
+writing the middle, or choose a smaller task that produces the pleasant feeling of being
+busy. The surface excuse may be practical. The question is whether it moves the project
+forward or keeps the vulnerable part untouched. Naming the pattern creates a small gap
+between the excuse and the next choice.
+
+<Figure id="100.1" caption="The visible excuse can conceal an effort to avoid uncertainty and exposure.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="a reasonable reason to delay"
+    below={["fear of exposure", "uncertainty about the result", "perfectionism", "self-doubt"]}
+    waterlineLabel="what is easy to explain"
+  />
+</Figure>
+
+## The meaningful project can attract the strongest avoidance
+
+The book reverses a familiar inference. Strong reluctance does not necessarily prove that a
+project lacks value. It may appear precisely where the stakes feel high, where the work could
+change how you see yourself or invite other people to judge it. That is not a reason to
+romanticize every hesitation. It is a reason to inspect it before obeying it. A project can
+be important and still need to be abandoned, narrowed, or delayed for real constraints. The
+point is to distinguish those decisions from automatic retreat.
+
+<Figure id="100.2" caption="As a project feels more consequential, the temptation to avoid exposure can rise with it.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="low personal stakes"
+    right="high personal stakes"
+    marker={0.8}
+    markerLabel="pause and inspect"
+    zones={[
+      { from: 0.04, to: 0.38, label: "ordinary reluctance" },
+      { from: 0.6, to: 0.98, label: "avoidance may sound urgent", accent: true },
+    ]}
+  />
+</Figure>
+
+## Starting before certainty changes the problem
+
+Many projects stall because their first move is asked to prove too much. A writer tries to
+produce the final opening, a designer waits for the complete concept, and an entrepreneur
+demands a full business case before speaking to a customer. The professional move is smaller:
+make the next bounded artifact. A rough page, a study, a sketch, a test call, or a list of
+questions gives the project something outside the mind. Once there is material, craft has an
+object to work on.
+
+<Figure id="100.3" caption="A bounded action turns a private judgment into material that can be improved.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["name the live project", "choose one bounded action", "make a rough version", "decide the next action"]}
+    highlight={1}
+  />
+</Figure>
+
+## Turning pro means building a practice, not adopting a title
+
+In Pressfield's language, turning pro is an internal commitment to treat the work as work.
+It does not require quitting a job, earning money from art, or feeling certain about an
+identity. It means making a repeatable appointment, arriving prepared, accepting that some
+sessions will be mediocre, and studying the skills the work demands. The contrast is useful
+because it shifts attention from a dramatic breakthrough to observable conduct. A practice
+can be modest and still be serious.
+
+<Figure id="100.4" caption="The professional stance is a repeatable set of behaviors, not a claim of status.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "waiting for permission",
+      points: ["works when inspired", "treats a bad session as a verdict", "protects the fantasy", "postpones craft"],
+    }}
+    right={{
+      title: "building a practice",
+      points: ["keeps a recurring appointment", "expects uneven sessions", "finishes small units", "studies the craft"],
+    }}
+  />
+</Figure>
+
+## Finishing is part of the discipline
+
+Beginning protects possibility. Finishing exposes the actual work to revision, response, and
+the possibility that it is less impressive than imagined. That exposure is why endless
+preparation can feel safer than completion. But a practice that does not finish cannot learn
+what a real audience, client, reader, or collaborator needs. Complete a defined version,
+release or review it at the right scale, and let the result inform the next attempt. The
+standard is progress through completed cycles, not invulnerability to criticism.
+
+<Figure id="100.5" caption="Completion creates feedback that makes the next session more informed.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["make the piece", "finish a version", "review the response", "return with a clearer task"]}
+    compoundingEdge={3}
+    centerLabel="a working practice"
+  />
+</Figure>
+
+## The model
+
+Resistance is a model for a recurring encounter, not a diagnosis. A project that matters can
+activate fear, self-doubt, perfectionism, and delay. The response is neither to argue with
+every thought nor to wait for the thoughts to vanish. Recognize the pattern, reduce the next
+task to something specific, and use a scheduled practice to return. Craft and feedback make
+the return more useful over time. The model puts the project at the center because the goal
+is work completed, not a permanent victory over discomfort.
+
+<Figure id="100.6" caption="Resistance takes several forms; a scheduled practice reconnects them to the work.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "work", label: "meaningful work", x: 0.5, y: 0.12 },
+      { id: "resistance", label: "Resistance", x: 0.5, y: 0.52 },
+      { id: "forms", label: "delay, doubt, perfectionism", x: 0.14, y: 0.86 },
+      { id: "practice", label: "scheduled practice", x: 0.86, y: 0.86 },
+    ]}
+    edges={[
+      { from: "work", to: "resistance", label: "stakes", labelOffset: { x: -28, y: 2 } },
+      { from: "resistance", to: "forms", label: "appears as", labelOffset: { x: -30, y: 0 } },
+      { from: "forms", to: "practice", kind: "balancing", label: "name it" },
+      { from: "practice", to: "work", kind: "reinforcing", label: "return", labelOffset: { x: 26, y: 0 } },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the avoidance accurately">
+For three work sessions, write down the first reason you give yourself for not beginning.
+Then classify it: a real constraint that needs a plan, or an avoidance pattern that protects
+you from beginning. Respect the first. Do not let the second decide the day.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Make a professional appointment">
+Choose two recurring sessions this week, each short enough to keep even on a busy day. Decide
+the place, start time, tool, and first action before the session begins. The appointment is
+successful if you arrive and do the agreed first action, not if the result feels brilliant.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Define a finish line for one small version">
+Take one vague project and state the smallest version that can be complete: a 500-word scene,
+three thumbnail sketches, a five-slide outline, or one customer conversation. Set a deadline
+for that version. Leave expansion for the next cycle.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Close the loop without drama">
+At the end of a session, record two lines: what became clearer and the exact action that
+starts the next session. Do not grade your talent. Give your future self a visible place to
+resume.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Resistance is a strong metaphor, not a clinical explanation for every failure to work. A
+missed session can reflect illness, disability, caregiving, precarious employment, grief,
+trauma, depression, or a project whose scope and support are genuinely wrong. Treating every
+obstacle as a character flaw adds shame where planning, rest, accommodation, collaboration,
+or professional care may be needed. The book's discipline is most useful when it helps a
+person separate ordinary avoidance from those real conditions, then choose a humane next
+step.
+</Callout>
+
+## If you remember one thing
+
+When a project matters enough to provoke avoidance, do not wait to feel fearless. Name the
+pattern, choose the smallest real action, and return to the practice that lets the work grow.
+
+The nearby shelf adds compassionate drafting advice, curiosity-led creative permission, and
+the focused conditions that make regular practice easier to protect.
+
+<ShelvedNearby
+  related={["bird-by-bird", "big-magic", "deep-work", "steal-like-an-artist"]}
+  buyUrl="https://blackirishbooks.com/product/the-war-of-art/"
+  buyLabel="The War of Art by Steven Pressfield"
+/>
