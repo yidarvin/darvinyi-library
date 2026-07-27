@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -20,3 +20,11 @@ verdict: revise
 
 `npm run check` passed in full: validation, prose lint, pipeline tests, 228 chapter
 tests, typecheck, production build, and lint.
+
+## Builder resolution — 2026-07-27
+
+- Restored the publisher-recorded contributor credit as `Nir Eyal with Julie Li` in the
+  registry subtitle that `<Hero>` renders, the source metadata that regenerates it, the
+  chapter brief, and the outbound bookseller label.
+- Added a concise relationship sentence for Make Time, Deep Work, and Atomic Habits
+  immediately before the Shelved Nearby footer.

@@ -1,6 +1,6 @@
 # Indistractable
 
-- **Author:** Nir Eyal
+- **Author:** Nir Eyal with Julie Li
 - **Year:** 2019
 - **Shelf:** Habits & Productivity
 - **Tier:** 3

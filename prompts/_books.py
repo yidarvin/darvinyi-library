@@ -124,7 +124,7 @@ BOOKS = [
          shelf="Habits & Productivity", tier=3,
          thesis="Reclaim attention from an always-on world with small daily tactics built around a single chosen highlight.",
          model="Highlight, Laser, Energy, Reflect", flag=""),
-    dict(id="indistractable", title="Indistractable", author="Nir Eyal", year=2019,
+    dict(id="indistractable", title="Indistractable", author="Nir Eyal with Julie Li", year=2019,
          shelf="Habits & Productivity", tier=3,
          thesis="Distraction starts inside us; master the internal triggers and the external ones lose their grip.",
          model="", flag=""),
