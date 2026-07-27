@@ -1966,7 +1966,7 @@
       "diagrams": [
         "flow",
         "comparison",
-        "iceberg",
+        "comparison",
         "node graph",
         "venn overlap",
         "process loop"

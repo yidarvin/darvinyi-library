@@ -3,7 +3,7 @@ import { ExerciseCard } from "../components/ExerciseCard";
 import { Figure } from "../components/Figure";
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Venn } from "../components/diagrams";
+import { Compare, Flow, NodeGraph, ProcessLoop, Venn } from "../components/diagrams";
 
 <Hero
   slug="bird-by-bird"
@@ -74,12 +74,18 @@ calendar left on the wall, or the person avoiding the chair by the window. The p
 pile up decoration. It is to select details that carry feeling, setting, and implication at
 once, then trust the reader to take part in the meaning.
 
-<Figure id="99.3" caption="Specific observations give a reader access to the feeling beneath a broad label.">
-  <Iceberg
+<Figure id="99.3" caption="Visible evidence on the page lets a reader infer the feeling and pressure of a scene.">
+  <Compare
     className="block w-full min-w-[440px]"
-    above="a scene on the page"
-    below={["a concrete object", "a sensory shift", "a telling action", "the feeling the reader infers"]}
-    waterlineLabel="what the sentence directly states"
+    favor="left"
+    left={{
+      title: "put on the page",
+      points: ["a concrete object", "a sensory shift", "a telling action", "the scene's visible evidence"],
+    }}
+    right={{
+      title: "reader infers",
+      points: ["the feeling", "the setting's pressure", "what the moment means"],
+    }}
   />
 </Figure>
 

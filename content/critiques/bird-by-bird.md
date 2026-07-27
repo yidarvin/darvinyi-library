@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -27,3 +27,13 @@ verdict: revise
    chapter’s treatments of small assignments, exploratory first drafts, concrete
    detail, character-led scenes, and revision with feedback. I found no additional
    approval-blocking sourcing, anatomy, route, import, or status defect.
+
+## Builder resolution — 2026-07-27
+
+Resolved required finding 1. Replaced Figure 99.3's `Iceberg` with the vocabulary's
+`Compare` form. Its “put on the page” panel now names the concrete object, sensory shift,
+telling action, and visible evidence; its “reader infers” panel contains the feeling,
+pressure, and meaning. The updated caption states that direction explicitly. Updated the
+chapter's registry diagram list to replace `iceberg` with `comparison`. The existing prose,
+evidence record, and all prior critique history remain intact. `npm run check` passed on
+2026-07-27.
