@@ -1,0 +1,194 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Venn } from "../components/diagrams";
+
+<Hero
+  slug="bird-by-bird"
+  thesis="Writing moves when a huge, frightening project becomes one small piece of material, drafted freely and shaped later with attention."
+  minutes={7}
+/>
+
+## The thesis
+
+Anne Lamott's answer to the terror of a blank page is to reduce the unit of work. A book is
+too large to write in one sitting, and a perfect sentence is too high a bar for a first
+attempt. Choose one scene, memory, image, or question. Put down an imperfect version while
+the inner judge is temporarily off duty. Then return as an editor. The work becomes possible
+because discovery and judgment no longer have to happen in the same moment.
+
+## Why it matters
+
+Writing can look mysterious when seen only in finished form. The public sees the clean
+argument, the vivid scene, or the published book. It does not see the hesitant pages that
+made those things available. Lamott makes that hidden middle ordinary. Her method gives a
+writer a way to proceed without pretending that uncertainty, envy, fear, or a weak first
+attempt will disappear first.
+
+## Make the assignment small enough to enter
+
+Overwhelm often arrives through scale. "Write the novel" asks for a finished world before a
+writer has selected a door into it. A smaller prompt creates a boundary: describe the room
+after the argument, follow one person through one errand, recall the sound that starts a
+memory. The small piece is not a consolation prize. It is a real unit of composition, one
+that can reveal the larger work's voice, stakes, and next question.
+
+<Figure id="99.1" caption="A large project advances through one bounded piece that can actually be finished today.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["name the large project", "choose one small piece", "write that piece", "notice the next piece"]}
+    highlight={1}
+  />
+</Figure>
+
+## Let the first pass be private and unruly
+
+The book's famous permission for bad first drafts is not a claim that careless writing is the
+goal. It separates two useful jobs. Early pages are a place to find what you think, remember,
+and care about, including the false starts and excess that later work will remove. A polished
+page asks for selection, proportion, and a reader's attention. Asking for all of that before
+there is material on the page hands the editor an empty desk to criticize.
+
+<Figure id="99.2" caption="The first pass produces material; the later pass decides what deserves to stay.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "first pass",
+      points: ["write before judging", "allow detours and excess", "follow a live detail", "make material to inspect"],
+    }}
+    right={{
+      title: "later pass",
+      points: ["choose the real center", "cut repetition", "clarify for a reader", "give the piece a shape"],
+    }}
+  />
+</Figure>
+
+## Details make experience believable
+
+General labels report an opinion. Particular sensory evidence lets a reader arrive at one.
+Rather than announcing that a kitchen was sad, a draft can notice the cold coffee ring, the
+calendar left on the wall, or the person avoiding the chair by the window. The point is not to
+pile up decoration. It is to select details that carry feeling, setting, and implication at
+once, then trust the reader to take part in the meaning.
+
+<Figure id="99.3" caption="Specific observations give a reader access to the feeling beneath a broad label.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="a scene on the page"
+    below={["a concrete object", "a sensory shift", "a telling action", "the feeling the reader infers"]}
+    waterlineLabel="what the sentence directly states"
+  />
+</Figure>
+
+## Start with someone who wants something
+
+Plot is easier to force when it begins as a list of things that should happen. Lamott instead
+puts attention on a person with a desire, a limitation, and a situation that presses back.
+Choices then create consequences, which change the next choice. This gives a scene an engine.
+The writer still has to arrange and revise, but character stops being furniture moved through
+a prewritten sequence and becomes the source of the sequence's pressure.
+
+<Figure id="99.4" caption="A scene gathers momentum when desire meets pressure, choice, and consequence.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "want", label: "a person wants", x: 0.5, y: 0.1 },
+      { id: "pressure", label: "a situation resists", x: 0.12, y: 0.52 },
+      { id: "choice", label: "a choice follows", x: 0.88, y: 0.52 },
+      { id: "result", label: "a consequence changes things", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "want", to: "pressure" },
+      { from: "pressure", to: "choice" },
+      { from: "choice", to: "result" },
+      { from: "result", to: "want", kind: "reinforcing", label: "new stakes" },
+    ]}
+  />
+</Figure>
+
+## Revision needs distance and another pair of eyes
+
+A writer is too close to a new draft to know what it communicates. Time creates enough
+distance to hear its repetitions and missing steps. A trusted reader adds a second kind of
+evidence: where attention brightened, where meaning was lost, and what the page seems to be
+about. Feedback is not a command to obey. It is information to compare with the work's own
+intention. The writer remains responsible for the next decision.
+
+<Figure id="99.5" caption="Revision improves when the writer's intention meets distance and a reader's response.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[{ label: "writer's intention" }, { label: "time away" }, { label: "trusted response" }]}
+    intersectionLabel="a clearer next draft"
+  />
+</Figure>
+
+## The Model
+
+"Shitty first drafts" is deliberately blunt permission to begin without performing mastery.
+It is a model of sequence, not an excuse to stop at the rough version. First, get a private
+draft onto the page. Next, find the material with energy and remove what merely filled space.
+Then revise for the person who will read it. A new draft can restart the loop, but each pass
+has one job and therefore a workable standard.
+
+<Figure id="99.6" caption="Drafting, shaping, and revising are different passes through the same piece of work.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["draft freely", "find the live material", "shape the piece", "revise for a reader"]}
+    compoundingEdge={3}
+    centerLabel="a workable draft"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose a scene, not a project">
+Write the name of a project that feels too large to begin. Under it, name one piece that fits
+in twenty minutes: a remembered room, a difficult phone call, a list of objects from a trip,
+or the moment before a decision. Set a timer and write only that piece.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Give the first pass a protected rule">
+For one session, keep moving forward. Do not delete whole paragraphs, search for a better
+word, or reread from the beginning. Mark a problem with brackets if you must, then continue.
+When the timer ends, close the document before deciding what the draft means.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Trade one abstraction for evidence">
+Find one sentence that names a feeling, such as "the meeting was tense." Replace or follow it
+with one visible action, sound, object, or bodily response. Keep only the detail that changes
+how the reader understands the moment.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Ask for one kind of feedback">
+After a day away from a short draft, give it to one trusted reader with a narrow question:
+where did your attention sharpen, and where did you get lost? Listen without defending the
+page. Write down the answers, then decide privately which revision serves the piece.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The permission to draft badly is permission for a stage, not a defense of publishing work that
+has not been revised. The book's generous, personal voice can also make a solitary writing
+life look more available than it is. Regular practice is valuable, but a schedule must make
+room for paid work, disability, caregiving, health, and unequal access to quiet, time, and
+feedback. Small assignments reduce the intimidation of a project. They do not remove those
+conditions or replace the craft of sustained revision.
+</Callout>
+
+## If you remember one thing
+
+When the work feels impossible, lower the size of the next assignment and lower the standard
+of the first pass. Make honest material first. Shape it after there is something real to see.
+
+The nearby shelf pairs Lamott's compassion for the drafting life with books on craft, creative
+permission, and protecting a practice.
+
+<ShelvedNearby
+  related={["on-writing", "big-magic", "steal-like-an-artist", "deep-work"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/97395/bird-by-bird-by-anne-lamott/"
+  buyLabel="Bird by Bird by Anne Lamott"
+/>
