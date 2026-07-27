@@ -1,0 +1,188 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Flow, Iceberg, NodeGraph } from "../components/diagrams";
+
+<Hero
+  slug="noise"
+  thesis="A judgment system can be wrong in one direction, or it can give different answers to the same case. The second failure, noise, is easy to miss and costly to leave unmanaged."
+  minutes={7}
+/>
+
+## The thesis
+
+Kahneman, Sibony, and Sunstein ask us to look beyond the average error in a judgment
+system. A hiring panel, court, claims operation, or forecasting team can have no obvious
+collective lean and still treat comparable cases very differently. That unwanted spread is
+noise. It makes outcomes depend partly on which person happens to decide, what features of
+the case catch their attention, and even the conditions of the moment. Fairer, more reliable
+judgment starts by measuring the spread, then redesigning the process that permits it.
+
+## Why it matters
+
+Bias is visible because it points somewhere. A group that consistently overvalues a factor
+can be shown its average drift. Noise is quieter. A high estimate and a low estimate can
+cancel in the average, making a system look centered while individuals receive very different
+treatment. That is a serious problem when a judgment determines a diagnosis, a sentence, an
+insurance price, a performance rating, or an opportunity to be hired. Consistency is not the
+whole of justice or accuracy, but arbitrary variation is not a harmless feature of expertise.
+
+## Bias and noise are different errors
+
+Bias is a systematic miss. If a forecasting process repeatedly predicts too much growth, its
+average answer is tilted upward. Noise is the extra scatter around whatever average the system
+produces. Two assessors can be equally well-intentioned, receive the same file, and still land
+far apart. A system may have bias, noise, both, or neither. Treating every error as bias means
+the repair will often chase a directional problem while leaving the lottery intact.
+
+<Figure id="106.1" caption="Bias shifts the center of judgment; noise spreads comparable judgments apart.">
+  <Compare
+    className="block w-full"
+    favor="right"
+    left={{
+      title: "bias",
+      points: ["answers lean in one direction", "visible in the average", "repair the systematic pull"],
+    }}
+    right={{
+      title: "noise",
+      points: ["answers vary too much", "hidden by the average", "repair the judgment process"],
+    }}
+  />
+</Figure>
+
+## The average can hide a lottery
+
+Leaders often inspect a portfolio-level result: the average rating, the aggregate payout, the
+mean forecast error. Those summaries matter, but they do not answer the question a person
+inside the system experiences: would another qualified evaluator have reached a similar
+conclusion? If one severe judgment is balanced by one lenient judgment, the average can look
+fine while both people have been treated inconsistently. The relevant unit is not only the
+score on the dashboard. It is the distribution of judgments for comparable work.
+
+<Figure id="106.2" caption="A tidy average can sit above a wide and consequential range of individual judgments.">
+  <Iceberg
+    className="block w-full"
+    above="the average result"
+    waterlineLabel="the dashboard view"
+    below={["wide individual range", "different treatment", "unseen error costs"]}
+  />
+</Figure>
+
+## Variation has more than one source
+
+Some professionals are consistently tougher or more optimistic than their peers. That is one
+form of difference. More elusive is the pattern each person carries: one interviewer may prize
+polish, another initiative, and a third a familiar background. The same person can also shift
+with fatigue, a recent case, a noisy room, or a bad morning. These sources can overlap. The
+important practical point is that a shared title and a common rubric do not guarantee a shared
+judgment policy.
+
+<Figure id="106.3" caption="A single case can pick up variability from the person, their cues, and the occasion.">
+  <NodeGraph
+    className="block w-full"
+    nodes={[
+      { id: "case", label: "same case", x: 0.5, y: 0.5 },
+      { id: "person", label: "person's baseline", x: 0.18, y: 0.18 },
+      { id: "pattern", label: "what they notice", x: 0.82, y: 0.18 },
+      { id: "occasion", label: "moment and context", x: 0.5, y: 0.87 },
+    ]}
+    edges={[
+      { from: "person", to: "case", label: "level" },
+      { from: "pattern", to: "case", label: "pattern" },
+      { from: "occasion", to: "case", label: "occasion" },
+    ]}
+  />
+</Figure>
+
+## Measure the spread before prescribing the cure
+
+Noise cannot be inferred from a few memorable disagreements. A noise audit gives several
+qualified people the same representative cases, asks for independent judgments, and examines
+how widely the results differ. The exercise is diagnostic, not a public ranking of who has the
+best instincts. It can reveal where disagreement concentrates, whether criteria are being
+interpreted differently, and whether the stakes justify a more structured method. A single
+small audit is a starting sample, not a permanent verdict on a person or profession.
+
+<Figure id="106.4" caption="A noise audit turns an impression of inconsistency into a measurable range to investigate.">
+  <Flow
+    className="block w-full"
+    steps={["choose comparable cases", "collect private judgments", "inspect the spread", "redesign and retest"]}
+    highlight={2}
+  />
+</Figure>
+
+## Good process reduces avoidable variation
+
+The book's response is decision hygiene: safeguards put in place before anyone knows whose
+judgment will drift, or which case will provoke it. Break a broad evaluation into separate
+questions. Set criteria before reviewing a candidate or proposal. Gather assessments
+independently before the meeting creates an anchor. Combine multiple judgments where the task
+allows it. Use a simple rule or model when it has proved reliable, while keeping a person
+responsible for the cases where context genuinely matters. These moves do not remove judgment.
+They give it less room to turn incidental conditions into outcomes.
+
+<Figure id="106.5" caption="Decision hygiene adds repeatable safeguards before individual impressions become a verdict.">
+  <Bars
+    className="block w-full"
+    items={[
+      { label: "one broad impression", value: 0.92, valueLabel: "more room for drift" },
+      { label: "separate criteria", value: 0.62, valueLabel: "make reasons visible" },
+      { label: "independent judgments", value: 0.42, valueLabel: "avoid a shared anchor" },
+      { label: "combine and review", value: 0.28, accent: true, valueLabel: "check the result" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the recurring judgment">
+Choose one decision that your team makes often and that matters to the people affected by it:
+hiring, prioritization, ratings, estimates, or approvals. State what two genuinely comparable
+cases should receive comparable treatment. This defines the system worth inspecting.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Run a small blind comparison">
+Select a handful of past or constructed cases, remove identifying details where practical, and
+ask several qualified people to assess them privately using the current process. Compare the
+range before discussing why it appeared. The goal is to learn about the system, not to win an
+argument about the correct answer.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Separate the judgment into parts">
+Replace one global verdict with a few observable questions. For a hiring decision, rate the
+role-relevant evidence, the quality of examples, and the requirements separately before any
+overall recommendation. Agree on the criteria and their meaning before reviewing candidates.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Combine before you convene">
+Have evaluators record their assessment and reasons before a group meeting. Then compare the
+independent views, discuss meaningful disagreements, and record why the final decision differs
+from the initial range. Independence does not end collaboration. It protects what collaboration
+gets to examine.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Reducing noise is not the same as demanding uniformity. Two cases that differ in relevant ways
+should not be forced to the same result, and a narrow scoring rule can hide values that deserve
+deliberation. Agreement also does not prove correctness. A whole team can share the same blind
+spot, which is bias, while agreeing perfectly. Decision hygiene earns its cost in recurring,
+high-stakes judgments where comparable treatment matters. It should be tested for its effects,
+not treated as a ritual or an excuse to remove human accountability.
+</Callout>
+
+## If you remember one thing
+
+When two people should reach similar answers but do not, do not assume the disagreement is
+just personality. Measure the variation, then give the judgment a process sturdy enough that
+the outcome depends more on the case than on the decider or the day.
+
+Thinking, Fast and Slow explains the predictable shortcuts that can create bias; Misbehaving
+shows how decision design can accommodate real human judgment; Nudge carries that design
+question into institutions.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "misbehaving", "nudge"]}
+  buyUrl="https://www.littlebrown.com/titles/daniel-kahneman/noise/9780316451406/"
+  buyLabel="Noise by Daniel Kahneman, Olivier Sibony, and Cass R. Sunstein"
+/>
