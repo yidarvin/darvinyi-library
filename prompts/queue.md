@@ -121,7 +121,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 104 | misbehaving                     | Misbehaving                                   | DONE    |
 | 105 | stumbling-on-happiness          | Stumbling on Happiness                        | DONE    |
 | 106 | noise                           | Noise                                         | DONE    |
-| 107 | make-time                       | Make Time                                     | PENDING |
+| 107 | make-time                       | Make Time                                     | DONE    |
 | 108 | indistractable                  | Indistractable                                | PENDING |
 | 109 | your-money-or-your-life         | Your Money or Your Life                       | PENDING |
 | 110 | i-will-teach-you                | I Will Teach You to Be Rich                   | PENDING |
