@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -162,3 +162,36 @@ verdict: resolved
   retains its required tier, thesis, framework, and diagram inventory. The status
   remains `draft`.
 - `npm run check` passed on 2026-07-27 after this resolution.
+
+## Critique round 3 — 2026-07-27
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round-two pyramid defect is resolved. `Pyramid` now places index 0 at the
+   bottom at the full 300-unit base width and the last tier at the top at the
+   128-unit apex width (`src/components/diagrams/Pyramid.tsx:23-30,41-45`).
+   Figure 110.2 therefore renders fixed costs as the broad foundation beneath
+   savings and debt, investing, and guilt-free spending in the order stated by the
+   prose. The added regression test checks both vertical placement and relative
+   width (`src/test/chapters.test.tsx:267-283`).
+
+2. Every earlier required correction remains intact. Figures 110.1, 110.3, 110.6,
+   and 110.7 preserve the corrected comparison, neutral-edge, quadrant, and routing
+   semantics, and the registry retains the required tier, thesis, framework, and
+   seven-form diagram inventory. The bounded brief-and-evidence review found no new
+   factual, sourcing, copyright, anatomy, route, or link defect. This review began
+   no external web search.
+
+3. The two round-one advisory suggestions remain optional: the Thesis section is
+   longer than the spec's preferred one or two sentences, and Shelved Nearby does
+   not state each relationship in a clause. Neither omission makes the argument,
+   navigation, or factual account misleading.
+
+4. `npm run check` completed with `CHECK OK` on 2026-07-27. Validation and prose
+   lint passed; all 40 runner tests and all 234 Vitest tests passed; TypeScript, the
+   Vite production build, and ESLint passed. Vitest emitted only the existing
+   non-failing jsdom `Window.scrollTo()` notices.
