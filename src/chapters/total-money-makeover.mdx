@@ -1,0 +1,235 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Flow, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="total-money-makeover"
+  thesis="A household can turn a frightening debt picture into a series of visible wins by putting its money in a strict order and carrying each finished payment forward."
+  minutes={8}
+/>
+
+## The thesis
+
+Ramsey offers a deliberately narrow answer to financial disorder: stop treating every money
+choice as equally urgent, make a written plan, and work it in sequence. First create a small
+cash margin. Then clear non-mortgage debt one account at a time, using early completed
+balances to create momentum. Once the household is no longer carrying that debt, rebuild
+reserves, invest, prepare for children’s education if relevant, pay down the home, and direct
+the resulting capacity toward wealth and generosity. The plan is less a calculation than a
+behavioral operating system for making sustained action feel possible.
+
+## Why it matters
+
+Debt can turn a monthly budget into a pile of competing alarms. Minimum payments keep every
+account alive, but they can make no account feel meaningfully smaller. The book gives a
+household a rule for what happens next, so energy does not dissolve into repeated debate.
+Its appeal is not subtlety. It is the relief of replacing a vague intention to get better
+with a visible order of operations.
+
+## Give every dollar a job before the month begins
+
+The plan starts with a budget that assigns the income you expect to receive. Essentials,
+minimum debt payments, and the current priority each get a line before discretionary spending
+does. The purpose is not to predict every surprise. It is to make tradeoffs visible while
+there is still time to choose them. A dollar that is left undefined tends to be claimed by the
+loudest want or the most recent bill.
+
+Writing the plan also changes the conversation in a shared household. Instead of arguing
+about a purchase after the money is gone, people can decide in advance what this month must
+carry. The budget is a map that can be corrected when reality changes. It is not a moral
+grade on the person using it.
+
+<Figure id="112.1" caption="A written plan gives income a destination before ordinary spending starts to compete for it.">
+  <Flow
+    className="block w-full"
+    steps={["income arrives", "cover essentials", "fund the current priority", "spend from the remainder"]}
+    highlight={2}
+  />
+</Figure>
+
+## Make the first payoff win easy to see
+
+The debt snowball orders non-mortgage balances by size, not by interest rate. Continue the
+required payments on every account, then aim all extra money at the smallest remaining
+balance. When it disappears, the former payment is no longer scattered across the budget. It
+becomes part of the extra amount directed at the next balance.
+
+This order is psychologically intentional. A small account vanishing can produce evidence
+that the plan is working long before the total debt looks impressive. Ramsey favors that
+proof of progress over the interest-saving order. The method bets that a person who stays in
+the plan will do more good than one who chooses a more efficient schedule and abandons it.
+
+<Figure id="112.3" caption="The snowball starts with the smallest balance so the first completed account arrives sooner.">
+  <Bars
+    className="block w-full"
+    items={[
+      { label: "smallest balance", value: 0.25, accent: true, valueLabel: "target this first" },
+      { label: "next balance", value: 0.52, valueLabel: "keep its minimum current" },
+      { label: "largest balance", value: 0.84, valueLabel: "wait its turn" },
+    ]}
+  />
+</Figure>
+
+## A finished payment becomes fuel for the next one
+
+The important unit is not merely a paid-off account. It is the payment that has been freed.
+Suppose a household had been sending $75 to a card each month. When that balance reaches
+zero, the $75 does not become casual spending. It joins the amount already being sent to the
+next target. Each completion increases the force applied to the remaining list without
+requiring a new raise or a new source of income.
+
+This is why the snowball is a loop instead of a checklist. The completed balance creates a
+new, larger payment. That larger payment produces the next completion. A pause, a new debt,
+or diverting the freed payment breaks the loop, so the plan asks for unusual focus while this
+phase is underway.
+
+<Figure id="112.4" caption="Each cleared balance adds its former payment to the next target, increasing the next push.">
+  <ProcessLoop
+    className="block w-full"
+    stages={["clear the smallest balance", "free its payment", "add it to the next target", "reach the next payoff sooner"]}
+    compoundingEdge={3}
+    centerLabel="the debt snowball"
+  />
+</Figure>
+
+## The plan works only if new borrowing stops refilling the list
+
+Paying down debt while continuing to add balances is motion without escape. The book makes
+the spending boundary unusually firm because the payoff order needs surplus money to remain
+available. That can mean selling an underused item, taking temporary extra work, cutting a
+cost, or simply postponing purchases that cannot be paid for now. None of those moves is a
+universal answer, but each tests the same question: does this choice shorten the list, or
+extend it?
+
+The stricter rule also keeps the method legible. If a purchase must be financed, the cost is
+no longer only its price. It includes another minimum payment, another decision, and another
+claim on the next month. Seeing that full consequence can make a short-term refusal feel
+less like punishment and more like protection for the plan already underway.
+
+<Figure id="112.5" caption="Debt reduction depends on keeping progress from being replaced by a new obligation.">
+  <Compare
+    className="block w-full"
+    favor="left"
+    left={{
+      title: "protect the plan",
+      points: ["spend from money already assigned", "send surplus to the target", "let finished payments roll forward"],
+    }}
+    right={{
+      title: "refill the list",
+      points: ["finance the current shortfall", "add another minimum payment", "delay the next payoff"],
+    }}
+  />
+</Figure>
+
+## A small reserve keeps a surprise from becoming new debt
+
+Before the aggressive payoff phase, the method calls for a starter emergency fund. Its job is
+not to absorb every possible disruption. It is to create enough distance between a flat tire,
+a repair, or an urgent trip and another charge card balance. That small gap matters because a
+debt plan that must borrow again at the first disruption cannot hold its shape.
+
+The later, larger reserve has a different job. After non-mortgage debt is gone, the plan
+expands the buffer toward several months of expenses. The sequence treats resilience as
+something that is built in layers: first prevent a routine surprise from reversing progress,
+then build room for a more serious interruption.
+
+<Figure id="112.2" caption="The reserve grows from a first line of defense into room to absorb a longer interruption.">
+  <Spectrum
+    className="block w-full"
+    left="one surprise means borrowing"
+    right="an interruption has a cash buffer"
+    marker={0.42}
+    markerLabel="starter reserve"
+    zones={[
+      { from: 0, to: 0.3, label: "fragile month" },
+      { from: 0.34, to: 0.56, label: "first line of defense", accent: true },
+      { from: 0.7, to: 1, label: "larger reserve" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The debt snowball is a behavior-first repayment system. List the balances from smallest to
+largest, keep each required payment current, and send every available extra dollar to the
+smallest balance. On the day it is gone, redirect its payment to the next-smallest balance.
+The order stays fixed by balance, while the attack payment grows after every completion.
+
+The surrounding Baby Steps matter because they stop this phase from trying to do every job at
+once. A starter reserve comes before the debt list. A fuller reserve follows it. Long-term
+investing, education savings where applicable, home payoff, and giving occupy later phases.
+The plan asks for sequence, not simultaneous optimization.
+
+<Figure id="112.6" caption="The debt snowball keeps minimums current, then rolls each finished payment into the next smallest balance.">
+  <div className="space-y-5">
+    <Bars
+      className="block w-full"
+      items={[
+        { label: "smallest balance", value: 0.24, accent: true, valueLabel: "extra payment goes here" },
+        { label: "middle balance", value: 0.5, valueLabel: "becomes the next target" },
+        { label: "largest balance", value: 0.78, valueLabel: "minimum stays current" },
+      ]}
+    />
+    <Flow
+      className="block w-full"
+      steps={["list by balance", "pay minimums", "aim surplus at the smallest", "roll that payment forward"]}
+      highlight={2}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Make a one-page money map">
+Write this month’s expected income, required living costs, every debt minimum, and the amount
+left after those commitments. If the number is negative, do not invent a payoff target yet.
+First identify the cost, income, or assistance decision needed to make the month viable.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Build the debt list">
+For each non-mortgage debt, record the current balance, interest rate, minimum payment, and
+due date. Sort the list by balance if you are choosing the snowball. Keep the rate visible so
+you understand the cost of the behavioral tradeoff you are making.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Choose one starter reserve target">
+Set aside a small, separate cash amount before accelerating payments. Keep it available for a
+genuine disruption, not for a planned purchase. Refill it after use before assuming the plan
+can safely resume at full speed.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Protect one payment from drift">
+Name the smallest balance and the exact extra payment it will receive this month. Put the
+payment date on the calendar. If a new expense appears, decide deliberately whether it can
+wait, be reduced, or be covered without adding a new debt.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The snowball is a motivation strategy, not an interest-minimization rule. The Consumer
+Financial Protection Bureau explains that paying the highest-rate balance first can save money
+over time, while paying the smallest balance first can make progress easier to see and may
+help some people continue. Compare both paths using your actual rates, fees, and minimums.
+A fixed starter reserve may also be too small for a household with volatile income, medical
+needs, dependents, or insecure housing. Do not miss a required payment, ignore lender
+communications, or forgo protections that apply to a particular debt just to preserve a
+simple sequence. For decisions involving bankruptcy, tax treatment, federal student loans,
+or serious hardship, use current official guidance or a qualified adviser.
+</Callout>
+
+## If you remember one thing
+
+Progress becomes easier to sustain when each cleared balance creates a larger payment for the
+next one. Put the money in order, protect a small buffer, and make every finished obligation
+strengthen the next move instead of disappearing into ordinary spending.
+
+Psychology of Money supplies the behavioral context for plans people can actually keep, I Will
+Teach You to Be Rich offers a more flexible default-based money system, and Your Money or Your
+Life connects a spending plan to the time and freedom it is meant to protect.
+
+<ShelvedNearby
+  related={["psychology-of-money", "i-will-teach-you", "your-money-or-your-life"]}
+  buyUrl="https://www.thomasnelson.com/9781400342525/the-total-money-makeover-updated-and-expanded/"
+  buyLabel="The Total Money Makeover by Dave Ramsey"
+/>

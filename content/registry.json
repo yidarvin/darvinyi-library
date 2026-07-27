@@ -2218,7 +2218,18 @@
       "subtitle": "Dave Ramsey · 2003",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "A household can turn a frightening debt picture into a series of visible wins by putting its money in a strict order and carrying each finished payment forward.",
+      "framework": "The debt snowball",
+      "diagrams": [
+        "flow / sequence",
+        "bars",
+        "process loop",
+        "comparison / split",
+        "spectrum / gradient",
+        "bars with flow / sequence"
+      ]
     },
     {
       "num": 113,
