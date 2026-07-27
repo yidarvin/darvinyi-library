@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -79,3 +79,20 @@ verdict: revise
    all 199 Vitest tests; TypeScript and the Vite production build; and ESLint
    passed. Vitest emitted only the existing non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+- Replaced Figure 96.2's concentric layers with a `Flow` from thought commentary,
+  through a highlighted body anchor, to immediate sensation. The diagram now shows
+  the attention shift described by the neighboring prose and caption.
+- Replaced Figure 96.3's iceberg with a four-step `Flow`: a thought or feeling
+  appears, it is noticed, a response is chosen, then the person acts. This teaches
+  the stated interruption of automatic action without claiming hidden drivers.
+- Narrowed the caveat to the non-clinical practice supported by the recorded
+  evidence: notice a body or breath anchor, recognize wandering attention, and
+  return. Removed the unsupported adverse-experience and emergency-support claims.
+- Also replaced Figure 96.5's quantified spectrum with a neutral `NodeGraph` that
+  connects formal sitting, walking, eating, and listening to the shared practice of
+  returning attention.
+- Preserved the five key ideas, fixed page anatomy, exercises, cross-links, and
+  existing evidence. `npm run check` passed before this resolution was appended.

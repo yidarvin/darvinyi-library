@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, Iceberg, ProcessLoop, Spectrum } from "../components/diagrams";
+import { Compare, Flow, NodeGraph, ProcessLoop } from "../components/diagrams";
 
 <Hero
   slug="wherever-you-go"
@@ -60,10 +60,10 @@ take three unhurried steps between rooms. The point is not to turn every sensati
 It is to give awareness something real and close enough to notice.
 
 <Figure id="96.2" caption="A body anchor brings attention from the outer rush of thought toward immediate sensation.">
-  <Concentric
-    className="block w-full"
-    rings={[{ label: "felt sensation" }, { label: "breath and posture" }, { label: "sounds and surroundings" }]}
-    highlight={0}
+  <Flow
+    className="block min-w-[420px]"
+    steps={["thought commentary", "body anchor: breath, posture, feet", "immediate sensation"]}
+    highlight={1}
   />
 </Figure>
 
@@ -79,12 +79,11 @@ what has appeared: a tight chest, a defensive sentence, a prediction. The next j
 decide whether a response is needed, and what kind. Awareness does not remove responsibility. It
 makes an automatic response easier to interrupt.
 
-<Figure id="96.3" caption="The first reaction is visible, while sensation, memory, and prediction can be noticed beneath it.">
-  <Iceberg
-    className="block w-full"
-    above="the reaction you notice"
-    below={["body sensation", "memory or association", "a prediction about what comes next"]}
-    waterlineLabel="what arrives all at once"
+<Figure id="96.3" caption="Noticing creates a step between a thought or feeling and the response you choose.">
+  <Flow
+    className="block min-w-[558px]"
+    steps={["thought or feeling appears", "notice what arrived", "choose a response", "act with care"]}
+    highlight={2}
   />
 </Figure>
 
@@ -127,17 +126,22 @@ some are painful, and some are plainly boring. The useful measure is not how cal
 It is whether attention can make contact with what is actually happening, then support a more
 considered action.
 
-<Figure id="96.5" caption="Formal sitting and daily activity sit on one continuum of deliberate contact with the present.">
-  <Spectrum
-    className="block w-full"
-    left="formal sitting"
-    right="daily activity"
-    marker={0.68}
-    markerLabel="walking, eating, listening"
-    markerLabelPlacement="top"
-    zones={[
-      { from: 0.04, to: 0.35, label: "set aside time" },
-      { from: 0.5, to: 0.96, label: "bring attention into the day", accent: true },
+<Figure id="96.5" caption="Formal sitting and ordinary activities can all hold the same return to present contact.">
+  <NodeGraph
+    className="block min-w-[380px]"
+    directed={false}
+    nodes={[
+      { id: "sitting", label: "formal sitting", x: 0.5, y: 0.1 },
+      { id: "walking", label: "walking", x: 0.12, y: 0.5 },
+      { id: "practice", label: "return attention", x: 0.5, y: 0.5 },
+      { id: "eating", label: "eating", x: 0.88, y: 0.5 },
+      { id: "listening", label: "listening", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "sitting", to: "practice" },
+      { from: "walking", to: "practice" },
+      { from: "eating", to: "practice" },
+      { from: "listening", to: "practice" },
     ]}
   />
 </Figure>
@@ -173,12 +177,11 @@ ask one question that follows from what they actually said.
 ## Where people get it wrong
 
 <Callout kind="note">
-Mindfulness is not a promise of constant calm, a substitute for treatment, or a reason to endure
-harm without action. Paying attention can make difficult thoughts, grief, trauma responses, or
-physical pain more noticeable at first. If a practice leaves you overwhelmed, disconnected, or
-unsafe, stop and seek appropriate support from a qualified clinician or local emergency service.
-Nonjudgment also does not mean moral neutrality. You can see experience clearly and still set a
-boundary, report wrongdoing, or change the conditions causing harm.
+Mindfulness is not a promise of constant calm or a reason to endure harm without action. This
+chapter describes a non-clinical attention practice: noticing a body or breath anchor, recognizing
+when attention wanders, and returning. Nonjudgment also does not mean moral neutrality. You can
+see experience clearly and still set a boundary, report wrongdoing, or change the conditions
+causing harm.
 </Callout>
 
 ## If you remember one thing
