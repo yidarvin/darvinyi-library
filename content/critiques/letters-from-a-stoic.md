@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -111,3 +111,13 @@ verdict: revise
    validation and prose lint passed; the two pipeline tests, all 40 runner tests,
    all 193 Vitest tests, TypeScript, the Vite production build, and ESLint passed.
    Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+- Replaced the unsupported description of Seneca as knowing luxury and political danger with the
+  brief-supported statement that he wrote at the center of power. The surrounding explanation
+  remains a contextual reading of the letters, not a claim of unrecorded biography.
+- Removed the unsupported claim that Seneca possessed extraordinary wealth. The caveat now keeps
+  the recorded Letter 47-supported limit: he criticized cruelty toward enslaved people while
+  accepting the institution. It no longer uses unsupported biography to calibrate the reader's
+  trust.
