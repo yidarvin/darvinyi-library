@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -55,3 +55,21 @@ verdict: resolved
   forms used on the finished page. The chapter remains `draft`; this resolution does
   not mark it done.
 - Ran the mandatory full `npm run check` gate after the corrections; it passes.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+1. Figure 113.5 gives the committed-versus-aspirational distinction the wrong
+   structure. The chapter prose describes two explicitly labeled goal types, and the
+   recorded evidence likewise distinguishes goals requiring dependable delivery from
+   goals intended to stretch a team. `Spectrum` is reserved for matters of degree,
+   but this figure places the two types at opposite ends of one scale and adds an
+   unsupported `0.72` marker. That presentation tells the reader an OKR occupies a
+   position between committed and aspirational, rather than requiring an honest
+   choice of type. Use an in-vocabulary categorical form, such as `Compare`, that
+   preserves the distinction, and keep the registry diagram list in agreement.
+
+### Advisory
+
+- None.
