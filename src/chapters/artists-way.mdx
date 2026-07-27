@@ -1,0 +1,218 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum, Venn } from "../components/diagrams";
+
+<Hero
+  slug="artists-way"
+  thesis="Creativity becomes easier to recover when regular practices clear room for private thought, fresh attention, and imperfect work."
+  minutes={7}
+/>
+
+## The thesis
+
+*The Artist's Way* treats a creative block less as an absence of talent than as a crowded
+relationship with making. Worry, self-surveillance, old disappointments, and the demand to
+produce something worthwhile can take up all the available room. Julia Cameron's answer is a
+set of recurring practices: private writing that lets mental noise out, solo encounters that
+put something interesting back in, and small acts of making before judgment takes over. The
+point is not to manufacture inspiration on command. It is to build conditions in which
+attention and experimentation have somewhere to return.
+
+## Why it matters
+
+Creative work is often assigned two jobs at once. It must prove that its maker has talent,
+and it must justify the time spent on it. That is a heavy burden for an early sketch, a first
+paragraph, or an afternoon of looking around. Cameron's program lowers the stakes of the
+first move. A practice can be useful before it is impressive. Repeated permission to notice,
+play, and make rough material gives a person evidence that their creative life is still an
+activity, not a verdict waiting to be delivered.
+
+## A block often has more underneath it than a blank page
+
+"I have nothing" can be the visible sentence, but it rarely describes the whole situation.
+The page may be carrying fear of being ordinary, an imagined audience, a dispute with a past
+teacher, or pressure to make the first attempt count. Cameron's morning-writing practice is
+useful because it creates a private place for this traffic to appear without having to become
+good prose. Once the noise has been named, it is easier to see that it is noise, not
+necessarily a command to stop.
+
+<Figure id="101.1" caption="A blank page can sit above worries and judgments that need room before work can begin.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="I have nothing to make"
+    below={["fear of looking foolish", "pressure to be original", "old criticism", "too many unfinished thoughts"]}
+    waterlineLabel="what is easiest to say"
+  />
+</Figure>
+
+## Making and judging need different turns
+
+An inner critic can sometimes improve a finished piece. It is far less helpful when it is
+asked to supervise every first mark. In that role, it compares a rough attempt with an
+imagined final standard and calls the gap failure. Cameron's practices create a distinction:
+there is time to put material down, and later there is time to assess, edit, or discard it.
+That separation does not ban standards. It prevents standards from ending the experiment
+before there is anything real to evaluate.
+
+<Figure id="101.2" caption="Drafting needs permission to generate; revision needs standards to shape what exists.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "judging too early",
+      points: ["asks whether it is good", "compares with a finished ideal", "edits the first impulse", "makes starting feel risky"],
+    }}
+    right={{
+      title: "making, then judging",
+      points: ["makes private material", "lets roughness be evidence", "returns later with criteria", "gives revision something to work on"],
+    }}
+  />
+</Figure>
+
+## Attention becomes material when it is collected
+
+The book does not reserve creative nourishment for museums, travel, or expensive tools. The
+relevant habit is a deliberate encounter with something that has not already been reduced to
+a task: a walk through an unfamiliar block, an old movie, a hardware store, a morning at the
+library, a small concert, or a sketchbook in a park. Cameron calls the recurring solo outing
+an artist date. Its value is not that every outing supplies an idea. It trains attention to
+register texture, questions, and pleasure, which are the raw materials a practice can later
+use.
+
+<Figure id="101.3" caption="Attention turns into material when a small encounter is noticed and returned to in the work.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["seek one live encounter", "notice a detail", "keep a trace", "make from it later"]}
+    highlight={1}
+  />
+</Figure>
+
+## Play needs solitude, novelty, and a little time without a payoff
+
+An artist date works partly because it removes the usual audience. No companion needs to be
+entertained, and no purchase, photo, or finished result has to justify the time. That creates
+a modest zone of play. Solitude leaves room for your own response; novelty interrupts habit;
+and unpriced time makes curiosity easier to follow. The combination is more important than
+the activity selected. A free afternoon spent noticing local architecture can do the job as
+well as a formal class if it restores alertness rather than becoming another performance.
+
+<Figure id="101.4" caption="A replenishing encounter combines private attention, novelty, and freedom from a required result.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[{ label: "solitude" }, { label: "something new" }, { label: "no required output" }]}
+    intersectionLabel="playful attention"
+  />
+</Figure>
+
+## A practice protects return, not constant productivity
+
+The ambition of a recurring ritual is continuity. A daily page and a weekly date give the
+creative life appointments that can survive a flat week. They do not turn every session into
+a breakthrough, and they should not become a scorecard. The useful question is simpler: did
+this arrangement make it more likely that you would come back? A practice that produces less
+shame, more observation, and another small start is doing its work even when no finished piece
+appears that day.
+
+<Figure id="101.5" caption="The aim is a sustainable return to the work, not a daily test of productivity.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="prove something today"
+    right="keep returning"
+    marker={0.74}
+    markerLabel="protect the next visit"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.02, to: 0.38, label: "performance pressure" },
+      { from: 0.57, to: 0.98, label: "continuity and attention", accent: true },
+    ]}
+  />
+</Figure>
+
+## The model
+
+Cameron's two best-known tools work at different rhythms. Morning pages are private,
+handwritten freewriting done early in the day, a place to empty recurring concerns and catch
+what has been asking for attention. The artist date is a regular solo appointment with
+curiosity. One practice clears the desk; the other restocks it. Neither replaces craft or
+revision. Together, they make a more hospitable loop around the actual work: notice what is
+there, feed attention with something real, make a small attempt, and notice again.
+
+<Figure id="101.6" caption="Morning pages clear private noise and artist dates renew attention around the ongoing work.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "pages", label: "morning pages", x: 0.5, y: 0.1 },
+      { id: "notice", label: "clearer attention", x: 0.14, y: 0.52 },
+      { id: "date", label: "artist date", x: 0.86, y: 0.52 },
+      { id: "work", label: "small creative work", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "pages", to: "notice", label: "empty" },
+      { from: "notice", to: "date", label: "follow" },
+      { from: "date", to: "work", label: "refresh" },
+      { from: "work", to: "pages", kind: "reinforcing", label: "notice again" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Make a private morning page">
+For five mornings this week, write by hand for ten minutes before opening messages or feeds.
+Write what is present, including complaints, distractions, and uncertainty. Do not revise or
+save it for an audience. When the timer ends, underline one concern or curiosity that keeps
+returning. The purpose is to hear the room in your head, not to produce a journal entry.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Schedule a small artist date">
+Put one hour on your calendar this week for a solo encounter that costs little or nothing.
+Choose something you have not been paying attention to: a neighborhood, a public building, a
+used-record store, an aquarium livestream, a botanical garden, or a film from a genre you do
+not know. Leave your productivity goal at home. Bring a notebook only to catch details that
+ask to be remembered.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Separate the maker from the editor">
+Choose one stalled project. Give the maker twenty-five minutes to produce a deliberately rough
+unit, such as a scene, thumbnail, melody fragment, or three possible headlines. Stop without
+grading it. On the following day, give the editor fifteen minutes to circle one part worth
+keeping and name one revision. The two jobs can cooperate once they stop competing for the
+same minute.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make the return easy">
+At the end of each creative session, leave a visible starting point for the next one: an open
+document with a question at the top, a marked page, tools on the table, or a note naming the
+next tiny action. A creative life survives on re-entry. Design the room so tomorrow's return
+does not have to begin with remembering everything.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book's spiritual language and structured rituals will not suit everyone, and the tools
+are not a diagnosis or treatment for depression, trauma, disability, or burnout. A persistent
+inability to work may call for rest, practical support, accommodation, collaboration, or
+professional care rather than more self-discipline. There is also no evidence that morning
+pages or artist dates guarantee originality, income, or recovery from a serious mental-health
+condition. Their modest promise is more useful: they can make private attention and regular
+experimentation easier to practice.
+</Callout>
+
+## If you remember one thing
+
+Treat creativity as a relationship that needs regular contact. Clear a little private space,
+go looking for something that interests you, and return to the small piece of work that is
+ready for attention.
+
+The nearby shelf adds compassionate drafting advice, a case for curiosity-led making, and a
+practical account of how recurring work sessions survive resistance.
+
+<ShelvedNearby
+  related={["bird-by-bird", "big-magic", "war-of-art"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/349644/the-artists-way-by-julia-cameron/"
+  buyLabel="The Artist's Way by Julia Cameron"
+/>
