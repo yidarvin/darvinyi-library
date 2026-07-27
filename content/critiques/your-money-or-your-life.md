@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -67,3 +67,36 @@ current component contracts: Figure 109.1 is explicitly a hypothetical example, 
 `Compare` import is removed, and the Shelved Nearby lead names the relationship to each of
 its three linked books. The shared footer component does not accept per-link relationship
 copy, so this chapter-level lead supplies it without changing unrelated shared UI.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+1. **The registry record is incomplete.** The `your-money-or-your-life` entry has only
+   its basic routing fields and `status: "draft"`. It is missing `tier`, `thesis`,
+   `framework`, and `diagrams`, all of which the definition of done requires and the
+   adjacent completed records contain. `mark.py` changes only status, so approving
+   now would leave the final registry incomplete even though the current validator
+   does not enforce those fields.
+
+2. **All six figures shrink below legible phone size.** Every diagram is passed
+   `className="block w-full"` with no minimum width. At a 360px viewport, the layout
+   and Figure padding leave roughly 278px for the SVG. The two four-step Flow figures
+   therefore scale their 558-unit viewBoxes by about one half, reducing their
+   9–11.5-unit labels to roughly 4.5–5.8 CSS pixels. The 380–384-unit Bars, Matrix,
+   Spectrum, and Curve figures likewise reduce most labels to roughly 7–9 pixels.
+   `Figure` has an overflow container, but it cannot scroll when its child has no
+   minimum width. Give each chapter diagram a suitable minimum width, as other
+   chapters do for these primitives, so labels remain readable at 360px.
+
+### Advisory
+
+1. The Thesis section takes five sentences, while the authoring spec asks it to
+   compress the argument into one or two. Its argument is clear, so this does not
+   independently block approval, but it could be tightened when addressing the
+   required findings.
+
+`npm run check` passed before this critique round on 2026-07-27. The recorded
+first-party evidence supports the chapter's adjusted-hourly-wage, monthly tracking,
+fulfillment, enough, and capital-expenses crossover claims. The resolved matrix,
+spectrum, and crossover findings remain fixed. No new external search was performed.
