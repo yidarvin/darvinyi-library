@@ -1,0 +1,248 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Flow, Matrix, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="measure-what-matters"
+  thesis="An ambitious objective gives a team a shared direction. A small set of measurable key results turns that direction into a promise that can be checked, discussed, and revised."
+  minutes={7}
+/>
+
+## The thesis
+
+OKRs give an organization a way to turn intent into a visible operating agreement. An
+objective says what meaningful change the team is trying to create. Key results say what
+evidence will show that the change happened, within a stated period. The strength of the
+pair is not the template. It is the conversation it forces: choose a few priorities, make
+success observable, let connected teams see the same commitments, and learn from the score
+before the work is over.
+
+## Why it matters
+
+Organizations rarely lack for useful work. They struggle to decide which useful work is
+important now, and to notice early when motion is not producing the intended effect. A goal
+system can make those tradeoffs public. It cannot decide the strategy, but it can stop a
+strategy from dissolving into private interpretations and an overfull project list.
+
+## Focus is a choice to leave work out
+
+An objective is not a filing cabinet for every desirable improvement. It is a bet on the
+change that deserves disproportionate attention in the next cycle. That makes the list
+short enough to remember and consequential enough to affect ordinary decisions. A team that
+has named three true priorities can see the fourth request for what it is: a tradeoff to
+make, not a free addition.
+
+Focus is therefore less about motivational wording than subtraction. The useful question is
+not whether a candidate goal sounds good. It is whether it is important enough to displace
+something already on the page. If nothing would move aside, the list is not yet a set of
+priorities.
+
+<Figure id="113.1" caption="A small objective set makes the tradeoff visible: some good work waits so the chosen work can move.">
+  <Bars
+    className="block w-full min-w-[400px]"
+    items={[
+      { label: "chosen objective", value: 92, accent: true },
+      { label: "supporting objective", value: 71, accent: true },
+      { label: "supporting objective", value: 58, accent: true },
+      { label: "worthwhile, later", value: 28 },
+      { label: "worthwhile, later", value: 20 },
+    ]}
+    ariaLabel="Three highlighted objectives receive attention while two worthwhile items are deliberately deferred."
+  />
+</Figure>
+
+## An objective points; key results supply the proof
+
+The objective should be a compact description of the change worth pursuing, clear enough to
+give a team a common destination. It is qualitative because it has to carry meaning. Key
+results are different. They establish the finish line: a particular threshold, date, rate,
+or condition that an informed observer can verify. They are not a list of activities the
+team hopes to complete.
+
+That distinction catches a common failure. "Run a campaign" can be work that matters, but it
+does not tell anyone whether the campaign changed the problem. A result such as a measured
+increase in qualified demand is harder to write because it asks for a theory of what would
+count as progress. That difficulty is part of the value.
+
+<Figure id="113.2" caption="Work is an input; a key result identifies the signal that the work changed something.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "activity", right: "evidence", label: "what the statement contains" }}
+    yAxis={{ low: "unclear", high: "clear", label: "connection to the objective" }}
+    quadrants={[
+      { title: "busy, but detached", note: "a task without a reason" },
+      { title: "a useful key result", note: "specific proof of progress" },
+      { title: "vague aspiration", note: "a direction without a test" },
+      { title: "a metric with a purpose", note: "watch for its side effects" },
+    ]}
+    highlight={1}
+    ariaLabel="A matrix distinguishes a useful key result, specific proof clearly connected to an objective, from activity or vague aspiration."
+  />
+</Figure>
+
+## Alignment is a map of related commitments
+
+Publishing goals does not make every team do the same work. It gives them a way to see where
+their work meets. A product team may own activation, a support team may own response quality,
+and a marketing team may own the promise made before a customer arrives. Separate objectives
+can still be aligned when their dependencies are explicit and their key results do not reward
+one group for making another group's work worse.
+
+The point is coordination, not a rigid cascade. Some objectives must come from leaders,
+because they express a strategic decision. Others should originate near the work, where a
+team sees an opportunity or risk that the top level cannot. The test is whether people can
+trace a local commitment to a shared purpose and raise a conflict before it becomes a missed
+deadline.
+
+<Figure id="113.3" caption="Shared visibility lets teams coordinate different commitments around one customer change.">
+  <NodeGraph
+    className="block w-full min-w-[400px]"
+    ariaLabel="A goal network links a company direction to product, marketing, and support team objectives, all feeding customer adoption."
+    nodes={[
+      { id: "direction", label: "company direction", x: 0.5, y: 0.08 },
+      { id: "product", label: "product objective", x: 0.14, y: 0.43 },
+      { id: "marketing", label: "marketing objective", x: 0.86, y: 0.43 },
+      { id: "support", label: "support objective", x: 0.5, y: 0.78 },
+      { id: "customer", label: "customer adoption", x: 0.5, y: 0.43 },
+    ]}
+    edges={[
+      { from: "direction", to: "product" },
+      { from: "direction", to: "marketing" },
+      { from: "direction", to: "support" },
+      { from: "product", to: "customer", kind: "reinforcing" },
+      { from: "marketing", to: "customer", kind: "reinforcing" },
+      { from: "support", to: "customer", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## A score is useful only when it changes the next move
+
+Writing a goal at the start of a quarter is not the practice. The practice is a cadence of
+checking the measures, naming what has changed, and deciding whether the current plan still
+makes sense. A missed key result is information. It may reveal weak execution, an unreliable
+measure, a mistaken assumption, or a priority that no longer deserves the same resources.
+
+This makes tracking a management habit rather than a reporting ritual. The review should be
+brief enough to repeat, specific enough to expose reality, and safe enough that a red score
+produces help or a decision instead of defensive storytelling. End-of-cycle scoring then has
+a purpose: it preserves the learning that should shape the next set of objectives.
+
+<Figure id="113.4" caption="A score becomes operational when it feeds the next decision, not when it merely records the last one.">
+  <ProcessLoop
+    className="block w-full min-w-[400px]"
+    stages={["set a result", "do the work", "check the signal", "adjust or commit"]}
+    compoundingEdge={3}
+    centerLabel="the OKR cadence"
+    ariaLabel="An iterative OKR cadence: set a result, do the work, check the signal, then adjust or recommit."
+  />
+</Figure>
+
+## Stretch needs an honest label
+
+Some goals are commitments: a team must meet them because another person, system, or safety
+constraint depends on the result. Others are aspirational: a team is deliberately trying to
+reach beyond its reliable range. Treating both as identical creates bad incentives. People
+either sandbag the ambitious target, or hide trouble on the essential one.
+
+The better move is to state the type of goal, the reason for the stretch, and the downside if
+it is missed. An aspirational goal can invite a new approach. It should not quietly become a
+performance trap. A committed goal can demand reliability. It should not be dressed up as a
+moonshot simply to sound impressive.
+
+<Figure id="113.5" caption="Commitments protect what must happen; aspirations make the intended stretch explicit.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="committed result"
+    right="aspirational result"
+    marker={0.72}
+    markerLabel="name the stretch"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0, to: 0.4, label: "reliable delivery matters" },
+      { from: 0.58, to: 1, label: "learning and bold attempts", accent: true },
+    ]}
+    ariaLabel="A continuum from committed results that require reliable delivery to aspirational results where the intended stretch is named."
+  />
+</Figure>
+
+## The Model
+
+An OKR is a compact chain from a chosen change to evidence that the change occurred. First,
+name the objective in language people can act on. Then select the few results that, together,
+would make that claim credible. Give each result a threshold and a time window. Finally, use
+regular check-ins to decide what to continue, change, or stop. The diagram is deliberately
+simple because an OKR should fit into a working conversation, not become a second planning
+system.
+
+<Figure id="113.6" caption="The framework links a chosen change to evidence, a time horizon, and a review that can alter the work.">
+  <Flow
+    className="block w-full min-w-[540px]"
+    steps={[
+      "objective: name the change",
+      "key results: define proof",
+      "cycle: set thresholds and dates",
+      "check-in: learn and adjust",
+    ]}
+    highlight={1}
+    ariaLabel="The OKR framework: name the change, define proof with key results, set thresholds and dates, then learn and adjust at check-ins."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose one change that deserves the next cycle">
+Write down every plausible priority for the next six to twelve weeks. Then force a ranking.
+Keep only the two or three changes that would make the greatest difference if they moved.
+For each item you leave out, write one sentence saying why it can wait. Share the list with
+the people who will have to make the tradeoffs.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Draft an objective before you draft the task list">
+Describe the change in one memorable sentence. Then ask three people close to the work what
+they think it asks them to do. If their answers point in unrelated directions, make the
+objective more concrete. Do not add measures yet. First make sure the destination is worth
+sharing.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Find three pieces of proof">
+For that objective, write three results that would let a skeptical colleague verify progress.
+Give each a starting point, target, deadline, and owner. Cross out anything that only names
+an activity, meeting, or deliverable. Keep the work plan separately, where it can change
+without changing the definition of success.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Install a fifteen-minute check-in">
+Once each week, look at the key results together. Record the current score, the fact behind
+it, and one decision: continue, change the plan, ask for help, or stop. At the end of the
+cycle, score the set and write what the measures taught you before setting the next one.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+OKRs do not create a strategy, and a precise score does not make the chosen direction wise.
+Use them after a real choice about customers, capabilities, and constraints has been made.
+They also should not replace a health dashboard. A key result is a measure selected for a
+change; a standing metric may still be needed to catch damage the goal does not see. Pair
+quantity with quality when speed, revenue, or volume could create harm elsewhere. Finally,
+do not use an aspirational score as a crude individual compensation formula. If missing a
+stretch goal carries a direct personal penalty, the system teaches caution and metric gaming
+instead of honest ambition.
+</Callout>
+
+## If you remember one thing
+
+An OKR is not a grand statement with numbers attached. It is a short, public agreement about
+which change matters now, what evidence will count, and when the team will look at reality
+together.
+
+Good Strategy Bad Strategy clarifies the strategic diagnosis that should come before an OKR,
+Drive examines the human conditions behind commitment, and Essentialism offers the discipline
+of choosing what does not belong on the list.
+
+<ShelvedNearby
+  related={["good-strategy", "drive", "essentialism"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/546304/measure-what-matters-by-john-doerr-foreword-by-larry-page/"
+  buyLabel="Measure What Matters by John Doerr"
+/>
