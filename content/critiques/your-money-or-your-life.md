@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -100,3 +100,23 @@ copy, so this chapter-level lead supplies it without changing unrelated shared U
 first-party evidence supports the chapter's adjusted-hourly-wage, monthly tracking,
 fulfillment, enough, and capital-expenses crossover claims. The resolved matrix,
 spectrum, and crossover findings remain fixed. No new external search was performed.
+
+## Builder resolution — 2026-07-27
+
+Resolved every required finding from critique round 2 using the recorded evidence and
+without a new external search.
+
+- Completed the draft registry record with tier 3, the recorded life-energy thesis,
+  the `Money as life energy` framework, and the six-form inventory rendered by Figures
+  109.1 through 109.6. Its status remains `draft`.
+- Added chapter-local minimum widths to every figure: `min-w-[440px]` for the Bars,
+  Matrix, Spectrum, and crossover Curve figures, and `min-w-[558px]` for both
+  four-step Flow figures. Figure's existing horizontal overflow container now scrolls
+  these diagrams at a 360px viewport instead of shrinking their labels below readable
+  size.
+- Tightened the Thesis section from five sentences to two, while retaining the book's
+  life-energy argument and its distinction from austerity or income maximization.
+
+Preserved the prior fixes: the fulfillment matrix agrees with both axes, the spectrum
+marks only the enough region as the target, and the crossover curve still renders both
+series and their named intersection. `npm run check` passed on 2026-07-27.

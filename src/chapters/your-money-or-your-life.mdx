@@ -10,12 +10,10 @@ import { Bars, Curve, Flow, Matrix, Spectrum } from "../components/diagrams";
 
 ## The thesis
 
-Robin and Dominguez ask a question that changes the unit of a money decision. A dollar is
-not merely a number in an account. It represents time, attention, commuting, recovery, and
-effort exchanged to earn it. Once spending is translated back into that cost, the useful
-question becomes whether a purchase gave enough life back. The goal is neither austerity nor
-an impressive income. It is an honest relationship between resources, values, and the days
-you have available.
+Robin and Dominguez recast a money decision as a trade of life energy: each dollar reflects
+the time, attention, commuting, recovery, and effort spent to earn it. Translate spending
+back into that cost, then direct resources toward a life that feels worth the exchange rather
+than toward austerity or an impressive income.
 
 ## Why it matters
 
@@ -39,7 +37,7 @@ some amount of time and effort.
 
 <Figure id="109.1" caption="A hypothetical workweek shows why a listed wage can overstate what an hour leaves available for life.">
   <Bars
-    className="block w-full"
+    className="block w-full min-w-[440px]"
     items={[
       { label: "listed pay", value: 0.9, valueLabel: "starting figure" },
       { label: "after job costs", value: 0.66, valueLabel: "money that remains" },
@@ -63,7 +61,7 @@ using facts rather than fog.
 
 <Figure id="109.2" caption="A regular record turns scattered transactions into a pattern that can be examined.">
   <Flow
-    className="block w-full"
+    className="block w-full min-w-[558px]"
     steps={["record each flow", "group the month", "translate to hours", "notice the pattern"]}
     highlight={3}
   />
@@ -84,7 +82,7 @@ and which ones are carrying more habit or status than satisfaction.
 
 <Figure id="109.3" caption="The strongest candidates are expenses that fit your values and return real value for their cost.">
   <Matrix
-    className="block w-full"
+    className="block w-full min-w-[440px]"
     xAxis={{ left: "low fulfillment", right: "high fulfillment", label: "value received" }}
     yAxis={{ low: "weak fit", high: "strong fit", label: "fit with values" }}
     quadrants={[
@@ -113,7 +111,7 @@ it?"
 
 <Figure id="109.4" caption="Enough is a chosen point between unmet needs and an endless escalation of wants.">
   <Spectrum
-    className="block w-full"
+    className="block w-full min-w-[440px]"
     left="unmet needs"
     right="more by default"
     marker={0.58}
@@ -143,7 +141,7 @@ choose, even long before it replaces a salary.
 
 <Figure id="109.5" caption="The crossover is the point where independent income can cover recurring expenses.">
   <Curve
-    className="block w-full"
+    className="block w-full min-w-[440px]"
     shape="crossover"
     axes={{ x: "consistent saving and time", y: "monthly cash flow" }}
   />
@@ -164,7 +162,7 @@ is more freedom to choose work, rest, care, and service on terms that make sense
 
 <Figure id="109.6" caption="Money is translated back into life energy before it is committed to the next choice.">
   <Flow
-    className="block w-full"
+    className="block w-full min-w-[558px]"
     steps={["earn income", "find real hourly wage", "price in life energy", "choose by fulfillment"]}
     highlight={2}
   />

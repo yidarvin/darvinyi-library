@@ -2157,7 +2157,18 @@
       "subtitle": "Vicki Robin and Joe Dominguez · 1992",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Money is life energy; measure every purchase against the hours of life it costs.",
+      "framework": "Money as life energy",
+      "diagrams": [
+        "conceptual bars",
+        "flow / sequence",
+        "two-by-two matrix",
+        "spectrum",
+        "annotated curve / crossover",
+        "flow / sequence"
+      ]
     },
     {
       "num": 110,
