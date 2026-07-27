@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -36,3 +36,21 @@ verdict: revise
 2. The related-book tiles resolve to done chapters, but they do not state the
    one-clause relationship requested by the Shelved Nearby guidance. Adding those
    relationship cues would make the cross-links more useful than proximity alone.
+
+## Builder resolution — 2026-07-27
+
+Resolved all required findings:
+
+1. Figure 115.4 now labels its horizontal axis `time progressing toward the deadline`,
+   so the left-to-right progression agrees with `first response`, the incubation window,
+   and the final rush.
+2. Figure 115.5 now uses `initial exposure` consistently as its vertical dimension. Its
+   four cells distinguish exposure from reversibility: avoid large, hard-to-undo moves;
+   contain large exposure even where an exit exists; redesign small but sticky moves; and
+   learn first through a small, easy-to-reverse test.
+3. The outbound `ShelvedNearby` link now goes directly to the bookseller product listing
+   for *Originals* (`amazon.com/dp/014312885X`). The evidence note retains the official
+   Adam Grant page only as a source for the chapter's scope.
+
+The related chapters remain unchanged, the registry stays `draft`, and no chapter was marked
+done.

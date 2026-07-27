@@ -125,7 +125,7 @@ test, revise, or deliver simply transfers the cost to the last hour.
   <Curve
     className="block w-full min-w-[400px]"
     shape="bell"
-    axes={{ x: "time before the deadline", y: "room to explore" }}
+    axes={{ x: "time progressing toward the deadline", y: "room to explore" }}
     annotations={[
       { x: 0.13, y: 0.26, text: "first response" },
       { x: 0.51, y: 0.98, text: "incubation window" },
@@ -152,15 +152,15 @@ Originality earns trust when it is as serious about consequences as it is about 
   <Matrix
     className="block w-full min-w-[440px]"
     xAxis={{ left: "hard to reverse", right: "easy to reverse", label: "ability to change course" }}
-    yAxis={{ low: "small exposure", high: "large exposure", label: "cost if wrong" }}
+    yAxis={{ low: "small exposure", high: "large exposure", label: "initial exposure" }}
     quadrants={[
       { title: "avoid", note: "large exposure, hard to undo" },
-      { title: "guarded commitment", note: "large exposure, but reversible" },
-      { title: "stuck experiment", note: "small now, costly to unwind" },
-      { title: "learn first", note: "small, reversible test" },
+      { title: "contain the downside", note: "large exposure, even with an exit" },
+      { title: "redesign the exit", note: "small exposure, hard to unwind" },
+      { title: "learn first", note: "small, easy-to-reverse test" },
     ]}
     highlight={3}
-    ariaLabel="A matrix highlights small, reversible tests as a responsible way to learn before making a larger commitment."
+    ariaLabel="A matrix sorts experiments by initial exposure and ability to change course, highlighting small, easy-to-reverse tests as the responsible way to learn before making a larger commitment."
   />
 </Figure>
 
@@ -247,6 +247,6 @@ responsible alternative a fair test with other people.
 
 <ShelvedNearby
   related={["zero-to-one", "thinking-in-bets", "dare-to-lead", "deep-work"]}
-  buyUrl="https://adamgrant.net/book/originals/"
+  buyUrl="https://www.amazon.com/dp/014312885X"
   buyLabel="Originals by Adam Grant"
 />
