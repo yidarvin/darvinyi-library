@@ -1842,7 +1842,17 @@
       "subtitle": "Seneca · c. 65 CE",
       "part": "Philosophy & Wisdom",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "A finite life becomes more available when time, comfort, fear, and status stop deciding what deserves attention.",
+      "framework": "No single signature model; the letters' recurring practices are synthesized through the key ideas rather than forced into one framework.",
+      "diagrams": [
+        "timeline",
+        "spectrum",
+        "process loop",
+        "venn / overlap",
+        "iceberg"
+      ]
     },
     {
       "num": 94,

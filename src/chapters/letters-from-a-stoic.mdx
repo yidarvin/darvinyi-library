@@ -1,0 +1,202 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Iceberg, ProcessLoop, Spectrum, Timeline, Venn } from "../components/diagrams";
+
+<Hero
+  slug="letters-from-a-stoic"
+  thesis="A finite life becomes more available when time, comfort, fear, and status stop deciding what deserves your attention."
+  minutes={9}
+/>
+
+## The thesis
+
+Seneca writes philosophy as correspondence with a friend who has to make decisions in the
+world, not as a theory sealed off from ordinary pressures. The letters ask a demanding question:
+if fortune can remove possessions, position, health, and even time, what remains worth building?
+His answer is a trained capacity for sound judgment, enoughness, courage, and humane conduct.
+The work is not to secure a painless life. It is to stop handing the terms of a life to things
+that can leave without asking.
+
+## Why it matters
+
+The letters come from a man who knew both luxury and political danger. That setting gives the
+advice its bite. Seneca is not promising that wisdom will make loss pleasant. He is asking what
+preparation makes a person less governable by a delayed reply, a changing market, a hostile
+audience, or an imagined future. The letter form also keeps returning philosophy to a particular
+day: this fear, this purchase, this relationship, this hour.
+
+## Key ideas
+
+### Time is the possession that leaves first
+
+Seneca treats time as more serious than money because no later gain can restore an afternoon
+already spent. Some time is taken by duties, some disappears into drift, and some is given away
+without noticing. His point is not to schedule every minute or turn rest into another project.
+It is to make the day answerable. Before saying yes to an obligation, distraction, or resentment,
+ask what portion of a finite life it is buying.
+
+That question changes the scale of a decision. A long wait may be unavoidable, but attention
+inside it is still available. A commitment may be worthy, but it should be chosen rather than
+accepted by default. The aim is stewardship, not frantic efficiency: spend hours on what a person
+can later recognize as part of living, rather than merely a gap between plans.
+
+<Figure id="93.1" caption="A finite day turns postponement into a question about the next hour.">
+  <Timeline
+    className="block w-full min-w-[416px]"
+    segments={[
+      { label: "time assumed", sub: "later will cover it" },
+      { label: "time noticed", sub: "choose the use" },
+      { label: "this hour", sub: "give it a job" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+### Enough is a form of independence
+
+The letters do not require a vow of poverty. Seneca can value a comfortable home, a good meal,
+and the security that resources provide. The danger begins when comfort becomes a condition for
+being able to function, or wealth becomes a verdict on a person's worth. Then a lost convenience
+does more than inconvenience us. It tells us who we are allowed to be.
+
+His countermeasure is selective rehearsal. Try a simpler meal, a plainer routine, or a day without
+the purchase that has become automatic. The exercise is not performative deprivation, and it is
+not a claim to understand involuntary poverty. Its narrower purpose is to discover which needs are
+real, which are habits of expectation, and whether a loss of ease would actually make a life
+unlivable. Possessions can remain useful without becoming the master of their owner.
+
+<Figure id="93.2" caption="Comfort can be welcome without becoming a condition for steadiness.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="comfort as a requirement"
+    right="comfort as a preference"
+    marker={0.78}
+    markerLabel="enough"
+    zones={[
+      { from: 0, to: 0.38, label: "loss feels like collapse" },
+      { from: 0.62, to: 1, label: "use it, do not depend on it", accent: true },
+    ]}
+  />
+</Figure>
+
+### Fear shrinks when it has been examined in daylight
+
+Anxious imagination often makes a future event larger by keeping it vague. Seneca advises a more
+concrete move: name the feared outcome, estimate what it would actually require, and distinguish
+pain from the story that says it would end everything. That does not make danger harmless. It makes
+it possible to prepare for what is real instead of submitting to a shapeless forecast.
+
+Practice belongs before the emergency. A person can rehearse a difficult conversation, learn the
+first steps after a financial shock, or make a small voluntary encounter with discomfort. Each
+rehearsal supplies evidence that a feared state is not necessarily an annihilation of agency. The
+goal is not bravado. It is a more proportionate fear, one that can still leave room for judgment.
+
+<Figure id="93.3" caption="Preparation replaces a vague forecast with a tested next step.">
+  <ProcessLoop
+    className="block w-full min-w-[380px]"
+    stages={["name the fear", "test a small hardship", "learn what holds", "meet the next threat"]}
+    compoundingEdge={3}
+    centerLabel="prepared courage"
+  />
+</Figure>
+
+### Mortality makes a day complete enough to use
+
+Seneca returns to death because an imagined endless future makes delay look cheap. The reminder is
+not a demand to treat every morning as a crisis or to deny grief when someone dies. It asks a
+cleaner question: if a day is a real portion of a life, what would make it whole enough to release?
+
+That standard favors conduct over accumulation. One can finish a day with an honest conversation,
+a kept responsibility, attention given to a friend, or work done with care, even when the larger
+project remains unfinished. Mortality does not make every task urgent. It exposes the cost of
+letting status, grievance, and endless preparation consume the days from which a life is made.
+
+<Figure id="93.4" caption="Finitude focuses attention on conduct that can make this day count.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[
+      { label: "the time available", x: 0.36, y: 0.48 },
+      { label: "what matters", x: 0.64, y: 0.48 },
+    ]}
+    intersectionLabel="the next worthy act"
+  />
+</Figure>
+
+### Rank is visible; shared vulnerability is the deeper fact
+
+Seneca's letter on enslaved people attacks the Roman habit of treating human beings as tools and
+asks masters to recognize a common exposure to fortune, pain, and death. It also makes an important
+Stoic move: reputation, office, and social role sit on the surface of a person. They say little
+about character, and they can reverse quickly.
+
+The useful lesson is not merely to be polite across a hierarchy. It is to let power make a person
+more careful, not more entitled. In any role with leverage, ask what another person needs to work,
+speak, and retain dignity. That is a sturdier moral test than whether they are useful, agreeable,
+or deferential. Seneca's own compromise with a slaveholding society is a limit on his example, but
+the pressure to see the person beneath the role remains sharp.
+
+<Figure id="93.5" caption="Status is the visible tip; equal human exposure and character sit beneath it.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="rank, wealth, and office"
+    below={["shared vulnerability", "capacity for character", "claims of dignity"]}
+    waterlineLabel="what a role can hide"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Give one hour a name">
+Before the day fills itself, choose one hour and write what it is for: making progress on a real
+obligation, being fully with someone, or restoring attention. Protect it from casual claims.
+At the end, write one sentence about whether the use matched the name. Do this for a week before
+trying to redesign your whole schedule.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Test one convenience">
+Choose a convenience you reach for automatically, such as delivery, streaming, a ride, or a
+particular purchase. Leave it aside for one day. Notice the actual cost, the irritation you add,
+and what was still fine. The test is information about dependence, not a contest in deprivation.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make fear specific">
+When a future outcome is crowding your attention, divide a page in three: what I know, what I am
+predicting, and the first useful action if the feared event occurs. Ask one trusted person to
+check whether the prediction is proportionate. Then take the first action if it is available.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Review a use of power">
+At the end of a meeting or workday, name one point where you had more authority, information, or
+social ease than another person. Did you make it safer for them to contribute, or did you make
+your position the center of the exchange? Pick one behavior to adjust in the next similar moment.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Stoicism is not a command to suppress grief, accept abuse, or handle illness, trauma, and injustice
+alone. A feeling can be painful and still carry useful information. The discipline is to examine
+what the feeling asks you to conclude, then pursue care, protection, protest, or help with as much
+judgment as the situation permits. Seneca also needs to be read with his contradictions in view.
+He wrote against cruelty toward enslaved people while accepting the institution, and he urged
+independence from wealth while possessing extraordinary wealth and proximity to imperial power.
+Those tensions do not erase the letters. They prevent the reader from turning their author into an
+authority beyond criticism.
+</Callout>
+
+## If you remember one thing
+
+You cannot make a life secure by controlling fortune. You can use the time in hand, need less from
+what may disappear, and choose conduct that remains yours even when circumstances change.
+
+## Shelved nearby
+
+Meditations is a fellow Stoic's private practice in examining judgment under pressure. The Daily
+Stoic turns Seneca and other ancient writers into a repeated daily prompt. Man's Search for Meaning
+tests responsibility and dignity under conditions far beyond ordinary control.
+
+<ShelvedNearby
+  related={["meditations", "daily-stoic", "mans-search-for-meaning"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/317438/letters-from-a-stoic-by-seneca-translated-with-an-introduction-by-robin-campbell-cover-illustrated-by-coralie-bickford-smith/"
+  buyLabel="Letters from a Stoic by Seneca"
+/>
