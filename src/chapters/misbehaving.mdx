@@ -1,0 +1,209 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Matrix, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="misbehaving"
+  thesis="Economics becomes more useful when its decision-makers have limited attention, care about fairness, and sometimes need help carrying out their own plans."
+  minutes={8}
+/>
+
+## The thesis
+
+Thaler's story is about a change in what economics was willing to see. The standard model
+of a perfectly calculating person can be elegant and useful, but it leaves too much ordinary
+behavior outside the frame. People sort money into mental buckets, dislike giving up what
+they already own, care whether a price feels fair, and make plans their future selves do not
+always follow. Those are not embarrassing exceptions to discard. When their patterns are
+systematic, they belong in the analysis of markets, households, and public policy.
+
+## Why it matters
+
+A model can be clean enough to solve and still be too clean to guide a real decision. That
+matters whenever a policy assumes that a form, a price, or a default is neutral. It also
+matters personally: a retirement plan that asks for a difficult calculation at the exact
+moment temptation is strongest is not merely testing character. It is poorly designed for
+the humans who must use it.
+
+## An anomaly is a clue, not a nuisance
+
+Thaler began by collecting situations in which the tidy prediction and ordinary behavior
+parted company. A person will pay more to keep a mug already on the desk than to acquire the
+same mug. A household will avoid selling a losing investment even when the sale is sensible.
+A firm can face public anger for raising prices during a shortage. Each example is small, but
+the accumulation changes the question. Instead of asking how to dismiss the exception, ask
+what regular feature of people made it appear.
+
+<Figure id="104.1" caption="Useful models meet the observed pattern and change when the gap keeps recurring.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "a clean assumption",
+      points: ["one consistent preference", "full calculation", "self-interest alone", "plans carried out"],
+    }}
+    right={{
+      title: "a behavioral question",
+      points: ["what actually repeats?", "which shortcut appears?", "what feels fair?", "where does the plan fail?"],
+    }}
+  />
+</Figure>
+
+## Money gets sorted before it gets spent
+
+A dollar is interchangeable on a spreadsheet. In a life, it may be rent money, a tax refund,
+a vacation fund, or a gain from a winning trade. Those labels help people simplify a complex
+world, but they can also narrow attention. A person may refuse to touch a savings account
+while carrying expensive debt, or take a risk inside one account that would look different
+when viewed across the whole household. Mental accounting does not make people foolish. It
+shows that the frame around a choice can matter as much as the arithmetic inside it.
+
+<Figure id="104.2" caption="A labeled account is visible; the household-wide tradeoff often sits below the decision.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the labeled pot of money"
+    waterlineLabel="the decision frame"
+    below={["other accounts", "debt and opportunity cost", "the full household balance"]}
+  />
+</Figure>
+
+## Ownership changes the starting point
+
+The value of a thing is not always fixed before a transaction. Possession can turn a possible
+sale into a loss, and losses tend to demand more attention than equivalent gains. That helps
+explain why buyers and sellers can stare at the same object and arrive at stubbornly different
+prices. It also explains why a default has force: leaving it can feel like preserving what is
+already yours, even when it was selected for you. The practical check is simple: if you did
+not own this yet, would you choose to buy or keep it today?
+
+<Figure id="104.3" caption="The same object can feel like a gain before ownership and a loss once it is yours.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="not yet mine"
+    right="already mine"
+    marker={0.68}
+    markerLabel="reference point shifts"
+    zones={[
+      { from: 0.0, to: 0.43, label: "ask what it is worth to gain" },
+      { from: 0.57, to: 1.0, label: "ask what it feels like to lose", accent: true },
+    ]}
+  />
+</Figure>
+
+## A price also says something about treatment
+
+People do not judge every price increase by supply and demand alone. Context matters. A higher
+price after an input cost rises can read as a response to a harder situation. The same price
+increase during an emergency can read as an attempt to exploit need. The distinction is not a
+complete rule for setting prices, and reasonable people can disagree at the margins. Still,
+fairness can change what customers will tolerate, how they interpret a firm, and whether a
+market outcome holds together socially.
+
+<Figure id="104.4" caption="A price move is judged through both the reason for it and the pressure on the buyer.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "ordinary demand", right: "urgent demand", label: "buyer pressure" }}
+    yAxis={{ low: "no cost change", high: "costs rising", label: "seller pressure" }}
+    quadrants={[
+      { title: "explain the increase", note: "cost pressure is visible" },
+      { title: "still scrutinized", note: "need raises stakes" },
+      { title: "hard to justify", note: "price alone changes" },
+      { title: "exploitation concern", note: "need without new cost" },
+    ]}
+    highlights={[3]}
+  />
+</Figure>
+
+## The planner needs a way to bind the doer
+
+The person who sets a long-range intention and the person facing a tempting moment share a
+body, but not always a priority. On Sunday, saving more after the next raise can sound wise.
+On payday, the immediate claim on the money feels concrete and the future benefit feels thin.
+Thaler's work on self-control treats that conflict as a design problem. A commitment made in a
+cool moment can reduce the number of battles that must be won in a hot one. Programs such as
+automatic escalation use future income increases to make the commitment easier to accept now.
+
+<Figure id="104.5" caption="A commitment made before temptation can carry a long-term plan through the moment of choice.">
+  <Timeline
+    className="block w-full min-w-[640px]"
+    segments={[
+      { label: "calm planning", sub: "choose a rule" },
+      { label: "commitment", sub: "set it in advance" },
+      { label: "payday or trigger", sub: "short-term pull arrives" },
+      { label: "automatic action", sub: "the rule carries on" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Choice architecture is never absent
+
+Every form, cafeteria line, pension portal, and product comparison has an order, a default,
+and an amount of effort attached to each option. Leaving that structure accidental does not
+make it neutral. The behavioral response is to arrange choices so that the easier path serves
+people's stated interests while preserving a real ability to choose otherwise. Good choice
+architecture makes the tradeoff visible, the exit straightforward, and the designer
+answerable for the influence it has created.
+
+<Figure id="104.6" caption="The arrangement of choices can shape action before deliberate comparison gets underway.">
+  <Flow
+    className="block w-full min-w-[580px]"
+    steps={["choice set", "default and effort", "first action", "review or opt out"]}
+    highlight={1}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Look across the labels">
+For one money decision, write every relevant account, debt, recurring cost, and opportunity on
+one page. Then make the decision from the whole page. The labels can remain useful, but they
+should not hide the larger tradeoff.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Run the ownership reversal">
+Before keeping an investment, subscription, possession, or open option, ask one question: if
+I did not have this already, would I pay to get it today? Treat the answer as a prompt for
+review, not an order to sell or cancel.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Commit while the future has a voice">
+Pick one recurring choice where present comfort repeatedly beats a longer aim. Set a small
+rule before the next trigger: transfer a fraction of a raise, schedule the appointment, or
+keep a purchase delay. Make the rule adjustable, but do not require a new act of willpower
+every time.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Audit one default">
+Choose a form or process you control. Identify its default, the effort required to change it,
+and what information appears first. Make the preferred path explainable, and make declining
+it as easy as accepting it.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Behavioral economics does not say that people are irrational all the time, that preferences do
+not exist, or that any official may quietly substitute a designer's values for a person's own.
+Heuristics can be efficient, and a nudge can be manipulative when the goal is hidden, the exit
+is costly, or the evidence for the promised benefit is weak. The strongest use of Thaler's
+approach is modest and testable: identify a predictable friction, make the choice and its
+consequences clearer, preserve an easy refusal, and check whether the intervention helps the
+people it claims to serve.
+</Callout>
+
+## If you remember one thing
+
+The useful opposite of the imaginary rational actor is not a hopelessly irrational person. It
+is a recognizable human being, whose shortcuts, reference points, fairness concerns, and
+self-control problems can be understood well enough to design better choices.
+
+Thinking, Fast and Slow explains several judgment patterns behind these departures;
+Predictably Irrational follows how framing steers choice; Nudge turns the design question
+into public and organizational practice.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "predictably-irrational", "nudge"]}
+  buyUrl="https://wwnorton.com/books/9780393352795"
+  buyLabel="Misbehaving by Richard H. Thaler"
+/>

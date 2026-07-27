@@ -1,0 +1,14 @@
+# Misbehaving — research notes
+
+Verified 2026-07-27. These primary sources and the author's original research record support
+the chapter's original account of behavioral economics, mental accounting, fairness,
+self-control, and choice architecture. The chapter is an original synthesis of the book's
+ideas and source material, not a reproduction of its text or figures.
+
+- Richard H. Thaler, [Misbehaving: The Making of Behavioral Economics](https://wwnorton.com/books/9780393352795). The publisher's direct book page identifies the 2015 paperback edition and provides the chapter's outbound purchase path.
+- Richard H. Thaler, [Nobel Prize autobiographical essay](https://www.nobelprize.org/prizes/economic-sciences/2017/thaler/biographical/), 2017. Thaler recounts collecting cases inconsistent with standard economic theory, then recognizing that systematic judgment errors supplied a way to specify limited rationality. This supports the chapter's opening account of anomalies as research clues.
+- Sendhil Mullainathan and Richard H. Thaler, [Behavioral Economics](https://www.nber.org/papers/w7948), NBER Working Paper 7948, 2000. The authors define the field through bounded rationality, bounded willpower, and bounded self-interest, and explain why market forces need not erase their effects. This supports the chapter's account of behavioral economics as an extension of, rather than a rejection of, economic analysis.
+- Royal Swedish Academy of Sciences, [2017 prize press release](https://www.nobelprize.org/prizes/economic-sciences/2017/press-release/). The Academy summarizes Thaler's contributions to mental accounting, the endowment effect, fairness, and self-control. It supports the factual scaffolding of the six key ideas, while the prose and diagrams are the library's own.
+- Richard H. Thaler and Hersh M. Shefrin, [An Economic Theory of Self-Control](https://doi.org/10.1086/260971), *Journal of Political Economy*, 1981. The planner-doer framework underlies the chapter's distinction between a long-term intention and a tempting immediate choice.
+- Richard H. Thaler and Shlomo Benartzi, [Save More Tomorrow](https://doi.org/10.1086/380085), *Journal of Political Economy*, 2004. The paper presents a retirement-saving program in which employees commit to allocating portions of future pay raises to saving. It supports the chapter's example of a commitment made before a future choice, not a personal financial recommendation.
+- Royal Swedish Academy of Sciences, [popular science background for the 2017 prize](https://www.nobelprize.org/prizes/economic-sciences/2017/popular-information/). This primary prize material explains the gap between simplified assumptions and systematic real-world behavior, and discusses behavioral insights in policy design. It informs the caveat that interventions need transparent goals and genuine choice.
