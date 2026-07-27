@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -141,3 +141,10 @@ Resolved all required findings without new external research.
    lint passed; all 40 pipeline and runner tests and all 191 Vitest tests passed;
    TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
    the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+Resolved the round 2 required finding. Removed `compoundingEdge={3}` from Figure
+92.6's `ProcessLoop`, so all arrows now render as neutral recurrence. The Model
+still expresses the supported observe-act-adjust practice without implying that
+the return from adjustment reinforces or compounds the next cycle.
