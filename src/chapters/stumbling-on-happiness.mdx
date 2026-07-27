@@ -1,0 +1,208 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Curve, Flow, Iceberg, Matrix, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="stumbling-on-happiness"
+  thesis="The future feels knowable because imagination can stage it in the present. Its missing context, selective attention, and unnoticed capacity to adapt make that feeling a poor guide to how large or lasting an event will be."
+  minutes={8}
+/>
+
+## The thesis
+
+Daniel Gilbert's argument begins with an ordinary fact: choices are usually made by
+asking how their outcomes will feel. The trouble is that the answer comes from a
+simulation, not from the future itself. Imagination gives a sharp present reaction to a
+partial scene, then treats that reaction as evidence about a whole future life. We often
+get the direction right, knowing that a gain is preferable to a loss, while badly
+misjudging the intensity and duration of the feeling that follows.
+
+## Why it matters
+
+Career moves, purchases, relationships, and plans are often defended with a forecast of
+happiness. When the forecast puts one visible event at the center of everything, it can
+make a narrow upside look decisive or a setback look permanent. A better forecast does
+not remove uncertainty. It puts more of real life into the estimate before a commitment
+makes the imagined version expensive.
+
+## The future in your head is a constructed scene
+
+To imagine a promotion, a move, or a new possession, the mind has to build a scene from
+fragments. It keeps the feature that gave the choice its emotional charge and supplies
+some plausible details. Much of what will actually matter stays outside the frame: the
+commute, ordinary evenings, other people, changing priorities, and events that have not
+yet announced themselves. The scene can feel vivid without being complete. The feeling it
+produces is real now, but it is a reaction to the construction.
+
+<Figure id="105.1" caption="A forecast reacts to the future scene imagination supplies, not to every condition the future will contain.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the vivid future scene"
+    waterlineLabel="what imagination includes"
+    below={["ordinary routines", "other events and people", "details not yet known"]}
+  />
+</Figure>
+
+## One event crowds out the rest of life
+
+Focalism is the tendency to keep attention on the event being judged and to leave the
+rest of a future day, week, or year mostly blank. Winning the job, missing the flight, or
+moving to a sunnier city becomes the whole forecast. In lived experience, the focal event
+has competition. Work still arrives, friends call, a cold is caught, chores need doing,
+and another concern soon asks for attention. The event matters, but its share of the
+emotional field is usually smaller than the preview implied.
+
+<Figure id="105.2" caption="The focal event is one part of the future timeline, even when it fills the entire forecast.">
+  <Timeline
+    className="block w-full min-w-[640px]"
+    segments={[
+      { label: "before", sub: "ordinary life continues" },
+      { label: "focal event", sub: "the preview's center" },
+      { label: "the next days", sub: "other concerns return" },
+      { label: "new routine", sub: "attention moves on" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Strong feelings are often forecast as permanent ones
+
+The common error is not that a future event will feel nothing like the preview. It is that
+the feeling seems likely to remain as strong as it feels while imagined. A prize, a new
+room, an insult, or a disappointment can command attention at first. Repetition makes it
+more familiar, other inputs arrive, and the initial peak is no longer the baseline. This
+is the impact bias: overestimating how much an event will shape experience, often by
+overstating its intensity, its duration, or both.
+
+<Figure id="105.3" caption="A sharp initial reaction can fade as the event becomes one condition among many.">
+  <Curve
+    className="block w-full min-w-[380px]"
+    shape="peak"
+    axes={{ x: "time after the event", y: "felt impact" }}
+    annotations={[
+      { x: 0.7, y: 0.9, text: "initial peak" },
+      { x: 0.95, y: 0.83, text: "life resumes", labelPosition: "below" },
+    ]}
+  />
+</Figure>
+
+## You leave your own recovery tools out of the forecast
+
+Negative possibilities can look especially immovable from a distance. Gilbert calls the
+oversight immune neglect: people do not fully anticipate the ways they will explain,
+reframe, seek support, solve a problem, or redirect attention after something hurts. None
+of those responses guarantees a quick recovery, and none makes a serious loss trivial.
+They do mean that the person living through an outcome is not as passive as the person
+imagining it. A forecast that omits coping has quietly changed the scenario.
+
+<Figure id="105.4" caption="The imagined setback often contains only the blow; the lived setback also contains responses to it.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "the forecast", 
+      points: ["one bad outcome", "attention fixed on loss", "coping left unmodeled", "distress assumed to last"],
+    }}
+    right={{
+      title: "the lived response",
+      points: ["the outcome arrives", "explanation and action", "support and new information", "attention finds other work"],
+    }}
+  />
+</Figure>
+
+## Another person's experience can beat your private movie
+
+The mind insists that its circumstances are special, which is sometimes true. It can use
+that belief to dismiss a more useful input: what happened to people who already made the
+choice. Gilbert and colleagues call this surrogation. A person with similar constraints
+will not supply your answer, but their report includes the mundane texture that a sales
+page or private fantasy excludes. The practical question is not whether another person's
+experience is identical to yours. It is whether it is better evidence than a scene you
+invented alone.
+
+<Figure id="105.5" caption="For an unfamiliar choice, direct experience and comparable reports are stronger inputs than imagination alone.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "few comparable reports", right: "use comparable reports", label: "evidence from others" }}
+    yAxis={{ low: "hard to try", high: "easy to try", label: "access to direct experience" }}
+    quadrants={[
+      { title: "make it reversible", note: "keep the commitment small" },
+      { title: "ask, then decide", note: "use reports as a check" },
+      { title: "run a small trial", note: "replace fantasy with contact" },
+      { title: "try and compare", note: "the strongest practical input" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## The Model
+
+Affective forecasting is the sequence by which a choice becomes a prediction about
+feeling. First, the mind renders a possible event. That preview creates an emotion in the
+present. The emotion is then projected forward as a claim about the person who will live
+through the event. The sequence is useful because it lets people choose before outcomes
+arrive. Its weak point is the handoff from a selective preview to a confident forecast.
+
+<Figure id="105.6" caption="A present reaction to an imagined scene becomes a forecast about a later lived experience.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["future scene", "feeling now", "affective forecast", "lived experience"]}
+    highlight={1}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Describe a Tuesday, not a highlight">
+Before a large choice, write the ordinary version of life after it. Include the schedule,
+money, people, responsibilities, and small annoyances that will still be there. Then write
+the appealing or frightening event inside that week. This is a repair for focalism, not a
+reason to talk yourself out of the choice.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Forecast a range and a fade">
+State the direction you expect to feel, then give a range for intensity and name a time
+when the feeling may be less central. The point is not false neutrality. It is to stop a
+single high or low moment from silently becoming the permanent future.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Borrow a lived report">
+Find two or three people who have made a comparable choice. Ask about an ordinary day six
+months in, what surprised them, what they miss, and what they had to adapt to. Look for
+conditions that match your own before treating any answer as evidence.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make one part reversible">
+When possible, turn a giant imagined choice into a smaller contact with reality: rent
+before buying, shadow the job, take the class, or use a trial period. A reversible step
+does not solve every decision, but it replaces an untested forecast with information from
+your actual response.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+This framework does not say that external conditions barely matter, that people should
+expect to recover quickly from every loss, or that suffering is a reasoning error. Income,
+health, safety, discrimination, relationships, and material constraints can change a life
+in ways a tidy forecast cannot dissolve. The research points to an error pattern, not a
+universal emotional law. A useful reading is narrower: forecasts are often reasonably good
+at the direction of a feeling and less dependable about its exact force and staying power.
+Use that humility to gather better evidence, not to minimize anyone's circumstances.
+</Callout>
+
+## If you remember one thing
+
+Do not let a present feeling about a partial future decide how much a future event will
+matter. Put the rest of life back into the picture, ask people who have already lived it,
+and favor a small reality check over a perfect private forecast.
+
+Thinking, Fast and Slow supplies the broader account of judgment shortcuts; Predictably
+Irrational shows how those shortcuts can bend choice; The Happiness Hypothesis asks what
+well-being is built from after the forecast is over.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "predictably-irrational", "happiness-hypothesis"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/59967/stumbling-on-happiness-by-daniel-gilbert/"
+  buyLabel="Stumbling on Happiness by Daniel Gilbert"
+/>
