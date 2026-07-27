@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, NodeGraph, Spectrum, Timeline, Venn } from "../components/diagrams";
+import { Compare, CoreContext, Flow, NodeGraph, Spectrum, Timeline } from "../components/diagrams";
 
 <Hero
   slug="make-it-stick"
@@ -77,9 +77,11 @@ Cramming can raise performance while the material is still warm, but it gives li
 finding the knowledge after it has faded. Spacing returns to a topic after an interval, when
 recall has become effortful but remains possible. Each return asks the learner to reconstruct
 the path rather than walk one that is already lit. The appropriate interval is not a magic
-number. It depends on how well the material is known and how long it must last. The practical
-rule is simple: schedule several brief returns, and let a difficult retrieval pull the next
-review closer rather than abandoning the topic.
+number. It depends on how well the material is known and how long it must last. The research
+recorded here supports adapting intervals to the intended retention period, rather than using
+one universal schedule. As a practical recommendation from the book, schedule several brief
+returns; if a retrieval is difficult, bring the next review closer instead of abandoning the
+topic.
 
 <Figure id="97.3" caption="Several returns make practice resemble the later moment of recall more than one long sitting does.">
   <Timeline
@@ -111,6 +113,8 @@ where the task does not announce its own category.
     right="many unrelated tasks"
     marker={0.52}
     markerLabel="related mix"
+    markerLabelPlacement="top"
+    emphasizeEndpoint="none"
     zones={[
       { from: 0, to: 0.32, label: "blocked: method is obvious" },
       { from: 0.35, to: 0.68, label: "interleaved: choose and compare", accent: true },
@@ -119,16 +123,17 @@ where the task does not announce its own category.
   />
 </Figure>
 
-## Elaboration gives a fact handles
+## Elaboration makes a better study prompt
 
-A fact held alone has few routes back. Elaboration adds handles by connecting it to a reason,
-an example, a contrast, a picture, or a prior idea. Ask why a claim is true, how it differs
-from a tempting alternative, and when it would matter. Explain it in plain language to an
-imagined newcomer, then test whether the explanation still works when the familiar notes are
-gone. The point is not decorative detail. Good elaboration makes the structure of an idea
-more visible, so a later cue has more than one way to find it.
+The book recommends connecting a new fact to a reason, an example, a contrast, a picture, or
+a prior idea. Ask why a claim is true, how it differs from a tempting alternative, and when it
+would matter. Explain it in plain language to an imagined newcomer, then test whether the
+explanation still works when the familiar notes are gone. Treat these connections as prompts
+for building and checking an explanation, not as decorative detail or a substitute for
+retrieval. The research record for this chapter does not make a separate causal claim about
+elaboration.
 
-<Figure id="97.5" caption="An idea becomes easier to find when it has several meaningful routes back into memory.">
+<Figure id="97.5" caption="Elaboration supplies several meaningful prompts for explaining and checking a new idea.">
   <NodeGraph
     className="block w-full min-w-[440px]"
     nodes={[
@@ -149,22 +154,19 @@ more visible, so a later cue has more than one way to find it.
 
 ## The Model
 
-The three central moves work as a system. Retrieval makes you reconstruct the knowledge.
-Spacing ensures that reconstruction happens after a little forgetting. Interleaving makes
-you decide which knowledge belongs to the cue in front of you. None replaces initial
-instruction, worked examples, or feedback. They change what happens after the first encounter:
-instead of keeping a topic familiar through repeated exposure, you build the ability to call
-it back and choose it under changing conditions.
+The book groups three central moves. Retrieval asks you to reconstruct knowledge. Spacing
+returns to it after time has passed. Interleaving asks you to decide which knowledge belongs to
+the cue in front of you. They address different demands in practice and can each be useful
+after initial instruction. None replaces worked examples or feedback, and this model does not
+claim that all three must be present at once.
 
-<Figure id="97.6" caption="Durable learning grows where recall, time, and discrimination reinforce one another.">
-  <Venn
+<Figure id="97.6" caption="Three distinct moves can shape practice after initial instruction, without a required sequence or intersection.">
+  <CoreContext
     className="block w-full min-w-[440px]"
-    sets={[
-      { label: "retrieval" },
-      { label: "spacing" },
-      { label: "interleaving" },
-    ]}
-    intersectionLabel="durable, usable learning"
+    coreTitle="three complementary moves"
+    coreItems={["retrieval", "spacing", "interleaving"]}
+    contextTitle="practice conditions"
+    contextItems={["after initial instruction", "with feedback"]}
   />
 </Figure>
 

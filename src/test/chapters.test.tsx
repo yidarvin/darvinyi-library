@@ -5,7 +5,7 @@ import { MemoryRouter } from "react-router";
 import { MDXProvider } from "@mdx-js/react";
 import { mdxComponents } from "../components/mdxComponents";
 import { AppRoutes } from "../App";
-import { CoreContext, NodeGraph } from "../components/diagrams";
+import { CoreContext, NodeGraph, Spectrum } from "../components/diagrams";
 import { registry } from "../lib/registry";
 
 // Every MDX module on disk, regardless of registry status. The chapter being built
@@ -129,6 +129,25 @@ describe("NodeGraph", () => {
 });
 
 describe("CoreContext", () => {
+  it("keeps three peer core items inside the inner frame", () => {
+    const { container } = render(
+      <CoreContext
+        coreTitle="three moves"
+        coreItems={["retrieval", "spacing", "interleaving"]}
+        contextItems={["feedback"]}
+      />,
+    );
+
+    const cards = Array.from(container.querySelectorAll<SVGRectElement>("[data-core-item]"));
+    expect(cards).toHaveLength(3);
+    for (const card of cards) {
+      const x = Number(card.getAttribute("x"));
+      const width = Number(card.getAttribute("width"));
+      expect(x).toBeGreaterThanOrEqual(74);
+      expect(x + width).toBeLessThanOrEqual(366);
+    }
+  });
+
   it("lays out four peer core items inside the core rather than as a hierarchy", () => {
     const { container } = render(
       <CoreContext
@@ -150,6 +169,19 @@ describe("CoreContext", () => {
       expect(x + width).toBeLessThanOrEqual(366);
       expect(y).toBeGreaterThanOrEqual(72);
       expect(y + height).toBeLessThanOrEqual(216);
+    }
+  });
+});
+
+describe("Spectrum", () => {
+  it("can keep both endpoints neutral when a middle zone is the target", () => {
+    const { container } = render(
+      <Spectrum left="blocked" right="unrelated" emphasizeEndpoint="none" />,
+    );
+
+    expect(container.querySelector("linearGradient")).toBeNull();
+    for (const endpoint of container.querySelectorAll("circle")) {
+      expect(endpoint.getAttribute("fill")).toBe("var(--comment)");
     }
   });
 });

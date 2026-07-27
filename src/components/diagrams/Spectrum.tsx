@@ -20,6 +20,8 @@ export interface SpectrumProps extends DiagramBase {
   markerLabel?: string;
   /** Put a marker caption above the pole labels when the two would otherwise collide. */
   markerLabelPlacement?: "near-marker" | "top";
+  /** Which endpoint, if any, the track should visually emphasize. */
+  emphasizeEndpoint?: "left" | "right" | "none";
   /** Optional labeled bands along the axis. */
   zones?: SpectrumZone[];
 }
@@ -35,6 +37,7 @@ export function Spectrum({
   marker,
   markerLabel,
   markerLabelPlacement = "near-marker",
+  emphasizeEndpoint = "right",
   zones = [],
   ariaLabel,
   className,
@@ -52,12 +55,14 @@ export function Spectrum({
       ariaLabel={ariaLabel ?? `A spectrum from ${left} to ${right}.`}
       className={className}
     >
-      <defs>
-        <linearGradient id={`sp-grad-${uid}`} x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stopColor={C.comment} />
-          <stop offset="1" stopColor={C.accent} />
-        </linearGradient>
-      </defs>
+      {emphasizeEndpoint !== "none" && (
+        <defs>
+          <linearGradient id={`sp-grad-${uid}`} x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stopColor={emphasizeEndpoint === "left" ? C.accent : C.comment} />
+            <stop offset="1" stopColor={emphasizeEndpoint === "right" ? C.accent : C.comment} />
+          </linearGradient>
+        </defs>
+      )}
 
       {/* zones */}
       {zones.map((z, i) => {
@@ -88,9 +93,17 @@ export function Spectrum({
       })}
 
       {/* the axis track */}
-      <line x1={x0} y1={trackY} x2={x1} y2={trackY} stroke={`url(#sp-grad-${uid})`} strokeWidth="3" strokeLinecap="round" />
-      <circle cx={x0} cy={trackY} r="4" fill={C.comment} />
-      <circle cx={x1} cy={trackY} r="4" fill={C.accent} />
+      <line
+        x1={x0}
+        y1={trackY}
+        x2={x1}
+        y2={trackY}
+        stroke={emphasizeEndpoint === "none" ? C.comment : `url(#sp-grad-${uid})`}
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <circle cx={x0} cy={trackY} r="4" fill={emphasizeEndpoint === "left" ? C.accent : C.comment} />
+      <circle cx={x1} cy={trackY} r="4" fill={emphasizeEndpoint === "right" ? C.accent : C.comment} />
 
       {/* pole labels */}
       <text x={x0} y={trackY - 34} textAnchor="start" fontFamily={MONO} fontSize="12" fill={C.fg}>

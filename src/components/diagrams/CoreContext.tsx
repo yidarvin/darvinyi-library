@@ -31,7 +31,7 @@ export function CoreContext({
   const gridRows = grid ? Math.ceil(itemCount / gridColumns) : 1;
   const itemW = grid
     ? 122
-    : Math.min(132, Math.max(94, (270 - (itemCount - 1) * 12) / itemCount));
+    : Math.min(132, Math.max(82, (270 - (itemCount - 1) * 12) / itemCount));
   const itemH = grid ? 44 : 58;
   const itemGapY = grid ? 10 : 0;
   const itemsStart = grid ? 92 : 220 - (itemCount * itemW + (itemCount - 1) * 12) / 2;

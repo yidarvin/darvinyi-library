@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -89,3 +89,33 @@ verdict: revise
    all 201 Vitest tests; TypeScript and the Vite production build; and ESLint
    passed. Vitest emitted only the existing non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-27
+
+1. Replaced the Model figure's three-way Venn with the documented Core / context
+   form. It now shows retrieval, spacing, and interleaving as three peer,
+   complementary moves under practice conditions. The Model prose and caption now
+   state that the moves have no required sequence, intersection, or joint-necessity
+   claim. The evidence dossier records that boundary explicitly.
+
+2. Made Figure 97.4's `related mix` marker independently legible by moving it to
+   the top label position. Extended the shared `Spectrum` primitive with an
+   `emphasizeEndpoint` option and used its neutral setting here, so the bad
+   `many unrelated tasks` endpoint is no longer accented. A regression test covers
+   that neutral-endpoint rendering.
+
+3. Narrowed the spacing adjustment and elaboration guidance to practical
+   recommendations from the book. The revised spacing paragraph retains only the
+   recorded finding that intervals vary with intended retention. The elaboration
+   section and caption no longer present an unsupported causal effect, and the
+   evidence dossier names this attribution boundary.
+
+4. Completed the draft registry record with tier 2, the chapter thesis, a
+   non-synergistic framework description, and the six rendered diagram forms in
+   page order. Also tightened the shared Core / context layout and added a
+   regression test so three peer cards remain inside its inner frame.
+
+5. Ran `npm run check` successfully on 2026-07-27. Validation, prose lint,
+   pipeline tests, Vitest, TypeScript, the Vite production build, and ESLint
+   passed. The chapter remains `draft`; it was not marked done, committed, or
+   pushed.

@@ -1918,7 +1918,18 @@
       "subtitle": "Peter Brown, Henry Roediger, and Mark McDaniel · 2014",
       "part": "Learning & Skill Acquisition",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Learning lasts when you repeatedly bring knowledge back to mind, return to it after some forgetting, and practice distinguishing it from nearby alternatives.",
+      "framework": "Retrieval, spacing, and interleaving: three complementary study moves used after initial instruction, without a required sequence or three-way interaction.",
+      "diagrams": [
+        "comparison",
+        "flow",
+        "timeline",
+        "spectrum",
+        "node graph",
+        "core / context"
+      ]
     },
     {
       "num": 98,
