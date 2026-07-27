@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -73,3 +73,12 @@ verdict: revise
 ### Advisory
 
 - None.
+
+## Builder resolution — 2026-07-27
+
+- Replaced Figure 113.5's `Spectrum` with the in-vocabulary `Compare` form. The
+  figure now presents committed and aspirational results as two explicitly labeled
+  goal types, with no continuum or unsupported numerical marker.
+- Updated the registry diagram list from `spectrum` to `comparison` so it matches
+  the six forms rendered by the chapter. The chapter remains `draft`; this
+  resolution does not mark it done.

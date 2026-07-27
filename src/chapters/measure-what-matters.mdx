@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Bars, Flow, Matrix, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+import { Bars, Compare, Flow, Matrix, NodeGraph, ProcessLoop } from "../components/diagrams";
 
 <Hero
   slug="measure-what-matters"
@@ -151,18 +151,26 @@ performance trap. A committed goal can demand reliability. It should not be dres
 moonshot simply to sound impressive.
 
 <Figure id="113.5" caption="Commitments protect what must happen; aspirations make the intended stretch explicit.">
-  <Spectrum
-    className="block w-full min-w-[440px]"
-    left="committed result"
-    right="aspirational result"
-    marker={0.72}
-    markerLabel="name the stretch"
-    markerLabelPlacement="top"
-    zones={[
-      { from: 0, to: 0.4, label: "reliable delivery matters" },
-      { from: 0.58, to: 1, label: "learning and bold attempts", accent: true },
-    ]}
-    ariaLabel="A continuum from committed results that require reliable delivery to aspirational results where the intended stretch is named."
+  <Compare
+    className="block w-full min-w-[400px]"
+    left={{
+      title: "committed result",
+      points: [
+        "reliable delivery is expected",
+        "a partner or constraint depends on it",
+        "a miss needs an operational response",
+      ],
+    }}
+    right={{
+      title: "aspirational result",
+      points: [
+        "deliberate stretch is expected",
+        "state why the reach matters",
+        "a miss should produce learning, not concealment",
+      ],
+    }}
+    favor="none"
+    ariaLabel="A comparison of committed results, which require reliable delivery, and aspirational results, which explicitly invite a meaningful stretch."
   />
 </Figure>
 
