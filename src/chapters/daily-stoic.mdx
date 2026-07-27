@@ -1,0 +1,207 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Concentric, Flow, NodeGraph, ProcessLoop, Pyramid } from "../components/diagrams";
+
+<Hero
+  slug="daily-stoic"
+  thesis="A short encounter with a durable principle can shape a day, if reflection turns it into one chosen response rather than a decorative quotation."
+  minutes={8}
+/>
+
+## The thesis
+
+*The Daily Stoic* makes ancient Stoic material usable through repetition. Its unit is not a
+theory to master once, but a small prompt to carry into the day: notice what is happening,
+separate it from the judgment rushing in, and choose conduct that can stand on its own even
+when the outcome does not cooperate. The point of returning every morning is not to collect
+wise sayings. It is to make a better response easier to reach when pressure arrives.
+
+## Why it matters
+
+Philosophy often fails at the moment it is most needed. A principle that seemed clear while
+reading can disappear in a tense meeting, a delayed flight, or an ordinary argument at home.
+The book's calendar format treats that gap as a practice problem. A brief daily encounter gives
+attention something to return to before impulse, distraction, and habit take over.
+
+## Key ideas
+
+### A principle becomes useful through repeated contact
+
+The book is organized as a year because a single reading rarely changes a reflex. A prompt
+encountered again and again can become familiar enough to interrupt a familiar mistake. The
+daily unit is deliberately small: read, consider a situation where the idea applies, then look
+for one place to use it. The following day supplies another chance to notice what held and what
+did not.
+
+This is less like finishing a course than maintaining an instrument. The goal is not to achieve
+a permanently calm state. It is to shorten the distance between losing one's footing and
+returning to a considered action. Repetition matters because life keeps presenting the same
+problems in new clothes.
+
+<Figure id="91.1" caption="A short prompt becomes practice only when reflection returns to the next real encounter.">
+  <ProcessLoop
+    className="block w-full min-w-[380px]"
+    stages={["read one prompt", "test it against today", "notice the result", "return tomorrow"]}
+    compoundingEdge={3}
+    centerLabel="daily practice"
+  />
+</Figure>
+
+### Put effort where a choice can still matter
+
+Stoicism begins with a practical boundary. Other people, a past decision, the weather, and the
+final result of an effort all place conditions on a day, but they do not become steerable merely
+because they matter to you. Attention becomes more useful when it moves inward to preparation,
+judgment, speech, and the next act.
+
+This is not an argument for indifference to the wider world. A difficult condition may call for
+care, protest, negotiation, or help. The distinction simply prevents a person from spending the
+whole day wrestling an outcome that is no longer theirs to decide. It asks what portion of the
+situation can still be met faithfully.
+
+<Figure id="91.2" caption="Conditions shape the day, while judgment and chosen conduct remain the nearest field of action.">
+  <Concentric
+    className="block w-full min-w-[380px]"
+    rings={[
+      { label: "judgment" },
+      { label: "preparation and conduct" },
+      { label: "the result" },
+    ]}
+    externalLabel="conditions: chance, other people, the past"
+    highlight={0}
+  />
+</Figure>
+
+### Pause between the impression and the reply
+
+Many bad decisions begin as an unexamined first impression. A remark feels insulting, a delay
+looks like disrespect, a risk feels intolerable, and the mind quickly supplies a whole story.
+The Stoic move is not to deny the first feeling. It is to delay granting it authority. What are
+the facts? What am I inferring? What response will still seem fair after the heat has passed?
+
+That pause is small, but it changes the sequence. Instead of treating the first interpretation as
+an order, a person can inspect it, revise it if needed, and then decide what the moment asks for.
+Some situations will still require a firm no. The difference is that the boundary comes from a
+considered judgment, not from a reflex that picked the target and the tone.
+
+<Figure id="91.3" caption="Inspection creates room between a first impression and an answer that has to live with its consequences.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["an impression arrives", "name the added story", "check what is known", "choose the reply"]}
+    highlight={2}
+  />
+</Figure>
+
+### Character is the part of a good day you can carry
+
+The book repeatedly redirects the measure of a day away from comfort, applause, possession, or
+control over another person. Those things can be welcome and still remain unstable. A person has
+a firmer basis for evaluation in the qualities brought to a situation: clear judgment, restraint,
+courage, and fairness. They are not trophies. They are standards for deciding what to do when no
+external score settles the question.
+
+This changes the meaning of success in modest but important ways. A difficult conversation can
+go badly and still be conducted honestly. A loss can hurt and still be met without cruelty. A
+project can succeed without becoming an excuse for vanity. The standard does not erase results;
+it prevents results from being the only thing that counts.
+
+<Figure id="91.4" caption="Circumstances change around a day; chosen qualities provide a steadier basis for action.">
+  <Pyramid
+    className="block w-full min-w-[380px]"
+    tiers={[
+      { label: "clear judgment", note: "see the situation plainly" },
+      { label: "self-command", note: "do not let impulse take the wheel" },
+      { label: "courage and fairness", note: "act well with and for others" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+### Inner discipline should make a person more useful to others
+
+Stoicism can sound private, as if its aim were to keep every disturbance outside the mind. The
+daily readings point toward a social test instead. Better command of judgment should make a
+person less vain, less reactive, and more reliable in shared work. Calm is not the finish line
+if it merely makes someone unavailable to other people.
+
+That is why the question after a setback is larger than, "How do I feel better?" It also asks
+what the situation requires of a colleague, neighbor, friend, or citizen. Sometimes the answer
+is patient listening. Sometimes it is a difficult correction, a kept promise, or a refusal to
+join a petty conflict. Inner work earns its value when it reaches outward as conduct that helps
+hold a common world together.
+
+<Figure id="91.5" caption="Reflection matters socially when it connects clearer judgment to dependable action with other people.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "notice", label: "notice the reaction", x: 0.12, y: 0.5 },
+      { id: "judge", label: "examine judgment", x: 0.42, y: 0.18 },
+      { id: "act", label: "choose fair action", x: 0.42, y: 0.82 },
+      { id: "shared", label: "shared work", x: 0.84, y: 0.5 },
+    ]}
+    edges={[
+      { from: "notice", to: "judge" },
+      { from: "judge", to: "act" },
+      { from: "act", to: "shared", kind: "reinforcing", label: "trust" },
+      { from: "shared", to: "notice", label: "next encounter", labelOffset: { y: 14 } },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose a prompt before the noise starts">
+At the beginning of tomorrow, write one question where you will see it: What part of this day is
+actually mine to direct? Return to it before opening the first message that raises your pulse.
+Name one action in your control, then do that action before trying to solve the whole situation.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Separate the camera view from the story">
+When a moment feels loaded, record two sentences. First, write what a camera could have captured.
+Second, write the conclusion your mind added about motive, future, or worth. Leave both on the
+page for ten minutes. Then decide which part needs evidence and which part is asking for a wiser
+reply.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Rehearse one quality in advance">
+Pick an encounter you expect to be difficult: a feedback conversation, a long wait, or a request
+you may need to decline. Choose one quality to practice there, such as patience, candor, or
+restraint. Make it behavioral. Patience might mean asking one question before defending your
+position. Candor might mean stating the concern without an accusation.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Close with a useful review">
+Before bed, write three short lines: where you reacted too quickly, where you acted in a way you
+respect, and what you will try differently at the next similar moment. Keep the review specific.
+It is preparation for tomorrow, not a prosecution of today's failures.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Stoicism is not emotional numbness, an order to tolerate harm, or a substitute for medical,
+psychological, legal, or community support. Feelings can carry information, and some conditions
+need to be changed rather than privately endured. The distinction between what one can direct and
+what one cannot is a way to locate the next responsibility, not a reason to excuse injustice or
+blame people for circumstances outside their power. The daily-reader format also favors brief,
+portable lessons. Readers who want the philosophical arguments and their historical context
+should go to the ancient sources as well as the commentary.
+</Callout>
+
+## If you remember one thing
+
+Read one principle, then give it a job in the next hard moment. A daily practice works when it
+helps you see more clearly and choose one fair action that remains yours to take.
+
+## Shelved nearby
+
+Meditations is the primary Stoic notebook that supplies much of the tradition's practical voice.
+The Obstacle Is the Way develops the same turn from setback to chosen response for a modern
+reader. The 7 Habits of Highly Effective People similarly starts effectiveness with responsibility
+for one's response.
+
+<ShelvedNearby
+  related={["meditations", "obstacle-is-the-way", "seven-habits"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/545426/the-daily-stoic-by-ryan-holiday-and-stephen-hanselman/9780735211735/"
+  buyLabel="The Daily Stoic by Ryan Holiday and Stephen Hanselman"
+/>

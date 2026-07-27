@@ -1803,7 +1803,17 @@
       "subtitle": "Ryan Holiday and Stephen Hanselman · 2016",
       "part": "Philosophy & Wisdom",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "A daily encounter with Stoic ideas becomes a practice when it improves the next judgment and the next chosen action.",
+      "framework": "No single signature model; the calendar-based daily practice is synthesized through the key ideas.",
+      "diagrams": [
+        "process loop",
+        "concentric circles",
+        "flow",
+        "pyramid",
+        "node graph"
+      ]
     },
     {
       "num": 92,
