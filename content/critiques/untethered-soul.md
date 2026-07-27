@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -71,3 +71,21 @@ verdict: revise
    all 197 Vitest tests; TypeScript and the Vite production build; and ESLint
    passed. Vitest emitted only the existing non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+- **Required 1:** Replaced Figure 95.2's core-first `Concentric` rings with the
+  existing `CoreContext` vocabulary form. Its outer field is explicitly labeled
+  “the field of awareness,” and its contained passing-state cards are thoughts,
+  feelings, and events. The revised caption now describes that containment
+  relation directly.
+- **Required 2:** Re-rendered the final MDX page and counted 1,400
+  reader-visible alphanumeric tokens, including Hero and cover metadata,
+  headings, captions, diagram labels, exercise titles, and the nearby-book footer.
+  At approximately 200 words per minute, rounded up, that is seven minutes; the
+  Hero badge is now `minutes={7}`.
+- **Required 3:** Narrowed Figure 95.3 and its section from an attributed
+  stored-emotion mechanism to the page-level observation that a current trigger can
+  recruit memory, expectation, or a familiar conclusion. The prose now explicitly
+  says that this does not establish a hidden mechanism or explain the cause of a
+  feeling, and the iceberg labels no longer assert stored emotional material.

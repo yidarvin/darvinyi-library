@@ -1,11 +1,11 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, Flow, Iceberg, Spectrum } from "../components/diagrams";
+import { Compare, CoreContext, Flow, Iceberg, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="untethered-soul"
   thesis="Freedom begins when the mind's running commentary becomes something you can notice, rather than the authority that gets to define you."
-  minutes={6}
+  minutes={7}
 />
 
 ## The thesis
@@ -64,36 +64,34 @@ That distinction makes a little room around experience. Anxiety may still be the
 excitement, or anger. The practice does not require turning any of them into evidence about an
 essential self. It asks you to let the changing material stay changing.
 
-<Figure id="95.2" caption="Awareness is treated as the steady field in which thoughts, feelings, and events can come and go.">
-  <Concentric
+<Figure id="95.2" caption="The field of awareness holds thoughts, feelings, and events together while each can change.">
+  <CoreContext
     className="block w-full min-w-[380px]"
-    rings={[
-      { label: "awareness" },
-      { label: "thoughts and feelings" },
-      { label: "events and other people" },
-    ]}
-    highlight={0}
+    contextTitle="the field of awareness"
+    coreTitle="passing states, noticed together"
+    coreItems={["thoughts", "feelings", "events"]}
+    contextItems={[]}
   />
 </Figure>
 
-### A present trigger often touches older stored resistance
+### A present trigger can recruit an old story
 
 Some reactions are larger than the occasion that prompts them. A brief criticism can produce a
-day of shame. A delayed reply can feel like abandonment. Singer describes such contractions as
-old emotional material held inside, ready to tighten when life brushes against it. The language is
-spiritual, but the everyday observation is recognizable: the present moment can recruit a much
-older story.
+day of shame. A delayed reply can feel like abandonment. The practical observation here is more
+modest: a present event can quickly recruit a memory, expectation, or familiar conclusion. The
+current fact may then seem to disappear behind the reaction it has set in motion.
 
 Seeing this does not make the trigger unreal or excuse harmful behavior. It makes the response
 more legible. Instead of assigning the whole reaction to the person in front of you, ask what the
 event touched, what the body is doing, and what conclusion has rushed in. That pause can prevent
-an old defense from taking over a new situation.
+an old story from taking over a new situation. It does not establish a hidden stored-emotion
+mechanism or explain the cause of the feeling.
 
-<Figure id="95.3" caption="A current event may be visible on the surface while memory, expectation, and protection intensify the reaction underneath.">
+<Figure id="95.3" caption="A current event may be visible on the surface while memory, expectation, and protection shape the reaction around it.">
   <Iceberg
     className="block w-full min-w-[380px]"
     above="the event happening now"
-    below={["old hurt", "expectation and fear", "the urge to protect yourself"]}
+    below={["memory", "expectation", "the urge to protect yourself"]}
     waterlineLabel="what the moment first reveals"
   />
 </Figure>
