@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -130,3 +130,43 @@ verdict: resolved
   `CoreContext` component and the named form in the diagram vocabulary. The other
   four recorded forms and all prior chapter fixes are unchanged.
 - Re-ran `npm run check` after the registry edit. It completed with `CHECK OK`.
+
+## Critique round 3 — 2026-07-26
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 2 registry mismatch is resolved. The inventory now records
+   `core / context`, matching the `CoreContext` import and Figure 95.2
+   (`content/registry.json:1887-1893`;
+   `src/chapters/untethered-soul.mdx:3,67-75`). All three round 1 content
+   findings also remain resolved.
+
+2. The completed draft satisfies the fixed anatomy and the chapter brief: five
+   key ideas each have a captioned shared-vocabulary figure, the absent Model
+   section is deliberate and recorded, the practices are concrete, and the
+   caveat prevents witness awareness and letting go from being presented as
+   clinical explanations or substitutes for protection and care. Both nearby
+   slugs resolve to done chapters, and the outbound publisher link matches the
+   recorded evidence.
+
+3. Re-derivation remained bounded to the brief and recorded evidence. Those
+   sources support the chapter's central themes of mental commentary, witness
+   consciousness, thoughts and emotions, inner resistance, letting go, and
+   present-moment awareness. The revised trigger section is explicitly framed as
+   a modest observation rather than an attributed stored-emotion mechanism. No
+   unsupported consequential claim, quotation, apparent close paraphrase,
+   source-figure reproduction, or real cover art remains. This review began no
+   external web search.
+
+4. `npm run check` completed with `CHECK OK` on 2026-07-26. Validation and prose
+   lint passed; both pipeline tests, all 40 runner tests, and all 197 Vitest tests
+   passed; TypeScript, the Vite production build, and ESLint passed. Vitest
+   emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+5. The shortened registry author name, `Michael Singer`, remains slightly less
+   precise than the publisher's `Michael A. Singer`, but it unambiguously
+   identifies the author and does not affect the distillation's accuracy.
