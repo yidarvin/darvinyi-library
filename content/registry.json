@@ -2038,7 +2038,19 @@
       "subtitle": "Peter Attia · 2023",
       "part": "Health & the Body",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "A longer life matters only if it preserves healthspan: the capacity to stay capable, connected, and in command of ordinary choices. Earlier risk reduction, physical reserve, and revision as evidence changes help protect it.",
+      "framework": "Medicine 3.0: earlier, individualized risk reduction under uncertainty, revised as evidence changes.",
+      "diagrams": [
+        "comparison / split",
+        "annotated curve",
+        "node graph",
+        "venn / overlap",
+        "flow / sequence",
+        "comparison / split",
+        "flow / sequence"
+      ]
     },
     {
       "num": 104,

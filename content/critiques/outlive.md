@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -54,3 +54,16 @@ verdict: revise
    `npm run check` passed on 2026-07-27, including validation, prose lint, all 40
    pipeline tests, all 216 Vitest tests, TypeScript, the production build, and ESLint.
    Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-27
+
+- Compressed **The thesis** to two sentences while retaining the healthspan, earlier
+  prevention, physical-capacity, and evidence-revision argument.
+- Set Figure 103.5's four-step `Flow` to its generated 558px width and set Figure
+  103.6's shared wrapper to 558px, so both flows preserve their authored 11.5-unit
+  labels at a 360px viewport through the Figure's horizontal scroll container.
+- Replaced the author-site outbound link with Harmony/Penguin Random House's direct
+  Outlive purchase page and recorded that publisher source in the chapter evidence.
+- Completed the Outlive registry record with tier 2, a chapter-aligned thesis,
+  Medicine 3.0 as the framework, and all seven diagram forms in rendered order.
+- `npm run check` passed on 2026-07-27.
