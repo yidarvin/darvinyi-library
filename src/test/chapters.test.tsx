@@ -110,4 +110,20 @@ describe("NodeGraph", () => {
     expect(Number(edge!.getAttribute("x1"))).toBeGreaterThan(94);
     expect(Number(edge!.getAttribute("x2"))).toBeLessThan(286);
   });
+
+  it("can show neutral connections without implying direction", () => {
+    const { container } = render(
+      <NodeGraph
+        ariaLabel="A neutral relationship map."
+        directed={false}
+        nodes={[
+          { id: "center", label: "center", x: 0.5, y: 0.5 },
+          { id: "peer", label: "peer", x: 0.5, y: 0.1 },
+        ]}
+        edges={[{ from: "center", to: "peer" }]}
+      />,
+    );
+
+    expect(container.querySelector("line")?.getAttribute("marker-end")).toBeNull();
+  });
 });

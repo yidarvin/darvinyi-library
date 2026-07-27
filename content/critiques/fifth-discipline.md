@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -56,3 +56,20 @@ Mechanical verification: `npm run check` completed with `CHECK OK` on
 2026-07-26. Queue and registry validation, prose lint, 40 runner tests, 185
 Vitest tests, TypeScript, the Vite production build, and ESLint all passed.
 Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+1. Replaced the Model figure's invented reinforcing ring with a neutral node graph:
+   systems thinking is now centered and linked, without arrowheads or signed edges, to
+   personal mastery, mental models, shared vision, and team learning. The Model prose and
+   accessible label now state that these links show integration, not causal order. Added an
+   opt-in `directed={false}` mode to the reusable `NodeGraph` primitive and a regression test
+   for arrowhead-free relationships; the diagram vocabulary records the neutral-map use.
+2. Added a sixth Key Idea, "Personal mastery keeps learning connected to a person," with an
+   original flow diagram and a concrete personal-mastery practice card. Renumbered the later
+   figures and exercises while preserving their prior content.
+3. Completed the `fifth-discipline` registry entry with tier, thesis, framework, and the
+   seven rendered diagram forms.
+4. Recomputed the final static reader-visible token count after the revisions: 1,609
+   alphanumeric tokens, which rounds up to a nine-minute distillation at 200 words per minute. The
+   Hero badge is now `minutes={9}`.

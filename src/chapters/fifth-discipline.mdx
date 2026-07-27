@@ -1,11 +1,11 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Iceberg, NodeGraph, ProcessLoop, Venn } from "../components/diagrams";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Venn } from "../components/diagrams";
 
 <Hero
   slug="fifth-discipline"
   thesis="An organization learns when people can improve their own judgment, examine their assumptions together, and see the feedback patterns their separate decisions create."
-  minutes={8}
+  minutes={9}
 />
 
 ## The thesis
@@ -74,6 +74,24 @@ story explicit enough for people to challenge, improve, and use.
   />
 </Figure>
 
+### Personal mastery keeps learning connected to a person
+
+Personal mastery is not a ranking of individual talent. It is the continuing work of noticing
+the gap between an aspiration and current capability, then choosing practice that narrows it.
+That discipline matters in a learning organization because a group cannot outsource all
+learning to its meeting rooms. People need a way to name what they are trying to become better
+at, learn from the result, and bring a more considered judgment back to the group. The aim is
+not private perfection. It is an individual capacity for purpose, attention, and revision that
+can support shared work.
+
+<Figure id="90.3" caption="Personal mastery turns an aspiration into a small cycle of practice and reflection.">
+  <Flow
+    className="block w-full min-w-[400px]"
+    steps={["name an aspiration", "notice the current gap", "practice one capability", "reflect and revise"]}
+    highlight={2}
+  />
+</Figure>
+
 ### Assumptions need a place in the room
 
 Every decision rests on a model of how the situation works, usually held as common sense
@@ -83,7 +101,7 @@ did we observe, what meaning did we assign to it, and what action follows? Separ
 steps does not eliminate judgment. It gives colleagues something concrete to inspect instead
 of forcing them to either accept the conclusion or attack the person who reached it.
 
-<Figure id="90.3" caption="A stated conclusion can be examined when observations and assumptions are kept distinct.">
+<Figure id="90.4" caption="A stated conclusion can be examined when observations and assumptions are kept distinct.">
   <Compare
     className="block w-full min-w-[400px]"
     favor="right"
@@ -107,7 +125,7 @@ than erase them. When people can connect their own standards of craft, service, 
 common direction, initiative becomes less dependent on supervision. The aim is alignment that
 retains judgment, not uniformity that suppresses it.
 
-<Figure id="90.4" caption="A common direction gains force when it overlaps with people’s lived commitments.">
+<Figure id="90.5" caption="A common direction gains force when it overlaps with people’s lived commitments.">
   <Venn
     className="block w-full min-w-[380px]"
     sets={[{ label: "personal standards" }, { label: "shared direction" }]}
@@ -124,7 +142,7 @@ when new evidence arrives. This is not a demand for endless consensus. A team ca
 uncertainty while making clear what it believes, what it does not know, and what signal would
 cause it to reconsider.
 
-<Figure id="90.5" caption="Team learning turns a decision into a cycle of explanation, testing, and adjustment.">
+<Figure id="90.6" caption="Team learning turns a decision into a cycle of explanation, testing, and adjustment.">
   <ProcessLoop
     className="block w-full min-w-[400px]"
     stages={["state the reasoning", "hear other views", "test the shared map", "coordinate a next move"]}
@@ -136,54 +154,63 @@ cause it to reconsider.
 ## The Model
 
 The learning organization is not a department and it is not a finished organizational design.
-It is a set of connected practices. People work on their own capability and purpose. They make
-their mental models discussable. They build a direction worth coordinating around, and learn
-how to think together. Systems thinking connects those practices to the patterns they jointly
-produce, so learning is measured in changed conditions and better action, not better meeting
-language.
+It is a set of connected practices: personal mastery, mental models, shared vision, and team
+learning. Systems thinking is the integrating practice. It asks how these disciplines bear on
+the patterns a group is jointly producing, so learning is measured in changed conditions and
+better action, not better meeting language. The links in the map are not a sequence or a claim
+that one discipline automatically causes another. They show the common system a group needs to
+see while it uses the disciplines together.
 
-<Figure id="90.6" caption="Five connected practices help a group notice, revise, and act on the system it inhabits.">
+<Figure id="90.7" caption="Systems thinking connects four learning disciplines to the conditions a group creates together.">
   <NodeGraph
     className="block w-full min-w-[440px]"
+    directed={false}
+    ariaLabel="A neutral relationship map with systems thinking at the center, connected to personal mastery, mental models, shared vision, and team learning. The connections do not show causal direction."
     nodes={[
-      { id: "mastery", label: "personal mastery", x: 0.5, y: 0.07 },
-      { id: "models", label: "mental models", x: 0.92, y: 0.36 },
-      { id: "vision", label: "shared vision", x: 0.76, y: 0.89 },
-      { id: "team", label: "team learning", x: 0.24, y: 0.89 },
-      { id: "systems", label: "systems thinking", x: 0.08, y: 0.36 },
+      { id: "systems", label: "systems thinking", x: 0.5, y: 0.5 },
+      { id: "mastery", label: "personal mastery", x: 0.5, y: 0.05 },
+      { id: "models", label: "mental models", x: 0.9, y: 0.5 },
+      { id: "vision", label: "shared vision", x: 0.5, y: 0.95 },
+      { id: "team", label: "team learning", x: 0.1, y: 0.5 },
     ]}
     edges={[
-      { from: "mastery", to: "models", kind: "reinforcing" },
-      { from: "models", to: "vision", kind: "reinforcing" },
-      { from: "vision", to: "team", kind: "reinforcing" },
-      { from: "team", to: "systems", kind: "reinforcing" },
-      { from: "systems", to: "mastery", kind: "reinforcing" },
+      { from: "systems", to: "mastery" },
+      { from: "systems", to: "models" },
+      { from: "systems", to: "vision" },
+      { from: "systems", to: "team" },
     ]}
   />
 </Figure>
 
 ## Put it to work
 
-<ExerciseCard n="01" title="Map one recurring problem">
+<ExerciseCard n="01" title="Practice one capability against a real aspiration">
+Choose one skill or judgment that would help you contribute to work you care about. Describe the
+current gap in observable terms, then set a small practice for the next week. At the end, ask
+what changed, what did not, and what support or feedback would make the next attempt better.
+Bring the learning into the next relevant team conversation.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Map one recurring problem">
 Pick a problem that has appeared at least three times. Write the visible event, the pattern
 across the previous cases, and three conditions that may be generating it. Ask one colleague
 from another part of the work to add a missing handoff, incentive, or delay. Keep the sketch
 small enough to use in the next planning conversation.
 </ExerciseCard>
 
-<ExerciseCard n="02" title="Separate what you saw from what you inferred">
+<ExerciseCard n="03" title="Separate what you saw from what you inferred">
 Before a consequential decision, make two short columns. In the first, record observations that
 another person could check. In the second, record the interpretation you are adding. Circle one
 interpretation to test before acting. This creates a productive opening for disagreement.
 </ExerciseCard>
 
-<ExerciseCard n="03" title="Run a learning review, not a status review">
+<ExerciseCard n="04" title="Run a learning review, not a status review">
 At the end of a project week, ask: what result surprised us, what assumption did it challenge,
 and what will we change in the next cycle? Give the meeting one concrete decision to revisit
 next time. The point is to update the work, not to perform reflection.
 </ExerciseCard>
 
-<ExerciseCard n="04" title="Make the shared direction usable">
+<ExerciseCard n="05" title="Make the shared direction usable">
 Ask each person on a team to finish one sentence: the future we are trying to create is worth
 the tradeoff because ____. Compare the answers. Where they differ, do not smooth them over.
 Use the differences to clarify what the team is actually promising one another.

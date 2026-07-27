@@ -73,7 +73,7 @@ Two or three overlapping sets with a labeled intersection. For sweet-spot and co
 ### 11. Node graph
 Nodes connected by edges, non-hierarchical. For networks and system maps.
 - Use for: stocks-and-flows sketches, network effects, systems with feedback between parts.
-- Component: `<NodeGraph nodes={[...]} edges={[...]} />`
+- Component: `<NodeGraph nodes={[...]} edges={[...]} directed={false} />` for a neutral relationship map; omit `directed={false}` when arrows are needed and supported.
 - Keep sparse and legible; this is a concept sketch, not a full systems model.
 
 ### 12. Timeline / bar

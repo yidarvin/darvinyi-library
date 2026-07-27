@@ -24,6 +24,8 @@ export interface GraphEdge {
 export interface NodeGraphProps extends DiagramBase {
   nodes: GraphNode[];
   edges: GraphEdge[];
+  /** Draw neutral links without arrowheads when a map shows association rather than direction. */
+  directed?: boolean;
 }
 
 /**
@@ -31,7 +33,7 @@ export interface NodeGraphProps extends DiagramBase {
  * where parts feed back on each other. Kept sparse on purpose; this is a concept
  * sketch, not a full stocks-and-flows model.
  */
-export function NodeGraph({ nodes = [], edges = [], ariaLabel, className }: NodeGraphProps) {
+export function NodeGraph({ nodes = [], edges = [], directed = true, ariaLabel, className }: NodeGraphProps) {
   const uid = useId();
   const cx = 190;
   const cy = 162;
@@ -103,7 +105,7 @@ export function NodeGraph({ nodes = [], edges = [], ariaLabel, className }: Node
               stroke={rein ? C.accent : C.comment}
               strokeWidth={rein ? 1.8 : 1.4}
               strokeDasharray={bal ? "5 3" : undefined}
-              markerEnd={`url(#${rein ? `ng-arwA-${uid}` : `ng-arw-${uid}`})`}
+              markerEnd={directed ? `url(#${rein ? `ng-arwA-${uid}` : `ng-arw-${uid}`})` : undefined}
             />
             {(rein || bal || e.label) && (
               <text
