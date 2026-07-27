@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -112,3 +112,20 @@ verdict: resolved
   the clear sparse goal network, and the registry still records all six diagram forms.
 - Ran `npm run check`; the complete gate passes. The registry status remains `draft`;
   this resolution does not mark the chapter done.
+
+## Critique round 4 — 2026-07-27
+
+### Required
+
+1. Figure 113.4 adds an unsupported reinforcing meaning to the review cadence.
+   `compoundingEdge={3}` makes `ProcessLoop` draw the edge from “adjust or commit”
+   back to “set a result” in accent with a plus sign, and that prop is explicitly
+   defined for a reinforcing or compounding edge. The chapter and recorded evidence
+   support regular check-ins and iteration, but they do not claim that this
+   transition compounds or forms a positive feedback loop. Remove the compounding
+   marker, or replace it with a supported distinction, so the diagram encodes the
+   ordinary review cycle described by the prose and caption.
+
+### Advisory
+
+- None.
