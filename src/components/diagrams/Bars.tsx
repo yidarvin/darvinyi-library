@@ -22,10 +22,26 @@ export interface BarsProps extends DiagramBase {
 export function Bars({ items = [], ariaLabel, className }: BarsProps) {
   const gutter = 128;
   const trackX = gutter + 8;
-  const trackW = 380 - trackX - 40;
-  const rowH = 38;
-  const top = 14;
-  const height = top * 2 + items.length * rowH;
+  const trackW = 220;
+  let cursor = 14;
+  const rows = items.map((item) => {
+    const labelLines = wrapLabel(item.label, 16);
+    // Annotations sit under the bar rather than beyond its endpoint. This keeps
+    // long explanations inside the fixed SVG viewport at narrow display widths.
+    const valueLines = item.valueLabel ? wrapLabel(item.valueLabel, 30) : [];
+    const mainHeight = Math.max(20, labelLines.length * 12);
+    const annotationHeight = valueLines.length ? valueLines.length * 12 + 8 : 0;
+    const row = {
+      item,
+      labelLines,
+      valueLines,
+      centerY: cursor + mainHeight / 2,
+      annotationY: cursor + mainHeight + 12,
+    };
+    cursor += mainHeight + annotationHeight + 10;
+    return row;
+  });
+  const height = Math.max(56, cursor + 4);
 
   return (
     <Svg
@@ -33,11 +49,10 @@ export function Bars({ items = [], ariaLabel, className }: BarsProps) {
       ariaLabel={ariaLabel ?? `A bar comparison of ${items.map((i) => i.label).join(", ")}.`}
       className={className}
     >
-      {items.map((item, i) => {
-        const y = top + i * rowH + rowH / 2;
+      {rows.map(({ item, labelLines, valueLines, centerY, annotationY }, i) => {
+        const y = centerY;
         const v = Math.min(1, Math.max(0, item.value));
         const w = Math.max(2, trackW * v);
-        const labelLines = wrapLabel(item.label, 16);
         return (
           <g key={i}>
             <text textAnchor="end" fontFamily={MONO} fontSize="11" fill={item.accent ? C.accent : C.fg}>
@@ -49,9 +64,13 @@ export function Bars({ items = [], ariaLabel, className }: BarsProps) {
             </text>
             <rect x={trackX} y={y - 9} width={trackW} height={18} rx="4" fill={C.surface2} stroke={C.border} />
             <rect x={trackX} y={y - 9} width={w} height={18} rx="4" fill={item.accent ? C.accent : C.comment} fillOpacity={item.accent ? 0.85 : 0.6} />
-            {item.valueLabel && (
-              <text x={trackX + w + 6} y={y + 4} fontFamily={MONO} fontSize="10" fill={C.muted}>
-                {item.valueLabel}
+            {valueLines.length > 0 && (
+              <text data-bar-annotation="true" fontFamily={MONO} fontSize="10" fill={C.muted}>
+                {valueLines.map((line, lineIndex) => (
+                  <tspan key={lineIndex} x={trackX} y={annotationY + lineIndex * 12}>
+                    {line}
+                  </tspan>
+                ))}
               </text>
             )}
           </g>

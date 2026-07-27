@@ -2099,7 +2099,17 @@
       "subtitle": "Daniel Kahneman, Olivier Sibony, and Cass Sunstein · 2021",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Unwanted variability in human judgment is a huge, hidden source of error, distinct from bias and just as costly.",
+      "framework": "No single signature model; the Model section is deliberately absent because the book's account is expressed through five key-idea diagrams.",
+      "diagrams": [
+        "comparison / split",
+        "iceberg",
+        "node graph",
+        "flow / sequence",
+        "timeline / bar"
+      ]
     },
     {
       "num": 107,

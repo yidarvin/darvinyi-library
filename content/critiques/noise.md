@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -34,3 +34,15 @@ verdict: revise
 ### Advisory
 
 - None.
+
+## Builder resolution — 2026-07-27
+
+- Redrew Figure 106.3 so `stable case` is an input to `variable judgment`, with
+  baseline, attention, and occasion noise all directed to the judgment rather than
+  the case. Its caption now names that causal target directly.
+- Reworked the shared `Bars` primitive so value annotations wrap below the track
+  within the SVG viewport instead of extending past each bar endpoint. Added a
+  shared regression test covering the long Noise annotations.
+- Completed the Noise registry record with its tier, thesis, deliberate absence of
+  a Model section, and the five diagram forms used by the chapter.
+- Verified the targeted diagram and chapter test. Full `npm run check` passes.

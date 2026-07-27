@@ -76,19 +76,21 @@ with fatigue, a recent case, a noisy room, or a bad morning. These sources can o
 important practical point is that a shared title and a common rubric do not guarantee a shared
 judgment policy.
 
-<Figure id="106.3" caption="A single case can pick up variability from the person, their cues, and the occasion.">
+<Figure id="106.3" caption="A stable case enters the system, while baseline, attention, and occasion make the judgment vary.">
   <NodeGraph
     className="block w-full"
     nodes={[
-      { id: "case", label: "same case", x: 0.5, y: 0.5 },
-      { id: "person", label: "person's baseline", x: 0.18, y: 0.18 },
-      { id: "pattern", label: "what they notice", x: 0.82, y: 0.18 },
-      { id: "occasion", label: "moment and context", x: 0.5, y: 0.87 },
+      { id: "case", label: "stable case", x: 0.22, y: 0.14 },
+      { id: "person", label: "person's baseline", x: 0.72, y: 0.18 },
+      { id: "pattern", label: "what they notice", x: 0.18, y: 0.54 },
+      { id: "occasion", label: "moment and context", x: 0.75, y: 0.54 },
+      { id: "judgment", label: "variable judgment", x: 0.5, y: 0.84 },
     ]}
     edges={[
-      { from: "person", to: "case", label: "level" },
-      { from: "pattern", to: "case", label: "pattern" },
-      { from: "occasion", to: "case", label: "occasion" },
+      { from: "case", to: "judgment", label: "input", labelOffset: { x: -14, y: -8 } },
+      { from: "person", to: "judgment", label: "level", labelOffset: { x: 12, y: -4 } },
+      { from: "pattern", to: "judgment", label: "pattern", labelOffset: { x: -8, y: 8 } },
+      { from: "occasion", to: "judgment", label: "occasion", labelOffset: { x: 12, y: 8 } },
     ]}
   />
 </Figure>

@@ -5,7 +5,7 @@ import { MemoryRouter } from "react-router";
 import { MDXProvider } from "@mdx-js/react";
 import { mdxComponents } from "../components/mdxComponents";
 import { AppRoutes } from "../App";
-import { CoreContext, Matrix, NodeGraph, Spectrum } from "../components/diagrams";
+import { Bars, CoreContext, Matrix, NodeGraph, Spectrum } from "../components/diagrams";
 import { registry } from "../lib/registry";
 
 // Every MDX module on disk, regardless of registry status. The chapter being built
@@ -125,6 +125,27 @@ describe("NodeGraph", () => {
     );
 
     expect(container.querySelector("line")?.getAttribute("marker-end")).toBeNull();
+  });
+});
+
+describe("Bars", () => {
+  it("keeps long value annotations inside the fixed viewport", () => {
+    const { container } = render(
+      <Bars
+        items={[
+          { label: "one broad impression", value: 0.92, valueLabel: "more room for drift" },
+          { label: "separate criteria", value: 0.62, valueLabel: "make reasons visible" },
+          { label: "independent judgments", value: 0.42, valueLabel: "avoid a shared anchor" },
+        ]}
+      />,
+    );
+
+    const annotations = Array.from(container.querySelectorAll<SVGTSpanElement>("[data-bar-annotation] tspan"));
+    expect(annotations).toHaveLength(3);
+    for (const annotation of annotations) {
+      expect(Number(annotation.getAttribute("x"))).toBe(136);
+      expect(annotation.textContent!.length).toBeLessThanOrEqual(30);
+    }
   });
 });
 
