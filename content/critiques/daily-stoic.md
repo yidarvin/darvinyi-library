@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-26
 
@@ -80,3 +80,37 @@ verdict: resolved
 3. Preserved the prior chapter prose, evidence posture, caveats, linked books, and
    all other diagrams. `npm run test -- src/test/chapters.test.tsx` passed before
    the full gate, and `npm run check` completed with `CHECK OK` afterward.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+1. **Update the registry's diagram inventory to match the resolved chapter.**
+   Figures 91.2 and 91.4 now use the imported `Compare` and `CoreContext` forms
+   (`src/chapters/daily-stoic.mdx:3,62-75,110-118`), but the registry still lists
+   their superseded forms, `concentric circles` and `pyramid`
+   (`content/registry.json:1810-1815`). The authoring definition of done requires a
+   complete registry entry, and the critique rubric requires registry and content
+   agreement. Replace those two stale inventory values with the vocabulary names
+   for the forms the page actually renders, preserving the diagram order. The
+   current validator does not compare this metadata with MDX imports, so
+   `npm run check` passing does not resolve the inconsistency.
+
+### Advisory
+
+1. The two findings from round 1 are otherwise resolved. Figure 91.2 now groups
+   preparation, judgment, speech, and the next act together as available choices,
+   and Figure 91.4 renders clear judgment, restraint, courage, and fairness as peer
+   items rather than a hierarchy. The revised components' visible and accessible
+   encodings agree with the prose and captions.
+
+2. No new factual, copyright, anatomy, practice, caveat, related-link, or
+   phone-legibility defect was found in this pass. The chapter remains an original
+   thematic synthesis within the brief and recorded evidence, deliberately omits a
+   signature Model section, and uses five captioned vocabulary diagrams. This
+   review began no external web search.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-26. Queue, registry,
+   critique, and content validation; prose lint; all pipeline tests; all 189
+   Vitest tests; TypeScript and Vite production build; and ESLint passed. Vitest
+   emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
