@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -170,3 +170,33 @@ Verification after these changes: `npm run check` passed on 2026-07-27, includin
 registry validation, prose lint, pipeline and runner tests, application tests, typecheck,
 production build, and ESLint. Vitest emitted only the existing non-failing jsdom
 `Window.scrollTo()` notices.
+
+## Critique round 3 — 2026-07-27
+
+### Required
+
+None.
+
+### Advisory
+
+None.
+
+### Verification
+
+`npm run check` passed on 2026-07-27: queue/registry/content validation, prose lint,
+2 pipeline tests, 40 runner tests, 236 application tests, typecheck, production build,
+and ESLint all completed successfully. Vitest emitted only the existing non-failing
+jsdom `Window.scrollTo()` notices.
+
+The brief, recorded evidence, chapter, directly imported book and diagram components,
+shared SVG helpers, registry entry, queue state, generated cover path, and related targets
+were checked without beginning a new external web search. The thesis and carry-away
+statements preserve the conditional meaning of `r > g`; the stock/flow distinction,
+retention mechanism, historical account, interacting distribution channels, and
+measurement caveat agree with the local dossier. Each of the five key ideas has a
+captioned, in-vocabulary structural diagram, and the signature Model figure renders at
+its 578px intrinsic width so its labels remain legible in the horizontally scrolling
+mobile figure. All three reader-visible related links resolve to completed chapters, and
+the outbound link points to the publisher. The two earlier critique rounds' required
+fixes remain present. Because the evidence dossier records source summaries rather than
+source excerpts, close-paraphrase review was necessarily limited to the local material.

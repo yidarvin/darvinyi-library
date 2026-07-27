@@ -125,7 +125,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 108 | indistractable                  | Indistractable                                | DONE    |
 | 109 | your-money-or-your-life         | Your Money or Your Life                       | DONE    |
 | 110 | i-will-teach-you                | I Will Teach You to Be Rich                   | DONE    |
-| 111 | capital-21c                     | Capital in the Twenty-First Century           | PENDING |
+| 111 | capital-21c                     | Capital in the Twenty-First Century           | DONE    |
 | 112 | total-money-makeover            | The Total Money Makeover                      | PENDING |
 | 113 | measure-what-matters            | Measure What Matters                          | PENDING |
 | 114 | 48-laws-of-power                | The 48 Laws of Power                          | PENDING |
