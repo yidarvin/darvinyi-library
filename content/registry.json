@@ -2021,14 +2021,14 @@
       "routes": [],
       "status": "draft",
       "tier": 2,
-      "thesis": "Breathing is a continuous, adjustable bodily process: favor comfortable nasal breathing when it is available, use a gentle slower rhythm as a cue rather than a cure, and investigate persistent obstruction.",
-      "framework": "No single signature framework; the Model section is deliberately absent, and five key-idea diagrams carry the visual argument about route, rhythm, feedback, and comfort.",
+      "thesis": "Breathing is a continuous, adjustable bodily process: favor comfortable nasal breathing when it is available, treat paced-breathing findings as acute observations rather than prescriptions, and investigate persistent obstruction.",
+      "framework": "No single signature framework; the Model section is deliberately absent, and five key-idea diagrams carry the visual argument about route, measured rhythm, a transition pause, and comfort.",
       "diagrams": [
         "flow / sequence",
         "comparison / split",
         "node graph",
         "process loop",
-        "spectrum / gradient"
+        "two-by-two matrix"
       ]
     },
     {

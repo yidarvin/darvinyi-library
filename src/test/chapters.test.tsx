@@ -5,7 +5,7 @@ import { MemoryRouter } from "react-router";
 import { MDXProvider } from "@mdx-js/react";
 import { mdxComponents } from "../components/mdxComponents";
 import { AppRoutes } from "../App";
-import { CoreContext, NodeGraph, Spectrum } from "../components/diagrams";
+import { CoreContext, Matrix, NodeGraph, Spectrum } from "../components/diagrams";
 import { registry } from "../lib/registry";
 
 // Every MDX module on disk, regardless of registry status. The chapter being built
@@ -183,5 +183,24 @@ describe("Spectrum", () => {
     for (const endpoint of container.querySelectorAll("circle")) {
       expect(endpoint.getAttribute("fill")).toBe("var(--comment)");
     }
+  });
+});
+
+describe("Matrix", () => {
+  it("can emphasize peer quadrants when the target is not one pace or endpoint", () => {
+    const { container } = render(
+      <Matrix
+        xAxis={{ left: "slower", right: "faster" }}
+        yAxis={{ low: "more strain", high: "less strain" }}
+        quadrants={[{ title: "a" }, { title: "b" }, { title: "c" }, { title: "d" }]}
+        highlights={[0, 1]}
+      />,
+    );
+
+    const cells = container.querySelectorAll("rect");
+    expect(cells[0].getAttribute("fill")).toBe("var(--accent)");
+    expect(cells[1].getAttribute("fill")).toBe("var(--accent)");
+    expect(cells[2].getAttribute("fill")).toBe("var(--surface-2)");
+    expect(cells[3].getAttribute("fill")).toBe("var(--surface-2)");
   });
 });

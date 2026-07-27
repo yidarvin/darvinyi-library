@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -34,3 +34,20 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-27
+
+1. Removed the longer-exhale instruction, stress-spiral mechanism, and claim that a breath
+   changes the next turn of anxiety. Key Idea 4 now presents a breathing pause only as a
+   transition cue, explicitly states the limits of the recorded six-breaths-per-minute study,
+   and Exercise 02 uses an unforced even rhythm without an exhale target.
+2. Rebuilt figure 102.3 as a neutral, non-directional map of the recorded six-per-minute
+   condition, heart rhythm, blood pressure, and baroreflex sensitivity. It no longer includes
+   air exchange, felt state, or a reinforcing edge.
+3. Replaced figure 102.5 with a pace-by-felt-strain matrix. Both lower-strain pace ranges are
+   highlighted as potentially comfortable and repeatable, while either pace can signal that the
+   reader should back off when it feels strained. Extended the shared Matrix primitive to support
+   peer highlighted quadrants and added its regression test.
+
+The registry and Breath brief now carry the same narrower framing. Chapter status remains draft;
+no done mark, commit, or push was made.

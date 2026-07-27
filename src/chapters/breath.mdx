@@ -1,10 +1,10 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+import { Compare, Flow, Matrix, NodeGraph, ProcessLoop } from "../components/diagrams";
 
 <Hero
   slug="breath"
-  thesis="Breathing is a continuous, adjustable bodily process. Favor an open nose when it is comfortable, use a calmer rhythm as a cue rather than a cure, and treat persistent obstruction as a problem worth investigating."
+  thesis="Breathing is a continuous, adjustable bodily process. Favor an open nose when it is comfortable, treat paced-breathing findings as acute observations rather than prescriptions, and investigate persistent obstruction."
   minutes={6}
 />
 
@@ -14,7 +14,7 @@ Breathing is not merely an automatic exchange of air. Its route and rhythm affec
 conditions under which air reaches the lungs and can change what the body notices from one
 moment to the next. Nestor's useful provocation is to pay attention to a process that usually
 runs unattended. The durable lesson is modest: make room for comfortable nasal breathing when
-you can, practice a gentle slower rhythm when it helps, and do not turn either practice into a
+you can, use a brief breathing pause to notice your pace, and do not turn either practice into a
 medical theory.
 
 ## Why it matters
@@ -68,50 +68,49 @@ rest, exercise, allergy, anatomy, illness, and sleep can all change the sensible
   />
 </Figure>
 
-### Rhythm gives the nervous system a signal to work with
+### Paced breathing can be observed in short-term measures
 
 Breathing is unusual because it keeps running without instruction but can also be guided on
-purpose. When a person settles into a slow, even rhythm, the timing of breath, heart rate, and
-blood-pressure regulation can become more pronounced. Controlled studies at six breaths per
-minute have found short-term changes in baroreflex sensitivity, including among people with
-hypertension. That finding does not make a count of six a universal prescription, nor does it
-show that slow breathing treats disease. It does make a gentle rhythm a reasonable way to create
-a pause before reacting.
+purpose. Controlled studies have compared a six-breaths-per-minute condition with other rates
+while recording heart rhythm, blood pressure, and baroreflex sensitivity. One such study found
+short-term changes in baroreflex sensitivity, including among people with hypertension. That
+finding does not make a count of six a universal prescription, nor does it show that slow
+breathing treats disease. The study describes an acute condition and its measurements, not a way
+to predict what a breathing practice will do for someone.
 
-<Figure id="102.3" caption="A deliberate rhythm links breath to the body signals that rise and fall with each cycle.">
+<Figure id="102.3" caption="The six-per-minute condition was recorded alongside heart rhythm, blood pressure, and baroreflex sensitivity.">
   <NodeGraph
     className="block w-full min-w-[380px]"
+    directed={false}
     nodes={[
-      { id: "breath", label: "breath rhythm", x: 0.5, y: 0.14 },
-      { id: "lungs", label: "air exchange", x: 0.16, y: 0.5 },
-      { id: "heart", label: "heart rhythm", x: 0.84, y: 0.5 },
-      { id: "notice", label: "felt state", x: 0.5, y: 0.82 },
+      { id: "condition", label: "six/min condition", x: 0.5, y: 0.14 },
+      { id: "heart", label: "heart rhythm", x: 0.16, y: 0.5 },
+      { id: "pressure", label: "blood pressure", x: 0.84, y: 0.5 },
+      { id: "baroreflex", label: "baroreflex sensitivity", x: 0.5, y: 0.82 },
     ]}
     edges={[
-      { from: "breath", to: "lungs", label: "paces" },
-      { from: "breath", to: "heart", label: "modulates" },
-      { from: "lungs", to: "notice", label: "informs" },
-      { from: "heart", to: "notice", label: "informs" },
-      { from: "notice", to: "breath", kind: "reinforcing", label: "adjusts" },
+      { from: "condition", to: "heart", label: "recorded with" },
+      { from: "condition", to: "pressure", label: "recorded with" },
+      { from: "heart", to: "baroreflex", label: "response measure" },
+      { from: "pressure", to: "baroreflex", label: "response measure" },
     ]}
   />
 </Figure>
 
-### A slower exhale can interrupt a spiral
+### A breathing pause is a cue, not a treatment
 
-Stress often creates a loop: a quick, shallow breath feels like evidence that something is
-wrong; that interpretation produces more tension; the next breath becomes quicker still. The
-loop is real even when the original trigger is not dangerous. A slightly longer, unforced exhale
-does not settle every anxious state, but it gives attention one concrete job and changes the
-next turn of the cycle. The aim is not to manufacture serenity. It is to reduce acceleration.
+A few quiet minutes can mark a transition. They offer a moment to notice whether breathing feels
+free, effortful, hurried, or ordinary. That is a use for attention, not a claim about the cause
+of anxiety or the mechanism of a stress response. The recorded paced-breathing study examined a
+six-breaths-per-minute condition and short-term physiological measurements. It did not test a
+longer-exhale technique, an anxiety feedback loop, or what a practice changes in the next turn
+of a stressful moment.
 
-<Figure id="102.4" caption="A gentle change in the next breath can interrupt the feedback between sensation and alarm.">
+<Figure id="102.4" caption="A breathing pause can be a repeatable transition routine without being a treatment.">
   <ProcessLoop
     className="block w-full min-w-[380px]"
-    stages={["quick breath", "strong sensation", "alarm", "more tension"]}
-    compoundingEdge={3}
-    interruption={{ fromStage: 2, label: "soften the exhale" }}
-    centerLabel="a stress loop"
+    stages={["pause", "notice", "breathe freely", "return to task"]}
+    centerLabel="a transition routine"
   />
 </Figure>
 
@@ -124,17 +123,18 @@ are trying to win. Start with a pace that feels easy enough to continue. If deli
 down makes you uncomfortable, return to ordinary breathing. Skill here looks less like control
 than responsiveness.
 
-<Figure id="102.5" caption="The useful range is the one that feels steady and repeatable, not the most extreme one.">
-  <Spectrum
+<Figure id="102.5" caption="Comfort and repeatability can occur at more than one pace; strain is the signal to change course.">
+  <Matrix
     className="block w-full min-w-[380px]"
-    left="rushed or forced"
-    right="slow and comfortable"
-    marker={0.7}
-    markerLabel="repeatable pace"
-    zones={[
-      { from: 0, to: 0.3, label: "too much effort" },
-      { from: 0.52, to: 0.9, label: "gentle control", accent: true },
+    xAxis={{ left: "slower", right: "faster", label: "pace" }}
+    yAxis={{ low: "more strain", high: "less strain", label: "felt effort" }}
+    quadrants={[
+      { title: "may suit you", note: "comfortable, repeatable" },
+      { title: "may suit you", note: "comfortable, repeatable" },
+      { title: "back off", note: "slow can still strain" },
+      { title: "back off", note: "speed can strain" },
     ]}
+    highlights={[0, 1]}
   />
 </Figure>
 
@@ -149,9 +149,10 @@ is not currently easy.
 
 <ExerciseCard n="02" title="Try five quiet minutes">
 Sit or stand comfortably. Breathe through the nose if that is easy, otherwise use the route that
-lets you breathe freely. Let the exhale last a little longer than the inhale, without holding,
-pushing, or chasing a count. Stop the experiment if it causes lightheadedness, distress, or more
-air hunger.
+lets you breathe freely. Choose an even, comfortable rhythm without holding, pushing, or
+targeting the exhale. The cited study examined a six-breaths-per-minute condition; it did not
+identify a best rhythm for you or guarantee an effect. Stop the experiment if it causes
+lightheadedness, distress, or more air hunger.
 </ExerciseCard>
 
 <ExerciseCard n="03" title="Use a transition, not an emergency fix">

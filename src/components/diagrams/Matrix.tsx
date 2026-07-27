@@ -17,18 +17,21 @@ export interface MatrixProps extends DiagramBase {
   quadrants: [MatrixQuadrant, MatrixQuadrant, MatrixQuadrant, MatrixQuadrant];
   /** Index (0-3, same order) of the quadrant to highlight in accent. */
   highlight?: number;
+  /** Indexes (0-3, same order) of peer quadrants to highlight in accent. */
+  highlights?: number[];
 }
 
 /**
  * Two axes, four quadrants: for anything that sorts on two independent dimensions
- * (urgent/important, effort/impact, any typology). The target quadrant is drawn in
- * accent; the rest stay muted.
+ * (urgent/important, effort/impact, any typology). One or more target quadrants can
+ * draw in accent; the rest stay muted.
  */
 export function Matrix({
   xAxis = { left: "", right: "" },
   yAxis = { low: "", high: "" },
   quadrants = [{ title: "" }, { title: "" }, { title: "" }, { title: "" }],
   highlight,
+  highlights,
   ariaLabel,
   className,
 }: MatrixProps) {
@@ -57,7 +60,7 @@ export function Matrix({
     >
       {/* quadrant fills */}
       {cells.map((c, i) => {
-        const on = highlight === i;
+        const on = highlights ? highlights.includes(i) : highlight === i;
         return (
           <rect
             key={`cell-${i}`}
@@ -79,7 +82,7 @@ export function Matrix({
       {/* quadrant labels */}
       {cells.map((c, i) => {
         const q = quadrants[i];
-        const on = highlight === i;
+        const on = highlights ? highlights.includes(i) : highlight === i;
         const cxq = c.x + gw / 4;
         return (
           <g key={`label-${i}`}>

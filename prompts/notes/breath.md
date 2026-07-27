@@ -8,7 +8,9 @@
 
 ## Thesis to convey
 
-How we breathe, and especially breathing through the nose, quietly shapes health more than we realize.
+Breathing route and rhythm are worth noticing: nasal passages condition air, paced-breathing
+studies describe acute physiological observations, and persistent obstruction deserves medical
+attention rather than a technique.
 
 ## Signature model
 
