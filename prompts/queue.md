@@ -112,7 +112,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 095 | untethered-soul                 | The Untethered Soul                           | DONE    |
 | 096 | wherever-you-go                 | Wherever You Go, There You Are                | DONE    |
 | 097 | make-it-stick                   | Make It Stick                                 | DONE    |
-| 098 | ultralearning                   | Ultralearning                                 | PENDING |
+| 098 | ultralearning                   | Ultralearning                                 | DONE    |
 | 099 | bird-by-bird                    | Bird by Bird                                  | PENDING |
 | 100 | war-of-art                      | The War of Art                                | PENDING |
 | 101 | artists-way                     | The Artist's Way                              | PENDING |
