@@ -103,7 +103,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 086 | factfulness                     | Factfulness                                   | DONE    |
 | 087 | emperor-maladies                | The Emperor of All Maladies                   | DONE    |
 | 088 | henrietta-lacks                 | The Immortal Life of Henrietta Lacks          | DONE    |
-| 089 | antifragile                     | Antifragile                                   | PENDING |
+| 089 | antifragile                     | Antifragile                                   | DONE    |
 | 090 | fifth-discipline                | The Fifth Discipline                          | PENDING |
 | 091 | daily-stoic                     | The Daily Stoic                               | PENDING |
 | 092 | tao-te-ching                    | Tao Te Ching                                  | PENDING |
