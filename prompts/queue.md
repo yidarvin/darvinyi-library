@@ -128,7 +128,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 111 | capital-21c                     | Capital in the Twenty-First Century           | DONE    |
 | 112 | total-money-makeover            | The Total Money Makeover                      | DONE    |
 | 113 | measure-what-matters            | Measure What Matters                          | DONE    |
-| 114 | 48-laws-of-power                | The 48 Laws of Power                          | PENDING |
+| 114 | 48-laws-of-power                | The 48 Laws of Power                          | DONE    |
 | 115 | originals                       | Originals                                     | PENDING |
 | 116 | radical-candor                  | Radical Candor                                | PENDING |
 | 117 | culture-code                    | The Culture Code                              | PENDING |

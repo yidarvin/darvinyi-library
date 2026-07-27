@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -67,3 +67,21 @@ verdict: resolved
   omission, and the six rendered diagram forms in page order.
 - Paraphrased the publisher's characterization in the caveat, removed the inline
   verbatim phrase, and removed the unused `Compare` import.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+None. The round-one findings are resolved. The revised chapter now preserves
+Greene's descriptive, often ruthless account before separating out the library's
+defensive applications; Figure 114.6 follows both of its axes; the registry records
+the deliberate Model-section omission and all six rendered forms; and the caveat
+uses original wording supported by the recorded evidence.
+
+`npm run check` passed in full on 2026-07-27: queue and registry validation, prose
+lint, 40 pipeline tests, 243 application tests, TypeScript, production build, and
+ESLint. The jsdom `Window.scrollTo()` notices remained non-failing.
+
+### Advisory
+
+None.
