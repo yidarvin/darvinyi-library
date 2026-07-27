@@ -2118,7 +2118,18 @@
       "subtitle": "Jake Knapp and John Zeratsky · 2018",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Reclaim attention from an always-on world with small daily tactics built around a single chosen Highlight.",
+      "framework": "Highlight, Laser, Energy, Reflect",
+      "diagrams": [
+        "two-by-two matrix",
+        "process loop",
+        "comparison / split",
+        "node graph",
+        "flow / sequence",
+        "process loop"
+      ]
     },
     {
       "num": 108,

@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Flow, Matrix, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+import { Compare, Flow, Matrix, NodeGraph, ProcessLoop } from "../components/diagrams";
 
 <Hero
   slug="make-time"
@@ -47,7 +47,7 @@ letting the loudest request decide.
       { title: "duty", note: "do when required" },
       { title: "Highlight candidate", note: "protect a block" },
       { title: "pleasant filler", note: "use spare time" },
-      { title: "postpone or decline", note: "question the demand" },
+      { title: "personal Highlight", note: "make room deliberately" },
     ]}
     highlight={1}
   />
@@ -88,26 +88,28 @@ instant. A day does not need perfect discipline when the environment stops rewar
 impulse with immediate access.
 
 <Figure id="107.3" caption="Move the Highlight toward an easy start and distractions toward a deliberate detour.">
-  <Spectrum
+  <Compare
     className="block w-full min-w-[440px]"
-    left="instant impulse"
-    right="deliberate choice"
-    marker={0.73}
-    markerLabel="one extra step"
-    zones={[
-      { from: 0, to: 0.34, label: "feeds and alerts by default" },
-      { from: 0.62, to: 1, label: "pause, then choose", accent: true },
-    ]}
+    left={{
+      title: "Highlight: easy start",
+      points: ["open the document", "place materials in reach", "name the first action"],
+    }}
+    right={{
+      title: "distraction: deliberate detour",
+      points: ["move the phone away", "remove the shortcut", "pause before a check"],
+    }}
+    favor="none"
   />
 </Figure>
 
 ## Energy is part of the attention system
 
-Attention is easier to direct when the body is not running on fumes. The book treats
-movement, food, sleep, daylight, quiet, and time with other people as inputs to the
-mental state required for focus. None has to become an optimization project. A short walk,
-a proper lunch, a screen-free wind-down, or a conversation can be a more useful support
-for the afternoon than another attempt to force concentration.
+Attention is easier to direct when the body is not running on fumes. The Energy stage adds
+a practical constraint: attention depends partly on physical conditions. Movement, food and
+water, rest, daylight, quiet, and time with other people are ordinary supports worth
+testing. None has to become an optimization project. A short walk, a proper lunch, a
+screen-free wind-down, or a conversation can be a more useful support for the afternoon
+than another attempt to force concentration.
 
 The important connection is causal enough for daily planning: a neglected body makes a
 fragile attention plan. Instead of asking only where an extra hour could be found, ask what
@@ -221,4 +223,3 @@ tomorrow.
   buyUrl="https://www.penguinrandomhouse.com/books/564727/make-time-by-jake-knapp-and-john-zeratsky/"
   buyLabel="Make Time by Jake Knapp and John Zeratsky"
 />
-

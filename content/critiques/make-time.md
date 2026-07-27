@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -41,3 +41,18 @@ verdict: revise
   (`src/chapters/make-time.mdx:104-110`; `content/evidence/make-time.md:3-17`).
   Preserve that source-level detail in a future evidence pass or soften the attribution
   if it cannot be re-derived from the cited materials.
+
+## Builder resolution — 2026-07-27
+
+- Corrected Figure 107.1's bottom-right, high-meaning/low-consequence quadrant to
+  `personal Highlight / make room deliberately`, which now agrees with the decision
+  rule in the surrounding prose. The high-consequence/high-meaning quadrant remains
+  the protected Highlight candidate.
+- Replaced Figure 107.3's one-axis spectrum with the in-vocabulary comparison form.
+  Its left panel makes the Highlight easier to start, while its right panel adds a
+  deliberate detour to distraction, matching the section and caption.
+- Completed the draft registry record with tier 3, the chapter thesis, the
+  `Highlight, Laser, Energy, Reflect` framework, and all six rendered diagram forms.
+- Softened the Energy paragraph so the recorded general evidence supports its
+  attribution; the specific supports are presented as ordinary conditions to test,
+  not as a detailed claim about the source.
