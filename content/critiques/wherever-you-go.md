@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-26
 
@@ -96,3 +96,30 @@ verdict: resolved
   returning attention.
 - Preserved the five key ideas, fixed page anatomy, exercises, cross-links, and
   existing evidence. `npm run check` passed before this resolution was appended.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+1. **Synchronize the registry's diagram inventory with the resolved chapter.**
+   The chapter now imports and renders a process loop, two flows, a comparison,
+   and a node graph (`src/chapters/wherever-you-go.mdx:1-3,41-48,62-68,82-88,102-115,129-147`).
+   The registry still records the pre-resolution sequence of process loop,
+   concentric circles, iceberg, comparison, and spectrum
+   (`content/registry.json:1906-1912`). This leaves three of five key-idea
+   diagrams falsely described and violates the authoring spec's requirement for
+   complete registry metadata. Update the five entries to match the figures
+   actually on the page. The repository validator does not compare these names
+   with MDX usage, so its passing result does not resolve the mismatch.
+
+### Advisory
+
+1. The three required findings from round 1 are resolved as recorded: Figures
+   96.2 and 96.3 now encode the stated relations, the caveat stays within the
+   non-clinical limits supported by the recorded evidence, and Figure 96.5 now
+   uses a neutral relationship map. No settled finding is reopened.
+
+2. `npm run check` completed with `CHECK OK` on 2026-07-26. Validation and prose
+   lint passed; all 40 pipeline and runner tests and all 199 Vitest tests passed;
+   TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
+   the existing non-failing jsdom `Window.scrollTo()` notices.
