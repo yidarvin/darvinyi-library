@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, Iceberg, Matrix, Spectrum, Timeline } from "../components/diagrams";
+import { Compare, Flow, Iceberg, Matrix, Timeline } from "../components/diagrams";
 
 <Hero
   slug="misbehaving"
@@ -72,21 +72,22 @@ shows that the frame around a choice can matter as much as the arithmetic inside
 The value of a thing is not always fixed before a transaction. Possession can turn a possible
 sale into a loss, and losses tend to demand more attention than equivalent gains. That helps
 explain why buyers and sellers can stare at the same object and arrive at stubbornly different
-prices. It also explains why a default has force: leaving it can feel like preserving what is
-already yours, even when it was selected for you. The practical check is simple: if you did
-not own this yet, would you choose to buy or keep it today?
+prices. Defaults deserve a separate explanation. They can work through effort, inattention,
+an implied recommendation, and status quo bias, without prior ownership. The practical check
+for an owned thing is simple: if you did not own this yet, would you pay to get it today?
 
-<Figure id="104.3" caption="The same object can feel like a gain before ownership and a loss once it is yours.">
-  <Spectrum
+<Figure id="104.3" caption="Ownership changes the transaction from acquiring a possible gain to giving up a possible loss.">
+  <Compare
     className="block w-full min-w-[440px]"
-    left="not yet mine"
-    right="already mine"
-    marker={0.68}
-    markerLabel="reference point shifts"
-    zones={[
-      { from: 0.0, to: 0.43, label: "ask what it is worth to gain" },
-      { from: 0.57, to: 1.0, label: "ask what it feels like to lose", accent: true },
-    ]}
+    favor="right"
+    left={{
+      title: "before ownership",
+      points: ["object is a possible gain", "question: what would I pay to get it?"],
+    }}
+    right={{
+      title: "after ownership",
+      points: ["sale is a possible loss", "question: what would I accept to give it up?"],
+    }}
   />
 </Figure>
 
