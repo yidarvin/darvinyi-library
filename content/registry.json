@@ -2198,7 +2198,18 @@
       "subtitle": "Thomas Piketty · 2013",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "When returns on capital outpace economic growth, inherited wealth, saving, and unequal returns can concentrate ownership unless institutions counter the tendency.",
+      "framework": "r > g",
+      "diagrams": [
+        "comparison",
+        "conceptual bars",
+        "timeline",
+        "process loop",
+        "node graph",
+        "conceptual bars"
+      ]
     },
     {
       "num": 112,

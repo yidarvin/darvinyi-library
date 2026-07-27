@@ -1,0 +1,233 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="capital-21c"
+  thesis="Wealth does not naturally spread itself around. When private assets grow faster than the economy that supports them, inheritance, saving, and unequal returns can pull ownership toward the top."
+  minutes={8}
+/>
+
+## The thesis
+
+Piketty's central claim is a warning about a tendency, not a law of nature. A society can
+produce more each year while the stock of privately owned wealth grows even faster. When
+owners can reinvest a meaningful share of those returns, accumulated wealth gains ground on
+new income. Because ownership begins unevenly distributed, the result can be a widening
+gap between those who live chiefly from work and those who also own claims on land,
+businesses, housing, and financial assets. History, policy, and shocks can interrupt the
+process. They are part of the explanation, not footnotes to it.
+
+## Why it matters
+
+Inequality is often discussed as a difference in paychecks. This book asks the prior
+question: who owns the assets that produce income, and how does that ownership change over
+generations? That lens makes inheritance, taxes, debt, housing, corporate ownership, and
+public wealth visible in the same frame. It also stops a rising national average from being
+mistaken for a broadly shared gain.
+
+## Capital is a stock; income is a flow
+
+The argument begins with a distinction that is easy to blur. Wealth is a stock measured at a
+moment: a home net of its mortgage, a business stake, a pension account, a bond portfolio.
+Income is a flow measured across a period: wages, profits, rents, and interest received over
+a year. A large stock can generate a stream of income without the owner performing new work
+that year. That is not an accusation. It is the accounting fact that lets ownership matter
+alongside labor.
+
+Keeping the two measures separate makes better questions possible. Is a rise in national
+income reaching workers, owners, or both? Is a household gaining from a salary, an asset
+price, or an inheritance? The answers lead to different policy and personal conclusions.
+
+<Figure id="111.1" caption="Wealth is what is owned at a point in time; income is what arrives over a period.">
+  <Compare
+    className="block w-full min-w-[384px]"
+    favor="left"
+    left={{
+      title: "wealth: a stock",
+      points: ["assets minus debts", "exists at a date", "can be passed on", "can earn a return"],
+    }}
+    right={{
+      title: "income: a flow",
+      points: ["wages, rents, interest, profit", "earned over a year", "can be spent or saved", "can add to wealth"],
+    }}
+  />
+</Figure>
+
+## The wealth-to-income ratio changes the scale
+
+The same annual return has a different social weight when the underlying asset stock is
+small than when it is several years of national income. Piketty follows the ratio of private
+wealth to national income because it gives that scale a common language. If private wealth
+is large relative to one year's output, ownership claims can shape more of the economy's
+future income. The ratio does not announce who owns the wealth, but it tells us why the
+distribution of ownership deserves attention.
+
+That ratio also avoids a common shortcut. A country can be richer in aggregate while access
+to wealth remains narrow. Growth and broad ownership are separate questions.
+
+<Figure id="111.2" caption="A larger private wealth stock can make ownership claims more consequential than one year's income alone suggests.">
+  <Bars
+    className="block w-full min-w-[380px]"
+    items={[
+      { label: "one year's national income", value: 0.28, valueLabel: "the annual flow" },
+      { label: "private wealth stock", value: 0.74, accent: true, valueLabel: "a stock accumulated across years" },
+      { label: "ownership distribution", value: 0.46, valueLabel: "a separate question from total size" },
+    ]}
+  />
+</Figure>
+
+## The twentieth century was not a self-correction
+
+The book's long view resists a comforting story in which mature economies automatically
+become more equal. In the wealthy countries Piketty studies, the great compression of the
+mid-twentieth century followed war, depression, inflation, destruction, nationalization,
+capital controls, and more progressive taxation. Those events changed both the amount of
+private wealth and the rules around it. The later rise in concentration is therefore not a
+simple return to a timeless equilibrium, nor proof that one variable explains every country.
+
+The useful lesson is historical: distribution is built through institutions and events.
+Policy can change the after-tax return, who has access to assets, the cost of education, the
+strength of inheritance, and the share of income available to save.
+
+<Figure id="111.3" caption="Wealth concentration moves through historical shocks and policy choices, not along an automatic path.">
+  <Timeline
+    className="block w-full min-w-[580px]"
+    segments={[
+      { label: "high inherited wealth", sub: "before 1914" },
+      { label: "shocks and compression", sub: "1914 to 1945" },
+      { label: "high growth and rebuilding", sub: "postwar decades" },
+      { label: "new concentration pressures", sub: "since the 1980s" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Returns become concentration through saving
+
+The shorthand r > g can sound as if any high return immediately creates inequality. It does
+not. Returns have to remain with owners, and owners have to save enough of them for the
+asset base to expand. Debt, consumption, taxes, gifts, losses, and dilution can all change
+the path. Yet the loop matters because a larger base can produce a larger return next year.
+If the highest-wealth households also save more, or obtain better net returns, the loop has
+more force at the top than elsewhere.
+
+This is why a one-year market gain is not the claim. The concern is a compounding pattern
+that can operate over decades and generations.
+
+<Figure id="111.4" caption="A return becomes lasting concentration only when enough of it is retained and reinvested.">
+  <ProcessLoop
+    className="block w-full min-w-[380px]"
+    stages={["owned assets", "return to capital", "income kept", "saving and reinvestment"]}
+    compoundingEdge={3}
+    centerLabel="a compounding ownership loop"
+  />
+</Figure>
+
+## Distribution depends on more than the average return
+
+An average can hide the machinery that separates households. Portfolio scale can affect the
+fees paid, the advice available, the ability to wait through a loss, and access to private
+opportunities. Labor income, housing, inheritance, and tax rules also feed into who can
+accumulate. Piketty's framework is most useful when it opens this system rather than when it
+is treated as a single-cause verdict.
+
+For public choices, that means asking how a rule changes each connection. A tax on an
+inheritance, affordable education, tenant protections, employee ownership, transparent asset
+reporting, and progressive taxes act on different parts of the map. They cannot be judged by
+the slogan alone.
+
+<Figure id="111.5" caption="Wealth concentration emerges from connected channels of income, ownership, saving, and rules.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "assets", label: "owned assets", x: 0.5, y: 0.08 },
+      { id: "returns", label: "net returns", x: 0.87, y: 0.44 },
+      { id: "saving", label: "saving capacity", x: 0.66, y: 0.88 },
+      { id: "income", label: "labor income", x: 0.1, y: 0.7 },
+      { id: "rules", label: "tax and property rules", x: 0.08, y: 0.25 },
+    ]}
+    edges={[
+      { from: "assets", to: "returns", kind: "reinforcing", label: "income" },
+      { from: "returns", to: "saving", kind: "reinforcing", label: "kept" },
+      { from: "saving", to: "assets", kind: "reinforcing", label: "reinvested" },
+      { from: "income", to: "saving", label: "room to save" },
+      { from: "rules", to: "returns", kind: "balancing", label: "after tax" },
+      { from: "rules", to: "assets", kind: "balancing", label: "inheritance" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The model compares two rates over a long horizon. **r** is the net return earned by capital:
+profits, rents, interest, dividends, and gains after the relevant costs. **g** is the growth
+of the economy, shaped by productivity and population. When r is persistently higher than g,
+past wealth can grow faster than total income. That creates pressure toward concentration if
+ownership, saving, and returns are already unequal. It does not predict a fixed future, and
+it does not say wages, innovation, or policy are irrelevant. It names the background
+arithmetic that makes those choices matter.
+
+<Figure id="111.6" caption="r greater than g is a long-run pressure: returns on owned assets can outpace growth of the economy.">
+  <Bars
+    className="block w-full min-w-[380px]"
+    items={[
+      { label: "g: economic growth", value: 0.38, valueLabel: "the annual economy-wide pace" },
+      { label: "r: return to capital", value: 0.72, accent: true, valueLabel: "an illustrative higher long-run return" },
+      { label: "result when ownership is unequal", value: 0.58, valueLabel: "wealth can pull ahead of income" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Read a claim as stock, flow, or rate">
+When an inequality claim appears, sort its terms before judging it. Is it about wealth at a
+date, income over a year, or a rate of change? Then ask which population and which assets
+are included. This small discipline prevents an annual wage statistic from standing in for
+ownership.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Map one compounding loop">
+Pick an asset you understand, such as housing, a retirement account, a family business, or a
+student loan. Write down what produces its return, what is retained, and what rule changes
+the next round. The point is not to make a prediction. It is to see where the loop can be
+strengthened, interrupted, or shared.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Ask who can save">
+For any proposal that asks households to invest more, add two questions: who has an initial
+surplus, and who can survive a loss or a long wait? This separates advice for an individual
+with spare cash from a story about the whole distribution.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Compare policies by their connection">
+Choose a policy you favor or oppose, then name the link it changes: pre-tax income, asset
+ownership, inheritance, net return, or saving capacity. A clear mechanism makes disagreement
+more useful than a debate over whether inequality matters in the abstract.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The formula is a pressure, not an inequality machine that runs without conditions. Piketty's
+own later account distinguishes r > g from a complete explanation of wealth distribution.
+Savings, unequal returns, labor income, taxation, war, asset prices, debt, and institutions
+all change the result. The data also deserve humility: wealth is hard to observe, especially
+at the top and across borders, and the World Inequality Database revises its series as new
+sources and methods arrive. Treat the book as a durable way to frame questions about
+ownership, not as permission to infer a country's future from two letters.
+</Callout>
+
+## If you remember one thing
+
+Growth alone does not tell you whether prosperity is becoming broadly owned. When assets
+grow faster than the economy and their returns are retained by an already narrow group,
+inequality can compound. The counterweights are historical and political, which means they
+can be chosen.
+
+<ShelvedNearby
+  related={["psychology-of-money", "thinking-in-systems", "why-nations-fail"]}
+  buyUrl="https://www.hup.harvard.edu/books/9780674979857/capital-in-the-twenty-first-century"
+  buyLabel="Capital in the Twenty-First Century by Thomas Piketty"
+/>
