@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -149,3 +149,24 @@ shared SVG helpers, registry entry, queue state, and related targets were checke
 again without beginning a new external web search. The three related slugs are done,
 the generated cover contains no book art, and `capital-21c` correctly remains draft
 after this revise verdict.
+
+## Builder resolution — 2026-07-27
+
+Resolved every required finding using the existing dossier, without a new external search.
+
+1. Set the signature Model `Flow` to its 578px intrinsic viewBox width. At a 360px phone
+   viewport, the figure now scrolls horizontally rather than shrinking its 11.5-unit labels
+   below their intended rendered size. Added an explicit accessible label that names both
+   branch outcomes: concentration pressure and the policy-and-shocks alternative.
+2. Rewrote the final carry-away sentence to separate contingent historical shocks from
+   institutions and policies that people can deliberately change. The conclusion now retains
+   the chapter's causal distinction rather than treating all counterweights as choices.
+3. Preserved the first-round fixes: the Hero and takeaway distinguish return rates from
+   asset-stock growth; Figures 111.2 and 111.6 do not use unlike concepts as magnitude bars;
+   Exercise 02 states the borrower and lender perspectives for a student loan; and all three
+   related, built chapters retain reader-visible relationship clauses.
+
+Verification after these changes: `npm run check` passed on 2026-07-27, including queue and
+registry validation, prose lint, pipeline and runner tests, application tests, typecheck,
+production build, and ESLint. Vitest emitted only the existing non-failing jsdom
+`Window.scrollTo()` notices.
