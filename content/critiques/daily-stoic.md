@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -114,3 +114,14 @@ verdict: revise
    critique, and content validation; prose lint; all pipeline tests; all 189
    Vitest tests; TypeScript and Vite production build; and ESLint passed. Vitest
    emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+1. Updated the `daily-stoic` registry diagram inventory in its existing figure
+   order. Figure 91.2 now records the vocabulary form `comparison / split`, and
+   Figure 91.4 now records `core / context`, matching the page's imported
+   `Compare` and `CoreContext` components.
+
+2. Preserved the resolved chapter figures, their peer-choice and peer-quality
+   encodings, the evidence record, and the chapter's draft status. `npm run check`
+   completed with `CHECK OK` after this metadata correction.
