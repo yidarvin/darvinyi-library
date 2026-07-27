@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-26
 
@@ -89,3 +89,36 @@ verdict: resolved
   recruit memory, expectation, or a familiar conclusion. The prose now explicitly
   says that this does not establish a hidden mechanism or explain the cause of a
   feeling, and the iceberg labels no longer assert stored emotional material.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+1. **Synchronize the registry's diagram inventory with the revised Figure 95.2.**
+   The builder resolved round 1 by replacing `Concentric` with `CoreContext`
+   (`src/chapters/untethered-soul.mdx:3,67-75`), but the registry still records
+   `"concentric circles"` as the chapter's second diagram
+   (`content/registry.json:1888-1894`). The authoring spec requires a complete
+   registry entry, and the critique rubric requires registry and rendered content
+   to agree. Record the actual `core / context` form so the inventory describes the
+   page that ships.
+
+### Advisory
+
+1. The three round 1 required content findings are resolved in the draft. Figure
+   95.2 now visibly contains the passing-state cards within the labeled field of
+   awareness; the Hero uses the recorded seven-minute reading time; and the third
+   key idea now presents a modest trigger-and-old-story observation while expressly
+   declining to claim a hidden stored-emotion mechanism.
+
+2. The rest of the prior review remains settled. The fixed anatomy, five diagrammed
+   key ideas, concrete practices, safety caveat, completed related-book links, and
+   recorded publisher link remain intact. Within the bounded brief and evidence,
+   no new unsupported consequential claim, close paraphrase, source-figure
+   reproduction, or cover-art issue was found. This review began no external web
+   search.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-26. Validation, prose lint,
+   both pipeline tests, all 40 runner tests, all 197 Vitest tests, TypeScript, the
+   production build, and ESLint passed. Vitest emitted only the existing
+   non-failing jsdom `Window.scrollTo()` notices.
