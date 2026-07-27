@@ -107,7 +107,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 090 | fifth-discipline                | The Fifth Discipline                          | DONE    |
 | 091 | daily-stoic                     | The Daily Stoic                               | DONE    |
 | 092 | tao-te-ching                    | Tao Te Ching                                  | DONE    |
-| 093 | letters-from-a-stoic            | Letters from a Stoic                          | PENDING |
+| 093 | letters-from-a-stoic            | Letters from a Stoic                          | DONE    |
 | 094 | ego-is-the-enemy                | Ego Is the Enemy                              | PENDING |
 | 095 | untethered-soul                 | The Untethered Soul                           | PENDING |
 | 096 | wherever-you-go                 | Wherever You Go, There You Are                | PENDING |

@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -121,3 +121,43 @@ verdict: resolved
   the recorded Letter 47-supported limit: he criticized cruelty toward enslaved people while
   accepting the institution. It no longer uses unsupported biography to calibrate the reader's
   trust.
+
+## Critique round 3 — 2026-07-26
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round-two sourcing defect is resolved. The contextual paragraph now uses
+   only the brief-supported claim that Seneca wrote at the center of power, and
+   the caveat limits its historical judgment to the Letter 47-supported tension
+   between his criticism of cruelty toward enslaved people and his acceptance of
+   Roman slavery. The unsupported claims about luxury, political danger, and
+   extraordinary wealth are absent.
+
+2. The round-one diagram and reading-time fixes remain intact. Figure 93.3 uses
+   neutral return arrows, Figure 93.2 separates its shortened pole labels from
+   the top-placed marker label, and the Hero retains the eight-minute badge. The
+   five figures match the recorded vocabulary and the surrounding prose, and
+   their minimum widths are contained by the shared horizontally scrollable
+   Figure frame at phone width.
+
+3. Within the bounded brief and recorded evidence, the treatments of time,
+   voluntary simplicity, examined fear, mortality, and humane conduct across
+   rank remain supportable. The page is original thematic synthesis with no
+   quotation or apparent reproduction of a source figure. This round began no
+   external web search.
+
+4. The required anatomy is complete and ordered. Five key ideas each have a
+   captioned structural diagram, the Model section is correctly absent for a
+   book with no single signature framework, four practice cards prescribe
+   observable actions, the caveat is substantive, all three related slugs are
+   done, and the outbound publisher link agrees with the evidence record.
+
+5. `npm run check` completed with `CHECK OK` on 2026-07-26. Queue/registry
+   validation and prose lint passed; the two pipeline tests, all 40 runner tests,
+   all 193 Vitest tests, TypeScript, the Vite production build, and ESLint passed.
+   Vitest emitted only the existing non-failing jsdom `Window.scrollTo()`
+   notices.
