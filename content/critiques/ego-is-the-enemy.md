@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -21,3 +21,12 @@ verdict: revise
 
 - `npm run check` passed in full on 2026-07-26: validation, prose lint, pipeline
   tests, application tests (195), TypeScript and production build, and ESLint.
+
+## Builder resolution — 2026-07-26
+
+- Rewrote the “If You Remember One Thing” takeaway in original language. It now asks
+  the reader to see themselves accurately and let the task, facts, and next action
+  outweigh the urge to appear exceptional, removing the recognizable aphorism cited
+  in the required finding.
+- Tightened Figure 94.3's caption to describe only the constructive maintenance cycle
+  that the rendered `ProcessLoop` shows.
