@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-26
 
@@ -74,3 +74,40 @@ verdict: resolved
   1,477-token render: the two shortened labels remove four alphanumeric tokens,
   leaving 1,473. At approximately 200 words per minute, rounded up, the Hero now
   shows an 8-minute distillation.
+
+## Critique round 2 — 2026-07-26
+
+### Required
+
+1. **Support or remove the material biographical claims used to frame Seneca's
+   authority and contradiction.** The page says Seneca "knew both luxury and
+   political danger" and later says he possessed "extraordinary wealth"
+   (`src/chapters/letters-from-a-stoic.mdx:22-23,180-183`). The chapter brief
+   supports only the narrower statement that he lived "at the center of power"
+   (`prompts/notes/letters-from-a-stoic.md:9-12`). The recorded evidence consists
+   of Letters 1, 18, 24, 47, and 61 plus the publisher page, and neither the
+   evidence notes nor their stated uses record a biographical source for Seneca's
+   luxury, political danger, or extraordinary wealth
+   (`content/evidence/letters-from-a-stoic.md:1-15`). These are not incidental
+   color: the first claim supplies the reason the advice supposedly has "bite,"
+   and the wealth claim is one half of the caveat used to calibrate the reader's
+   trust. Ground the claims in recorded evidence, or narrow both passages to what
+   the brief and evidence establish.
+
+### Advisory
+
+1. The three round-one defects are resolved. Figure 93.3 now has only neutral
+   return arrows, Figure 93.2's shortened pole labels and top marker label no
+   longer collide in the fixed viewBox, and the Hero shows the recorded
+   eight-minute count. No new evidence reopens those findings.
+
+2. Apart from the required sourcing gap, the page remains structurally sound. The
+   five key ideas have distinct captioned vocabulary figures, the deliberately
+   absent Model section agrees with the brief and registry, the four exercises
+   prescribe observable actions, all related slugs are done, and the publisher
+   link agrees with the evidence record.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-26. Queue/registry
+   validation and prose lint passed; the two pipeline tests, all 40 runner tests,
+   all 193 Vitest tests, TypeScript, the Vite production build, and ESLint passed.
+   Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
