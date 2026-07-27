@@ -1,0 +1,224 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="tao-te-ching"
+  thesis="A life goes better when it follows the grain of a situation: use less force, leave room for what is emerging, and let enough be enough."
+  minutes={7}
+/>
+
+## The thesis
+
+The *Tao Te Ching* treats force as an expensive way to meet a changing world. Its alternative is
+not doing nothing. It is learning to notice a situation's shape, then acting with enough care
+and no surplus pressure. Yielding, modesty, empty space, and contentment are practical
+disciplines for working with reality before trying to make reality obey.
+
+## Why it matters
+
+Much of modern advice confuses agency with constant assertion. More effort, more control, and
+more acquisition can look like progress even when they make a person brittle, exhaust a team,
+or turn a manageable problem into a contest of wills. This old, compact text keeps returning to
+a harder question: what would remain if you stopped adding force where attention, patience, or a
+smaller move would do?
+
+## Key ideas
+
+### Names are useful, but they do not contain the whole thing
+
+The book opens by placing a limit on explanation. A name lets people point, compare, coordinate,
+and teach. It also cuts a moving reality into a manageable piece. That is useful, but dangerous
+when the label begins to stand in for the thing itself. A job title is not a person. A diagnosis
+is not an entire life. A plan is not the weather, the market, or the people who must carry it out.
+
+This is not an instruction to abandon language or analysis. It is a reminder to hold them
+lightly. When a situation resists the category you brought to it, return to observation. Ask what
+is actually happening before defending the name you gave it.
+
+<Figure id="92.1" caption="A label reveals one visible edge of a situation; the wider pattern keeps exceeding it.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the label: a role, problem, or plan"
+    below={["conditions", "relationships", "history", "what is still changing"]}
+  />
+</Figure>
+
+### Yielding can preserve what pushing would break
+
+The book repeatedly favors the low, the soft, and the flexible. Its image is not weakness for
+its own sake. A rigid response can be impressive until conditions change. A flexible one can
+absorb a shock, revise a position, and keep contact with the real problem. In conflict, this may
+mean asking a question before stating a case. In work, it may mean testing a small version before
+committing everyone to the large one.
+
+Yielding has a boundary. It does not mean accepting mistreatment, hiding a needed truth, or
+letting another person choose everything. It means that a firm boundary can be set without making
+hardness the first tool reached for. The aim is responsiveness, not submission.
+
+<Figure id="92.2" caption="When conditions shift, responsiveness can keep a person in contact with the problem where rigidity loses purchase.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="rigid insistence"
+    right="responsive firmness"
+    marker={0.78}
+    markerLabel="yield without disappearing"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.0, to: 0.34, label: "push until something breaks" },
+      { from: 0.61, to: 1.0, label: "adapt while keeping a boundary", accent: true },
+    ]}
+  />
+</Figure>
+
+### Empty space is part of what makes a thing useful
+
+The text notices that a wheel, a vessel, and a room are useful not only because of their solid
+materials. Their openings and unfilled portions let them turn, hold, and shelter. The idea travels
+well. A calendar needs unscheduled time if it is to absorb a surprise. A conversation needs a
+pause if someone is to think. A team needs room to decide if every move is not prewritten from
+above.
+
+This is a discipline of subtraction. When something is failing, the next improvement is often
+assumed to be another rule, meeting, feature, or opinion. First ask what useful capacity has been
+crowded out. Removing an obstruction can produce more than adding another layer.
+
+<Figure id="92.3" caption="Structure gives an activity shape, but room inside the structure is what lets the activity happen.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["give it a shape", "leave room inside", "let it receive", "make it usable"]}
+    highlight={1}
+  />
+</Figure>
+
+### Leadership can work from below rather than above
+
+The political passages do not picture wise leadership as constant display. They favor restraint,
+low status, and conditions in which people can carry out ordinary life without being continually
+handled. Read outside ancient statecraft, the lesson is about where attention goes. A leader who
+must be the source of every answer makes everyone else wait. A leader who clarifies purpose,
+removes obstacles, and lets capable people act builds a more durable arrangement.
+
+That approach still requires decisions and accountability. It is not a pose of disappearing when
+the hard call arrives. The test is whether authority makes useful action more possible for others,
+or merely makes the authority more visible.
+
+<Figure id="92.4" caption="Authority can create capacity by clarifying direction, removing obstacles, and returning initiative to the people doing the work.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "purpose", label: "clear purpose", x: 0.14, y: 0.5 },
+      { id: "leader", label: "restrained leadership", x: 0.43, y: 0.2 },
+      { id: "room", label: "room to act", x: 0.43, y: 0.8 },
+      { id: "work", label: "shared work", x: 0.85, y: 0.5 },
+    ]}
+    edges={[
+      { from: "purpose", to: "leader" },
+      { from: "leader", to: "room", label: "removes friction" },
+      { from: "room", to: "work", kind: "reinforcing", label: "initiative" },
+      { from: "work", to: "purpose", label: "what reality teaches" },
+    ]}
+  />
+</Figure>
+
+### Enoughness protects attention from appetite
+
+The *Tao Te Ching* is suspicious of the chase for more: more display, more possessions, more
+control, more stimulation. The point is not poverty as a badge of virtue. It is that appetite
+has no natural stopping point when recognition and accumulation become the score. A person can
+gain the thing they pursued and immediately need a larger version to feel secure again.
+
+Enoughness is a chosen measure. It asks what the work, household, or body genuinely needs, then
+lets that answer limit the next demand. This can make attention available for maintenance,
+friendship, craft, and rest, none of which compete well in a life measured only by visible gain.
+
+<Figure id="92.5" caption="Acquisition keeps moving the finish line; enoughness sets a measure that can release attention for the rest of life.">
+  <Compare
+    className="block w-full min-w-[380px]"
+    favor="right"
+    left={{
+      title: "more as the measure",
+      points: ["the finish line moves", "comparison supplies the score", "attention stays scarce", "satisfaction must be renewed"],
+    }}
+    right={{
+      title: "enough as the measure",
+      points: ["needs set a limit", "usefulness supplies the score", "attention can return", "care becomes possible"],
+    }}
+  />
+</Figure>
+
+## The Model
+
+Wu wei is commonly translated as non-action, but that English phrase can make it sound like
+withdrawal. A better working interpretation is action without strain added for its own sake.
+Start by seeing what the situation permits and resists. Take the smallest fitting action. Watch
+the effect. Then adjust rather than doubling down to prove resolve. The model asks for skill,
+attention, and responsibility. What it gives up is the fantasy that force is the same as power.
+
+<Figure id="92.6" caption="Wu wei is a recurring practice of reading conditions, taking the fitting action, and withholding unnecessary force.">
+  <ProcessLoop
+    className="block w-full min-w-[380px]"
+    stages={["read the conditions", "find the natural opening", "act at the needed scale", "adjust without forcing"]}
+    compoundingEdge={3}
+    centerLabel="wu wei"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the category, then inspect its edges">
+Choose a problem you have labeled quickly: a difficult colleague, a failing project, a lack of
+discipline. Write the label at the top of a page. Under it, list five concrete facts the label
+does not explain. Ask which action becomes possible when the category stops pretending to be the
+whole situation.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Replace one push with a smaller test">
+When you feel the urge to force a decision, delay the large move for one day if the stakes allow.
+Try a smaller, reversible action that could teach you something: one conversation, a rough
+prototype, a limited trial, or a clear boundary stated once. Notice whether the issue needs more
+force or better contact with its conditions.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make a little empty space">
+Remove one low-value demand from the coming week. Do not refill the space immediately. Use it as
+a buffer for a delayed task, a hard conversation, or ten quiet minutes before a decision. Treat
+the gap as capacity, not as an error in the schedule.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Define enough before the next addition">
+Before buying, committing, or expanding, complete one sentence: this is enough when ________.
+Use a condition you could observe, such as a working reserve, a finished scope, or a sustainable
+weekly rhythm. Let the definition make one tempting extra move easier to decline.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Wu wei does not excuse passivity before harm, abdication of responsibility, or a refusal to use
+force when protection is necessary. A parent may need to intervene, a worker may need to name an
+unsafe condition, and a community may need to resist an abuse of power. The question is whether
+the action is proportionate and responsive, not whether it looks gentle. There is also no settled
+single author standing behind the familiar eighty-one chapters. The text is traditionally
+attributed to Lao Tzu, while manuscript discoveries and scholarship show a layered transmission.
+Read any translation as an interpretation of a terse, variant text, rather than as a frictionless
+set of modern slogans.
+</Callout>
+
+## If you remember one thing
+
+Do not confuse effort with force. See the situation clearly, make the smallest action that fits,
+and leave enough room for reality and other people to answer back.
+
+## Shelved nearby
+
+Meditations also asks how to meet conditions one cannot command, but its Stoic answer centers on
+judgment and duty. The Daily Stoic turns that same kind of reflection into a daily practice.
+The Power of Now shares the attention to present conditions, from a more explicitly spiritual
+modern voice.
+
+<ShelvedNearby
+  related={["meditations", "daily-stoic", "power-of-now"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/349945/tao-te-ching-by-lao-tzu/"
+  buyLabel="Tao Te Ching by Lao Tzu, translated by Darrell D. Lau"
+/>
