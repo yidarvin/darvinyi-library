@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -13,3 +13,17 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-27
+
+- Reduced **The thesis** to two sentences that state the governing sequence and its
+  behavior-first tradeoff, leaving the Baby Steps detail to the later sections.
+- Corrected figure 112.1 to show `cover essentials → pay every minimum → fund the current
+  priority`; its five-step flow now keeps the extra target payment structurally after every
+  required debt payment.
+- Made figures 112.1, 112.2, and 112.6 phone-legible by preserving their 696px, 380px, and
+  558px diagram widths inside the figure's horizontal scroll container, rather than shrinking
+  their labels.
+- Added Spectrum's reusable stacked-endpoint layout and applied it to figure 112.2 with the
+  starter-reserve marker placed above the endpoint labels. Added a regression test that checks
+  the wrapped endpoint rows remain below the top marker label.

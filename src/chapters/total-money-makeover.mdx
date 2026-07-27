@@ -10,13 +10,10 @@ import { Bars, Compare, Flow, ProcessLoop, Spectrum } from "../components/diagra
 
 ## The thesis
 
-Ramsey offers a deliberately narrow answer to financial disorder: stop treating every money
-choice as equally urgent, make a written plan, and work it in sequence. First create a small
-cash margin. Then clear non-mortgage debt one account at a time, using early completed
-balances to create momentum. Once the household is no longer carrying that debt, rebuild
-reserves, invest, prepare for children’s education if relevant, pay down the home, and direct
-the resulting capacity toward wealth and generosity. The plan is less a calculation than a
-behavioral operating system for making sustained action feel possible.
+Ramsey’s answer to financial disorder is a strict sequence: give each dollar a job, keep
+required payments current, and turn each finished debt payment into momentum for the next
+priority. The plan favors visible progress and sustained behavior over trying to optimize every
+financial goal at once.
 
 ## Why it matters
 
@@ -41,9 +38,9 @@ grade on the person using it.
 
 <Figure id="112.1" caption="A written plan gives income a destination before ordinary spending starts to compete for it.">
   <Flow
-    className="block w-full"
-    steps={["income arrives", "cover essentials", "fund the current priority", "spend from the remainder"]}
-    highlight={2}
+    className="block min-w-[696px] max-w-none"
+    steps={["income arrives", "cover essentials", "pay every minimum", "fund the current priority", "spend from the remainder"]}
+    highlight={3}
   />
 </Figure>
 
@@ -135,11 +132,13 @@ then build room for a more serious interruption.
 
 <Figure id="112.2" caption="The reserve grows from a first line of defense into room to absorb a longer interruption.">
   <Spectrum
-    className="block w-full"
+    className="block min-w-[380px] max-w-none"
     left="one surprise means borrowing"
     right="an interruption has a cash buffer"
     marker={0.42}
     markerLabel="starter reserve"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
     zones={[
       { from: 0, to: 0.3, label: "fragile month" },
       { from: 0.34, to: 0.56, label: "first line of defense", accent: true },
@@ -171,7 +170,7 @@ The plan asks for sequence, not simultaneous optimization.
       ]}
     />
     <Flow
-      className="block w-full"
+      className="block min-w-[558px] max-w-none"
       steps={["list by balance", "pay minimums", "aim surplus at the smallest", "roll that payment forward"]}
       highlight={2}
     />

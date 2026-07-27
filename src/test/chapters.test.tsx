@@ -227,6 +227,29 @@ describe("Spectrum", () => {
       expect(endpoint.getAttribute("fill")).toBe("var(--comment)");
     }
   });
+
+  it("can stack long endpoints above the track without colliding with a top marker label", () => {
+    const { container } = render(
+      <Spectrum
+        left="one surprise means borrowing"
+        right="an interruption has a cash buffer"
+        marker={0.42}
+        markerLabel="starter reserve"
+        markerLabelPlacement="top"
+        endpointLabelLayout="stacked"
+      />,
+    );
+
+    const endpoints = container.querySelector('[data-spectrum-endpoints="stacked"]');
+    const endpointLines = endpoints?.querySelectorAll("tspan");
+    const marker = screen.getByText("starter reserve");
+
+    expect(endpointLines).toHaveLength(4);
+    for (const line of endpointLines ?? []) {
+      expect(Number(line.getAttribute("y"))).toBeGreaterThan(30);
+    }
+    expect(Number(marker.getAttribute("y"))).toBe(24);
+  });
 });
 
 describe("Curve", () => {

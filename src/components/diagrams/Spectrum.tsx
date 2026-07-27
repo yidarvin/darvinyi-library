@@ -20,6 +20,8 @@ export interface SpectrumProps extends DiagramBase {
   markerLabel?: string;
   /** Put a marker caption above the pole labels when the two would otherwise collide. */
   markerLabelPlacement?: "near-marker" | "top";
+  /** Stack long pole labels above their ends instead of letting them meet in the middle. */
+  endpointLabelLayout?: "inline" | "stacked";
   /** Which endpoint, if any, the track should visually emphasize. */
   emphasizeEndpoint?: "left" | "right" | "none";
   /** Optional labeled bands along the axis. */
@@ -37,6 +39,7 @@ export function Spectrum({
   marker,
   markerLabel,
   markerLabelPlacement = "near-marker",
+  endpointLabelLayout = "inline",
   emphasizeEndpoint = "right",
   zones = [],
   ariaLabel,
@@ -106,12 +109,33 @@ export function Spectrum({
       <circle cx={x1} cy={trackY} r="4" fill={emphasizeEndpoint === "right" ? C.accent : C.comment} />
 
       {/* pole labels */}
-      <text x={x0} y={trackY - 34} textAnchor="start" fontFamily={MONO} fontSize="12" fill={C.fg}>
-        {left}
-      </text>
-      <text x={x1} y={trackY - 34} textAnchor="end" fontFamily={MONO} fontSize="12" fill={C.fg}>
-        {right}
-      </text>
+      {endpointLabelLayout === "stacked" ? (
+        <g data-spectrum-endpoints="stacked">
+          <CenteredText
+            x={94}
+            y={48}
+            lines={wrapLabel(left, 18)}
+            fill={C.fg}
+            size={12}
+          />
+          <CenteredText
+            x={286}
+            y={48}
+            lines={wrapLabel(right, 18)}
+            fill={C.fg}
+            size={12}
+          />
+        </g>
+      ) : (
+        <g data-spectrum-endpoints="inline">
+          <text x={x0} y={trackY - 34} textAnchor="start" fontFamily={MONO} fontSize="12" fill={C.fg}>
+            {left}
+          </text>
+          <text x={x1} y={trackY - 34} textAnchor="end" fontFamily={MONO} fontSize="12" fill={C.fg}>
+            {right}
+          </text>
+        </g>
+      )}
 
       {/* marker */}
       {typeof marker === "number" && (
