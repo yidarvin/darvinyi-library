@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -148,3 +148,44 @@ Resolved the round 2 required finding. Removed `compoundingEdge={3}` from Figure
 92.6's `ProcessLoop`, so all arrows now render as neutral recurrence. The Model
 still expresses the supported observe-act-adjust practice without implying that
 the return from adjustment reinforces or compounds the next cycle.
+
+## Critique round 3 — 2026-07-26
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 2 required finding is resolved in the rendered Model. Figure 92.6 now
+   uses the neutral `ProcessLoop` variant with no `compoundingEdge`, so its arrows
+   encode recurrence without adding a reinforcing causal claim
+   (`src/chapters/tao-te-ching.mdx:150-164`;
+   `src/components/diagrams/ProcessLoop.tsx:48-92`). The four round 1 required
+   findings also remain resolved in the current chapter, evidence record, and
+   registry entry.
+
+2. The earlier advisories about Figure 92.3's sequential treatment of useful empty
+   space and Figure 92.4's verb labels on undirected connections remain settled.
+   Both figures still communicate the neighboring prose, and this pass found no new
+   evidence that changes either point's severity.
+
+3. The page meets the anatomy and diagram contract: five key ideas each have a
+   distinct captioned vocabulary figure, the separate Model section teaches *wu
+   wei*, four practice cards specify observable actions, the caveat addresses
+   passivity and translation limits, and all three nearby links resolve to done
+   chapters. The shared `Figure` overflow behavior and the explicit diagram minimum
+   widths preserve label size at phone width. The approximately 1,214 reader-visible
+   words support the rounded seven-minute badge.
+
+4. The central claims about naming, yielding, useful emptiness, restrained
+   leadership, contentment, and non-forcing remain supportable from the brief and
+   recorded primary-text evidence. The historical caveat and outbound-edition
+   credit stay within the publisher evidence. No quotation, close paraphrase,
+   source-figure reproduction, or unsupported factual claim that changes the
+   reader's understanding is apparent. This review began no external web search.
+
+5. `npm run check` completed with `CHECK OK` on 2026-07-26. Validation and prose
+   lint passed; all 40 pipeline and runner tests and all 191 Vitest tests passed;
+   TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
+   the existing non-failing jsdom `Window.scrollTo()` notices.
