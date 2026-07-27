@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -39,3 +39,19 @@ verdict: revise
 ### Advisory
 
 - None.
+
+## Builder resolution — 2026-07-27
+
+- Corrected Figure 113.1 to pass `Bars` fractional magnitudes (`0.92`, `0.71`,
+  `0.58`, `0.28`, and `0.20`), so the visible bar lengths now encode the stated
+  priority tradeoff.
+- Rebuilt Figure 113.2's four labels around its declared axes: clear activity is
+  purposeful activity, clear evidence is a useful key result, unclear activity is
+  busy but detached, and unclear evidence is an orphan metric.
+- Repositioned Figure 113.3 into a sparse, non-overlapping goal network. Every
+  directed edge now has positive clearance from its source and target cards, and
+  the company-direction-to-support connection no longer crosses the customer card.
+- Completed the registry record with tier, thesis, framework, and the six diagram
+  forms used on the finished page. The chapter remains `draft`; this resolution does
+  not mark it done.
+- Ran the mandatory full `npm run check` gate after the corrections; it passes.

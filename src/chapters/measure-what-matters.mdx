@@ -41,11 +41,11 @@ priorities.
   <Bars
     className="block w-full min-w-[400px]"
     items={[
-      { label: "chosen objective", value: 92, accent: true },
-      { label: "supporting objective", value: 71, accent: true },
-      { label: "supporting objective", value: 58, accent: true },
-      { label: "worthwhile, later", value: 28 },
-      { label: "worthwhile, later", value: 20 },
+      { label: "chosen objective", value: 0.92, accent: true },
+      { label: "supporting objective", value: 0.71, accent: true },
+      { label: "supporting objective", value: 0.58, accent: true },
+      { label: "worthwhile, later", value: 0.28 },
+      { label: "worthwhile, later", value: 0.2 },
     ]}
     ariaLabel="Three highlighted objectives receive attention while two worthwhile items are deliberately deferred."
   />
@@ -70,13 +70,13 @@ count as progress. That difficulty is part of the value.
     xAxis={{ left: "activity", right: "evidence", label: "what the statement contains" }}
     yAxis={{ low: "unclear", high: "clear", label: "connection to the objective" }}
     quadrants={[
-      { title: "busy, but detached", note: "a task without a reason" },
+      { title: "purposeful activity", note: "a task tied to the goal" },
       { title: "a useful key result", note: "specific proof of progress" },
-      { title: "vague aspiration", note: "a direction without a test" },
-      { title: "a metric with a purpose", note: "watch for its side effects" },
+      { title: "busy, but detached", note: "a task without a reason" },
+      { title: "an orphan metric", note: "a number without a reason" },
     ]}
     highlight={1}
-    ariaLabel="A matrix distinguishes a useful key result, specific proof clearly connected to an objective, from activity or vague aspiration."
+    ariaLabel="A matrix distinguishes a useful key result, evidence clearly connected to an objective, from purposeful activity, detached activity, and an orphan metric."
   />
 </Figure>
 
@@ -99,11 +99,11 @@ deadline.
     className="block w-full min-w-[400px]"
     ariaLabel="A goal network links a company direction to product, marketing, and support team objectives, all feeding customer adoption."
     nodes={[
-      { id: "direction", label: "company direction", x: 0.5, y: 0.08 },
-      { id: "product", label: "product objective", x: 0.14, y: 0.43 },
-      { id: "marketing", label: "marketing objective", x: 0.86, y: 0.43 },
-      { id: "support", label: "support objective", x: 0.5, y: 0.78 },
-      { id: "customer", label: "customer adoption", x: 0.5, y: 0.43 },
+      { id: "direction", label: "company direction", x: 0.5, y: 0.05 },
+      { id: "product", label: "product objective", x: 0.1, y: 0.38 },
+      { id: "marketing", label: "marketing objective", x: 0.9, y: 0.38 },
+      { id: "support", label: "support objective", x: 0.1, y: 0.85 },
+      { id: "customer", label: "customer adoption", x: 0.8, y: 0.85 },
     ]}
     edges={[
       { from: "direction", to: "product" },

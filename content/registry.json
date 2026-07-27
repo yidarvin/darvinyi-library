@@ -2238,7 +2238,18 @@
       "subtitle": "John Doerr · 2018",
       "part": "Leadership & Business",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Align and stretch an organization by setting ambitious objectives paired with measurable key results.",
+      "framework": "Objectives and Key Results (OKRs)",
+      "diagrams": [
+        "bars",
+        "two-by-two matrix",
+        "node graph",
+        "process loop",
+        "spectrum",
+        "flow"
+      ]
     },
     {
       "num": 114,
