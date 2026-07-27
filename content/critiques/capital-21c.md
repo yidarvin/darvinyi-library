@@ -1,0 +1,73 @@
+verdict: revise
+
+## Critique round 1 — 2026-07-27
+
+### Required
+
+1. The two carry-away statements replace the brief's `r > g` condition with a
+   different claim. The Hero says that "private assets grow faster than the economy"
+   (`src/chapters/capital-21c.mdx:7`), and the final takeaway repeats that assets grow
+   faster than the economy (`src/chapters/capital-21c.mdx:224-226`). A return on
+   capital is not itself growth of the asset stock: returns may be consumed, taxed,
+   lost, or reinvested, a distinction the chapter correctly makes elsewhere. The
+   brief requires the thesis that returns on capital can outrun economic growth, and
+   the recorded evidence treats saving and unequal returns as separate interacting
+   drivers. Restore that distinction in both summary statements so a reader who sees
+   only the Hero or final takeaway receives the actual model rather than a
+   consequence that holds only after additional conditions.
+
+2. Figures 111.2 and 111.6 misuse magnitude bars by placing unlike concepts on one
+   quantitative-looking scale. Figure 111.2 assigns arbitrary lengths to one year's
+   national income, a private wealth stock, and "ownership distribution"
+   (`src/chapters/capital-21c.mdx:69-77`), although distribution is not a magnitude
+   comparable to either stock or flow. Figure 111.6 similarly places economic
+   growth, return to capital, and "result when ownership is unequal" on the same
+   scale (`src/chapters/capital-21c.mdx:171-179`); the result is not a rate, and its
+   intermediate bar length has no defined meaning. The vocabulary permits Bars for
+   simple, clearly labeled magnitude contrasts, not for categorical annotations.
+   Rework both figures so every encoded length has a coherent common basis and move
+   conditions or consequences into a structural form that represents their role.
+
+3. Exercise 02 tells the reader to pick an asset and includes "a student loan" in
+   the examples (`src/chapters/capital-21c.mdx:191-195`). A student loan is an asset
+   to the lender but a liability to the student, and the exercise gives no
+   perspective that would make the classification valid. That directly undercuts
+   the page's stock, flow, and debt distinction. Either identify the lender's claim
+   explicitly or frame the exercise around an asset-or-liability compounding loop.
+
+4. The Shelved Nearby block supplies three bare related slugs but no explanation of
+   any relationship (`src/chapters/capital-21c.mdx:229-233`). The authoring contract
+   requires each graph edge to note the relationship in one clause. Add a
+   reader-visible relationship for each related book while retaining only links to
+   built chapters.
+
+### Advisory
+
+1. The wealth-to-income discussion switches from "national income" to "one year's
+   output" at `src/chapters/capital-21c.mdx:60-63`. Those are not strictly the same
+   denominator. Use the recorded term consistently unless the distinction is
+   intentionally explained.
+
+2. Figure 111.5 marks the links from "tax and property rules" to both returns and
+   assets as balancing, while one is labeled only "inheritance." Tax and property
+   rules can reinforce or reduce concentration depending on their design, and
+   inheritance itself transfers ownership rather than necessarily balancing it.
+   More precise node and edge labels would make the visual agree with the nuanced
+   prose.
+
+### Verification
+
+`npm run check` passed on 2026-07-27: queue/registry/content validation, prose lint,
+2 pipeline tests, 40 runner tests, 236 application tests, typecheck, production
+build, and ESLint all completed successfully. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.
+
+The thesis, stock/flow distinction, conditional treatment of `r > g`, interacting
+drivers of concentration, measurement caveat, and publisher link were re-derived
+against `prompts/notes/capital-21c.md` and `content/evidence/capital-21c.md`. The
+chapter, all of its imports, and the relevant shared SVG helpers were inspected. The
+three related slugs resolve to completed chapters, the generated cover uses no book
+art, and the recorded evidence supports the caveat's caution about measurement and
+single-cause readings. Because the evidence dossier records source summaries rather
+than source excerpts, close-paraphrase review was limited to the local material. No
+new external web search was begun.
