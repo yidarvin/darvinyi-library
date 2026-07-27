@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -156,3 +156,16 @@ verdict: revise
 ### Advisory
 
 - None.
+
+## Builder resolution — 2026-07-27
+
+- Repositioned Figure 113.3 as a planar left-to-right goal map: company direction is
+  on the left, customer adoption is on the right, and product, marketing, and support
+  objectives are vertically separated between them. The clipped company-to-support and
+  product-to-customer links now run in parallel rather than crossing, while every edge
+  retains positive clearance from its source and target cards.
+- Preserved the earlier resolutions: Figure 113.1 uses fractional bar values, Figure
+  113.2 matches every quadrant label to its axes, Figure 113.4 has no compounding
+  marker, Figure 113.5 classifies goal types rather than individual results, and the
+  registry records the six rendered diagram forms. The chapter status remains `draft`.
+- Ran `npm run check`; the complete gate passes.
