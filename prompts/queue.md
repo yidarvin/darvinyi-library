@@ -120,7 +120,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 103 | outlive                         | Outlive                                       | DONE    |
 | 104 | misbehaving                     | Misbehaving                                   | DONE    |
 | 105 | stumbling-on-happiness          | Stumbling on Happiness                        | DONE    |
-| 106 | noise                           | Noise                                         | PENDING |
+| 106 | noise                           | Noise                                         | DONE    |
 | 107 | make-time                       | Make Time                                     | PENDING |
 | 108 | indistractable                  | Indistractable                                | PENDING |
 | 109 | your-money-or-your-life         | Your Money or Your Life                       | PENDING |
