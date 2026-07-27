@@ -2278,7 +2278,18 @@
       "subtitle": "Adam Grant · 2016",
       "part": "Leadership & Business",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Original thinkers question defaults, develop several alternatives, and champion a responsible change despite doubt.",
+      "framework": "No single signature framework; the Model section is deliberately omitted, with six key-idea diagrams carrying the visual argument.",
+      "diagrams": [
+        "spectrum",
+        "bars",
+        "comparison",
+        "annotated curve",
+        "two-by-two matrix",
+        "flow"
+      ]
     },
     {
       "num": 116,

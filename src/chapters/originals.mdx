@@ -1,0 +1,252 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Curve, Flow, Matrix, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="originals"
+  thesis="Original thinkers are ordinary people who notice a default worth questioning, develop more than one answer, and keep backing a responsible change after doubt arrives."
+  minutes={8}
+/>
+
+## The thesis
+
+Originality is not a personality type reserved for fearless founders and eccentric geniuses.
+Grant's argument is more practical: it begins when someone treats a familiar arrangement as
+changeable, develops an alternative, and does the social work of giving that alternative a
+chance. Doubt, delay, and caution do not disqualify a person from that work. The important
+distinction is between feeling uncertainty and letting uncertainty decide every move.
+
+## Why it matters
+
+Most institutions have sensible defaults. They also have inherited habits that no one can
+quite explain anymore. The first are useful shortcuts. The second can keep a team serving an
+old customer, tolerating a needless rule, or repeating a decision because challenging it feels
+more expensive than accepting it. A culture that treats every convention as sacred loses both
+learning and the people closest to a problem.
+
+## A default is a starting point, not a verdict
+
+The original move is often modest. It is the question that interrupts an automatic answer:
+why does this meeting exist, who is this policy protecting, what would we design if the old
+tool disappeared? That question does not assume the established practice is wrong. It makes
+the reasons available for inspection.
+
+This is different from reflexive contrarianism. Reversing a decision merely because it is
+popular still lets the crowd choose for you. The useful posture is evidence-led independence:
+understand the constraint, name the outcome it was meant to produce, then test whether the
+same outcome needs a different route now.
+
+<Figure id="115.1" caption="The useful move is from automatic acceptance toward an examined, editable default.">
+  <Spectrum
+    className="block w-full min-w-[400px]"
+    left="default accepted"
+    right="default examined"
+    marker={0.68}
+    markerLabel="ask what it is for"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
+    zones={[
+      { from: 0, to: 0.32, label: "habit decides", accent: false },
+      { from: 0.57, to: 1, label: "reason and evidence decide", accent: true },
+    ]}
+    ariaLabel="A spectrum moves from a default accepted automatically to a default examined, with asking what it is for marked toward the examined end."
+  />
+</Figure>
+
+## More attempts create more material to judge
+
+People remember the successful proposal, product, or performance and erase the weak drafts
+that came first. Grant argues that this gives originality a misleading, clean appearance.
+Novel work needs a supply of candidates because the first answer is often the answer closest
+to what everyone has already seen. Generating several possibilities is not proof that one is
+good. It is how a team gets beyond the first familiar one.
+
+That changes the assignment. Do not ask a group to produce its one best idea on demand. Ask
+for a field of possible moves, including small reversals, adjacent experiments, and ideas that
+may fail a quick test. Then separate generation from selection. A rough option is allowed to
+exist long enough to be compared with another rough option, rather than being polished into a
+favorite before anyone has checked it.
+
+<Figure id="115.2" caption="A wider field contains more weak candidates, and a better chance to find a promising one.">
+  <Bars
+    className="block w-full min-w-[400px]"
+    items={[
+      { label: "first familiar answer", value: 0.2 },
+      { label: "rough alternatives", value: 0.82 },
+      { label: "options worth testing", value: 0.46, accent: true },
+      { label: "one supported bet", value: 0.28, accent: true },
+    ]}
+    ariaLabel="Conceptual bars show one first familiar answer, a larger set of rough alternatives, a smaller set worth testing, and one supported bet."
+  />
+</Figure>
+
+## Judge a new idea with both distance and imagination
+
+Creators can become attached to work simply because it is theirs. Established gatekeepers can
+do the opposite, treating unfamiliar work as defective because it does not resemble the last
+success. Grant's practical answer is to seek informed peers: people close enough to understand
+the craft and far enough away to say where an idea loses the audience, the economics, or the
+purpose.
+
+The request matters. "Do you like it?" invites a vague verdict. A better review asks a peer to
+name the user, the problem, the moment the proposal becomes confusing, and the evidence that
+would change their mind. The author keeps decision responsibility, but gains a harder and
+more useful test than either enthusiasm or a quick rejection.
+
+<Figure id="115.3" caption="Useful review combines enough distance to criticize with enough fluency to recognize a new possibility.">
+  <Compare
+    className="block w-full min-w-[400px]"
+    left={{
+      title: "owner alone",
+      points: ["sees the intention", "can defend the favorite", "may miss a reader's confusion"],
+    }}
+    right={{
+      title: "informed peer review",
+      points: ["understands the craft", "can name the weak point", "can imagine an unfamiliar option"],
+    }}
+    favor="right"
+    ariaLabel="A comparison shows how informed peer review combines craft knowledge with distance from the owner of an idea."
+  />
+</Figure>
+
+## Leave room for the idea to change shape
+
+Immediate completion has a real virtue when someone needs a reliable answer. It is less useful
+when the task calls for a surprising connection. Grant's treatment of procrastination is not a
+license to avoid work. It is a case for a bounded pause after a problem has been loaded into
+your mind and before the first response hardens into the only response.
+
+Use the pause actively. Record the question, gather an input from another field, take a walk,
+and return at a scheduled time. The point is incubation, not a deadline crisis. A delay that
+creates a few fresh connections can improve a creative task. A delay that removes the time to
+test, revise, or deliver simply transfers the cost to the last hour.
+
+<Figure id="115.4" caption="For open-ended work, a bounded pause can create room for connections before urgency takes over.">
+  <Curve
+    className="block w-full min-w-[400px]"
+    shape="bell"
+    axes={{ x: "time before the deadline", y: "room to explore" }}
+    annotations={[
+      { x: 0.13, y: 0.26, text: "first response" },
+      { x: 0.51, y: 0.98, text: "incubation window" },
+      { x: 0.91, y: 0.22, text: "rush" },
+    ]}
+    ariaLabel="A conceptual bell curve shows room to explore peaking in a bounded incubation window between a first response and a rushed deadline."
+  />
+</Figure>
+
+## Put risk around the experiment, not around your whole life
+
+An original proposal can be a large uncertainty without requiring a reckless identity. The
+relevant question is not whether you are a risk taker. It is which uncertainty is being taken,
+who bears the loss, how reversible the next step is, and what evidence would justify a larger
+commitment. A pilot, prototype, or limited trial can turn a dramatic wager into an informative
+one.
+
+That framing also makes responsibility clearer. Do not call an experiment small when the
+downside falls on customers, employees, or people without a real choice. Reduce the exposed
+surface, set a stop condition, and ask who would be harmed if the optimistic story is wrong.
+Originality earns trust when it is as serious about consequences as it is about novelty.
+
+<Figure id="115.5" caption="A responsible experiment pairs a limited initial exposure with a clear path to learn, stop, or expand.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "hard to reverse", right: "easy to reverse", label: "ability to change course" }}
+    yAxis={{ low: "small exposure", high: "large exposure", label: "cost if wrong" }}
+    quadrants={[
+      { title: "avoid", note: "large exposure, hard to undo" },
+      { title: "guarded commitment", note: "large exposure, but reversible" },
+      { title: "stuck experiment", note: "small now, costly to unwind" },
+      { title: "learn first", note: "small, reversible test" },
+    ]}
+    highlight={3}
+    ariaLabel="A matrix highlights small, reversible tests as a responsible way to learn before making a larger commitment."
+  />
+</Figure>
+
+## Dissent needs a real holder and a route into the decision
+
+A leader cannot manufacture independent thought by assigning someone to perform disagreement.
+The better practice is to find the person who actually sees a different risk or possibility,
+give them time to prepare, and make their evidence part of the decision. The group does not
+owe every dissenting view a win. It does owe a fair hearing before consensus becomes a lock.
+
+Speaking up is also only half the work. An idea moves when its advocate can translate it for
+people with different concerns: the colleague who worries about cost, the operator who sees a
+failure mode, and the decision maker who must choose a timing. That is coalition building in
+its constructive form. It creates enough shared understanding to run a test, not enough
+pressure to silence a legitimate objection.
+
+<Figure id="115.6" caption="A dissenting view becomes useful when it is prepared, heard, and tested against the decision's real constraints.">
+  <Flow
+    className="block w-full min-w-[540px]"
+    steps={[
+      "find the unstated concern",
+      "prepare evidence and tradeoffs",
+      "bring the holder into the room",
+      "test the proposal or revise it",
+    ]}
+    highlight={2}
+    ariaLabel="A flow runs from finding an unstated concern to preparing evidence, bringing the dissenting view into the room, and testing or revising the proposal."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Interrogate one inherited rule">
+Choose a process you follow every week. Write its original purpose, the people it serves, and
+the evidence that it still works. Ask one person who relies on it what would break if it changed.
+Then propose a reversible adjustment, not a revolt, and decide when you will review the result.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Run a quantity round before choosing">
+For one live problem, set a twenty-minute timer and make each participant write five possible
+moves independently. Put every move on one page without debate. Only then sort them by the
+user problem, cost of a test, and evidence of demand. Keep one unexpected option in the next
+round even if it is not the favorite yet.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Schedule a pause with a return time">
+When a task needs a fresh angle, write the question and your first answer. Step away for a
+defined period, then return with one input from another domain and two new alternatives. Put
+the return time on the calendar. If the work has a hard deadline, protect enough time after the
+pause to test and finish it.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make the smallest honest bet">
+For a proposal that feels risky, name the irreversible part, the people exposed to the downside,
+and the signal that would make you stop. Redesign the first step so it teaches you something
+while exposing fewer people. Share the stop condition before the experiment begins.
+</ExerciseCard>
+
+<ExerciseCard n="05" title="Invite the dissent that already exists">
+Before a consequential decision, ask privately who sees a serious risk or a better alternative.
+Invite one genuine dissenter to prepare a short case, including the evidence that would change
+their view. In the meeting, record the concern, the response, and the follow-up test instead of
+performing a ceremonial debate.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+This book is best read as a set of prompts for championing change, not a formula for predicting
+which unconventional idea will win. A larger idea pool can produce more possibilities, but it
+also creates more noise. A pause can support incubation on open-ended work, but chronic delay
+still harms routine commitments and leaves no time to revise. Dissent can improve a group's
+reasoning, yet a contrarian view is not automatically insightful or safe. Finally, "move the
+world" language can hide who pays for an experiment and who gets to consent. Judge a novel
+proposal by its evidence, reversibility, distribution of risk, and effects on the people who
+live with it, not by the drama of its departure from the norm.
+</Callout>
+
+## If you remember one thing
+
+Originality is not the absence of fear or the possession of one brilliant idea. It is the
+practice of questioning a default, making several possibilities visible, and giving the most
+responsible alternative a fair test with other people.
+
+<ShelvedNearby
+  related={["zero-to-one", "thinking-in-bets", "dare-to-lead", "deep-work"]}
+  buyUrl="https://adamgrant.net/book/originals/"
+  buyLabel="Originals by Adam Grant"
+/>
