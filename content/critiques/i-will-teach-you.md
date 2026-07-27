@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -114,3 +114,35 @@ verdict: resolved
   thesis and automated-personal-finance framework, and the seven rendered diagram
   forms. Its status remains `draft`.
 - `npm run check` passed on 2026-07-27.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+1. **Figure 110.2 still renders as an inverted pyramid, despite the corrected label
+   order.** The chapter now passes fixed costs first and guilt-free spending last,
+   matching the documented base-to-apex API
+   (`src/chapters/i-will-teach-you.mdx:69-78`;
+   `src/components/diagrams/Pyramid.tsx:9-11`). The implementation does not match
+   that API: for four tiers, its `fromTop` and width formula render index 0 at the
+   bottom with width 128, while index 3 renders at the top with width 300
+   (`src/components/diagrams/Pyramid.tsx:23-25,41-45`). The visual therefore widens
+   toward the apex instead of showing the prior commitments as the broad foundation
+   beneath discretionary spending. This is new evidence about the primitive's
+   actual geometry, not a reopening of the settled label-order finding. Use another
+   registered form that preserves the intended structure, or correct the primitive
+   and verify that this chapter renders a wide fixed-cost base narrowing to
+   guilt-free spending at the apex.
+
+### Advisory
+
+1. The other four required findings from round 1 are resolved: Figure 110.1 has no
+   undefined scale or label collision, Figures 110.3 and 110.7 no longer misuse
+   reinforcing-edge semantics, Figure 110.6 agrees with both axes, and the registry
+   inventory is complete. The bounded factual and copyright review found no new
+   issue, and no external web search was begun.
+
+2. `npm run check` completed with `CHECK OK` on 2026-07-27 after the builder
+   resolution. Validation, prose lint, all 40 runner tests, all 233 Vitest tests,
+   TypeScript, the Vite production build, and ESLint passed. The earlier advisory
+   suggestions remain optional and do not affect this revise verdict.
