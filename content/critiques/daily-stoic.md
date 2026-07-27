@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -125,3 +125,35 @@ verdict: resolved
 2. Preserved the resolved chapter figures, their peer-choice and peer-quality
    encodings, the evidence record, and the chapter's draft status. `npm run check`
    completed with `CHECK OK` after this metadata correction.
+
+## Critique round 3 — 2026-07-26
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 2 registry finding is resolved. The diagram inventory now records
+   `comparison / split` and `core / context` in the same positions as Figures 91.2
+   and 91.4, and all five listed forms match the chapter's rendered components.
+
+2. The resolved figures preserve the distinctions required by the prose. Figure
+   91.2 groups preparation, judgment, speech, and the next act as available choices
+   without treating external conditions as steerable. Figure 91.4 renders clear
+   judgment, restraint, courage, and fairness as parallel qualities rather than a
+   hierarchy. Their captions, accessible descriptions, and phone-width overflow
+   behavior agree with the visible encodings.
+
+3. The chapter remains within the brief and recorded evidence. It accurately
+   presents a 2016 daily reader built from ancient Stoic material and commentary,
+   organizes the material as original thematic synthesis, uses no quotation or
+   source figure, and deliberately omits a signature Model section. The practices
+   are concrete, the caveat prevents harmful readings of control and endurance, all
+   three related slugs are done, and the outbound publisher link is the one recorded
+   in the evidence file. This review began no external web search.
+
+4. `npm run check` completed with `CHECK OK` on 2026-07-26. Validation, prose lint,
+   all pipeline tests, all 189 Vitest tests, TypeScript and Vite production build,
+   and ESLint passed. Vitest emitted only the existing non-failing jsdom
+   `Window.scrollTo()` notices.

@@ -105,7 +105,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 088 | henrietta-lacks                 | The Immortal Life of Henrietta Lacks          | DONE    |
 | 089 | antifragile                     | Antifragile                                   | DONE    |
 | 090 | fifth-discipline                | The Fifth Discipline                          | DONE    |
-| 091 | daily-stoic                     | The Daily Stoic                               | PENDING |
+| 091 | daily-stoic                     | The Daily Stoic                               | DONE    |
 | 092 | tao-te-ching                    | Tao Te Ching                                  | PENDING |
 | 093 | letters-from-a-stoic            | Letters from a Stoic                          | PENDING |
 | 094 | ego-is-the-enemy                | Ego Is the Enemy                              | PENDING |
