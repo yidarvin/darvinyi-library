@@ -1,0 +1,224 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Flow, Matrix, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="make-time"
+  thesis="A day becomes more intentional when one chosen priority gets protected attention, enough energy to meet it, and a small review before tomorrow begins."
+  minutes={8}
+/>
+
+## The thesis
+
+Make Time treats attention as something a day can either spend by default or direct on
+purpose. Knapp and Zeratsky's answer is not a larger task list. It is a small daily
+design: choose one meaningful Highlight, make distraction less convenient while doing
+it, support the physical conditions that attention needs, then notice what worked. The
+point is to recover a piece of the day for something you would be glad to have done.
+
+## Why it matters
+
+Modern tools are good at supplying the next thing to react to. Messages, feeds, alerts,
+and open tabs compete without needing an invitation, while the work, people, and projects
+that matter most often ask for a deliberate beginning. A chosen priority gives the day a
+center of gravity. It does not make obligations vanish, but it keeps them from silently
+becoming the whole plan.
+
+## A Highlight is a decision about today
+
+A Highlight is not a claim that one task is the only thing that matters. It is a promise
+to give one thing a real portion of today. The choice can be practical, such as finishing
+the decision that is blocking a team, or personal, such as spending an evening with a
+friend without dividing your attention. What matters is that the choice is concrete enough
+to schedule and small enough to complete or move meaningfully.
+
+Choosing one priority also exposes a useful tension. A task can be urgent yet leave no
+trace of satisfaction. Another can matter deeply but have no external deadline. The best
+daily target often sits where personal meaning and practical consequence meet. When that
+intersection is unavailable, choose deliberately which reason earns the day rather than
+letting the loudest request decide.
+
+<Figure id="107.1" caption="A good daily target has a reason to matter and a reason to happen now.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "low personal meaning", right: "high personal meaning", label: "meaning" }}
+    yAxis={{ low: "low practical consequence", high: "high practical consequence", label: "consequence" }}
+    quadrants={[
+      { title: "duty", note: "do when required" },
+      { title: "Highlight candidate", note: "protect a block" },
+      { title: "pleasant filler", note: "use spare time" },
+      { title: "postpone or decline", note: "question the demand" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Attention needs a boundary, not a pep talk
+
+Distraction rarely arrives as a serious proposal. It appears as an easy opening: one quick
+check before starting, a notification during a difficult sentence, a tab that promises a
+small answer. The cost comes from the sequence. A brief escape creates more places to
+return from, and the original task becomes less inviting as its thread goes cold.
+
+The practical move is to change the setup before concentration is needed. Put the phone in
+another room, sign out of the service that pulls you in, close the spare tabs, or decide
+when messages will get a reply. These are not tests of moral strength. They are ways of
+making the intended action easier to resume than the automatic detour.
+
+<Figure id="107.2" caption="A small check can become a loop that makes the chosen work harder to restart.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["a hard moment", "quick check", "fresh prompts", "weaker work thread"]}
+    compoundingEdge={2}
+    centerLabel="the detour loop"
+  />
+</Figure>
+
+## Add friction where attention leaks
+
+The aim is not to ban every pleasurable tool. It is to stop making distraction the path of
+least resistance during the time you meant to protect. A little friction is often enough:
+the password you need to enter again, the browser profile without entertainment shortcuts,
+or the charger that lives outside the bedroom. The extra step creates a moment in which a
+choice can reappear.
+
+This works in both directions. Make the Highlight obvious by opening the document and
+placing its materials where you will start. Make the interrupting activity slightly less
+instant. A day does not need perfect discipline when the environment stops rewarding every
+impulse with immediate access.
+
+<Figure id="107.3" caption="Move the Highlight toward an easy start and distractions toward a deliberate detour.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="instant impulse"
+    right="deliberate choice"
+    marker={0.73}
+    markerLabel="one extra step"
+    zones={[
+      { from: 0, to: 0.34, label: "feeds and alerts by default" },
+      { from: 0.62, to: 1, label: "pause, then choose", accent: true },
+    ]}
+  />
+</Figure>
+
+## Energy is part of the attention system
+
+Attention is easier to direct when the body is not running on fumes. The book treats
+movement, food, sleep, daylight, quiet, and time with other people as inputs to the
+mental state required for focus. None has to become an optimization project. A short walk,
+a proper lunch, a screen-free wind-down, or a conversation can be a more useful support
+for the afternoon than another attempt to force concentration.
+
+The important connection is causal enough for daily planning: a neglected body makes a
+fragile attention plan. Instead of asking only where an extra hour could be found, ask what
+would make the next protected hour usable. The answer may be a break before the block, not
+another tool inside it.
+
+<Figure id="107.4" caption="Energy supports form a system around the attention you hope to direct.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "attention", label: "usable attention", x: 0.5, y: 0.5 },
+      { id: "move", label: "movement", x: 0.16, y: 0.22 },
+      { id: "rest", label: "rest", x: 0.82, y: 0.2 },
+      { id: "food", label: "food and water", x: 0.14, y: 0.77 },
+      { id: "quiet", label: "quiet and daylight", x: 0.83, y: 0.78 },
+    ]}
+    edges={[
+      { from: "move", to: "attention", kind: "reinforcing" },
+      { from: "rest", to: "attention", kind: "reinforcing" },
+      { from: "food", to: "attention", kind: "reinforcing" },
+      { from: "quiet", to: "attention", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Reflection turns tactics into a personal system
+
+No one tactic fits every job, household, body, or season. The useful unit is a small
+experiment. At the end of a day, note whether the Highlight happened, how your energy felt,
+what drew your attention away, and what adjustment is worth trying tomorrow. The record can
+be four lines. Its job is not to grade you. Its job is to replace vague self-judgment with
+evidence from your own week.
+
+Over time, the review reveals conditions, not rules. Perhaps writing goes better before
+email, perhaps a walk makes the late afternoon workable, or perhaps the chosen task was
+too large to begin. Keep the conditions that helped and change one that did not. Reflection
+is how a collection of tactics becomes a practice that belongs to your actual life.
+
+<Figure id="107.5" caption="A short review makes tomorrow's setup a response to evidence rather than a repeat of hope.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["try one setup", "notice the result", "keep or change one condition", "plan tomorrow's start"]}
+    highlight={2}
+  />
+</Figure>
+
+## The Model
+
+The four parts form a daily loop. Highlight names where attention should go. Laser protects
+the time and removes obvious invitations to leave it. Energy makes the attention available
+to use. Reflect closes the loop by turning the result into one adjustment for tomorrow.
+The sequence is helpful because each part compensates for a weakness in the others. A good
+priority without a boundary is easy to interrupt. A focus block without enough energy is
+hard to use. A plan without reflection repeats its blind spots.
+
+<Figure id="107.6" caption="Choose the priority, protect it, support the person doing it, then improve tomorrow's version.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["Highlight", "Laser", "Energy", "Reflect"]}
+    compoundingEdge={3}
+    centerLabel="a designed day"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose tomorrow before today closes">
+Write one Highlight for tomorrow and give it a bounded calendar block. Name the first
+physical action, such as opening the proposal outline or calling one person. If the task
+cannot fit in the block, shrink it until it can move.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Remove one invitation to drift">
+Pick the distraction that most often takes over your first ten minutes. Add one obstacle
+tonight: log out, remove the shortcut, move the device, or schedule a later check-in window.
+Do not redesign everything at once. Notice whether this one change gives the Highlight a
+cleaner start.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Protect the energy before the block">
+Choose one support that makes focus more likely tomorrow: take a walk before lunch, prepare
+a meal, set a bedtime alarm, or step outside between meetings. Treat it as preparation for
+the work, not as a reward you earn after it.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Write a four-line review">
+At the end of the day, record the Highlight, whether it received real attention, your
+energy level, and one thing to try next. Read the last few entries after a week and look for
+the conditions that repeat.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+This is a method for directing some discretionary attention, not a verdict on how a day
+should look. Care work, hourly work, illness, emergencies, and workplaces with little
+schedule control can sharply limit the room for a protected block. No arrangement of apps
+solves an understaffed team or a workload that exceeds a person's capacity. Use the model
+to notice where you do have a choice, and treat the rest as a reason for better boundaries,
+support, or organizational change, not as evidence of personal failure.
+</Callout>
+
+## If you remember one thing
+
+Choose one thing that deserves a real part of today, then make the first step easier than
+the distractions around it. A short review will teach you how to protect that choice better
+tomorrow.
+
+<ShelvedNearby
+  related={["deep-work", "essentialism", "four-thousand-weeks"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/564727/make-time-by-jake-knapp-and-john-zeratsky/"
+  buyLabel="Make Time by Jake Knapp and John Zeratsky"
+/>
+
