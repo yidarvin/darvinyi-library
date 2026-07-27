@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -119,3 +119,46 @@ verdict: resolved
    pipeline tests, Vitest, TypeScript, the Vite production build, and ESLint
    passed. The chapter remains `draft`; it was not marked done, committed, or
    pushed.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+None.
+
+### Advisory
+
+1. All four round 1 requirements are resolved in the current draft. The Model now
+   presents retrieval, spacing, and interleaving as peer moves without asserting
+   joint necessity or an unsupported interaction. Figure 97.4 gives the related
+   mix its own label position and leaves both bad endpoints neutral. The spacing
+   adjustment and elaboration prompts are bounded as recommendations from the
+   book rather than independent causal findings. The registry records tier,
+   thesis, the non-synergistic framework, and all six rendered forms in page order.
+
+2. The bounded evidence remains consistent with the page. The retrieval,
+   distributed-practice, and category-discrimination claims can be re-derived
+   from the recorded research, while the scope note expressly rejects a
+   three-way interaction claim. The draft uses original thematic prose, no source
+   quotation or real cover art, and shared diagram primitives rather than an
+   apparent reproduction of a source figure. This review began no external web
+   search.
+
+3. The page and imported renderers meet the content contract. Five key ideas each
+   have a captioned, in-vocabulary structural figure; the Model renders the
+   brief's three-part framework; four practice cards specify observable actions;
+   and the caveat distinguishes productive difficulty from unsupported struggle.
+   All three related slugs resolve to done chapters, and the outbound link matches
+   the recorded publisher page. Chapter-local minimum widths are preserved by
+   `Figure`'s horizontal overflow wrapper on a phone.
+
+4. The earlier Figure 97.3 caption advisory remains: the caption compares spaced
+   returns with one long sitting, while the timeline draws only the spaced
+   sequence. The prose makes the comparison clear, so this is a precision polish
+   point and does not block approval.
+
+5. `npm run check` completed with `CHECK OK` on 2026-07-27. Queue, registry,
+   critique, and content validation; prose lint; all 40 pipeline and runner tests;
+   all 203 Vitest tests; TypeScript and the Vite production build; and ESLint
+   passed. Vitest emitted only the existing non-failing jsdom
+   `Window.scrollTo()` notices.
