@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -98,3 +98,54 @@ Verification after these changes: `npm run check` passed on 2026-07-27, includin
 registry validation, prose lint, 42 pipeline and runner tests, 236 application tests,
 typecheck, production build, and ESLint. Vitest emitted only the existing non-failing jsdom
 `Window.scrollTo()` notices.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+1. The signature Model figure is not legible at the required 360px phone width. The
+   chapter gives the branched `Flow` only `min-w-[380px]`
+   (`src/chapters/capital-21c.mdx:175-181`), but that component computes a 578-unit
+   viewBox for these three steps plus the branch
+   (`src/components/diagrams/Flow.tsx:20-28`). At its 380px minimum, every 11.5-unit
+   label therefore renders at about 7.6 CSS pixels, and the figure's padded mobile
+   viewport makes the reader scroll even to see that undersized text. This is the
+   page's signature framework, so it must meet the authoring contract's phone
+   legibility requirement. Give the SVG a minimum rendered width near its intrinsic
+   viewBox width, or restructure the model into a phone-legible composition without
+   shrinking its labels.
+
+2. The last sentence of the mandatory carry-away section says, "The counterweights
+   are historical and political, which means they can be chosen"
+   (`src/chapters/capital-21c.mdx:226-231`). The chapter has just identified war,
+   depression, inflation, destruction, and other shocks as historical
+   counterweights. Those events are not deliberate policy choices, and being
+   historical does not imply that something can be chosen. Distinguish contingent
+   historical shocks from institutions and policies that people can deliberately
+   change, so the final takeaway does not collapse the chapter's own causal
+   distinction.
+
+### Advisory
+
+1. When repairing the Model figure, add an explicit `ariaLabel` that includes both
+   branch outcomes. `Flow`'s derived accessible name lists only the three `steps`
+   (`src/components/diagrams/Flow.tsx:31-34`), so the current role-image name omits
+   both the concentration pressure and the policy-and-shocks alternative that carry
+   the figure's conclusion.
+
+### Verification
+
+`npm run check` passed on 2026-07-27: queue/registry/content validation, prose lint,
+2 pipeline tests, 40 runner tests, 236 application tests, typecheck, production
+build, and ESLint all completed successfully. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.
+
+The prior round's four required fixes remain present: the summary statements now
+separate a return rate from asset-stock growth, Figures 111.2 and 111.6 no longer
+place unlike quantities on magnitude bars, Exercise 02 states the balance-sheet
+perspective for a student loan, and every related link has a reader-visible
+relationship clause. The brief, recorded evidence, chapter, imported components,
+shared SVG helpers, registry entry, queue state, and related targets were checked
+again without beginning a new external web search. The three related slugs are done,
+the generated cover contains no book art, and `capital-21c` correctly remains draft
+after this revise verdict.
