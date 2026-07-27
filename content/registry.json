@@ -1905,10 +1905,10 @@
       "framework": "No single signature model; five practice principles are synthesized as key ideas.",
       "diagrams": [
         "process loop",
-        "concentric circles",
-        "iceberg",
+        "flow",
+        "flow",
         "comparison",
-        "spectrum"
+        "node graph"
       ]
     },
     {

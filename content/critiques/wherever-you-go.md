@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -123,3 +123,11 @@ verdict: revise
    lint passed; all 40 pipeline and runner tests and all 199 Vitest tests passed;
    TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
    the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-27
+
+- Updated the `wherever-you-go` registry inventory to match the five rendered key-idea
+  figures exactly: process loop, flow, flow, comparison, and node graph. This replaces
+  the obsolete concentric circles, iceberg, and spectrum entries while preserving the
+  previously resolved chapter diagrams and caveat.
+- `npm run check` passed after the metadata correction.
