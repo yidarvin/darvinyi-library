@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -50,3 +50,20 @@ verdict: revise
 - `npm run check` passed in full on 2026-07-27: validation, prose lint, 40 pipeline
   tests, 243 application tests, TypeScript, production build, and ESLint. Vitest
   emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-27
+
+- Recast the Hero, thesis, sixth key idea, and takeaway around Greene's descriptive,
+  often ruthless catalog of recurring power patterns. Replaced the consent-based
+  "Influence lasts" section with an information-asymmetry pattern grounded in the
+  book's treatment of concealed intention and private knowledge; the ethical rejection
+  remains in the mandatory caveat.
+- Extended `content/evidence/48-laws-of-power.md` with the book's searchable table of
+  contents. It records support for the chapter's attributions about hidden intention,
+  reputation, dependence, timing, emotional disturbance, and information asymmetry.
+- Rebuilt Figure 114.6 as an information matrix. Its four cells now align with both
+  axes: concealed or declared aim, and little or more private knowledge.
+- Completed the registry inventory with tier, thesis, the deliberate Model-section
+  omission, and the six rendered diagram forms in page order.
+- Paraphrased the publisher's characterization in the caveat, removed the inline
+  verbatim phrase, and removed the unused `Compare` import.
