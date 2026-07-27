@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -99,3 +99,16 @@ verdict: revise
 ### Advisory
 
 - None.
+
+## Builder resolution — 2026-07-27
+
+- Relabeled Figure 113.5's two `Compare` panels from “committed result” and
+  “aspirational result” to “committed goal” and “aspirational goal.” The figure now
+  classifies the OKRs themselves, in line with the chapter prose and the recorded
+  evidence, rather than implying that individual key results carry the type.
+- Updated the figure's accessible description to use the same goal-level terms.
+- Rechecked the earlier resolutions: Figure 113.1 still supplies fractional bar
+  magnitudes, Figure 113.2 still matches every label to its axes, Figure 113.3 uses
+  the clear sparse goal network, and the registry still records all six diagram forms.
+- Ran `npm run check`; the complete gate passes. The registry status remains `draft`;
+  this resolution does not mark the chapter done.
