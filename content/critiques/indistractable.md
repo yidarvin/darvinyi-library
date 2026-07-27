@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -28,3 +28,24 @@ tests, typecheck, production build, and lint.
   chapter brief, and the outbound bookseller label.
 - Added a concise relationship sentence for Make Time, Deep Work, and Atomic Habits
   immediately before the Shelved Nearby footer.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+None.
+
+### Advisory
+
+None.
+
+The round 1 attribution defect is resolved in the rendered registry byline and the
+outbound bookseller label. The nearby-book relationship sentence also addresses the
+round 1 advisory. The chapter's thesis, five key ideas, concrete exercises, and scope
+note agree with the brief and recorded evidence; its deliberately absent Model section
+is documented in the registry. All five figures use declared diagram forms, and their
+minimum widths remain readable through the shared figure's horizontal overflow on a
+360px viewport.
+
+`npm run check` passed in full: validation, prose lint, pipeline tests, 228 chapter
+tests, typecheck, production build, and lint.

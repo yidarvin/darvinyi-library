@@ -122,7 +122,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 105 | stumbling-on-happiness          | Stumbling on Happiness                        | DONE    |
 | 106 | noise                           | Noise                                         | DONE    |
 | 107 | make-time                       | Make Time                                     | DONE    |
-| 108 | indistractable                  | Indistractable                                | PENDING |
+| 108 | indistractable                  | Indistractable                                | DONE    |
 | 109 | your-money-or-your-life         | Your Money or Your Life                       | PENDING |
 | 110 | i-will-teach-you                | I Will Teach You to Be Rich                   | PENDING |
 | 111 | capital-21c                     | Capital in the Twenty-First Century           | PENDING |
