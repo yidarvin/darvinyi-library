@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -33,3 +33,19 @@ verdict: revise
   recorded evidence does not establish that particular sampling rule. Present it as a
   practical check rather than an evidence-calibrated threshold, or add support during a
   future research pass.
+
+## Builder resolution — 2026-07-27
+
+- Replaced Figure 105.3's rising `peak` curve with the reusable `decay` annotated-curve
+  variant. The visible line begins high immediately after the event, declines across
+  time, and places the “initial reaction” and “life resumes” annotations on that line.
+  Added `decay` to the Curve primitive's documented vocabulary options.
+- Reassigned Figure 105.5 by `Matrix`'s documented reading order: small trial at
+  easy-to-try/few-reports, try and compare at easy-to-try/use-reports, reversible
+  commitment at hard-to-try/few-reports, and reports as a check at hard-to-try/use-reports.
+  The highlighted strongest input is now the easy-to-try/use-reports quadrant.
+- Completed the registry record with tier 3, the brief's thesis and affective-forecasting
+  framework, and all six rendered diagram forms. Its status remains `draft`.
+- Adjusted the lived-report exercise to describe seeking a few comparable people as a
+  practical check, rather than presenting a two-or-three-person threshold as an
+  evidence-calibrated rule.

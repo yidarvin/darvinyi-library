@@ -2079,7 +2079,18 @@
       "subtitle": "Daniel Gilbert · 2006",
       "part": "Behavioral Science & Decision-Making",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "We are strikingly bad at predicting what will make us happy, because imagination distorts the future in consistent ways.",
+      "framework": "Affective forecasting",
+      "diagrams": [
+        "iceberg",
+        "timeline / bar",
+        "annotated curve",
+        "comparison / split",
+        "two-by-two matrix",
+        "flow / sequence"
+      ]
     },
     {
       "num": 106,

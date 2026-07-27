@@ -1,7 +1,7 @@
 import { C, MONO, SANS, type DiagramBase } from "./_util";
 import { Svg } from "./_shared";
 
-export type CurveShape = "exp" | "log" | "s" | "u" | "bell" | "peak" | "channel";
+export type CurveShape = "exp" | "log" | "s" | "u" | "bell" | "peak" | "decay" | "channel";
 
 export interface CurveAnnotation {
   /** Position along the plot, each 0 to 1. */
@@ -36,6 +36,10 @@ const value = (shape: Exclude<CurveShape, "channel">, t: number): number => {
       return t <= 0.72
         ? 0.08 + 0.84 * (1 - (1 - t / 0.72) * (1 - t / 0.72))
         : 0.92 - 0.1 * Math.pow((t - 0.72) / 0.28, 1.2);
+    case "decay":
+      // A conceptual reaction that is strongest at the event and then loses force.
+      // The floor keeps the line illustrative rather than implying that impact vanishes.
+      return 0.18 + 0.74 * Math.exp(-2.8 * t);
   }
 };
 
