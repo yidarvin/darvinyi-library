@@ -13,6 +13,8 @@ or figures. Its diagrams are new conceptual SVGs built from the library vocabula
 ### Scope note
 
 The diagram labeled r > g is intentionally illustrative, not a recreation of a source chart
-or a claim about a universal numerical spread. The chapter treats r > g as a mechanism that
-can amplify concentration when ownership, savings, and returns differ, while recognizing
-that the observed distribution depends on institutions, shocks, and measurement choices.
+or a claim about a universal numerical spread. Here r is a return rate, not a statement that
+the asset stock itself grows at that rate. The chapter treats r > g as a mechanism that can
+amplify concentration when returns are retained and ownership, savings, and returns differ,
+while recognizing that the observed distribution depends on institutions, shocks, and
+measurement choices.

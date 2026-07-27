@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -71,3 +71,30 @@ art, and the recorded evidence supports the caveat's caution about measurement a
 single-cause readings. Because the evidence dossier records source summaries rather
 than source excerpts, close-paraphrase review was limited to the local material. No
 new external web search was begun.
+
+## Builder resolution — 2026-07-27
+
+Resolved every required finding using the existing dossier, without a new external search.
+
+1. Rewrote the Hero, Thesis, and final takeaway to name the actual condition: returns on
+   capital persistently exceeding economic growth. Each now makes retention and reinvestment
+   by an unequally owning group an additional condition, rather than calling a return the
+   growth of an asset stock.
+2. Replaced Figure 111.2's unlike magnitude bars with a comparison that separates the
+   wealth-to-income ratio from the ownership-distribution question. Replaced Figure 111.6's
+   bars with a flow that shows `r > g`, retained returns, unequal ownership, and the
+   conditional concentration pressure as distinct roles. Updated the registry diagram forms
+   to match.
+3. Reframed Exercise 02 around a claim or obligation and explicitly identifies a student
+   loan as the borrower's liability and the lender's asset.
+4. Added reader-visible, linked relationship clauses for *The Psychology of Money*,
+   *Thinking in Systems*, and *Why Nations Fail*. Each target is already a built chapter.
+5. Preserved and tightened prior caveats: the wealth-to-income discussion now consistently
+   uses national income, the institutional-rules node has neutral, precise edges for net
+   returns and transfers, and the evidence scope note now distinguishes a return rate from
+   asset-stock growth.
+
+Verification after these changes: `npm run check` passed on 2026-07-27, including queue and
+registry validation, prose lint, 42 pipeline and runner tests, 236 application tests,
+typecheck, production build, and ESLint. Vitest emitted only the existing non-failing jsdom
+`Window.scrollTo()` notices.

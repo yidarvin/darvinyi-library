@@ -2204,11 +2204,11 @@
       "framework": "r > g",
       "diagrams": [
         "comparison",
-        "conceptual bars",
+        "comparison / split",
         "timeline",
         "process loop",
         "node graph",
-        "conceptual bars"
+        "flow / sequence"
       ]
     },
     {

@@ -1,22 +1,22 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Bars, Compare, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+import { Compare, Flow, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
 
 <Hero
   slug="capital-21c"
-  thesis="Wealth does not naturally spread itself around. When private assets grow faster than the economy that supports them, inheritance, saving, and unequal returns can pull ownership toward the top."
+  thesis="Wealth does not naturally spread itself around. When returns on capital persistently exceed economic growth, and a narrow group retains enough to reinvest, inheritance, saving, and unequal returns can pull ownership toward the top."
   minutes={8}
 />
 
 ## The thesis
 
-Piketty's central claim is a warning about a tendency, not a law of nature. A society can
-produce more each year while the stock of privately owned wealth grows even faster. When
-owners can reinvest a meaningful share of those returns, accumulated wealth gains ground on
-new income. Because ownership begins unevenly distributed, the result can be a widening
-gap between those who live chiefly from work and those who also own claims on land,
-businesses, housing, and financial assets. History, policy, and shocks can interrupt the
-process. They are part of the explanation, not footnotes to it.
+Piketty's central claim is a warning about a tendency, not a law of nature. When returns on
+capital remain above economic growth, and owners can retain and reinvest a meaningful share
+of those returns, accumulated wealth can gain ground on new income. Because ownership begins
+unevenly distributed, the result can be a widening gap between those who live chiefly from
+work and those who also own claims on land, businesses, housing, and financial assets.
+History, policy, and shocks can interrupt the process. They are part of the explanation, not
+footnotes to it.
 
 ## Why it matters
 
@@ -59,21 +59,25 @@ price, or an inheritance? The answers lead to different policy and personal conc
 The same annual return has a different social weight when the underlying asset stock is
 small than when it is several years of national income. Piketty follows the ratio of private
 wealth to national income because it gives that scale a common language. If private wealth
-is large relative to one year's output, ownership claims can shape more of the economy's
-future income. The ratio does not announce who owns the wealth, but it tells us why the
-distribution of ownership deserves attention.
+is large relative to one year's national income, ownership claims can shape more of the
+economy's future income. The ratio does not announce who owns the wealth, but it tells us why
+the distribution of ownership deserves attention.
 
 That ratio also avoids a common shortcut. A country can be richer in aggregate while access
 to wealth remains narrow. Growth and broad ownership are separate questions.
 
-<Figure id="111.2" caption="A larger private wealth stock can make ownership claims more consequential than one year's income alone suggests.">
-  <Bars
+<Figure id="111.2" caption="The wealth-to-income ratio describes the scale of a stock; the distribution of ownership remains a separate question.">
+  <Compare
     className="block w-full min-w-[380px]"
-    items={[
-      { label: "one year's national income", value: 0.28, valueLabel: "the annual flow" },
-      { label: "private wealth stock", value: 0.74, accent: true, valueLabel: "a stock accumulated across years" },
-      { label: "ownership distribution", value: 0.46, valueLabel: "a separate question from total size" },
-    ]}
+    favor="none"
+    left={{
+      title: "scale of private wealth",
+      points: ["a stock built across years", "compared with national income", "sets the size of ownership claims"],
+    }}
+    right={{
+      title: "distribution of ownership",
+      points: ["asks who owns the stock", "can be broad or narrow", "is not measured by the ratio alone"],
+    }}
   />
 </Figure>
 
@@ -145,15 +149,15 @@ the slogan alone.
       { id: "returns", label: "net returns", x: 0.87, y: 0.44 },
       { id: "saving", label: "saving capacity", x: 0.66, y: 0.88 },
       { id: "income", label: "labor income", x: 0.1, y: 0.7 },
-      { id: "rules", label: "tax and property rules", x: 0.08, y: 0.25 },
+      { id: "rules", label: "institutional rules", x: 0.08, y: 0.25 },
     ]}
     edges={[
       { from: "assets", to: "returns", kind: "reinforcing", label: "income" },
       { from: "returns", to: "saving", kind: "reinforcing", label: "kept" },
       { from: "saving", to: "assets", kind: "reinforcing", label: "reinvested" },
       { from: "income", to: "saving", label: "room to save" },
-      { from: "rules", to: "returns", kind: "balancing", label: "after tax" },
-      { from: "rules", to: "assets", kind: "balancing", label: "inheritance" },
+      { from: "rules", to: "returns", label: "sets net returns" },
+      { from: "rules", to: "assets", label: "sets transfer rules" },
     ]}
   />
 </Figure>
@@ -168,14 +172,12 @@ ownership, saving, and returns are already unequal. It does not predict a fixed 
 it does not say wages, innovation, or policy are irrelevant. It names the background
 arithmetic that makes those choices matter.
 
-<Figure id="111.6" caption="r greater than g is a long-run pressure: returns on owned assets can outpace growth of the economy.">
-  <Bars
+<Figure id="111.6" caption="r greater than g becomes a concentration pressure only through retained returns and unequal ownership.">
+  <Flow
     className="block w-full min-w-[380px]"
-    items={[
-      { label: "g: economic growth", value: 0.38, valueLabel: "the annual economy-wide pace" },
-      { label: "r: return to capital", value: 0.72, accent: true, valueLabel: "an illustrative higher long-run return" },
-      { label: "result when ownership is unequal", value: 0.58, valueLabel: "wealth can pull ahead of income" },
-    ]}
+    steps={["r persistently exceeds g", "returns are retained", "ownership is already unequal"]}
+    highlight={0}
+    branch={{ up: "pressure toward concentration", down: "policy and shocks can change the path" }}
   />
 </Figure>
 
@@ -188,11 +190,13 @@ are included. This small discipline prevents an annual wage statistic from stand
 ownership.
 </ExerciseCard>
 
-<ExerciseCard n="02" title="Map one compounding loop">
-Pick an asset you understand, such as housing, a retirement account, a family business, or a
-student loan. Write down what produces its return, what is retained, and what rule changes
-the next round. The point is not to make a prediction. It is to see where the loop can be
-strengthened, interrupted, or shared.
+<ExerciseCard n="02" title="Map one compounding loop from a clear perspective">
+Pick a claim or obligation you understand, such as housing equity, a retirement account, a
+family business, or a student loan. State whose balance sheet you are using: a student loan
+is a liability to the borrower and an asset to the lender. Then write down what produces the
+return or cost, what is retained or repaid, and what rule changes the next round. The point is
+not to make a prediction. It is to see where the loop can be strengthened, interrupted, or
+shared.
 </ExerciseCard>
 
 <ExerciseCard n="03" title="Ask who can save">
@@ -221,10 +225,16 @@ ownership, not as permission to infer a country's future from two letters.
 
 ## If you remember one thing
 
-Growth alone does not tell you whether prosperity is becoming broadly owned. When assets
-grow faster than the economy and their returns are retained by an already narrow group,
-inequality can compound. The counterweights are historical and political, which means they
-can be chosen.
+Growth alone does not tell you whether prosperity is becoming broadly owned. When returns on
+capital persistently exceed economic growth, and an already narrow group retains enough to
+reinvest, inequality can compound. The counterweights are historical and political, which
+means they can be chosen.
+
+[The Psychology of Money](/psychology-of-money) adds the household behavior that shapes who
+can keep saving through uncertainty. [Thinking in Systems](/thinking-in-systems) offers a
+method for tracing the feedback loops and intervention points in this argument. [Why Nations
+Fail](/why-nations-fail) examines the political institutions that decide who can own, inherit,
+and influence the economic rules.
 
 <ShelvedNearby
   related={["psychology-of-money", "thinking-in-systems", "why-nations-fail"]}
