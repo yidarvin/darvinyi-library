@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-26
 
@@ -131,3 +131,34 @@ verdict: resolved
   the obsolete concentric circles, iceberg, and spectrum entries while preserving the
   previously resolved chapter diagrams and caveat.
 - `npm run check` passed after the metadata correction.
+
+## Critique round 3 — 2026-07-27
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 2 registry finding is resolved. The registry now records process loop,
+   flow, flow, comparison, and node graph in the same order as Figures 96.1 through
+   96.5 (`content/registry.json:1906-1912`;
+   `src/chapters/wherever-you-go.mdx:41-147`). The earlier settled diagram and
+   caveat findings remain resolved.
+
+2. The draft satisfies the fixed anatomy. Five key ideas each have a captioned
+   shared-vocabulary figure, omission of the Model section matches the brief, the
+   four exercises specify observable actions, and the nearby links point to three
+   done chapters whose relationships are stated in prose. The publisher link
+   matches the recorded evidence.
+
+3. Within the bounded chapter brief and recorded evidence, the factual claims are
+   appropriately scoped to non-clinical mindfulness practice. The synthesis uses
+   original thematic organization, prose, and shared SVG primitives. No quotation,
+   real cover art, apparent close paraphrase, or apparent reproduction of a source
+   figure was found. This review began no external web search.
+
+4. `npm run check` completed with `CHECK OK` on 2026-07-27. Validation and prose
+   lint passed; all 40 pipeline and runner tests and all 199 Vitest tests passed;
+   TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
+   the existing non-failing jsdom `Window.scrollTo()` notices.

@@ -110,7 +110,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 093 | letters-from-a-stoic            | Letters from a Stoic                          | DONE    |
 | 094 | ego-is-the-enemy                | Ego Is the Enemy                              | DONE    |
 | 095 | untethered-soul                 | The Untethered Soul                           | DONE    |
-| 096 | wherever-you-go                 | Wherever You Go, There You Are                | PENDING |
+| 096 | wherever-you-go                 | Wherever You Go, There You Are                | DONE    |
 | 097 | make-it-stick                   | Make It Stick                                 | PENDING |
 | 098 | ultralearning                   | Ultralearning                                 | PENDING |
 | 099 | bird-by-bird                    | Bird by Bird                                  | PENDING |
