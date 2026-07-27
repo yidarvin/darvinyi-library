@@ -1,0 +1,200 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Iceberg, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="wherever-you-go"
+  thesis="Mindfulness is the ordinary skill of returning to what is here, with enough kindness to see it clearly and enough patience to stay."
+  minutes={7}
+/>
+
+## The thesis
+
+Kabat-Zinn presents mindfulness as a way of meeting the life already underway. Attention is
+deliberately placed in the present, then placed there again when it wanders, without making the
+wander itself into a failure. Formal meditation gives this skill a quiet place to develop. The
+larger aim is to carry the same quality of attention into eating, walking, working, waiting, and
+speaking with other people.
+
+## Why it matters
+
+Much of a day is spent near the present without quite arriving in it. The body may be at the
+sink while the mind is rehearsing a meeting, replaying an argument, or trying to get through the
+next hour. That mental travel is sometimes useful. It becomes costly when it is the only place
+attention knows how to go. Mindfulness offers a small alternative: contact this breath, this
+sound, this feeling, and this task before deciding what needs to happen next.
+
+## Key ideas
+
+### Attention is trained by returning, not by never wandering
+
+A wandering mind is not evidence that meditation has gone wrong. It is the condition that makes
+practice possible. Pick an anchor, such as the physical movement of breathing, and notice when
+attention has left it. The return is the repetition that matters. Each return makes the next one
+more familiar, without requiring a dramatic experience or a perfectly blank mind.
+
+This reframes concentration as a relationship with distraction rather than a contest against it.
+Planning may appear, a sound may interrupt, or an old worry may pull hard. Name none of these as
+a personal defect. Recognize where the mind went, then come back to the immediate sensation that
+was chosen as the anchor.
+
+<Figure id="96.1" caption="Practice is the gentle loop of noticing that attention left and bringing it back.">
+  <ProcessLoop
+    className="block w-full"
+    stages={["choose an anchor", "notice attention wandering", "acknowledge it", "return to the anchor"]}
+    compoundingEdge={3}
+    centerLabel="practice"
+  />
+</Figure>
+
+### The body gives attention a place to land
+
+The body is not a puzzle to solve before meditation can begin. It supplies direct information:
+the pressure of feet on a floor, the shape of a seated posture, an inhale stretching the ribs,
+or tension in the jaw. These sensations happen before the running commentary about them. They
+offer a reliable way to move from abstraction into contact.
+
+Beginning with the body also makes mindfulness practical in crowded circumstances. A person can
+feel one full exhale before answering an email, notice their shoulders while standing in line, or
+take three unhurried steps between rooms. The point is not to turn every sensation into a message.
+It is to give awareness something real and close enough to notice.
+
+<Figure id="96.2" caption="A body anchor brings attention from the outer rush of thought toward immediate sensation.">
+  <Concentric
+    className="block w-full"
+    rings={[{ label: "felt sensation" }, { label: "breath and posture" }, { label: "sounds and surroundings" }]}
+    highlight={0}
+  />
+</Figure>
+
+### Thoughts and feelings are events, not commands
+
+Mindfulness does not ask a person to deny anger, fear, pleasure, or judgment. It asks for a
+small amount of space around them. A thought can be recognized as thinking. A feeling can be felt
+in the body and allowed to have its force. Neither has to become a verdict about the whole day or
+an instruction to act immediately.
+
+This distinction is especially useful when a reaction arrives quickly. The first job is to see
+what has appeared: a tight chest, a defensive sentence, a prediction. The next job is separate:
+decide whether a response is needed, and what kind. Awareness does not remove responsibility. It
+makes an automatic response easier to interrupt.
+
+<Figure id="96.3" caption="The first reaction is visible, while sensation, memory, and prediction can be noticed beneath it.">
+  <Iceberg
+    className="block w-full"
+    above="the reaction you notice"
+    below={["body sensation", "memory or association", "a prediction about what comes next"]}
+    waterlineLabel="what arrives all at once"
+  />
+</Figure>
+
+### Nonjudgment means seeing before adding a verdict
+
+Nonjudgment is often mistaken for passive approval or an instruction to have no opinions. It is
+neither. The practice is to notice the quick label, pleasant or unpleasant, before letting it
+close the case. You can see that a meeting was hurtful, that a task is tedious, or that a habit
+is harmful. Mindfulness simply asks that the observation come before the extra story about what
+the experience proves about you or other people.
+
+That pause leaves room for discernment. A clear boundary, an apology, a change of plan, or a
+request for help may still be the right next move. The difference is that action is no longer
+required to carry the full weight of the first judgment.
+
+<Figure id="96.4" caption="Observation keeps the facts available; a verdict can arrive later, after there is room to assess.">
+  <Compare
+    className="block w-full"
+    favor="right"
+    left={{
+      title: "immediate verdict",
+      points: ["label the moment good or bad", "treat the label as the whole story", "react to the conclusion"],
+    }}
+    right={{
+      title: "mindful noticing",
+      points: ["name what is happening", "feel its effect", "assess and respond with care"],
+    }}
+  />
+</Figure>
+
+### Formal practice becomes a way of moving through ordinary life
+
+Sitting quietly matters because it makes the pattern visible. In a few minutes, attention leaves,
+returns, meets discomfort, notices sound, and starts again. But the book refuses to reserve
+mindfulness for a cushion. Washing dishes, taking a walk, eating one bite, or listening without
+preparing a reply can all become places to practice the same return.
+
+There is no final state in which the present stays permanently tidy. Some moments are spacious,
+some are painful, and some are plainly boring. The useful measure is not how calm a person looks.
+It is whether attention can make contact with what is actually happening, then support a more
+considered action.
+
+<Figure id="96.5" caption="Formal sitting and daily activity sit on one continuum of deliberate contact with the present.">
+  <Spectrum
+    className="block w-full"
+    left="formal sitting"
+    right="daily activity"
+    marker={0.68}
+    markerLabel="walking, eating, listening"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.04, to: 0.35, label: "set aside time" },
+      { from: 0.5, to: 0.96, label: "bring attention into the day", accent: true },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Take a three-minute seat">
+Sit somewhere stable and set a three-minute timer. Feel the contact points of your body, then
+follow one breath from its beginning to its end. When you notice planning, remembering, or
+drifting, silently say “thinking” and return to the next breath. Count no returns. The point is
+to perform them.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Choose one ordinary anchor">
+Attach attention to one daily activity for a week: the first sip of coffee, the walk from a car
+to a door, or washing your hands. For that brief interval, stay with sensations, sounds, and
+movement. If your mind leaves, use the activity itself to come back.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Separate a fact from the story">
+When a difficult reaction appears, write two short lines. First, state what an observer could
+verify: “the message arrived late.” Second, state the story your mind supplied: “they do not
+respect me.” Feel the difference without forcing either line to disappear. Then decide whether a
+response is needed.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Listen through one full answer">
+In your next low-stakes conversation, let the other person finish one answer before composing
+yours. Notice the urge to rehearse, correct, or solve. Return to the sound of their words, then
+ask one question that follows from what they actually said.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Mindfulness is not a promise of constant calm, a substitute for treatment, or a reason to endure
+harm without action. Paying attention can make difficult thoughts, grief, trauma responses, or
+physical pain more noticeable at first. If a practice leaves you overwhelmed, disconnected, or
+unsafe, stop and seek appropriate support from a qualified clinician or local emergency service.
+Nonjudgment also does not mean moral neutrality. You can see experience clearly and still set a
+boundary, report wrongdoing, or change the conditions causing harm.
+</Callout>
+
+## If you remember one thing
+
+The present is not somewhere you reach once and keep. It is the place attention returns to, one
+breath, sensation, conversation, and ordinary task at a time.
+
+## Shelved nearby
+
+*The Power of Now* also treats present attention as an alternative to being carried by thought.
+*The Untethered Soul* explores the related practice of noticing inner commentary without giving
+it complete authority. The *Tao Te Ching* offers an older, less effortful view of meeting changing
+conditions.
+
+<ShelvedNearby
+  related={["power-of-now", "untethered-soul", "tao-te-ching"]}
+  buyUrl="https://www.hachettebookgroup.com/titles/jon-kabat-zinn-phd/wherever-you-go-there-you-are/9780306832017/?lens=balance"
+  buyLabel="Wherever You Go, There You Are by Jon Kabat-Zinn"
+/>

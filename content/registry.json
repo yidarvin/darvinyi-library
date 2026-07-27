@@ -1899,7 +1899,17 @@
       "subtitle": "Jon Kabat-Zinn · 1994",
       "part": "Spirituality & Mindfulness",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Mindfulness is the ordinary skill of returning to the present with patience, curiosity, and enough space to choose a response.",
+      "framework": "No single signature model; five practice principles are synthesized as key ideas.",
+      "diagrams": [
+        "process loop",
+        "concentric circles",
+        "iceberg",
+        "comparison",
+        "spectrum"
+      ]
     },
     {
       "num": 97,

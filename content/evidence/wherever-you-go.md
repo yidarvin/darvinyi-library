@@ -1,0 +1,11 @@
+# Wherever You Go, There You Are — research notes
+
+Verified 2026-07-26. This chapter is an original synthesis of the book's recurring
+argument and does not reproduce its prose, exercises, figures, or cover art. Its diagrams are
+original conceptual illustrations made with the library's fixed SVG vocabulary.
+
+- Jon Kabat-Zinn, [*Wherever You Go, There You Are*, 10th Anniversary Edition](https://jonkabat-zinn.com/book/wherever-you-go-there-you-are-mindfulness-meditation-in-everyday-life-10th-anniversary-edition-with-a-new-afterword-by-the-author/). The author's official description presents the book as a path for newcomers and experienced practitioners to cultivate mindfulness in their own lives. It supports the chapter's focus on formal and informal practice.
+- Hachette Book Group, [*Wherever You Go, There You Are*](https://www.hachettebookgroup.com/titles/jon-kabat-zinn-phd/wherever-you-go-there-you-are/9780306832017/?lens=balance). The publisher identifies the current edition, its subtitle, and Kabat-Zinn as author. It is also the chapter's outbound path for readers who want the original book.
+- Jon Kabat-Zinn, ["Cultivating Mindfulness"](https://jonkabat-zinn.com/wp-content/uploads/2023/01/JonKabat-Zinn_DailyPractice.pdf). The author's daily-practice guidance starts with bodily sensations and the breath, then recommends recognizing when attention wanders and returning. It informs the body-anchor and return-practice sections.
+- Jon Kabat-Zinn, ["Some Reflections on the Origins of MBSR"](https://jonkabat-zinn.com/wp-content/uploads/2023/01/JonKabat-Zinn_SomeReflectionsOriginsMBSR.pdf). Kabat-Zinn discusses his widely used description of mindfulness as intentional, present-focused, and nonjudgmental, while clarifying that practice does not require judgments never to arise. This informs the distinction between observation and a verdict.
+- Jon Kabat-Zinn, ["Series 2: Everyday Life Meditations"](https://jonkabat-zinn.com/download/series-2-everyday-life-meditations/). The author describes short sitting and lying-down practices originally developed alongside this book. This supports presenting the chapter's exercises as brief, repeatable invitations rather than claims of clinical treatment.
