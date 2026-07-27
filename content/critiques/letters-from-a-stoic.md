@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -61,3 +61,16 @@ verdict: revise
    lint passed; the two pipeline tests, all 40 runner tests, all 193 Vitest tests,
    TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
    the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+- Removed `compoundingEdge={3}` from Figure 93.3. The Process Loop now encodes the
+  evidence-supported recurring practice with neutral return arrows, without claiming
+  that meeting a threat reinforces the next cycle.
+- Re-composed Figure 93.2's poles as `comfort required` and `comfort preferred`, and
+  set `markerLabelPlacement="top"`. The shorter endpoint labels no longer collide,
+  and `enough` occupies its own line above the axis labels at phone width.
+- Recomputed the final rendered reader-visible count from the critique's recorded
+  1,477-token render: the two shortened labels remove four alphanumeric tokens,
+  leaving 1,473. At approximately 200 words per minute, rounded up, the Hero now
+  shows an 8-minute distillation.

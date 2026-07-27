@@ -5,7 +5,7 @@ import { Iceberg, ProcessLoop, Spectrum, Timeline, Venn } from "../components/di
 <Hero
   slug="letters-from-a-stoic"
   thesis="A finite life becomes more available when time, comfort, fear, and status stop deciding what deserves your attention."
-  minutes={9}
+  minutes={8}
 />
 
 ## The thesis
@@ -68,10 +68,11 @@ unlivable. Possessions can remain useful without becoming the master of their ow
 <Figure id="93.2" caption="Comfort can be welcome without becoming a condition for steadiness.">
   <Spectrum
     className="block w-full min-w-[440px]"
-    left="comfort as a requirement"
-    right="comfort as a preference"
+    left="comfort required"
+    right="comfort preferred"
     marker={0.78}
     markerLabel="enough"
+    markerLabelPlacement="top"
     zones={[
       { from: 0, to: 0.38, label: "loss feels like collapse" },
       { from: 0.62, to: 1, label: "use it, do not depend on it", accent: true },
@@ -95,7 +96,6 @@ goal is not bravado. It is a more proportionate fear, one that can still leave r
   <ProcessLoop
     className="block w-full min-w-[380px]"
     stages={["name the fear", "test a small hardship", "learn what holds", "meet the next threat"]}
-    compoundingEdge={3}
     centerLabel="prepared courage"
   />
 </Figure>
