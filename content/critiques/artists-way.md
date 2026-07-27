@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -45,3 +45,23 @@ None.
   42 pipeline and runner tests, 211 Vitest tests, TypeScript/Vite production build,
   and ESLint all completed successfully. Vitest emitted only the existing non-failing
   `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-27
+
+1. Kept the shared `NodeGraph` primitive unchanged and separated Figure 101.6's two
+   central labels with its chapter-level `labelOffset` support. `follow` now sits 16
+   units above the horizontal connection, while `notice again` sits 18 units below
+   its previous vertical-connection position, so each relationship remains legible.
+
+2. Changed the Hero badge from `7-min` to `8-min`, matching the recorded rendered
+   count of approximately 1,491 visible alphanumeric words at roughly 200 words per
+   minute, rounded up.
+
+3. Completed the draft `artists-way` registry entry with tier 2, the recorded thesis,
+   the Morning Pages and Artist Dates framework, and the six rendered forms in page
+   order: iceberg, comparison, flow, Venn overlap, spectrum, and node graph. The
+   chapter remains `draft` and its queue row remains `PENDING`.
+
+4. `npm run check` passed on 2026-07-27 after the chapter and registry fixes:
+   validation, prose lint, pipeline tests, Vitest, TypeScript/Vite production build,
+   and ESLint completed successfully.

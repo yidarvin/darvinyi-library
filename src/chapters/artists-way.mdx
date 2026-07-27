@@ -8,7 +8,7 @@ import { Compare, Flow, Iceberg, NodeGraph, Spectrum, Venn } from "../components
 <Hero
   slug="artists-way"
   thesis="Creativity becomes easier to recover when regular practices clear room for private thought, fresh attention, and imperfect work."
-  minutes={7}
+  minutes={8}
 />
 
 ## The thesis
@@ -151,9 +151,9 @@ there, feed attention with something real, make a small attempt, and notice agai
     ]}
     edges={[
       { from: "pages", to: "notice", label: "empty" },
-      { from: "notice", to: "date", label: "follow" },
+      { from: "notice", to: "date", label: "follow", labelOffset: { y: -16 } },
       { from: "date", to: "work", label: "refresh" },
-      { from: "work", to: "pages", kind: "reinforcing", label: "notice again" },
+      { from: "work", to: "pages", kind: "reinforcing", label: "notice again", labelOffset: { y: 18 } },
     ]}
   />
 </Figure>
