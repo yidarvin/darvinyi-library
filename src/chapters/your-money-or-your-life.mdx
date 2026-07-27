@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Bars, Compare, Curve, Flow, Matrix, Spectrum } from "../components/diagrams";
+import { Bars, Curve, Flow, Matrix, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="your-money-or-your-life"
@@ -37,7 +37,7 @@ actually claims beyond the formal schedule. The result is a personal estimate, n
 verdict on a job. It gives a concrete conversion rate for later choices: this price is also
 some amount of time and effort.
 
-<Figure id="109.1" caption="The number on a payslip can overstate what an hour of work leaves available for life.">
+<Figure id="109.1" caption="A hypothetical workweek shows why a listed wage can overstate what an hour leaves available for life.">
   <Bars
     className="block w-full"
     items={[
@@ -88,10 +88,10 @@ and which ones are carrying more habit or status than satisfaction.
     xAxis={{ left: "low fulfillment", right: "high fulfillment", label: "value received" }}
     yAxis={{ low: "weak fit", high: "strong fit", label: "fit with values" }}
     quadrants={[
-      { title: "review", note: "values say no" },
+      { title: "question", note: "fits values, but gives little back" },
       { title: "protect", note: "a good use of resources" },
       { title: "automatic", note: "neither reward nor fit" },
-      { title: "question", note: "pleasant, but misaligned" },
+      { title: "review", note: "pleasant, but misaligned" },
     ]}
     highlight={1}
   />
@@ -119,6 +119,7 @@ it?"
     marker={0.58}
     markerLabel="enough for this life"
     markerLabelPlacement="top"
+    emphasizeEndpoint="none"
     zones={[
       { from: 0.0, to: 0.34, label: "security first" },
       { from: 0.46, to: 0.7, label: "sufficient and deliberate", accent: true },
@@ -140,15 +141,11 @@ expenses jump, and income can be irregular. Still, tracking the two directions i
 Each durable reduction in unnecessary expense and each increase in savings can widen room to
 choose, even long before it replaces a salary.
 
-<Figure id="109.5" caption="As recurring expenses fall and independent income grows, more of the calendar becomes negotiable.">
+<Figure id="109.5" caption="The crossover is the point where independent income can cover recurring expenses.">
   <Curve
     className="block w-full"
-    shape="exp"
-    axes={{ x: "consistent saving and time", y: "income from accumulated assets" }}
-    annotations={[
-      { x: 0.26, y: 0.06, text: "small early gap" },
-      { x: 0.72, y: 0.43, text: "more room to choose" },
-    ]}
+    shape="crossover"
+    axes={{ x: "consistent saving and time", y: "monthly cash flow" }}
   />
 </Figure>
 
@@ -219,6 +216,10 @@ with material financial consequences.
 Treat a dollar as a claim on your finite time. When earning, spending, and saving are measured
 against the life you want, money can become a tool for greater freedom rather than a demand for
 more of your life.
+
+Psychology of Money adds the behavioral context for money choices, Common Sense Investing
+grounds the investing side in low-cost indexing, and Four Thousand Weeks keeps the focus on
+time as a finite resource rather than a score to optimize.
 
 <ShelvedNearby
   related={["psychology-of-money", "common-sense-investing", "four-thousand-weeks"]}

@@ -5,7 +5,7 @@ import { MemoryRouter } from "react-router";
 import { MDXProvider } from "@mdx-js/react";
 import { mdxComponents } from "../components/mdxComponents";
 import { AppRoutes } from "../App";
-import { Bars, CoreContext, Matrix, NodeGraph, Spectrum } from "../components/diagrams";
+import { Bars, CoreContext, Curve, Matrix, NodeGraph, Spectrum } from "../components/diagrams";
 import { registry } from "../lib/registry";
 
 // Every MDX module on disk, regardless of registry status. The chapter being built
@@ -226,6 +226,22 @@ describe("Spectrum", () => {
     for (const endpoint of container.querySelectorAll("circle")) {
       expect(endpoint.getAttribute("fill")).toBe("var(--comment)");
     }
+  });
+});
+
+describe("Curve", () => {
+  it("shows both quantities and their named intersection for a crossover", () => {
+    const { container } = render(
+      <Curve
+        shape="crossover"
+        axes={{ x: "saving and time", y: "monthly cash flow" }}
+      />,
+    );
+
+    expect(container.querySelector('[data-curve-series="independent-income"]')).not.toBeNull();
+    expect(container.querySelector('[data-curve-series="recurring-expenses"]')).not.toBeNull();
+    expect(container.querySelector("[data-crossover-point]")).not.toBeNull();
+    expect(container.textContent).toContain("crossover");
   });
 });
 

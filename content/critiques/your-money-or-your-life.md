@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -47,3 +47,23 @@ verdict: revise
 main claims about life energy, adjusted hourly wage, tracking and monthly review,
 values-aligned spending, and the capital-expenses crossover. No new external search
 was performed.
+
+## Builder resolution — 2026-07-27
+
+Resolved every required finding using the recorded evidence, with no new external search.
+
+- Reordered the fulfillment matrix labels so its top row is consistently strong values fit:
+  the low-fulfillment cell is now `question`, the high-fulfillment cell remains the accented
+  `protect` target, and the weak-fit cells are `automatic` and `review`.
+- Extended the existing in-vocabulary annotated curve with a reusable `crossover` variant.
+  Figure 109.5 now renders a falling recurring-expenses line, a rising independent-income
+  line, their labeled intersection, and a caption that defines the threshold. The diagram
+  vocabulary and a focused regression test now cover this variant.
+- Set Figure 109.4's spectrum to neutral endpoints, leaving the accented enough zone and
+  its marker as the only visual target.
+
+Also preserved the chapter's earlier work while applying the advisory cleanup that fit the
+current component contracts: Figure 109.1 is explicitly a hypothetical example, the unused
+`Compare` import is removed, and the Shelved Nearby lead names the relationship to each of
+its three linked books. The shared footer component does not accept per-link relationship
+copy, so this chapter-level lead supplies it without changing unrelated shared UI.

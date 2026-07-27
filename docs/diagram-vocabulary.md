@@ -51,7 +51,8 @@ Directed left-to-right (or top-down) stages, non-cyclic. For processes with a st
 ### 7. Annotated curve
 A plotted line making a conceptual (not data-precise) point, with annotations on regions.
 - Use for: the flow channel (challenge vs. skill), the forgetting curve, compounding/exponential growth, the hype cycle, diminishing returns.
-- Component: `<Curve shape="exp|log|s|u|bell|peak|decay|channel" annotations={[...]} axes={{x,y}} />`
+- Component: `<Curve shape="exp|log|s|u|bell|peak|decay|channel|crossover" annotations={[...]} axes={{x,y}} />`
+- Variant: `crossover` draws a falling recurring-expense line and a rising independent-income line, with their intersection named. Use it when the threshold where one quantity covers another is the idea.
 - These are illustrative. Label axes conceptually; never present as reproduced data from the book.
 
 ### 8. Comparison / split

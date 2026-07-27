@@ -1,7 +1,7 @@
 import { C, MONO, SANS, type DiagramBase } from "./_util";
 import { Svg } from "./_shared";
 
-export type CurveShape = "exp" | "log" | "s" | "u" | "bell" | "peak" | "decay" | "channel";
+export type CurveShape = "exp" | "log" | "s" | "u" | "bell" | "peak" | "decay" | "channel" | "crossover";
 
 export interface CurveAnnotation {
   /** Position along the plot, each 0 to 1. */
@@ -18,7 +18,7 @@ export interface CurveProps extends DiagramBase {
   annotations?: CurveAnnotation[];
 }
 
-const value = (shape: Exclude<CurveShape, "channel">, t: number): number => {
+const value = (shape: Exclude<CurveShape, "channel" | "crossover">, t: number): number => {
   switch (shape) {
     case "exp":
       return (Math.exp(3 * t) - 1) / (Math.exp(3) - 1);
@@ -46,7 +46,8 @@ const value = (shape: Exclude<CurveShape, "channel">, t: number): number => {
 /**
  * A plotted line making a conceptual (not data-precise) point, with region
  * annotations: compounding growth, diminishing returns, an adoption S-curve, the
- * flow channel. Axes are labeled conceptually and never present reproduced data.
+ * flow channel, or a crossover between two conceptual series. Axes are labeled
+ * conceptually and never present reproduced data.
  */
 export function Curve({ shape, axes, annotations = [], ariaLabel, className }: CurveProps) {
   const x0 = 46;
@@ -91,6 +92,69 @@ export function Curve({ shape, axes, annotations = [], ariaLabel, className }: C
           >
             flow
           </text>
+        </>
+      ) : shape === "crossover" ? (
+        <>
+          {/* Two conceptual series meet when independent income covers recurring expenses. */}
+          <path
+            data-curve-series="independent-income"
+            d={Array.from({ length: 49 }, (_, i) => {
+              const t = i / 48;
+              const income = 0.06 + 0.82 * t * t;
+              return `${i === 0 ? "M" : "L"}${px(t).toFixed(1)},${py(income).toFixed(1)}`;
+            }).join(" ")}
+            stroke={C.accent}
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            data-curve-series="recurring-expenses"
+            d={Array.from({ length: 49 }, (_, i) => {
+              const t = i / 48;
+              const expenses = 0.72 - 0.36 * t;
+              return `${i === 0 ? "M" : "L"}${px(t).toFixed(1)},${py(expenses).toFixed(1)}`;
+            }).join(" ")}
+            stroke={C.muted}
+            strokeWidth="2"
+            strokeDasharray="5 4"
+            strokeLinecap="round"
+          />
+          {(() => {
+            const crossoverT = (-0.36 + Math.sqrt(0.36 * 0.36 + 4 * 0.82 * 0.66)) / (2 * 0.82);
+            const crossoverValue = 0.72 - 0.36 * crossoverT;
+            const crossoverX = px(crossoverT);
+            const crossoverY = py(crossoverValue);
+            return (
+              <g>
+                <line
+                  data-crossover-guide="true"
+                  x1={crossoverX}
+                  y1={crossoverY}
+                  x2={crossoverX}
+                  y2={y1}
+                  stroke={C.accent}
+                  strokeWidth="1"
+                  strokeDasharray="3 3"
+                  opacity="0.7"
+                />
+                <circle data-crossover-point="true" cx={crossoverX} cy={crossoverY} r="4.5" fill={C.accent} />
+                <text x={crossoverX + 8} y={crossoverY - 8} fontFamily={MONO} fontSize="10" fill={C.accent}>
+                  crossover
+                </text>
+              </g>
+            );
+          })()}
+          <g aria-hidden="true">
+            <line x1={x0} y1="15" x2={x0 + 18} y2="15" stroke={C.accent} strokeWidth="2.4" />
+            <text x={x0 + 24} y="19" fontFamily={MONO} fontSize="9.5" fill={C.accent}>
+              independent income
+            </text>
+            <line x1="194" y1="15" x2="212" y2="15" stroke={C.muted} strokeWidth="2" strokeDasharray="5 4" />
+            <text x="218" y="19" fontFamily={MONO} fontSize="9.5" fill={C.muted}>
+              recurring expenses
+            </text>
+          </g>
         </>
       ) : (
         <path
