@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -54,3 +54,40 @@ Resolved all required findings:
 
 The related chapters remain unchanged, the registry stays `draft`, and no chapter was marked
 done.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+1. The Hero reading-time badge is not computed from the final rendered page. A
+   direct server render contains 1,655 reader-visible words, including the Hero,
+   headings, captions, diagram labels, exercise titles, and generated footer text.
+   At the authoring spec's approximately 200 words per minute, rounded up, this is a
+   nine-minute distillation, not `minutes={8}`. Set the badge from the rendered count.
+
+### Advisory
+
+1. The three required findings from round 1 remain resolved. Figure 115.4 now
+   progresses toward the deadline, Figure 115.5 consistently sorts initial exposure
+   against reversibility, and the outbound link is a direct bookseller product page.
+
+2. Figure 115.2 still gives the singular `first familiar answer` and `one supported
+   bet` different bar lengths even though the bars otherwise encode candidate
+   quantity. Equal endpoints, or labels that define another magnitude, would make
+   the narrowing sequence more precise. This remains the round 1 advisory.
+
+3. The four related slugs resolve to done chapters, but the footer still presents
+   cover tiles without the one-clause relationship notes requested by the
+   cross-linking guidance. This remains advisory because the links are valid and the
+   missing cues do not misstate the chapter.
+
+4. Within the recorded evidence, the chapter's claims about questioning defaults,
+   generating alternatives, informed-peer review, bounded incubation, and genuine
+   dissent are supported and carefully qualified. The risk and consent guidance is
+   explicitly identified as the chapter's ethical synthesis. No new external web
+   search was begun for this review.
+
+5. `npm run check` passed on 2026-07-27: queue, registry, critique, and content
+   validation; prose lint; all 42 pipeline tests; all 245 Vitest tests; TypeScript
+   and the Vite production build; and ESLint. Vitest emitted only the existing
+   non-failing jsdom `Window.scrollTo()` notices.
