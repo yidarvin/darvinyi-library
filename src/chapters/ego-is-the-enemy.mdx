@@ -1,0 +1,175 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="ego-is-the-enemy"
+  thesis="Ambition, achievement, and setbacks all go better when the work matters more than the story you tell about yourself."
+  minutes={6}
+/>
+
+## The thesis
+
+Holiday treats ego as an inflated concern with one's own importance, not as healthy
+confidence. It turns ambition into a performance, success into a reason to stop listening,
+and failure into an insult to identity. The counterdiscipline is humility: stay teachable,
+put the task ahead of recognition, and let facts rather than self-image decide the next move.
+
+## Why it matters
+
+The danger is rarely a dramatic declaration of superiority. It is the quieter habit of
+confusing attention with progress, a title with ability, or a setback with a verdict on
+who you are. That confusion wastes the three moments when a person most needs clear sight:
+before they have earned competence, after they have gained some, and after things have gone
+wrong. The page's question is practical: what behavior keeps the work in view when the self
+wants center stage?
+
+## Learn before you need to be impressive
+
+Early ambition can make a person eager to look advanced before they have done enough
+beginner work. The cost is not modesty for its own sake. If protecting an image becomes the
+job, asking basic questions, taking criticism, and doing unglamorous repetitions all feel
+like threats. A learner can admit the gap and close it. A performer has to defend the gap,
+which leaves less room to improve.
+
+<Figure id="94.1" caption="Learning compounds when the task, not the appearance of mastery, gets the attention.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "protect the image",
+      points: ["talk before testing", "avoid basic questions", "treat feedback as a slight", "choose visible work"],
+    }}
+    right={{
+      title: "serve the work",
+      points: ["test before claiming", "ask what is missing", "use feedback as data", "do the needed work"],
+    }}
+  />
+</Figure>
+
+## Aim at contribution, not applause
+
+Recognition is not useless. A good reputation can open a door, secure resources, or help a
+good idea travel. Trouble begins when recognition becomes the measure of whether the work is
+worth doing. Then every decision bends toward the visible move: the announcement before the
+draft, the credit before the contribution, the audience before the result. Purpose gives a
+better filter. It asks what the project needs, who it is for, and what remains unfinished.
+
+<Figure id="94.2" caption="Applause is the visible tip; useful work depends on commitments that draw much less notice.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="attention and status"
+    waterlineLabel="what is easy to see"
+    below={["craft", "service", "long-term purpose"]}
+  />
+</Figure>
+
+## Treat success as a new job
+
+A win changes the conditions. More people defer to you, praise gets easier to find, and the
+old habits that produced the result can start to feel beneath you. That is the moment to add
+friction to self-congratulation, not to abandon standards. Keep people nearby who can name a
+weak argument. Return to the work that earned trust. Let a result raise the responsibility
+rather than inflate the identity attached to it.
+
+<Figure id="94.3" caption="A result can begin a maintenance cycle, or a story that cuts off the feedback needed for the next result.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["result", "renew standards", "seek clear feedback", "improve the work"]}
+    compoundingEdge={3}
+    centerLabel="earned trust"
+  />
+</Figure>
+
+## Separate the event from the self
+
+Failure supplies information, but ego often changes the subject. A rejection becomes proof
+that the world is unfair, an error becomes evidence that you are hopeless, and a lost
+opportunity becomes a wound to defend. Each response makes the lesson harder to see.
+Resilience begins with a plainer description: this attempt did not work. Name what happened,
+find the part you control, and make a smaller next attempt. The point is not to deny pain.
+It is to keep pain from writing an identity statement.
+
+<Figure id="94.4" caption="A setback becomes useful when facts lead to a revision instead of a verdict about the person involved.">
+  <Flow
+    className="block w-full min-w-[440px]"
+    steps={["setback", "name the facts", "adjust one move", "try again"]}
+    highlight={2}
+  />
+</Figure>
+
+## Keep an internal scorecard
+
+External signals arrive late, unevenly, and sometimes for reasons unrelated to the quality
+of the work. A private scorecard makes a steadier guide. It can ask whether you prepared,
+acted honestly, learned from evidence, helped the team, and finished the next useful piece.
+These are not consolation prizes for losing. They are controllable standards, which makes
+them more reliable than praise when deciding what to do tomorrow.
+
+<Figure id="94.5" caption="A private scorecard shifts judgment from public reaction toward controllable conduct.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="public reaction"
+    right="controllable conduct"
+    marker={0.78}
+    markerLabel="daily review"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.0, to: 0.34, label: "attention", accent: false },
+      { from: 0.62, to: 1.0, label: "effort, honesty, learning", accent: true },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose the apprentice move">
+Before a meeting, rehearsal, or difficult task, write down one thing you do not yet know.
+Ask the question that would answer it, even if asking makes you look less polished. Record
+the answer in the same place you keep the work, not in a story about having asked.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Move the announcement after the evidence">
+For one project this week, delay the public update until there is a draft, a test, or a
+useful result to show. Notice which decisions become easier when no one is watching yet.
+Then share the work with enough context for someone else to improve it.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Run a post-win review">
+Within two days of good news, write three lines: what actually produced this result, what
+could still break, and whose feedback you need next. Turn one answer into a calendar action.
+The review converts celebration into preparation.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Describe the setback without a verdict">
+When an attempt fails, write a version with no labels for yourself or anyone else. Include
+only the aim, the observable result, and one variable to change. Make the next attempt small
+enough to schedule within a week.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Humility is not self-erasure, passivity, or a refusal to claim credit for work you did. The
+book's use of ego is a moral and practical description of self-importance, not a clinical
+theory of personality. Its historical examples can sharpen judgment, but they do not prove a
+simple rule that every success comes from humility or every failure from pride. Keep the
+useful test close to the ground: does a belief about yourself make you less able to learn,
+contribute, or recover?
+</Callout>
+
+## If you remember one thing
+
+Keep your identity small enough to let the work correct you. Humility is not thinking less
+of yourself. It is giving the task, the facts, and the next useful action more authority than
+the need to appear exceptional.
+
+Before exploring the books below, this page belongs beside *The Obstacle Is the Way* on
+turning difficulty into a response, *Mindset* on learning from feedback, and *The Daily
+Stoic* on practicing a steadier judgment.
+
+<ShelvedNearby
+  related={["obstacle-is-the-way", "mindset", "daily-stoic"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/318016/ego-is-the-enemy-by-ryan-holiday/9781591847816/"
+  buyLabel="Ego Is the Enemy by Ryan Holiday"
+/>
