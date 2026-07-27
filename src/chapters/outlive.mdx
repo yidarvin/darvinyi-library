@@ -1,0 +1,230 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Curve, Flow, NodeGraph, Venn } from "../components/diagrams";
+
+<Hero
+  slug="outlive"
+  thesis="A longer life is only a win if it preserves the ability to use it. Start reducing major risks and building physical capacity long before illness makes the choice urgent."
+  minutes={7}
+/>
+
+## The thesis
+
+Attia asks medicine to care about the quality of the extra years, not merely their count. His
+case is for an earlier, more personal form of prevention: identify meaningful risks before they
+become a diagnosis, build a body that can keep doing ordinary work, and adjust the plan as new
+information arrives. The aim is not immortality. It is to widen the portion of life in which you
+remain capable, connected, and able to choose.
+
+## Why it matters
+
+Modern care is exceptionally good at responding to an emergency. The difficulty is that many
+long-running conditions do their early work quietly. By the time a problem announces itself,
+some options may be narrower and some capacity may already be gone. That makes prevention less
+like a one-time checkup and more like maintaining a machine whose future failures are expensive.
+
+## Key ideas
+
+### Lifespan is a count; healthspan is the part you can use
+
+Living longer and living well can overlap, but they are not the same goal. A person can add years
+while losing the ability to walk far, lift a bag, think clearly, sleep well, or participate in the
+people and work they care about. Healthspan gives the ambition a more demanding test: would the
+extra time still feel like yours? It shifts attention from the date at the end of life to the
+capacity available before it.
+
+<Figure id="103.1" caption="A longer life and a more capable life overlap, but neither guarantees the other.">
+  <Compare
+    className="block w-full min-w-[380px]"
+    favor="right"
+    left={{
+      title: "lifespan",
+      points: ["how long life lasts", "a count of years", "can rise without preserving function", "ends at death"],
+    }}
+    right={{
+      title: "healthspan",
+      points: ["how well life can be used", "capacity and independence", "depends on daily function", "can be protected earlier"],
+    }}
+  />
+</Figure>
+
+### The useful moment to act often arrives before the symptom
+
+Risk is not fate, and it rarely moves in a clean line. Still, many harmful processes have a long
+quiet phase before they become an acute event or a disabling diagnosis. Attia's provocation is to
+take that quiet phase seriously. The point is neither to scan everything nor to panic at every
+number. It is to ask which risks are credible for this person, what would change a decision, and
+when it makes sense to look again.
+
+<Figure id="103.2" caption="Prevention tries to move useful attention into the long interval before a visible crisis.">
+  <Curve
+    className="block w-full min-w-[380px]"
+    shape="exp"
+    axes={{ x: "time", y: "burden or risk" }}
+    annotations={[
+      { x: 0.27, y: 0.13, text: "risk can be quiet" },
+      { x: 0.57, y: 0.3, text: "attention can change course" },
+      { x: 0.9, y: 0.8, text: "symptom or event" },
+    ]}
+  />
+</Figure>
+
+### A few chronic fronts deserve sustained attention
+
+The book groups much of late-life illness into cardiovascular disease, cancer, neurodegenerative
+disease, and metabolic disease. These are not a complete map of human suffering, and one person
+can face other urgent risks. The grouping is useful because the fronts are not isolated. Blood
+pressure, movement, smoking, sleep, family history, care access, and metabolic health can matter
+across more than one of them. A good plan looks for connections without pretending that one habit
+solves every problem.
+
+<Figure id="103.3" caption="The four fronts are distinct, yet shared risks and care choices can connect them.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "heart", label: "cardiovascular", x: 0.5, y: 0.1 },
+      { id: "cancer", label: "cancer", x: 0.86, y: 0.5 },
+      { id: "brain", label: "neurodegeneration", x: 0.5, y: 0.9 },
+      { id: "metabolic", label: "metabolic disease", x: 0.14, y: 0.5 },
+      { id: "risk", label: "shared risks", x: 0.5, y: 0.5 },
+    ]}
+    edges={[
+      { from: "risk", to: "heart", label: "informs", labelOffset: { x: -32, y: 0 } },
+      { from: "risk", to: "cancer", label: "informs", labelOffset: { x: 24, y: 0 } },
+      { from: "risk", to: "brain", label: "informs", labelOffset: { x: 28, y: 0 } },
+      { from: "risk", to: "metabolic", label: "informs", labelOffset: { x: -24, y: 0 } },
+    ]}
+  />
+</Figure>
+
+### Exercise is a reserve of options
+
+Attia gives exercise unusual weight because it is both a direct practice and a way to hold onto
+future choices. Endurance helps with sustained effort. Strength helps with force and everyday
+loads. Stability helps make movement reliable under changing conditions. None is a magic shield,
+and fitness measures in long-term studies are associations rather than a personal forecast. But a
+larger reserve can make an illness, a fall, a move, or a demanding trip less likely to turn into a
+loss of independence.
+
+<Figure id="103.4" caption="Endurance, strength, and stability overlap as a practical reserve for daily life.">
+  <Venn
+    className="block w-full min-w-[380px]"
+    sets={[
+      { label: "endurance" },
+      { label: "strength" },
+      { label: "stability" },
+    ]}
+    intersectionLabel="usable capacity"
+  />
+</Figure>
+
+### Start with a future task, then train backward
+
+Abstract goals make it hard to know what to practice. A more concrete question is, "What would I
+like an ordinary day to ask of me later?" Carrying groceries, getting up from the floor, traveling
+with a friend, and playing on the ground with a child all imply particular kinds of capacity.
+Choose a few that matter, name the abilities behind them, practice a manageable version now, and
+revisit the target as life changes. The method makes training a preparation for a life, not a
+contest with a spreadsheet.
+
+<Figure id="103.5" caption="A future activity can be translated into a present practice and checked again over time.">
+  <Flow
+    className="block w-full min-w-[380px]"
+    steps={["future activity", "needed capacity", "present practice", "review and adjust"]}
+    highlight={1}
+  />
+</Figure>
+
+## The Model
+
+Medicine 3.0 is Attia's name for a shift in posture. Medicine 2.0 waits for evidence of disease,
+then applies a proven treatment. Medicine 3.0 tries to make earlier, individualized choices under
+uncertainty: it combines family history, current measures, preferences, and changing evidence to
+reduce risk before disease is obvious. The contrast is a useful prompt, not a replacement for
+ordinary care. Good acute care and prevention are partners, and prevention still needs a reasoned
+case for each test, treatment, and tradeoff.
+
+<Figure id="103.6" caption="Medicine 3.0 adds earlier risk reduction and regular revision to the strengths of treatment after diagnosis.">
+  <div className="min-w-[380px] space-y-6">
+    <Compare
+      className="block w-full"
+      favor="right"
+      left={{
+        title: "Medicine 2.0",
+        points: ["symptom or diagnosis", "established treatment", "acute rescue", "measure response"],
+      }}
+      right={{
+        title: "Medicine 3.0",
+        points: ["estimate personal risk", "act before symptoms", "weigh uncertainty", "revise as evidence changes"],
+      }}
+    />
+    <Flow
+      className="block w-full"
+      steps={["notice risk", "choose a response", "measure again", "adjust"]}
+      highlight={1}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write a small future-capacity list">
+Choose three activities you would like to keep doing in later decades. Make them concrete enough
+to picture: carry a suitcase upstairs, take a long walk with a friend, get down to the floor and
+back up. For each one, name the likely demands, such as endurance, leg strength, grip, balance, or
+confidence. This is a direction for practice, not a fitness test.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Build the weekly floor before chasing the ceiling">
+If activity is safe for you, begin with a weekly movement routine you can repeat, then add both
+aerobic and muscle-strengthening work gradually. Public-health guidance gives adults a broad
+baseline, but the useful starting dose depends on health, injury history, medication, disability,
+and current activity. Ask a qualified clinician or exercise professional for a starting plan when
+those factors make the choice unclear.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Prepare a prevention conversation">
+Bring family history, current medications, past test results, symptoms, and the questions you
+actually care about to a routine visit. Ask which evidence-based preventive services apply to you,
+what benefit and harm each one carries, and what result would change the next decision. A longer
+test list is not automatically a better plan.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Treat emotional health as part of the plan">
+Put one durable support on the calendar: a difficult conversation, time with someone trustworthy,
+therapy, a support group, or a clinical visit. The model is too narrow if it tracks blood markers
+and ignores isolation, stress, addiction, grief, or depression. Seek urgent help for thoughts of
+self-harm or danger to others.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Medicine 3.0 is a framing device, not a validated protocol. Earlier testing can find actionable
+risk, but it can also create false alarms, incidental findings, expense, and treatment cascades.
+Preventive recommendations apply differently by age, sex, family history, symptoms, and baseline
+risk, so a personalized plan needs shared decision-making with a qualified clinician. The book's
+interest in longevity therapies can also outpace evidence. A 2025 review concluded that human data
+do not yet establish rapamycin as a proven treatment to delay aging in healthy older adults. Do
+not use this page to self-prescribe drugs, supplements, scans, fasting regimens, or extreme
+training.
+</Callout>
+
+## If you remember one thing
+
+Aim to arrive in later life with choices. Protect healthspan by building capacity, taking credible
+risks seriously before they become urgent, and revising the plan with evidence and the clinicians
+who know your situation.
+
+## Shelved nearby
+
+Why We Sleep treats sleep as one condition that can shape both present function and long-term
+health. Breath is a narrower reminder that a basic bodily process deserves attention without
+turning into a cure-all. Atomic Habits helps make the small, repeated practices in a long plan
+easier to keep.
+
+<ShelvedNearby
+  related={["why-we-sleep", "breath", "atomic-habits"]}
+  buyUrl="https://peterattiamd.com/outlive/"
+  buyLabel="Outlive by Peter Attia"
+/>
