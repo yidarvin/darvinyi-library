@@ -1,0 +1,220 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Iceberg, NodeGraph, ProcessLoop, Venn } from "../components/diagrams";
+
+<Hero
+  slug="fifth-discipline"
+  thesis="An organization learns when people can improve their own judgment, examine their assumptions together, and see the feedback patterns their separate decisions create."
+  minutes={8}
+/>
+
+## The thesis
+
+Senge treats organizational learning as a capability, not a training calendar or a store of
+documents. It is the repeated ability to notice what a group is producing, revise how it
+thinks, and act differently together. Personal mastery, mental models, shared vision, and
+team learning make that possible. Systems thinking binds them because a group cannot learn
+from a problem it keeps mistaking for a simple, isolated event.
+
+## Why it matters
+
+Most organizations are built to divide work into functions, targets, and reporting lines.
+That division can make local responsibility clear while hiding the consequences that travel
+between teams and arrive later. A sales push can overload delivery. A cost cut can remove the
+time needed to prevent defects. Each decision can look sensible in its own meeting, even as
+the combined system produces a result nobody intended. The book asks a harder question than
+who made the error: what recurring pattern made the error likely?
+
+## Key ideas
+
+### Events have a history below the surface
+
+An event is loud and easy to discuss: a deadline slips, a customer leaves, a service fails.
+It is also the least useful level at which to stop. Repeated events usually reflect patterns,
+and patterns reflect structures such as incentives, handoffs, information gaps, and delayed
+consequences. Looking below the incident changes the conversation from assigning blame to
+changing conditions. It also makes a proposed fix more testable. If the structure is real,
+the same pattern should weaken when that structure changes.
+
+<Figure id="90.1" caption="A visible incident can be the surface expression of patterns and structures below it.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="a missed delivery"
+    waterlineLabel="what the incident reveals"
+    below={["recurring rushes", "handoffs without feedback", "targets that reward speed alone"]}
+  />
+</Figure>
+
+### Feedback, not one-way causes, shapes results
+
+In a complex setting, an action changes the conditions for the next action. A team under
+pressure may skip review to ship faster. Defects then rise, support work expands, and the team
+has even less time to review. The original push becomes part of a reinforcing loop. Other
+loops balance: a hiring freeze may lower costs, but overload and turnover eventually force a
+new round of hiring. The value of a loop sketch is not its visual polish. It makes a causal
+story explicit enough for people to challenge, improve, and use.
+
+<Figure id="90.2" caption="Skipping review can create the very pressure that makes review feel impossible.">
+  <NodeGraph
+    className="block w-full min-w-[400px]"
+    nodes={[
+      { id: "pressure", label: "delivery pressure", x: 0.5, y: 0.08 },
+      { id: "review", label: "review time", x: 0.9, y: 0.47 },
+      { id: "defects", label: "defects", x: 0.7, y: 0.9 },
+      { id: "support", label: "support load", x: 0.12, y: 0.76 },
+      { id: "capacity", label: "available capacity", x: 0.1, y: 0.28 },
+    ]}
+    edges={[
+      { from: "pressure", to: "review", kind: "balancing", label: "−" },
+      { from: "review", to: "defects", kind: "balancing", label: "−" },
+      { from: "defects", to: "support", kind: "reinforcing", label: "+" },
+      { from: "support", to: "capacity", kind: "balancing", label: "−" },
+      { from: "capacity", to: "pressure", kind: "balancing", label: "−" },
+    ]}
+  />
+</Figure>
+
+### Assumptions need a place in the room
+
+Every decision rests on a model of how the situation works, usually held as common sense
+rather than named as an assumption. That is useful until the model filters out disconfirming
+evidence or becomes too risky to question. The discipline is to surface the inference: what
+did we observe, what meaning did we assign to it, and what action follows? Separating those
+steps does not eliminate judgment. It gives colleagues something concrete to inspect instead
+of forcing them to either accept the conclusion or attack the person who reached it.
+
+<Figure id="90.3" caption="A stated conclusion can be examined when observations and assumptions are kept distinct.">
+  <Compare
+    className="block w-full min-w-[400px]"
+    favor="right"
+    left={{
+      title: "hidden model",
+      points: ["a result is treated as self-explanatory", "assumptions stay private", "disagreement sounds personal"],
+    }}
+    right={{
+      title: "examined model",
+      points: ["observations are named", "inferences can be tested", "the next action can change"],
+    }}
+  />
+</Figure>
+
+### Shared vision is chosen, not merely announced
+
+A slogan can synchronize language without creating commitment. A shared vision does more: it
+gives separate people a picture of a future they recognize as worth building, and a reason to
+coordinate when the immediate tradeoff is difficult. It must still meet personal aims rather
+than erase them. When people can connect their own standards of craft, service, or growth to a
+common direction, initiative becomes less dependent on supervision. The aim is alignment that
+retains judgment, not uniformity that suppresses it.
+
+<Figure id="90.4" caption="A common direction gains force when it overlaps with people’s lived commitments.">
+  <Venn
+    className="block w-full min-w-[380px]"
+    sets={[{ label: "personal standards" }, { label: "shared direction" }]}
+    intersectionLabel="chosen contribution"
+  />
+</Figure>
+
+### Teams learn by making reasoning mutual
+
+A capable group can still be poor at learning when members defend their positions, withhold
+doubt, and call the resulting quiet agreement. Productive dialogue asks people to state the
+reasoning behind a view, listen for the logic behind another view, and revise the group’s map
+when new evidence arrives. This is not a demand for endless consensus. A team can decide under
+uncertainty while making clear what it believes, what it does not know, and what signal would
+cause it to reconsider.
+
+<Figure id="90.5" caption="Team learning turns a decision into a cycle of explanation, testing, and adjustment.">
+  <ProcessLoop
+    className="block w-full min-w-[400px]"
+    stages={["state the reasoning", "hear other views", "test the shared map", "coordinate a next move"]}
+    compoundingEdge={3}
+    centerLabel="team learning"
+  />
+</Figure>
+
+## The Model
+
+The learning organization is not a department and it is not a finished organizational design.
+It is a set of connected practices. People work on their own capability and purpose. They make
+their mental models discussable. They build a direction worth coordinating around, and learn
+how to think together. Systems thinking connects those practices to the patterns they jointly
+produce, so learning is measured in changed conditions and better action, not better meeting
+language.
+
+<Figure id="90.6" caption="Five connected practices help a group notice, revise, and act on the system it inhabits.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "mastery", label: "personal mastery", x: 0.5, y: 0.07 },
+      { id: "models", label: "mental models", x: 0.92, y: 0.36 },
+      { id: "vision", label: "shared vision", x: 0.76, y: 0.89 },
+      { id: "team", label: "team learning", x: 0.24, y: 0.89 },
+      { id: "systems", label: "systems thinking", x: 0.08, y: 0.36 },
+    ]}
+    edges={[
+      { from: "mastery", to: "models", kind: "reinforcing" },
+      { from: "models", to: "vision", kind: "reinforcing" },
+      { from: "vision", to: "team", kind: "reinforcing" },
+      { from: "team", to: "systems", kind: "reinforcing" },
+      { from: "systems", to: "mastery", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Map one recurring problem">
+Pick a problem that has appeared at least three times. Write the visible event, the pattern
+across the previous cases, and three conditions that may be generating it. Ask one colleague
+from another part of the work to add a missing handoff, incentive, or delay. Keep the sketch
+small enough to use in the next planning conversation.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Separate what you saw from what you inferred">
+Before a consequential decision, make two short columns. In the first, record observations that
+another person could check. In the second, record the interpretation you are adding. Circle one
+interpretation to test before acting. This creates a productive opening for disagreement.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Run a learning review, not a status review">
+At the end of a project week, ask: what result surprised us, what assumption did it challenge,
+and what will we change in the next cycle? Give the meeting one concrete decision to revisit
+next time. The point is to update the work, not to perform reflection.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make the shared direction usable">
+Ask each person on a team to finish one sentence: the future we are trying to create is worth
+the tradeoff because ____. Compare the answers. Where they differ, do not smooth them over.
+Use the differences to clarify what the team is actually promising one another.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Systems thinking is not a claim that every issue has one hidden root cause, or that a sketch of
+arrows substitutes for evidence. A map is a hypothesis about relationships and delays. It has
+to be checked against data, lived experience, and the people affected by the system. The
+learning-organization ideal can also become a management demand for permanent self-improvement.
+People need time, safety to disagree, and real authority to change conditions. Without those,
+requests for learning can become another way to place responsibility on individuals for a
+system they cannot alter.
+</Callout>
+
+## If you remember one thing
+
+When a problem repeats, do not begin by finding the person to correct. Make the pattern and the
+assumptions behind it visible, then let the group change the conditions that keep producing it.
+
+## Shelved nearby
+
+[Thinking in Systems](/thinking-in-systems) offers a more general guide to feedback, delays,
+and intervention in complex systems. [The Lean Startup](/lean-startup) gives a practical
+experiment loop for turning a revised assumption into evidence. [Antifragile](/antifragile)
+asks how to keep experimentation survivable when the wider system is uncertain.
+
+<ShelvedNearby
+  related={["thinking-in-systems", "lean-startup", "antifragile"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/163984/the-fifth-discipline-by-peter-m-senge/"
+  buyLabel="The Fifth Discipline by Peter M. Senge"
+/>
