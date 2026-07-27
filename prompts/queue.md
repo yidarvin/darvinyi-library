@@ -114,7 +114,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 097 | make-it-stick                   | Make It Stick                                 | DONE    |
 | 098 | ultralearning                   | Ultralearning                                 | DONE    |
 | 099 | bird-by-bird                    | Bird by Bird                                  | DONE    |
-| 100 | war-of-art                      | The War of Art                                | PENDING |
+| 100 | war-of-art                      | The War of Art                                | DONE    |
 | 101 | artists-way                     | The Artist's Way                              | PENDING |
 | 102 | breath                          | Breath                                        | PENDING |
 | 103 | outlive                         | Outlive                                       | PENDING |

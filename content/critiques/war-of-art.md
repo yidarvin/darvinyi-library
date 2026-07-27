@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -40,3 +40,19 @@ verdict: resolved
 - Recomputed the Hero badge from the critique's recorded final rendered visible-word
   count of 1,267. At approximately 200 words per minute, rounded up, the chapter now
   shows a 7-minute distillation.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+None. The Figure 100.2 marker label now uses the separate top baseline and remains
+clear of the right pole label. The Hero now shows seven minutes, which is the
+required rounded-up reading time for the recorded 1,267 visible words. The full
+re-review found no other blocking defect in sourcing, anatomy, diagram meaning or
+geometry, imports, registry data, route, outbound link, or related-book statuses.
+`npm run check` passes in full.
+
+### Advisory
+
+No new advisory findings. The per-title cross-link relationship note from round 1
+remains advisory and is not reopened.
