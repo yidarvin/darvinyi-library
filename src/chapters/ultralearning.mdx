@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, NodeGraph, ProcessLoop, Pyramid, Timeline } from "../components/diagrams";
+import { Compare, Curve, Flow, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
 
 <Hero
   slug="ultralearning"
@@ -90,13 +90,9 @@ After the weak link improves, put it back into the complete task and see whether
 real conditions. This alternation keeps practice both precise and relevant.
 
 <Figure id="98.3" caption="A narrow drill supports a whole performance when it targets one visible bottleneck.">
-  <Pyramid
+  <Flow
     className="block w-full min-w-[440px]"
-    tiers={[
-      { label: "whole performance", note: "the intended use" },
-      { label: "integrated subskills", note: "the parts working together" },
-      { label: "one limiting component", note: "the next drill" },
-    ]}
+    steps={["perform the whole task", "find the bottleneck", "drill one component", "reintegrate and test"]}
     highlight={2}
   />
 </Figure>
@@ -155,6 +151,33 @@ need enough structure to persist and enough flexibility to stop repeating an unh
       { label: "later use", sub: "test under real conditions" },
     ]}
     highlight={2}
+  />
+</Figure>
+
+## Protect attention long enough to notice patterns
+
+Focus is not simply a willingness to work for many hours. It is the ability to keep attention
+on one demanding problem long enough for its details to become available for comparison.
+Notifications, frequent task switches, and a constantly changing exercise can leave a learner
+busy while preventing that comparison. Give a session one clear target, remove the most likely
+interruptions, and stay with the attempt long enough to see what repeats.
+
+That sustained contact helps build intuition. Intuition here is not a private hunch or a
+substitute for checking work. It is a quicker sense of which feature matters, which pattern is
+familiar, or which next move deserves testing, built from many focused encounters with examples,
+retrieval, and correction. Early work may need explicit rules and slow explanations. With
+repeated, checked use, those rules become easier to recognize inside a live problem.
+
+<Figure id="98.7" caption="Focused, checked encounters gradually turn explicit rules into usable pattern recognition.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="s"
+    axes={{ x: "focused, checked encounters", y: "usable pattern recognition" }}
+    annotations={[
+      { x: 0.16, y: 0.02, text: "explicit rules", labelPosition: "above" },
+      { x: 0.56, y: 0.66, text: "patterns connect", labelPosition: "above" },
+      { x: 0.88, y: 0.98, text: "faster judgment", labelPosition: "below" },
+    ]}
   />
 </Figure>
 

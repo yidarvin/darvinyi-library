@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -11,3 +11,16 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-27
+
+Resolved required finding 1 by replacing Figure 98.3's inverted pyramid with a directed
+four-stage flow: whole performance, bottleneck identification, a drill on the limiting
+component, and reintegration with a test. The visual now makes the drill's return to the whole
+task explicit.
+
+Resolved required finding 2 by adding a seventh key idea, "Protect attention long enough to
+notice patterns," with Figure 98.7, an annotated conceptual curve. Its prose accounts for focus
+as sustained attention on a demanding target and intuition as checked pattern recognition built
+through focused encounters, retrieval, and feedback. The registry now records seven key ideas
+and the added annotated-curve diagram.

@@ -1941,14 +1941,15 @@
       "status": "draft",
       "tier": 2,
       "thesis": "Hard skills move faster when a self-directed project aims at real performance, exposes its weak links, and keeps changing its method in response to evidence.",
-      "framework": "No single signature model; the chapter organizes six complementary project-design moves as key ideas.",
+      "framework": "No single signature model; the chapter organizes seven complementary project-design moves as key ideas.",
       "diagrams": [
         "node graph",
         "comparison",
-        "pyramid",
+        "flow",
         "flow",
         "process loop",
-        "timeline"
+        "timeline",
+        "annotated curve"
       ]
     },
     {
