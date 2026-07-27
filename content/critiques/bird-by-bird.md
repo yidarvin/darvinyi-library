@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -37,3 +37,22 @@ pressure, and meaning. The updated caption states that direction explicitly. Upd
 chapter's registry diagram list to replace `iceberg` with `comparison`. The existing prose,
 evidence record, and all prior critique history remain intact. `npm run check` passed on
 2026-07-27.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+None. The resolved Figure 99.3 now encodes the same direction as the prose: concrete
+evidence is placed on the page, and the reader infers feeling, pressure, and meaning from
+it. The replacement uses the registered comparison form, its caption matches its labels,
+and the registry diagram list agrees with the chapter.
+
+The remaining claims are consistent with the chapter brief and recorded primary-source
+evidence. The required anatomy, five key-idea figures, signature model, concrete exercises,
+generated hero, outbound publisher link, imports, route, and built related links are
+present and internally consistent. `npm run check` passed in full on 2026-07-27.
+
+### Advisory
+
+No new advisory findings. The optional cross-link-label improvement from round 1 remains
+advisory and does not block approval.
