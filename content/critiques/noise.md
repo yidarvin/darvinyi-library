@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -46,3 +46,23 @@ verdict: resolved
 - Completed the Noise registry record with its tier, thesis, deliberate absence of
   a Model section, and the five diagram forms used by the chapter.
 - Verified the targeted diagram and chapter test. Full `npm run check` passes.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+1. Figure 106.4 is not legible at the required 360px phone width. The four supplied
+   steps at `src/chapters/noise.mdx:107-112` make `Flow` calculate a 558-unit-wide
+   viewBox (`src/components/diagrams/Flow.tsx:21-27`), but the chapter passes
+   `className="block w-full"` and `Svg` applies that class directly
+   (`src/components/diagrams/_shared.tsx:28-33`). The SVG therefore compresses to
+   the figure's content width instead of using the horizontal overflow wrapper. Even
+   before accounting for the figure's 40px horizontal padding, the 11.5-unit step
+   labels render below 7.5px in a 360px viewport; inside the padded figure they are
+   smaller still. Make this four-step figure readable at 360px, either by giving the
+   flow a real scrollable minimum width or by using a mobile layout that preserves
+   legible label size, and add regression coverage for the sizing behavior.
+
+### Advisory
+
+- None.
