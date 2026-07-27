@@ -1,0 +1,258 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Iceberg, Matrix, NodeGraph, Spectrum, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="48-laws-of-power"
+  thesis="Power is shaped by perception, incentives, dependence, and timing. Seeing those forces clearly helps you act with more agency and makes manipulation easier to recognize."
+  minutes={8}
+/>
+
+## The thesis
+
+Greene treats power as a recurring social problem rather than a private virtue. Across
+courts, companies, armies, and friendships, people compete for status, access, safety, and
+control. His laws turn those contests into a field guide: study what people need, what they
+fear losing, what story surrounds them, and when a situation is ready to move. The useful
+lesson is clear sight. Once the pattern is visible, you can choose a response instead of
+being steered by someone else’s script.
+
+## Why it matters
+
+Many costly workplace conflicts arrive disguised as something smaller: a disagreement over
+credit, an oddly urgent request, a flattering invitation with no clear terms, or a decision
+made before the meeting begins. The visible exchange is often only the surface. A power lens
+asks what incentives, dependencies, and reputational stakes sit underneath it. That question
+can make you harder to surprise. It should also make you slower to treat another person as a
+piece to move.
+
+## Read the room beneath the request
+
+People rarely announce the full reason for a move. A manager may ask for speed because a
+deadline is real, because a rival team is gaining ground, or because their own standing is on
+the line. The same request calls for a different response in each case. Greene’s habit of
+looking behind the official explanation is valuable when it means gathering context before
+you commit.
+
+This is observation, not mind reading. Test your guess against what people do, who has a
+voice, what resources are scarce, and what would change if the request failed. Ask direct
+questions when the relationship permits it. The goal is a more accurate map of the situation,
+not a clever story about hidden motives.
+
+<Figure id="114.1" caption="The request is visible; incentives, stakes, and dependencies often shape what sits below it.">
+  <Iceberg
+    className="block w-full min-w-[400px]"
+    above="the stated request"
+    below={["incentives", "status at stake", "dependencies"]}
+    waterlineLabel="what the room says aloud"
+    ariaLabel="An iceberg shows a stated request above the waterline and incentives, status at stake, and dependencies below it."
+  />
+</Figure>
+
+## Reputation is a reserve, not a costume
+
+A reputation changes how people interpret incomplete information. If colleagues have seen
+you keep commitments, share credit, and admit uncertainty early, a short message can carry
+weight. If they expect surprises or self-serving spin, the same message may be read as a
+tactic. Greene emphasizes the strategic value of public image. The more durable version is
+to make the image answer to a record.
+
+That calls for ordinary maintenance. Make ownership visible without claiming work that is
+not yours. Correct the facts before a false account becomes familiar. Keep promises narrow
+enough to honor. When you make a mistake, name it and state the repair. A protected
+reputation is not a polished mask. It is a stock of evidence other people can draw on when
+they decide whether to trust you.
+
+<Figure id="114.2" caption="A credible public standing rests on repeated evidence, not a single impressive performance.">
+  <Bars
+    className="block w-full min-w-[400px]"
+    items={[
+      { label: "one dramatic claim", value: 0.24 },
+      { label: "visible ownership", value: 0.53 },
+      { label: "kept commitments", value: 0.74, accent: true },
+      { label: "repaired mistakes", value: 0.68, accent: true },
+    ]}
+    ariaLabel="Conceptual bars show that visible ownership, kept commitments, and repaired mistakes create a more credible standing than one dramatic claim."
+  />
+</Figure>
+
+## Dependence sets the terms of a choice
+
+Power grows when one side cannot easily proceed without the other. The book often presents
+that fact as a reason to make people dependent. In real work, it is just as useful as a
+warning label. If only one vendor knows the system, if only one colleague holds the client
+relationship, or if your next move depends on a single person’s approval, the arrangement is
+fragile for everyone in it.
+
+The constructive response is to build options. Learn enough to understand the bottleneck.
+Document the work. Maintain more than one relationship. Develop skills that travel. Options
+do not remove the need for cooperation. They make cooperation more voluntary, and they make
+it easier to say no when the terms become unreasonable.
+
+<Figure id="114.3" caption="More routes to people, knowledge, and alternatives reduce the force of any one bottleneck.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    ariaLabel="A network connects a person to knowledge, collaborators, alternatives, and a decision, showing how multiple routes reduce a single bottleneck."
+    nodes={[
+      { id: "you", label: "your next move", x: 0.08, y: 0.5 },
+      { id: "knowledge", label: "shared knowledge", x: 0.45, y: 0.1 },
+      { id: "people", label: "trusted peers", x: 0.45, y: 0.52 },
+      { id: "options", label: "credible options", x: 0.45, y: 0.9 },
+      { id: "choice", label: "a freer choice", x: 0.92, y: 0.5 },
+    ]}
+    edges={[
+      { from: "you", to: "knowledge" },
+      { from: "you", to: "people" },
+      { from: "you", to: "options" },
+      { from: "knowledge", to: "choice", kind: "reinforcing" },
+      { from: "people", to: "choice", kind: "reinforcing" },
+      { from: "options", to: "choice", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Timing changes the meaning of the same move
+
+An idea can be sound and still fail because the setting is not ready for it. A proposal made
+while the decision maker is defending a prior choice can sound like an attack. The same
+proposal, raised after new evidence has appeared and a private conversation has prepared the
+ground, may be heard as help. Greene repeatedly treats patience and preparation as strategic
+assets.
+
+Patience is not passivity. It means doing the work that makes a later request easier to
+receive: collecting facts, finding allies, clarifying the cost of delay, and noticing when a
+real opening has appeared. Then act plainly. Waiting forever turns timing into avoidance;
+forcing a move before the conditions exist turns conviction into noise.
+
+<Figure id="114.4" caption="Preparation makes a window easier to recognize, then a clear commitment turns the opening into action.">
+  <Timeline
+    className="block w-full min-w-[540px]"
+    segments={[
+      { label: "observe", sub: "notice the conditions" },
+      { label: "prepare", sub: "gather facts and support" },
+      { label: "opening", sub: "the context shifts" },
+      { label: "commit", sub: "make the move clearly" },
+    ]}
+    highlight={2}
+    ariaLabel="A timeline runs from observing conditions to preparation, an opening, and clear commitment."
+  />
+</Figure>
+
+## Composure keeps choices available
+
+Provocation narrows the field. When someone is trying to rush, flatter, embarrass, or anger
+you, an immediate reaction can give them the tempo and the terms. Greene prizes emotional
+control because a person who can pause is harder to steer. The ethical use of that insight is
+simple: regain enough distance to decide what serves the work and the relationship.
+
+The pause can be brief. Name what you need to know. Ask for time. Write the terms down. Move
+the conversation to a calmer setting. Composure is not coldness, and it does not require
+hiding a real feeling. It creates a gap between feeling and action, which is where judgment
+has room to operate.
+
+<Figure id="114.5" caption="A pause moves a response away from reflex and toward a deliberate choice.">
+  <Spectrum
+    className="block w-full min-w-[400px]"
+    left="instant reaction"
+    right="deliberate response"
+    marker={0.67}
+    markerLabel="pause and assess"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
+    zones={[
+      { from: 0.0, to: 0.35, label: "someone else sets the tempo" },
+      { from: 0.55, to: 1.0, label: "choose the next move", accent: true },
+    ]}
+    ariaLabel="A spectrum moves from instant reaction to deliberate response, with a pause and assessment creating room to choose the next move."
+  />
+</Figure>
+
+## Influence lasts when the other person can still choose
+
+The sharpest edge of the book is its willingness to treat people as instruments. That can
+produce a short-term win, especially where fear, scarcity, or hierarchy already does much of
+the work. It also creates a debt: people who feel used remember the cost, limit what they
+share, and look for an exit. A better test of influence is whether the other person can see
+the terms, refuse them, and still be treated with respect.
+
+This does not mean every decision requires unanimous enthusiasm. Leaders must sometimes set
+direction, negotiate firmly, or say no. The distinction is between making a case that another
+person can evaluate and arranging the situation so they cannot meaningfully choose. Durable
+power comes from competence, contribution, and consent, with clear boundaries around the
+moments when authority is necessary.
+
+<Figure id="114.6" caption="Visible terms and room to refuse support durable influence; concealed pressure produces a brittle win.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "concealed terms", right: "visible terms", label: "how the influence works" }}
+    yAxis={{ low: "little room to refuse", high: "real room to choose", label: "the other person's agency" }}
+    quadrants={[
+      { title: "informed agreement", note: "a durable basis for cooperation" },
+      { title: "clear and voluntary", note: "the strongest foundation" },
+      { title: "coerced compliance", note: "a brittle win" },
+      { title: "open pressure", note: "authority needs limits" },
+    ]}
+    highlight={1}
+    ariaLabel="A matrix contrasts concealed and visible terms with little and real room to refuse, highlighting clear and voluntary cooperation."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Map one live power dynamic">
+Choose a negotiation, stalled project, or relationship that matters this month. In a private
+note, separate the stated issue from the likely stakes: resources, status, access, risk, and
+time. Mark what you know, what you are guessing, and the one question that could test your
+guess. Bring that question to the next conversation instead of arriving with an accusation.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Replace one bottleneck with two routes">
+Find one point where your work depends on a single person, tool, or piece of private knowledge.
+Add a second path this week: document the process, introduce another collaborator, learn the
+basic task, or identify an alternative. The aim is resilience, not an excuse to treat people
+as disposable.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Put the terms on the page">
+Before accepting an important request, write five lines: the decision, the owner, the
+deadline, the resources, and what success would look like. Send the summary back for
+confirmation. Clear terms protect your reputation and make hidden assumptions easier to
+surface while there is still time to change them.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Use a pause before the next charged reply">
+When a message provokes an immediate response, wait long enough to name the decision you are
+actually making. Read the message once for facts, once for stakes, then draft a reply that
+states your boundary or question without guessing at motives. If the issue is consequential,
+move it to a conversation where tone and terms can be checked together.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The criticism is plain: this book presents deception, intimidation, exploitation of weakness,
+and domination as usable strategies. Penguin Random House’s own description calls it
+“amoral, cunning, ruthless” and says its laws share an interest in total domination. That is
+not a harmless stylistic flourish. Treating people as targets can damage trust, conceal harm,
+and normalize coercion, particularly where authority and resources are already unequal.
+Greene has described the book as a way to see power clearly, including for self-defense, but
+description does not settle endorsement. Read it as a map of tactics that may be operating
+around you. Keep ethical guardrails separate and explicit: informed consent, honest terms,
+fair dealing, accountability, and a real ability to refuse.
+</Callout>
+
+## If you remember one thing
+
+Power becomes less mysterious when you can see the incentives, stories, dependencies, and
+timing around a decision. Use that clarity to protect your agency and build credible,
+consent-respecting influence, not to turn other people into tools.
+
+Influence explains the psychological shortcuts that can make a request persuasive, Getting to
+Yes offers a principled alternative for negotiation, and Difficult Conversations helps keep a
+hard exchange from collapsing into blame.
+
+<ShelvedNearby
+  related={["influence", "getting-to-yes", "difficult-conversations"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/330912/the-48-laws-of-power-by-robert-greene/9781101042458/"
+  buyLabel="The 48 Laws of Power by Robert Greene"
+/>
