@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -67,3 +67,13 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-27
+
+- Recast the impact-bias heading and explanation around the supported error: forecasts
+  can overestimate a reaction's intensity, duration, or both. Removed the claim that
+  people characteristically forecast an unchanged or permanent reaction.
+- Rewrote the range-and-fade exercise so a single moment no longer becomes a
+  “permanent future”; it now asks whether the feeling may dominate for longer than it
+  will. Also softened the nearby “setback look permanent” wording for the same
+  calibration.
