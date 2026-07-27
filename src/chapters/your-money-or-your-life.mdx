@@ -1,0 +1,227 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Curve, Flow, Matrix, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="your-money-or-your-life"
+  thesis="Money records a trade of life energy. See the trade clearly, direct it toward what matters, and build enough margin to choose your time more freely."
+  minutes={9}
+/>
+
+## The thesis
+
+Robin and Dominguez ask a question that changes the unit of a money decision. A dollar is
+not merely a number in an account. It represents time, attention, commuting, recovery, and
+effort exchanged to earn it. Once spending is translated back into that cost, the useful
+question becomes whether a purchase gave enough life back. The goal is neither austerity nor
+an impressive income. It is an honest relationship between resources, values, and the days
+you have available.
+
+## Why it matters
+
+Most financial systems sort money into income, bills, debt, and investments. That is useful,
+but incomplete. It can leave a person earning more while feeling less able to choose a job,
+care for family, or take part in a community. This book makes the missing tradeoff visible.
+It treats personal finance as a way to recover agency over time, rather than as a contest to
+make the largest possible number.
+
+## Your paycheck is not your real hourly wage
+
+The wage on an offer letter is a starting estimate, not necessarily the amount that reaches
+your life. Work can require a commute, clothing, meals, professional costs, and time spent
+preparing or recovering. Those costs are not identical for everyone, and some are worthwhile.
+The point is to count them before treating gross pay as the price of an hour.
+
+Subtract the work-specific spending from take-home pay. Then include the hours that the job
+actually claims beyond the formal schedule. The result is a personal estimate, not a moral
+verdict on a job. It gives a concrete conversion rate for later choices: this price is also
+some amount of time and effort.
+
+<Figure id="109.1" caption="The number on a payslip can overstate what an hour of work leaves available for life.">
+  <Bars
+    className="block w-full"
+    items={[
+      { label: "listed pay", value: 0.9, valueLabel: "starting figure" },
+      { label: "after job costs", value: 0.66, valueLabel: "money that remains" },
+      { label: "real hourly wage", value: 0.48, accent: true, valueLabel: "after related time too" },
+    ]}
+  />
+</Figure>
+
+## Attention turns a money trail into evidence
+
+Memory is a poor ledger. A person can feel frugal while small recurring charges quietly set
+the shape of a month, or feel irresponsible while a clear record shows ordinary necessities
+and a manageable problem. The proposed practice is simple: record income and outgo, group
+the spending by category, and revisit the pattern each month. The aim is observation before
+correction.
+
+That sequence matters. A budget imposed from the outside can turn every purchase into a
+small trial. A record built from actual behavior shows what the household is already doing.
+From there, savings, debt reduction, a change in work, or a new expense can be discussed
+using facts rather than fog.
+
+<Figure id="109.2" caption="A regular record turns scattered transactions into a pattern that can be examined.">
+  <Flow
+    className="block w-full"
+    steps={["record each flow", "group the month", "translate to hours", "notice the pattern"]}
+    highlight={3}
+  />
+</Figure>
+
+## Fulfillment is the test, not deprivation
+
+The book does not ask every category to shrink. It asks whether the value received feels
+proportionate to the life energy spent, whether the expense fits the life you want, and how
+it might change if paid work were less necessary. Those questions can justify spending more
+on something that genuinely supports health, relationships, craft, or joy. They can also
+expose a purchase that has become automatic.
+
+This is a useful distinction because low cost and high value are separate dimensions. The
+right move is rarely a universal rule such as "cut restaurants" or "never buy new." It is a
+repeated judgment about fit. Over time, the pattern can reveal which costs deserve protection
+and which ones are carrying more habit or status than satisfaction.
+
+<Figure id="109.3" caption="The strongest candidates are expenses that fit your values and return real value for their cost.">
+  <Matrix
+    className="block w-full"
+    xAxis={{ left: "low fulfillment", right: "high fulfillment", label: "value received" }}
+    yAxis={{ low: "weak fit", high: "strong fit", label: "fit with values" }}
+    quadrants={[
+      { title: "review", note: "values say no" },
+      { title: "protect", note: "a good use of resources" },
+      { title: "automatic", note: "neither reward nor fit" },
+      { title: "question", note: "pleasant, but misaligned" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Enough makes a stopping point possible
+
+Without an idea of enough, every raise can become a reason to raise spending, and every
+comparison can produce a new target. The book treats enough as a personally chosen level of
+needs, comforts, and pleasures that support a satisfying life without turning every desire
+into an obligation. It is not a claim that everyone starts with adequate income or faces the
+same costs. It is a way to decide when more consumption stops improving the life it was meant
+to serve.
+
+Enough is therefore a boundary, not a fixed lifestyle template. It may change with children,
+health, location, caregiving, or work. Naming it still helps. It separates the question
+"Can I afford this?" from the harder one, "Is this a good trade for the time it took to earn
+it?"
+
+<Figure id="109.4" caption="Enough is a chosen point between unmet needs and an endless escalation of wants.">
+  <Spectrum
+    className="block w-full"
+    left="unmet needs"
+    right="more by default"
+    marker={0.58}
+    markerLabel="enough for this life"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.0, to: 0.34, label: "security first" },
+      { from: 0.46, to: 0.7, label: "sufficient and deliberate", accent: true },
+      { from: 0.78, to: 1.0, label: "comparison can take over" },
+    ]}
+  />
+</Figure>
+
+## The gap between income and spending becomes choice
+
+When income remains above spending, the gap can be used for debt repayment, a reserve, or
+long-term investment. The book calls attention to the crossover: the point at which income
+from accumulated capital can cover ordinary expenses. The deeper idea is not a date on a
+calendar. It is that lower recurring needs and a growing pool of assets reduce the amount of
+paid work required to keep life running.
+
+The curve is conceptual because real lives are not smooth. Markets fall, rates change,
+expenses jump, and income can be irregular. Still, tracking the two directions is clarifying.
+Each durable reduction in unnecessary expense and each increase in savings can widen room to
+choose, even long before it replaces a salary.
+
+<Figure id="109.5" caption="As recurring expenses fall and independent income grows, more of the calendar becomes negotiable.">
+  <Curve
+    className="block w-full"
+    shape="exp"
+    axes={{ x: "consistent saving and time", y: "income from accumulated assets" }}
+    annotations={[
+      { x: 0.26, y: 0.06, text: "small early gap" },
+      { x: 0.72, y: 0.43, text: "more room to choose" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+Money becomes useful information when it is converted in both directions. First, start with
+the real cost of earning it: net income divided by the time and money a job requires. Then
+convert a proposed expense into the hours behind it. Finally, ask whether the exchange
+supports the life you are trying to build. This does not make the answer mechanical. It makes
+the trade visible before habit, advertising, or panic makes it for you.
+
+The model links personal awareness to financial independence. Spending with intention can
+lower the resources needed for a good life. The resulting surplus can build a buffer and
+income beyond employment. The purpose of that buffer is not withdrawal from contribution. It
+is more freedom to choose work, rest, care, and service on terms that make sense.
+
+<Figure id="109.6" caption="Money is translated back into life energy before it is committed to the next choice.">
+  <Flow
+    className="block w-full"
+    steps={["earn income", "find real hourly wage", "price in life energy", "choose by fulfillment"]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Calculate one honest workweek">
+Take a typical week of take-home pay. List the costs that would disappear without this job,
+then list the additional hours it asks of you, such as travel, preparation, and recovery.
+Divide the adjusted pay by the adjusted hours. Keep the result as a working estimate, and
+update it when the job or your responsibilities change.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Keep a thirty-day money record">
+For one month, record every incoming and outgoing amount without trying to improve it. At
+month end, create categories that describe your actual life. Convert one or two recurring
+categories into hours using your estimate. The goal is an accurate map, not a performance.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Review one category with three questions">
+Choose a category with enough activity to be meaningful. Ask what value it returned, whether
+it fits your values, and what might change if paid work were optional. Decide on one small
+experiment for next month: preserve it, reduce it, or spend differently within it.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Define a first freedom target">
+Name a concrete form of margin, such as paying off high-interest debt, building a starter
+reserve, or funding a month between jobs. Calculate the monthly gap available after essentials
+and direct a chosen portion to that target. Review it after any change in income, housing,
+health, or caregiving.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Life energy is a powerful lens, but it is not a complete measure of a life. Low wages, unsafe
+work, disability, caregiving, debt terms, discrimination, and local housing costs can sharply
+limit the choices available to a household. The model should never be used to blame someone
+for constraints they did not create. Its investment guidance also requires updating: the
+authors' own revised edition adds modern material on index funds and other income streams, and
+no historical interest-rate formula can promise a safe withdrawal amount today. Use the
+tracking practices to clarify tradeoffs, then seek regulated, personal advice for decisions
+with material financial consequences.
+</Callout>
+
+## If you remember one thing
+
+Treat a dollar as a claim on your finite time. When earning, spending, and saving are measured
+against the life you want, money can become a tool for greater freedom rather than a demand for
+more of your life.
+
+<ShelvedNearby
+  related={["psychology-of-money", "common-sense-investing", "four-thousand-weeks"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/303637/your-money-or-your-life-by-vicki-robin-and-joe-dominguez-foreword-by-mr-money-mustache/"
+  buyLabel="Your Money or Your Life by Vicki Robin and Joe Dominguez"
+/>
