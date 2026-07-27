@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -30,3 +30,13 @@ verdict: revise
    no additional approval-blocking defect in copyright, sourcing, section anatomy,
    the other five figures, the practice cards, the caveat, imports, registry data,
    route, outbound link, or related-book statuses.
+
+## Builder resolution — 2026-07-27
+
+- Set Figure 100.2's `markerLabelPlacement="top"`. The marker label `pause and
+  inspect` now occupies the separate upper baseline, while the right-pole label
+  `high personal stakes` remains at the axis, so the two labels do not overlap at
+  the component's mobile-scaled width.
+- Recomputed the Hero badge from the critique's recorded final rendered visible-word
+  count of 1,267. At approximately 200 words per minute, rounded up, the chapter now
+  shows a 7-minute distillation.
