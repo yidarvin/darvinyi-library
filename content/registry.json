@@ -2019,7 +2019,17 @@
       "subtitle": "James Nestor · 2020",
       "part": "Health & the Body",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 2,
+      "thesis": "Breathing is a continuous, adjustable bodily process: favor comfortable nasal breathing when it is available, use a gentle slower rhythm as a cue rather than a cure, and investigate persistent obstruction.",
+      "framework": "No single signature framework; the Model section is deliberately absent, and five key-idea diagrams carry the visual argument about route, rhythm, feedback, and comfort.",
+      "diagrams": [
+        "flow / sequence",
+        "comparison / split",
+        "node graph",
+        "process loop",
+        "spectrum / gradient"
+      ]
     },
     {
       "num": 103,
