@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -51,3 +51,13 @@ None.
 
 The registry and Breath brief now carry the same narrower framing. Chapter status remains draft;
 no done mark, commit, or push was made.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+None.
+
+### Advisory
+
+None.
