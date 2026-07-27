@@ -5,7 +5,7 @@ import { MemoryRouter } from "react-router";
 import { MDXProvider } from "@mdx-js/react";
 import { mdxComponents } from "../components/mdxComponents";
 import { AppRoutes } from "../App";
-import { NodeGraph } from "../components/diagrams";
+import { CoreContext, NodeGraph } from "../components/diagrams";
 import { registry } from "../lib/registry";
 
 // Every MDX module on disk, regardless of registry status. The chapter being built
@@ -125,5 +125,31 @@ describe("NodeGraph", () => {
     );
 
     expect(container.querySelector("line")?.getAttribute("marker-end")).toBeNull();
+  });
+});
+
+describe("CoreContext", () => {
+  it("lays out four peer core items inside the core rather than as a hierarchy", () => {
+    const { container } = render(
+      <CoreContext
+        coreTitle="four standards"
+        coreItems={["judgment", "restraint", "courage", "fairness"]}
+        contextItems={["conditions"]}
+      />,
+    );
+
+    const cards = Array.from(container.querySelectorAll<SVGRectElement>("[data-core-item]"));
+    expect(cards).toHaveLength(4);
+    expect(new Set(cards.map((card) => card.getAttribute("y"))).size).toBe(2);
+    for (const card of cards) {
+      const x = Number(card.getAttribute("x"));
+      const y = Number(card.getAttribute("y"));
+      const width = Number(card.getAttribute("width"));
+      const height = Number(card.getAttribute("height"));
+      expect(x).toBeGreaterThanOrEqual(74);
+      expect(x + width).toBeLessThanOrEqual(366);
+      expect(y).toBeGreaterThanOrEqual(72);
+      expect(y + height).toBeLessThanOrEqual(216);
+    }
   });
 });

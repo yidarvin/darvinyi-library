@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -62,3 +62,21 @@ verdict: revise
    critique, and content validation; prose lint; all pipeline tests; all 188 Vitest
    tests; TypeScript and Vite production build; and ESLint passed. Vitest emitted
    only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+1. Replaced Figure 91.2's concentric-circle encoding with the in-vocabulary
+   `Compare` form. Its accented "available choices" panel now lists preparation,
+   judgment, speech, and the next act together, while its peer panel lists other
+   people, the past, chance, and results as conditions to meet. The revised
+   caption states the same full boundary.
+
+2. Replaced Figure 91.4's `Pyramid` with `CoreContext`, so clear judgment,
+   restraint, courage, and fairness appear as four peer standards inside changing
+   conditions rather than as a ranked structure. Extended `CoreContext` with a
+   bounded two-by-two layout for four or more core items and added a regression
+   test that verifies the four peer cards remain within the core.
+
+3. Preserved the prior chapter prose, evidence posture, caveats, linked books, and
+   all other diagrams. `npm run test -- src/test/chapters.test.tsx` passed before
+   the full gate, and `npm run check` completed with `CHECK OK` afterward.

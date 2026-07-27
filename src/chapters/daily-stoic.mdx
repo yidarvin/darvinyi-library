@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Concentric, Flow, NodeGraph, ProcessLoop, Pyramid } from "../components/diagrams";
+import { Compare, CoreContext, Flow, NodeGraph, ProcessLoop } from "../components/diagrams";
 
 <Hero
   slug="daily-stoic"
@@ -59,16 +59,18 @@ care, protest, negotiation, or help. The distinction simply prevents a person fr
 whole day wrestling an outcome that is no longer theirs to decide. It asks what portion of the
 situation can still be met faithfully.
 
-<Figure id="91.2" caption="Conditions shape the day, while judgment and chosen conduct remain the nearest field of action.">
-  <Concentric
+<Figure id="91.2" caption="Conditions shape the day, while preparation, judgment, speech, and the next act remain available choices.">
+  <Compare
     className="block w-full min-w-[380px]"
-    rings={[
-      { label: "judgment" },
-      { label: "preparation and conduct" },
-      { label: "the result" },
-    ]}
-    externalLabel="conditions: chance, other people, the past"
-    highlight={0}
+    favor="left"
+    left={{
+      title: "available choices",
+      points: ["preparation", "judgment", "speech", "the next act"],
+    }}
+    right={{
+      title: "conditions to meet",
+      points: ["other people", "the past", "chance", "results"],
+    }}
   />
 </Figure>
 
@@ -105,15 +107,13 @@ go badly and still be conducted honestly. A loss can hurt and still be met witho
 project can succeed without becoming an excuse for vanity. The standard does not erase results;
 it prevents results from being the only thing that counts.
 
-<Figure id="91.4" caption="Circumstances change around a day; chosen qualities provide a steadier basis for action.">
-  <Pyramid
-    className="block w-full min-w-[380px]"
-    tiers={[
-      { label: "clear judgment", note: "see the situation plainly" },
-      { label: "self-command", note: "do not let impulse take the wheel" },
-      { label: "courage and fairness", note: "act well with and for others" },
-    ]}
-    highlight={2}
+<Figure id="91.4" caption="Changing conditions surround four parallel qualities that can guide a chosen response.">
+  <CoreContext
+    className="block w-full min-w-[440px]"
+    coreTitle="qualities to bring"
+    coreItems={["clear judgment", "restraint", "courage", "fairness"]}
+    contextTitle="changing conditions"
+    contextItems={["other people", "the past", "chance", "the result"]}
   />
 </Figure>
 

@@ -26,34 +26,47 @@ export function CoreContext({
   className,
 }: CoreContextProps) {
   const itemCount = Math.max(coreItems.length, 1);
-  const itemW = Math.min(132, Math.max(94, (270 - (itemCount - 1) * 12) / itemCount));
-  const itemsStart = 220 - (itemCount * itemW + (itemCount - 1) * 12) / 2;
+  const grid = itemCount > 3;
+  const gridColumns = 2;
+  const gridRows = grid ? Math.ceil(itemCount / gridColumns) : 1;
+  const itemW = grid
+    ? 122
+    : Math.min(132, Math.max(94, (270 - (itemCount - 1) * 12) / itemCount));
+  const itemH = grid ? 44 : 58;
+  const itemGapY = grid ? 10 : 0;
+  const itemsStart = grid ? 92 : 220 - (itemCount * itemW + (itemCount - 1) * 12) / 2;
+  const coreHeight = grid ? 48 + gridRows * itemH + (gridRows - 1) * itemGapY + 16 : 130;
+  const coreBottom = 72 + coreHeight;
+  const diagramHeight = grid ? coreBottom + 54 : 264;
 
   return (
     <Svg
-      viewBox="0 0 440 264"
+      viewBox={`0 0 440 ${diagramHeight}`}
       ariaLabel={
         ariaLabel ??
         `${coreTitle} contains the parallel elements ${coreItems.join(", ")}. Outside it, ${contextTitle} includes ${contextItems.join(", ")}.`
       }
       className={className}
     >
-      <rect x="18" y="18" width="404" height="228" rx="12" fill={C.surface} stroke={C.border} />
+      <rect x="18" y="18" width="404" height={diagramHeight - 36} rx="12" fill={C.surface} stroke={C.border} />
       <text x="38" y="47" fontFamily={MONO} fontSize="11" fill={C.comment}>
         {`// ${contextTitle}`}
       </text>
 
-      <rect x="74" y="72" width="292" height="130" rx="10" fill={C.surface2} stroke={C.accent} strokeOpacity="0.7" strokeWidth="1.5" />
+      <rect x="74" y="72" width="292" height={coreHeight} rx="10" fill={C.surface2} stroke={C.accent} strokeOpacity="0.7" strokeWidth="1.5" />
       <text x="220" y="99" textAnchor="middle" fontFamily={MONO} fontSize="12" fontWeight="600" fill={C.accent}>
         {coreTitle}
       </text>
 
       {coreItems.map((item, i) => {
-        const x = itemsStart + i * (itemW + 12);
+        const col = grid ? i % gridColumns : i;
+        const row = grid ? Math.floor(i / gridColumns) : 0;
+        const x = itemsStart + col * (itemW + 12);
+        const y = grid ? 118 + row * (itemH + itemGapY) : 120;
         return (
           <g key={item}>
-            <rect x={x} y="120" width={itemW} height="58" rx="7" fill={C.surface} stroke={C.border} />
-            <CenteredText x={x + itemW / 2} y={149} lines={wrapLabel(item, 16)} fill={C.fg} size={11.5} font={MONO} />
+            <rect data-core-item="true" x={x} y={y} width={itemW} height={itemH} rx="7" fill={C.surface} stroke={C.border} />
+            <CenteredText x={x + itemW / 2} y={y + itemH / 2} lines={wrapLabel(item, 16)} fill={C.fg} size={11.5} font={MONO} />
           </g>
         );
       })}
@@ -62,8 +75,8 @@ export function CoreContext({
         const positions = [
           { x: 46, y: 64 },
           { x: 272, y: 64 },
-          { x: 46, y: 228 },
-          { x: 272, y: 228 },
+          { x: 46, y: diagramHeight - 36 },
+          { x: 272, y: diagramHeight - 36 },
         ];
         const position = positions[i % positions.length];
         return (
