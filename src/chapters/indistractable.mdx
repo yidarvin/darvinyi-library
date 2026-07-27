@@ -1,0 +1,208 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="indistractable"
+  thesis="Attention becomes more reliable when you notice what is pulling at you, reserve time for what matters, and make the unwanted detour harder to take."
+  minutes={7}
+/>
+
+## The thesis
+
+Indistractable argues that distraction is not a property of a phone, an inbox, or any
+one tempting thing. It is the gap between an intention and the action that replaces it.
+The useful response starts before the alert: notice the discomfort or cue that creates
+the urge, decide what deserves time in advance, remove needless invitations to detour,
+and set commitments that can hold when motivation drops.
+
+## Why it matters
+
+Most attention advice starts with the visible culprit. Close the tab, silence the
+notification, buy a more restrictive tool. Those moves can help, but they leave a
+question unanswered: what made the interruption appealing at that particular moment?
+When an uncomfortable task, a moment of uncertainty, or an unplanned hour is doing the
+pulling, the same pattern can simply find a different outlet. This book treats attention
+as a design problem with an emotional starting point.
+
+## Name the detour by the plan it displaced
+
+A message from a friend can be connection, a game can be rest, and a scroll through a
+feed can be harmless entertainment. The activity alone does not decide its meaning. The
+question is whether it was the action you meant to take in that slice of time. A planned
+break is part of the day. An automatic break that replaces the work, conversation, or
+rest you chose is a detour.
+
+That distinction removes a lot of empty moralizing. The goal is not permanent
+seriousness, nor a ban on technology. It is the ability to spend time deliberately,
+including on pleasure. A calendar creates the reference point that a bare to-do list
+often lacks: it tells you what a competing action is competing with.
+
+<Figure id="108.1" caption="The same activity can be restoration or a detour, depending on the intention it replaced.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    left={{
+      title: "chosen action",
+      points: ["fits a planned block", "can include rest or play", "moves with an intention"],
+    }}
+    right={{
+      title: "automatic detour",
+      points: ["arrives without a decision", "replaces the chosen block", "relieves the moment, then costs time"],
+    }}
+    favor="left"
+  />
+</Figure>
+
+## Look below the visible habit
+
+The action you can see is usually the least interesting part of a distraction. Opening
+the news, checking messages, or polishing a small task may be the surface response to
+boredom, self-doubt, fatigue, loneliness, or the resistance of beginning. The book calls
+these inner prompts internal triggers. They do not make an unwanted action inevitable,
+but they explain why deleting one app rarely solves the whole problem.
+
+The practical skill is a short pause with an honest label. Instead of saying, "I have no
+discipline," ask what sensation arrived just before the urge. Describe it plainly, stay
+with it for a moment, and give the planned task a smaller next move. Curiosity turns a
+vague impulse into something you can answer. Self-contempt usually adds another feeling
+that needs escape.
+
+<Figure id="108.2" caption="The visible click is often a quick answer to discomfort that is harder to name.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the visible detour"
+    waterlineLabel="what is easy to notice"
+    below={["boredom or strain", "fear of beginning", "uncertainty", "a wish for quick relief"]}
+  />
+</Figure>
+
+## Put values on the calendar
+
+An intention has much more leverage when it has an address in time. Rather than treating
+the calendar as a record of meetings and the task list as a record of everything else,
+the book recommends reserving blocks for the work, relationships, maintenance, and rest
+that express your values. A block is a promise about a portion of time, not a prediction
+that every hour will go perfectly.
+
+This also makes room for the things people wrongly call distractions by default. Reading
+for fun, a show, social media, or a walk can all belong if they have a chosen place. What
+matters is that the day is not left as unclaimed space for the loudest request to occupy.
+Review the plan after a week, then revise its shape to match actual constraints and the
+life you are trying to live.
+
+<Figure id="108.3" caption="A timeboxed day gives work, care, rest, and connection a claim before interruptions do.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "prepare", sub: "choose the day" },
+      { label: "focused work", sub: "protect a block" },
+      { label: "people and care", sub: "be present" },
+      { label: "rest and review", sub: "adjust tomorrow" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Make external cues earn their place
+
+External triggers are the environmental prompts that announce themselves: alerts,
+badges, open tabs, meeting requests, a coworker at the desk, or a device within reach.
+Some are useful. A reminder to join a meeting can keep a promise; a message from a child
+may deserve an immediate answer. The point is not to erase every cue. It is to decide
+which cues serve the plan and to change the ones that merely interrupt it.
+
+Treat this as maintenance, not a once-and-for-all purge. Turn off alerts that have no
+timely job. Create a visible signal for a focus block. Batch a routine check at a time
+you selected. Ask whether a recurring meeting needs a different format. Each adjustment
+returns a small decision to the moment before attention is captured.
+
+<Figure id="108.4" caption="A cue becomes useful only after it passes through the plan for the current block.">
+  <Flow
+    className="block w-full min-w-[640px]"
+    steps={["a cue arrives", "check the current block", "choose a response"]}
+    highlight={1}
+    branch={{ up: "serve it now", down: "silence or defer" }}
+  />
+</Figure>
+
+## Let a prior promise protect a later self
+
+There are moments when noticing an urge and cleaning up the environment are not enough.
+That is where a pact belongs. It is a decision made while you are clear-headed that changes
+what will be easy, available, or costly later. Leaving the phone outside the room, using a
+site blocker during a planned session, or asking a friend to hold you to a commitment all
+move the choice upstream.
+
+The book describes several kinds of pact. An effort pact adds a little friction. A price
+pact attaches a real cost to abandoning the plan. An identity pact frames follow-through
+as the kind of promise you keep. Use the smallest one that helps. A pact should support a
+choice you actually endorse, not turn ordinary rest into a rule violation.
+
+<Figure id="108.5" caption="Different pacts reinforce one chosen action by changing the future conditions around it.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "plan", label: "keep the chosen block", x: 0.5, y: 0.5 },
+      { id: "effort", label: "effort pact", x: 0.16, y: 0.22 },
+      { id: "price", label: "price pact", x: 0.84, y: 0.22 },
+      { id: "identity", label: "identity pact", x: 0.5, y: 0.86 },
+    ]}
+    edges={[
+      { from: "effort", to: "plan", kind: "reinforcing", label: "friction" },
+      { from: "price", to: "plan", kind: "reinforcing", label: "cost" },
+      { from: "identity", to: "plan", kind: "reinforcing", label: "promise" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Track one recurring detour">
+For three days, write down the moment you notice one repeated distraction. Record what you
+were about to do, the feeling or situation just before it, and what you did instead. Do not
+try to solve the pattern while recording it. Look for the trigger after you have a few
+entries.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Give one value a block">
+Choose one value that keeps receiving leftover time, such as being a dependable teammate,
+moving your body, learning, or calling family. Reserve one realistic block for it this
+week. Write the first action inside the block, then treat the result as information for
+next week's version.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Audit one source of interruption">
+Pick one notification stream, recurring meeting, or open-tab habit. Decide what it is for
+and when it deserves an answer. Remove, defer, batch, or redesign the part that has no
+job. Keep a useful cue if it serves a commitment you made.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Add one proportionate pact">
+For a block that repeatedly slips away, add the least severe barrier that creates a pause:
+leave the device outside the room, schedule a blocker, or tell a collaborator when you
+will be unavailable. Review after a week. The pact is successful if it protects a choice,
+not if it makes the day punitive.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The claim that distraction starts inside you is a useful place to investigate, not a
+verdict that every lapse is personal failure. A noisy home, an understaffed workplace,
+caregiving, illness, and inaccessible systems can make focused time genuinely scarce.
+Attention conditions also vary widely, including for people with ADHD. Use calendars,
+environment changes, and pacts as experiments within the control you have. They are not a
+diagnosis, a treatment plan, or a substitute for changing an unreasonable environment.
+</Callout>
+
+## If you remember one thing
+
+Do not wait for a perfectly disciplined moment. Decide what deserves the next block of
+time, notice the urge to leave it without contempt, and make the unwanted detour less
+available before it arrives.
+
+<ShelvedNearby
+  related={["make-time", "deep-work", "atomic-habits"]}
+  buyUrl="https://www.benbellabooks.com/shop/indistractable/"
+  buyLabel="Indistractable by Nir Eyal"
+/>

@@ -2138,7 +2138,17 @@
       "subtitle": "Nir Eyal · 2019",
       "part": "Habits & Productivity",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Distraction starts inside us; master the internal triggers and the external ones lose their grip.",
+      "framework": "No single signature model; the Model section is deliberately absent because the book's account is expressed through five key-idea diagrams.",
+      "diagrams": [
+        "comparison / split",
+        "iceberg",
+        "timeline / bar",
+        "flow / sequence",
+        "node graph"
+      ]
     },
     {
       "num": 109,
