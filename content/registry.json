@@ -2177,7 +2177,19 @@
       "subtitle": "Ramit Sethi · 2009",
       "part": "Money, Investing & Economics",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Automate a simple system for spending, saving, and investing, then spend guilt-free on what you love.",
+      "framework": "Automated personal finance",
+      "diagrams": [
+        "comparison / split",
+        "pyramid / hierarchy",
+        "process loop",
+        "comparison / split",
+        "annotated curve",
+        "two-by-two matrix",
+        "node graph"
+      ]
     },
     {
       "num": 111,

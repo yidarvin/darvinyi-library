@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -96,3 +96,21 @@ verdict: revise
    lint passed; all 40 runner tests and 233 Vitest tests passed; TypeScript, the Vite
    production build, and ESLint passed. Vitest emitted only the existing non-failing
    jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-27
+
+- Figure 110.1 now uses the registered comparison / split form to contrast small
+  one-off cuts with recurring choices. This removes the undefined numeric spectrum,
+  zones, and colliding marker label while preserving the chapter's priority claim.
+- Figure 110.2 now passes `Pyramid` tiers from fixed costs at the base through
+  savings and debt, then investing, to guilt-free spending at the apex.
+- Figure 110.3 no longer marks the payday-return edge as compounding. Figure 110.7
+  now renders all income transfers as neutral directed routes, without unsupported
+  reinforcing semantics.
+- Figure 110.6 now places costly, low-value spending in the top-left; deliberate
+  funding in the top-right and highlighted target quadrant; small, low-value spending
+  in the bottom-left; and cheap pleasure in the bottom-right, matching the axes.
+- The `i-will-teach-you` draft registry record now includes tier 3, the brief's
+  thesis and automated-personal-finance framework, and the seven rendered diagram
+  forms. Its status remains `draft`.
+- `npm run check` passed on 2026-07-27.

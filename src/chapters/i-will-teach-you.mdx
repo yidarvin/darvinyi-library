@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Curve, Matrix, NodeGraph, ProcessLoop, Pyramid, Spectrum } from "../components/diagrams";
+import { Compare, Curve, Matrix, NodeGraph, ProcessLoop, Pyramid } from "../components/diagrams";
 
 <Hero
   slug="i-will-teach-you"
@@ -38,17 +38,18 @@ commitments that will repeat whether or not you remember them. Ask what can be n
 cancelled, refinanced, shared, or replaced. A small saving made permanent can matter more
 than a heroic month of austerity.
 
-<Figure id="110.1" caption="Put attention where a better recurring choice has room to keep working.">
-  <Spectrum
+<Figure id="110.1" caption="A recurring choice can keep paying off after a one-off cut has finished.">
+  <Compare
     className="block w-full min-w-[440px]"
-    left="many tiny cuts"
-    right="a few recurring choices"
-    marker={0.8}
-    markerLabel="start here"
-    zones={[
-      { from: 0, to: 0.38, label: "easy to notice, limited reach" },
-      { from: 0.6, to: 1, label: "terms, fixed costs, and debt", accent: true },
-    ]}
+    favor="right"
+    left={{
+      title: "small one-off cuts",
+      points: ["easy to notice", "limited reach", "still useful when they help"],
+    }}
+    right={{
+      title: "recurring choices",
+      points: ["rates, terms, and fixed costs", "a better choice repeats", "inspect these first"],
+    }}
   />
 </Figure>
 
@@ -69,10 +70,10 @@ virtuous. It is whether the whole arrangement reflects the life you mean to fund
   <Pyramid
     className="block w-full min-w-[440px]"
     tiers={[
-      { label: "guilt-free spending", note: "what remains is yours to enjoy" },
-      { label: "long-term investing", note: "a claim on future choices" },
-      { label: "savings and debt plan", note: "goals and resilience" },
       { label: "fixed costs", note: "keep the month running" },
+      { label: "savings and debt plan", note: "goals and resilience" },
+      { label: "long-term investing", note: "a claim on future choices" },
+      { label: "guilt-free spending", note: "what remains is yours to enjoy" },
     ]}
   />
 </Figure>
@@ -94,7 +95,6 @@ every day.
   <ProcessLoop
     className="block w-full min-w-[440px]"
     stages={["payday", "scheduled transfers", "bills and goals funded", "remainder available"]}
-    compoundingEdge={3}
     centerLabel="review, then repeat"
   />
 </Figure>
@@ -170,12 +170,12 @@ drop without feeling punished.
     xAxis={{ left: "little value", right: "real value", label: "value to your life" }}
     yAxis={{ low: "low cost", high: "high cost", label: "ongoing cost" }}
     quadrants={[
-      { title: "let it be", note: "small and unimportant" },
-      { title: "enjoy", note: "cheap pleasure is still pleasure" },
       { title: "cut or negotiate", note: "costly and forgettable" },
       { title: "fund deliberately", note: "a meaningful priority" },
+      { title: "let it be", note: "small and unimportant" },
+      { title: "enjoy", note: "cheap pleasure is still pleasure" },
     ]}
-    highlight={3}
+    highlight={1}
   />
 </Figure>
 
@@ -200,8 +200,8 @@ priorities when attention is elsewhere.
     ]}
     edges={[
       { from: "income", to: "bills", label: "pay" },
-      { from: "income", to: "savings", label: "save", kind: "reinforcing" },
-      { from: "income", to: "invest", label: "invest", kind: "reinforcing" },
+      { from: "income", to: "savings", label: "save" },
+      { from: "income", to: "invest", label: "invest" },
       { from: "income", to: "spend", label: "use" },
     ]}
   />
