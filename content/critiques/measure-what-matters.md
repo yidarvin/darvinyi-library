@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -140,3 +140,19 @@ verdict: resolved
   Figure 113.5 classifies committed and aspirational goals, and the registry lists
   all six diagram forms. The chapter status remains `draft`.
 - Ran `npm run check`; the complete gate passes.
+
+## Critique round 5 — 2026-07-27
+
+### Required
+
+1. Figure 113.3's current geometry still leaves two distinct directed links
+   ambiguous. After `NodeGraph` applies its endpoint clearance, the
+   company-direction-to-support segment intersects the product-to-customer segment
+   near SVG coordinate `(126, 162)`. There is no junction at that crossing, so the
+   sparse goal map visually splices commitments that the declared edge list keeps
+   separate. Reposition the nodes so these two clipped segments do not cross, while
+   preserving the earlier fixes that keep every edge clear of the node cards.
+
+### Advisory
+
+- None.
