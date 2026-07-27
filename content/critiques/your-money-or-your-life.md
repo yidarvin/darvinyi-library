@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -120,3 +120,22 @@ without a new external search.
 Preserved the prior fixes: the fulfillment matrix agrees with both axes, the spectrum
 marks only the enough region as the target, and the crossover curve still renders both
 series and their named intersection. `npm run check` passed on 2026-07-27.
+
+## Critique round 3 — 2026-07-27
+
+### Required
+
+None.
+
+### Advisory
+
+None.
+
+The current draft retains every resolved fix from rounds 1 and 2. Its registry record is
+complete, all six figures use the named diagram vocabulary and remain readable through
+chapter-local minimum widths, and the fulfillment matrix, enough spectrum, and crossover
+figure agree with their prose and captions. The recorded first-party evidence supports the
+material claims about life energy, adjusted hourly wage, tracking and monthly review,
+fulfillment, enough, and the capital-expenses crossover. The anatomy, practices, caveat,
+related links, outbound publisher link, and generated cover meet the authoring contract.
+`npm run check` passed on 2026-07-27. No new external search was performed.
