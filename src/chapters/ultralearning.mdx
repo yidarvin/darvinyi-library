@@ -1,0 +1,219 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, ProcessLoop, Pyramid, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="ultralearning"
+  thesis="Hard skills move faster when a self-directed project aims at real performance, exposes its weak links, and keeps changing its method in response to evidence."
+  minutes={8}
+/>
+
+## The thesis
+
+*Ultralearning* treats rapid learning as a design problem, not a test of native talent or
+sheer stamina. Pick a concrete capability, investigate how that capability is actually used,
+and build practice that repeatedly meets its hard parts. The pace comes from refusing activity
+that looks like learning but does not change performance. A learner studies the field, works
+in the conditions that matter, notices what breaks, and revises the next attempt.
+
+## Why it matters
+
+Most ambitious learning projects fail before they become informative. The goal stays vague,
+the material expands without a boundary, and practice happens in a safer setting than the one
+where the skill must eventually work. Young's answer is a project with a destination and a
+feedback path. It can be intense, but intensity is not the point. The point is to spend a
+limited number of hours on work that reveals a useful next move.
+
+## Key ideas
+
+## Begin with a map, not a pile of resources
+
+Before committing to a course, app, or reading list, find out what competent performance is
+made of. Ask practitioners what they do, inspect the tasks a real setting demands, and separate
+facts, concepts, and procedures. That early investigation is meta-learning: learning enough
+about the territory to make a plan for learning the territory. It prevents a common trap,
+where a beginner gives equal time to what is easy to find instead of what the work requires.
+The map is provisional. Its job is to help choose a starting route, then improve as the project
+supplies better evidence.
+
+<Figure id="98.1" caption="A useful project map connects a real performance to the knowledge and actions that support it.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "goal", label: "real performance", x: 0.5, y: 0.48 },
+      { id: "concepts", label: "key concepts", x: 0.17, y: 0.16 },
+      { id: "facts", label: "needed facts", x: 0.83, y: 0.16 },
+      { id: "procedures", label: "repeatable actions", x: 0.16, y: 0.84 },
+      { id: "standards", label: "quality standard", x: 0.84, y: 0.84 },
+    ]}
+    edges={[
+      { from: "concepts", to: "goal", label: "explain" },
+      { from: "facts", to: "goal", label: "inform" },
+      { from: "procedures", to: "goal", label: "perform" },
+      { from: "standards", to: "goal", label: "judge" },
+    ]}
+  />
+</Figure>
+
+## Practice in the place where the skill will be used
+
+Transfer is fragile. Knowing vocabulary cards is not the same as following a quick
+conversation, and completing tidy exercises is not the same as making a decision when the
+problem has not named itself. Directness means putting the eventual performance into practice
+as early as possible. A prospective presenter gives short talks. A programmer builds a small
+working feature. A language learner has conversations. Simulations and exercises still have a
+place, especially at the beginning, but they should be chosen because they prepare a visible
+part of the real task, not because they are more comfortable than it.
+
+<Figure id="98.2" caption="Practice transfers best when its decisions and conditions resemble the performance that matters.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "comfortable proxy",
+      points: ["the task supplies the next step", "feedback is predictable", "few consequences for a miss", "can conceal a missing decision"],
+    }}
+    right={{
+      title: "direct practice",
+      points: ["the learner must choose a next step", "conditions vary", "a standard exposes the miss", "rehearses the intended performance"],
+    }}
+  />
+</Figure>
+
+## Pull the limiting piece out of the whole
+
+A complex skill can hide the reason it is stalling. A pianist may lose time at a transition,
+not in the whole piece. A writer may understand a subject but fail to shape an opening. A
+drill temporarily narrows the task so that one component receives more repetitions and more
+attention than the complete performance allows. The narrow exercise is not the destination.
+After the weak link improves, put it back into the complete task and see whether it holds under
+real conditions. This alternation keeps practice both precise and relevant.
+
+<Figure id="98.3" caption="A narrow drill supports a whole performance when it targets one visible bottleneck.">
+  <Pyramid
+    className="block w-full min-w-[440px]"
+    tiers={[
+      { label: "whole performance", note: "the intended use" },
+      { label: "integrated subskills", note: "the parts working together" },
+      { label: "one limiting component", note: "the next drill" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Make memory produce, not merely recognize
+
+Reviewing notes can keep an idea feeling familiar without proving that it can be found again.
+Retrieval changes the question. Close the source, solve from memory, explain the concept in
+plain language, or reconstruct a process from a blank page. The struggle is useful when it
+reveals a particular gap and is followed by a check. Repeated recall also shows which details
+are worth preserving for the project and which were only passing trivia. The aim is not a
+perfect first attempt. It is a stronger route from cue to answer on the next one.
+
+<Figure id="98.4" caption="Recall turns a hidden gap into a specific target for the next study pass.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["meet an idea", "hide the source", "rebuild it", "check the gap", "return later"]}
+    highlight={2}
+  />
+</Figure>
+
+## Treat feedback as a signal, not a verdict
+
+Feedback is valuable only when it changes the next attempt. Some signals are direct: a reader
+stops at a confusing sentence, a test answer is wrong, a recording reveals a rushed phrase.
+Other signals are delayed or noisy, so they need a better comparison point, a rubric, a coach,
+or several attempts before they can be interpreted. The practical move is to name one error
+precisely enough to test a correction. "I need to improve" produces little. "My explanation
+does not state the causal link" produces an experiment for tomorrow.
+
+<Figure id="98.5" caption="Feedback earns its value when one observed result changes one later attempt.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["make an attempt", "observe a result", "name one gap", "test one correction"]}
+    compoundingEdge={3}
+    centerLabel="evidence loop"
+  />
+</Figure>
+
+## Plan returns, then keep experimenting
+
+An intense first encounter cannot guarantee that a skill will remain available. Schedule
+returns so important knowledge and procedures have to be recovered after some time away, then
+use the result to adjust the interval or the exercise. Young's larger point is experimental:
+no study ritual deserves loyalty just because it felt productive. Change one feature, observe
+what happens to performance, and keep the versions that solve the actual problem. Projects
+need enough structure to persist and enough flexibility to stop repeating an unhelpful method.
+
+<Figure id="98.6" caption="A project keeps knowledge alive by returning to it, measuring the result, and adapting the next return.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "first attempt", sub: "set a baseline" },
+      { label: "first return", sub: "retrieve and check" },
+      { label: "adapt the method", sub: "change one feature" },
+      { label: "later use", sub: "test under real conditions" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write a performance brief">
+Choose one capability you want in the next six weeks. Describe the moment it will be used, the
+person who will judge it, and one visible sign that it worked. Then ask someone who already does
+it well which facts, concepts, and procedures a beginner usually misses. Keep the answer to one
+page. This is a map for choosing practice, not a syllabus to complete.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Schedule the real version this week">
+Put one small direct-performance session on the calendar before you study more. Record a
+two-minute explanation, speak with a language partner, build the feature, or solve a fresh
+case. Make the task short enough to finish, but real enough that it can surprise you. Write
+down the first decision that felt uncertain.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Build one bottleneck drill">
+From that session, choose one component that most limited the result. Make an exercise that
+repeats only that component five times with a clear standard. Then perform the whole task once
+more. If the correction disappears in the whole task, reduce the drill or strengthen the link
+between the drill and its real cue.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Leave a question for your future self">
+End each session by writing one prompt you should answer without notes on the next return. Put
+the return on your calendar. When you come back, try the prompt first, check the result, and
+change only one part of the following session. A project becomes self-correcting when its last
+attempt designs its next one.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Aggressive does not mean punishing or nonstop. Young has stressed that an ultralearning project
+can be spread across a schedule, and that spaced practice can be more useful for durable memory
+than a concentrated burst. His later writing also corrects an imbalance in the original
+emphasis: direct practice and difficult problem solving do not make good examples,
+foundational instruction, or early coaching unnecessary. A poor drill can waste effort, and a
+weak feedback source can teach the wrong lesson. Use direct work to reveal what must be learned,
+then borrow competent explanations and correction when the task is still opaque.
+</Callout>
+
+## If you remember one thing
+
+Do not ask how much study you can endure. Ask what real performance you want, what currently
+breaks inside it, and what tomorrow's attempt can do to make that break smaller.
+
+## Shelved nearby
+
+[Make It Stick](/make-it-stick) supplies the retrieval and spacing tools that keep a project
+available after its first burst. [Peak](/peak) sharpens the targeted-practice and feedback loop
+behind a useful drill. [Deep Work](/deep-work) protects the undistracted time that demanding
+practice needs.
+
+<ShelvedNearby
+  related={["make-it-stick", "peak", "deep-work"]}
+  buyUrl="https://www.harpercollins.com/products/ultralearning-scott-h-young?variant=32122843172898"
+  buyLabel="Ultralearning by Scott Young"
+/>
