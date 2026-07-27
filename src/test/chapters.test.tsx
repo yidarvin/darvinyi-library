@@ -5,7 +5,7 @@ import { MemoryRouter } from "react-router";
 import { MDXProvider } from "@mdx-js/react";
 import { mdxComponents } from "../components/mdxComponents";
 import { AppRoutes } from "../App";
-import { Bars, CoreContext, Curve, Matrix, NodeGraph, Spectrum } from "../components/diagrams";
+import { Bars, CoreContext, Curve, Matrix, NodeGraph, Pyramid, Spectrum } from "../components/diagrams";
 import { registry } from "../lib/registry";
 
 // Every MDX module on disk, regardless of registry status. The chapter being built
@@ -261,5 +261,24 @@ describe("Matrix", () => {
     expect(cells[1].getAttribute("fill")).toBe("var(--accent)");
     expect(cells[2].getAttribute("fill")).toBe("var(--surface-2)");
     expect(cells[3].getAttribute("fill")).toBe("var(--surface-2)");
+  });
+});
+
+describe("Pyramid", () => {
+  it("renders the first tier as the wide base and the last tier as the narrow apex", () => {
+    const { container } = render(
+      <Pyramid
+        tiers={[
+          { label: "base" },
+          { label: "middle" },
+          { label: "apex" },
+        ]}
+      />,
+    );
+
+    const tiers = Array.from(container.querySelectorAll<SVGRectElement>("svg > g > rect"));
+    expect(tiers).toHaveLength(3);
+    expect(Number(tiers[0].getAttribute("y"))).toBeGreaterThan(Number(tiers[2].getAttribute("y")));
+    expect(Number(tiers[0].getAttribute("width"))).toBeGreaterThan(Number(tiers[2].getAttribute("width")));
   });
 });

@@ -41,7 +41,7 @@ export function Pyramid({ tiers = [], highlight, ariaLabel, className }: Pyramid
       {tiers.map((tier, i) => {
         // i = 0 is the base (bottom, widest); the last tier is the apex (top).
         const fromTop = n - 1 - i;
-        const w = n === 1 ? baseW : baseW - ((baseW - apexW) * fromTop) / (n - 1);
+        const w = n === 1 ? baseW : apexW + ((baseW - apexW) * fromTop) / (n - 1);
         const y = topPad + fromTop * (rowH + gap);
         const on = highlight === i;
         return (

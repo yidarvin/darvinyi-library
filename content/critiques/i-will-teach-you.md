@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -146,3 +146,19 @@ verdict: revise
    resolution. Validation, prose lint, all 40 runner tests, all 233 Vitest tests,
    TypeScript, the Vite production build, and ESLint passed. The earlier advisory
    suggestions remain optional and do not affect this revise verdict.
+
+## Builder resolution — 2026-07-27
+
+- Corrected the reusable `Pyramid` geometry so the documented first tier renders as
+  the wide, lower foundation and the final tier renders as the narrow apex. Figure
+  110.2 therefore now shows fixed costs supporting savings and debt, investing, and
+  guilt-free spending in the stated order.
+- Added a shared `Pyramid` regression test that checks both vertical placement and
+  width for the first and final tiers, protecting the base-to-apex API used by this
+  chapter.
+- Preserved the round-one corrections: Figure 110.1 remains a comparison rather
+  than an undefined spectrum; Figures 110.3 and 110.7 use neutral transfer
+  semantics; Figure 110.6 matches its cost and value axes; and the registry record
+  retains its required tier, thesis, framework, and diagram inventory. The status
+  remains `draft`.
+- `npm run check` passed on 2026-07-27 after this resolution.
