@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -65,3 +65,33 @@ None.
 4. `npm run check` passed on 2026-07-27 after the chapter and registry fixes:
    validation, prose lint, pipeline tests, Vitest, TypeScript/Vite production build,
    and ESLint completed successfully.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+None. All three round-one findings are resolved. Figure 101.6 now separates the
+central edge labels, with `follow` above the horizontal connection and
+`notice again` below it. The Hero declares eight minutes, consistent with the
+recorded approximately 1,491 reader-visible words at roughly 200 words per minute,
+rounded up. The registry entry now records tier 2, the brief's thesis, the
+Morning Pages and Artist Dates framework, and the six diagram forms used in page
+order.
+
+The independent reread found no unsupported factual claim that changes the reader's
+understanding. The chapter stays within the brief and recorded evidence when it
+describes private longhand morning freewriting, recurring solo artist dates, and
+their use as repeatable creativity practices. Its clinical caveat appropriately
+limits the promise of those practices. The prose and diagrams are original, the
+five key ideas each have a captioned in-vocabulary figure, the signature model and
+four concrete exercises are present, the generated cover path is intact, and all
+three related slugs resolve to completed chapters.
+
+`npm run check` passed on 2026-07-27: queue, registry, critique, and content
+validation; prose lint; 42 pipeline and runner tests; 211 Vitest tests; TypeScript
+and the Vite production build; and ESLint all completed successfully. Vitest emitted
+only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+### Advisory
+
+None.
