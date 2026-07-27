@@ -1886,7 +1886,7 @@
       "framework": "No single signature framework; the Model section is intentionally omitted in favor of five key-idea diagrams.",
       "diagrams": [
         "comparison",
-        "concentric circles",
+        "core / context",
         "iceberg",
         "flow",
         "spectrum"

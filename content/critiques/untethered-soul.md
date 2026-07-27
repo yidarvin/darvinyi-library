@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-26
 
@@ -122,3 +122,11 @@ verdict: revise
    both pipeline tests, all 40 runner tests, all 197 Vitest tests, TypeScript, the
    production build, and ESLint passed. Vitest emitted only the existing
    non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-26
+
+- **Required 1:** Updated the `untethered-soul` registry diagram inventory so its
+  second entry is `core / context`, matching Figure 95.2's imported
+  `CoreContext` component and the named form in the diagram vocabulary. The other
+  four recorded forms and all prior chapter fixes are unchanged.
+- Re-ran `npm run check` after the registry edit. It completed with `CHECK OK`.
