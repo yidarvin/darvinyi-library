@@ -1,0 +1,226 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, Spectrum, Timeline, Venn } from "../components/diagrams";
+
+<Hero
+  slug="make-it-stick"
+  thesis="Learning lasts when you repeatedly bring knowledge back to mind, return to it after some forgetting, and practice distinguishing it from nearby alternatives."
+  minutes={8}
+/>
+
+## The thesis
+
+*Make It Stick* asks learners to distrust a familiar feeling: smooth study is not reliable
+evidence of durable learning. Re-reading, highlighting, and repeating one kind of problem
+can make material feel close at hand because it is still in view. The more durable route asks
+you to retrieve without looking, revisit after time has passed, and mix related problems so
+you must decide which idea applies. That work feels less fluent because it makes memory do
+the work it will need to do later.
+
+## Why it matters
+
+Most studying is arranged around getting through material. The test, meeting, case, or real
+conversation arrives later and asks a different question: can you recognize the cue, rebuild
+the idea, and use it without the page in front of you? A learning system should therefore
+practice the later demand, not merely repeat the earlier exposure. This matters outside a
+classroom too. A new language, a clinical procedure, a sales explanation, or a technical
+concept becomes useful only when it can be recalled and selected at the moment it is needed.
+
+## Key ideas
+
+## Familiarity can impersonate knowledge
+
+Seeing an answer again makes it easier to process, and that ease is easy to mistake for
+mastery. Recognition answers a generous question: does this look known now? Recall asks the
+harder question: can you produce the idea with no prompt beyond the problem? The first is
+useful for getting oriented. The second reveals whether a memory can survive outside the
+study session. A blank page, a closed-book explanation, a practice problem, or a low-stakes
+quiz turns that difference into information. Getting stuck is not proof that the session has
+failed. It is a precise signal about what deserves another pass.
+
+<Figure id="97.1" caption="Familiar material can feel learned before it can be produced on demand.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "recognition",
+      points: ["the answer remains visible", "asks: does this look known?", "feels smooth in the moment", "can hide missing links"],
+    }}
+    right={{
+      title: "retrieval",
+      points: ["the cue arrives without the answer", "asks: can I rebuild it?", "makes gaps observable", "prepares later use"],
+    }}
+  />
+</Figure>
+
+## Retrieval is practice, not only a measurement
+
+Tests are commonly treated as an audit after learning has finished. The book treats them as
+part of learning itself. Trying to recall a definition, sketching a process from memory, or
+solving a problem before consulting the solution strengthens the route back to the knowledge
+and exposes the missing pieces. Feedback completes the loop. Check the answer, identify the
+specific error, and retrieve again later. The goal is not to manufacture pressure or grade
+yourself harshly. It is to create many small occasions when knowledge has to travel from
+memory into use.
+
+<Figure id="97.2" caption="A recall attempt becomes a learning event when its error directs the next attempt.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["meet an idea", "close the source", "rebuild from memory", "check the gap", "try again later"]}
+    highlight={2}
+  />
+</Figure>
+
+## Forgetting creates the room that spacing uses
+
+Cramming can raise performance while the material is still warm, but it gives little practice
+finding the knowledge after it has faded. Spacing returns to a topic after an interval, when
+recall has become effortful but remains possible. Each return asks the learner to reconstruct
+the path rather than walk one that is already lit. The appropriate interval is not a magic
+number. It depends on how well the material is known and how long it must last. The practical
+rule is simple: schedule several brief returns, and let a difficult retrieval pull the next
+review closer rather than abandoning the topic.
+
+<Figure id="97.3" caption="Several returns make practice resemble the later moment of recall more than one long sitting does.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "first encounter", sub: "learn the shape" },
+      { label: "short return", sub: "retrieve, then check" },
+      { label: "longer return", sub: "retrieve with less support" },
+      { label: "use later", sub: "apply in context" },
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Mixing problems trains selection
+
+Blocked practice repeats one problem type until the method becomes obvious. It is efficient
+when you are first learning a procedure, but it can quietly supply the answer to a more
+important question: which procedure belongs here? Interleaving places neighboring problem
+types side by side. The learner has to inspect the features of each problem, distinguish what
+changes, and choose a method before carrying it out. That choice makes practice slower and
+often less satisfying. It also better resembles a real exam, a diagnosis, or any setting
+where the task does not announce its own category.
+
+<Figure id="97.4" caption="Blocked work repeats a known method; mixed work makes the learner select among nearby methods.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="one type at a time"
+    right="many unrelated tasks"
+    marker={0.52}
+    markerLabel="related mix"
+    zones={[
+      { from: 0, to: 0.32, label: "blocked: method is obvious" },
+      { from: 0.35, to: 0.68, label: "interleaved: choose and compare", accent: true },
+      { from: 0.72, to: 1, label: "too scattered to learn from" },
+    ]}
+  />
+</Figure>
+
+## Elaboration gives a fact handles
+
+A fact held alone has few routes back. Elaboration adds handles by connecting it to a reason,
+an example, a contrast, a picture, or a prior idea. Ask why a claim is true, how it differs
+from a tempting alternative, and when it would matter. Explain it in plain language to an
+imagined newcomer, then test whether the explanation still works when the familiar notes are
+gone. The point is not decorative detail. Good elaboration makes the structure of an idea
+more visible, so a later cue has more than one way to find it.
+
+<Figure id="97.5" caption="An idea becomes easier to find when it has several meaningful routes back into memory.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "idea", label: "new idea", x: 0.5, y: 0.5 },
+      { id: "why", label: "why it works", x: 0.18, y: 0.18 },
+      { id: "example", label: "concrete example", x: 0.82, y: 0.2 },
+      { id: "contrast", label: "nearby contrast", x: 0.2, y: 0.83 },
+      { id: "prior", label: "what it connects to", x: 0.8, y: 0.82 },
+    ]}
+    edges={[
+      { from: "why", to: "idea", label: "reason" },
+      { from: "example", to: "idea", label: "case" },
+      { from: "contrast", to: "idea", label: "difference" },
+      { from: "prior", to: "idea", label: "link" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The three central moves work as a system. Retrieval makes you reconstruct the knowledge.
+Spacing ensures that reconstruction happens after a little forgetting. Interleaving makes
+you decide which knowledge belongs to the cue in front of you. None replaces initial
+instruction, worked examples, or feedback. They change what happens after the first encounter:
+instead of keeping a topic familiar through repeated exposure, you build the ability to call
+it back and choose it under changing conditions.
+
+<Figure id="97.6" caption="Durable learning grows where recall, time, and discrimination reinforce one another.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[
+      { label: "retrieval" },
+      { label: "spacing" },
+      { label: "interleaving" },
+    ]}
+    intersectionLabel="durable, usable learning"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Close the source before you review it">
+After reading a section or watching a lesson, close it. Write three things you can recall,
+then explain the main relationship in your own words. Open the source only after the attempt.
+Correct the gaps with a different color or a short note, so tomorrow's question is visible.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Build returns into the calendar">
+Choose one topic you want to retain. Give it a ten-minute recall session tomorrow, another
+later this week, and one next week. Begin each session with questions or problems, not a
+re-read. If the first prompt is impossible, briefly restudy the missing piece and leave a
+new question for the next return.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Create a mixed set">
+Take three related problem types, terms, or cases. Shuffle them into one short session. Before
+solving each one, state what kind it is and name the clue that made you choose that approach.
+This turns the answer into a decision you can inspect.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="End with one better question">
+When you check an answer, do not merely mark it right or wrong. Write the next question that
+would catch the same misunderstanding from a different angle. Your review system gets stronger
+when its prompts evolve with the errors it finds.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Difficulty helps only when it is productive. A learner still needs an initial model, feedback
+on errors, and enough support to make a correction possible. Retrieval cannot replace teaching
+an unfamiliar idea, and a pile of mixed, unrelated tasks can be noise rather than
+interleaving. Spacing schedules returns; it does not excuse avoiding a topic until it is
+unrecoverable. The research supports these tools as strong general strategies, not a uniform
+recipe for every skill, learner, deadline, or high-stakes setting.
+</Callout>
+
+## If you remember one thing
+
+Do not measure a study session by how familiar the page feels. Measure it by whether you can
+retrieve the idea later, tell it apart from its neighbors, and use the gaps you find to plan
+the next return.
+
+## Shelved nearby
+
+[Peak](/peak) supplies the feedback loop that turns an exposed gap into a better next
+attempt. [Mindset](/mindset) helps treat the discomfort of a hard recall attempt as useful
+information rather than a verdict. [Deep Work](/deep-work) makes room for the concentration
+needed to work through a genuine retrieval attempt.
+
+<ShelvedNearby
+  related={["peak", "mindset", "deep-work"]}
+  buyUrl="https://www.hup.harvard.edu/books/9780674729018/make-it-stick"
+  buyLabel="Make It Stick by Peter C. Brown, Henry L. Roediger III, and Mark A. McDaniel"
+/>
