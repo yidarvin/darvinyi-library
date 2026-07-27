@@ -1,0 +1,18 @@
+# I Will Teach You to Be Rich — research notes
+
+Verified 2026-07-27. These first-party sources support this chapter's original account of
+the book's automated personal-finance framework. The chapter is a synthesis in new prose and
+original diagrams, not a reproduction of the book's text, worksheets, percentages, or
+figures.
+
+- Ramit Sethi, [*Conscious Spending Basics*](https://www.iwillteachyoutoberich.com/conscious-spending-basics/). Sethi describes the Conscious Spending Plan as a flexible alternative to micromanaging every expense. It divides money among fixed costs, investments, savings, and guilt-free spending, with automation supporting the plan. This is the source for the chapter's four-job framing, though its prose and diagrams are independently organized.
+- Ramit Sethi, [*Automate Your Finances Using Technology and Psychology*](https://www.iwillteachyoutoberich.com/automate-your-finances/). This author-published excerpt and guide explains linking accounts, timing transfers around paydays, paying recurring bills, reviewing the card statement, leaving a checking buffer, and adapting the system for irregular income. It directly supports the chapter's automated-flow model and its emphasis on a small review rather than passive neglect.
+- Ramit Sethi, [*How to Save Money and Still Enjoy Life*](https://www.iwillteachyoutoberich.com/best-way-to-save-money/). The official site explains the connection between a category-based plan, automatic saving after payday, debt repayment, and spending on valued categories. This supports the chapter's account of intentional rather than universally restrictive spending.
+- [*I Will Teach You to Be Rich*, second edition](https://www.hachettebookgroup.com/titles/ramit-sethi/9781523505746/9781523505746/), Hachette Book Group / Workman Publishing. The publisher describes the 2019 revised edition as a six-week personal-finance program covering debt, bank accounts, automation, saving, spending, and investing. It is also the chapter's outbound purchase link.
+- Consumer Financial Protection Bureau, [automatic payments from a bank account](https://www.consumerfinance.gov/ask-cfpb/how-do-automatic-payments-from-a-bank-account-work-en-2021/). The CFPB explains that automatic payments can cause overdraft or nonsufficient-funds fees if balances are too low, and advises consumers to review authorizations and monitor timing and amounts. This supports the caveat that automation needs a buffer and oversight.
+- U.S. Securities and Exchange Commission, [dollar-cost averaging](https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging) and [asset allocation and diversification](https://www.investor.gov/introduction-investing/getting-started/asset-allocation). Investor.gov defines regular equal-interval investing and explains that diversification can reduce, but cannot eliminate, investment risk. These sources support the chapter's qualified account of recurring long-term investment.
+- Internal Revenue Service, [2026 retirement contribution limits](https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500). The IRS confirms that contribution limits and eligibility rules change and can depend on income, filing status, and plan coverage. The chapter therefore avoids presenting the book's historical account examples as current universal instructions.
+
+The chapter's caveat is deliberate. The framework is useful for creating a default system,
+but it cannot erase unequal income, debt burdens, unstable work, or country-specific tax and
+account rules. It is not individualized financial, tax, or debt advice.

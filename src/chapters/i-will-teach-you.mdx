@@ -1,0 +1,262 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Curve, Matrix, NodeGraph, ProcessLoop, Pyramid, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="i-will-teach-you"
+  thesis="A useful money plan runs on defaults: cover obligations, move money toward savings and investing, then spend the remainder freely on the life you chose."
+  minutes={9}
+/>
+
+## The thesis
+
+Personal finance is often presented as a test of vigilance. Sethi proposes a different
+starting point: make the important decisions deliberately, put them on a schedule, and
+stop requiring a fresh act of discipline for every payday. A plan that protects bills,
+savings, and long-term investing before discretionary spending can make spending feel less
+like a daily moral contest. The aim is not deprivation. It is to direct money firmly toward
+the things that matter, and to stop fussing over the rest.
+
+## Why it matters
+
+Money has a way of becoming a thousand small decisions: whether to move cash this month,
+whether a bill is due, whether an expense was justified, whether investing can wait. That
+mental overhead is part of the problem. The book's lasting contribution is an operating
+system for reducing it. Once the plan is funded by default, attention can go to the few
+choices that actually change the shape of a financial life.
+
+## Make the large recurring choices earn their place
+
+Saving a few dollars on a routine purchase can be satisfying, but it rarely repairs a plan
+strained by a high fixed cost, expensive debt, or a subscription pile that has become
+invisible. Sethi directs attention toward the recurring decisions that keep claiming money
+month after month. Housing, transportation, insurance, interest, and the terms of a
+financial product deserve inspection because a better decision keeps paying off.
+
+This is not an excuse to ignore small spending. It is a way to rank it. First find the
+commitments that will repeat whether or not you remember them. Ask what can be negotiated,
+cancelled, refinanced, shared, or replaced. A small saving made permanent can matter more
+than a heroic month of austerity.
+
+<Figure id="110.1" caption="Put attention where a better recurring choice has room to keep working.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="many tiny cuts"
+    right="a few recurring choices"
+    marker={0.8}
+    markerLabel="start here"
+    zones={[
+      { from: 0, to: 0.38, label: "easy to notice, limited reach" },
+      { from: 0.6, to: 1, label: "terms, fixed costs, and debt", accent: true },
+    ]}
+  />
+</Figure>
+
+## Give the essentials a claim before the fun begins
+
+The plan separates money by job. Fixed costs keep the household running. Savings prepare
+for known goals and unwelcome surprises. Investments serve a longer horizon. What remains
+is discretionary spending, which is allowed to be pleasurable because the prior claims have
+already been met. The categories are not universal percentages or a verdict on anyone's
+life. They are a practical order for seeing tradeoffs.
+
+That order also changes the meaning of a splurge. A dinner, hobby, trip, or excellent pair
+of shoes is not automatically irresponsible. It is a choice inside a plan that has already
+made room for obligations and future needs. The question is not whether every purchase looks
+virtuous. It is whether the whole arrangement reflects the life you mean to fund.
+
+<Figure id="110.2" caption="Guilt-free spending rests on prior commitments, not on pretending those commitments do not exist.">
+  <Pyramid
+    className="block w-full min-w-[440px]"
+    tiers={[
+      { label: "guilt-free spending", note: "what remains is yours to enjoy" },
+      { label: "long-term investing", note: "a claim on future choices" },
+      { label: "savings and debt plan", note: "goals and resilience" },
+      { label: "fixed costs", note: "keep the month running" },
+    ]}
+  />
+</Figure>
+
+## Turn good intentions into a payday routine
+
+The essential move is automation. Route income into a central account, then schedule the
+transfers and payments that should happen before ordinary spending gets a chance to absorb
+the money. The exact accounts, dates, and amounts depend on the household. The design
+principle does not: align them with when income actually arrives, leave a buffer, and make
+the default serve your stated priorities.
+
+Automation is not neglect. A calendar reminder to check balances and transactions keeps the
+system honest. It also makes a correction smaller. When a bill changes, income shifts, or a
+goal becomes more important, adjust the rule once rather than trying to remember a new rule
+every day.
+
+<Figure id="110.3" caption="The routine moves priorities first, leaving ordinary spending inside a known boundary.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["payday", "scheduled transfers", "bills and goals funded", "remainder available"]}
+    compoundingEdge={3}
+    centerLabel="review, then repeat"
+  />
+</Figure>
+
+## Use credit as a tool, not as extra income
+
+The book treats credit cards and debt as systems that need rules. A card can simplify
+payments, create a record, and sometimes provide useful protections. It becomes dangerous
+when the bill is a surprise or when a balance repeatedly carries forward because the plan
+assumed money that never arrived. The useful distinction is between a payment method and a
+way to stretch a month beyond its income.
+
+If a balance is already expensive, the first task is clarity: the rate, the minimum, the
+full balance, and a realistic payoff path. The second is to prevent new borrowing from
+undoing the progress. That may mean changing the automatic payment, lowering a limit, or
+removing the card from situations where it has become a reflex.
+
+<Figure id="110.4" caption="A card can organize a planned purchase or conceal an unplanned obligation. The rule makes the difference.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="left"
+    left={{
+      title: "payment tool",
+      points: ["purchase fits the plan", "bill is reviewed", "balance is paid by rule", "record stays visible"],
+    }}
+    right={{
+      title: "income substitute",
+      points: ["purchase fills a shortfall", "bill arrives as a surprise", "balance carries forward", "interest narrows next month"],
+    }}
+  />
+</Figure>
+
+## Let regular investing outlast your mood
+
+For long-term goals, the book favors a simple, low-maintenance approach over constant
+prediction. A recurring contribution matters because it keeps the decision from being
+reopened every time markets feel exciting or frightening. Time and continued contributions
+give compounding a chance to work, while a diversified approach avoids tying the whole plan
+to one story about a single company or trend.
+
+No chart can promise a return, and a long horizon does not remove loss. It does make a useful
+discipline possible: decide the purpose and risk level of the money, choose an approach you
+can stay with, and contribute on schedule. The boring action is often the action that
+survives long enough to matter.
+
+<Figure id="110.5" caption="Regular contributions give long-term growth a base, though the path is never this smooth.">
+  <Curve
+    className="block w-full min-w-[440px]"
+    shape="exp"
+    axes={{ x: "regular contributions and time", y: "potential long-term value" }}
+    annotations={[
+      { x: 0.22, y: 0.05, text: "contributions do the early work" },
+      { x: 0.78, y: 0.43, text: "growth has more to build on" },
+    ]}
+  />
+</Figure>
+
+## Spend generously where the value is real
+
+Conscious spending is selective, not timid. A useful plan can make room for a few things
+that genuinely improve your days, while being unsentimental about costs that do not. That is
+different from buying whatever feels good in the moment. It requires choosing the areas that
+matter enough to protect, then cutting or renegotiating the ones that merely drifted in.
+
+The test is personal and concrete. Does this category create time, delight, connection, or
+craft you would miss? Is it worth the other goal it postpones? A clear answer can justify
+spending more than a generic budget would suggest. It can also make a costly habit easier to
+drop without feeling punished.
+
+<Figure id="110.6" caption="The spending worth protecting is both meaningful to you and chosen with its real cost in view.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "little value", right: "real value", label: "value to your life" }}
+    yAxis={{ low: "low cost", high: "high cost", label: "ongoing cost" }}
+    quadrants={[
+      { title: "let it be", note: "small and unimportant" },
+      { title: "enjoy", note: "cheap pleasure is still pleasure" },
+      { title: "cut or negotiate", note: "costly and forgettable" },
+      { title: "fund deliberately", note: "a meaningful priority" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## The Model
+
+An automated money system treats the checking account as a temporary junction, not the final
+home of every dollar. Income arrives, then standing rules route it to the uses already
+chosen: obligations, savings, investing, and available spending. The model works because it
+moves the decision from an emotional moment after payday to a calm setup session before it.
+Its real output is not perfect optimization. It is a financial life that keeps following its
+priorities when attention is elsewhere.
+
+<Figure id="110.7" caption="One income stream can serve several purposes when the routes are set before spending begins.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "income", label: "income arrives", x: 0.5, y: 0.5 },
+      { id: "bills", label: "fixed bills", x: 0.16, y: 0.2 },
+      { id: "savings", label: "savings goals", x: 0.84, y: 0.2 },
+      { id: "invest", label: "long-term investing", x: 0.16, y: 0.82 },
+      { id: "spend", label: "available spending", x: 0.84, y: 0.82 },
+    ]}
+    edges={[
+      { from: "income", to: "bills", label: "pay" },
+      { from: "income", to: "savings", label: "save", kind: "reinforcing" },
+      { from: "income", to: "invest", label: "invest", kind: "reinforcing" },
+      { from: "income", to: "spend", label: "use" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Make a one-page monthly map">
+Write your expected take-home income at the top. Under it, list the fixed costs that repeat,
+the debt minimums, the savings goals, and the investment contribution you can actually
+sustain. Do not chase a perfect percentage. Make every line honest enough to use next month.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Set one route after payday">
+Choose a savings goal or investment contribution and schedule a transfer for just after
+income arrives. Start with an amount that will clear reliably. If you have an irregular
+income, build the necessary cash buffer and use a schedule that fits the pattern rather than
+pretending every month is identical.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Inspect one recurring cost">
+Pick a cost that recurs and is large enough to matter: insurance, a phone plan, a loan rate,
+housing, transportation, or a cluster of subscriptions. Find its renewal date, cancellation
+terms, and alternatives. Take one concrete action: negotiate, switch, cancel, or decide to
+keep it on purpose.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Schedule a short monthly review">
+Put a twenty-minute appointment on the calendar. Check the account buffer, confirm that
+automatic payments ran as expected, scan for an unfamiliar charge, and update one transfer
+only if the plan changed. The point is maintenance, not a monthly trial of your character.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+This is a United States centered framework, and its named account types, tax treatment,
+credit rules, and contribution limits do not travel intact to every reader or even remain
+fixed from year to year. Automation also requires enough cash timing margin: an automatic
+debit can still trigger overdraft or insufficient-funds fees if the account is short. A
+person facing volatile income, high-interest debt, caregiving costs, disability, or a thin
+margin may need to stabilize essentials before allocating to long-term investments. Regular
+investing and diversification can reduce some risks, but neither guarantees a gain. Use the
+framework to clarify choices, then check current local rules and seek qualified advice for a
+decision with material tax, debt, or investment consequences.
+</Callout>
+
+## If you remember one thing
+
+Make the important money decisions once, while you are calm, and turn them into defaults.
+When obligations and future goals move first, the money left for enjoyment can be spent with
+far less anxiety and far more intention.
+
+<ShelvedNearby
+  related={["psychology-of-money", "your-money-or-your-life", "random-walk", "intelligent-investor"]}
+  buyUrl="https://www.hachettebookgroup.com/titles/ramit-sethi/9781523505746/9781523505746/"
+  buyLabel="I Will Teach You to Be Rich by Ramit Sethi"
+/>
