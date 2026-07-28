@@ -1,0 +1,214 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, CoreContext, Flow, NodeGraph, ProcessLoop } from "../components/diagrams";
+
+<Hero
+  slug="culture-code"
+  thesis="A durable culture is built in repeated moments when people learn they belong, can name a weakness, and know what the group is trying to protect."
+  minutes={7}
+/>
+
+## The thesis
+
+Culture is not the mood in a room or the values printed on its wall. Coyle treats it as a
+pattern of ordinary interactions that teaches people three things: they have a place here,
+they can expose a problem without losing that place, and their work points toward a shared
+aim. Safety makes attention available. Vulnerability turns information into trust. Purpose
+helps the group choose when its options compete. Each has to be visible in the way a group
+meets, decides, responds to mistakes, and tells its story.
+
+## Why it matters
+
+Most teams have talent, a plan, and a stated mission. They still lose useful information when
+status makes a question feel risky, when bad news arrives late, or when neighboring teams
+optimize different definitions of success. Culture is the operating condition underneath those
+failures. It determines whether a concern becomes a useful signal, whether help is asked for
+soon enough, and whether a local decision can be judged against something larger than the
+nearest metric.
+
+## Key ideas
+
+### Belonging is built through small, repeated signals
+
+Safety is not softness, nor is it the absence of demanding work. It is the working belief that
+you will be treated as a participant while doing that demanding work. A welcome that uses your
+name, a leader who makes room for a quieter voice, an interruption that is repaired, and a
+clear answer to a question all send evidence about the relationship. One grand offsite cannot
+outweigh a stream of daily signals that people are disposable or unheard.
+
+The useful managerial question is concrete: what does a newcomer learn in the first ten
+minutes, and what does a colleague learn when they disagree? Design those threshold moments.
+Listen long enough to demonstrate that a question had somewhere to land. Close the loop on
+what changed and what did not. Safety grows when people can predict respectful treatment,
+especially when the conversation has stakes.
+
+<Figure id="117.1" caption="Belonging becomes credible when small signals recur at the moments people are deciding whether to contribute.">
+  <Flow
+    className="block w-full min-w-[540px]"
+    steps={["notice a person", "invite their view", "respond with respect", "show the follow-through"]}
+    highlight={3}
+    ariaLabel="A sequence for building belonging: notice a person, invite their view, respond with respect, and show follow-through."
+  />
+</Figure>
+
+### A leader's uncertainty gives others permission to contribute
+
+Teams take their cues from the people with the most authority. When a leader performs perfect
+certainty, everyone else learns to conceal doubt, qualify bad news, and wait for direction.
+When that leader names a limit in their view and asks for help, the invitation becomes more
+than a slogan. It changes the task from protecting a hierarchy to improving a shared picture.
+
+This is not theater. A leader should not manufacture confession or spill private detail to
+create a feeling. The relevant move is work-specific fallibility: name what you do not know,
+what you may have missed, or where the plan could fail. Then make it safe for someone to add
+the information you lack. Authority remains responsible for the decision, but no longer
+pretends it has a monopoly on the facts.
+
+<Figure id="117.2" caption="Authority can turn uncertainty into a request for better information instead of a cue to stay silent.">
+  <Compare
+    className="block w-full min-w-[400px]"
+    favor="right"
+    left={{ title: "performed certainty", points: ["leader has every answer", "risk travels downward", "bad news is delayed", "people protect status"] }}
+    right={{ title: "visible fallibility", points: ["leader names a limit", "help is requested", "bad news arrives sooner", "the picture improves"] }}
+    ariaLabel="A comparison between performed certainty and visible fallibility."
+  />
+</Figure>
+
+### Vulnerability becomes trust through response, not disclosure alone
+
+Trust does not appear after a group has become comfortable enough to take risks. It is made by
+the exchange of small risks and reliable responses. Someone says, "I missed this," asks for
+help, or admits that a decision is unclear. Another person meets that exposure with attention,
+truthfulness, and help rather than a status contest. The next disclosure becomes a little less
+costly. Over time, the group can discuss the work as it is rather than as everyone wishes it
+looked.
+
+That loop has a condition: the response must match the promise. If a person is punished for
+raising a concern, the group has learned the opposite lesson, regardless of its stated values.
+Care and accountability belong together here. A missed commitment may need correction. The
+correction should focus on repair and learning, not on making the messenger unsafe.
+
+<Figure id="117.3" caption="A risk that receives a useful response makes the next honest signal easier to send.">
+  <ProcessLoop
+    className="block w-full min-w-[400px]"
+    stages={["name a risk", "receive attention", "repair or learn", "trust the next exchange"]}
+    compoundingEdge={3}
+    centerLabel="mutual risk"
+    ariaLabel="A loop where naming a risk receives attention, leads to repair or learning, and makes the next exchange more trusted."
+  />
+</Figure>
+
+### Purpose needs a core and visible proof
+
+Purpose is not a decorative mission statement. It is a compact answer to what the group is
+for, whom it serves, and which tradeoffs it will accept. That answer helps a team recognize a
+good decision before a leader is available to approve it. It also gives disagreement a fairer
+reference point. Instead of arguing only from role or preference, people can ask which choice
+best advances the thing they are here to do.
+
+The core should stay stable enough to orient people, while tactics, metrics, and rituals stay
+open to revision. A purpose becomes real when it shows up in hiring, stories about good work,
+meeting agendas, and the choices a group makes under pressure. Repetition is not empty when
+the examples keep connecting the words to an actual decision.
+
+<Figure id="117.4" caption="A stable reason for the work can guide practices that need to change with the situation.">
+  <CoreContext
+    className="block w-full min-w-[440px]"
+    coreTitle="shared purpose"
+    coreItems={["who we serve", "what we protect", "what success means"]}
+    contextItems={["priorities", "rituals", "metrics", "stories"]}
+    contextTitle="practices that can change"
+    ariaLabel="A shared purpose includes who the group serves, what it protects, and what success means."
+  />
+</Figure>
+
+### Culture is maintained at the handoffs between people
+
+The three skills reinforce one another, but they are not a staircase that a group completes.
+Safety makes it likelier that a person will share a concern. Shared vulnerability reveals the
+information needed to coordinate. Purpose gives that coordination a direction. The results of
+the work then become new evidence about whether the group lives by its stated purpose. The
+system is strongest at the handoffs: a planning meeting, a review, a customer escalation, a
+new hire's first week, or the moment a target and a principle conflict.
+
+This makes culture everyone's work without making it everyone's private burden. A team can
+change its meeting format, decision rules, response to bad news, and examples of recognized
+work. It cannot compensate for a leader who rewards silence, a process that invites retaliation,
+or goals that make colleagues compete against the shared outcome. The formal system has to
+carry the same message as the interpersonal one.
+
+<Figure id="117.5" caption="Safety, honest information, and shared direction reinforce one another through the work itself.">
+  <NodeGraph
+    className="block w-full min-w-[420px]"
+    ariaLabel="A culture system connects safety, honest signals, shared purpose, coordinated choices, and results that provide evidence for the next interaction."
+    nodes={[
+      { id: "safety", label: "safety", x: 0.08, y: 0.38 },
+      { id: "truth", label: "honest signals", x: 0.4, y: 0.06 },
+      { id: "purpose", label: "shared purpose", x: 0.88, y: 0.36 },
+      { id: "action", label: "coordinated choice", x: 0.72, y: 0.9 },
+      { id: "evidence", label: "results and learning", x: 0.18, y: 0.9 },
+    ]}
+    edges={[
+      { from: "safety", to: "truth", kind: "reinforcing", label: "speaking up" },
+      { from: "truth", to: "purpose", label: "tradeoffs" },
+      { from: "purpose", to: "action", kind: "reinforcing", label: "direction" },
+      { from: "action", to: "evidence", label: "outcome" },
+      { from: "evidence", to: "safety", kind: "reinforcing", label: "fair response" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Inspect one threshold moment">
+Choose a first meeting, kickoff, review, or escalation. List the signals a person receives
+there about voice, status, and follow-through. Change one detail this week, such as who speaks
+first, how questions are collected, or how the decision is explained afterward.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Open the next meeting with a useful limit">
+Before a decision, name one uncertainty you carry: an assumption, a missing customer view, or a
+risk you cannot judge alone. Ask a specific person or role for the missing information. After
+the meeting, say what their input changed.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make bad news repairable">
+Pick a recent miss and run a short review. Start with what happened, what the group knew at the
+time, and what signal should arrive earlier next time. End with one owner and one change to the
+work system. Do not use the meeting to assign a personality label.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Turn purpose into one decision rule">
+Write a sentence that names the customer, teammate, or outcome your group protects. Bring one
+current tradeoff to the next meeting and ask how that sentence changes the choice. If it does
+not change anything, refine it until it can guide a real decision.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The framework can be misused as a demand for emotional openness or as a way to treat a
+structural problem as a team-attitude problem. Psychological safety does not require sharing
+private experience, accepting poor performance, or overlooking harassment and retaliation.
+Nor can better meeting habits solve understaffing, discriminatory rules, impossible targets,
+or a leader who holds unilateral power without accountability. Make room for candor, then
+change the policy, incentives, and protections that determine whether candor is actually safe.
+The book's examples are instructive cases, not proof that one recipe produces performance in
+every kind of organization.
+</Callout>
+
+## If you remember one thing
+
+Culture becomes trustworthy when people repeatedly see that they belong, that difficult truth
+can improve the work, and that the group will use that truth in service of a purpose they can
+name together.
+
+<ShelvedNearby
+  related={["dare-to-lead", "radical-candor", "extreme-ownership", "start-with-why"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/235200/the-culture-code-by-daniel-coyle/9780804176989/"
+  buyLabel="The Culture Code by Daniel Coyle"
+/>
+
