@@ -3,7 +3,7 @@ import { ExerciseCard } from "../components/ExerciseCard";
 import { Figure } from "../components/Figure";
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, CoreContext, Flow, NodeGraph, ProcessLoop } from "../components/diagrams";
+import { Compare, CoreContext, NodeGraph, ProcessLoop } from "../components/diagrams";
 
 <Hero
   slug="culture-code"
@@ -46,11 +46,12 @@ what changed and what did not. Safety grows when people can predict respectful t
 especially when the conversation has stakes.
 
 <Figure id="117.1" caption="Belonging becomes credible when small signals recur at the moments people are deciding whether to contribute.">
-  <Flow
+  <ProcessLoop
     className="block w-full min-w-[540px]"
-    steps={["notice a person", "invite their view", "respond with respect", "show the follow-through"]}
-    highlight={3}
-    ariaLabel="A sequence for building belonging: notice a person, invite their view, respond with respect, and show follow-through."
+    stages={["notice a person", "invite their view", "respond with respect", "show the follow-through"]}
+    compoundingEdge={3}
+    centerLabel="repeated signals"
+    ariaLabel="A recurring loop for building belonging: notice a person, invite their view, respond with respect, show follow-through, and repeat."
   />
 </Figure>
 
@@ -206,9 +207,13 @@ Culture becomes trustworthy when people repeatedly see that they belong, that di
 can improve the work, and that the group will use that truth in service of a purpose they can
 name together.
 
+- [Dare to Lead](/dare-to-lead) extends the safety work into brave, accountable leadership.
+- [Radical Candor](/radical-candor) focuses on the feedback habits that make directness safer.
+- [Extreme Ownership](/extreme-ownership) pairs culture's shared trust with disciplined team accountability.
+- [Start with Why](/start-with-why) develops the purpose language that gives daily tradeoffs direction.
+
 <ShelvedNearby
   related={["dare-to-lead", "radical-candor", "extreme-ownership", "start-with-why"]}
   buyUrl="https://www.penguinrandomhouse.com/books/235200/the-culture-code-by-daniel-coyle/9780804176989/"
   buyLabel="The Culture Code by Daniel Coyle"
 />
-
