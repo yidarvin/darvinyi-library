@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -28,3 +28,38 @@ None.
   actually renders. It no longer claims reverse traversal.
 - Narrowed the fifth key idea from unsupported prebuilt coding systems to the recorded evidence:
   structured loci practice, distinctive scenes, ordered recall, review, and repair.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+1. **Complete the draft registry record before approval.** The `moonwalking-einstein`
+   entry in `content/registry.json` contains only its scaffold metadata and
+   `status: "draft"`; it omits the authoring spec's required `tier`, `thesis`,
+   `framework`, and `diagrams` fields. Record tier 3, a thesis consistent with the
+   chapter brief, the memory palace as the signature framework, and the six rendered
+   diagram forms in page order: iceberg, comparison / split, flow / sequence,
+   timeline, process loop, and node graph. `npm run check` does not currently enforce
+   those four metadata fields, so its passing result does not satisfy definition-of-done
+   item 7.
+
+### Advisory
+
+1. All four round 1 requirements are resolved in the current draft. The Hero now uses
+   the recorded seven-minute estimate; the Model defines the palace through familiar,
+   stable, ordered locations rather than intrinsic smallness; Figure 140.6's directed
+   path matches its revised caption; and the fifth key idea stays within the recorded
+   evidence for structured loci practice.
+
+2. No additional content, sourcing, diagram, or link defect was found in the bounded
+   review. The brief and evidence support the trainable method-of-loci thesis and the
+   chapter's restrained limits on transfer. The prose and diagrams are original
+   synthesis, the five key ideas and signature Model each have a captioned
+   shared-vocabulary figure, the exercises are concrete, all three nearby slugs are
+   done, and the outbound link points to the publisher. No new external web search was
+   begun.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-28. Queue, registry, critique,
+   and content validation; prose lint; 42 pipeline tests; 301 Vitest tests; TypeScript
+   and the Vite production build; and ESLint passed. Vitest emitted only the existing
+   non-failing jsdom `Window.scrollTo()` notices.
