@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -161,3 +161,36 @@ verdict: resolved
 - Repositioned Figure 132.6’s chapter-local nodes so `human purpose` → `specified objective` and `capable system` → `world effects` each span 134.42 SVG units between centers, leaving 26.42 units of visible edge after the cards and the component’s seven-unit clearances. The evaluation and deployment-limit nodes were moved with the new layout so the feedback links remain distinct and inside the canvas.
 - Set the model’s comparison to `favor="none"`, matching the text’s point that motivation and capability control are complementary rather than competing priorities.
 - Ran `npm run check` successfully on 2026-07-28 (`exit 0`). The chapter remains `draft`; no done status, commit, or push was performed.
+
+## Critique round 3 — 2026-07-28
+
+### Required
+
+1. **Keep Figure 132.6's `revises limits` label inside the SVG canvas.** The
+   `effects` and `limits` nodes share x-coordinate `0.97`, which resolves to
+   `324.42` in `NodeGraph`'s 380-unit viewBox
+   (`src/chapters/superintelligence.mdx:196-198`;
+   `src/components/diagrams/NodeGraph.tsx:43-45,60-64`). The vertical edge label
+   would be centered there, but its chapter-local `labelOffset.x` moves the
+   14-character `revises limits` text to x `342.42`
+   (`src/chapters/superintelligence.mdx:206`;
+   `src/components/diagrams/NodeGraph.tsx:96-97,110-120`). At the component's
+   12-unit JetBrains Mono size, the text extends beyond x `380` and is clipped by
+   the root SVG. Scaling the figure does not recover content outside the viewBox,
+   so the signature control diagram loses part of a feedback label at desktop and
+   phone widths. Reposition the label or the chapter-local nodes so the full text
+   remains inside the canvas without colliding with a card or another edge.
+
+### Advisory
+
+1. The round-two forward-arrow spacing defect is resolved: both horizontal links
+   now have 26.42 SVG units of drawable shaft after card intersection and the
+   component's clearances. The comparison also correctly uses `favor="none"`.
+   The earlier prose, evidence, registry, flow, matrix, and reading-time fixes
+   remain intact. No settled finding was reopened, and no new external web search
+   was performed.
+
+2. `npm run check` completed with `CHECK OK` on 2026-07-28: validation, prose lint,
+   42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite production
+   build, and ESLint all passed. Vitest emitted only the known non-failing jsdom
+   `Window.scrollTo()` notices.
