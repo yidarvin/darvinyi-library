@@ -2434,7 +2434,17 @@
       "subtitle": "Lori Gottlieb · 2019",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Therapy makes an old story, a familiar pattern, and a next choice visible enough to work with, so change can happen through a trustworthy relationship rather than a perfect answer.",
+      "framework": "No single signature model; the chapter deliberately omits The Model and uses five key-idea diagrams to carry the book's therapeutic themes.",
+      "diagrams": [
+        "iceberg",
+        "comparison",
+        "process loop",
+        "spectrum",
+        "flow"
+      ]
     },
     {
       "num": 124,
