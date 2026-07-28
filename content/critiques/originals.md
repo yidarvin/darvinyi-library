@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -91,3 +91,15 @@ done.
    validation; prose lint; all 42 pipeline tests; all 245 Vitest tests; TypeScript
    and the Vite production build; and ESLint. Vitest emitted only the existing
    non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-27
+
+Resolved the round 2 required finding:
+
+1. The `<Hero>` reading-time badge now uses `minutes={9}`. This matches the recorded
+   server-rendered count of 1,655 reader-visible words, including headings, captions,
+   diagram labels, exercise titles, and generated footer text, rounded up at
+   approximately 200 words per minute.
+
+The round 1 axis, matrix, and direct-bookseller-link fixes remain in place. The registry
+remains `draft`; this resolution does not mark the chapter done.
