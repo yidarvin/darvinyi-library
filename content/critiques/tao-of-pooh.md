@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -56,3 +56,37 @@ verdict: resolved
 - Ran `npm run check` on 2026-07-28; the full validation, prose lint, pipeline,
   Vitest, TypeScript/Vite build, and ESLint gate passed. The chapter remains `draft`;
   this resolution does not mark it done.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+1. Both round-one blockers are resolved in the exact current draft. `The thesis` is
+   two sentences and retains the required synthesis. Figure 137.2 renders with a
+   `0 0 558 180` viewBox and `min-w-[558px]`, so the Figure overflow wrapper preserves
+   the four-step Flow's native label size at a 360px viewport. The focused regression
+   test asserts both properties.
+
+2. The broader independent review found no new defect. The five key ideas have
+   distinct, semantically fitting forms from the registered diagram vocabulary, and
+   their labels agree with the prose. The absent Model section matches the brief and
+   registry explanation. The exercises are concrete, the caveat distinguishes Hoff's
+   popular interpretation from the wider Taoist tradition, and all three related
+   slugs are done. The generated cover and publisher outbound link satisfy the
+   copyright and cross-link contract.
+
+3. The local brief and recorded evidence support the claims that affect the reader's
+   understanding: Hoff's Pooh-based introduction, naturalness, simplicity, humility,
+   *wu wei*, sufficiency, and practiced responsiveness. The chapter clearly marks its
+   practical labels and all five diagrams as original synthesis, quotes no source
+   text, and reproduces no source figure, character art, or cover art. No new external
+   web search was begun for this review.
+
+4. `npm run check` passed on 2026-07-28: queue, registry, critique, and chapter
+   validation; prose lint; 40 queue-runner tests; 295 Vitest tests; TypeScript and the
+   Vite production build; and ESLint all completed successfully. Vitest emitted only
+   the existing non-failing jsdom `Window.scrollTo()` notices.
