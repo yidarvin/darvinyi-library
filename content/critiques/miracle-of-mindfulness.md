@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -54,3 +54,16 @@ verdict: revise
    all 297 Vitest tests; TypeScript and the Vite production build; and ESLint
    passed. Vitest emitted only the existing non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+Resolved all required findings from critique round 1.
+
+1. Compressed **The thesis** to two sentences while retaining the connection among
+   ordinary activity, gentle attention, and careful action with others.
+2. Replaced the unsupported shared-conditions key idea and its interbeing-style
+   network diagram with **Conversation can be another place to return**, a
+   book-bounded communication practice grounded in the recorded book source. Updated
+   the fourth practice card to practice arriving before a reply, removed the
+   no-longer-used Fourteen Mindfulness Trainings evidence note, and updated the
+   registry framework description from shared conditions to communication.
