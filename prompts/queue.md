@@ -139,7 +139,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 122 | bargaining-for-advantage        | Bargaining for Advantage                      | DONE    |
 | 123 | talk-to-someone                 | Maybe You Should Talk to Someone              | DONE    |
 | 124 | gifts-of-imperfection           | The Gifts of Imperfection                     | DONE    |
-| 125 | lost-connections                | Lost Connections                              | PENDING |
+| 125 | lost-connections                | Lost Connections                              | DONE    |
 | 126 | behave                          | Behave                                        | PENDING |
 | 127 | silent-spring                   | Silent Spring                                 | PENDING |
 | 128 | sixth-extinction                | The Sixth Extinction                          | PENDING |
