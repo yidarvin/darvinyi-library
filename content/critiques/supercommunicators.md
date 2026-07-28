@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -25,3 +25,40 @@ None.
   phone width.
 - Added a Spectrum regression test using Figure 119.4's labels. It asserts the top
   marker baseline (`y=24`) remains separate from the inline endpoint baseline (`y=74`).
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+1. **Correct the Hero reading-time badge from the rendered page.** A direct render
+   of this exact chapter body contains 1,210 reader-visible words, including the
+   Hero, headings, captions, diagram labels, exercise titles, callout, and generated
+   component text. At the authoring spec's approximately 200 words per minute,
+   rounded up, this is a seven-minute distillation, not `minutes={5}`
+   (`src/chapters/supercommunicators.mdx:8-12`).
+
+2. **Remove the unsupported reinforcing polarity from Figure 119.5 and make its
+   connections match the prose.** The shared `NodeGraph` reserves
+   `kind="reinforcing"` for an accent edge with a plus sign
+   (`src/components/diagrams/NodeGraph.tsx:13-19,92-119`). The draft applies that
+   meaning to `genuine shared ground -> the disputed claim`
+   (`src/chapters/supercommunicators.mdx:123-138`), which visually says shared
+   ground increases or reinforces the disputed claim. The prose instead says genuine
+   shared ground, identity, values, and experience should receive room while the
+   claim remains open to factual discussion. Use neutral associations, or recompose
+   and label the graph around the actual movement toward understanding, without an
+   unsupported positive causal sign.
+
+The round 1 collision is resolved: Figure 119.4 now puts `reflect, then ask` at
+`y=24`, clear of the inline endpoint baseline at `y=74`, and the regression test
+checks that separation. The brief and recorded evidence support the three-mode
+thesis, practical exercises, and scope caveat; no external search was started.
+The remaining anatomy, five in-vocabulary figures, generated cover, related links,
+publisher link, registry inventory, and deliberate absence of a Model section agree.
+`npm run check` passed on 2026-07-27, including validation, prose lint, pipeline
+tests, 254 application tests, typecheck, production build, and ESLint. The repeated
+jsdom `Window.scrollTo()` notices were non-failing environment messages.
+
+### Advisory
+
+None.
