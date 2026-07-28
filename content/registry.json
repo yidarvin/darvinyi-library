@@ -2530,7 +2530,17 @@
       "subtitle": "Elizabeth Kolbert · 2014",
       "part": "Big Ideas: Science, History & Society",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Extinction is an ordinary part of life's long history. What is extraordinary is one species changing habitats, climate, and the movement of organisms quickly enough to push many others toward the edge at once.",
+      "framework": "No single signature framework; the Model section is deliberately absent because the book's argument is carried by five Key Ideas diagrams rather than an invented model.",
+      "diagrams": [
+        "comparison",
+        "iceberg",
+        "node graph",
+        "flow",
+        "venn"
+      ]
     },
     {
       "num": 129,

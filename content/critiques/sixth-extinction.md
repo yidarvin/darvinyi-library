@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -41,3 +41,16 @@ verdict: revise
 
 2. `npm run check` passed in full on 2026-07-28: validation, prose lint, 40 pipeline
    tests, 274 application tests, typecheck, production build, and lint all passed.
+
+## Builder resolution — 2026-07-28
+
+- Completed the registry metadata with tier, page thesis, the explicit reason The Model is
+  absent, and the five in-vocabulary diagram forms. The chapter remains `draft`.
+- Replaced Figure 128.1's equal-width timeline with an in-vocabulary comparison that contrasts
+  dispersed background turnover with the concentrated time span and breadth of a mass
+  extinction. Its caption now states that contrast directly without numerical claims.
+- Narrowed the human-transport claim to human-mediated connections between previously separate
+  places, removed the unsupported geological-threshold debate claim, and retained the IUCN
+  measurement caveat supported by the recorded evidence.
+- Tightened the *The Selfish Gene* cross-link to differential reproduction changing population
+  composition over generations.

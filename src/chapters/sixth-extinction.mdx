@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Flow, Iceberg, NodeGraph, Timeline, Venn } from "../components/diagrams";
+import { Compare, Flow, Iceberg, NodeGraph, Venn } from "../components/diagrams";
 
 <Hero
   slug="sixth-extinction"
@@ -40,17 +40,17 @@ can replace themselves, and add heat and acidity to systems already under strain
 agent is not hidden in a sediment layer. It is dispersed across ordinary institutions and
 infrastructure.
 
-<Figure id="128.1" caption="The present crisis is best understood as a rapid, human-driven shift in the pace of loss.">
-  <Timeline
-    className="block w-full min-w-[656px]"
-    segments={[
-      { label: "background turnover", sub: "species appear and disappear" },
-      { label: "five great die-offs", sub: "deep-time pulses" },
-      { label: "human expansion", sub: "land, harvest, transport" },
-      { label: "planetary pressure", sub: "many drivers at once" },
-      { label: "a choice point", sub: "loss or repair" },
-    ]}
-    highlight={3}
+<Figure id="128.1" caption="Mass extinction names loss concentrated across many lineages in a short geological span, not ordinary background turnover.">
+  <Compare
+    className="block w-full max-w-[520px]"
+    left={{
+      title: "background turnover",
+      points: ["losses dispersed through time", "limited set of lineages at once", "ecological roles can be refilled"],
+    }}
+    right={{
+      title: "mass extinction",
+      points: ["losses concentrated in a short span", "many lineages affected together", "ecological roles are abruptly reordered"],
+    }}
   />
 </Figure>
 
@@ -110,7 +110,7 @@ conservation therefore starts with a system map instead of a mascot.
 
 ## Moving organisms moves whole histories
 
-Human transport changes biogeography at a speed no animal migration could match. A ship,
+Human transport can connect places that would otherwise remain biologically separate. A ship,
 shipment, pet release, or crop introduction can carry an organism into a place where prey,
 competitors, hosts, or predators have no shared history with it. Sometimes the newcomer fails.
 Sometimes it becomes one more part of a functioning community. Sometimes it meets a population
@@ -192,11 +192,10 @@ minute arrives.
 "The sixth extinction" is a serious diagnosis, not a license for loose arithmetic. A threatened
 species is not an extinct one, and a population decline is not automatically a species loss.
 The IUCN also cautions that extinction risk has been evaluated for only a portion of described
-species, so no single list can yield a precise total for life on Earth. There is legitimate
-scientific debate about whether the present period has already crossed a strict geological
-threshold for the label "mass extinction." That uncertainty does not reverse the well-supported
-finding that human pressures are driving widespread biodiversity decline. It means the case for
-action should be made with the measures named plainly, not inflated for effect.
+species, so no single list can yield a precise total for life on Earth. Those limits do not
+reverse the well-supported finding that human pressures are driving widespread biodiversity
+decline. They mean the case for action should be made with the measures named plainly, not
+inflated for effect.
 </Callout>
 
 ## If you remember one thing
@@ -208,8 +207,8 @@ systems created much of that pressure, which means human systems can still reduc
 ## Shelved nearby
 
 <em>Silent Spring</em> follows one route by which human interventions travel through living
-systems, while <em>The Selfish Gene</em> supplies the evolutionary logic that makes small
-population changes matter over generations.
+systems, while <em>The Selfish Gene</em> explains how differential reproduction changes a
+population's composition over generations.
 
 <ShelvedNearby
   related={["silent-spring", "selfish-gene"]}
