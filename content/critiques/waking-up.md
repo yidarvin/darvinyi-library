@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -144,3 +144,30 @@ verdict: resolved
 - Preserved the prior resolution: all five figures retain their chapter-local
   minimum widths, Figure 139.1 remains the event-commentary-response Flow, and
   the caveat remains limited to the recorded non-clinical evidence.
+
+## Critique round 3 — 2026-07-28
+
+### Required
+
+1. **Correct the Hero reading-time badge from the final rendered word count.**
+   The current Hero declares `minutes={7}` (`src/chapters/waking-up.mdx:5-9`),
+   but a direct static render through the real MDX and shared components contains
+   approximately 1,456 reader-visible words, including the Hero, headings,
+   captions, SVG labels, exercise titles, callout, and generated nearby-book
+   metadata. At approximately 200 words per minute, rounded up as the authoring
+   spec requires, this is an eight-minute distillation. Set the badge to
+   `minutes={8}`.
+
+### Advisory
+
+None. The four earlier required findings remain resolved: the figures preserve
+their authored mobile widths, Figure 139.1 encodes its event-commentary-response
+claim, the caveat stays within the recorded evidence, and the registry diagram
+inventory matches the rendered chapter. The fixed anatomy, evidence boundaries,
+related links, and deliberately absent Model section remain sound. This review
+began no external web search.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28. Validation and prose
+lint passed; both pipeline tests, all 40 runner tests, all 299 Vitest tests,
+TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
+the existing non-failing jsdom `Window.scrollTo()` notices.
