@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -110,3 +110,39 @@ Resolved every required finding from critique round 1.
 
 Also changed “one ordinary star” to “one star” to avoid implying that the Sun is
 representative of the stellar population.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None.
+
+The four required findings from round 1 are resolved in the current draft. **The
+thesis** is now a two-sentence synthesis. Figures 129.1 and 129.2 preserve their
+native SVG widths inside the shared horizontal scroller. Figure 129.4 now encodes
+the stated positive feedback from gravity through gathered matter and increased
+density back to stronger gravitational pull, while dark matter enters through a
+neutral contributing edge. Its revised labels wrap inside the fixed node cards.
+
+A full re-review found the remaining anatomy and wiring consistent with the brief
+and authoring spec: six key ideas each have a captioned vocabulary diagram; the
+intentionally absent Model is explained in the registry; the exercises are
+specific; the caveat distinguishes measurements, model-level accounting, and
+unknown underlying causes; both nearby links resolve to done chapters; and the
+outbound author page matches the recorded evidence. The chapter's cosmology claims
+remain supported by the bounded NASA, ESA, and author evidence record, with no new
+external search performed. The prose and figures remain original in organization
+and expression within the available record.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28. Validation, prose lint, 42
+pipeline tests, 276 Vitest tests, TypeScript, the Vite production build, and ESLint
+all passed. Vitest emitted only the existing non-failing jsdom `Window.scrollTo()`
+notices.
+
+### Advisory
+
+1. The round-1 advisory on Figure 129.6 remains: the `Compare` primitive inserts
+   “vs” and favors inquiry even though the prose describes wonder and rigor as
+   partners, and the figure does not carry the section's stewardship point. The
+   caption, parallel panel content, and surrounding prose keep the intended lesson
+   clear, so this remains optional visual polish rather than a misleading diagram.
