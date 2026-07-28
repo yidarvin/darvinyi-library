@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -40,3 +40,13 @@ None.
 - Replaced Figure 136.2's exponential `Curve` with the in-vocabulary `Flow` "enter the contest → spend time and resources → lose room for other needs." The revised figure has no quantitative axes or growth law and states the recorded evidence's supported burden and capacity tradeoff.
 - Recast "Why it matters" as a present-day relevance claim. It no longer attributes the book's survival or canonical status to a historical cause.
 - Updated the evidence attribution boundary and registry diagram inventory from annotated curve to flow so the chapter artifacts describe the rendered figure consistently.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+None.
