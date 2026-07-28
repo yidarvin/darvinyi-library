@@ -148,7 +148,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 131 | the-innovators                  | The Innovators                                | DONE    |
 | 132 | superintelligence               | Superintelligence                             | DONE    |
 | 133 | scientific-revolutions          | The Structure of Scientific Revolutions       | DONE    |
-| 134 | godel-escher-bach               | Gödel, Escher, Bach                           | PENDING |
+| 134 | godel-escher-bach               | Gödel, Escher, Bach                           | DONE    |
 | 135 | guide-to-good-life              | A Guide to the Good Life                      | PENDING |
 | 136 | art-of-war                      | The Art of War                                | PENDING |
 | 137 | tao-of-pooh                     | The Tao of Pooh                               | PENDING |
