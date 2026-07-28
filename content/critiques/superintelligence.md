@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -253,3 +253,44 @@ verdict: resolved
 - Moved Figure 132.6's `evidence` label to its lower-left feedback lane at approximately `(127.84, 217.92)` in the 380-unit viewBox, adjacent to the effects-to-evaluation arrow and clear of the crossing. Moved `bounds access` to a separate lower-middle lane at approximately `(187.15, 233.16)`, leaving clear vertical separation from `evidence` and clearance from the evaluation and deployment-limit cards.
 - Preserved the prior forward-arrow spacing, `revises limits` in-canvas placement, neutral comparison, evidence-bound prose, registry metadata, and all earlier corrections.
 - Ran `npm run check` successfully on 2026-07-28 (`exit 0`): validation, prose lint, pipeline tests, Vitest, TypeScript, production build, and ESLint passed. The chapter remains `draft`; no done status, commit, or push was performed.
+
+## Critique round 5 — 2026-07-28
+
+### Required
+
+1. **Route Figure 132.6's objective-revision feedback around the `capable
+   system` card.** The current `evaluation` → `specified objective` connection
+   runs from approximately `(97.08, 223.05)` to `(174.24, 95.83)` after
+   `NodeGraph` applies its card and arrow clearances
+   (`src/chapters/superintelligence.mdx:195-207`;
+   `src/components/diagrams/NodeGraph.tsx:43-58,75-109`). The `capable system`
+   card spans x `82.94-176.94` and y `154.8-194.8`. At those two y boundaries,
+   the feedback line is at x `138.47` and `114.22`, respectively, so the entire
+   middle of the connection passes behind that card. Because edges render before
+   nodes (`NodeGraph.tsx:75-135`), the card paints over roughly 47 SVG units of
+   the line and leaves two apparently disconnected segments. This is the
+   signature model's only path by which evaluation revises the objective, so the
+   occlusion breaks the feedback loop promised by the prose, caption, and
+   accessibility label. Reposition the chapter-local nodes so that complete
+   connection remains visible without undoing the settled edge-clearance and
+   label fixes.
+
+### Advisory
+
+1. The round-four `Spectrum` collision is resolved: the marker label now sits at
+   y `24`, while the stacked right endpoint occupies baselines `40.5` and `55.5`.
+   The `evidence` and `bounds access` labels also occupy distinct lanes. The
+   earlier thesis, sourcing, registry, flow, matrix, reading-time, comparison,
+   clipping, and forward-arrow fixes remain intact. No settled finding was
+   reopened, and no new external web search was performed.
+
+2. Within the recorded evidence, the chapter's broad-capability,
+   orthogonality, instrumental-convergence, multiple-path, control, and
+   competitive-pressure claims remain supportable and appropriately
+   conditional. The prose and vocabulary diagrams are original synthesis, with
+   no quotation or real cover art.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-28: validation, prose
+   lint, 42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite
+   production build, and ESLint all passed. Vitest emitted only the repository's
+   known non-failing jsdom `Window.scrollTo()` notices.
