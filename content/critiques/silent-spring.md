@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -48,3 +48,22 @@ verdict: revise
 None. `npm run check` passed on 2026-07-28, including validation, prose lint, 42
 pipeline and runner tests, 271 Vitest tests, TypeScript, the production build, and
 ESLint. The repeated jsdom `Window.scrollTo()` notices were non-failing test output.
+
+## Builder resolution — 2026-07-28
+
+- Rewrote the persistence passage and figure 127.2 so persistence, bioaccumulation
+  within one organism, and biomagnification as increasing concentration across trophic
+  levels are distinct. The figure labels now encode lower and higher trophic
+  concentrations, and the prose retains the recorded chemical, species, exposure,
+  place, and time qualifications.
+- Kept figures 127.2 and 127.4 at their 696-unit readable width and figure 127.5 at
+  its 656-unit readable width with horizontal scrolling in the existing `Figure`
+  frame. Added chapter-level regression coverage for all three SVG widths, viewBoxes,
+  and scroll containers.
+- Completed the `silent-spring` registry record with tier, thesis, the explicit
+  no-single-model rationale, and its five diagram forms.
+- Narrowed the caveat to the documented DDE-associated eggshell thinning and
+  reproductive harm in bald eagles near the end of long food chains. No new external
+  research was used.
+
+`npm run check` passed on 2026-07-28 before this resolution was recorded.

@@ -2511,7 +2511,17 @@
       "subtitle": "Rachel Carson · 1962",
       "part": "Big Ideas: Science, History & Society",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "A pesticide can solve a local problem while changing a much larger living system, so its full effects must be made visible before it is used.",
+      "framework": "No single signature framework. The Model section is deliberately absent because Carson's argument is carried by five Key Ideas diagrams rather than one invented model.",
+      "diagrams": [
+        "node graph",
+        "flow",
+        "process loop",
+        "flow",
+        "timeline"
+      ]
     },
     {
       "num": 128,

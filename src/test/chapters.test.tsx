@@ -171,6 +171,41 @@ describe("Noise audit flow", () => {
   });
 });
 
+describe("Silent Spring mobile figures", () => {
+  it("keeps the two five-step flows and five-segment timeline at readable widths", async () => {
+    const mod = await mdxModules["../chapters/silent-spring.mdx"]();
+    const SilentSpring = mod.default;
+    render(
+      <MemoryRouter>
+        <MDXProvider components={mdxComponents}>
+          <SilentSpring />
+        </MDXProvider>
+      </MemoryRouter>,
+    );
+
+    const persistenceFigure = screen
+      .getByText(/Persistence keeps a chemical available/i)
+      .closest("figure");
+    const decisionFigure = screen
+      .getByText(/A sound response moves from observation/i)
+      .closest("figure");
+    const timelineFigure = screen
+      .getByText(/Carson's warning helped connect ecological evidence/i)
+      .closest("figure");
+
+    for (const [figure, viewBox, minWidth] of [
+      [persistenceFigure, "0 0 696 180", "min-w-[696px]"],
+      [decisionFigure, "0 0 696 180", "min-w-[696px]"],
+      [timelineFigure, "0 0 656 168", "min-w-[656px]"],
+    ] as const) {
+      const svg = figure?.querySelector("svg");
+      expect(svg?.getAttribute("viewBox")).toBe(viewBox);
+      expect(svg?.getAttribute("class")).toContain(minWidth);
+      expect(figure?.querySelector(".overflow-x-auto")).not.toBeNull();
+    }
+  });
+});
+
 describe("CoreContext", () => {
   it("keeps three peer core items inside the inner frame", () => {
     const { container } = render(
