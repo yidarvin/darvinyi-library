@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -62,3 +62,17 @@ jsdom `Window.scrollTo()` notices were non-failing environment messages.
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-27
+
+- Changed the Hero badge from `5-min distillation` to `7-min distillation`, matching
+  the recorded rendered-word count of 1,210 at the specified approximately 200 words
+  per minute, rounded up.
+- Recast Figure 119.5 as a neutral relationship map with `directed={false}`. All four
+  links, including genuine shared ground to the disputed claim, now render without
+  arrowheads, accent treatment, or a plus sign. Its aria label now states the intended
+  reading: identity, values, experience, and genuine shared ground can be acknowledged
+  while the claim remains open to discussion.
+- Preserved the round 1 Spectrum correction and its regression test: `reflect, then
+  ask` remains on the upper baseline at `y=24`, separate from the inline endpoint at
+  `y=74`.

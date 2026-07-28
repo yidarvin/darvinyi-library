@@ -8,7 +8,7 @@ import { Compare, Flow, NodeGraph, Spectrum, Venn } from "../components/diagrams
 <Hero
   slug="supercommunicators"
   thesis="Connection improves when you notice what a conversation needs, then answer that need before trying to move it somewhere else."
-  minutes={5}
+  minutes={7}
 />
 
 ## The thesis
@@ -123,6 +123,8 @@ spot and makes the distance worse.
 <Figure id="119.5" caption="A difficult exchange can move toward understanding when identity, values, and the disputed claim all have a place in the conversation.">
   <NodeGraph
     className="block w-full min-w-[440px]"
+    directed={false}
+    ariaLabel="A neutral map of the identity, values, experience, and genuine shared ground that can each be acknowledged while a disputed claim remains open to discussion."
     nodes={[
       { id: "claim", label: "the disputed claim", x: 0.5, y: 0.5 },
       { id: "identity", label: "identity and status", x: 0.15, y: 0.22 },
@@ -134,7 +136,7 @@ spot and makes the distance worse.
       { from: "identity", to: "claim" },
       { from: "values", to: "claim" },
       { from: "experience", to: "claim" },
-      { from: "shared", to: "claim", kind: "reinforcing" },
+      { from: "shared", to: "claim" },
     ]}
   />
 </Figure>
