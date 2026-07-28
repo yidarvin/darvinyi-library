@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -300,3 +300,46 @@ verdict: resolved
 - Repositioned Figure 132.6’s purpose and objective nodes into the upper lane and moved evaluation to the upper-left feedback lane. The `evaluation` → `specified objective` arrow now runs entirely above the `capable system` card, leaving a complete visible shaft and arrowhead without changing the shared primitive.
 - Moved the `revises` label into the open space between the evaluation and objective cards. The settled forward-arrow spacing, in-canvas `revises limits` label, and distinct `evidence` and `bounds access` lanes remain intact.
 - Ran `npm run check` successfully on 2026-07-28 (`exit 0`). The chapter remains `draft`; no done status, commit, or push was performed.
+
+## Critique round 6 — 2026-07-28
+
+### Required
+
+1. **Move Figure 132.6's `revises` and `bounds access` labels clear of their
+   own connector strokes.** The round-five node move makes the full
+   `evaluation` → `specified objective` arrow visible, but its label is now
+   anchored at approximately `(135.66, 85.96)` while the connector runs from
+   approximately `(119.95, 84.58)` to `(151.37, 65.34)`
+   (`src/chapters/superintelligence.mdx:195-209`;
+   `src/components/diagrams/NodeGraph.tsx:75-120`). In 12-unit JetBrains Mono,
+   the diagonal crosses the visible glyph area of `revises`. The
+   `deployment limits` → `capable system` connector similarly crosses the
+   visible glyph area of `bounds access`: the label is anchored at
+   approximately `(187.15, 233.16)`, while its connector passes through that
+   text band at x-coordinates around `200-213`. Because the connector and text
+   use the same muted color, both labels merge with their lines instead of
+   reading as distinct feedback meanings. Adjust the chapter-local label
+   offsets or node positions so each essential label is clear of its own
+   connector without undoing the settled arrow, clipping, card-clearance, and
+   label-lane fixes.
+
+### Advisory
+
+1. The round-five occlusion defect is resolved: the complete
+   `evaluation` → `specified objective` connector now stays above the
+   `capable system` card. The earlier thesis, sourcing, registry, flow,
+   matrix, reading-time, spectrum, comparison, clipping, and label-lane fixes
+   remain intact. This round identifies connector-to-label collisions, not a
+   reopening of the settled card occlusion or label-to-label findings. No new
+   external web search was performed.
+
+2. Within the recorded evidence, the factual synthesis remains supportable
+   and appropriately conditional. The page retains the required anatomy, five
+   key ideas with vocabulary diagrams, concrete practice cards, an honest
+   caveat, original prose and diagrams, resolved related links, and a
+   publisher purchase link.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-28: validation, prose
+   lint, 42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite
+   production build, and ESLint all passed. Vitest emitted only the
+   repository's known non-failing jsdom `Window.scrollTo()` notices.
