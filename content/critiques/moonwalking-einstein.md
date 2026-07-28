@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -75,3 +75,26 @@ None.
   badge, the non-limiting definition of the memory palace, the Model figure's
   fixed-order caption, and the evidence-bounded account of practice and speed. No new
   external research was needed.
+
+## Critique round 3 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+1. The round 2 registry finding is resolved. The draft record now includes tier 3,
+   the brief-consistent thesis, the memory-palace framework, and all six diagram forms
+   in rendered order. The chapter remains internally consistent with that metadata,
+   and all three related slugs resolve to existing chapters with `done` status.
+
+2. The bounded re-review found no new sourcing, anatomy, diagram, interaction, or
+   technical-integrity defect. The local brief and recorded evidence support the
+   trainable method-of-loci thesis and the page's stated limits; no new external web
+   search was begun.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-28. Queue, registry, critique,
+   and chapter validation; prose lint; 42 pipeline tests; 301 Vitest tests; TypeScript
+   and the Vite production build; and ESLint passed. Vitest emitted only the existing
+   non-failing jsdom `Window.scrollTo()` notices.
