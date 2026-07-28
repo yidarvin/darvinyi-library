@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -54,3 +54,37 @@ verdict: resolved
   measurement caveat supported by the recorded evidence.
 - Tightened the *The Selfish Gene* cross-link to differential reproduction changing population
   composition over generations.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+1. **The Thesis does not follow the fixed one-to-two-sentence contract.** The block at
+   `src/chapters/sixth-extinction.mdx:13-18` is four sentences: a framing sentence,
+   the central claim, a qualification, and a second formulation of the claim. The
+   authoring spec requires this section to compress the entire argument into one or
+   two sentences. Reduce it to that form while preserving the causal claim and the
+   useful qualification that mass extinction does not mean every species disappears.
+
+2. **Figure 128.4 puts prevention after the event it must prevent.** The shared
+   `Flow` component attaches its branch after the last step, so the sequence at
+   `src/chapters/sixth-extinction.mdx:125-131` reads: human transport, new arrival,
+   novel interaction, local vulnerability, then “prevention or removal.” That
+   conflicts with the surrounding prose and Exercise 03, which correctly distinguish
+   prevention before introduction from response after an arrival. Move prevention
+   to the appropriate point in the sequence, or relabel the post-arrival branch as
+   containment/removal so the diagram teaches the intervention chronology accurately.
+
+### Advisory
+
+1. Figure 128.1's third comparison row is not structurally parallel:
+   “ecological roles can be refilled” and “ecological roles are abruptly reordered”
+   can both occur on different timescales, and the recorded evidence does not establish
+   this as a defining binary. The first two rows already carry the supported contrast
+   in pace and breadth; removing or tightening the third would make the figure cleaner.
+
+2. The three required findings from round 1 are resolved. The registry metadata is
+   complete, Figure 128.1 now encodes pace and breadth, the unsupported transport and
+   threshold claims are gone, and the *Selfish Gene* cross-link is precise.
+   `npm run check` passed in full on 2026-07-28: validation, prose lint, 40 pipeline
+   tests, 274 application tests, typecheck, production build, and lint all passed.
