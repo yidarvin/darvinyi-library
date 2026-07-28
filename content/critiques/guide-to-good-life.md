@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -71,3 +71,26 @@ decision.
   `draft`; this resolution does not mark the chapter done.
 - Ran the mandatory `npm run check` gate after these changes; validation, prose lint, pipeline
   tests, Vitest, typecheck, production build, and advisory lint passed.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+1. Figure 135.1's caption says that attention can bring an ordinary good back into view, but the
+   curve itself encodes only novelty fading from "new" to "familiar"
+   (`src/chapters/guide-to-good-life.mdx`, lines 41–50). A future polish pass could either narrow
+   the caption to the decay the figure actually shows or add an annotation that makes the return
+   of attention visible.
+
+### Verification
+
+`npm run check` passed on 2026-07-28: queue and registry validation, prose lint, 42 pipeline
+tests, 290 Vitest tests, typecheck, production build, and lint all completed successfully. The
+three prior required corrections remain present: the negative-visualization flow ends with
+renewed attention rather than a mandatory planning step, the three-ring control map is explicitly
+this page's application rather than an attribution to Irvine, and the reading-time and registry
+metadata are complete.
