@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -171,3 +171,14 @@ began no external web search.
 lint passed; both pipeline tests, all 40 runner tests, all 299 Vitest tests,
 TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
 the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Updated the `waking-up` Hero from `minutes={7}` to `minutes={8}`. The badge now
+  matches the recorded final rendered word-count calculation, which rounds roughly
+  1,456 reader-visible words up to an eight-minute distillation at 200 words per
+  minute.
+- Preserved all four earlier resolutions: the five diagram widths retain authored
+  mobile scale, Figure 139.1 remains the event-commentary-response Flow, the caveat
+  remains within the recorded non-clinical evidence, and the registry diagram
+  inventory matches the five rendered figures.
