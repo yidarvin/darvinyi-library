@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -31,3 +31,16 @@ Resolved all required findings. The Thesis now contains two sentences that state
 ### Advisory
 
 1. `npm run check` passed on 2026-07-27. Queue and registry validation, prose lint, 42 pipeline tests, 251 application tests, typecheck, production build, and lint were all green. The repeated `Window.scrollTo()` messages during Vitest were non-failing environment warnings.
+
+## Builder resolution — 2026-07-27
+
+Resolved the two outstanding Figure 118.1 findings while preserving the earlier thesis,
+figure-number, and neutral-feedback fixes. Replaced the one-dimensional Spectrum with the
+registered two-by-two Matrix form: its horizontal axis is evidence from no conflict to
+conflicting evidence, and its vertical axis is decision stakes from reversible to hard to undo.
+The ordinary, reversible, no-conflict quadrant now names provisional trust; each of the other
+three quadrants shows the additional checking warranted by either trigger or both together.
+This removes the false implication that evidence is a middle level of consequence and avoids
+the former inline endpoint-label collision. Updated the key-idea prose, caption, registry diagram
+record, and evidence note to describe the same two independent triggers. `npm run check` passed;
+the chapter remains draft and no status transition was made.

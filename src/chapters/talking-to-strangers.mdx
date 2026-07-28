@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+import { Compare, Flow, Iceberg, Matrix, NodeGraph } from "../components/diagrams";
 
 <Hero
   slug="talking-to-strangers"
@@ -26,25 +26,24 @@ story as proof that we understand someone we have only just met.
 ### Trust is the social default
 
 Most conversation would stall if every ordinary claim required an investigation. We therefore
-start by accepting much of what people say, then revise when a discrepancy, a strong incentive,
-or independent evidence gives us reason to look again. This default is not a personal defect or
-a command to ignore warnings. It is the efficient starting point that makes cooperation possible.
-The risk comes when the setting calls for verification but a familiar, coherent story lets doubt
-feel unnecessary.
+start by accepting much of what people say, then revise when evidence conflicts or the decision
+stakes make an independent check worthwhile. This default is not a personal defect or a command
+to ignore warnings. It is the efficient starting point that makes cooperation possible. The risk
+comes when the setting calls for verification but a familiar, coherent story lets doubt feel
+unnecessary.
 
-<Figure id="118.1" caption="Begin with provisional trust in a routine encounter, then verify independently when evidence conflicts or stakes rise.">
-  <Spectrum
+<Figure id="118.1" caption="Start with provisional trust only when evidence is consistent and the choice is reversible; either conflicting evidence or higher stakes warrants more checking.">
+  <Matrix
     className="block w-full min-w-[440px]"
-    left="routine, reversible choice"
-    right="high-consequence decision"
-    marker={0.18}
-    markerLabel="start: provisional trust"
-    markerLabelPlacement="top"
-    zones={[
-      { from: 0.0, to: 0.32, label: "trust, then stay open to revision" },
-      { from: 0.36, to: 0.64, label: "new discrepancy or evidence" },
-      { from: 0.68, to: 1.0, label: "verify independently before acting", accent: true },
+    xAxis={{ left: "no conflict", right: "conflicting evidence", label: "what the evidence shows" }}
+    yAxis={{ low: "reversible", high: "hard to undo", label: "decision stakes" }}
+    quadrants={[
+      { title: "look again", note: "a discrepancy merits a check" },
+      { title: "verify before acting", note: "conflict and high stakes" },
+      { title: "provisional trust", note: "stay open to revision" },
+      { title: "add an independent check", note: "high stakes need safeguards" },
     ]}
+    highlights={[0, 1, 3]}
   />
 </Figure>
 
