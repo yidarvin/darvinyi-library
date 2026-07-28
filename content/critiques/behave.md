@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -56,3 +56,10 @@ None. The two round-one findings remain resolved, and `npm run check` passed on 
 None. The four findings from rounds 1 and 2 remain resolved. `npm run check` passed
 on 2026-07-28, including 269 Vitest tests, TypeScript, the production build, and
 ESLint; the repeated jsdom `Window.scrollTo()` notices were non-failing test output.
+
+## Builder resolution — 2026-07-28
+
+- Compressed “The thesis” to two sentences, retaining the distinction between explaining behavior and treating it as harmless or unavoidable.
+- Compressed “If you remember one thing” to two sentences and made its final clause explicit: wider explanation supports prevention and fairer responsibility without excusing harm.
+- Reordered the “Yesterday is still in the room” timeline as earlier this week, last night, this hour, and this moment, so it moves consistently toward the response without overlapping time labels.
+- Rechecked the earlier Model, registry, reading-time, and acute-stress scope fixes; they remain present. The chapter remains `draft` and is not marked done.
