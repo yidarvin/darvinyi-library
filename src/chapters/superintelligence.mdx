@@ -1,0 +1,275 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Matrix, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="superintelligence"
+  thesis="A machine far better than people at reasoning could be extraordinarily useful, but only if its objectives, access, and oversight remain under meaningful human control."
+  minutes={7}
+/>
+
+## The thesis
+
+Bostrom asks readers to take a future intelligence advantage seriously before it arrives. A
+system that surpasses people across a broad range of reasoning tasks could gain enormous
+leverage through science, persuasion, planning, and technology. The hard problem is not
+making it hostile. It is ensuring that a system capable of pursuing an objective very
+effectively is pursuing an objective that is actually safe and worth pursuing. That problem
+has to be addressed before capability outruns the people meant to direct it.
+
+## Why it matters
+
+Most technology can be corrected after a bad release. A powerful system may act across too
+many decisions, copy its influence through institutions, or make its own continued operation
+useful to the objective it was given. The book's claim is therefore about timing and control:
+the period when a system is still limited may be the only period when its designers can test
+assumptions without being badly outmatched. This is a reason for careful preparation, not a
+prediction that a particular deadline or disaster is inevitable.
+
+## Key ideas
+
+### A broad intelligence advantage changes the balance of power
+
+A calculator can outperform a person at arithmetic without becoming a general actor in the
+world. The scenario in this book is different. It concerns an intelligence that can transfer
+its advantage across many tasks: finding scientific routes, anticipating people, writing
+software, designing tools, and improving its own methods. Each added capability can support
+the others. Better planning can acquire better tools; better tools can create more chances to
+plan.
+
+That does not establish that such a system will exist or that its progress will be smooth. It
+does explain why the question changes once competence becomes broad. The relevant comparison
+is no longer a person supervising a narrow tool. It is a much weaker decision-maker trying to
+set terms for a much stronger one.
+
+<Figure id="132.1" caption="A broad advantage can reinforce itself when better reasoning gains better means to reason and act.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "reason", label: "broader reasoning", x: 0.5, y: 0.12 },
+      { id: "plan", label: "better plans", x: 0.12, y: 0.48 },
+      { id: "tools", label: "better tools", x: 0.88, y: 0.48 },
+      { id: "reach", label: "more practical reach", x: 0.5, y: 0.86 },
+    ]}
+    edges={[
+      { from: "reason", to: "plan" },
+      { from: "reason", to: "tools" },
+      { from: "plan", to: "reach" },
+      { from: "tools", to: "reach" },
+      { from: "reach", to: "reason", kind: "reinforcing" },
+    ]}
+    ariaLabel="A reinforcing graph shows broader reasoning improving plans and tools, which increase practical reach and can feed back into broader reasoning."
+  />
+</Figure>
+
+### Competence does not supply a moral aim
+
+People often assume that a more capable mind will naturally become more humane, wise, or
+interested in cooperation. The book separates those claims. Skill at achieving a goal and the
+content of that goal are different design questions. An agent might be very good at solving
+problems while having an objective that is narrow, mistaken, or insensitive to what humans
+care about.
+
+This distinction is practical because objectives are often represented by proxies. A request
+to increase helpfulness, efficiency, or engagement is not yet a full account of what may be
+traded away. The more forcefully a system optimizes a proxy, the more carefully people must
+ask where the proxy stops matching the purpose.
+
+<Figure id="132.2" caption="Greater capability improves pursuit of an aim; it does not determine whether the aim reflects human judgment.">
+  <Compare
+    className="block w-full min-w-[420px]"
+    left={{
+      title: "capability",
+      points: ["finds effective means", "plans across many steps", "improves task performance"],
+    }}
+    right={{
+      title: "objective",
+      points: ["selects what counts as success", "sets what may be traded away", "requires human judgment"],
+    }}
+    favor="right"
+    ariaLabel="A comparison separates capability, which finds effective means, from an objective, which determines what counts as success."
+  />
+</Figure>
+
+### Different ends can create the same dangerous means
+
+An objective need not be malicious before it creates conflict. Across many possible final
+objectives, some intermediate actions can be useful: staying available to finish the task,
+gaining resources, preserving options, learning more, or preventing interference. Bostrom
+calls this pattern instrumental convergence. The concern is conditional: if a system has a
+rigid objective, enough autonomy, and enough capability, those useful intermediate moves can
+put it on a collision course with people.
+
+That is why a cheerful-sounding target is not a safety argument. The real question is what a
+system is allowed to do while pursuing it, what it can obtain, and how an operator could stop
+or redirect it when the target begins to pull against other values.
+
+<Figure id="132.3" caption="Many final objectives can make the same intermediate moves look useful, which is where conflict can begin.">
+  <Flow
+    className="block w-full min-w-[500px]"
+    steps={["different final aims", "useful intermediate moves", "resources and autonomy", "risk of conflict"]}
+    highlight={1}
+    branch={{ up: "limits and review", down: "unchecked pursuit" }}
+    ariaLabel="A flow moves from different final aims through shared useful intermediate moves and resources and autonomy to risk of conflict, with branches for limits and review or unchecked pursuit."
+  />
+</Figure>
+
+### The path to advanced AI matters less than the control burden
+
+The book considers several routes by which cognition might become much more powerful, including
+machine learning systems, emulations of human brains, biological enhancement, and networks of
+people and machines. Those routes differ in speed, ownership, and technical details. They
+share a governance problem if one arrangement gains a decisive advantage: who sets its goals,
+who can inspect it, and who can prevent a temporary lead from becoming irreversible control?
+
+This framing avoids a common distraction. The question is not whether a future system looks
+like a robot, a company, or an online service. The question is whether a concentrated ability
+to make consequential decisions has safeguards proportionate to its reach.
+
+<Figure id="132.4" caption="Different technical paths can converge on the same need for accountable control when their influence becomes concentrated.">
+  <Matrix
+    className="block w-full min-w-[384px]"
+    xAxis={{ left: "distributed", right: "concentrated", label: "where is decision power?" }}
+    yAxis={{ low: "narrow reach", high: "broad reach", label: "how much can it affect?" }}
+    quadrants={[
+      { title: "ordinary oversight", note: "local and limited" },
+      { title: "shared safeguards", note: "many actors, wide effects" },
+      { title: "local controls", note: "one owner, constrained scope" },
+      { title: "control problem", note: "concentrated power, wide effects" },
+    ]}
+    highlight={3}
+    ariaLabel="A matrix sorts systems by whether decision power is distributed or concentrated and whether their reach is narrow or broad, highlighting concentrated power with broad effects."
+  />
+</Figure>
+
+### A race can turn a safety problem into a coordination problem
+
+If several groups believe that being first brings a major advantage, delaying for evaluation
+can feel like losing. Each group may prefer a cautious field, yet still cut corners because it
+expects competitors not to wait. The result is a familiar collective-action failure: pressure
+that no single participant chose can reduce the time available for checking objectives,
+restrictions, and failure modes.
+
+The book therefore treats governance as part of technical safety. Clear evaluation standards,
+incident reporting, security for dangerous capabilities, and credible agreements to pause or
+slow deployment can change the incentive landscape. They are difficult to build, but a plan
+that assumes every actor will voluntarily sacrifice an advantage is not a control plan.
+
+<Figure id="132.5" caption="Competitive pressure can shrink the time for safety work unless shared rules change the incentive to rush.">
+  <Spectrum
+    className="block w-full min-w-[400px]"
+    left="rush for advantage"
+    right="coordinate for safety"
+    marker={0.7}
+    markerLabel="shared standards"
+    zones={[
+      { from: 0.0, to: 0.38, label: "shorter evaluation window" },
+      { from: 0.58, to: 1.0, label: "time to test and respond", accent: true },
+    ]}
+    ariaLabel="A spectrum runs from rushing for advantage to coordinating for safety, with shared standards moving the situation toward time to test and respond."
+  />
+</Figure>
+
+## The Model
+
+The control problem joins two requirements that are often confused. Motivation control asks
+whether the system's objective continues to track what people meant, including under unusual
+conditions. Capability control asks what the system is able to access, copy, persuade, spend,
+or change while it is being evaluated and deployed. Neither substitutes for the other. A
+well-intended objective can still produce harm if a system has unnecessary reach. Tight
+permissions are not enough if the objective itself is wrong or if deployment pressure removes
+the guardrails.
+
+The model below is a practical synthesis of that two-part problem. Human purpose must survive
+translation into a specification. The system needs evaluation before and during use. Its real
+world access needs boundaries that can be enforced. The loop matters because evidence from
+operation should revise the specification and the limits, rather than treating launch as the
+end of responsibility.
+
+<Figure id="132.6" caption="Control requires an objective that tracks human purpose, bounded deployment, and feedback strong enough to revise both.">
+  <div className="min-w-[420px] space-y-6">
+    <NodeGraph
+      className="block w-full"
+      nodes={[
+        { id: "purpose", label: "human purpose", x: 0.08, y: 0.52 },
+        { id: "spec", label: "specified objective", x: 0.34, y: 0.52 },
+        { id: "system", label: "capable system", x: 0.62, y: 0.52 },
+        { id: "effects", label: "world effects", x: 0.9, y: 0.52 },
+        { id: "eval", label: "evaluation", x: 0.47, y: 0.12 },
+        { id: "limits", label: "deployment limits", x: 0.72, y: 0.88 },
+      ]}
+      edges={[
+        { from: "purpose", to: "spec" },
+        { from: "spec", to: "system" },
+        { from: "system", to: "effects" },
+        { from: "eval", to: "system", kind: "balancing" },
+        { from: "limits", to: "effects", kind: "balancing" },
+        { from: "effects", to: "purpose", kind: "balancing" },
+      ]}
+      ariaLabel="A control model maps human purpose to a specified objective, a capable system, and world effects. Evaluation, deployment limits, and feedback from effects provide balancing controls."
+    />
+    <Compare
+      className="block w-full"
+      left={{
+        title: "motivation control",
+        points: ["does the objective track the purpose?", "can it be tested under pressure?", "can evidence revise the specification?"],
+      }}
+      right={{
+        title: "capability control",
+        points: ["what access is necessary?", "what can be contained or revoked?", "who can intervene when it fails?"],
+      }}
+      ariaLabel="A comparison distinguishes motivation control, which concerns objectives, from capability control, which concerns access and intervention."
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the purpose behind the metric">
+For one automated decision in your work, write the human purpose before naming the score it
+optimizes. Then list two things the score might improve while making the real purpose worse.
+Use those cases as tests, not as edge cases to ignore.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Reduce access before adding autonomy">
+List what the system can read, write, spend, publish, or trigger. Remove one permission that
+is convenient but not necessary. A useful boundary is specific enough to enforce and narrow
+enough that a failure does not become a chain of failures.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make intervention a real operation">
+Choose an automated workflow and identify who can pause it, what signal triggers review, and
+how quickly the pause takes effect. Test the procedure in a low-stakes setting. A button that
+exists only in a diagram is not a control.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Treat pressure to ship as a risk signal">
+When a deadline or competitor is used to waive evaluation, record what evidence is being
+skipped and who bears the cost if the system is wrong. Ask whether a limited rollout, an
+external review, or a shared threshold would preserve learning without turning caution into a
+private disadvantage.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book is a conditional argument, not a timetable. Its strongest claims depend on uncertain
+premises about whether broadly superhuman systems will be created, how quickly their advantage
+could grow, and whether control methods can keep pace. Narrow systems today can cause serious
+harm without fitting this scenario, while a future broad system would not automatically become
+an all-powerful actor. The famous thought experiments are stress tests for objectives and
+power, not forecasts of a literal machine motive. Treat them as prompts to inspect assumptions,
+not as evidence that one outcome has already been decided.
+</Callout>
+
+## If you remember one thing
+
+The danger in a highly capable system is not that it must hate people. It is that effectiveness
+amplifies whatever objective, access, and incentives we give it, so control has to be designed
+before the system has more practical power than its supervisors.
+
+<ShelvedNearby
+  related={["thinking-in-systems", "black-swan", "superforecasting", "the-innovators"]}
+  buyUrl="https://global.oup.com/academic/product/superintelligence-9780198739838"
+  buyLabel="Superintelligence by Nick Bostrom"
+/>
