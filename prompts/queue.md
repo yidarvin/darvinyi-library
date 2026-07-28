@@ -134,7 +134,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 117 | culture-code                    | The Culture Code                              | DONE    |
 | 118 | talking-to-strangers            | Talking to Strangers                          | DONE    |
 | 119 | supercommunicators              | Supercommunicators                            | DONE    |
-| 120 | attached                        | Attached                                      | PENDING |
+| 120 | attached                        | Attached                                      | DONE    |
 | 121 | getting-past-no                 | Getting Past No                               | PENDING |
 | 122 | bargaining-for-advantage        | Bargaining for Advantage                      | PENDING |
 | 123 | talk-to-someone                 | Maybe You Should Talk to Someone              | PENDING |
