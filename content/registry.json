@@ -2689,7 +2689,17 @@
       "subtitle": "Sun Tzu · c. 500 BCE",
       "part": "Philosophy & Wisdom",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "The highest skill is to win without fighting, through preparation, positioning, and knowing yourself and your rival.",
+      "framework": "No single signature model. The Key Ideas diagrams synthesize comparative preparation, capacity, positioning, information, and coordination.",
+      "diagrams": [
+        "iceberg",
+        "annotated curve",
+        "spectrum",
+        "comparison",
+        "process loop"
+      ]
     },
     {
       "num": 137,

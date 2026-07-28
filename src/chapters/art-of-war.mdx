@@ -1,0 +1,204 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Curve, Iceberg, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="art-of-war"
+  thesis="The highest skill is to avoid a costly fight by preparing well, shaping the conditions, and understanding both your position and the other side's."
+  minutes={7}
+/>
+
+## The thesis
+
+*The Art of War* treats victory as a problem to solve before a clash begins. Its strategist
+compares conditions, protects scarce capacity, and changes the situation until force becomes
+less necessary or meets a genuine opening.
+
+## Why it matters
+
+The book survives because it notices a stubborn mistake: people often substitute intensity for
+strategy. More effort can be needed, but it is a poor first answer when the real problem is bad
+information, a divided group, an expensive objective, or a contest that should never have been
+entered. The text asks for a colder look at conditions before pride turns a disagreement into a
+drain on everyone involved.
+
+## Key ideas
+
+### Read the conditions below the visible contest
+
+The visible move, an attack, a deadline, a public argument, can make a contest look simpler than
+it is. The text begins instead with a comparison of conditions: the people involved, the timing,
+the setting, the quality of leadership, and the ability to organize and supply the effort. These
+are not decorations around the plan. They determine what a plan can bear.
+
+For ordinary work, this means pausing before the first move to ask concrete questions. Who has to
+carry the decision? What information is missing? What constraints are fixed? What will a delay
+cost, and what would make an agreement durable? A strong plan begins by making those conditions
+visible. It does not pretend that resolve can erase them.
+
+<Figure id="136.1" caption="The visible contest rests on conditions that decide whether a plan can hold.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the move everyone can see"
+    waterlineLabel="what the plan exposes"
+    below={["shared purpose", "timing and setting", "leadership", "organization and supply"]}
+  />
+</Figure>
+
+### Count the cost of a long contest
+
+The book is unsentimental about duration. A prolonged campaign consumes material, attention,
+morale, and the ability to respond elsewhere. Even an eventual win can be a bad exchange if it
+leaves the winner exhausted and the larger situation worse. The relevant question is not simply,
+"Can we prevail?" It is, "What will this consume before we do?"
+
+That question improves decisions outside war as well. A lawsuit, a product battle, a political
+fight, or a feud can take on a life of its own. Before escalating, name the cost that rises with
+time and the point at which the original aim will no longer justify it. A limited agreement,
+withdrawal, or change of objective can preserve more than a dramatic victory.
+
+<Figure id="136.2" caption="As a contest drags on, the burden on people and resources can rise faster than the original aim merits.">
+  <Curve
+    className="block w-full min-w-[380px]"
+    shape="exp"
+    axes={{ x: "time in the contest", y: "capacity consumed" }}
+    annotations={[
+      { x: 0.2, y: 0.08, text: "manageable" },
+      { x: 0.8, y: 0.62, text: "options shrink" },
+    ]}
+  />
+</Figure>
+
+### Change the position before adding force
+
+The text favors meeting a weak point rather than proving strength against the most defended one.
+Its deeper lesson is about position. An advantage is often made by choosing the place, timing, and
+terms of action so that a concentrated effort meets a real opening. Repeating the same hard push
+against the same resistance is rarely a strategy.
+
+This does not mean exploiting a person's vulnerability or engineering a private trap. In a
+responsible setting, it can mean changing a proposal so it answers the other side's legitimate
+constraint, piloting a smaller version, choosing a less congested channel, or declining a fight
+whose only prize is status. The move is from collision toward fit.
+
+<Figure id="136.3" caption="A better position moves effort away from a defended collision and toward an opening where progress is possible.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="force the defended point"
+    right="work through a real opening"
+    marker={0.76}
+    markerLabel="change the position"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
+    zones={[
+      { from: 0.0, to: 0.36, label: "effort meets resistance" },
+      { from: 0.61, to: 1.0, label: "conditions support action", accent: true },
+    ]}
+  />
+</Figure>
+
+### Knowledge must be comparative
+
+Knowing your own plan is not enough. The book repeatedly asks a commander to compare both sides:
+readiness, resources, likely choices, and the setting in which each side must act. Confidence
+that is not checked against the other side's condition is only a story about yourself.
+
+The practical habit is to build the other side's constraints into your picture early. If you are
+negotiating, learn what they need to protect. If you are planning a launch, learn where users will
+actually hesitate. If a team is stuck, learn which dependency or incentive makes the current
+behavior sensible. The aim is not omniscience. It is to replace a flattering assumption with a
+testable comparison before commitment makes learning expensive.
+
+<Figure id="136.4" caption="A useful plan compares its own condition with the other side's constraints instead of treating either as an afterthought.">
+  <Compare
+    className="block w-full min-w-[384px]"
+    favor="none"
+    left={{
+      title: "our condition",
+      points: ["what we can sustain", "what we know", "what we need to protect", "where coordination can fail"],
+    }}
+    right={{
+      title: "their condition",
+      points: ["what they can sustain", "what they know", "what they need to protect", "where a proposal may fit"],
+    }}
+  />
+</Figure>
+
+### Signals turn many people into one effort
+
+The book does not imagine strategy as a brilliant person acting alone. It pays attention to
+organization, discipline, signs, and signals because a group cannot use an advantage it cannot
+coordinate around. Clear roles and timely information let a large effort respond as an effort
+rather than as a crowd of separate impulses.
+
+In modern teams, coordination does not require theatrical command. It requires a shared purpose,
+an owner for the next decision, a way to surface new information, and permission to revise the
+plan when conditions change. The feedback matters because a plan that cannot learn becomes a
+ritual. The text's concern with changing circumstances is a warning against mistaking a fixed
+script for discipline.
+
+<Figure id="136.5" caption="Shared purpose, clear signals, and review let a group act together while staying able to adapt.">
+  <ProcessLoop
+    className="block w-full min-w-[380px]"
+    stages={["set the purpose", "assign the next move", "share new signals", "revise the position"]}
+    compoundingEdge={3}
+    centerLabel="coordinated action"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write the conditions before the move">
+For one disagreement, launch, or difficult decision, list the people who must carry it, the
+constraint that cannot be wished away, the information you lack, and the capacity it will use.
+Do this before drafting the first persuasive message or committing new resources. If the list
+changes the objective, let it.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Set a cost limit for escalation">
+Name one conflict that could expand without producing a better result. Choose a concrete limit:
+two more meetings, a fixed budget, one week of investigation, or a stated decision date. At that
+limit, reconsider the aim rather than treating more investment as proof that the fight matters.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Find an opening that respects the other side">
+When a proposal meets resistance, do not repeat it louder. Ask what condition makes the answer
+reasonable from the other side's view. Change scope, sequence, evidence, timing, or the option
+set. Do not use the exercise to exploit private weakness or evade a fair boundary.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Run a short comparison review">
+Before a consequential move, give the plan two columns: our condition and their condition. Put
+only observed facts or explicit assumptions in each. Mark the two assumptions that would most
+change the decision if false, then seek one inexpensive way to test them.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+This is a military text, not a complete moral philosophy or a universal handbook for work and
+relationships. Its attention to deception, pressure, and advantage can become corrosive when
+lifted into intimate life, leadership, or civic disagreement without consent, law, and care for
+the people affected. “Win without fighting” is not permission to manipulate someone until they
+cannot refuse. Often the better application is to prevent a needless contest, state interests
+plainly, seek an agreement, or leave. The text also comes through translation and long
+transmission, so a memorable English slogan should not be treated as a frictionless rule for
+every situation.
+</Callout>
+
+## If you remember one thing
+
+Do not confuse a head-on contest with strength. See the conditions clearly, protect the capacity
+you will need afterward, and change the situation until the best outcome asks for less force.
+
+## Shelved nearby
+
+*Good Strategy Bad Strategy* helps distinguish a real diagnosis and guiding policy from a slogan.
+*Getting to Yes* offers a cooperative alternative for conflicts that can be negotiated rather than
+won. The *Tao Te Ching* similarly questions whether force is the first tool worth reaching for.
+
+<ShelvedNearby
+  related={["good-strategy", "getting-to-yes", "tao-te-ching"]}
+  buyUrl="https://us.macmillan.com/books/9781509827954/theartofwar/"
+  buyLabel="The Art of War by Sun Tzu, translated by Jonathan Clements"
+/>
