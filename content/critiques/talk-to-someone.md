@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -56,3 +56,33 @@ Resolved every required finding from round 1:
   thesis, the deliberate absence of a single signature model, and the five rendered
   diagram forms in page order: iceberg, comparison, process loop, spectrum, and
   flow. Its status remains `draft` pending independent re-review.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+None.
+
+### Advisory
+
+None.
+
+The round 1 fixes hold on independent re-review. Figure 123.4 uses the existing
+Spectrum collision-avoidance options, keeping the marker and both endpoint labels
+distinct. The seven-minute Hero badge matches the previously recorded 1,290
+reader-visible words at approximately 200 words per minute, rounded up. The registry
+now records tier 3, a chapter-aligned thesis, the brief-supported absence of a single
+signature model, and the five diagrams in rendered order.
+
+The chapter's dual clinician-and-patient perspective, partial life narratives,
+therapeutic relationship, recurring patterns, and loss within desired change are
+supported by the brief and recorded evidence. The prose and conceptual diagrams are
+an original synthesis, and the exercises do not present diagnosis or a universal
+treatment protocol. Related links point to done chapters, and the outbound link
+points to the publisher's page for the book. This review began no new external web
+search.
+
+`npm run check` completed with `CHECK OK` on 2026-07-27. Repository validation,
+prose lint, all 40 pipeline and runner tests, all 262 Vitest tests, TypeScript, the
+Vite production build, and ESLint passed. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.

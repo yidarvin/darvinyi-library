@@ -137,7 +137,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 120 | attached                        | Attached                                      | DONE    |
 | 121 | getting-past-no                 | Getting Past No                               | DONE    |
 | 122 | bargaining-for-advantage        | Bargaining for Advantage                      | DONE    |
-| 123 | talk-to-someone                 | Maybe You Should Talk to Someone              | PENDING |
+| 123 | talk-to-someone                 | Maybe You Should Talk to Someone              | DONE    |
 | 124 | gifts-of-imperfection           | The Gifts of Imperfection                     | PENDING |
 | 125 | lost-connections                | Lost Connections                              | PENDING |
 | 126 | behave                          | Behave                                        | PENDING |
