@@ -214,6 +214,23 @@ describe("CoreContext", () => {
       expect(y + height).toBeLessThanOrEqual(216);
     }
   });
+
+  it("describes an empty core as stable rather than as a container", () => {
+    const { container } = render(
+      <CoreContext
+        coreTitle="inherent worth"
+        coreItems={[]}
+        contextTitle="things that can change"
+        contextItems={["feedback", "skill", "outcome", "approval"]}
+      />,
+    );
+
+    const svg = container.querySelector("svg");
+    expect(svg?.getAttribute("aria-label")).toBe(
+      "inherent worth remains stable. Outside it, things that can change includes feedback, skill, outcome, approval.",
+    );
+    expect(container.querySelectorAll("[data-core-item]")).toHaveLength(0);
+  });
 });
 
 describe("Spectrum", () => {

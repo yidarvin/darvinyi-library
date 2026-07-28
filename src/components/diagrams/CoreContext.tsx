@@ -4,7 +4,7 @@ import { CenteredText, Svg } from "./_shared";
 export interface CoreContextProps extends DiagramBase {
   /** The name of the small, enduring center. */
   coreTitle: string;
-  /** Peer elements that belong together inside the core. */
+  /** Optional peer elements that belong together inside the core. */
   coreItems: string[];
   /** Elements outside the core that can change independently. */
   contextItems: string[];
@@ -13,9 +13,9 @@ export interface CoreContextProps extends DiagramBase {
 }
 
 /**
- * A grouped core with peer elements inside a wider, changeable context. Use when
- * a concept has several equally fundamental parts that should not be rendered as
- * nested layers, while the surrounding practices remain open to revision.
+ * An enduring center, optionally with peer elements, inside a wider changeable
+ * context. Use when the core must stay distinct from revisable surrounding measures
+ * or practices, without rendering either as nested layers or prerequisites.
  */
 export function CoreContext({
   coreTitle,
@@ -25,6 +25,7 @@ export function CoreContext({
   ariaLabel,
   className,
 }: CoreContextProps) {
+  const hasCoreItems = coreItems.length > 0;
   const itemCount = Math.max(coreItems.length, 1);
   const grid = itemCount > 3;
   const gridColumns = 2;
@@ -44,7 +45,10 @@ export function CoreContext({
       viewBox={`0 0 440 ${diagramHeight}`}
       ariaLabel={
         ariaLabel ??
-        `${coreTitle} contains the parallel elements ${coreItems.join(", ")}. Outside it, ${contextTitle} includes ${contextItems.join(", ")}.`
+        (hasCoreItems
+          ? `${coreTitle} contains the parallel elements ${coreItems.join(", ")}.`
+          : `${coreTitle} remains stable.`) +
+          ` Outside it, ${contextTitle} includes ${contextItems.join(", ")}.`
       }
       className={className}
     >
@@ -54,7 +58,7 @@ export function CoreContext({
       </text>
 
       <rect x="74" y="72" width="292" height={coreHeight} rx="10" fill={C.surface2} stroke={C.accent} strokeOpacity="0.7" strokeWidth="1.5" />
-      <text x="220" y="99" textAnchor="middle" fontFamily={MONO} fontSize="12" fontWeight="600" fill={C.accent}>
+      <text x="220" y={hasCoreItems ? 99 : 146} textAnchor="middle" fontFamily={MONO} fontSize="12" fontWeight="600" fill={C.accent}>
         {coreTitle}
       </text>
 

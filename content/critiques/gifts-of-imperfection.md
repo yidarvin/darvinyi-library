@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -63,3 +63,21 @@ review began no new external web search.
 prose lint, all 40 pipeline and runner tests, all 264 Vitest tests, TypeScript, the
 Vite production build, and ESLint passed. Vitest emitted only the existing
 non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+1. Recast Figure 124.1 so its centered, item-free `inherent worth` field is stable
+   rather than a container for courage, compassion, and connection. Feedback, skill,
+   outcome, and approval remain visibly outside it as changeable measures. The shared
+   CoreContext accessibility text now describes an empty core as stable, with a
+   regression test for that case.
+2. Set Figure 124.3 to favor the left-hand `careful striving` panel.
+3. Added the ProcessLoop interruption from `miss what is here` to `gratitude: notice
+   what is here` in Figure 124.4, along with chapter-specific accessible text that
+   describes the redirection to the present.
+4. Changed the Hero badge from eight to seven minutes, matching the recorded rendered
+   word-count calculation.
+
+Verification: `npm run check` completed with `CHECK OK` on 2026-07-28. The full gate
+validated the queue and registry, prose lint, pipeline tests, Vitest, TypeScript, the
+production build, and ESLint.

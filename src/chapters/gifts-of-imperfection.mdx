@@ -8,7 +8,7 @@ import { Compare, CoreContext, Iceberg, ProcessLoop, Spectrum } from "../compone
 <Hero
   slug="gifts-of-imperfection"
   thesis="Wholehearted living begins when worthiness stops being a prize to earn and becomes the ground from which you meet an unfinished life."
-  minutes={8}
+  minutes={7}
 />
 
 ## The thesis
@@ -43,7 +43,7 @@ turning every failure into self-rejection.
   <CoreContext
     className="block w-full"
     coreTitle="inherent worth"
-    coreItems={["courage", "compassion", "connection"]}
+    coreItems={[]}
     contextTitle="things that can change"
     contextItems={["feedback", "skill", "outcome", "approval"]}
   />
@@ -79,7 +79,7 @@ standard treats feedback as danger.
 <Figure id="124.3" caption="Standards improve a piece of work; perfectionism tries to protect a person from judgment.">
   <Compare
     className="block w-full"
-    favor="right"
+    favor="left"
     left={{
       title: "careful striving",
       points: ["asks what the work needs", "uses feedback to revise", "allows a draft to exist", "can stop when the task is complete"],
@@ -105,7 +105,8 @@ letting imagined deprivation occupy every available inch of the day.
     className="block w-full"
     stages={["notice what is missing", "predict a worse future", "tighten and compare", "miss what is here"]}
     compoundingEdge={3}
-    centerLabel="the scarcity loop"
+    interruption={{ fromStage: 3, label: "gratitude: notice what is here" }}
+    ariaLabel="A scarcity loop: notice what is missing, predict a worse future, tighten and compare, then miss what is here before returning to the start. From missing what is here, gratitude redirects attention to what is present."
   />
 </Figure>
 

@@ -37,9 +37,10 @@ Nested rings, core outward. For center-and-layers ideas.
 - Component: `<Concentric rings={[...]} labelFrom="inside" />`
 
 ### 5a. Core / context
-A grouped enduring center with two or more peer elements, surrounded by changeable context.
-For models where the core's parts are parallel, not successive rings or prerequisite tiers.
-- Use for: core values plus purpose, constitutional principles plus evolving policy, or any stable identity with revisable practices around it.
+An enduring center, optionally grouped with two or more peer elements, surrounded by changeable
+context. For models where the center must remain distinct from revisable measures, and its
+optional parts are parallel rather than successive rings or prerequisite tiers.
+- Use for: core values plus purpose, constitutional principles plus evolving policy, inherent worth beside changing performance measures, or any stable identity with revisable practices around it.
 - Component: `<CoreContext coreTitle="..." coreItems={[...]} contextItems={[...]} />`
 
 ### 6. Flow / sequence
