@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -44,3 +44,29 @@ This removes the false implication that evidence is a middle level of consequenc
 the former inline endpoint-label collision. Updated the key-idea prose, caption, registry diagram
 record, and evidence note to describe the same two independent triggers. `npm run check` passed;
 the chapter remains draft and no status transition was made.
+
+## Critique round 3 — 2026-07-27
+
+### Required
+
+1. **Figure 118.1 assigns two explanations to the wrong quadrants.** `Matrix` consumes
+   its cells in top-left, top-right, bottom-left, bottom-right order. The top-left cell
+   is therefore high stakes with no conflicting evidence, yet its note says “a
+   discrepancy merits a check.” The bottom-right cell is reversible with conflicting
+   evidence, yet its note says “high stakes need safeguards.” The prescriptions are
+   consequently crossed across the two axes the prior resolution was meant to separate.
+   Make each cell's title and note describe its actual evidence-and-stakes combination.
+
+2. **Figure 118.4's feedback-edge label is not legible.** The horizontal
+   `response → pressure` edge has only about 100 viewBox units between the two 94-unit
+   node cards, but centers the 23-character label “changes next conditions” in that gap
+   at 12px monospace. The label extends behind both endpoint cards, which render after
+   the edges and cover both ends of the text. Shorten, wrap, or reposition the label so
+   the full relationship remains visible at phone width.
+
+### Advisory
+
+1. `npm run check` passed on 2026-07-27. Queue and registry validation, prose lint,
+   42 pipeline tests, 251 application tests, typecheck, production build, and lint were
+   all green. The repeated `Window.scrollTo()` messages during Vitest were non-failing
+   environment warnings.
