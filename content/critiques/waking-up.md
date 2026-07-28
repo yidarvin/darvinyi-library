@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -134,3 +134,13 @@ verdict: revise
    lint passed; both pipeline tests, all 40 runner tests, all 299 Vitest tests,
    TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
    the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Updated `waking-up`'s registry diagram inventory to match the five rendered
+  figures, in order: `flow / sequence`, `node graph`, `flow / sequence`,
+  `comparison / split`, and `spectrum / gradient`. This removes the stale
+  `iceberg` entry left from the earlier revision.
+- Preserved the prior resolution: all five figures retain their chapter-local
+  minimum widths, Figure 139.1 remains the event-commentary-response Flow, and
+  the caveat remains limited to the recorded non-clinical evidence.
