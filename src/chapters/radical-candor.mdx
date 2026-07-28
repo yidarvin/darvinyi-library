@@ -1,0 +1,220 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, CoreContext, Flow, Matrix, NodeGraph, ProcessLoop } from "../components/diagrams";
+
+<Hero
+  slug="radical-candor"
+  thesis="Useful feedback joins a clear challenge to genuine concern for the person who has to act on it."
+  minutes={7}
+/>
+
+## The thesis
+
+Directness and care are not competing manners. They solve different parts of the same
+management problem. A person needs a clear account of what is working or failing, and needs
+reason to believe that the account is meant to help rather than diminish them. Radical Candor
+holds both duties together: make the work discussable, and keep the relationship strong enough
+to carry the discussion.
+
+## Why it matters
+
+Teams often make a false choice between silence and harshness. Silence protects the next few
+minutes while leaving a colleague without information they could use. Harshness may state the
+problem, but it can turn the conversation into self-protection rather than learning. The result
+in both cases is less accurate information, later surprises, and weaker trust. This framework
+makes the two missing ingredients visible so a manager can correct the actual failure.
+
+## Care is a working relationship, not forced intimacy
+
+Personal care does not require friendship, private disclosure, or the same style of warmth
+with every colleague. It means treating the other person's success, dignity, and constraints
+as real. Learn enough about their goals to offer useful support. Keep commitments. Make room
+for their account of a problem. That steady attention gives a hard message a credible context.
+
+Care also has limits. A manager should not use the language of closeness to demand emotional
+access from an employee. The relevant test is simpler: after this conversation, does the
+person have more clarity, agency, and support to do good work?
+
+<Figure id="116.1" caption="Care centers the person's ability to succeed, with support expressed through ordinary work. ">
+  <CoreContext
+    className="block w-full min-w-[400px]"
+    coreTitle="care for the person"
+    coreItems={["dignity", "growth", "context"]}
+    contextItems={["keep commitments", "ask and listen", "offer support", "respect boundaries"]}
+    ariaLabel="A core-context diagram showing care for a person through dignity, growth, and context, supported by keeping commitments, listening, offering support, and respecting boundaries."
+  />
+</Figure>
+
+## Challenge the work without defining the person
+
+A useful challenge points to something the other person can inspect and change: a missed
+handoff, an unclear proposal, an interrupted colleague, or a choice that created a cost. It
+then explains the effect and asks for the missing context. A label such as careless, difficult,
+or not a team player does the opposite. It converts a particular event into a verdict about
+identity and offers no clear next move.
+
+Specificity is therefore both kinder and more demanding. It narrows the disagreement to a
+claim that can be examined. The manager can still hold a high standard, repeat the concern,
+or make a consequential decision. They just do not disguise a character judgment as guidance.
+
+<Figure id="116.2" caption="Observable work gives a colleague something to understand and change; a character label only closes the door. ">
+  <Compare
+    className="block w-full min-w-[400px]"
+    favor="left"
+    left={{
+      title: "challenge the work",
+      points: ["name the event", "describe its effect", "ask for context", "agree on a next move"],
+    }}
+    right={{
+      title: "judge the person",
+      points: ["use a broad label", "assume motive", "invite defense", "leave no useful action"],
+    }}
+    ariaLabel="A comparison between challenging observable work and judging a person's character."
+  />
+</Figure>
+
+## Ask for guidance before making it a demand
+
+Feedback is easier to dismiss when it is something managers do to other people. The practice
+changes when a manager regularly asks what they could do better, listens without retaliation,
+and acts on what they learn. That response establishes a two-way standard. It also supplies
+information a manager cannot see from their own position.
+
+Seeking guidance first is not a ritual that earns permission to criticize. It is a way to
+practice the humility that makes a challenge more accurate. Ask one concrete question, leave
+time for a real answer, and return to it later with what changed or what could not change.
+
+<Figure id="116.3" caption="A feedback culture starts with receiving a useful signal, then makes giving and inviting it a shared practice. ">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["ask for one observation", "listen without defense", "act or explain", "offer your guidance"]}
+    highlight={2}
+    ariaLabel="A four-step feedback sequence: ask for an observation, listen without defense, act or explain, then offer guidance."
+  />
+</Figure>
+
+## Praise teaches by naming what should repeat
+
+Praise is often treated as the pleasant half of feedback, which makes it easy to make vague.
+But a generic compliment gives little direction. Useful praise identifies the choice or
+behavior that helped, the result it produced, and why that result mattered. It tells a
+colleague what good judgment looked like in context, not merely that a manager felt pleased.
+
+That precision also makes praise more credible. It rewards an actual contribution rather than
+trying to raise morale through flattery. Over time, a team can see which behaviors the work
+needs more of and who is already demonstrating them.
+
+<Figure id="116.4" caption="Specific praise connects a visible choice to its effect, making the desired pattern easier to repeat. ">
+  <NodeGraph
+    className="block w-full min-w-[400px]"
+    nodes={[
+      { id: "choice", label: "visible choice", x: 0.1, y: 0.5 },
+      { id: "effect", label: "effect on the work", x: 0.48, y: 0.5 },
+      { id: "reason", label: "why it mattered", x: 0.83, y: 0.25 },
+      { id: "repeat", label: "a pattern to repeat", x: 0.83, y: 0.77 },
+    ]}
+    edges={[
+      { from: "choice", to: "effect", kind: "reinforcing" },
+      { from: "effect", to: "reason" },
+      { from: "effect", to: "repeat", kind: "reinforcing" },
+    ]}
+    ariaLabel="A diagram connecting a visible choice to its effect, why it mattered, and a pattern to repeat."
+  />
+</Figure>
+
+## Check how the message landed
+
+Good intent does not settle whether feedback was useful. The listener may have heard a
+different claim, may know a fact the manager missed, or may be too surprised to respond well
+in the moment. A short pause and a real question make room to find out. If the concern was
+unclear, say it more plainly. If the person is hurt but the concern remains valid, add care
+without withdrawing the challenge. If the manager is wrong, correct the record.
+
+This is why candor is a conversation rather than a brave speech. The aim is not to prove that
+the manager said the hard thing. The aim is a shared, accurate understanding that permits a
+better next action.
+
+<Figure id="116.5" caption="Feedback becomes useful through repeated checking and adjustment, not through a single well-intended delivery. ">
+  <ProcessLoop
+    className="block w-full min-w-[400px]"
+    stages={["observe", "say the concern", "hear the response", "adjust and agree"]}
+    centerLabel="feedback calibration"
+    compoundingEdge={3}
+    ariaLabel="A feedback calibration loop: observe, say the concern, hear the response, then adjust and agree."
+  />
+</Figure>
+
+## The Model
+
+The matrix is a diagnostic, not a license to rate a person's character. Its two dimensions
+describe what a piece of guidance communicates: whether it shows concern for the person and
+whether it makes the challenge clear. High care and high challenge is the destination. The
+other regions name distinct corrections. If a message protects feelings by becoming vague,
+add clarity. If it is clear but lands as contempt, add evidence of care without erasing the
+issue.
+
+<Figure id="116.6" caption="The candor matrix locates feedback by the care it communicates and the clarity of its challenge. ">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "indirect", right: "direct", label: "challenge" }}
+    yAxis={{ low: "little", high: "genuine", label: "care" }}
+    quadrants={[
+      { title: "ruinous empathy", note: "care without a clear challenge" },
+      { title: "radical candor", note: "care and challenge together" },
+      { title: "manipulative insincerity", note: "neither care nor clarity" },
+      { title: "obnoxious aggression", note: "clarity without care" },
+    ]}
+    highlight={1}
+    ariaLabel="The Radical Candor matrix maps feedback from indirect to direct challenge and little to genuine care. Radical Candor is highlighted where care and direct challenge are both high."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Ask for one improvement this week">
+Choose a colleague who sees your work closely. Ask, “What is one thing I could do that would
+make it easier to work with me?” Do not explain the answer away. Write down what you heard,
+then report back on the action you took or the constraint you found.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Prepare a challenge from evidence">
+Before a difficult conversation, write the event you observed, the effect it had, and the
+question you need answered. Remove any conclusion about motive or personality. Open with the
+event, then invite the person's account before proposing a next step.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make one piece of praise operational">
+Find a recent contribution worth reinforcing. Name the specific choice, the result it created,
+and why that result mattered to the team or customer. Deliver it soon enough that the context
+is still clear, and make it public only when the person is likely to welcome that attention.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Gauge before you close">
+At the end of a feedback conversation, ask what the other person heard and what support they
+need. If their answer reveals a different interpretation, clarify the concern or reconsider
+your premise. End with one owner, one next action, and a point to check back.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Radical Candor is not a defense of bluntness, public embarrassment, or relentless criticism.
+Power matters: an employee may reasonably protect themselves when a manager's response can
+affect pay, security, or belonging. Care also cannot repair a discriminatory policy, chronic
+overload, missing resources, or retaliation. Use direct conversations to improve the work,
+and address structural conditions through the authority, process, and protections they require.
+</Callout>
+
+## If you remember one thing
+
+Say what the work needs said, in a way that makes the other person more able to respond and
+act. Care gives candor a purpose; directness gives care practical force.
+
+<ShelvedNearby
+  related={["crucial-conversations", "nonviolent-communication", "dare-to-lead", "emotional-intelligence"]}
+  buyUrl="https://us.macmillan.com/books/9781427283139/radicalcandorbeakickassbosswithoutlosingyourhumanity/"
+  buyLabel="Radical Candor by Kim Scott"
+/>
