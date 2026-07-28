@@ -2549,7 +2549,18 @@
       "subtitle": "Neil deGrasse Tyson · 2017",
       "part": "Big Ideas: Science, History & Society",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "The cosmos becomes thinkable when a few durable ideas connect its beginning, its matter, its structure, and the evidence that lets us see beyond Earth.",
+      "framework": "No single signature model; the chapter is a connected cosmology primer, so the Model section is intentionally absent.",
+      "diagrams": [
+        "timeline",
+        "flow",
+        "process loop",
+        "node graph",
+        "conceptual bars",
+        "comparison"
+      ]
     },
     {
       "num": 130,

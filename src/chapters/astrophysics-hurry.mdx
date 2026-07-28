@@ -1,0 +1,233 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Compare, Flow, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="astrophysics-hurry"
+  thesis="The cosmos becomes thinkable when a few durable ideas connect its beginning, its matter, its structure, and the evidence that lets us see beyond Earth."
+  minutes={8}
+/>
+
+## The thesis
+
+Tyson's short tour asks for cosmic literacy rather than a catalogue of spectacular
+objects. The useful picture begins with an expanding, cooling universe and follows what
+that change makes possible: light, atoms, stars, galaxies, planets, and observers able to
+reconstruct part of the story. The point is not to memorize every term. It is to know which
+questions have evidence behind them, which answers remain provisional, and how much of the
+universe is still unexplained.
+
+## The universe has a history, not a static backdrop
+
+The Big Bang is the name for an early hot, dense phase and the expansion that followed it.
+It is not an explosion at one location into an already empty room. Space itself has changed
+as the universe expanded and cooled. That distinction matters because it turns a vague
+origin story into a physical history with traces that can be tested.
+
+In the first few minutes, conditions favored light atomic nuclei. Much later, after the
+cosmic plasma cooled enough for electrons to stay attached to nuclei, light could travel
+freely. That leftover glow is the cosmic microwave background. Its tiny differences from
+place to place are useful: they are evidence about an early universe and the unevenness from
+which later structure grew. A history is credible when it leaves records that present-day
+instruments can inspect.
+
+<Figure id="129.1" caption="Expansion, cooling, and gravity turn an early hot universe into a place with stars and galaxies.">
+  <Timeline
+    className="block w-full min-w-[600px]"
+    highlight={2}
+    segments={[
+      { label: "hot early universe", sub: "rapid expansion" },
+      { label: "light elements", sub: "first minutes" },
+      { label: "oldest visible light", sub: "about 380,000 years" },
+      { label: "first stars", sub: "gravity gathers gas" },
+      { label: "galaxies and planets", sub: "cosmic history continues" },
+    ]}
+  />
+</Figure>
+
+## Light is a message carried across time
+
+Astronomers cannot collect a sample from a distant galaxy, but they can collect its light.
+That light has traveled for a finite time, so looking farther away is also looking farther
+back. More than an image arrives at a telescope. Split the light into wavelengths and it
+can reveal recognizable patterns tied to atoms, motion, temperature, and composition.
+
+This is why astrophysics is often an art of inference. A detector records photons, then a
+model connects their pattern to a source. The connection can be checked against laboratory
+physics, other wavelengths, and independent instruments. It is powerful, but it is not
+magic. The observation and the explanation should be kept distinct, especially when a
+headline turns an indirect measurement into a certainty.
+
+<Figure id="129.2" caption="Light becomes evidence only after its measured pattern is connected to a testable physical account.">
+  <Flow
+    className="block w-full min-w-[520px]"
+    steps={[
+      "distant source emits light",
+      "telescope records wavelengths",
+      "pattern is measured",
+      "physics tests an inference",
+    ]}
+    highlight={2}
+  />
+</Figure>
+
+## Stars change the chemical inventory
+
+The first universe was chemically spare. Stars changed that. Their interiors turn lighter
+nuclei into heavier ones through fusion, and massive stars can spread processed material
+when they end violently. Later clouds inherit that altered mix, forming new stars, planets,
+and more complicated chemistry. The iron in a tool, the oxygen in a lung, and the calcium
+in a bone have material histories older than the solar system.
+
+The phrase "made of star stuff" is a useful compression, provided it does not become a
+mystical slogan. It names a chain of physical recycling. Not every element comes from the
+same stellar event, and not every star dies the same way. The durable idea is simpler: the
+universe did not begin with the full chemical kit needed for rocky worlds. Generations of
+stars helped supply it.
+
+<Figure id="129.3" caption="Stellar birth, fusion, and dispersal recycle material into later generations of worlds.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["gas cloud", "star forms", "fusion changes elements", "material returns to space"]}
+    compoundingEdge={3}
+    centerLabel="chemical recycling"
+  />
+</Figure>
+
+## Gravity organizes a lumpy universe
+
+Gravity works from local differences. A region with slightly more matter attracts more
+matter, which makes the difference stronger. Over enormous spans of time, this simple rule
+helps turn early irregularities into a web of galaxies and clusters. Gas can fall into these
+gravitational wells, cool, and eventually form stars. The elegant part is not that gravity
+creates every detail alone. It sets a broad scaffold on which other physics can act.
+
+Much of that scaffold seems to involve dark matter. It does not announce itself by shining,
+but its gravity can be inferred from the motion of visible objects and from bent light behind
+massive foreground structures. Calling it dark describes our observational situation, not a
+known substance in a black paint bucket. Its composition remains open.
+
+<Figure id="129.4" caption="Small density differences pull in matter, helping gravity assemble the large-scale cosmic web.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "ripple", label: "small density difference", x: 0.5, y: 0.08 },
+      { id: "gravity", label: "gravity pulls inward", x: 0.16, y: 0.43 },
+      { id: "dark", label: "dark-matter scaffold", x: 0.84, y: 0.43 },
+      { id: "gas", label: "gas gathers", x: 0.27, y: 0.82 },
+      { id: "galaxy", label: "galaxy growth", x: 0.73, y: 0.82 },
+    ]}
+    edges={[
+      { from: "ripple", to: "gravity", kind: "reinforcing" },
+      { from: "ripple", to: "dark", kind: "reinforcing" },
+      { from: "gravity", to: "gas" },
+      { from: "dark", to: "galaxy" },
+      { from: "gas", to: "galaxy", kind: "reinforcing", label: "feeds" },
+    ]}
+  />
+</Figure>
+
+## Most of the cosmic budget is not ordinary matter
+
+Stars, dust, planets, and people feel like the whole show because they are what light makes
+available to us. In the standard cosmological accounting, ordinary matter is only a small
+fraction of the total mass-energy budget. Dark matter accounts for a much larger share, and
+dark energy for a larger share still. The labels are placeholders for well-measured effects,
+not final explanations of their causes.
+
+That distinction is one of the book's best lessons. A scientific answer can be specific
+about what happens while still being incomplete about why. Observations support the
+accelerating expansion of the universe and the gravitational influence attributed to dark
+matter. They do not yet tell us the underlying nature of either. Ignorance here is bounded,
+measured, and productive.
+
+<Figure id="129.5" caption="Ordinary matter is a small part of the standard cosmological inventory; the labels do not settle what the dark components are.">
+  <Bars
+    className="block w-full min-w-[400px]"
+    items={[
+      { label: "ordinary matter", value: 0.05, valueLabel: "about 5%" },
+      { label: "dark matter", value: 0.27, valueLabel: "about 27%" },
+      { label: "dark energy", value: 0.68, accent: true, valueLabel: "about 68%" },
+    ]}
+  />
+</Figure>
+
+## A cosmic perspective needs both scale and care
+
+The scale of the universe can make familiar concerns look parochial, but it does not erase
+their consequences. Earth is a small planet around one ordinary star, and it is also the
+only place where human duties can be carried out. Cosmic perspective is useful when it
+loosens false grandeur and sharpens stewardship, not when it becomes an excuse for
+indifference.
+
+The same perspective changes how scientific claims are heard. A thrilling finding is an
+invitation to ask how it was measured, what it rules out, and what would revise it. Wonder
+and rigor are partners. One supplies the question; the other keeps the answer accountable
+to the universe rather than to a satisfying story.
+
+<Figure id="129.6" caption="Wonder starts a question; evidence decides how far confidence can go.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "cosmic wonder",
+      points: ["makes scale felt", "raises new questions", "imagines possible worlds"],
+    }}
+    right={{
+      title: "cosmic inquiry",
+      points: ["measures a signal", "tests competing accounts", "keeps conclusions revisable"],
+    }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Read one space claim in two layers">
+Choose a space headline that catches your eye. First write what an instrument or mission
+actually measured. Then write the interpretation the article makes from that measurement.
+Find the mission page and check whether it describes the same boundary between observation
+and inference.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Practice the scale shift without leaving Earth">
+On a clear night, identify one planet or star and learn how its light reaches you. Then name
+one local condition that keeps you able to observe it: a dark enough sky, clean air, public
+science, or time outside. The cosmic view should return attention to shared conditions here.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make an unknown more precise">
+When you hear "dark matter" or "dark energy," replace the blank label with two columns:
+what observations support, and what scientists do not yet know. This keeps a real mystery
+from turning into either a fantasy answer or a reason to dismiss the evidence.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The Big Bang does not describe matter detonating from a central point into preexisting
+space, and the cosmic microwave background is not a photograph of the beginning itself. It
+is the oldest light currently observable, released long after the earliest stages described
+by cosmology. Likewise, dark matter and dark energy are not names for confirmed particles
+or a known repulsive fluid. They summarize evidence for gravitational effects and
+accelerated expansion within a successful model. The approximate 5%, 27%, and 68% budget is
+an account within that model, not a direct inventory poured into three containers. A clear
+introduction should make the unknowns visible rather than treating a memorable label as an
+explanation.
+</Callout>
+
+## If you remember one thing
+
+Astrophysics is a way of connecting light, matter, motion, and time into testable stories.
+The universe is stranger than familiar experience suggests, and the most honest map of it
+includes both its well-supported structure and the large regions we have yet to explain.
+
+## Shelved nearby
+
+<em>Cosmos</em> turns the same scientific scale into a case for curiosity and responsibility,
+while <em>A Brief History of Time</em> takes a slower pass through spacetime and cosmology.
+
+<ShelvedNearby
+  related={["cosmos", "brief-history-time"]}
+  buyUrl="https://neildegrassetyson.com/books/2017-05-astrophysics-for-people-in-a-hurry/"
+  buyLabel="Astrophysics for People in a Hurry by Neil deGrasse Tyson"
+/>
