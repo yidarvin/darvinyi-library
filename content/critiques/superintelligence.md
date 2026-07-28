@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -194,3 +194,9 @@ verdict: revise
    42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite production
    build, and ESLint all passed. Vitest emitted only the known non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Rebalanced Figure 132.6's chapter-local layout: `capable system` now sits left of the specification and `world effects` plus `deployment limits` occupy a shared, inset right column. This preserves both 134.42-unit horizontal forward links while giving the feedback label a separate lane.
+- Moved the `revises limits` label to x=308.36 in the 380-unit viewBox. Its roughly 101-unit text span now remains within x=258 to x=359, clear of the right-side cards and the diagonal deployment-limit edge.
+- The chapter remains `draft`; no done status, commit, or push was performed.

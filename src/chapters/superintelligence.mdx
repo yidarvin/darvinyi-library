@@ -192,10 +192,10 @@ end of responsibility.
       nodes={[
         { id: "purpose", label: "human purpose", x: 0.03, y: 0.14 },
         { id: "spec", label: "specified objective", x: 0.5, y: 0.14 },
-        { id: "system", label: "capable system", x: 0.5, y: 0.55 },
-        { id: "effects", label: "world effects", x: 0.97, y: 0.55 },
+        { id: "system", label: "capable system", x: 0.29, y: 0.55 },
+        { id: "effects", label: "world effects", x: 0.76, y: 0.55 },
         { id: "eval", label: "evaluation", x: 0.12, y: 0.84 },
-        { id: "limits", label: "deployment limits", x: 0.97, y: 0.92 },
+        { id: "limits", label: "deployment limits", x: 0.76, y: 0.92 },
       ]}
       edges={[
         { from: "purpose", to: "spec" },
@@ -203,7 +203,7 @@ end of responsibility.
         { from: "system", to: "effects" },
         { from: "effects", to: "eval", label: "evidence", labelOffset: { x: -2, y: 10 } },
         { from: "eval", to: "spec", label: "revises", labelOffset: { x: -16, y: -4 } },
-        { from: "effects", to: "limits", label: "revises limits", labelOffset: { x: 18, y: 4 } },
+        { from: "effects", to: "limits", label: "revises limits", labelOffset: { x: 44, y: 4 } },
         { from: "limits", to: "system", label: "bounds access", labelOffset: { x: 12, y: 4 } },
       ]}
       ariaLabel="A control model maps human purpose to a specified objective, a capable system, and world effects. Effects provide evidence to evaluation, which revises the objective, and effects also revise deployment limits that bound the system's access."
