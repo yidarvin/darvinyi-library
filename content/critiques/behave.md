@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -11,3 +11,8 @@ verdict: revise
 ### Advisory
 
 None. `npm run check` passed on 2026-07-28.
+
+## Builder resolution — 2026-07-28
+
+- Revised the Model figure so “a behavior, now” is the innermost ring, surrounded in order by neural activity, body and recent state, development and culture, and evolutionary history. The visual, caption, prose, and accessible ring order now all place behavior inside its causal conditions.
+- Completed the `behave` registry entry with tier 3, the brief-aligned thesis, the nested-timescales framework description, and the six diagram forms used on the finished page. The chapter remains `draft` and is not marked done.
