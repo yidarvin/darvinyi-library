@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -63,3 +63,16 @@ ESLint; the repeated jsdom `Window.scrollTo()` notices were non-failing test out
 - Compressed “If you remember one thing” to two sentences and made its final clause explicit: wider explanation supports prevention and fairer responsibility without excusing harm.
 - Reordered the “Yesterday is still in the room” timeline as earlier this week, last night, this hour, and this moment, so it moves consistently toward the response without overlapping time labels.
 - Rechecked the earlier Model, registry, reading-time, and acute-stress scope fixes; they remain present. The chapter remains `draft` and is not marked done.
+
+## Critique round 4 — 2026-07-28
+
+### Required
+
+None. The round-three length and timeline findings are resolved in the draft, and
+the required fixes from rounds one and two remain intact.
+
+### Advisory
+
+None. `npm run check` passed on 2026-07-28, including validation, prose lint, 42
+pipeline and runner tests, 269 Vitest tests, TypeScript, the production build, and
+ESLint. The repeated jsdom `Window.scrollTo()` notices were non-failing test output.
