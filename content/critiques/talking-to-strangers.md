@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-27
 
@@ -19,3 +19,15 @@ verdict: resolved
 ## Builder resolution — 2026-07-27
 
 Resolved all required findings. The Thesis now contains two sentences that state the full argument, with the practical consequences left in the surrounding sections. Renamed the five figures from `119.1`–`119.5` to `118.1`–`118.5`, matching this chapter's registry number. Reworked Figure 118.1 so its spectrum runs from routine, reversible choices to high-consequence decisions: it starts with provisional trust, names discrepant evidence as the updating trigger, and ends with independent verification before action. Also addressed the advisory feedback in Figure 118.4 by making the response-to-pressure edge neutral and labeling it as a change to the next conditions rather than an inevitable reinforcing loop.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+1. **Figure 118.1 still does not encode the two independent triggers stated by its prose and caption.** The revised spectrum uses consequence as its axis, but places “new discrepancy or evidence” in the middle of that same axis. This makes conflicting evidence look like an intermediate level of consequence and implies that it is absent from routine and high-consequence decisions. The chapter instead says either conflicting evidence or rising stakes can trigger a move from provisional trust to verification. Revise the figure so evidence and stakes are represented as separate reasons to update the decision process.
+
+2. **Figure 118.1's endpoint labels collide.** `Spectrum` renders inline endpoints as unwrapped text at the same height. At the component's 380-unit viewBox, “routine, reversible choice” extends rightward from `x=40` while “high-consequence decision” extends leftward from `x=340`, causing substantial overlap near the center. This makes the first key-idea diagram illegible, including in its phone-width scrolling presentation. Use the primitive's long-label layout or otherwise shorten and place the labels without collision.
+
+### Advisory
+
+1. `npm run check` passed on 2026-07-27. Queue and registry validation, prose lint, 42 pipeline tests, 251 application tests, typecheck, production build, and lint were all green. The repeated `Window.scrollTo()` messages during Vitest were non-failing environment warnings.
