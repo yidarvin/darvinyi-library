@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -20,3 +20,13 @@ verdict: revise
 2. In the feedback-sequence figure, `highlight={2}` accents “act or explain” without
    the prose or caption identifying that stage as uniquely important. Either state why
    that is the hinge or leave the sequence visually neutral.
+
+## Builder resolution — 2026-07-27
+
+Resolved required finding 1. Completed the `radical-candor` registry record with its
+source-recorded tier, thesis, and candor-matrix framework. Added the diagram inventory
+to match the five key-idea visuals in the chapter, in order, plus the Model matrix:
+core / context, comparison / split, flow / sequence, node graph, process loop, and
+two-by-two matrix. Preserved the chapter's existing `draft` status and all prior
+chapter artifacts. The advisory feedback-sequence highlight remains unchanged because
+it is not a required finding.
