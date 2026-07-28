@@ -1,0 +1,216 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="moonwalking-einstein"
+  thesis="A remarkable memory is often a practiced conversion: turn a fact into a vivid scene, give the scene a stable place, then revisit the route until the cue brings it back."
+  minutes={8}
+/>
+
+## The thesis
+
+*Moonwalking with Einstein* treats feats of recall less as a mysterious capacity than as a
+craft. Joshua Foer's central lesson is that bare information is hard to hold because it gives
+the mind little to work with. Transform it into a concrete, odd, active scene and attach that
+scene to a familiar location. The location gives the scene an address; retracing the route
+gives the fact a way home.
+
+## Why it matters
+
+Much everyday forgetting starts before recall. A name is heard while attention is elsewhere, a
+list has no structure, or a fact is filed as a verbal fragment with nothing to pull it back.
+The book makes remembering visible as a series of choices at encoding. That is useful because
+the choices can be practiced. You need not wait to discover whether you were born with an
+unusually generous memory.
+
+## Key ideas
+
+## Memory begins with an encounter that has shape
+
+The complaint, "I have a bad memory," often names the visible outcome, not the whole chain
+that produced it. A detail that was only half noticed cannot be recovered faithfully later.
+Nor does repetition alone guarantee a useful cue. Foer's approach begins by stopping long
+enough to decide what the information means and what could represent it. The representation
+does not need to be elegant. It needs a feature your attention can grab: a motion, a texture,
+an exaggerated scale, or an impossible action.
+
+<Figure id="140.1" caption="The missed detail is visible; attention and a usable cue do most of the earlier work.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="I forgot it"
+    waterlineLabel="the moment recall fails"
+    below={["thin attention", "no concrete scene", "no cue to return by"]}
+  />
+</Figure>
+
+## Images give an abstract fact something to hold
+
+An abstract item, such as a name, a number, or a technical term, can be translated into an
+invented scene. The translation is not a code that must make sense to anyone else. It is a
+private bridge that lets one thing provoke another. A botanist learning a Latin term may use a
+sound-alike creature; a speaker remembering a point may make its central action physically
+impossible. Specificity helps. A piano floating in a soup bowl is easier to revisit than a
+vague instruction to remember "music" and "food."
+
+<Figure id="140.2" caption="A bare item can become easier to revisit when it is given a particular, active scene.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "bare item",
+      points: ["a label or number", "little sensory detail", "competes with similar items", "offers no natural action"],
+    }}
+    right={{
+      title: "invented scene",
+      points: ["a concrete stand-in", "motion, scale, or texture", "distinct enough to notice", "prompts the original item"],
+    }}
+  />
+</Figure>
+
+## A familiar route supplies order
+
+Images alone can become a pile. The method of loci gives each one a fixed position along a
+place you know well: the walk from your desk to the kitchen, the entrance to a favorite park,
+or a room you can picture without effort. Choose the stops in one dependable order and do not
+shuffle them while you are learning. The route turns a list into a sequence of locations. On
+recall, the next place tells you where to look next.
+
+<Figure id="140.3" caption="A fixed route converts a set of scenes into an ordered series of retrieval cues.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["choose a known route", "name distinct stops", "place one scene at each stop", "walk the route to recall"]}
+    highlight={2}
+  />
+</Figure>
+
+## Retrieval is a walk, not a replay
+
+The palace is useful because it creates a procedure for getting back to the material. Mentally
+arrive at the first location, notice the scene you placed there, say or write the item it cues,
+then move on. If one scene has faded, do not let it erase the rest of the route. Continue to
+the next location, mark the uncertain spot, and repair that particular association afterward.
+This makes a lapse diagnostic. It tells you whether the problem was the image, the location,
+or the connection between them.
+
+<Figure id="140.4" caption="A recall pass preserves the route, reveals the weak scene, and gives the next practice pass a target.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "enter the route", sub: "start at the same place" },
+      { label: "meet a scene", sub: "notice its odd action" },
+      { label: "recover the item", sub: "say or write it" },
+      { label: "repair one miss", sub: "make the cue clearer" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Speed is built from a reusable vocabulary
+
+Competitive recall can look like instantaneous storage, but much of the speed comes from
+preparation. A practiced memorizer does not invent every association from nothing. They build
+reusable images for common sounds, categories, cards, or digit patterns, and they maintain
+routes that are already familiar. That preparation lowers the cost of encoding without making
+the material magically permanent. The route still needs review, and a weak image still needs a
+better one.
+
+<Figure id="140.5" caption="Practice turns one-off invention into a repeatable loop of encoding, recall, and repair.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["build a cue", "place the scene", "walk it back", "strengthen the miss"]}
+    compoundingEdge={3}
+    centerLabel="practice loop"
+  />
+</Figure>
+
+## The Model
+
+A memory palace is a deliberately small map. Its locations are already known, its order stays
+fixed, and each location carries one invented scene that points to the thing you need. This
+model is strongest when the material is a sequence or a bounded set: talking points for a
+speech, a short list of terms, a deck of cards, or a set of names. It is not a substitute for
+understanding why an argument is true. It makes selected material findable after you have
+understood it.
+
+<Figure id="140.6" caption="A familiar route holds original image cues in a stable order, ready to be walked in either direction.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "gate", label: "01 gate: lemon", x: 0.15, y: 0.5 },
+      { id: "shoes", label: "02 shoes: comet", x: 0.35, y: 0.14 },
+      { id: "mirror", label: "03 mirror: anchor", x: 0.65, y: 0.14 },
+      { id: "stove", label: "04 stove: violin", x: 0.85, y: 0.5 },
+      { id: "table", label: "05 table: glacier", x: 0.65, y: 0.86 },
+      { id: "window", label: "06 window: lantern", x: 0.35, y: 0.86 },
+    ]}
+    edges={[
+      { from: "gate", to: "shoes" },
+      { from: "shoes", to: "mirror" },
+      { from: "mirror", to: "stove" },
+      { from: "stove", to: "table" },
+      { from: "table", to: "window" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Build a six-stop route">
+Pick a space you can picture without looking around. Write six distinct stops in the order you
+would encounter them, such as door, chair, lamp, shelf, sink, and window. Walk the route in
+your head twice before adding anything to it. The route should be easy enough that the places,
+not navigation, take no effort.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Encode a short, useful list">
+Choose six items you genuinely need for a short task, perhaps the points in a meeting or the
+errands for an afternoon. For each item, invent one active scene that touches its assigned
+location. Make the scenes specific and separate. A giant envelope trapped in the sink is more
+useful than a general thought about mail.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Recall before checking">
+Put the list away for ten minutes. Start at the first stop and write each item as you encounter
+its scene. Check only after you complete the walk. For every miss, identify the broken link:
+was the location unclear, was the scene bland, or did the scene fail to point back to the item?
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Keep the palace small and clean">
+Use the same route only until its scenes begin to crowd one another. Then retire it for a
+while or make a new route. A palace is a workspace, not a warehouse. Short routes with clear
+purposes are easier to maintain than an enormous map filled with stale images.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The method earns its reputation for certain recall tasks, especially ordered lists, but it does
+not turn every memory problem into a visualization problem. A vivid cue cannot replace
+understanding, and a palace will not reliably remember a future appointment unless it is paired
+with a calendar or another external prompt. The evidence for loci training is encouraging, yet
+the studies recorded for this chapter use bounded tasks and structured practice. They do not
+show a general increase in intelligence, attention, or everyday judgment. If forgetting is new,
+severe, or disruptive, a mnemonic system is not a substitute for medical advice.
+</Callout>
+
+## If you remember one thing
+
+When a fact matters, do not leave it as a loose verbal fragment. Give it a concrete cue and a
+reliable place, then practice walking back to it. Memory becomes more dependable when recall
+has a route.
+
+## Shelved nearby
+
+[Make It Stick](/make-it-stick) adds retrieval and spacing to the palace's encoding work.
+[Ultralearning](/ultralearning) supplies the feedback loop for repairing a weak association.
+[Peak](/peak) explains how focused practice turns a deliberate technique into a faster skill.
+
+<ShelvedNearby
+  related={["make-it-stick", "ultralearning", "peak"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/301277/moonwalking-with-einstein-by-joshua-foer/"
+  buyLabel="Moonwalking with Einstein by Joshua Foer"
+/>
