@@ -1,0 +1,222 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Iceberg, NodeGraph, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="behave"
+  thesis="A human act has a history. To understand it well, move backward from the moment through body state, experience, development, social world, and evolutionary inheritance."
+  minutes={9}
+/>
+
+## The thesis
+
+Robert Sapolsky asks a disarming question: what happened before a person did that? His answer
+is never a single thing. An action is made in the present by a nervous system shaped by recent
+sleep, stress, hormones, learning, childhood, social rules, and a much longer biological past.
+Explanation does not make behavior harmless or unavoidable. It makes a shallow story about
+character less tempting, and a better response more possible.
+
+## Why it matters
+
+We are quick to explain a stranger's worst moment as a durable trait and our own as a bad day.
+That shortcut feels efficient because the act is visible and its causes are not. *Behave* asks
+for a wider frame. It gives neither a biological excuse nor a lecture about personal virtue. It
+asks what conditions made this response likely, which conditions could change, and where a
+person or institution can act before the next moment arrives.
+
+## Key ideas
+
+### The act is the tip, not the whole explanation
+
+An insult, a generous choice, a violent outburst, or a pause before speaking is the visible end
+of a long chain. The seconds before matter: attention, threat detection, memory, and inhibition
+are active. So do less immediate conditions, such as fatigue, a stressful week, learned habits,
+and a setting that rewards one response over another. Going backward does not discover a single
+root cause. It reveals a stack of influences that jointly made one action easier than its rivals.
+The practical question shifts from "What kind of person is this?" to "What was this system set
+up to do?"
+
+<Figure id="126.1" caption="The observable act sits above a much larger set of conditions that made it more or less likely.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the action we see"
+    waterlineLabel="the moment of behavior"
+    below={["neural state", "body state", "learned history", "social and evolutionary context"]}
+  />
+</Figure>
+
+### A brain is a negotiation, not a tiny commander
+
+It is tempting to speak as if one rational self sits at the controls while unruly emotions press
+buttons around it. The brain does not work that way. Perception, memory, valuation, bodily
+signals, and control systems continually influence one another. A frightened person may notice
+threat sooner. A hungry person may value immediate relief more strongly. A practiced musician
+can execute a skilled movement without narrating each step. The point is not that deliberation
+is powerless. It is that deliberation is one participant in a changing network, and it works
+best when the surrounding conditions give it room.
+
+<Figure id="126.2" caption="Behavior emerges from interacting systems rather than from a single inner commander.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "perception", label: "what stands out", x: 0.5, y: 0.1 },
+      { id: "memory", label: "memory and learning", x: 0.13, y: 0.54 },
+      { id: "body", label: "body signals", x: 0.87, y: 0.54 },
+      { id: "choice", label: "action selection", x: 0.5, y: 0.88 },
+    ]}
+    edges={[
+      { from: "perception", to: "memory", label: "meaning" },
+      { from: "memory", to: "choice", label: "expectation" },
+      { from: "body", to: "choice", label: "urgency" },
+      { from: "choice", to: "perception", kind: "reinforcing", label: "attention" },
+    ]}
+  />
+</Figure>
+
+### Hormones change the question; they do not supply the answer
+
+Hormones are often turned into cartoon causes: testosterone makes aggression, oxytocin makes
+kindness, cortisol makes panic. Sapolsky's better lesson is conditional. A hormone can alter
+what feels salient, how strongly a challenge registers, or which social goal is pursued. Its
+effect depends on the person, the situation, other biological signals, and what the environment
+makes possible. Biology is real without being a script. Treating it as a script hides the very
+context that tells us what a biological change will mean.
+
+<Figure id="126.3" caption="A hormone is better understood as a context-sensitive modifier than as a one-word explanation for an act.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "the cartoon cause",
+      points: ["one molecule", "one behavior", "same effect everywhere", "context ignored"],
+    }}
+    right={{
+      title: "the contextual view",
+      points: ["a biological signal", "changes priorities or sensitivity", "interacts with situation", "can support different actions"],
+    }}
+  />
+</Figure>
+
+### Yesterday is still in the room
+
+The causal history of an action does not begin in infancy. A short night of sleep, a threat a
+few minutes ago, a week of repeated strain, or a recent experience of being supported can alter
+the next decision. Stress can narrow attention and make a familiar response easier to repeat,
+though people vary and no one response is guaranteed. This is useful because some near causes
+are reachable. A pause, food, sleep, a less provocative meeting, or time to recover may not
+solve a deep problem, but they can change the conditions under which a choice is made.
+
+<Figure id="126.4" caption="Recent conditions accumulate into the state that meets the next decision.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "last night", sub: "sleep and recovery" },
+      { label: "this week", sub: "repeated strain" },
+      { label: "this hour", sub: "setting and cues" },
+      { label: "this moment", sub: "the response" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+### The boundary of "us" can move
+
+Humans readily form groups, but the membership of a group is neither fixed nor purely
+biological. A shared task can make strangers feel like a team. A threat can make a social line
+feel harder. A larger identity can move the boundary outward, from a neighborhood or nation to
+a profession, a species, or a common future. This flexibility matters because loyalty is not the
+opposite of cruelty. People can be deeply generous within a circle while treating outsiders as
+less worthy. The work is to notice which circle is organizing the moment and whether it has been
+drawn too tightly.
+
+<Figure id="126.5" caption="Social identity can place group boundaries close in or farther out.">
+  <Concentric
+    className="block w-full min-w-[380px]"
+    externalLabel="a shared identity can move the boundary"
+    rings={[
+      { label: "self" },
+      { label: "close ties" },
+      { label: "my group" },
+      { label: "a wider human circle" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## The Model
+
+Sapolsky's model is a set of nested timescales, read from the center outward. The action happens
+now, but its immediate neural conditions are already shaped by the body's current state, recent
+experience, development, culture, and evolutionary history. These are not five competing
+explanations from which to pick a winner. They are levels of the same explanation. Start nearest
+to the act when you need to intervene, then keep moving outward until the explanation includes
+the conditions that made the near cause likely.
+
+<Figure id="126.6" caption="A behavior happens in the present, inside conditions that extend from moments to millennia.">
+  <Concentric
+    className="block w-full min-w-[440px]"
+    externalLabel="a behavior happens now"
+    rings={[
+      { label: "neural activity, seconds" },
+      { label: "body and recent state, hours to months" },
+      { label: "development and culture, years" },
+      { label: "evolutionary history, millennia" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Describe the sequence before judging it">
+After a difficult interaction, write four plain facts: what happened just before, what changed in
+your body, what story or memory arrived, and what you did next. Keep adjectives about character
+out of the first pass. You are making a sequence that can be examined, not a case for acquittal.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Find one near condition you can change">
+Choose a recurring behavior and look for one condition within reach: an overloaded calendar, a
+conversation held too late, a notification that keeps provoking you, or a missing meal or break.
+Change it for a week. This does not claim the condition is the whole cause. It tests whether a
+small change in the setup makes a different response easier.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Widen the circle before a group decision">
+Before a team, family, or online argument, name who counts as "us" in the discussion and who
+will bear the cost of the decision. Add one absent perspective to the room, even if only by
+asking what it would need. A wider frame does not settle every conflict, but it interrupts the
+ease of treating outsiders as scenery.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Match responsibility to the level of cause">
+When a problem repeats, separate what one person can practice from what a group or institution
+must change. A person may need sleep, treatment, skill, or a pause. A workplace may need safer
+hours, clearer rules, or fewer humiliating incentives. Responsibility becomes more useful when
+it includes the conditions that distribute risk and power.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Explaining behavior is not excusing it, and biological influence is not biological destiny.
+Evidence at every level is probabilistic, often drawn from narrow settings, and can be revised.
+For example, a <a href="https://pubmed.ncbi.nlm.nih.gov/35201818/" target="_blank" rel="noopener noreferrer">2022 randomized study of testosterone</a> found competitive choices depended on both cortisol and status cues, not testosterone alone. A <a href="https://pubmed.ncbi.nlm.nih.gov/22101494/" target="_blank" rel="noopener noreferrer">controlled acute-stress study</a> found impaired flexible goal switching in one sample, not a universal diagnosis of how stressed people act. Use the framework to resist lazy explanations and to locate changeable conditions. Do not use it to predict an individual, erase accountability, or turn a research result into a label.
+</Callout>
+
+## If you remember one thing
+
+No behavior comes from nowhere. Look for the immediate conditions first, then widen the frame
+until the body, history, social setting, and long inheritance are all visible. That fuller story
+is where better prevention and fairer responsibility begin.
+
+## Shelved nearby
+
+*Thinking, Fast and Slow* focuses on the quick and deliberate judgments inside the immediate
+moment. *Emotional Intelligence* turns attention to emotional signals into practical regulation,
+while *The Body Keeps the Score* shows how threat can keep shaping a nervous system after danger.
+
+<ShelvedNearby
+  related={["thinking-fast-and-slow", "emotional-intelligence", "body-keeps-the-score"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/311787/behave-by-robert-m-sapolsky/9780735222786/"
+  buyLabel="Behave by Robert M. Sapolsky"
+/>
