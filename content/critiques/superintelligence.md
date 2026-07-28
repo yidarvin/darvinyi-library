@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -115,3 +115,43 @@ verdict: resolved
 - Rebuilt Figure 132.3 so its access-and-review decision branches to bounded pursuit or risk of conflict, before the conflict outcome. Reordered Figure 132.4 into Matrix’s documented coordinate order and highlighted concentrated decision power with broad reach.
 - Rewired Figure 132.6 with labeled feedback from world effects to evaluation and deployment limits, an evaluation-to-objective revision edge, and a deployment-limit-to-system access boundary. The graph now uses neutral labeled arrows rather than unsupported polarity signs.
 - Recomputed the Hero badge to `8-min distillation` from the rendered chapter length.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+1. **Give Figure 132.6 enough space to render its two core forward arrows.** The
+   revised graph places `human purpose` and `specified objective` at normalized
+   x-coordinates 0.12 and 0.45, and places `capable system` and `world effects` at
+   0.45 and 0.78 (`src/chapters/superintelligence.mdx:193-203`). In `NodeGraph`,
+   those positions resolve to centers only 94.38 SVG units apart. Each card is 94
+   units wide, and the component adds seven units of clearance at both ends of an
+   edge (`src/components/diagrams/NodeGraph.tsx:42-46,54-58,87-93`). Both horizontal
+   links therefore have a drawable length of 94.38 - 94 - 14 = -13.62 units:
+   their computed start lies beyond their computed end, inside the cards that are
+   painted over the edges. The signature model consequently does not visibly
+   communicate either purpose → specification or system → effects, two links
+   essential to the chain described by the prose and accessibility label. Recompose
+   the chapter-local node positions so each linked pair has real clearance and the
+   arrowheads remain visible; do not change the shared component for this page-only
+   defect.
+
+### Advisory
+
+1. The `Compare` under the control graph omits `favor`, so the shared component's
+   default accents capability control over motivation control
+   (`src/chapters/superintelligence.mdx:211-222`;
+   `src/components/diagrams/Compare.tsx:22-24,36-42`). `favor="none"` would better
+   match the prose's claim that neither requirement substitutes for the other.
+
+2. The round-one prose, evidence, registry, branching-flow, matrix-order, and
+   reading-time findings are resolved. Within the recorded evidence, the chapter's
+   broad-capability, orthogonality, instrumental-convergence, technical-path, and
+   competitive-pressure claims remain supportable and appropriately conditional.
+   The page uses original synthesis and diagrams, with no quotation or real cover
+   art. No new external web search was performed.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-28: validation, prose lint,
+   42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite production
+   build, and ESLint all passed. Vitest emitted only non-failing jsdom
+   `Window.scrollTo()` notices.
