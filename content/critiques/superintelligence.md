@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -246,3 +246,10 @@ verdict: revise
    lint, 42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite
    production build, and ESLint all passed. Vitest emitted only the repository's
    known non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Reconfigured Figure 132.5's chapter-local `Spectrum` labels: `shared standards` now occupies the top marker lane, while the two long endpoint labels use the stacked layout above their respective ends. The marker and the right endpoint no longer share the same horizontal band.
+- Moved Figure 132.6's `evidence` label to its lower-left feedback lane at approximately `(127.84, 217.92)` in the 380-unit viewBox, adjacent to the effects-to-evaluation arrow and clear of the crossing. Moved `bounds access` to a separate lower-middle lane at approximately `(187.15, 233.16)`, leaving clear vertical separation from `evidence` and clearance from the evaluation and deployment-limit cards.
+- Preserved the prior forward-arrow spacing, `revises limits` in-canvas placement, neutral comparison, evidence-bound prose, registry metadata, and all earlier corrections.
+- Ran `npm run check` successfully on 2026-07-28 (`exit 0`): validation, prose lint, pipeline tests, Vitest, TypeScript, production build, and ESLint passed. The chapter remains `draft`; no done status, commit, or push was performed.

@@ -161,6 +161,8 @@ counter that pressure. They are difficult to build and require their own scrutin
     right="coordinate for safety"
     marker={0.7}
     markerLabel="shared standards"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
     zones={[
       { from: 0.0, to: 0.38, label: "shorter evaluation window" },
       { from: 0.58, to: 1.0, label: "time to test and respond", accent: true },
@@ -201,10 +203,10 @@ end of responsibility.
         { from: "purpose", to: "spec" },
         { from: "spec", to: "system" },
         { from: "system", to: "effects" },
-        { from: "effects", to: "eval", label: "evidence", labelOffset: { x: -2, y: 10 } },
+        { from: "effects", to: "eval", label: "evidence", labelOffset: { x: -45, y: 10 } },
         { from: "eval", to: "spec", label: "revises", labelOffset: { x: -16, y: -4 } },
         { from: "effects", to: "limits", label: "revises limits", labelOffset: { x: 44, y: 4 } },
-        { from: "limits", to: "system", label: "bounds access", labelOffset: { x: 12, y: 4 } },
+        { from: "limits", to: "system", label: "bounds access", labelOffset: { x: -10, y: 15 } },
       ]}
       ariaLabel="A control model maps human purpose to a specified objective, a capable system, and world effects. Effects provide evidence to evaluation, which revises the objective, and effects also revise deployment limits that bound the system's access."
     />
