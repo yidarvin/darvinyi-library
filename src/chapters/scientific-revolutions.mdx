@@ -1,0 +1,244 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, CoreContext, Iceberg, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="scientific-revolutions"
+  thesis="Science often moves by long stretches of disciplined problem solving, interrupted when a framework can no longer organize the world it helped reveal."
+  minutes={8}
+/>
+
+## The thesis
+
+Kuhn's history of science rejects the picture of knowledge as a single, smooth pile of
+facts. A scientific community usually works inside a shared framework that tells it what
+counts as a good question, a reliable instrument, and a satisfying answer. That arrangement
+makes deep, cumulative work possible. But when its failures become too consequential to
+treat as local puzzles, a competing framework can reorganize the field. Progress then comes
+in both modes: patient refinement and occasional reconstruction.
+
+## Why it matters
+
+The phrase "paradigm shift" is now used for any new app or management slogan. Kuhn meant
+something more demanding. A real shift changes the standards, categories, and exemplary
+problems that let a field do its work. The distinction helps separate a useful improvement
+from a change in the map itself. It also explains why good evidence can take time to alter a
+settled practice: evidence is interpreted inside a working system before it is allowed to
+call that system into question.
+
+## A paradigm is a working world, not a single theory
+
+A paradigm is larger than a headline explanation. It bundles methods, instruments,
+successful examples, habitual questions, standards of proof, and an educated sense of what a
+solution should look like. A physicist trained with a familiar set of problems does not face
+each measurement as a blank slate. The training supplies a field of possible moves.
+
+That shared background is productive. It lets researchers divide labor, improve techniques,
+and disagree about a result without first renegotiating the meaning of every term. The cost
+is that the framework also directs attention. It makes some features of the world easier to
+notice and others easier to treat as noise, error, or somebody else's problem.
+
+<Figure id="133.1" caption="A paradigm supplies a stable working center while practices and results continue to change around it.">
+  <CoreContext
+    className="block w-full min-w-[440px]"
+    coreTitle="shared framework"
+    coreItems={["exemplary problems", "accepted methods", "standards of proof"]}
+    contextTitle="the field at work"
+    contextItems={["new measurements", "tools", "specialized questions", "published results"]}
+    ariaLabel="A shared framework contains exemplary problems, accepted methods, and standards of proof, while measurements, tools, questions, and results change around it."
+  />
+</Figure>
+
+## Normal science earns its name through concentration
+
+Most scientific work, in Kuhn's account, is not a hunt for a new worldview. It is the hard
+work of extending one that has already proved useful. Researchers make a prediction more
+precise, refine an instrument, solve a difficult case, or bring a stubborn observation into
+line with a known model. These are not trivial chores. A field becomes capable through this
+kind of focused puzzle solving.
+
+The framework narrows the game, and that narrowness is a feature. A problem has enough shape
+to reward skill when the community agrees on the tools and on what counts as a solution. The
+same discipline that produces reliable detail can, however, postpone a more radical question
+about whether the rules of the game still fit the phenomenon.
+
+<Figure id="133.2" caption="Normal science tightens a shared framework through repeated cycles of precise puzzle solving.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["shared expectations", "focused puzzle", "test or measurement", "refined result"]}
+    compoundingEdge={3}
+    centerLabel="normal science"
+    ariaLabel="A loop runs from shared expectations through a focused puzzle, testing, and a refined result that strengthens the next round of normal science."
+  />
+</Figure>
+
+## An anomaly is a mismatch, not a revolution on arrival
+
+Every capable framework encounters awkward observations. An instrument may be misread, a
+calculation may be incomplete, or a surprising case may yield once the method improves. The
+first responsible response is usually to investigate the local mismatch, not to announce the
+collapse of all prior knowledge. A mature field has earned that patience.
+
+An anomaly becomes important when careful work keeps returning to the same trouble. It is no
+longer a puzzle with a difficult answer, but evidence that the available rules cannot tell
+researchers what answer would settle it. Its force comes from persistence, relevance, and
+its relation to other problems, not from its mere novelty.
+
+<Figure id="133.3" caption="A hard puzzle remains inside the framework; a persistent mismatch can put the framework itself in play.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "a hard puzzle",
+      points: ["the rules name a possible solution", "better measurement may resolve it", "the framework keeps its authority"],
+    }}
+    right={{
+      title: "a persistent anomaly",
+      points: ["the rules no longer settle the case", "repairs multiply without closure", "the framework becomes a question"],
+    }}
+    ariaLabel="A comparison shows that a hard puzzle is expected to yield within the rules, while a persistent anomaly makes the framework itself questionable."
+  />
+</Figure>
+
+## Crisis changes the question before it changes the answer
+
+When anomalies accumulate, the field can enter a crisis. Confidence in its usual procedures
+weakens, old fixes look less convincing, and researchers become willing to try approaches
+that would previously have seemed irrelevant or badly formed. This is a period of expanded
+possibility, not a moment when everyone suddenly agrees on a replacement.
+
+The visible dispute may be about a troublesome result. Beneath it lies a deeper conflict over
+which concepts, measurements, and questions deserve authority. That is why a crisis can feel
+confusing from inside. The group is no longer merely deciding how to solve a puzzle. It is
+deciding what sort of puzzle it has.
+
+<Figure id="133.4" caption="A visible discrepancy can rest on a deeper dispute about concepts, methods, and standards.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="a result that will not fit"
+    waterlineLabel="the reported problem"
+    below={["strained concepts", "competing methods", "uncertain standards", "a new field of questions"]}
+    ariaLabel="An iceberg places an unfitting result above the waterline and strained concepts, competing methods, uncertain standards, and new questions below it."
+  />
+</Figure>
+
+## A new framework has to organize more than one surprise
+
+A challenger wins attention by opening a more fruitful line of work, not by being different
+for its own sake. It must handle important successes of the older framework while making
+sense of problems that framework left unsettled. Adoption is social as well as evidential:
+scientists compare results, learn new techniques, teach the approach, and discover whether it
+generates problems worth solving.
+
+Kuhn's point is not that evidence disappears during this process. It is that evidence does
+not arrive with an instruction sheet that ranks every framework automatically. Competing
+approaches may group phenomena differently and set different expectations. Shared values such
+as accuracy, reach, coherence, simplicity, and future promise matter, but reasonable people
+can weigh them differently while the field is still changing.
+
+<Figure id="133.5" caption="A replacement gains ground by connecting old successes, stubborn anomalies, new methods, and a community of users.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    ariaLabel="A network connects a candidate framework with old successes, unresolved anomalies, new methods, and a scientific community, each feeding the framework's adoption."
+    nodes={[
+      { id: "candidate", label: "candidate framework", x: 0.5, y: 0.5 },
+      { id: "successes", label: "old successes", x: 0.18, y: 0.16 },
+      { id: "anomalies", label: "unresolved anomalies", x: 0.82, y: 0.16 },
+      { id: "methods", label: "new methods", x: 0.18, y: 0.84 },
+      { id: "community", label: "scientific community", x: 0.82, y: 0.84 },
+    ]}
+    edges={[
+      { from: "successes", to: "candidate", label: "retain" },
+      { from: "anomalies", to: "candidate", kind: "reinforcing", label: "explain" },
+      { from: "methods", to: "candidate", label: "test" },
+      { from: "candidate", to: "community", kind: "reinforcing", label: "learn" },
+      { from: "community", to: "methods", label: "develop" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+A paradigm shift is a change in the field's operating frame. Normal science gives a community
+the means to deepen a successful framework. Persistent anomalies can turn that confidence
+into a crisis. A competing framework then has to earn a following by producing a more
+promising program of research. Once it becomes the shared basis for new puzzles, the cycle of
+normal science begins again. The sequence is a conceptual map, not a timetable or a law that
+every discipline must obey.
+
+<Figure id="133.6" caption="A paradigm shift rebuilds the framework that makes the next stretch of normal science possible.">
+  <Timeline
+    className="block w-full min-w-[620px]"
+    highlight={3}
+    segments={[
+      { label: "normal science", sub: "shared puzzles" },
+      { label: "persistent anomaly", sub: "repairs stop closing the gap" },
+      { label: "crisis", sub: "the framework is questioned" },
+      { label: "new framework", sub: "a different research program" },
+      { label: "new normal science", sub: "fresh puzzles and standards" },
+    ]}
+    ariaLabel="A paradigm-shift timeline moves from normal science through a persistent anomaly and crisis to a new framework and a new period of normal science."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the frame before debating the result">
+For a recurring disagreement in your work, write down the assumption both sides are using:
+what counts as success, what evidence is trusted, and what problem is being optimized. If
+the answers differ, arguing over the latest data point may be premature. Start by making the
+frame visible.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Keep an anomaly log">
+When a process repeatedly produces an awkward exception, record it instead of explaining it
+away on the spot. Include the expected result, the actual result, the condition, and the
+repair attempted. Review the list after a few cycles. One exception may be noise. A pattern
+of exceptions may tell you which assumption deserves a closer look.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Test a rival model as a working tool">
+Choose one problem that your usual method handles poorly. Describe how a different model
+would define the problem, what it would measure, and what result it would predict. Run a
+small, reversible test. The aim is not to declare a revolution. It is to give an alternative
+a fair chance to produce useful work.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Protect both modes of progress">
+Set aside one part of a project for refinement and another for challenge. In the first,
+improve the current system with clear standards. In the second, ask what the system excludes,
+which recurring failure has become normal, and what a different frame would make possible.
+Do not let novelty disrupt routine work, and do not let routine work make novelty invisible.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Kuhn did not give a license to call every disagreement a paradigm shift, nor did he say that
+evidence is merely a matter of taste. His historical model was shaped chiefly by physical
+science and describes an influential pattern, not a universal schedule for all inquiry.
+"Incommensurable" does not mean rivals cannot be compared or discussed. It marks the fact
+that comparison can be difficult when terms, methods, and standards are moving together.
+Later Kuhn also emphasized values used in theory choice, including accuracy, consistency,
+scope, simplicity, and future fruitfulness. Those values guide judgment without supplying an
+automatic decision procedure.
+</Callout>
+
+## If you remember one thing
+
+Science needs settled frameworks because they make exact, shared work possible. It also needs
+the discipline to notice when a framework's unresolved failures have become a reason to test
+a different way of seeing.
+
+## Shelved nearby
+
+Read <a href="/demon-haunted-world">The Demon-Haunted World</a> for the practices of
+testing claims that any framework must face, and <a href="/the-innovators">The
+Innovators</a> for a history of technical change shaped by communities, tools, and new
+problems.
+
+<ShelvedNearby
+  related={["demon-haunted-world", "the-innovators"]}
+  buyUrl="https://press.uchicago.edu/ucp/books/book/chicago/S/bo13179751.html"
+  buyLabel="The Structure of Scientific Revolutions by Thomas S. Kuhn"
+/>

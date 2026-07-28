@@ -2629,7 +2629,18 @@
       "subtitle": "Thomas Kuhn · 1962",
       "part": "Systems, Complexity & the Future",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Science often advances through long stretches of puzzle solving inside a shared framework, punctuated by revolutions when persistent failures make a new framework more promising.",
+      "framework": "Paradigm shift: normal science, persistent anomaly, crisis, new framework, and renewed normal science.",
+      "diagrams": [
+        "core / context",
+        "process loop",
+        "comparison",
+        "iceberg",
+        "node graph",
+        "timeline"
+      ]
     },
     {
       "num": 134,
