@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -182,3 +182,34 @@ the existing non-failing jsdom `Window.scrollTo()` notices.
   mobile scale, Figure 139.1 remains the event-commentary-response Flow, the caveat
   remains within the recorded non-clinical evidence, and the registry diagram
   inventory matches the five rendered figures.
+
+## Critique round 4 — 2026-07-28
+
+### Required
+
+None.
+
+The earlier required findings remain resolved. All five figures retain minimum widths
+that preserve their authored label sizes in the mobile overflow container; Figure
+139.1 now encodes the event-commentary-response distinction; the caveat makes only the
+bounded epistemic and non-clinical claims supported by the evidence record; the
+registry lists the five rendered diagram forms in order; and the Hero now reports the
+resolved eight-minute reading time.
+
+The thesis and anatomy match the brief. The deliberate absence of a Model section is
+recorded in both the brief and registry. Five key ideas each have a captioned
+shared-vocabulary diagram, the four exercises specify concrete observations and
+actions, all three nearby slugs are done chapters, and the outbound publisher link
+matches the recorded evidence. Within the supplied brief and evidence, no unsupported
+claim that changes the reader's understanding, apparent close paraphrase, reproduced
+source figure, or real cover art was found. This review began no external web search.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28. Validation and prose lint
+passed; both pipeline tests, all 40 runner tests, all 299 Vitest tests, TypeScript, the
+Vite production build, and ESLint passed. Vitest emitted only the existing non-failing
+jsdom `Window.scrollTo()` notices.
+
+### Advisory
+
+None. The earlier non-blocking observation about Figure 139.5's spectrum remains in
+round 1; no new evidence warrants promoting it or requesting stylistic churn.

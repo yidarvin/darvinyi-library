@@ -153,7 +153,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 136 | art-of-war                      | The Art of War                                | DONE    |
 | 137 | tao-of-pooh                     | The Tao of Pooh                               | DONE    |
 | 138 | miracle-of-mindfulness          | The Miracle of Mindfulness                    | DONE    |
-| 139 | waking-up                       | Waking Up                                     | PENDING |
+| 139 | waking-up                       | Waking Up                                     | DONE    |
 | 140 | moonwalking-einstein            | Moonwalking with Einstein                     | PENDING |
 | 141 | mind-for-numbers                | A Mind for Numbers                            | PENDING |
 | 142 | creative-act                    | The Creative Act                              | PENDING |
