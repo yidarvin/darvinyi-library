@@ -171,6 +171,27 @@ describe("Noise audit flow", () => {
   });
 });
 
+describe("The Tao of Pooh mobile flow", () => {
+  it("keeps its four-step fitting-action flow at its readable native width", async () => {
+    const mod = await mdxModules["../chapters/tao-of-pooh.mdx"]();
+    const TaoOfPooh = mod.default;
+    render(
+      <MemoryRouter>
+        <MDXProvider components={mdxComponents}>
+          <TaoOfPooh />
+        </MDXProvider>
+      </MemoryRouter>,
+    );
+
+    const caption = screen.getByText(/A fitting action begins with conditions/i);
+    const flow = caption.closest("figure")?.querySelector("svg");
+
+    expect(flow).not.toBeNull();
+    expect(flow?.getAttribute("viewBox")).toBe("0 0 558 180");
+    expect(flow?.getAttribute("class")).toContain("min-w-[558px]");
+  });
+});
+
 describe("The Demon-Haunted World figure regressions", () => {
   it("keeps its confidence, inquiry, and detection-kit diagrams semantically and visually distinct", async () => {
     const compactText = (value: string | null | undefined) => (value ?? "").replace(/\s+/g, "");

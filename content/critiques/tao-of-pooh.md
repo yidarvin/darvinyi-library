@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -40,3 +40,19 @@ verdict: revise
    validation; prose lint; 40 queue-runner tests; 294 Vitest tests; TypeScript and the
    Vite production build; and ESLint all completed successfully. Vitest emitted only
    the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Compressed `The thesis` to two sentences. It keeps Hoff's Pooh-based entrance to
+  Taoist ideas, explicitly rejects passivity, and describes capable action as
+  responsive rather than performative control.
+- Changed Figure 137.2's four-step `Flow` from `min-w-[380px]` to its native
+  `min-w-[558px]`. The existing Figure overflow wrapper now scrolls the full-width
+  SVG instead of reducing its step labels and sequence numbers below readable size.
+- Added a focused chapter regression test that asserts the Flow's `558 × 180`
+  viewBox and `min-w-[558px]` class. Rechecked the recorded evidence boundary,
+  five original diagram forms, deliberate absence of a Model section, caveat,
+  related links, and draft registry status; no external research was begun.
+- Ran `npm run check` on 2026-07-28; the full validation, prose lint, pipeline,
+  Vitest, TypeScript/Vite build, and ESLint gate passed. The chapter remains `draft`;
+  this resolution does not mark it done.
