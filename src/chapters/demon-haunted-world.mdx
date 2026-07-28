@@ -1,0 +1,226 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Flow, Iceberg, Matrix, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="demon-haunted-world"
+  thesis="Scientific skepticism is not a taste for saying no. It is a public way of making claims earn the confidence we give them."
+  minutes={8}
+/>
+
+## The thesis
+
+Sagan's argument is that a technically powerful society needs more than scientific
+products. It needs the habits of mind that made those products possible: asking what a
+claim predicts, looking for alternative explanations, checking sources, and changing a
+conclusion when reality refuses to cooperate. Science is valuable here less as a storehouse
+of answers than as a practiced method for reducing self-deception.
+
+## Why it matters
+
+An extraordinary story can offer wonder, belonging, fear, or a clean villain before anyone
+has asked whether it is true. That makes it easy to mistake emotional force for evidence.
+The cost is larger than one bad belief. When decisions about health, public money, safety,
+or other people rest on claims that have not been tested, the damage moves from a private
+opinion into shared life.
+
+## A satisfying story is not yet an explanation
+
+Human beings are good at finding patterns, especially in events that feel uncanny or
+important. A pattern can be a clue, but it is not a conclusion. The crucial move is to
+separate what was observed from the story built around it. A strange light in the sky is an
+observation. A confident account of its origin adds several steps that still need support.
+
+This is not a demand to stop imagining. Imagination supplies possible explanations. The
+discipline begins when several explanations are kept alive long enough to compare them
+against evidence. The most dramatic account should not receive a free pass merely because
+it is vivid.
+
+<Figure id="130.1" caption="A claim can arrive with real observations at its surface and unsupported interpretation underneath.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="an arresting observation"
+    below={["a remembered detail", "an assumed cause", "a preferred story", "other explanations left untested"]}
+  />
+</Figure>
+
+## Confidence should track the evidence
+
+The useful question is not simply, "Do I believe this?" It is, "How much confidence does
+this evidence deserve?" An anecdote can justify curiosity. A measurement with a clear
+method can justify more. Independent agreement across methods and investigators earns more
+still. None of these steps makes a conclusion sacred. They make it progressively harder for
+a flattering mistake to survive.
+
+The size of the claim matters as well. A claim that would revise much of what is already
+known has more to explain, so it needs evidence that can bear that weight. This is not a
+rule for defending the status quo. It is the price of asking everyone else to rearrange their
+map of reality.
+
+<Figure id="130.2" caption="Large consequences and thin evidence call for restraint; strong, checked evidence can support firmer action.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "thin evidence", right: "checked evidence", label: "support for the claim" }}
+    yAxis={{ low: "small consequence", high: "large consequence", label: "cost of being wrong" }}
+    highlight={1}
+    quadrants={[
+      { title: "hold lightly", note: "low stakes, low support" },
+      { title: "act, keep checking", note: "large stakes, strong support" },
+      { title: "stay curious", note: "small stakes, more evidence needed" },
+      { title: "pause and test", note: "large stakes, weak support" },
+    ]}
+  />
+</Figure>
+
+## A method is an argument with a way to lose
+
+An explanation becomes useful when it risks contact with the world. It should tell us what
+we would expect to observe if it were right, and what result would count against it. A claim
+that can accommodate every outcome has protected itself from error, but it has also stopped
+teaching us much.
+
+That vulnerability is a strength. A failed prediction narrows the field, exposes a bad
+assumption, or forces a better question. Science does not proceed as a straight march from
+ignorance to certainty. It moves through guesses, tests, surprises, revisions, and new
+guesses. The point is to build a process in which being wrong leaves a useful trace.
+
+<Figure id="130.3" caption="A testable explanation can meet a result that changes the next version of the idea.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["propose an explanation", "derive a prediction", "compare with evidence", "revise or retain provisionally"]}
+    compoundingEdge={3}
+    centerLabel="error correction"
+  />
+</Figure>
+
+## Evidence gains strength in company
+
+No individual is free of wishful thinking, selective attention, or a loyalty to a first
+impression. The answer is not to locate a flawless expert. It is to make claims answerable
+to other people who can inspect the method, try a different measurement, find a missing
+variable, or fail to get the same result.
+
+That is why a single study, a charismatic spokesperson, or a polished chart should not end
+an inquiry. Public criticism is part of the engine. Agreement matters most when it emerges
+from work that had a real chance to disagree.
+
+<Figure id="130.4" caption="Scientific confidence grows through several independent checks, not through one voice repeating itself.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    ariaLabel="A claim is checked by observation, another investigator, a competing explanation, and a replication attempt. Their results feed a revised confidence judgment."
+    nodes={[
+      { id: "claim", label: "claim", x: 0.5, y: 0.08 },
+      { id: "observe", label: "observation", x: 0.16, y: 0.42 },
+      { id: "alternative", label: "alternative account", x: 0.84, y: 0.42 },
+      { id: "repeat", label: "independent check", x: 0.22, y: 0.78 },
+      { id: "confidence", label: "revised confidence", x: 0.72, y: 0.78 },
+    ]}
+    edges={[
+      { from: "claim", to: "observe" },
+      { from: "claim", to: "alternative" },
+      { from: "observe", to: "repeat" },
+      { from: "alternative", to: "confidence" },
+      { from: "repeat", to: "confidence", kind: "reinforcing" },
+      { from: "confidence", to: "claim", kind: "balancing", labelOffset: { x: 18, y: 8 } },
+    ]}
+  />
+</Figure>
+
+## Skepticism keeps wonder from becoming gullibility
+
+There are two bad responses to uncertainty. One is credulity: accepting a claim because it
+is comforting, frightening, or endorsed by a familiar group. The other is reflexive
+cynicism: treating every surprising possibility as foolish before the evidence is in.
+Sagan's better posture is open-minded, but not empty-headed. Welcome a new possibility,
+then ask it to survive the same tests as an ordinary one.
+
+This preserves the pleasure of discovery. A skeptic does not begin with "impossible." A
+skeptic begins with "show me how we could tell." That question respects both the claimant
+and the world.
+
+<Figure id="130.5" caption="Inquiry stays open to possibilities while refusing to grant certainty before the work is done.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="automatic belief"
+    right="automatic disbelief"
+    marker={0.5}
+    markerLabel="curious, testable inquiry"
+    zones={[
+      { from: 0, to: 0.32, label: "credulity" },
+      { from: 0.37, to: 0.63, label: "ask and test", accent: true },
+      { from: 0.68, to: 1, label: "cynicism" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The baloney detection kit is not a trivia quiz that stamps claims true or false. It is a
+set of friction points for a claim that wants your belief. Ask for a clear statement, seek
+the evidence behind it, compare plausible alternatives, look for an independent check, and
+name what result would change the conclusion. When a claim fails one of these questions,
+the appropriate response is often less confidence, not theatrical dismissal.
+
+<Figure id="130.6" caption="The kit turns an appealing claim into a sequence of checks before it earns a conclusion.">
+  <Flow
+    className="block w-full min-w-[584px]"
+    highlight={3}
+    steps={["state the claim clearly", "inspect the evidence", "compare alternatives", "seek an independent check"]}
+    branch={{ up: "prediction holds: increase confidence", down: "check fails: revise or suspend" }}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Separate the report from the story">
+Choose one remarkable claim you encountered this week. Write down only what was directly
+observed or measured. Then list the explanation supplied for it. Add two other explanations
+that would fit the same observation, even if one seems less exciting.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Find the source behind the source">
+Before sharing a quote, statistic, or health claim, trace it back one link farther than the
+post that delivered it. Look for an author, a date, a method, and a source that can be
+checked. If the trail disappears, share the uncertainty instead of the claim.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Write the losing condition">
+For a belief you hold strongly, finish this sentence: "I would reconsider if I saw..."
+Make the answer concrete enough that another person could recognize it. If no imaginable
+result qualifies, the belief is insulated from evidence.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Borrow one dissenting view">
+When a decision matters, ask someone who does not share your first conclusion to name the
+strongest alternative explanation. Do not ask them to agree. Ask what evidence would make
+their alternative more or less likely.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Skepticism is not a license to reject anything unfamiliar, nor is it a shortcut for deciding
+every question from a browser tab. The evidence available should fit the decision at hand,
+and expertise can be useful evidence when its methods and limits are visible. Science also
+has incentives, blind spots, and failed results. Peer review is a checkpoint, not a truth
+machine. The strength of scientific inquiry lies in making mistakes exposed, contested, and
+correctable over time, not in treating any institution as beyond question.
+</Callout>
+
+## If you remember one thing
+
+Keep room for surprise, but make every claim pass through contact with the world. The habit
+of asking what would show you are wrong is one of the surest ways to become less easy to
+deceive, including by yourself.
+
+## Shelved nearby
+
+<em>Noise</em> shows how error can enter even professional judgment, while
+<em>Thinking, Fast and Slow</em> examines some of the mental shortcuts that make a clean
+check worth having.
+
+<ShelvedNearby
+  related={["noise", "thinking-fast-and-slow"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/159731/the-demon-haunted-world-by-carl-sagan/"
+  buyLabel="The Demon-Haunted World by Carl Sagan"
+/>
