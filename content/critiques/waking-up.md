@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -98,3 +98,39 @@ verdict: resolved
   unsupported claim about meditation risks for named populations.
 - Preserved the five-key-idea anatomy, existing practice cards, links, and the
   deliberately absent Model section. `npm run check` passed on 2026-07-28.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+1. **Make the registry's diagram inventory agree with the resolved chapter.**
+   The builder replaced Figure 139.1 with `Flow`, and the chapter now imports and
+   renders `Flow`, `NodeGraph`, `Compare`, and `Spectrum`
+   (`src/chapters/waking-up.mdx:1-3,41-47`). The registry still lists `iceberg` as
+   the first diagram and lists only one `flow / sequence`
+   (`content/registry.json:2753-2759`). The rendered page actually contains two
+   Flow figures and no Iceberg figure. Update the registry inventory so it records
+   the five rendered forms in order: `flow / sequence`, `node graph`,
+   `flow / sequence`, `comparison / split`, and `spectrum / gradient`. This is a
+   required technical-integrity defect because the authoring spec requires a
+   complete registry entry and the rubric requires registry state to agree with
+   the files on disk.
+
+### Advisory
+
+1. The three prior required findings remain resolved. The minimum widths now
+   preserve each primitive's authored scale inside `Figure`'s horizontal overflow;
+   Figure 139.1 teaches the event, commentary, and response sequence described by
+   its section; and the caveat is bounded by the recorded evidence.
+
+2. The thesis and fixed anatomy are intact. The deliberately absent Model section
+   matches the brief, all five key ideas have captioned in-vocabulary diagrams, the
+   four exercises are concrete, the three related slugs resolve to done chapters,
+   and the outbound publisher link matches the evidence record. No unsupported
+   claim that changes the reader's understanding, apparent close paraphrase,
+   reproduced source figure, real cover art, or new external research was found.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-28. Validation and prose
+   lint passed; both pipeline tests, all 40 runner tests, all 299 Vitest tests,
+   TypeScript, the Vite production build, and ESLint passed. Vitest emitted only
+   the existing non-failing jsdom `Window.scrollTo()` notices.
