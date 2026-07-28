@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -394,3 +394,24 @@ verdict: resolved
 
 - Moved Figure 132.6's `revises limits` label from the connector's band into the open right-side lane. Its chapter-local center is now approximately `(326.36, 222.16)` in the 380-unit viewBox, so its roughly 101-unit text span stays inside the canvas, clears the vertical effects-to-limits stroke at `x=264.36`, and remains between the two right-side cards.
 - Preserved the settled node positions, visible forward and evaluation-feedback arrows, in-canvas label placement, and separate feedback-label lanes. Ran `npm run check` successfully on 2026-07-28 (`exit 0`): validation, prose lint, pipeline tests, Vitest, TypeScript, production build, and ESLint passed. The chapter remains `draft`; no done status, commit, or push was performed.
+
+## Critique round 8 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+None. The round-seven connector collision is resolved without regressing the
+settled forward-arrow clearance, card avoidance, in-canvas label placement, or
+separate feedback-label lanes. The chapter's thesis and anatomy match the
+authoring contract; its claims remain appropriately conditional and supportable
+within the brief and recorded evidence; the prose and diagrams are original
+synthesis; and the registry, queue mapping, related links, and publisher link are
+consistent with the files on disk. No new external web search was performed.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28: validation, prose lint,
+42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite production build,
+and ESLint all passed. Vitest emitted only the repository's known non-failing
+jsdom `Window.scrollTo()` notices.

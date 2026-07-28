@@ -146,7 +146,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 129 | astrophysics-hurry              | Astrophysics for People in a Hurry            | DONE    |
 | 130 | demon-haunted-world             | The Demon-Haunted World                       | DONE    |
 | 131 | the-innovators                  | The Innovators                                | DONE    |
-| 132 | superintelligence               | Superintelligence                             | PENDING |
+| 132 | superintelligence               | Superintelligence                             | DONE    |
 | 133 | scientific-revolutions          | The Structure of Scientific Revolutions       | PENDING |
 | 134 | godel-escher-bach               | Gödel, Escher, Bach                           | PENDING |
 | 135 | guide-to-good-life              | A Guide to the Good Life                      | PENDING |
