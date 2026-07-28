@@ -2608,7 +2608,19 @@
       "subtitle": "Nick Bostrom · 2014",
       "part": "Systems, Complexity & the Future",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "If machine intelligence surpasses ours, controlling it becomes the defining challenge, and we are unprepared.",
+      "framework": "The control problem: motivation control plus capability control.",
+      "diagrams": [
+        "node graph",
+        "comparison",
+        "flow with branch",
+        "two-by-two matrix",
+        "spectrum",
+        "node graph",
+        "comparison"
+      ]
     },
     {
       "num": 133,

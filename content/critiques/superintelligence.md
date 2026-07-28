@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -106,3 +106,12 @@ verdict: revise
    pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite production build,
    and ESLint all passed. Vitest emitted only the existing non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Completed the `superintelligence` registry record with tier 3, the brief-supported thesis, the control problem as its signature framework, and the seven rendered diagram forms in page order. Its status remains `draft`.
+- Compressed “The thesis” to two sentences while retaining the distinction between broad capability and a safe objective under meaningful human direction.
+- Rewrote the technical-path section to retain path-dependent differences while identifying the shared control burden. Narrowed the race claim to the recorded evidence that competition can reduce safety investment, and explicitly labeled the listed institutional measures as this chapter’s practical synthesis.
+- Rebuilt Figure 132.3 so its access-and-review decision branches to bounded pursuit or risk of conflict, before the conflict outcome. Reordered Figure 132.4 into Matrix’s documented coordinate order and highlighted concentrated decision power with broad reach.
+- Rewired Figure 132.6 with labeled feedback from world effects to evaluation and deployment limits, an evaluation-to-objective revision edge, and a deployment-limit-to-system access boundary. The graph now uses neutral labeled arrows rather than unsupported polarity signs.
+- Recomputed the Hero badge to `8-min distillation` from the rendered chapter length.

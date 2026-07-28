@@ -5,17 +5,14 @@ import { Compare, Flow, Matrix, NodeGraph, Spectrum } from "../components/diagra
 <Hero
   slug="superintelligence"
   thesis="A machine far better than people at reasoning could be extraordinarily useful, but only if its objectives, access, and oversight remain under meaningful human control."
-  minutes={7}
+  minutes={8}
 />
 
 ## The thesis
 
-Bostrom asks readers to take a future intelligence advantage seriously before it arrives. A
-system that surpasses people across a broad range of reasoning tasks could gain enormous
-leverage through science, persuasion, planning, and technology. The hard problem is not
-making it hostile. It is ensuring that a system capable of pursuing an objective very
-effectively is pursuing an objective that is actually safe and worth pursuing. That problem
-has to be addressed before capability outruns the people meant to direct it.
+When an intelligence can outperform people across many reasoning tasks, its ability to pursue
+an objective can grow beyond human supervision. Bostrom's control problem is to ensure that
+the objective, access, and oversight remain safe before capability becomes difficult to direct.
 
 ## Why it matters
 
@@ -104,27 +101,28 @@ That is why a cheerful-sounding target is not a safety argument. The real questi
 system is allowed to do while pursuing it, what it can obtain, and how an operator could stop
 or redirect it when the target begins to pull against other values.
 
-<Figure id="132.3" caption="Many final objectives can make the same intermediate moves look useful, which is where conflict can begin.">
+<Figure id="132.3" caption="Many final objectives can make the same intermediate moves look useful; controls determine whether pursuit stays bounded or turns toward conflict.">
   <Flow
     className="block w-full min-w-[500px]"
-    steps={["different final aims", "useful intermediate moves", "resources and autonomy", "risk of conflict"]}
+    steps={["different final aims", "useful intermediate moves", "access and review decision"]}
     highlight={1}
-    branch={{ up: "limits and review", down: "unchecked pursuit" }}
-    ariaLabel="A flow moves from different final aims through shared useful intermediate moves and resources and autonomy to risk of conflict, with branches for limits and review or unchecked pursuit."
+    branch={{ up: "bounded pursuit", down: "risk of conflict" }}
+    ariaLabel="A flow moves from different final aims through shared useful intermediate moves to an access and review decision, which branches to bounded pursuit or risk of conflict."
   />
 </Figure>
 
-### The path to advanced AI matters less than the control burden
+### Different paths can share a control burden
 
 The book considers several routes by which cognition might become much more powerful, including
 machine learning systems, emulations of human brains, biological enhancement, and networks of
-people and machines. Those routes differ in speed, ownership, and technical details. They
-share a governance problem if one arrangement gains a decisive advantage: who sets its goals,
-who can inspect it, and who can prevent a temporary lead from becoming irreversible control?
+people and machines. Those routes differ in speed, ownership, technical details, and the forms
+of governance they may require. They can also share a control burden if one arrangement gains a
+decisive advantage: who sets its goals, who can inspect it, and who can prevent a temporary lead
+from becoming irreversible control?
 
-This framing avoids a common distraction. The question is not whether a future system looks
-like a robot, a company, or an online service. The question is whether a concentrated ability
-to make consequential decisions has safeguards proportionate to its reach.
+The system's form still matters. Whether the capability sits in a robot, a company, or an online
+service changes how power is acquired and constrained. Across those differences, a concentrated
+ability to make consequential decisions needs safeguards proportionate to its reach.
 
 <Figure id="132.4" caption="Different technical paths can converge on the same need for accountable control when their influence becomes concentrated.">
   <Matrix
@@ -132,12 +130,12 @@ to make consequential decisions has safeguards proportionate to its reach.
     xAxis={{ left: "distributed", right: "concentrated", label: "where is decision power?" }}
     yAxis={{ low: "narrow reach", high: "broad reach", label: "how much can it affect?" }}
     quadrants={[
-      { title: "ordinary oversight", note: "local and limited" },
       { title: "shared safeguards", note: "many actors, wide effects" },
-      { title: "local controls", note: "one owner, constrained scope" },
       { title: "control problem", note: "concentrated power, wide effects" },
+      { title: "ordinary oversight", note: "local and limited" },
+      { title: "local controls", note: "one owner, constrained scope" },
     ]}
-    highlight={3}
+    highlight={1}
     ariaLabel="A matrix sorts systems by whether decision power is distributed or concentrated and whether their reach is narrow or broad, highlighting concentrated power with broad effects."
   />
 </Figure>
@@ -150,10 +148,11 @@ expects competitors not to wait. The result is a familiar collective-action fail
 that no single participant chose can reduce the time available for checking objectives,
 restrictions, and failure modes.
 
-The book therefore treats governance as part of technical safety. Clear evaluation standards,
-incident reporting, security for dangerous capabilities, and credible agreements to pause or
-slow deployment can change the incentive landscape. They are difficult to build, but a plan
-that assumes every actor will voluntarily sacrifice an advantage is not a control plan.
+The book therefore treats governance as part of technical safety. Competition can reduce safety
+investment, so a control plan cannot assume every actor will voluntarily absorb a delay. In this
+chapter's practical synthesis, public evaluation criteria, incident reporting, security for
+dangerous capabilities, and agreements to pause or slow deployment are ways institutions might
+counter that pressure. They are difficult to build and require their own scrutiny.
 
 <Figure id="132.5" caption="Competitive pressure can shrink the time for safety work unless shared rules change the incentive to rush.">
   <Spectrum
@@ -186,27 +185,28 @@ world access needs boundaries that can be enforced. The loop matters because evi
 operation should revise the specification and the limits, rather than treating launch as the
 end of responsibility.
 
-<Figure id="132.6" caption="Control requires an objective that tracks human purpose, bounded deployment, and feedback strong enough to revise both.">
+<Figure id="132.6" caption="Control requires an objective that tracks human purpose, bounded deployment, and operational feedback that revises both.">
   <div className="min-w-[420px] space-y-6">
     <NodeGraph
       className="block w-full"
       nodes={[
-        { id: "purpose", label: "human purpose", x: 0.08, y: 0.52 },
-        { id: "spec", label: "specified objective", x: 0.34, y: 0.52 },
-        { id: "system", label: "capable system", x: 0.62, y: 0.52 },
-        { id: "effects", label: "world effects", x: 0.9, y: 0.52 },
-        { id: "eval", label: "evaluation", x: 0.47, y: 0.12 },
-        { id: "limits", label: "deployment limits", x: 0.72, y: 0.88 },
+        { id: "purpose", label: "human purpose", x: 0.12, y: 0.2 },
+        { id: "spec", label: "specified objective", x: 0.45, y: 0.2 },
+        { id: "system", label: "capable system", x: 0.45, y: 0.55 },
+        { id: "effects", label: "world effects", x: 0.78, y: 0.55 },
+        { id: "eval", label: "evaluation", x: 0.12, y: 0.82 },
+        { id: "limits", label: "deployment limits", x: 0.78, y: 0.82 },
       ]}
       edges={[
         { from: "purpose", to: "spec" },
         { from: "spec", to: "system" },
         { from: "system", to: "effects" },
-        { from: "eval", to: "system", kind: "balancing" },
-        { from: "limits", to: "effects", kind: "balancing" },
-        { from: "effects", to: "purpose", kind: "balancing" },
+        { from: "effects", to: "eval", label: "evidence", labelOffset: { x: -2, y: 10 } },
+        { from: "eval", to: "spec", label: "revises", labelOffset: { x: -16, y: -4 } },
+        { from: "effects", to: "limits", label: "revises limits", labelOffset: { x: 18, y: 4 } },
+        { from: "limits", to: "system", label: "bounds access", labelOffset: { x: 12, y: 4 } },
       ]}
-      ariaLabel="A control model maps human purpose to a specified objective, a capable system, and world effects. Evaluation, deployment limits, and feedback from effects provide balancing controls."
+      ariaLabel="A control model maps human purpose to a specified objective, a capable system, and world effects. Effects provide evidence to evaluation, which revises the objective, and effects also revise deployment limits that bound the system's access."
     />
     <Compare
       className="block w-full"
