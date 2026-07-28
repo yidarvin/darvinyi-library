@@ -1,0 +1,209 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Flow, NodeGraph, ProcessLoop } from "../components/diagrams";
+
+<Hero
+  slug="miracle-of-mindfulness"
+  thesis="An ordinary task becomes meditation when attention, body, and intention arrive together, making a simple action a place to meet life rather than rush past it."
+  minutes={8}
+/>
+
+## The thesis
+
+Thich Nhat Hanh treats mindfulness as full participation in the moment already underway.
+Breathing, walking, washing a bowl, and listening to another person are not interruptions
+between more important events. They are the material of a life. Bringing attention back to one
+of them, with gentleness rather than strain, is both a meditation practice and preparation for
+more careful action with other people.
+
+## Why it matters
+
+This book began as guidance for young social workers during the Vietnam War, not as an argument
+for private serenity. Its practical question is therefore demanding: how can someone stay present
+enough to act with care when there is too much to do and suffering is close at hand? The answer is
+not to make the world smaller. It is to stop abandoning the body and the task in front of you
+while trying to meet the world.
+
+## Key ideas
+
+### The task in front of you is the place to practice
+
+Mindfulness is often imagined as a special posture in a quiet room. This book gives it a much
+wider address. A dish is not merely an obstacle between dinner and an empty sink. A walk is not
+only transport. Each gives attention something definite to meet: temperature, weight, sound,
+movement, and the next small action. The task does not become sacred because it is performed
+slowly or perfectly. It becomes a practice because the person doing it stops living somewhere
+else for a moment.
+
+That shift changes the aim of efficiency. Finishing still matters, especially when work is urgent.
+But hurrying through every ordinary action can make arrival the only part of the day that counts.
+Mindful action lets completion remain useful without turning the present step into disposable
+time.
+
+<Figure id="138.1" caption="A common task becomes practice when attention stays with the action as it unfolds.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["pause at the task", "notice contact and movement", "do one next action", "finish and continue"]}
+    highlight={1}
+  />
+</Figure>
+
+### Breath brings body and mind back into the same place
+
+The breath is useful here because it is already happening. It gives attention a nearby, repeatable
+place to rest when thought has traveled into planning, regret, fear, or distraction. The practice
+does not require forcing the breath into an ideal shape. First notice an inhale. Then notice an
+exhale. The simplicity is deliberate: there is no need to solve an entire inner life before
+returning to direct experience.
+
+Breath is not presented as a magic control panel for emotion. A difficult feeling may remain, and
+a hard decision may still need to be made. The breath simply gives awareness a stable point from
+which those things can be met. Body and mind are less split when both are allowed into the same
+moment.
+
+<Figure id="138.2" caption="A noticed breath gives attention a near center while feelings, thoughts, and circumstances continue around it.">
+  <Concentric
+    className="block w-full min-w-[380px]"
+    rings={[
+      { label: "this in-and-out breath" },
+      { label: "body sensations and feelings" },
+      { label: "thoughts, tasks, and surroundings" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+### Returning matters more than holding attention perfectly
+
+Attention leaves. It plans a conversation while hands are washing a cup, rehearses an old scene
+while feet are walking, or races toward the next obligation while someone is speaking. The book's
+discipline is not to make that movement impossible. It is to recognize it and come back without
+adding a harsh verdict. A return made with irritation only creates another event to be caught in.
+
+This makes practice portable. There is no need to wait until conditions are calm enough to have an
+unbroken mind. Notice the departure, name the current anchor, and resume it. Repeated returns
+build familiarity with beginning again, which is more useful than a brief performance of perfect
+concentration.
+
+<Figure id="138.3" caption="The practice loop is not flawless focus, but repeatedly recognizing departure and returning.">
+  <ProcessLoop
+    className="block w-full min-w-[380px]"
+    stages={["choose a living anchor", "attention wanders", "recognize without blame", "return to what is here"]}
+    compoundingEdge={3}
+    centerLabel="begin again"
+  />
+</Figure>
+
+### Presence is different from getting through the moment
+
+An ordinary activity can be done with a body in one place and attention entirely elsewhere. That
+is sometimes unavoidable. A nurse may need to move quickly, a parent may be exhausted, and an
+emergency leaves little room for leisurely awareness. Yet the habit of treating every moment as
+something to escape can persist long after urgency has passed. The book offers a counter-habit:
+meet the thing being done as the thing being done.
+
+This is not a command to enjoy every chore. It is an invitation to stop making the present into
+mere runway for a later reward. If washing, eating, or walking is unpleasant, mindfulness can
+notice that fact plainly. The practice adds contact, not a compulsory positive mood.
+
+<Figure id="138.4" caption="Mindful action keeps the present task available instead of turning it only into a hurdle before the next one.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "getting through it",
+      points: ["attention lives at the finish line", "the task becomes dead time", "frustration sets the pace"],
+    }}
+    right={{
+      title: "being with it",
+      points: ["attention meets this action", "the task has felt details", "completion can arrive without a chase"],
+    }}
+  />
+</Figure>
+
+### Care becomes more concrete when life is seen as shared
+
+The book's meditation is not a retreat into a sealed private self. Food reaches a table through
+soil, weather, labor, transport, and cooking. A conversation contains another person's history
+and needs as well as your own. Seeing these conditions does not require an abstract theory. It
+asks for a less isolated account of any moment.
+
+That perspective links attention to care. When the person in front of you is not reduced to a
+role in your schedule, listening changes. When an object is seen as the result of many conditions,
+use can become less careless. This is the book's larger ethical direction: attention should make
+contact with relationship, not merely improve a private mood.
+
+<Figure id="138.5" caption="An ordinary act sits in a web of people, materials, and conditions that deserve attention.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    directed={false}
+    nodes={[
+      { id: "act", label: "this ordinary act", x: 0.5, y: 0.5 },
+      { id: "body", label: "your body", x: 0.18, y: 0.18 },
+      { id: "other", label: "other people", x: 0.82, y: 0.18 },
+      { id: "materials", label: "materials and labor", x: 0.18, y: 0.82 },
+      { id: "place", label: "place and conditions", x: 0.82, y: 0.82 },
+    ]}
+    edges={[
+      { from: "act", to: "body" },
+      { from: "act", to: "other" },
+      { from: "act", to: "materials" },
+      { from: "act", to: "place" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Give one routine task its full interval">
+Choose a task that usually takes under five minutes, such as making tea, washing a few dishes, or
+walking from one room to another. For that interval, keep returning to what hands, feet, eyes, and
+ears are doing. When planning begins, acknowledge it, then rejoin the task at its next physical
+step. Do not stretch the interval to prove discipline.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Use a single breath before a transition">
+Before opening a message, answering a phone, or entering a meeting, notice one complete inhale
+and one complete exhale. Let the breath be ordinary. Then name the next job in a few words and do
+it. The pause is not a way to avoid a hard conversation. It is a way to arrive for it.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Practice the return without a scorecard">
+For three minutes, follow the sensation of breathing or the sound of a nearby activity. Each time
+you realize attention has left, quietly say, “back,” and return. Do not count departures or judge
+how quickly you noticed them. The return is the repetition being practiced.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Listen for the conditions around one request">
+The next time someone asks for something, wait for their full sentence. Before replying, identify
+one condition that may shape it: time pressure, uncertainty, care for someone else, or a need you
+do not yet understand. Ask one honest follow-up question. Presence is allowed to lead to a clear
+boundary, but it should first make the other person more visible.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Mindfulness is not a demand to be serene, grateful, or slow in every circumstance. People facing
+violence, grief, poverty, discrimination, illness, or unsafe work may need protection, treatment,
+material support, and collective action. A breath or a mindful dish cannot supply those things.
+The book's own origin among social workers in wartime is a useful guardrail: inner steadiness is
+meant to support compassionate engagement, not excuse withdrawal from a harmful situation.
+</Callout>
+
+## If you remember one thing
+
+Do not wait for a special setting to practice attention. Bring body and mind back to the ordinary
+action already in your hands, then let that contact shape the next response.
+
+## Shelved nearby
+
+*Wherever You Go, There You Are* offers a later, secularly framed guide to returning attention.
+*The Power of Now* focuses on the stories thought adds to the present. *The Untethered Soul*
+examines the related move of noticing inner commentary without giving it full authority.
+
+<ShelvedNearby
+  related={["wherever-you-go", "power-of-now", "untethered-soul"]}
+  buyUrl="https://www.beacon.org/The-Miracle-of-Mindfulness-P1234.aspx"
+  buyLabel="The Miracle of Mindfulness by Thich Nhat Hanh"
+/>

@@ -2727,7 +2727,17 @@
       "subtitle": "Thich Nhat Hanh · 1975",
       "part": "Spirituality & Mindfulness",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "An ordinary task becomes meditation when attention, body, and intention arrive together, making a simple action a place to meet life rather than rush past it.",
+      "framework": "No single signature framework; the Model section is deliberately absent, and five key-idea diagrams carry the visual argument about full participation, breath, returning, ordinary activity, and shared conditions.",
+      "diagrams": [
+        "flow / sequence",
+        "concentric circles",
+        "process loop",
+        "comparison / split",
+        "node graph"
+      ]
     },
     {
       "num": 139,
