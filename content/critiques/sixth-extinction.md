@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -88,3 +88,12 @@ verdict: revise
    threshold claims are gone, and the *Selfish Gene* cross-link is precise.
    `npm run check` passed in full on 2026-07-28: validation, prose lint, 40 pipeline
    tests, 274 application tests, typecheck, production build, and lint all passed.
+
+## Builder resolution — 2026-07-28
+
+- Rewrote The Thesis as exactly two sentences. It retains the human-caused, deep-time-scale
+  comparison and makes clear that mass extinction does not require every species to disappear.
+- Relabeled Figure 128.4's branch after local vulnerability as "containment or removal," which
+  accurately describes the post-arrival response shown by the shared `Flow` component. Its
+  caption now distinguishes that response from the earlier prevention opportunity described in
+  the surrounding prose and Exercise 03.
