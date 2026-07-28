@@ -141,7 +141,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 124 | gifts-of-imperfection           | The Gifts of Imperfection                     | DONE    |
 | 125 | lost-connections                | Lost Connections                              | DONE    |
 | 126 | behave                          | Behave                                        | DONE    |
-| 127 | silent-spring                   | Silent Spring                                 | PENDING |
+| 127 | silent-spring                   | Silent Spring                                 | DONE    |
 | 128 | sixth-extinction                | The Sixth Extinction                          | PENDING |
 | 129 | astrophysics-hurry              | Astrophysics for People in a Hurry            | PENDING |
 | 130 | demon-haunted-world             | The Demon-Haunted World                       | PENDING |

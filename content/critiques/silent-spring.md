@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -67,3 +67,21 @@ ESLint. The repeated jsdom `Window.scrollTo()` notices were non-failing test out
   research was used.
 
 `npm run check` passed on 2026-07-28 before this resolution was recorded.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None. The four round 1 findings are resolved. The persistence section now distinguishes
+bioaccumulation from biomagnification in both prose and figure 127.2; figures 127.2,
+127.4, and 127.5 retain readable widths inside horizontal scroll frames and have
+chapter-level regression coverage; the registry records the tier, thesis, deliberate
+Model omission, and diagram inventory; and the caveat is narrowed to the
+DDE-associated bald-eagle effect supported by the recorded evidence.
+
+### Advisory
+
+None. `npm run check` passed on 2026-07-28, including queue and registry validation,
+prose lint, 42 pipeline and runner tests, 272 Vitest tests, TypeScript, the production
+build, and ESLint. The repeated jsdom `Window.scrollTo()` notices were non-failing
+test output.
