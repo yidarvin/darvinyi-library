@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -30,3 +30,16 @@ core / context, comparison / split, flow / sequence, node graph, process loop, a
 two-by-two matrix. Preserved the chapter's existing `draft` status and all prior
 chapter artifacts. The advisory feedback-sequence highlight remains unchanged because
 it is not a required finding.
+
+## Critique round 2 — 2026-07-27
+
+### Required
+
+None. The round 1 registry finding is resolved: the record now includes the source
+tier, thesis, framework, and a diagram inventory that matches the chapter. The
+current draft follows the required anatomy, stays within the recorded evidence,
+uses structural in-vocabulary diagrams, and passes `npm run check`.
+
+### Advisory
+
+None new.

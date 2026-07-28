@@ -130,7 +130,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 113 | measure-what-matters            | Measure What Matters                          | DONE    |
 | 114 | 48-laws-of-power                | The 48 Laws of Power                          | DONE    |
 | 115 | originals                       | Originals                                     | DONE    |
-| 116 | radical-candor                  | Radical Candor                                | PENDING |
+| 116 | radical-candor                  | Radical Candor                                | DONE    |
 | 117 | culture-code                    | The Culture Code                              | PENDING |
 | 118 | talking-to-strangers            | Talking to Strangers                          | PENDING |
 | 119 | supercommunicators              | Supercommunicators                            | PENDING |
