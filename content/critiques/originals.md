@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -103,3 +103,40 @@ Resolved the round 2 required finding:
 
 The round 1 axis, matrix, and direct-bookseller-link fixes remain in place. The registry
 remains `draft`; this resolution does not mark the chapter done.
+
+## Critique round 3 — 2026-07-27
+
+### Required
+
+None. The current draft preserves all four required corrections from rounds 1 and 2:
+the incubation curve's axis agrees with its sequence, the experiment matrix consistently
+sorts initial exposure against reversibility, the outbound link is a direct bookseller
+product page, and the Hero declares a nine-minute reading time. A fresh direct server
+render contains 1,655 reader-visible words, which rounds up to nine minutes at the
+authoring spec's approximately 200 words per minute.
+
+The chapter follows the required spine and the brief's deliberate omission of a Model
+section. Its six key ideas each have a captioned structural diagram from the shared
+vocabulary; the practices are concrete; the caveat distinguishes originality from
+contrarianism and adds clear risk, consent, and reversibility boundaries. The chapter's
+claims about defaults, idea quantity, informed-peer review, bounded incubation, and
+genuine dissent remain supported by the recorded evidence, while the risk guidance is
+properly identified there as this library's ethical synthesis. No new external web search
+was begun.
+
+`npm run check` passed on 2026-07-27: queue, registry, critique, and content validation;
+prose lint; all 42 pipeline and runner tests; all 245 Vitest tests; TypeScript and the
+Vite production build; and ESLint. Vitest emitted only the existing non-failing jsdom
+`Window.scrollTo()` notices.
+
+### Advisory
+
+1. Figure 115.2 still uses bar length as candidate quantity while giving the singular
+   `first familiar answer` and `one supported bet` different lengths. Equal endpoints,
+   or labels that define another magnitude, would make the narrowing sequence more
+   precise. This remains the round 1 advisory and does not make the argument misleading.
+
+2. The four related slugs resolve to completed chapters, but the shared footer still
+   renders cover tiles without the one-clause relationship notes requested by the
+   cross-linking guidance. This remains advisory because the links are valid and their
+   lack of annotations does not misstate the chapter.
