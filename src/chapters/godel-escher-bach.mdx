@@ -1,0 +1,235 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, ProcessLoop, Pyramid, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="godel-escher-bach"
+  thesis="A self can be understood as a pattern that learns to represent the world, then folds those representations back onto the system that is making them."
+  minutes={8}
+/>
+
+## The thesis
+
+Hofstadter's wager is that meaning does not need to be placed into matter from outside. It
+can arise when many simple elements form a system able to make symbols, use symbols about
+the world, and eventually use them about itself. Gödel's logic, Escher's impossible
+perspectives, and Bach's interweaving voices are not evidence for the same theorem. They
+are three invitations to notice the same shape: a hierarchy that bends back and acquires
+the power to describe its own activity.
+
+## Why it matters
+
+Consciousness often feels like the final leftover after every physical mechanism has been
+named. This book changes the question. Instead of asking which tiny part contains the
+person, it asks what kind of organization lets a collection of parts become a point of view.
+That shift remains useful wherever a system is mistaken for a mere pile of its components:
+a program, a language, a living cell, a team, or a brain.
+
+## Rules can generate valid strings without supplying meaning
+
+A formal system begins with marks, starting statements, and transformation rules. At that
+level, a symbol is handled for its shape. A rule can turn one permitted string into another
+without knowing what either string is about. This is not a defect. It is what makes formal
+reasoning dependable: each step can be checked locally.
+
+Meaning enters through an interpretation, a correspondence between patterns in the system
+and something beyond it. The same marks can be treated as a game, an arithmetic claim, or a
+message only when a reader or a larger system supplies that relationship. Hofstadter uses
+this gap between rule-following and interpretation to keep two questions separate: what a
+system can mechanically produce, and what its patterns can come to mean.
+
+<Figure id="134.1" caption="Rules operate on forms; interpretation connects those forms to a subject matter.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{ title: "inside the rule set", points: ["marks and strings", "permitted transformations", "each move is locally checkable"] }}
+    right={{ title: "through interpretation", points: ["patterns stand for something", "relations can be recognized", "a result can carry meaning"] }}
+    ariaLabel="A comparison distinguishes rule-governed marks and transformations from an interpretation that gives patterns a subject matter and meaning."
+  />
+</Figure>
+
+## A code can turn a system into its own subject
+
+The decisive move in Gödel's proof is not a mystical sentence looking in a mirror. It is an
+encoding. If expressions and proofs can be assigned numbers, arithmetic can make claims
+about those numbers. A system originally built to reason about numbers can thereby contain
+claims about its own expressions and proofs.
+
+That bridge is powerful because it makes self-reference precise. A statement need not
+contain a literal copy of itself to reach itself. It can refer to a coded description, while
+the code preserves the relevant structure. The lesson is broader than mathematics: a useful
+map is a translation that preserves enough relationships for work at one level to matter at
+another.
+
+<Figure id="134.2" caption="Encoding lets a system use one domain to make claims about the structure of another.">
+  <Flow
+    className="block w-full min-w-[620px]"
+    steps={["symbols and proofs", "assign a code", "reason about codes", "claims about the system"]}
+    highlight={3}
+    ariaLabel="A sequence moves from symbols and proofs through an assigned code and arithmetic reasoning to claims about the original system."
+  />
+</Figure>
+
+## A complete-looking rule system still has a boundary
+
+Gödel's incompleteness result gives a sharp limit to a familiar ambition. A consistent,
+effectively specified system rich enough for ordinary arithmetic cannot settle every
+arithmetic question expressible in its language. Strengthening the rules may resolve one
+undecidable statement, but the expanded system faces a new limit of the same kind.
+
+The point is not that logic is broken or that every question is undecidable. The point is
+that formal power has a horizon. A system can be remarkably rigorous from within while
+still needing a wider vantage point to describe some facts about its own reach. Hofstadter
+returns to this pressure between levels because it makes self-reference consequential rather
+than decorative.
+
+<Figure id="134.3" caption="A stronger formal layer can address earlier limits, but it does not remove the need for a wider layer.">
+  <Pyramid
+    className="block w-full min-w-[440px]"
+    tiers={[
+      { label: "base rules", note: "derive ordinary results" },
+      { label: "stronger rules", note: "address a prior gap" },
+      { label: "meta-level question", note: "describe the enlarged system" },
+    ]}
+    highlight={2}
+    ariaLabel="A three-level hierarchy moves from base rules to stronger rules to a meta-level question about the enlarged system."
+  />
+</Figure>
+
+## Patterns can be real without being located in one part
+
+The book keeps returning to levels of description. A musical theme is not one note, and a
+thought is not one neuron. Those higher-level patterns are not ghosts hovering above their
+materials. They are organized regularities in the activity of many parts, recognizable and
+causally useful at their own scale.
+
+This is why reduction and explanation are not rivals. A lower-level account can explain how
+signals are carried, while a higher-level account can explain why a pattern counts as a
+melody, a proof, or a plan. Throwing away either level makes the system less intelligible.
+Hofstadter's central metaphor asks us to follow the traffic between them.
+
+<Figure id="134.4" caption="A pattern is distributed across parts, yet remains a useful object of explanation at a higher level.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    directed={false}
+    ariaLabel="A network of local signals forms a distributed pattern, which is named at a higher explanatory level."
+    nodes={[
+      { id: "signal-a", label: "signal A", x: 0.18, y: 0.22 },
+      { id: "signal-b", label: "signal B", x: 0.82, y: 0.22 },
+      { id: "signal-c", label: "signal C", x: 0.18, y: 0.78 },
+      { id: "signal-d", label: "signal D", x: 0.82, y: 0.78 },
+      { id: "pattern", label: "recognized pattern", x: 0.5, y: 0.5 },
+    ]}
+    edges={[
+      { from: "signal-a", to: "pattern", label: "contributes" },
+      { from: "signal-b", to: "pattern", label: "contributes" },
+      { from: "signal-c", to: "pattern", label: "contributes" },
+      { from: "signal-d", to: "pattern", label: "contributes" },
+    ]}
+  />
+</Figure>
+
+## Self-reference is generative only when it can be interpreted
+
+Recursion is a procedure that can apply its own result again. It becomes interesting when a
+system has enough memory, symbols, and feedback to treat a representation of itself as part
+of its next input. Then a description can alter the thing described, which changes the next
+description in turn.
+
+That does not make every repeated process a mind. A thermostat has feedback, but it does not
+therefore maintain a rich model of itself or of its world. Hofstadter's proposal concerns a
+much denser case: symbols that can be recombined, interpreted, and revised across many
+levels. The loop matters because it is embedded in a system capable of carrying meaning.
+
+<Figure id="134.5" caption="Feedback becomes self-reference when a system can use a representation of itself in its next round of activity.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="mere repetition"
+    right="interpreted self-reference"
+    marker={0.78}
+    markerLabel="symbolic feedback"
+    zones={[
+      { from: 0.0, to: 0.38, label: "same output repeats" },
+      { from: 0.62, to: 1.0, label: "a self-model affects the next state", accent: true },
+    ]}
+    ariaLabel="A spectrum runs from mere repetition to interpreted self-reference, with symbolic feedback near the latter end."
+  />
+</Figure>
+
+## The Model
+
+A strange loop is an ascent through levels that returns to where it began, but with the
+system now able to refer to itself from within. The diagram is a conceptual model, not a
+claim that brains run in four neat steps. Sensory activity supports patterns; patterns support
+symbols; symbols can form a model of the world and of the system making that model. The
+resulting self-model feeds back into what the system attends to and does. On Hofstadter's
+view, the persistent, revisable pattern made by that feedback is the best candidate for an
+"I."
+
+<Figure id="134.6" caption="A strange loop climbs from signals to a self-model, then sends that model back into the next round of signals.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["signals", "recognized patterns", "symbols about a world", "a model of this system"]}
+    compoundingEdge={3}
+    centerLabel="strange loop"
+    ariaLabel="A strange loop moves from signals through recognized patterns and symbols about a world to a model of the system, which feeds back into signals."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Draw the levels before fixing the problem">
+For a problem that keeps returning, list three levels: local events, the pattern they create,
+and the story or rule used to interpret that pattern. A delayed reply, for example, is an
+event. A recurring delay is a pattern. "They do not respect me" is an interpretation. The
+levels may all matter, but separating them prevents a story from posing as a fact.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Test the code, not only the conclusion">
+When two people agree on the facts but reach different conclusions, ask what translation
+links the facts to the conclusion. Which category, metric, or analogy did each person use?
+Often the disagreement is not at either endpoint. It lives in the map between them.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Build a useful feedback question">
+At the end of a repeated task, record one sentence: "What did my model expect, and what did
+this round show instead?" On the next attempt, change one input because of the answer. This
+is a modest version of a strange loop: a representation of the process influences the next
+process.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Keep levels in conversation">
+When an explanation feels too mechanical, look for the higher-level pattern it leaves out.
+When it feels vague, look for the local events that must sustain it. Good explanations move
+between scales without pretending that either one is the whole story.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Gödel's theorem is a precise result about formal systems, not a proof that human minds escape
+computation, that machines cannot be conscious, or that self-reference by itself produces a
+self. Hofstadter offers a philosophical and cognitive-science proposal built from analogies
+across logic, art, music, and minds. Its value is in the way it directs attention to levels,
+representations, and feedback. The empirical question of how consciousness arises remains
+open, and no diagram of a loop settles it.
+</Callout>
+
+## If you remember one thing
+
+The self may be less like a hidden object inside a brain and more like a durable pattern of
+symbols and feedback: a system that represents the world well enough to include itself in
+the picture.
+
+## Shelved nearby
+
+Read <a href="/scientific-revolutions">The Structure of Scientific Revolutions</a> for a
+different account of how a shared framework can shape what a community can see, and <a
+href="/superintelligence">Superintelligence</a> for the practical stakes of reasoning about
+machine intelligence.
+
+<ShelvedNearby
+  related={["scientific-revolutions", "superintelligence"]}
+  buyUrl="https://www.hachettebookgroup.com/titles/douglas-r-hofstadter/g%C3%B6del-escher-bach/9780465026562/?lens=basic-books"
+  buyLabel="Gödel, Escher, Bach by Douglas R. Hofstadter"
+/>

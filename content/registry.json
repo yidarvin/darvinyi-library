@@ -2649,7 +2649,18 @@
       "subtitle": "Douglas Hofstadter · 1979",
       "part": "Systems, Complexity & the Future",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Mind and meaning emerge from self-reference and strange loops, patterns shared by logic, art, and music.",
+      "framework": "Strange loops",
+      "diagrams": [
+        "comparison",
+        "flow",
+        "pyramid",
+        "node graph",
+        "spectrum",
+        "process loop"
+      ]
     },
     {
       "num": 135,
