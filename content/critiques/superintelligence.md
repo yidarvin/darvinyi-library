@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -389,3 +389,8 @@ verdict: revise
    lint, 42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite
    production build, and ESLint all passed. Vitest emitted only the
    repository's known non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Moved Figure 132.6's `revises limits` label from the connector's band into the open right-side lane. Its chapter-local center is now approximately `(326.36, 222.16)` in the 380-unit viewBox, so its roughly 101-unit text span stays inside the canvas, clears the vertical effects-to-limits stroke at `x=264.36`, and remains between the two right-side cards.
+- Preserved the settled node positions, visible forward and evaluation-feedback arrows, in-canvas label placement, and separate feedback-label lanes. Ran `npm run check` successfully on 2026-07-28 (`exit 0`): validation, prose lint, pipeline tests, Vitest, TypeScript, production build, and ESLint passed. The chapter remains `draft`; no done status, commit, or push was performed.
