@@ -192,11 +192,11 @@ end of responsibility.
     <NodeGraph
       className="block w-full"
       nodes={[
-        { id: "purpose", label: "human purpose", x: 0.03, y: 0.14 },
-        { id: "spec", label: "specified objective", x: 0.5, y: 0.14 },
+        { id: "purpose", label: "human purpose", x: 0.03, y: 0.03 },
+        { id: "spec", label: "specified objective", x: 0.5, y: 0.03 },
         { id: "system", label: "capable system", x: 0.29, y: 0.55 },
         { id: "effects", label: "world effects", x: 0.76, y: 0.55 },
-        { id: "eval", label: "evaluation", x: 0.12, y: 0.84 },
+        { id: "eval", label: "evaluation", x: 0.12, y: 0.29 },
         { id: "limits", label: "deployment limits", x: 0.76, y: 0.92 },
       ]}
       edges={[
@@ -204,7 +204,7 @@ end of responsibility.
         { from: "spec", to: "system" },
         { from: "system", to: "effects" },
         { from: "effects", to: "eval", label: "evidence", labelOffset: { x: -45, y: 10 } },
-        { from: "eval", to: "spec", label: "revises", labelOffset: { x: -16, y: -4 } },
+        { from: "eval", to: "spec", label: "revises", labelOffset: { y: 15 } },
         { from: "effects", to: "limits", label: "revises limits", labelOffset: { x: 44, y: 4 } },
         { from: "limits", to: "system", label: "bounds access", labelOffset: { x: -10, y: 15 } },
       ]}
