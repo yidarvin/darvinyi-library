@@ -2417,12 +2417,13 @@
       "status": "draft",
       "tier": 3,
       "thesis": "Effective negotiation comes from knowing your own style and preparing clear goals, standards, relationships, interests, and alternatives before pressure narrows the conversation.",
-      "framework": "No single signature model; the chapter deliberately omits The Model and uses five preparation-focused key-idea diagrams.",
+      "framework": "No single signature model; the chapter deliberately omits The Model and uses six preparation-focused key-idea diagrams.",
       "diagrams": [
         "concentric circles",
         "flow with branch",
         "iceberg",
         "comparison",
+        "venn",
         "node graph"
       ]
     },

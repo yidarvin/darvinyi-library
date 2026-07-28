@@ -1,11 +1,11 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, Flow, Iceberg, NodeGraph } from "../components/diagrams";
+import { Compare, Concentric, Flow, Iceberg, NodeGraph, Venn } from "../components/diagrams";
 
 <Hero
   slug="bargaining-for-advantage"
   thesis="Negotiate more effectively by preparing from your own strengths, knowing what the deal must beat, and using information, standards, relationships, and alternatives with discipline."
-  minutes={8}
+  minutes={9}
 />
 
 ## The thesis
@@ -61,7 +61,7 @@ accepting one attractive term while a damaging condition slips past.
     className="block w-full min-w-[558px]"
     steps={["set a defensible target", "name the minimum", "strengthen the alternative", "compare the full offer"]}
     highlight={3}
-    branch={{ up: "better: negotiate agreement", down: "worse: take the alternative" }}
+    branch={{ up: "meets prepared minimum: negotiate", down: "below prepared minimum: use alternative" }}
   />
 </Figure>
 
@@ -109,6 +109,28 @@ does not actually match the situation.
   />
 </Figure>
 
+## Treat the relationship as working infrastructure
+
+A relationship is not a reason to accept a bad deal. It is the condition that makes candid
+exchange, reliable follow-through, and repair after a disagreement more possible. In a
+one-time transaction, that may mean setting a clear, respectful way to share information and
+make commitments. In an ongoing relationship, it also means noticing the history each side
+brings into the room. Before negotiating, consider what has built confidence, what has damaged
+it, who needs to be heard, and how an agreement will be carried out after the meeting. That
+preparation protects both the substance of the deal and the ability to work together afterward.
+
+<Figure id="122.5" caption="A workable negotiating relationship combines candor, reliability, and a way to repair strain.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[
+      { label: "candid exchange" },
+      { label: "reliable commitments" },
+      { label: "repair after strain" },
+    ]}
+    intersectionLabel="a workable relationship"
+  />
+</Figure>
+
 ## Build leverage before you need to show it
 
 Leverage is not just a loud threat or a larger title. It grows when you have choices, useful
@@ -119,7 +141,7 @@ commitments constrain them. Do not confuse leverage with bluffing. A claim that 
 executed invites a test, while a real alternative lets you state your boundary calmly and
 keep negotiating without desperation.
 
-<Figure id="122.5" caption="Leverage is assembled from real choices and information, then expressed through a credible boundary.">
+<Figure id="122.6" caption="Leverage is assembled from real choices and information, then expressed through a credible boundary.">
   <NodeGraph
     className="block w-full min-w-[440px]"
     nodes={[
@@ -133,7 +155,7 @@ keep negotiating without desperation.
       { from: "options", to: "boundary", label: "supports" },
       { from: "info", to: "boundary", label: "clarifies" },
       { from: "time", to: "boundary", label: "protects" },
-      { from: "authority", to: "boundary", label: "makes real", kind: "reinforcing" },
+      { from: "authority", to: "boundary", label: "makes real" },
     ]}
   />
 </Figure>
@@ -161,7 +183,15 @@ just the conclusion. Then ask yourself what evidence would make you change your 
 standard is useful only if it constrains both sides.
 </ExerciseCard>
 
-<ExerciseCard n="04" title="Strengthen one source of leverage">
+<ExerciseCard n="04" title="Prepare the working relationship">
+Before the conversation, write three notes: the history that matters, the communication
+condition that will help each side speak plainly, and the first repair step if the discussion
+turns tense. For example, agree who needs to be consulted, how tentative terms will be
+recorded, and when either person can pause to check an assumption. Do not perform warmth. Make
+it easier for both sides to exchange information and keep commitments.
+</ExerciseCard>
+
+<ExerciseCard n="05" title="Strengthen one source of leverage">
 Pick the weak link in your preparation: too few options, too little information, too much
 time pressure, or no authority to act. Take one concrete step before the conversation, such
 as obtaining another quote, learning the approval path, moving a deadline, or arranging a

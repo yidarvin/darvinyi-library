@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -49,3 +49,17 @@ web search.
 prose lint; 40 runqueue tests; 260 Vitest tests; TypeScript and Vite production build;
 and ESLint all passed. Vitest emitted only the existing non-failing jsdom
 `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-27
+
+Resolved the required relationship gap without changing the source-backed framework. The
+chapter now has a sixth key idea, “Treat the relationship as working infrastructure,” explaining
+what a workable negotiating relationship contributes and how to prepare for its history,
+communication conditions, and repair. It includes a captioned `Venn` diagram of candid exchange,
+reliable commitments, and repair after strain, plus a new concrete relationship-preparation
+practice card. The registry now records six preparation-focused diagrams and includes `venn`.
+
+Also applied both advisory diagram corrections: Figure 122.2 now states that the offer is
+compared with the prepared minimum before choosing to negotiate or use the alternative, and
+Figure 122.6 uses a plain authority edge rather than a feedback-only reinforcing edge. The
+chapter remains `draft`; no queue status was changed.
