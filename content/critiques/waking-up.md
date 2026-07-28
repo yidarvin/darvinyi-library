@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -80,3 +80,21 @@ verdict: revise
    lint passed; both pipeline tests, all 40 runner tests, and all 299 Vitest tests
    passed; TypeScript, the Vite production build, and ESLint passed. Vitest
    emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Resolved mobile diagram legibility by giving Figure 139.1 its 420px Flow width,
+  Figure 139.2 its 380px NodeGraph width, Figure 139.3 its full 558px Flow width,
+  Figure 139.4 its 384px Compare width, and Figure 139.5 its 380px Spectrum width.
+  The existing Figure overflow container now keeps each SVG at its authored scale on
+  a 360px viewport.
+- Replaced Figure 139.1's unrelated Iceberg with an in-vocabulary Flow: chest
+  tightness, the added "I am failing" commentary, then noticing and responding. Its
+  caption now names that distinction. Also tightened Figure 139.3's caption to name
+  the shift from identification to awareness.
+- Narrowed the caveat to the recorded evidence: it distinguishes narrative and
+  present-centered self-focus, rejects unsupported philosophical conclusions, and
+  states that the page offers no condition-specific or clinical guidance. Removed the
+  unsupported claim about meditation risks for named populations.
+- Preserved the five-key-idea anatomy, existing practice cards, links, and the
+  deliberately absent Model section. `npm run check` passed on 2026-07-28.

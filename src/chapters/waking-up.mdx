@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+import { Compare, Flow, NodeGraph, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="waking-up"
@@ -38,12 +38,11 @@ This is not an argument for becoming indifferent. The point is to regain the dif
 what happened and the commentary that rushes to own it. When that gap is visible, a response can
 be considered instead of inherited from the first thought.
 
-<Figure id="139.1" caption="The felt owner of experience sits above a larger field of events that can be noticed directly.">
-  <Iceberg
-    className="block w-full"
-    above="the felt owner: 'me'"
-    waterlineLabel="close inspection"
-    below={["sights and sounds", "body sensations", "thoughts and moods", "attention shifting"]}
+<Figure id="139.1" caption="A raw event, the commentary added to it, and a considered response are distinct moments.">
+  <Flow
+    className="block min-w-[420px]"
+    steps={["chest tightness", "'I am failing'", "notice, then respond"]}
+    highlight={1}
   />
 </Figure>
 
@@ -62,7 +61,7 @@ soften the feeling of being trapped inside a private command center.
 
 <Figure id="139.2" caption="A sense of self can emerge from connected events without a separate central node.">
   <NodeGraph
-    className="block w-full"
+    className="block min-w-[380px]"
     directed={false}
     nodes={[
       { id: "sense", label: "sense data", x: 0.5, y: 0.1 },
@@ -93,9 +92,9 @@ chased away and no thought needs to become a project. The instruction is to noti
 appearing while also noticing the capacity in which it appears. For a beginner, the breath is a
 useful landing place whenever that instruction becomes too abstract.
 
-<Figure id="139.3" caption="Meditation makes the transition from being carried by a thought to noticing it available in real time.">
+<Figure id="139.3" caption="Meditation turns identification with a thought into awareness that the thought is occurring.">
   <Flow
-    className="block min-w-[420px]"
+    className="block min-w-[558px]"
     steps={["rest with a sensation", "a thought pulls attention", "recognize the thought", "return or open awareness"]}
     highlight={2}
   />
@@ -116,7 +115,7 @@ spiritual, but it requires no doctrine to practice.
 
 <Figure id="139.4" caption="Narrative is useful for coordination; immediate experience is where meditation begins.">
   <Compare
-    className="block w-full"
+    className="block min-w-[384px]"
     favor="right"
     left={{
       title: "narrative self",
@@ -143,7 +142,7 @@ consciousness, paired with an ethic of taking well-being seriously.
 
 <Figure id="139.5" caption="Practice can begin with direct experience, leaving larger metaphysical conclusions open.">
   <Spectrum
-    className="block w-full"
+    className="block min-w-[380px]"
     left="adopt an answer"
     right="investigate experience"
     marker={0.78}
@@ -190,12 +189,11 @@ for a few seconds.
 
 <Callout kind="note">
 The loss of a separate self is a report about how experience can feel under close attention, not
-a scientific proof that people lack agency, personhood, or obligations. Meditation research gives
-some support to a shift from narrative self-focus toward present-centered awareness, but it does
-not validate every philosophical conclusion a practitioner might draw. Meditation can also be
-destabilizing for some people, especially amid trauma, severe anxiety, psychosis, or a major mood
-episode. Treat this page as a non-clinical attention practice, stop if it increases distress, and
-seek qualified care when mental health support is needed.
+a scientific proof that people lack agency, personhood, or obligations. The mindfulness research
+cited here distinguishes narrative self-focus from present-centered awareness, but it does not
+validate every philosophical conclusion a practitioner might draw. Nor does this page establish
+how meditation affects any particular mental-health condition. Treat the exercises as attention
+experiments, not medical or mental-health guidance.
 </Callout>
 
 ## If you remember one thing
