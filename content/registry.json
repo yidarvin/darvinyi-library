@@ -2472,7 +2472,17 @@
       "subtitle": "Johann Hari · 2018",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Depression and anxiety can be understood partly as signals of a life cut off from belonging, agency, safety, and the living world, so repair has to reach beyond the individual mind.",
+      "framework": "No single signature model; the chapter deliberately omits The Model and uses five key-idea diagrams to carry its account of social disconnection.",
+      "diagrams": [
+        "iceberg",
+        "node graph",
+        "comparison",
+        "flow",
+        "spectrum"
+      ]
     },
     {
       "num": 126,

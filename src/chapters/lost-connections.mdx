@@ -1,0 +1,199 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="lost-connections"
+  thesis="Depression and anxiety can be understood partly as signals of a life cut off from belonging, agency, safety, and the living world, so repair has to reach beyond the individual mind."
+  minutes={7}
+/>
+
+## The thesis
+
+Hari asks a deliberately inconvenient question: what if some forms of despair make sense in
+the conditions that surround a person? *Lost Connections* argues that depression and anxiety
+cannot be reduced to a faulty brain alone. They can also grow where people lack close
+belonging, control over their days, meaningful work, safety, status, or contact with nature.
+The book's practical implication is social as well as personal. Relief may involve care and
+treatment, but it can also involve rebuilding the parts of life that give a person a place and a
+reason to act.
+
+## Why it matters
+
+The chemical-imbalance story has one virtue: it tells a suffering person that their pain is
+real and not a moral failure. Its weakness is that it can make the room around that person
+disappear. Hari restores the room. He treats loneliness, humiliation, insecure work, and
+disconnection as conditions worth changing, not private defects to endure. That framing can
+broaden the response from "what is wrong with me?" to "what has this life made hard to
+need?"
+
+## Key ideas
+
+### Distress can be information, not a verdict on character
+
+A depressed or anxious state can narrow attention until everything seems to confirm a single
+conclusion: I am broken, alone, and there is no next move. Hari resists that conclusion. He
+does not say that pain is welcome or that a hard environment explains every case. He says the
+pain may carry information about losses, threats, and needs that have been pushed outside the
+story. The symptom belongs above the waterline because it is what a person feels. The
+conditions beneath it deserve attention too.
+
+<Figure id="125.1" caption="Symptoms are visible; the losses and conditions around them may be less visible.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="depression or anxiety"
+    waterlineLabel="what gets named first"
+    below={["loss or threat", "thin belonging", "low control or meaning", "biological vulnerability"]}
+  />
+</Figure>
+
+### Belonging is participation, not an audience
+
+Having many contacts does not guarantee that anyone knows you, needs you, or will show up when
+you ask. Hari's stronger idea is collective: people need reciprocal roles in a group. A neighbor
+who receives help can give it later. A team can rely on its members. A gathering can turn an
+abstract feeling of isolation into a repeated obligation to be present. The goal is not to collect
+more social activity. It is to build relationships in which care, contribution, and recognition
+can travel both directions.
+
+<Figure id="125.2" caption="Connection becomes sturdier when people can both receive and contribute.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    directed={false}
+    nodes={[
+      { id: "person", label: "a person", x: 0.5, y: 0.5 },
+      { id: "friend", label: "trusted friend", x: 0.5, y: 0.05 },
+      { id: "group", label: "shared group", x: 0.9, y: 0.55 },
+      { id: "place", label: "local place", x: 0.52, y: 0.96 },
+      { id: "neighbor", label: "neighbor", x: 0.08, y: 0.55 },
+    ]}
+    edges={[
+      { from: "person", to: "friend", label: "trust", labelOffset: { x: -22 } },
+      { from: "person", to: "group", label: "contribute", labelOffset: { x: 16, y: -10 } },
+      { from: "person", to: "place", label: "return", labelOffset: { x: -22 } },
+      { from: "person", to: "neighbor", label: "help", labelOffset: { x: 12, y: -10 } },
+    ]}
+  />
+</Figure>
+
+### Work affects mental health through agency and dignity
+
+Work can supply income, but its psychological role is larger. It can give a person a skill that
+matters, a place in a group, a rhythm to the week, and some say over how a task is done. Work
+can also take each of these away through insecurity, arbitrary control, or a role that feels
+pointless. Hari asks readers to notice this difference without romanticizing employment. A good
+job is not a cure, and a bad job is not a personal failure. Conditions that leave people with no
+voice are conditions worth naming and, where possible, changing together.
+
+<Figure id="125.3" caption="Pay matters, but agency and recognition change what work asks of a person.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "work without a say",
+      points: ["tasks arrive from elsewhere", "effort feels replaceable", "uncertainty reaches home"],
+    }}
+    right={{
+      title: "work with agency",
+      points: ["some control over the task", "a visible contribution", "people who can recognize it"],
+    }}
+  />
+</Figure>
+
+### Safety makes connection possible
+
+Trauma, chronic fear, and humiliation train a person to anticipate danger. Withdrawal, watchfulness,
+or numbness can then become sensible protections, even when they reduce access to other people.
+Hari's social lens helps here because it directs attention to the conditions of safety, not only to
+the behavior that follows threat. A supportive person, a stable room, a predictable routine, or
+competent trauma-informed care can create enough safety for a small return to contact. The order
+matters. Demanding openness before safety repeats the problem.
+
+<Figure id="125.4" caption="Safety comes before the kind of contact that can begin to rebuild trust.">
+  <Flow
+    className="block w-full min-w-[440px]"
+    steps={["threat or shame", "protective withdrawal", "reliable safety", "small contact"]}
+    highlight={2}
+  />
+</Figure>
+
+### Nature can widen a life that has become very small
+
+The book treats contact with the natural world as one lost connection among several. A walk under
+trees, gardening with others, or time near water will not settle a severe depression by itself.
+Still, nature changes the scale of attention. It offers movement, daylight, sensory variety, and a
+world that does not demand a performance. When it is shared or repeated, it can also become a
+social practice. The useful question is modest: where could the week contain a little less enclosure
+and a little more living place?
+
+<Figure id="125.5" caption="The aim is a repeatable shift toward contact with a living environment, not a perfect escape.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="enclosed and alone"
+    right="outside and connected"
+    marker={0.68}
+    markerLabel="a regular shared walk"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
+    zones={[
+      { from: 0.0, to: 0.35, label: "indoor routine" },
+      { from: 0.43, to: 0.76, label: "a reachable green or blue place", accent: true },
+      { from: 0.82, to: 1.0, label: "time outside together" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Map one missing connection">
+Set a timer for ten minutes and list the kinds of connection in your ordinary week: a person who
+knows you, a group where you contribute, a place you return to, work where you have a say, and
+time outdoors. Circle one that feels thinnest. This is an inventory, not a scorecard.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Choose a reciprocal next step">
+Make one invitation that permits contribution on both sides: ask a neighbor to walk, join a regular
+volunteer shift, cook with someone, or return to a group where people would notice your absence.
+Avoid a grand rescue plan. The test is whether you can show up again next week.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Name the control problem at work">
+Write one work condition that drains agency and one specific conversation or collective action that
+could affect it. It may be a clearer priority, a boundary around messages, a schedule change, or a
+question for a coworker. Some conditions cannot be solved individually, which is useful information
+rather than proof that you failed.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make care part of the plan">
+If low mood, anxiety, sleep disruption, or thoughts of self-harm are affecting daily life, tell a
+qualified clinician or someone who can help you reach one. Keep any prescribed treatment decisions
+with that clinician. Reconnection can accompany therapy and medication; it does not have to compete
+with them.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Hari is right to challenge the idea that depression is merely a chemical imbalance, and research
+does support taking relationships and material conditions seriously. For example, a ten-year U.S.
+study found poorer relationship quality predicted later major depression, but it also found that
+simple social isolation did not. The relationship can run both ways: depression can thin a person's
+support as well as poor support raising risk. More importantly, social explanation does not cancel
+biology. A large <a href="https://pubmed.ncbi.nlm.nih.gov/39814019/" target="_blank" rel="noopener noreferrer">2025 genome-wide study of major depression</a> identified many genetic associations. Read the book as a case for widening care to include social repair, not as a reason to reject medication, therapy, or biological research. The evidence note for this page records the sources and limits.
+</Callout>
+
+## If you remember one thing
+
+When despair makes a life feel like an individual defect, look carefully at the connections that
+have been thinned or made unsafe. Repair one reachable piece of belonging, agency, or contact,
+while keeping professional care in the picture when it is needed.
+
+*Maybe You Should Talk to Someone* shows how a trustworthy relationship can make a stuck story
+workable. *Attached* explores how expectations of closeness shape adult relationships, while
+*Man's Search for Meaning* asks what can hold a life together when circumstances are brutal.
+
+<ShelvedNearby
+  related={["talk-to-someone", "attached", "mans-search-for-meaning"]}
+  buyUrl="https://www.bloomsbury.com/us/lost-connections-9781526634085/"
+  buyLabel="Lost Connections by Johann Hari"
+/>
