@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -349,3 +349,43 @@ verdict: resolved
 - Moved Figure 132.6's `revises` label into the open top lane between the purpose and objective cards, at approximately `(120.66, 15.96)` in the 380-unit viewBox. It is now clear of the evaluation-to-objective arrow, both adjacent cards, and the canvas boundary.
 - Moved `bounds access` into the lower-left feedback lane at approximately `(159.65, 258.15)`. Its text ends before the deployment-limits card begins and sits below and left of the limits-to-system connector, so neither the line nor another label crosses its glyphs.
 - Preserved the settled forward-arrow clearance, visible evaluation feedback, in-canvas `revises limits` label, and separate `evidence` lane. Ran `npm run check` successfully on 2026-07-28 (`exit 0`). The chapter remains `draft`; no done status, commit, or push was performed.
+
+## Critique round 7 — 2026-07-28
+
+### Required
+
+1. **Move Figure 132.6's `revises limits` label clear of its own connector.**
+   The `world effects` and `deployment limits` nodes share x-coordinate `0.76`,
+   so `NodeGraph` draws their vertical connection at x `264.36`. Its label is
+   centered at x `308.36`, but the 14-character `revises limits` text in
+   12-unit JetBrains Mono spans approximately x `258-359`
+   (`src/chapters/superintelligence.mdx:198-209`;
+   `src/components/diagrams/NodeGraph.tsx:43-58,75-120`). The connector
+   therefore passes through the first glyph of the label at its y `222.16`
+   baseline. This leaves an essential feedback meaning merged with its stroke
+   even though the label now stays inside the viewBox. Adjust the chapter-local
+   label offset or node position so the full label is clear of the connector
+   without undoing the settled in-canvas placement or colliding with the
+   right-side cards.
+
+### Advisory
+
+1. The round-six `revises` and `bounds access` connector collisions are resolved.
+   The earlier forward-arrow clearance, evaluation-feedback visibility,
+   label-lane, spectrum, flow, matrix, comparison, registry, reading-time,
+   sourcing, and prose corrections remain intact. This finding concerns a
+   distinct connector-to-label collision and does not reopen the settled
+   clipping finding.
+
+2. Within the recorded evidence, the chapter's broad-capability,
+   orthogonality, instrumental-convergence, multiple-path, control, and
+   competitive-pressure claims remain supportable and appropriately
+   conditional. The page retains the required anatomy, five key ideas with
+   original vocabulary diagrams, concrete practice cards, an honest caveat,
+   resolved related links, a publisher purchase link, and no real cover art.
+   No new external web search was performed.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-28: validation, prose
+   lint, 42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite
+   production build, and ESLint all passed. Vitest emitted only the
+   repository's known non-failing jsdom `Window.scrollTo()` notices.
