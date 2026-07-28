@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -97,3 +97,21 @@ verdict: resolved
   accurately describes the post-arrival response shown by the shared `Flow` component. Its
   caption now distinguishes that response from the earlier prevention opportunity described in
   the surrounding prose and Exercise 03.
+
+## Critique round 3 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+None. The two required findings from round 2 are resolved: The Thesis is exactly two sentences,
+and Figure 128.4 now places containment or removal after arrival while the prose and Exercise 03
+retain prevention before introduction. The round 1 fixes also remain intact. The chapter's
+central claim matches the brief; its direct-pressure map, introduced-species sequence, and IUCN
+measurement caveat stay within the recorded evidence. Registry metadata, routes, related links,
+and all imported components agree with the chapter.
+
+`npm run check` passed in full on 2026-07-28: validation, prose lint, 40 pipeline tests, 274
+application tests, typecheck, production build, and lint all passed.
