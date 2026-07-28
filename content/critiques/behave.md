@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -28,3 +28,9 @@ None. `npm run check` passed on 2026-07-28.
 ### Advisory
 
 None. The two round-one findings remain resolved, and `npm run check` passed on 2026-07-28.
+
+## Builder resolution — 2026-07-28
+
+- Recomputed the Hero badge from the recorded rendered-page count of 1,518 visible words: at approximately 200 words per minute, rounded up, *Behave* is now an 8-minute distillation.
+- Replaced the broad claim about “flexible goal switching” with the evidence note's limited finding: acute psychosocial stress was associated with larger task-switching costs during measured post-stress intervals in one sample.
+- Rechecked the prior round's Model and registry fixes. The behavior remains the innermost causal layer in the hero diagram, and the draft registry entry retains its tier, thesis, framework, and diagram metadata.
