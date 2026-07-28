@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -200,3 +200,49 @@ verdict: resolved
 - Rebalanced Figure 132.6's chapter-local layout: `capable system` now sits left of the specification and `world effects` plus `deployment limits` occupy a shared, inset right column. This preserves both 134.42-unit horizontal forward links while giving the feedback label a separate lane.
 - Moved the `revises limits` label to x=308.36 in the 380-unit viewBox. Its roughly 101-unit text span now remains within x=258 to x=359, clear of the right-side cards and the diagonal deployment-limit edge.
 - The chapter remains `draft`; no done status, commit, or push was performed.
+
+## Critique round 4 — 2026-07-28
+
+### Required
+
+1. **Separate Figure 132.5's marker label from its right endpoint label.** The
+   chapter uses the `Spectrum` defaults for both label layouts while supplying
+   `right="coordinate for safety"` and `markerLabel="shared standards"` at
+   `marker={0.7}` (`src/chapters/superintelligence.mdx:157-168`). The component
+   renders the 21-character endpoint at x=340, y=74 in 12-unit monospace type and
+   the 16-character marker label at x=250, y=78 in 10-unit monospace type
+   (`src/components/diagrams/Spectrum.tsx:49-53,129-158`). Their horizontal spans
+   overlap almost completely and their baselines are only four SVG units apart,
+   so the labels paint over each other at every display size. Use the component's
+   chapter-local `markerLabelPlacement` and/or `endpointLabelLayout` options, or
+   otherwise recompose this figure so all three structural labels are readable.
+
+2. **Give Figure 132.6's `evidence` and `bounds access` edge labels distinct
+   lanes.** With the current node positions and offsets, `NodeGraph` centers
+   `evidence` at approximately (170.84, 217.92) and `bounds access` at
+   approximately (209.15, 222.16)
+   (`src/chapters/superintelligence.mdx:192-207`;
+   `src/components/diagrams/NodeGraph.tsx:43-58,75-120`). Both labels render in
+   12-unit JetBrains Mono. Their text spans overlap by roughly 34 SVG units while
+   their baselines differ by only 4.24 units, making both connection meanings
+   unreadable where the two diagonal feedback edges cross. Reposition the
+   chapter-local nodes or label offsets so each feedback label is visibly tied to
+   one edge without colliding with another label, edge, or card.
+
+### Advisory
+
+1. The round-three clipping defect is resolved: `revises limits` now remains
+   inside the 380-unit viewBox, and the round-two forward arrows retain visible
+   clearance. The two findings above concern distinct collisions in the current
+   rendered geometry, so they do not reopen either settled issue.
+
+2. The earlier thesis, evidence, registry, flow, matrix, comparison, and
+   reading-time fixes remain intact. Within the recorded evidence, the factual
+   synthesis remains supportable and appropriately conditional. The page uses
+   original prose and original vocabulary diagrams, with no quotation or real
+   cover art. No new external web search was performed.
+
+3. `npm run check` completed with `CHECK OK` on 2026-07-28: validation, prose
+   lint, 42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite
+   production build, and ESLint all passed. Vitest emitted only the repository's
+   known non-failing jsdom `Window.scrollTo()` notices.
