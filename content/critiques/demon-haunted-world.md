@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -121,3 +121,36 @@ Resolved every required finding without changing the chapter's status.
    width through the existing horizontal scroller, preserving its authored label size.
 7. Ran `npm run check`: validation, prose lint, pipeline tests, Vitest, TypeScript,
    the production build, and ESLint all passed.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+1. All six required findings from round 1 are resolved. The registry record is
+   complete, the thesis is two sentences, Figure 130.2 now distinguishes evidential
+   support from scope of revision, Figure 130.4 no longer uses unsupported
+   reinforcing or balancing signs, Figure 130.5 separates its labels, and the
+   signature model visibly includes the losing condition, prediction, independent
+   test, and coherent outcomes at a readable authored width.
+
+2. Figure 130.4's independent-check node correctly branches to both agreement and
+   conflict, as its caption claims. Its competing-account node connects only to
+   conflict even though the accessible label groups the check and competing account
+   together as possible routes to either outcome
+   (`src/chapters/demon-haunted-world.mdx:107-126`). Narrowing that accessible label
+   or adding the symmetric edge would make the graph's secondary branch more exact,
+   but the present asymmetry does not materially change the section's teaching.
+
+3. Within the recorded evidence, the chapter's factual scope remains sound and its
+   prose and diagrams remain original synthesis. The five key ideas, signature
+   model, four concrete exercises, caveat, related links, publisher link, and
+   `minutes={8}` badge satisfy the page contract.
+
+4. `npm run check` completed with `CHECK OK` on 2026-07-28. Validation, prose lint,
+   40 pipeline tests, 279 Vitest tests, TypeScript, the Vite production build, and
+   ESLint all passed. Vitest emitted only the existing non-failing jsdom
+   `Window.scrollTo()` notices.
