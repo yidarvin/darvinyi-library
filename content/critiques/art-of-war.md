@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -33,3 +33,10 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-28
+
+- Changed the Hero badge to `minutes={8}`, using the critique's recorded direct-render count of approximately 1,445 visible words and the specified 200 words per minute, rounded up.
+- Replaced Figure 136.2's exponential `Curve` with the in-vocabulary `Flow` "enter the contest → spend time and resources → lose room for other needs." The revised figure has no quantitative axes or growth law and states the recorded evidence's supported burden and capacity tradeoff.
+- Recast "Why it matters" as a present-day relevance claim. It no longer attributes the book's survival or canonical status to a historical cause.
+- Updated the evidence attribution boundary and registry diagram inventory from annotated curve to flow so the chapter artifacts describe the rendered figure consistently.

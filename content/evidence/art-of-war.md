@@ -12,7 +12,7 @@ than reproductions of a translation, commentary, or historical figure.
 
 ### Attribution boundary
 
-The page's iceberg, curve, spectrum, comparison, and process-loop diagrams are this library's
+The page's iceberg, flow, spectrum, comparison, and process-loop diagrams are this library's
 teaching devices. The source does not supply those diagrams, nor does it present a single modern
 framework called “strategic advantage.” The page uses "preserve capacity," "find an opening," and
 "learn before committing" as plain-language synthesis of the recorded passages. It does not treat

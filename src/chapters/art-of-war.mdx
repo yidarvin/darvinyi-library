@@ -1,11 +1,11 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Curve, Iceberg, ProcessLoop, Spectrum } from "../components/diagrams";
+import { Compare, Flow, Iceberg, ProcessLoop, Spectrum } from "../components/diagrams";
 
 <Hero
   slug="art-of-war"
   thesis="The highest skill is to avoid a costly fight by preparing well, shaping the conditions, and understanding both your position and the other side's."
-  minutes={7}
+  minutes={8}
 />
 
 ## The thesis
@@ -16,11 +16,11 @@ less necessary or meets a genuine opening.
 
 ## Why it matters
 
-The book survives because it notices a stubborn mistake: people often substitute intensity for
+The book makes a present-day mistake easier to spot: people often substitute intensity for
 strategy. More effort can be needed, but it is a poor first answer when the real problem is bad
 information, a divided group, an expensive objective, or a contest that should never have been
-entered. The text asks for a colder look at conditions before pride turns a disagreement into a
-drain on everyone involved.
+entered. Its strategic lens asks for a colder look at conditions before pride turns a disagreement
+into a drain on everyone involved.
 
 ## Key ideas
 
@@ -57,15 +57,11 @@ fight, or a feud can take on a life of its own. Before escalating, name the cost
 time and the point at which the original aim will no longer justify it. A limited agreement,
 withdrawal, or change of objective can preserve more than a dramatic victory.
 
-<Figure id="136.2" caption="As a contest drags on, the burden on people and resources can rise faster than the original aim merits.">
-  <Curve
+<Figure id="136.2" caption="A prolonged contest adds demands until capacity is pulled away from the original aim and other needs.">
+  <Flow
     className="block w-full min-w-[380px]"
-    shape="exp"
-    axes={{ x: "time in the contest", y: "capacity consumed" }}
-    annotations={[
-      { x: 0.2, y: 0.08, text: "manageable" },
-      { x: 0.8, y: 0.62, text: "options shrink" },
-    ]}
+    steps={["enter the contest", "spend time and resources", "lose room for other needs"]}
+    highlight={2}
   />
 </Figure>
 
