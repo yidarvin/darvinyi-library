@@ -1,0 +1,218 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Flow, Iceberg, NodeGraph, Timeline, Venn } from "../components/diagrams";
+
+<Hero
+  slug="sixth-extinction"
+  thesis="Extinction is an ordinary part of life's long history. What is extraordinary is one species changing habitats, climate, and the movement of organisms quickly enough to push many others toward the edge at once."
+  minutes={8}
+/>
+
+## The thesis
+
+*The Sixth Extinction* asks readers to view the present through the long record of life on
+Earth. Elizabeth Kolbert's argument is that human activity is creating a biological crisis
+with the scale and abruptness of the great die-offs preserved in rock, though it is unfolding
+through farms, cities, trade, emissions, and extraction rather than a single asteroid or
+volcanic episode. The hard fact is not that every species will disappear. It is that the
+living world is being simplified faster than evolution and migration can usually repair it.
+
+## Why it matters
+
+Extinction sounds remote when it is reduced to a list of animals that are already gone. The
+book makes it immediate by shifting attention to the conditions that keep a species present:
+a connected place to live, enough compatible organisms around it, a climate within its
+tolerance, and enough time. Remove those conditions and a loss can begin long before the last
+individual vanishes. By the time absence is easy to count, many choices have already narrowed
+the possibilities.
+
+## Mass extinction is a change in pace
+
+Species have always appeared and disappeared. Fossils record a background turnover, along with
+five intervals when losses spread across many branches of life in a comparatively short
+geological span. That history gives the phrase "mass extinction" its force. It does not mean a
+world with no life left in it. It means a disruption broad enough to redraw which lineages
+remain and which ecological roles can still be filled.
+
+Kolbert's comparison is unsettling because the present driver is familiar. Humans alter land
+and sea, move species between places that were once separated, take organisms faster than some
+can replace themselves, and add heat and acidity to systems already under strain. The causal
+agent is not hidden in a sediment layer. It is dispersed across ordinary institutions and
+infrastructure.
+
+<Figure id="128.1" caption="The present crisis is best understood as a rapid, human-driven shift in the pace of loss.">
+  <Timeline
+    className="block w-full min-w-[656px]"
+    segments={[
+      { label: "background turnover", sub: "species appear and disappear" },
+      { label: "five great die-offs", sub: "deep-time pulses" },
+      { label: "human expansion", sub: "land, harvest, transport" },
+      { label: "planetary pressure", sub: "many drivers at once" },
+      { label: "a choice point", sub: "loss or repair" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## The last disappearance is only the visible tip
+
+An extinction is a clean category in retrospect: no members of a species remain. Living
+systems rarely announce themselves so neatly. A population can become sparse, its range can
+break into isolated fragments, and the genetic variation that helps it respond to change can
+shrink while the species still appears on a checklist. A plant may remain while its pollinator
+is gone. A forest may retain its trees while losing the animals that disperse their seeds.
+
+This is why headline counts demand interpretation. Confirmed extinctions matter, but they are
+late evidence. Range contraction, population trends, and damaged relationships often reveal
+the direction of travel sooner. They also explain why recovery cannot always be achieved by
+protecting a small remnant. A species needs the ecological work around it to continue.
+
+<Figure id="128.2" caption="Confirmed extinction is the visible endpoint; erosion of populations, range, and relationships often starts earlier.">
+  <Iceberg
+    className="block w-full max-w-[480px]"
+    above="a confirmed extinction"
+    waterlineLabel="easy to count"
+    below={["fewer populations", "fragmented range", "less genetic variety", "broken ecological roles"]}
+  />
+</Figure>
+
+## Pressure arrives as a system, not a single cause
+
+It is tempting to look for one villain, perhaps climate change or poaching. The practical
+picture is more crowded. A landscape cleared for food or timber can reduce habitat and divide
+what remains. Direct harvest can thin populations inside those fragments. Pollution changes
+water or soil. Trade and transport introduce new competitors, predators, parasites, and
+pathogens. Warming then changes the conditions under which all of those pressures operate.
+
+The point is not that every threat has equal weight in every place. It is that risks can
+compound. A species with a wide, connected range may absorb one disruption. The same species,
+restricted to a few pockets and facing a novel disease, has much less room to respond. Good
+conservation therefore starts with a system map instead of a mascot.
+
+<Figure id="128.3" caption="Several direct pressures can converge on the same population and reduce its margin for recovery.">
+  <NodeGraph
+    className="block w-full max-w-[520px]"
+    nodes={[
+      { id: "habitat", label: "habitat loss", x: 0.16, y: 0.16 },
+      { id: "harvest", label: "direct harvest", x: 0.84, y: 0.16 },
+      { id: "climate", label: "climate change", x: 0.84, y: 0.76 },
+      { id: "invasives", label: "introduced species", x: 0.16, y: 0.76 },
+      { id: "loss", label: "population loss", x: 0.5, y: 0.48 },
+    ]}
+    edges={[
+      { from: "habitat", to: "loss", label: "shrinks" },
+      { from: "harvest", to: "loss", label: "removes" },
+      { from: "climate", to: "loss", label: "shifts" },
+      { from: "invasives", to: "loss", label: "disrupts" },
+    ]}
+  />
+</Figure>
+
+## Moving organisms moves whole histories
+
+Human transport changes biogeography at a speed no animal migration could match. A ship,
+shipment, pet release, or crop introduction can carry an organism into a place where prey,
+competitors, hosts, or predators have no shared history with it. Sometimes the newcomer fails.
+Sometimes it becomes one more part of a functioning community. Sometimes it meets a population
+with no defenses and creates a cascade that would have been impossible before the connection
+was made.
+
+That sequence matters because it replaces the vague idea of an "invasive" organism with a
+testable question: what new interaction was created, and which species bears the cost? The
+organism itself is not a moral agent. The durable responsibility lies with the human movement,
+the prevention rules, and the speed of response once harm appears.
+
+<Figure id="128.4" caption="Transport can create a novel encounter before local species have had time to evolve a response.">
+  <Flow
+    className="block w-full min-w-[520px]"
+    steps={["human transport", "new arrival", "novel interaction", "local vulnerability"]}
+    highlight={0}
+    branch={{ up: "prevention or removal", down: "spread and loss" }}
+  />
+</Figure>
+
+## Persistence needs more than a protected dot on a map
+
+A protected area can be indispensable, but a boundary alone is not a survival plan. A
+population persists when its habitat remains suitable, when individuals or genes can move among
+populations, and when the rate of environmental change does not outrun its capacity to adjust.
+Climate change makes this especially sharp. As temperature and rainfall patterns move,
+organisms may need to shift their range, adapt, or decline. Roads, farms, walls, and isolated
+reserves can turn a possible move into a dead end.
+
+The useful unit is a connected landscape or seascape, plus the people whose decisions shape
+it. Protecting a core, restoring a corridor, reducing another stressor, and honoring local and
+Indigenous stewardship are not interchangeable actions. Together they create the breathing
+room that a species cannot give itself.
+
+<Figure id="128.5" caption="A population has room to persist when suitable habitat, connection, and time overlap.">
+  <Venn
+    className="block w-full max-w-[520px]"
+    sets={[
+      { label: "suitable habitat" },
+      { label: "connected populations" },
+      { label: "time to respond" },
+    ]}
+    intersectionLabel="room to persist"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Separate the measures before sharing a claim">
+When you encounter an extinction statistic, ask what is actually being measured: species
+already gone, species facing elevated risk, population size, range, or an ecosystem function.
+Each can be alarming, but they answer different questions. This small check makes public
+discussion more accurate and less vulnerable to false reassurance.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Trace one local pressure to a living system">
+Choose a local decision about land, water, transport, or consumption. Name the habitat it
+touches, the organisms that depend on it, and the institution that has authority over the
+decision. A useful concern has a location, a mechanism, and someone who can be asked to act.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Treat movement as a biological decision">
+Do not release unwanted pets, aquarium contents, bait, or garden plants into the wild. For a
+community proposal involving landscaping, stocking, shipping, or disease control, ask what
+species could be moved and what screening or monitoring comes with the plan. Prevention is
+usually easier than repairing a new ecological connection.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Support durable capacity, not only emergency rescue">
+When evaluating a conservation effort, look beyond a single charismatic species. Does it fund
+habitat protection, monitoring, restoration, local leadership, and long-term enforcement? The
+work is less dramatic than a last-minute rescue, but it preserves options before the final
+minute arrives.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+"The sixth extinction" is a serious diagnosis, not a license for loose arithmetic. A threatened
+species is not an extinct one, and a population decline is not automatically a species loss.
+The IUCN also cautions that extinction risk has been evaluated for only a portion of described
+species, so no single list can yield a precise total for life on Earth. There is legitimate
+scientific debate about whether the present period has already crossed a strict geological
+threshold for the label "mass extinction." That uncertainty does not reverse the well-supported
+finding that human pressures are driving widespread biodiversity decline. It means the case for
+action should be made with the measures named plainly, not inflated for effect.
+</Callout>
+
+## If you remember one thing
+
+Extinction is not only the last individual dying. It is the cumulative result of removing the
+space, connections, and time that populations need to remain part of a living world. Human
+systems created much of that pressure, which means human systems can still reduce it.
+
+## Shelved nearby
+
+<em>Silent Spring</em> follows one route by which human interventions travel through living
+systems, while <em>The Selfish Gene</em> supplies the evolutionary logic that makes small
+population changes matter over generations.
+
+<ShelvedNearby
+  related={["silent-spring", "selfish-gene"]}
+  buyUrl="https://us.macmillan.com/books/9780805099799/thesixthextinction/"
+  buyLabel="The Sixth Extinction by Elizabeth Kolbert"
+/>
