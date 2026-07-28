@@ -1,0 +1,193 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="talking-to-strangers"
+  thesis="People we do not know are harder to read than they feel. Better judgment begins with humility about what behavior reveals, attention to context, and safeguards that match the stakes."
+  minutes={7}
+/>
+
+## The thesis
+
+We meet strangers with a small, unreliable set of signals: a face, a voice, a story, a few
+actions under conditions we may not understand. Gladwell's argument is that we routinely turn
+that narrow sample into a confident explanation. We tend to take people at their word until
+something forces doubt, assume their inner state is legible from the outside, and forget how
+much a setting can change conduct. In ordinary life those shortcuts make social life possible.
+In a consequential encounter, they can make us dangerously sure of a story we have not earned.
+
+## Why it matters
+
+Misreading a new colleague can make a meeting awkward. Misreading a witness, a person in
+distress, or someone with less power can set a much larger chain in motion. The useful lesson is
+not to become permanently suspicious. It is to stop treating comfort, confidence, or a plausible
+story as proof that we understand someone we have only just met.
+
+## Key ideas
+
+### Trust is the social default
+
+Most conversation would stall if every ordinary claim required an investigation. We therefore
+start by accepting much of what people say, then revise when a discrepancy, a strong incentive,
+or independent evidence gives us reason to look again. This default is not a personal defect or
+a command to ignore warnings. It is the efficient starting point that makes cooperation possible.
+The risk comes when the setting calls for verification but a familiar, coherent story lets doubt
+feel unnecessary.
+
+<Figure id="119.1" caption="Ordinary conversation begins with provisional trust; higher stakes call for more independent checking.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="treat every claim as hostile"
+    right="accept without checking"
+    marker={0.54}
+    markerLabel="ordinary trust"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.0, to: 0.28, label: "social life becomes costly" },
+      { from: 0.41, to: 0.66, label: "trust, then update", accent: true },
+      { from: 0.76, to: 1.0, label: "vulnerability to a polished story" },
+    ]}
+  />
+</Figure>
+
+### Inner states do not reliably show on the surface
+
+An anxious person may look composed. A calm person may be masking fear. Someone who is lying
+may look nervous because lying is stressful, while someone telling the truth may look nervous
+because the room is hostile. The problem is not that behavior contains no information. It is that
+one visible cue rarely identifies its cause. Research on the [illusion of transparency](https://doi.org/10.1037/0022-3514.75.2.332)
+also finds that people commonly overestimate how clearly their own internal state is visible to
+others. Reading a face as a complete report invites an error in both directions.
+
+<Figure id="119.2" caption="A visible demeanor is a small signal above a much larger field of possible causes.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="a visible demeanor"
+    waterlineLabel="what an observer can see"
+    below={["fear or fatigue", "learned self-presentation", "the setting's pressure", "facts still unknown"]}
+  />
+</Figure>
+
+### Demeanor is a clue, not a verdict
+
+The familiar detective story makes this mistake look easy: notice the stammer, the avoided eye
+contact, the too-smooth answer, then infer the hidden truth. But the same behavior can arise
+from anxiety, cultural habit, trauma, disability, unfamiliarity, or deception. A fair reader
+keeps the observation separate from the interpretation. “They paused before answering” is a fact
+to investigate. “They are hiding something” is one explanation among several.
+
+<Figure id="119.3" caption="Observing a behavior and explaining it are separate jobs, especially when the cost of error is high.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "a verdict from demeanor",
+      points: ["one cue becomes a conclusion", "confidence rises quickly", "other explanations disappear"],
+    }}
+    right={{
+      title: "a testable observation",
+      points: ["name what happened", "list plausible causes", "seek facts that could separate them"],
+    }}
+  />
+</Figure>
+
+### Conduct is coupled to its setting
+
+People are not blank slates pushed around by a room, but neither are they fixed traits walking
+through unchanged circumstances. A person brings history, values, capacity, and intentions.
+The setting brings incentives, unfamiliar rules, surveillance, time pressure, power, and other
+people's expectations. These factors meet in behavior. That is why an encounter with a stranger
+cannot be understood by asking only what sort of person they are. Ask what the situation asked
+of them, what options it left open, and what each side could actually see.
+
+<Figure id="119.4" caption="Behavior emerges from a person and a setting acting on each other, then shapes the next response.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "person", label: "person's history", x: 0.15, y: 0.2 },
+      { id: "setting", label: "setting and rules", x: 0.84, y: 0.2 },
+      { id: "pressure", label: "pressure and power", x: 0.16, y: 0.8 },
+      { id: "behavior", label: "observable behavior", x: 0.5, y: 0.5 },
+      { id: "response", label: "other person's response", x: 0.84, y: 0.8 },
+    ]}
+    edges={[
+      { from: "person", to: "behavior" },
+      { from: "setting", to: "behavior" },
+      { from: "pressure", to: "behavior" },
+      { from: "behavior", to: "response" },
+      { from: "response", to: "pressure", kind: "reinforcing", label: "changes the room" },
+    ]}
+  />
+</Figure>
+
+### Important decisions need a check beyond the encounter
+
+There is no magic tell that can make an unfamiliar person transparent. The practical response is
+to change the decision process. Separate what you observed from what you inferred. Seek a second
+source, a record, more time, or another person's view. Then scale the response to what is known,
+what remains uncertain, and how hard the decision will be to undo. This is slower than a quick
+read, but it is a better use of effort than trying to become a human lie detector.
+
+<Figure id="119.5" caption="A consequential judgment earns a second pass from observation through proportionate action.">
+  <Flow
+    className="block w-full min-w-[520px]"
+    steps={["name the observable facts", "separate inference", "seek context or corroboration", "choose a proportionate next step"]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write two columns before you decide">
+For one unfamiliar person or tense exchange, make a short list headed “what I saw or heard” and
+another headed “what I think it means.” Keep the first column observable. Put every motive,
+trait, and explanation in the second. The gap between the columns shows what still needs to be
+checked.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Ask for the missing setting">
+Before drawing a conclusion from an unexpected action, ask what conditions could have shaped it:
+time pressure, unclear instructions, a safety concern, language, prior experience, incentives, or
+who held power. This does not settle the explanation. It gives you alternatives worth testing.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Match verification to the consequence">
+For a low-cost choice, hold your first impression lightly and move on. For hiring, discipline,
+lending, care, safety, or a public accusation, decide what independent check is required before
+you act. Build that check into the process before a persuasive story arrives.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Use a smaller next step when facts are thin">
+When evidence is incomplete, look for an action that gathers information without creating an
+irreversible outcome. A follow-up conversation, a neutral witness, a trial period, or a written
+record can be wiser than either blind trust or an immediate punishment.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+This is a useful warning about overconfidence, not a complete theory of every hard encounter.
+Truth-default theory itself describes belief as contextual and triggered by available evidence,
+not as a rule to trust indefinitely. Levine's [2014 account](https://doi.org/10.1177/0261927X14535916)
+also places more weight on communication content and context than on stereotyped nonverbal
+signals. The book's memorable cases can make a broad lesson feel more certain than any single
+case can establish. Context should widen an inquiry, not erase accountability, excuse coercion,
+or turn a person with less power into the sole manager of everyone else's uncertainty.
+</Callout>
+
+## If you remember one thing
+
+With strangers, confidence is cheap and understanding is earned. Treat a first impression as a
+starting hypothesis, then use context, corroboration, and a proportionate next step to decide how
+much it deserves.
+
+Blink examines when fast judgment can be trained and when it needs testing. Thinking, Fast and
+Slow explains why an easy story can outrun evidence, while Noise shows how a structured process
+can reduce arbitrary variation in consequential judgment.
+
+<ShelvedNearby
+  related={["blink", "thinking-fast-and-slow", "noise"]}
+  buyUrl="https://www.gladwellbooks.com/titles/malcolm-gladwell/talking-to-strangers/9780316299220/"
+  buyLabel="Talking to Strangers by Malcolm Gladwell"
+/>
