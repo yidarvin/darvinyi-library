@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -54,3 +54,19 @@ lint).
    count of about 1,350 words at roughly 200 words per minute, rounded up.
 
 `npm run check` passed on 2026-07-28 after these changes.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None. The builder's three recorded resolutions are present and aligned across the prose,
+diagram labels, captions, accessible labels, and Hero badge. The chapter now keeps
+programmability distinct from stored-program architecture, limits the opening relay to claims
+supported by the recorded evidence, and uses the required seven-minute reading time.
+
+### Advisory
+
+None. The five key ideas each have a distinct in-vocabulary diagram, the practices are concrete,
+the caveat preserves individual responsibility and unequal access to credit, the deliberate
+absence of a Model section is recorded, and all three related books are done. `npm run check`
+passed in full on 2026-07-28.
