@@ -10,11 +10,11 @@ import { Flow, Iceberg, Matrix, NodeGraph, ProcessLoop, Spectrum } from "../comp
 
 ## The thesis
 
-Sagan's argument is that a technically powerful society needs more than scientific
-products. It needs the habits of mind that made those products possible: asking what a
-claim predicts, looking for alternative explanations, checking sources, and changing a
-conclusion when reality refuses to cooperate. Science is valuable here less as a storehouse
-of answers than as a practiced method for reducing self-deception.
+Sagan's argument is that a technically powerful society needs the habits of mind that made
+scientific products possible: asking what a claim predicts, looking for alternatives,
+checking sources, and changing a conclusion when reality refuses to cooperate. Science is
+valuable less as a storehouse of answers than as a practiced method for reducing
+self-deception.
 
 ## Why it matters
 
@@ -57,17 +57,17 @@ known has more to explain, so it needs evidence that can bear that weight. This 
 rule for defending the status quo. It is the price of asking everyone else to rearrange their
 map of reality.
 
-<Figure id="130.2" caption="Large consequences and thin evidence call for restraint; strong, checked evidence can support firmer action.">
+<Figure id="130.2" caption="Confidence should rise with checked support, while a claim that would revise more needs a heavier evidential burden.">
   <Matrix
     className="block w-full min-w-[440px]"
     xAxis={{ left: "thin evidence", right: "checked evidence", label: "support for the claim" }}
-    yAxis={{ low: "small consequence", high: "large consequence", label: "cost of being wrong" }}
-    highlight={1}
+    yAxis={{ low: "fits much of what is known", high: "would revise much of it", label: "scope of the claim" }}
+    highlights={[1, 3]}
     quadrants={[
-      { title: "hold lightly", note: "low stakes, low support" },
-      { title: "act, keep checking", note: "large stakes, strong support" },
-      { title: "stay curious", note: "small stakes, more evidence needed" },
-      { title: "pause and test", note: "large stakes, weak support" },
+      { title: "very tentative", note: "large revision, thin support" },
+      { title: "take seriously, keep testing", note: "large revision, checked support" },
+      { title: "tentative", note: "ordinary scope, thin support" },
+      { title: "well supported, still revisable", note: "ordinary scope, checked support" },
     ]}
   />
 </Figure>
@@ -104,24 +104,25 @@ That is why a single study, a charismatic spokesperson, or a polished chart shou
 an inquiry. Public criticism is part of the engine. Agreement matters most when it emerges
 from work that had a real chance to disagree.
 
-<Figure id="130.4" caption="Scientific confidence grows through several independent checks, not through one voice repeating itself.">
+<Figure id="130.4" caption="Independent checks can confirm a prediction or reveal a conflict, giving confidence something real to answer to.">
   <NodeGraph
     className="block w-full min-w-[440px]"
-    ariaLabel="A claim is checked by observation, another investigator, a competing explanation, and a replication attempt. Their results feed a revised confidence judgment."
+    ariaLabel="A claim produces a testable expectation. An independent check and a competing account can lead to agreement or a conflict that revises confidence."
     nodes={[
       { id: "claim", label: "claim", x: 0.5, y: 0.08 },
-      { id: "observe", label: "observation", x: 0.16, y: 0.42 },
-      { id: "alternative", label: "alternative account", x: 0.84, y: 0.42 },
-      { id: "repeat", label: "independent check", x: 0.22, y: 0.78 },
-      { id: "confidence", label: "revised confidence", x: 0.72, y: 0.78 },
+      { id: "expectation", label: "testable expectation", x: 0.5, y: 0.34 },
+      { id: "check", label: "independent check", x: 0.16, y: 0.62 },
+      { id: "alternative", label: "competing account", x: 0.84, y: 0.62 },
+      { id: "agreement", label: "prediction agrees", x: 0.16, y: 0.9 },
+      { id: "conflict", label: "conflict found", x: 0.84, y: 0.9 },
     ]}
     edges={[
-      { from: "claim", to: "observe" },
-      { from: "claim", to: "alternative" },
-      { from: "observe", to: "repeat" },
-      { from: "alternative", to: "confidence" },
-      { from: "repeat", to: "confidence", kind: "reinforcing" },
-      { from: "confidence", to: "claim", kind: "balancing", labelOffset: { x: 18, y: 8 } },
+      { from: "claim", to: "expectation" },
+      { from: "expectation", to: "check" },
+      { from: "expectation", to: "alternative" },
+      { from: "check", to: "agreement" },
+      { from: "check", to: "conflict" },
+      { from: "alternative", to: "conflict" },
     ]}
   />
 </Figure>
@@ -145,6 +146,9 @@ and the world.
     right="automatic disbelief"
     marker={0.5}
     markerLabel="curious, testable inquiry"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
+    emphasizeEndpoint="none"
     zones={[
       { from: 0, to: 0.32, label: "credulity" },
       { from: 0.37, to: 0.63, label: "ask and test", accent: true },
@@ -157,16 +161,17 @@ and the world.
 
 The baloney detection kit is not a trivia quiz that stamps claims true or false. It is a
 set of friction points for a claim that wants your belief. Ask for a clear statement, seek
-the evidence behind it, compare plausible alternatives, look for an independent check, and
-name what result would change the conclusion. When a claim fails one of these questions,
-the appropriate response is often less confidence, not theatrical dismissal.
+the evidence behind it, compare plausible alternatives, name what result would change the
+conclusion, derive a prediction, and seek an independent test of it. When a claim fails one
+of these questions, the appropriate response is often less confidence, not theatrical
+dismissal.
 
-<Figure id="130.6" caption="The kit turns an appealing claim into a sequence of checks before it earns a conclusion.">
+<Figure id="130.6" caption="The kit turns an appealing claim into checks, a prediction, and a test that can change the conclusion.">
   <Flow
-    className="block w-full min-w-[584px]"
-    highlight={3}
-    steps={["state the claim clearly", "inspect the evidence", "compare alternatives", "seek an independent check"]}
-    branch={{ up: "prediction holds: increase confidence", down: "check fails: revise or suspend" }}
+    className="block w-full min-w-[992px]"
+    highlight={5}
+    steps={["state the claim", "inspect evidence", "compare alternatives", "name the losing result", "derive a prediction", "seek an independent test"]}
+    branch={{ up: "prediction holds: retain provisionally", down: "result conflicts: revise or suspend" }}
   />
 </Figure>
 

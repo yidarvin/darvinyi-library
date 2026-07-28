@@ -2569,7 +2569,18 @@
       "subtitle": "Carl Sagan · 1995",
       "part": "Big Ideas: Science, History & Society",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Scientific skepticism makes claims earn confidence through clear predictions, evidence, alternatives, independent checking, and a willingness to revise.",
+      "framework": "The baloney detection kit",
+      "diagrams": [
+        "iceberg",
+        "two-by-two matrix",
+        "process loop",
+        "node graph",
+        "spectrum",
+        "flow with branch"
+      ]
     },
     {
       "num": 131,

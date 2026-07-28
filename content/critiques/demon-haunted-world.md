@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -99,3 +99,25 @@ verdict: revise
    40 pipeline tests, 278 Vitest tests, TypeScript, the Vite production build, and
    ESLint all passed. Vitest emitted only the existing non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+Resolved every required finding without changing the chapter's status.
+
+1. Completed the draft registry record with tier 3, the distilled thesis, the baloney
+   detection kit framework, and the six rendered diagram forms.
+2. Compressed “The thesis” to two sentences while retaining the argument that science is
+   a method for reducing self-deception.
+3. Rebuilt Figure 130.2 around evidence support and the scope of revision a claim would
+   require. Its quadrant order now matches `Matrix`'s top-left, top-right, bottom-left,
+   bottom-right contract, and it no longer prescribes action from a confidence judgment.
+4. Rebuilt Figure 130.4 as neutral result flow from a testable expectation through an
+   independent check and competing account to visible agreement or conflict outcomes.
+   It has no reinforcing or balancing signs.
+5. Set Figure 130.5 to use the Spectrum top marker and stacked endpoint layouts, with
+   no endpoint emphasis, so the three labels remain distinct at mobile width.
+6. Expanded Figure 130.6 to six visible checks, including the losing result, prediction,
+   and independent test before its branch. It now keeps the primitive's 992-unit native
+   width through the existing horizontal scroller, preserving its authored label size.
+7. Ran `npm run check`: validation, prose lint, pipeline tests, Vitest, TypeScript,
+   the production build, and ESLint all passed.

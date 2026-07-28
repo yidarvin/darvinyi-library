@@ -171,6 +171,42 @@ describe("Noise audit flow", () => {
   });
 });
 
+describe("The Demon-Haunted World figure regressions", () => {
+  it("keeps its confidence, inquiry, and detection-kit diagrams semantically and visually distinct", async () => {
+    const compactText = (value: string | null | undefined) => (value ?? "").replace(/\s+/g, "");
+    const mod = await mdxModules["../chapters/demon-haunted-world.mdx"]();
+    const DemonHauntedWorld = mod.default;
+    render(
+      <MemoryRouter>
+        <MDXProvider components={mdxComponents}>
+          <DemonHauntedWorld />
+        </MDXProvider>
+      </MemoryRouter>,
+    );
+
+    const confidenceFigure = screen.getByText(/Confidence should rise with checked support/i).closest("figure");
+    expect(confidenceFigure?.textContent).toContain("very tentative");
+    expect(compactText(confidenceFigure?.textContent)).toContain(compactText("well supported, still revisable"));
+    expect(confidenceFigure?.textContent).not.toContain("cost of being wrong");
+
+    const independentCheckFigure = screen.getByText(/Independent checks can confirm a prediction/i).closest("figure");
+    expect(compactText(independentCheckFigure?.textContent)).toContain(compactText("prediction agrees"));
+    expect(compactText(independentCheckFigure?.textContent)).toContain(compactText("conflict found"));
+    expect(independentCheckFigure?.textContent).not.toMatch(/[+−]/);
+
+    const inquiryFigure = screen.getByText(/Inquiry stays open to possibilities/i).closest("figure");
+    expect(inquiryFigure?.querySelector('[data-spectrum-endpoints="stacked"]')).not.toBeNull();
+    expect(screen.getByText("curious, testable inquiry").getAttribute("y")).toBe("24");
+
+    const kitFigure = screen.getByText(/The kit turns an appealing claim/i).closest("figure");
+    const kit = kitFigure?.querySelector("svg");
+    expect(kit?.getAttribute("viewBox")).toBe("0 0 992 200");
+    expect(kit?.getAttribute("class")).toContain("min-w-[992px]");
+    expect(compactText(kitFigure?.textContent)).toContain(compactText("name the losing result"));
+    expect(compactText(kitFigure?.textContent)).toContain(compactText("seek an independent test"));
+  });
+});
+
 describe("Silent Spring mobile figures", () => {
   it("keeps the two five-step flows and five-segment timeline at readable widths", async () => {
     const mod = await mdxModules["../chapters/silent-spring.mdx"]();
