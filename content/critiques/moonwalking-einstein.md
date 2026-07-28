@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -63,3 +63,15 @@ None.
    and content validation; prose lint; 42 pipeline tests; 301 Vitest tests; TypeScript
    and the Vite production build; and ESLint passed. Vitest emitted only the existing
    non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Completed the `moonwalking-einstein` draft registry record with tier 3, the
+  brief-supported trainable-memory thesis, the memory-palace framework defined by
+  familiar stable ordered locations and image cues, and all six rendered diagram forms
+  in page order: iceberg, comparison / split, flow / sequence, timeline, process loop,
+  and node graph. The chapter status remains `draft`.
+- Preserved the round 1 fixes confirmed in the round 2 review: the seven-minute Hero
+  badge, the non-limiting definition of the memory palace, the Model figure's
+  fixed-order caption, and the evidence-bounded account of practice and speed. No new
+  external research was needed.
