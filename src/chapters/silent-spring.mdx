@@ -1,0 +1,209 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Bars, Flow, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="silent-spring"
+  thesis="A pesticide can solve a local problem while changing a much larger living system. Rachel Carson asked society to make that trade visible before it sprays."
+  minutes={7}
+/>
+
+## The thesis
+
+*Silent Spring* argues that the easy story of pest control leaves out the rest of the
+system. A chemical released to kill one organism can persist, move through soil and water,
+reach organisms that were never targets, and return as a human problem through damaged
+ecosystems, resistance, and public health. Carson's demand was not that people accept pests.
+It was that power over living systems be used with evidence, limits, and accountability.
+
+## Why it matters
+
+The book changed the scale of the question. Before Carson, a spray program could be judged
+mainly by whether it killed the intended insect. Her argument made the relevant unit a food
+web and, eventually, a public institution. That shift helped turn pollution from a private
+nuisance into a shared responsibility: someone must ask who receives the benefit, who absorbs
+the risk, and what evidence is needed before an intervention becomes routine.
+
+## A target is part of a web
+
+The first mistake in a chemical intervention is to picture one pest standing alone. In a
+living landscape, insects feed birds and fish, soil organisms cycle nutrients, predators hold
+other populations in check, and water carries material beyond the field or street where it was
+applied. The intended target is one node in a network, not the whole network.
+
+That does not mean every pesticide has the same effects or that every use produces a crisis.
+It means the useful question is broader than "does it work?" Ask what else encounters the
+chemical, how long it remains available, and what relationships change when one part of the
+web is removed or weakened. A control that looks clean at one point in the system can be a
+cost shifted somewhere else.
+
+<Figure id="127.1" caption="A pest-control decision enters a web of organisms, water, and human choices.">
+  <NodeGraph
+    className="block w-full"
+    nodes={[
+      { id: "spray", label: "a pesticide spray", x: 0.5, y: 0.12 },
+      { id: "pest", label: "target pest", x: 0.19, y: 0.4 },
+      { id: "beneficial", label: "beneficial insects", x: 0.8, y: 0.4 },
+      { id: "water", label: "soil and water", x: 0.5, y: 0.57 },
+      { id: "wildlife", label: "fish and wildlife", x: 0.21, y: 0.84 },
+      { id: "people", label: "people and policy", x: 0.79, y: 0.84 },
+    ]}
+    edges={[
+      { from: "spray", to: "pest", label: "intended effect" },
+      { from: "spray", to: "beneficial", label: "exposure" },
+      { from: "spray", to: "water", label: "moves" },
+      { from: "water", to: "wildlife", label: "exposure" },
+      { from: "wildlife", to: "people", label: "evidence" },
+      { from: "people", to: "spray", kind: "balancing", label: "limits" },
+    ]}
+  />
+</Figure>
+
+## Persistence turns a dose into a journey
+
+Carson paid close attention to chemicals whose usefulness came partly from lasting after the
+application. Persistence can mean fewer applications in the short term. It can also mean that
+material stays available long enough to travel, accumulate in fatty tissue, and meet organisms
+far from the original decision. The calendar matters as much as the moment of spraying.
+
+The food-web effect is often called biomagnification. A small exposure at a lower level can be
+present in many organisms. A predator that eats many prey can collect a larger burden than any
+one meal contained. This is a conceptual pattern, not a fixed multiplier. Concentrations vary
+with the chemical, species, place, and time. The lesson is to follow material through the
+system rather than stopping at the application site.
+
+<Figure id="127.2" caption="Persistent material can move from a small exposure to a larger burden higher in a food web.">
+  <Flow
+    className="block w-full"
+    steps={["application", "soil or water", "small organisms", "prey animals", "top predators"]}
+    highlight={4}
+  />
+</Figure>
+
+## Success can breed its own failure
+
+Pesticides impose a strong filter on a pest population. If some individuals survive because
+they carry a resistant trait, the survivors leave more descendants. Repeat the same pressure,
+and the population can become harder to control. The apparent answer, more frequent or heavier
+application, may intensify the very selection that made the tool weaker.
+
+This is not a moral failure by farmers or applicators. It is evolution operating inside a
+management system. Carson's warning therefore has an operational side: a control program has
+to preserve its own options. Monitor the pest, identify it correctly, and avoid treating every
+appearance as a reason for the same chemical response. A tool that is reserved and targeted
+lasts longer than a tool used by reflex.
+
+<Figure id="127.3" caption="Repeated reliance can select for survivors and make the next round less effective.">
+  <ProcessLoop
+    className="block w-full"
+    stages={["spray", "susceptible pests die", "resistant pests survive", "resistant pests multiply"]}
+    compoundingEdge={3}
+    centerLabel="the resistance loop"
+  />
+</Figure>
+
+## Control needs a decision ladder
+
+The alternative to indiscriminate spraying is not doing nothing. It is deciding with more care.
+Modern integrated pest management makes this concrete: identify and monitor the problem, set a
+threshold for action, prevent conditions that let it grow, try the lowest-risk effective
+control, then reassess. A pesticide may still be warranted, especially when disease or serious
+economic damage is at stake. It should be a deliberate tool with a defined target and a record
+of what happened afterward.
+
+This ladder changes the objective from eradicating every pest to managing damage at an
+acceptable level. That is a harder standard because it asks for observation and judgment. It
+also gives a community more than one move when a familiar chemical stops working or when its
+side effects become visible.
+
+<Figure id="127.4" caption="A sound response moves from observation to targeted action, then back to evidence.">
+  <Flow
+    className="block w-full"
+    steps={["identify and monitor", "set a threshold", "prevent", "use the lowest-risk control", "reassess"]}
+    highlight={3}
+  />
+</Figure>
+
+## Evidence has to reach public rules
+
+Carson did more than identify an ecological mechanism. She made a case for institutions that
+can respond when dispersed harms become visible. Her book appeared in 1962. The United States
+created the Environmental Protection Agency in 1970, and the agency cancelled most uses of DDT
+in 1972 after a public regulatory process. Those events were not caused by one book alone, but
+the book helped create the public attention that made pesticide oversight a durable political
+question.
+
+The lasting idea is a chain of responsibility. Field observations, laboratory findings, and
+harm reports have to travel into rules, enforcement, and revision. Regulation is neither a
+magic switch nor an enemy of science. It is the mechanism a society uses to keep a private
+decision from imposing an unpriced ecological cost on everyone else.
+
+<Figure id="127.5" caption="Carson's warning helped connect ecological evidence to a lasting regulatory response.">
+  <Timeline
+    className="block w-full"
+    segments={[
+      { label: "synthetic pesticide boom", sub: "postwar expansion" },
+      { label: "Silent Spring", sub: "1962" },
+      { label: "public scrutiny", sub: "evidence enters debate" },
+      { label: "EPA formed", sub: "1970" },
+      { label: "DDT cancellation", sub: "1972" },
+    ]}
+    highlight={1}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Describe the system before naming the tool">
+For a pest problem at home, work, or in a community, write down the target, its food or water
+connections, the people exposed, and the outcome you actually need. "No damage above this
+level" is a better starting point than "nothing alive."
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Ask for a threshold and a record">
+Before approving routine treatment, ask what observation triggers action, which organism is
+being targeted, what nonchemical options were considered, and how success or harm will be
+checked afterward. A decision that cannot be reviewed is difficult to improve.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Separate urgency from habit">
+An urgent disease vector can justify fast, targeted intervention. A recurring nuisance may call
+for prevention, exclusion, sanitation, habitat changes, or trapping first. Name the stakes so
+that urgency does not become a blanket excuse for the same response every time.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Treat resistance as feedback">
+If a treatment is losing effectiveness, do not simply assume the dose is too low. Confirm the
+identity of the pest, inspect the pattern of failure, and seek local technical guidance on
+alternatives. The outcome is data about the system, not merely an instruction to repeat it.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+*Silent Spring* is often reduced to "pesticides are always bad." That misses both the public
+health value of targeted vector control and Carson's actual policy direction, which was more
+careful use, stronger oversight, and alternatives to persistent broad-spectrum chemicals. The
+opposite simplification is also wrong: a useful pesticide is not automatically a safe one in
+every context. DDT has a specific history, including persistence, accumulation in fatty tissue,
+and the recovery of wildlife after U.S. restrictions. Present-day products need their own
+evidence, exposure analysis, and regulatory judgment. The book supplies a method of attention,
+not a substitute for current risk assessment.
+</Callout>
+
+## If you remember one thing
+
+No pest-control decision is only about a pest. Follow the chemical, the organisms, the time,
+and the feedback it creates, then choose the narrowest effective response that the evidence can
+defend.
+
+## Shelved nearby
+
+<em>Sapiens</em> widens the frame to human power over the living world, while <em>The Selfish
+Gene</em> makes evolution's feedback logic easier to see.
+
+<ShelvedNearby
+  related={["sapiens", "selfish-gene"]}
+  buyUrl="https://bookshop.org/p/books/silent-spring-rachel-carson/17888229"
+  buyLabel="Silent Spring by Rachel Carson"
+/>
