@@ -1,0 +1,208 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, Matrix, NodeGraph, ProcessLoop } from "../components/diagrams";
+
+<Hero
+  slug="attached"
+  thesis="Closeness can feel calming, urgent, or constraining depending on how a person expects support to work. Seeing that pattern turns a relationship fight into a clearer conversation about safety, space, and repair."
+  minutes={8}
+/>
+
+## The thesis
+
+*Attached* brings attachment theory into the everyday weather of romantic relationships.
+Its useful claim is that people develop recognizable ways of handling the threat of disconnection.
+Some reach harder for reassurance, some create distance, and some can usually ask for support
+without treating closeness or independence as a danger. These are patterns for regulating a bond,
+not verdicts on character. Once a couple can see the pattern, they have more choice about what
+they ask for and how they answer.
+
+## Why it matters
+
+Many arguments begin with an event too small to explain their force: a delayed reply, a cancelled
+plan, a partner who goes quiet after a hard day. The visible event may be ordinary. The meaning
+assigned to it can be much larger, especially when it raises the question, "Can I count on you?"
+Attachment language gives that question a name. It can replace the unhelpful story that one person
+is needy and the other is cold with a more workable one: both people are trying to manage a
+relationship that feels uncertain.
+
+## The behavior on top is rarely the whole signal
+
+An attachment response is easy to judge from the outside. Repeated texts can look controlling.
+Silence can look indifferent. Either can also be a hurried attempt to regain equilibrium when a
+bond feels at risk. The important distinction is not between good and bad people. It is between
+the behavior we can see and the alarm, expectation, or need beneath it. Curiosity does not excuse
+harmful conduct, but it makes a more accurate first move possible.
+
+<Figure id="120.1" caption="A small visible behavior can carry a larger, private question about safety in the relationship.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="a short reply, silence, or repeated checking"
+    below={["uncertainty about the bond", "fear of being dismissed or left", "a need for contact, clarity, or time"]}
+  />
+</Figure>
+
+## A dependable bond makes room for exploration
+
+Security does not mean constant contact, perfect calm, or never needing anyone. It means that a
+partner is broadly available, responsive, and able to return after a rupture. That expectation can
+free attention for work, friendship, rest, and independent plans. When availability feels doubtful,
+ordinary separations take more monitoring. The practical aim is not fusion. It is enough confidence
+in the connection that each person can move through the rest of life without having to test the
+bond all day.
+
+<Figure id="120.2" caption="Reliable responsiveness gives a relationship a base from which both closeness and independence become easier.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="left"
+    left={{
+      title: "a dependable bond",
+      points: ["needs can be named", "space has a return path", "repair is expected", "attention can move outward"],
+    }}
+    right={{
+      title: "an uncertain bond",
+      points: ["signals invite guessing", "space can feel like loss", "conflict threatens connection", "attention stays on the bond"],
+    }}
+  />
+</Figure>
+
+## Protection strategies solve a short-term problem
+
+When the attachment system is activated, people tend to move in one of two directions. An anxious
+strategy turns up proximity seeking: ask again, scan for signs, protest, or seek a promise that the
+relationship is intact. An avoidant strategy turns down dependence: change the subject, minimize
+the need, become busy, or restore distance. Both can bring a brief sense of control. Neither is a
+reliable route to being understood if it replaces a direct request. The strategy makes sense as a
+protection, yet can create the very isolation it is trying to prevent.
+
+<Figure id="120.3" caption="A protective reaction can bring immediate relief while making connection harder on the next pass.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["a cue feels threatening", "alarm rises", "pursue or pull away", "short relief, less clarity"]}
+    highlight={3}
+  />
+</Figure>
+
+## The chase-and-retreat cycle recruits both people
+
+One person seeking more contact and another seeking more distance can make a powerful loop.
+Pressure for reassurance makes the retreating partner feel crowded, so they withdraw. Withdrawal
+makes the pursuing partner feel abandoned, so they intensify. Each action is evidence for the
+other person's fear, even when both want the relationship to work. The way out is not deciding
+which style is the villain. It is interrupting the loop early: name the alarm, make a concrete
+request, state a boundary, and agree on when the conversation will resume.
+
+<Figure id="120.4" caption="Pursuit and withdrawal can reinforce each other until the cycle, rather than the original issue, runs the conversation.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["distance feels risky", "reassurance is pursued", "pressure is felt", "distance increases"]}
+    compoundingEdge={3}
+    centerLabel="the pursue-retreat loop"
+  />
+</Figure>
+
+## New evidence can change an old expectation
+
+Attachment is not a license to predict a person's future, and it is not a one-way story from
+childhood. A current relationship supplies evidence too. Consistent follow-through, respectful
+space, honest limits, and repair after conflict can make a bond feel safer over time. The reverse
+is also true: mixed signals, contempt, broken agreements, or coercion are not puzzles to solve
+with better self-regulation. They are information about the relationship. A healthy adjustment
+requires two people who can make safety visible in their actions.
+
+<Figure id="120.5" caption="Felt safety is shaped by a relationship's current pattern of clarity, follow-through, room, and repair.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "clarity", label: "clear requests", x: 0.16, y: 0.18 },
+      { id: "follow", label: "follow-through", x: 0.84, y: 0.18 },
+      { id: "space", label: "respectful space", x: 0.14, y: 0.82 },
+      { id: "repair", label: "repair after strain", x: 0.86, y: 0.82 },
+      { id: "safety", label: "felt safety", x: 0.5, y: 0.48 },
+    ]}
+    edges={[
+      { from: "clarity", to: "safety", kind: "reinforcing" },
+      { from: "follow", to: "safety", kind: "reinforcing" },
+      { from: "space", to: "safety", kind: "reinforcing" },
+      { from: "repair", to: "safety", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The book's three labels are a useful first map: secure, anxious, and avoidant. Contemporary
+measurement usually treats adult attachment as two dimensions instead: anxiety about rejection or
+abandonment, and avoidance of closeness or dependence. The matrix preserves the book's central
+contrast while showing why a label should remain provisional. A person can vary by relationship,
+by stress level, and over time. The useful question is not "What type am I?" It is "What happens
+to me when this bond feels uncertain, and what response would help us both?"
+
+<Figure id="120.6" caption="Attachment labels are shorthand for patterns of anxiety and avoidance, not permanent identities.">
+  <Matrix
+    className="block w-full min-w-[440px]"
+    xAxis={{ left: "low avoidance", right: "high avoidance", label: "comfort with closeness and dependence" }}
+    yAxis={{ low: "low anxiety", high: "high anxiety", label: "worry about rejection or abandonment" }}
+    quadrants={[
+      { title: "secure", note: "ask, receive, and offer support" },
+      { title: "anxious", note: "seek extra reassurance" },
+      { title: "avoidant", note: "protect independence through distance" },
+      { title: "mixed alarm", note: "want closeness, fear its cost" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Name the cue before the conclusion">
+When you feel the urge to chase or disappear, write down the observable event first: "They have
+not replied since noon," or "They changed the plan." Then write the meaning your mind supplied.
+Separating the event from the story gives you a chance to ask instead of accuse.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Make a request with a time and a boundary">
+Replace a protest with one usable request. Try: "I am feeling disconnected. Could we talk for ten
+minutes after dinner? If now is bad, please tell me a time tonight that works." The request names
+the need while leaving room for a real answer.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Plan space with a return path">
+If you need distance during conflict, say what is happening and when you will come back: "I am too
+flooded to listen well. I need thirty minutes, and I will meet you on the couch at 7:30." Space
+without a return time can feel like abandonment. A return time makes it a boundary instead.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Review the cycle together">
+At a calm time, each person names one cue that activates them, one protective move they make, and
+one response that helps. Keep the focus on the shared loop, not on proving who started it. If
+conflict is frightening, coercive, or repeatedly unsafe, prioritize support and safety over
+communication exercises.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The three-style framework is an accessible teaching tool, not a clinical diagnosis or a dating
+sorting machine. Research measures adult romantic attachment more often as continuous anxiety and
+avoidance, and people can show different patterns with different partners and in different periods
+of life. Early relationships may matter, but they do not write an adult destiny. Do not use
+"avoidant" to rationalize unreliability, "anxious" to dismiss a legitimate need, or attachment
+language to stay in a coercive or abusive relationship. In those situations, the priority is safety,
+trusted support, and professional or local help, not improving the cycle.
+</Callout>
+
+## If you remember one thing
+
+Attachment language is most useful when it creates compassion and a next move. Notice the alarm,
+ask plainly for what would help, respect a real limit, and look for repeated evidence that the
+relationship can hold both closeness and room.
+
+Nonviolent Communication offers a language for turning the alarm into a request, while The Seven
+Principles for Making Marriage Work gives repair and everyday connection a more detailed practice.
+
+<ShelvedNearby
+  related={["nonviolent-communication", "seven-principles-marriage", "supercommunicators"]}
+  buyUrl="https://www.panmacmillan.com/authors/amir-levine/attached/9781447205425"
+  buyLabel="Attached by Amir Levine and Rachel Heller"
+/>
