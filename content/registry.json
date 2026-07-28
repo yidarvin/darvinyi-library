@@ -2453,7 +2453,17 @@
       "subtitle": "Brené Brown · 2010",
       "part": "Meaning, Psychology & the Mind",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Wholehearted living means letting go of who you think you should be and embracing worthiness as you are.",
+      "framework": "No single signature model; the chapter deliberately omits The Model and uses five key-idea diagrams to carry the book's guideposts.",
+      "diagrams": [
+        "core / context",
+        "iceberg",
+        "comparison",
+        "process loop",
+        "spectrum"
+      ]
     },
     {
       "num": 125,

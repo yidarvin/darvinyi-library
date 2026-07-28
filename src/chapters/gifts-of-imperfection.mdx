@@ -1,0 +1,194 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, CoreContext, Iceberg, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="gifts-of-imperfection"
+  thesis="Wholehearted living begins when worthiness stops being a prize to earn and becomes the ground from which you meet an unfinished life."
+  minutes={8}
+/>
+
+## The thesis
+
+*The Gifts of Imperfection* argues that a person cannot build a settled life on a permanent
+audition. When approval, productivity, appearance, or control become proof that one deserves
+connection, ordinary setbacks carry the force of a verdict. Brown's alternative is
+wholeheartedness: practicing courage, compassion, and connection while accepting that a life can
+be messy, uncertain, and still worthy of participation.
+
+## Why it matters
+
+Many forms of striving offer a quick bargain: meet the standard, then you may relax. The standard
+usually moves. There is another credential to earn, another comparison to win, another way to
+avoid being seen as inadequate. The book names the cost of this bargain. A life organized around
+proving enoughness leaves little room for rest, play, creative risk, or an honest relationship.
+Its counterproposal is demanding in a different way: show up as you are, keep practicing, and do
+not make belonging conditional on a flawless performance.
+
+## Key ideas
+
+### Worthiness needs a place that performance cannot enter
+
+Brown distinguishes a basic sense of deserving care and connection from the things that change
+from day to day. Skill, income, feedback, appearance, and output matter in their proper places.
+They can help a person learn, decide, or repair a mistake. They make poor evidence for whether a
+person may take up space in a relationship. When the two categories merge, a weak result becomes
+a statement about the whole self. Separating them makes room to take responsibility without
+turning every failure into self-rejection.
+
+<Figure id="124.1" caption="Worth can stay stable while feedback, skill, and outcomes remain open to change.">
+  <CoreContext
+    className="block w-full"
+    coreTitle="inherent worth"
+    coreItems={["courage", "compassion", "connection"]}
+    contextTitle="things that can change"
+    contextItems={["feedback", "skill", "outcome", "approval"]}
+  />
+</Figure>
+
+### Shame gains force when it becomes a private verdict
+
+Shame turns a painful moment into a claim about identity: not merely that something went wrong,
+but that the person who did it is deficient and should disappear from view. Brown's work on shame
+and connection makes a practical point. Secrecy and isolation give that claim a closed room in
+which to grow. Naming what happened to a trustworthy person, using accurate language, and asking
+for perspective do not erase accountability. They stop self-contempt from posing as the only
+possible account of the event.
+
+<Figure id="124.2" caption="A visible mistake may sit above a private verdict, fear of rejection, and the urge to hide.">
+  <Iceberg
+    className="block w-full"
+    above="the mistake everyone can see"
+    waterlineLabel="what the event reveals first"
+    below={["a verdict about myself", "fear of rejection", "the urge to hide"]}
+  />
+</Figure>
+
+### High standards and perfectionism ask different questions
+
+Careful work can be satisfying. Revision can be generous to the people who rely on it. Neither
+requires perfectionism. Healthy standards ask, “What would make this better?” Perfectionism asks,
+“Can I make this untouchable enough that no one can judge me?” The first question is about the
+work and leaves room to learn. The second makes the work a shield for the self, which often leads
+to delay, overwork, or refusing to begin. A useful standard can survive feedback. A defensive
+standard treats feedback as danger.
+
+<Figure id="124.3" caption="Standards improve a piece of work; perfectionism tries to protect a person from judgment.">
+  <Compare
+    className="block w-full"
+    favor="right"
+    left={{
+      title: "careful striving",
+      points: ["asks what the work needs", "uses feedback to revise", "allows a draft to exist", "can stop when the task is complete"],
+    }}
+    right={{
+      title: "perfectionism",
+      points: ["tries to prevent judgment", "treats feedback as a threat", "raises the cost of starting", "moves the finish line"],
+    }}
+  />
+</Figure>
+
+### Scarcity turns attention into a search for what is missing
+
+An outlook of scarcity keeps scanning for the proof that there is not enough: not enough time,
+love, money, achievement, or safety. That scan can make joy feel reckless, as though appreciating
+what is good will tempt fate. Brown pairs gratitude with joy because gratitude redirects
+attention toward what is present, while joy asks a person to receive a good moment without first
+securing every future outcome. Neither practice denies loss or risk. Both interrupt the habit of
+letting imagined deprivation occupy every available inch of the day.
+
+<Figure id="124.4" caption="A scarcity scan narrows attention, while a gratitude practice can return it to what is present.">
+  <ProcessLoop
+    className="block w-full"
+    stages={["notice what is missing", "predict a worse future", "tighten and compare", "miss what is here"]}
+    compoundingEdge={3}
+    centerLabel="the scarcity loop"
+  />
+</Figure>
+
+### Rest, play, and creativity refuse to make output the price of being alive
+
+The book treats exhaustion as more than a scheduling problem. It can become a status signal and a
+way to avoid stillness, while play can seem frivolous unless it earns its keep. Brown's guideposts
+make a different claim: rest, unforced laughter, and making something without comparison are
+conditions that help a person remain available to their own life. They do not have to be optimized
+or transformed into a side hustle. A walk, a song, a nap, or a bad sketch can be valuable because
+it restores contact with attention and pleasure rather than because it produces a result.
+
+<Figure id="124.5" caption="Rest and play become possible when usefulness is not the only measure of a worthwhile hour.">
+  <Spectrum
+    className="block w-full"
+    left="prove the hour was useful"
+    right="make room to be alive"
+    marker={0.74}
+    markerLabel="rest, play, create"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
+    zones={[
+      { from: 0.02, to: 0.35, label: "output as self-proof" },
+      { from: 0.62, to: 0.98, label: "attention without a payoff", accent: true },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Separate the event from the verdict">
+When something goes badly this week, write two sentences. In the first, describe the observable
+event without an adjective about yourself. In the second, name the verdict that rushed in. For
+example: “I missed the deadline.” Then: “My mind says I am unreliable.” Keeping the sentences
+separate does not excuse the missed deadline. It gives you a problem to repair without accepting
+the verdict as fact.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Tell one trustworthy person the smaller truth">
+Choose a disappointment you have been hiding because it feels embarrassing. Tell a trusted friend,
+partner, mentor, or therapist a brief, specific version of it. Ask for listening rather than
+rescue. If the person responds with judgment or tries to make the feeling disappear, choose a
+different confidant next time. The goal is contact with a person who can hold both the mistake and
+your humanity.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Set a humane definition of done">
+For one task that invites endless polishing, decide before you begin what complete looks like: a
+draft shared by Thursday, three clear sections, or a reply that answers the question. Write the
+definition where you can see it. When the task meets it, send or stop. Save a note about one thing
+you would improve next time, then let that become the next task's opening, not today's moving
+finish line.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Keep a three-line gratitude record">
+At the end of three ordinary days, record one thing that was available, one person who mattered,
+and one small pleasure you actually noticed. Do not turn this into evidence that nothing is wrong.
+Its point is narrower: a difficult future is not the only thing your attention is allowed to
+report.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Worthiness is not a demand to feel confident, disclose everything, forgive harm, or stay in an
+unsafe relationship. Shame, depression, trauma, discrimination, poverty, illness, and burnout
+cannot be solved by a gratitude list or a better attitude. Brown's guideposts are reflective
+practices, not a diagnostic tool or a substitute for clinical care, material support, boundaries,
+or collective change. The most useful reading is modest: use them to notice when self-protection
+has become self-erasure, then choose the support and action the situation actually requires.
+</Callout>
+
+## If you remember one thing
+
+You do not have to earn the right to belong through a spotless life. Let your work be revisable,
+let difficult feelings be shareable with the right people, and leave enough room for rest, play,
+and connection to count as part of living.
+
+The nearby shelf explores the courage to be seen, the therapeutic work of loosening an old story,
+and the private practices that can make creative work less punishing.
+
+<ShelvedNearby
+  related={["daring-greatly", "talk-to-someone", "artists-way"]}
+  buyUrl="https://bookshop.org/p/books/the-gifts-of-imperfection-10th-anniversary-edition-features-a-new-foreword-and-an-exclusive-new-introduction-brene-brown/15965397?ean=9781592858491"
+  buyLabel="The Gifts of Imperfection by Brené Brown"
+/>
