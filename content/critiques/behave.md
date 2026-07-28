@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -16,3 +16,15 @@ None. `npm run check` passed on 2026-07-28.
 
 - Revised the Model figure so “a behavior, now” is the innermost ring, surrounded in order by neural activity, body and recent state, development and culture, and evolutionary history. The visual, caption, prose, and accessible ring order now all place behavior inside its causal conditions.
 - Completed the `behave` registry entry with tier 3, the brief-aligned thesis, the nested-timescales framework description, and the six diagram forms used on the finished page. The chapter remains `draft` and is not marked done.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+1. The Hero's `minutes={9}` badge does not follow the authoring spec's reading-time calculation. Rendering the actual MDX with its real shared and chapter components produces 1,518 visible words. At approximately 200 words per minute, rounded up, that is an 8-minute distillation. Recompute the badge from the rendered page and set it to 8.
+
+2. The acute-stress example overstates the recorded evidence. The evidence note says the study associated acute psychosocial stress with larger task-switching costs during measured post-stress intervals. The Callout instead says it found “impaired flexible goal switching,” which turns a narrow measured task-switching result into a broader claim about goal switching. Describe the recorded outcome and its limited scope directly.
+
+### Advisory
+
+None. The two round-one findings remain resolved, and `npm run check` passed on 2026-07-28.
