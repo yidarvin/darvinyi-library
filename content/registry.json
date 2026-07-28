@@ -2589,7 +2589,17 @@
       "subtitle": "Walter Isaacson · 2014",
       "part": "Systems, Complexity & the Future",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "The digital revolution was made by collaboration across generations, not by lone geniuses.",
+      "framework": "None. This book has no single signature framework, so the Model section is deliberately absent and the key-idea diagrams carry the visual argument.",
+      "diagrams": [
+        "timeline",
+        "node graph",
+        "comparison",
+        "flow",
+        "process loop"
+      ]
     },
     {
       "num": 132,

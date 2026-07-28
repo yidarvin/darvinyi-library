@@ -1,0 +1,215 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="the-innovators"
+  thesis="The digital revolution came from people who connected ideas, tools, and institutions across generations, then made their work usable by the next group."
+  minutes={9}
+/>
+
+## The thesis
+
+Isaacson's history pushes back on the clean myth of the solitary inventor. A new digital
+capability usually began as a partial insight, became real through the work of many hands, and
+grew only when another group could adapt it. Mathematical ideas, electronic components,
+software, networks, and interfaces advanced together. The recurring achievement was not a
+single flash of brilliance. It was a chain of people who could combine a new idea with a
+practical machine, a shared standard, or a community willing to extend it.
+
+## Why it matters
+
+The lone-genius story makes innovation seem mysterious and rare. It also hides the conditions
+that make useful novelty more likely: time to explore, access to prior work, clear interfaces
+between specialties, and credit for the people who turn an idea into dependable practice. The
+book is a useful corrective for any team that wants to make something new. Its question is not
+who gets to be the visionary. It is what connections would let the next good idea travel.
+
+## Key ideas
+
+### A breakthrough is usually a relay, not a finish line
+
+Digital history moves through handoffs. Early work on programmable machines made computation
+thinkable before the machines existed. Electronic switching made computation faster and more
+reliable. Smaller components made it cheap enough to spread. Networks let distant machines and
+people exchange work. None of those moves made the later ones inevitable, but each gave the
+next group a more useful starting point.
+
+Treating the relay as the unit of progress changes what deserves attention. A lab notebook,
+prototype, tool, or specification can matter even when it is not a finished product. The right
+question is often: what has this work made easier for the person who comes next?
+
+<Figure id="131.1" caption="Digital progress advanced through handoffs that made a new layer possible.">
+  <Timeline
+    className="block w-full min-w-[400px]"
+    segments={[
+      { label: "programmable ideas", sub: "instructions become explicit" },
+      { label: "electronic machines", sub: "logic gains speed and scale" },
+      { label: "networked systems", sub: "work can travel between machines" },
+    ]}
+    highlight={2}
+    ariaLabel="A conceptual timeline moves from programmable ideas to electronic machines to networked systems, showing that each stage gave the next a more useful starting point."
+  />
+</Figure>
+
+### Ideas need several kinds of work to become useful
+
+An invention has more than one job to do. Someone may frame a new possibility. Another person
+may solve the material constraint that makes it buildable. Someone else turns the result into
+software, tests it against failures, explains it to users, or builds a business that keeps it
+alive. These roles can sit in one person, but important systems rarely depend on one kind of
+talent for long.
+
+This is why historical credit matters. The people omitted from a heroic account are often the
+ones who made a machine programmable, reliable, operable, or understandable. A team that only
+rewards the initial concept will eventually lose the work that makes concepts survive contact
+with the world.
+
+<Figure id="131.2" caption="A useful digital system depends on connected kinds of contribution, not one starring role.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    directed={false}
+    nodes={[
+      { id: "idea", label: "new possibility", x: 0.5, y: 0.08 },
+      { id: "hardware", label: "physical system", x: 0.12, y: 0.42 },
+      { id: "software", label: "programming", x: 0.88, y: 0.42 },
+      { id: "practice", label: "testing and operation", x: 0.25, y: 0.84 },
+      { id: "use", label: "people and use", x: 0.75, y: 0.84 },
+    ]}
+    edges={[
+      { from: "idea", to: "hardware" },
+      { from: "idea", to: "software" },
+      { from: "hardware", to: "practice" },
+      { from: "software", to: "practice" },
+      { from: "practice", to: "use" },
+      { from: "use", to: "idea" },
+    ]}
+    ariaLabel="A neutral network connects a new possibility with physical systems, programming, testing and operation, and people and use."
+  />
+</Figure>
+
+### The boundary between hardware and software is a source of possibility
+
+One of the great conceptual shifts was to treat instructions as something a machine could
+store, change, and execute, rather than as a permanent feature of its wiring. That separation
+turned a calculating device into a general-purpose tool. It also created a productive division
+of labor: hardware teams could improve a machine while programmers explored what the machine
+could do.
+
+The distinction still matters whenever a team is deciding what to fix and what to keep
+adaptable. Put stable, expensive-to-change capabilities in the base. Keep the rules that will
+need frequent revision visible and editable. The goal is not to maximize abstraction. It is to
+preserve room for learning without making the foundation unreliable.
+
+<Figure id="131.3" caption="A stable machine and changeable instructions let one foundation serve many purposes.">
+  <Compare
+    className="block w-full min-w-[384px]"
+    favor="right"
+    left={{
+      title: "fixed-purpose machine",
+      points: ["behavior is built into the apparatus", "a new task demands a redesign", "improvement is tied to one use"],
+    }}
+    right={{
+      title: "programmable foundation",
+      points: ["instructions can be changed", "one machine can serve new tasks", "hardware and software can improve separately"],
+    }}
+    ariaLabel="A comparison contrasts a fixed-purpose machine with a programmable foundation, which keeps instructions changeable and lets hardware and software improve separately."
+  />
+</Figure>
+
+### Shared rules let independent work connect
+
+Collaboration does not require everyone to work in the same room or even on the same schedule.
+It requires an agreement about the handoff. A protocol, file format, programming interface, or
+other shared rule tells one contributor what another contributor can rely on. That agreement
+lets local work remain independent while the combined system still works.
+
+Shared rules are not the same as central control. Their value is that they reduce the amount of
+coordination needed for each new contribution. The best test is practical: can a new group join
+the system, understand the boundary, and add something without asking permission from every
+group already inside it?
+
+<Figure id="131.4" caption="A clear interface lets separate contributors add work without rebuilding the whole system.">
+  <Flow
+    className="block w-full min-w-[400px]"
+    steps={["make a local piece", "meet the shared interface", "connect and extend"]}
+    highlight={1}
+    ariaLabel="A flow moves from making a local piece through meeting a shared interface to connecting and extending the system."
+  />
+</Figure>
+
+### Use and revision turn a clever artifact into an ecosystem
+
+The first version of a technology exposes its own limits. People use it in unexpected ways,
+find the awkward parts, and ask for capabilities its makers did not anticipate. Bugs, workarounds,
+and new applications become information for the next version. This is not a smooth march toward
+perfection. It is a loop in which adoption can expose both value and harm.
+
+That loop needs a wider cast than the original builders. Operators see failures under pressure.
+Users reveal what actually helps. Maintainers learn where systems become fragile. A team that
+keeps listening can make the next iteration more capable. A team that treats feedback as noise
+may protect the first design at the cost of the system's future.
+
+<Figure id="131.5" caption="Use reveals the next problem, which gives the system another chance to improve.">
+  <ProcessLoop
+    className="block w-full min-w-[380px]"
+    stages={["build", "use", "notice limits", "revise"]}
+    compoundingEdge={3}
+    centerLabel="the extension loop"
+    ariaLabel="A process loop runs from building to use, noticing limits, and revision, with revision reinforcing the next build."
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Draw the relay behind a live project">
+Take one important feature, service, or process. List the prior work it depends on, the people
+who made that work usable, and the next person who will inherit your decision. Find one handoff
+that currently relies on memory or a private conversation, then turn it into a visible artifact.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Give each contribution a named owner">
+For a new idea, separate discovery, implementation, testing, operation, and user learning.
+Ask who owns each job and who is missing from the conversation. Do not make a single person the
+owner of collaboration. Make the handoffs and decision rights explicit instead.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Write the smallest interface agreement">
+Choose two teams or components that must work together. Write what one provides, what the other
+can expect, how failures are reported, and what may change without notice. Test the agreement by
+asking a new teammate to use it without a guided tour.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Treat early use as a research program">
+Before a launch, name two observations that would tell you the design is helping and two that
+would reveal a harmful or fragile effect. Give operators and users a clear route to report both.
+Set a review date when the team will decide what to keep, revise, or retire.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Collaboration is not a guarantee of good outcomes, and a networked history should not dissolve
+individual responsibility. Specific people did make unusually important conceptual and practical
+contributions. Institutions also shaped who had access to funding, credit, training, and the
+right to be named. The point is not to replace the lone-genius myth with an equally tidy claim
+that teamwork always wins. It is to ask which contributions, dependencies, and exclusions a
+simple hero story leaves out, then design present-day work with more honest credit and stronger
+accountability.
+</Callout>
+
+## If you remember one thing
+
+Innovation becomes durable when one group makes its insight usable by another. Build the relay:
+keep the handoff clear, invite the people who make ideas real, and leave the next group a better
+place to begin.
+
+The Innovator's Dilemma studies why established organizations can miss an emerging change.
+The Fifth Discipline examines the learning habits that help teams see their own system, while
+The Lean Startup turns early use into a disciplined cycle of testing and revision.
+
+<ShelvedNearby
+  related={["innovators-dilemma", "fifth-discipline", "lean-startup"]}
+  buyUrl="https://www.simonandschuster.com/books/The-Innovators/Walter-Isaacson/9781476708706"
+  buyLabel="The Innovators by Walter Isaacson"
+/>
