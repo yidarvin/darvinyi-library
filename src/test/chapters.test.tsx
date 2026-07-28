@@ -250,6 +250,25 @@ describe("Spectrum", () => {
     }
     expect(Number(marker.getAttribute("y"))).toBe(24);
   });
+
+  it("keeps a top marker label clear of inline endpoints", () => {
+    const { container } = render(
+      <Spectrum
+        left="waiting to speak"
+        right="building a shared account"
+        marker={0.72}
+        markerLabel="reflect, then ask"
+        markerLabelPlacement="top"
+      />,
+    );
+
+    const endpoints = container.querySelector('[data-spectrum-endpoints="inline"]');
+    const marker = screen.getByText("reflect, then ask");
+
+    expect(endpoints?.textContent).toContain("building a shared account");
+    expect(Number(marker.getAttribute("y"))).toBe(24);
+    expect(endpoints?.querySelectorAll("text")[1]?.getAttribute("y")).toBe("74");
+  });
 });
 
 describe("Curve", () => {

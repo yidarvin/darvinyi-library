@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -16,3 +16,12 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-27
+
+- Set Figure 119.4's `markerLabelPlacement="top"`. The marker label `reflect, then
+  ask` now renders at the separate upper baseline, while `building a shared account`
+  remains on the inline endpoint baseline, so their SVG text boxes do not overlap at
+  phone width.
+- Added a Spectrum regression test using Figure 119.4's labels. It asserts the top
+  marker baseline (`y=24`) remains separate from the inline endpoint baseline (`y=74`).
