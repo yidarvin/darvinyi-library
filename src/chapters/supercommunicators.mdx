@@ -1,0 +1,189 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, Spectrum, Venn } from "../components/diagrams";
+
+<Hero
+  slug="supercommunicators"
+  thesis="Connection improves when you notice what a conversation needs, then answer that need before trying to move it somewhere else."
+  minutes={5}
+/>
+
+## The thesis
+
+Good conversation is less about being quick, charming, or armed with a perfect line. It is a
+form of diagnosis. Before offering a solution, comfort, or argument, work out what kind of
+exchange is underway and what the other person wants from it. A practical problem calls for
+joint reasoning. An emotional moment calls for recognition. A question about belonging calls
+for care around identity and status. Connection becomes more likely when both people are doing
+the same conversational job at the same time.
+
+## Why it matters
+
+Many frustrating exchanges are not failures of goodwill. They are crossed purposes. One person
+brings a painful story and receives a list of fixes. Another brings a decision and receives
+sympathy without a plan. A third raises a value-laden concern and hears only a technical
+counterargument. Each response may be sensible in isolation. It misses because it answers a
+different question from the one on the table.
+
+## Key ideas
+
+### Treat the conversation as a job to be understood
+
+When someone starts talking, the first useful question is not "What should I say?" It is "What
+are we trying to do here?" The answer may be to decide, to make sense of a feeling, to test
+whether a relationship is safe, or to do several of these in turn. Naming the job gives both
+people a shared target. It also removes the burden of mind-reading. You can ask directly if
+they want help thinking through options, a chance to be heard, or something else entirely.
+
+<Figure id="119.1" caption="A useful response begins by matching the job of the conversation, rather than defaulting to your favorite kind of help.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "automatic response",
+      points: ["give advice immediately", "argue the facts", "reassure on reflex", "leave the real need untested"],
+    }}
+    right={{
+      title: "matched response",
+      points: ["ask what would help", "identify the conversational job", "respond in that mode", "check that it landed"],
+    }}
+  />
+</Figure>
+
+### Three modes can coexist, but they should not compete
+
+Duhigg groups conversation around three recurring concerns: practical choices, feelings, and
+social identity. The categories are not separate rooms. A disagreement about a schedule can
+also carry disappointment and a question of respect. The trouble begins when one mode crowds
+out the others without being named. If the facts are settled but someone still feels unheard,
+more facts will not repair the exchange. If a real decision is waiting, empathy alone may leave
+both people stuck. The move is to notice the active mode and make a deliberate shift together.
+
+<Figure id="119.2" caption="Practical, emotional, and social concerns often overlap; alignment is knowing which one needs attention now.">
+  <Venn
+    className="block w-full min-w-[440px]"
+    sets={[{ label: "what should we do?" }, { label: "how is this landing?" }, { label: "who are we to each other?" }]}
+    intersectionLabel="a conversation to align"
+  />
+</Figure>
+
+### Make the purpose discussable before debating the answer
+
+An exchange becomes easier to steer when people state what they hope will happen. A colleague
+might say, "I need us to choose a path today." A friend might say, "I do not need a solution
+yet." That small declaration changes the listener's task. It also gives the listener a fair
+way to disagree with the framing: perhaps a decision does need to wait until an emotion or a
+relationship concern is acknowledged. Purpose is not a contract. It is a starting hypothesis
+that can be corrected in public.
+
+<Figure id="119.3" caption="State the hoped-for purpose, test it together, then choose the kind of response that fits.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["notice the tension", "name what you need", "ask what they need", "agree on the next mode"]}
+    highlight={3}
+  />
+</Figure>
+
+### Listening needs visible evidence
+
+Silent attention can be generous, but it is often ambiguous. The other person cannot know
+which part you understood, what you inferred, or whether you are merely waiting to reply.
+Show your work: summarize the concern in plain language, ask a question that follows from
+their answer, and leave room to be corrected. This is not imitation or a trick for winning
+trust. It is a way of giving the speaker control over the shared account. A correction is
+evidence that the conversation is becoming more accurate.
+
+<Figure id="119.4" caption="Listening becomes credible when a summary can be corrected and the next question follows the speaker's meaning.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="waiting to speak"
+    right="building a shared account"
+    marker={0.72}
+    markerLabel="reflect, then ask"
+    zones={[
+      { from: 0, to: 0.34, label: "prepare your reply" },
+      { from: 0.6, to: 1, label: "make understanding checkable", accent: true },
+    ]}
+  />
+</Figure>
+
+### Identity concerns need room, not a quick correction
+
+Some disagreements are partly about belonging, dignity, culture, status, or the kind of person
+someone believes themselves to be. That does not make the factual question irrelevant. It does
+mean a correction may be heard as exclusion or contempt if the identity stake stays invisible.
+Ask what the issue represents, acknowledge any real value you share, and distinguish a person
+from the claim under discussion. Shared ground must be genuine. Invented similarity is easy to
+spot and makes the distance worse.
+
+<Figure id="119.5" caption="A difficult exchange can move toward understanding when identity, values, and the disputed claim all have a place in the conversation.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "claim", label: "the disputed claim", x: 0.5, y: 0.5 },
+      { id: "identity", label: "identity and status", x: 0.15, y: 0.22 },
+      { id: "values", label: "values at stake", x: 0.85, y: 0.22 },
+      { id: "experience", label: "lived experience", x: 0.15, y: 0.8 },
+      { id: "shared", label: "genuine shared ground", x: 0.85, y: 0.8 },
+    ]}
+    edges={[
+      { from: "identity", to: "claim" },
+      { from: "values", to: "claim" },
+      { from: "experience", to: "claim" },
+      { from: "shared", to: "claim", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Open with the kind of help you need">
+Before a conversation that matters, decide which request you are making. Try a sentence such as,
+"I need help choosing," "I need to say this out loud," or "I want to understand why this has
+become so charged." Asking for a mode is clearer than hoping the other person guesses it.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Ask the matching question">
+When someone brings you a problem, pause before you advise. Ask, "Would you like to think
+through options, or would it help to be heard first?" If the answer is unclear, offer a brief
+summary of what you heard and let them set the direction.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Reflect one layer deeper">
+In a tense discussion, name both the stated topic and one possible layer beneath it: "We are
+deciding about the deadline, and it sounds as though reliability is part of what worries you."
+Make it a question, not a verdict. The other person gets to revise your reading.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="End with an alignment check">
+Before leaving an important exchange, ask what each person is taking away and what happens
+next. If your summaries differ, do not paper over it with a pleasant ending. Return to the
+point of mismatch while there is still time to correct it.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The three modes are an orientation, not a way to classify people or solve every conflict with a
+single question. People may not want to disclose feelings or identity concerns, and they may
+have good reasons for caution. Power also changes the cost of speaking openly. Listening skills
+cannot make a coercive relationship safe, excuse a harmful action, or substitute for a boundary.
+Use them where both people can participate with enough freedom to correct the conversation.
+</Callout>
+
+## If you remember one thing
+
+Before you offer advice, comfort, or a rebuttal, find out what kind of conversation is needed.
+The response that fits the moment gives understanding a place to begin.
+
+How to Win Friends and Influence People focuses on respectful attention in everyday exchanges,
+while Crucial Conversations shows how candor and safety can coexist when the stakes rise.
+
+<ShelvedNearby
+  related={["how-to-win-friends", "crucial-conversations"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/675447/supercommunicators-by-charles-duhigg/"
+  buyLabel="Supercommunicators by Charles Duhigg"
+/>
