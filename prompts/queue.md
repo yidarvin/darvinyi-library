@@ -132,7 +132,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 115 | originals                       | Originals                                     | DONE    |
 | 116 | radical-candor                  | Radical Candor                                | DONE    |
 | 117 | culture-code                    | The Culture Code                              | DONE    |
-| 118 | talking-to-strangers            | Talking to Strangers                          | PENDING |
+| 118 | talking-to-strangers            | Talking to Strangers                          | DONE    |
 | 119 | supercommunicators              | Supercommunicators                            | PENDING |
 | 120 | attached                        | Attached                                      | PENDING |
 | 121 | getting-past-no                 | Getting Past No                               | PENDING |

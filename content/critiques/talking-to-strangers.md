@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -82,3 +82,21 @@ evidence cell says to look again. Figure 118.4 now uses the shorter neutral rela
 "sets next pressure" and moves it above the horizontal edge with a vertical label offset, so the
 entire label clears both endpoint cards at phone width. `npm run check` passed; the chapter
 remains draft and no status transition was made.
+
+## Critique round 4 — 2026-07-27
+
+### Required
+
+None. The matrix cells now match their evidence-and-stakes coordinates, and the node-graph
+feedback label clears the surrounding cards. The chapter's claims remain within the brief and
+recorded evidence, the five key ideas each have a legible in-vocabulary figure, and the fixed
+anatomy is complete with the deliberately omitted signature-model section documented in the
+registry.
+
+### Advisory
+
+None. `npm run check` passed on 2026-07-27: queue and registry validation, prose lint,
+42 pipeline tests, 251 application tests, typecheck, production build, and lint were all green.
+The repeated `Window.scrollTo()` messages during Vitest were non-failing environment warnings.
+The server-rendered page contains 1,252 visible words, which correctly rounds up to the displayed
+7-minute reading time at 200 words per minute.
