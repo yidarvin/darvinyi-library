@@ -204,9 +204,9 @@ end of responsibility.
         { from: "spec", to: "system" },
         { from: "system", to: "effects" },
         { from: "effects", to: "eval", label: "evidence", labelOffset: { x: -45, y: 10 } },
-        { from: "eval", to: "spec", label: "revises", labelOffset: { y: 15 } },
+        { from: "eval", to: "spec", label: "revises", labelOffset: { x: -15, y: -55 } },
         { from: "effects", to: "limits", label: "revises limits", labelOffset: { x: 44, y: 4 } },
-        { from: "limits", to: "system", label: "bounds access", labelOffset: { x: -10, y: 15 } },
+        { from: "limits", to: "system", label: "bounds access", labelOffset: { x: -35, y: 40 } },
       ]}
       ariaLabel="A control model maps human purpose to a specified objective, a capable system, and world effects. Effects provide evidence to evaluation, which revises the objective, and effects also revise deployment limits that bound the system's access."
     />

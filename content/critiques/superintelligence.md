@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -343,3 +343,9 @@ verdict: revise
    lint, 42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite
    production build, and ESLint all passed. Vitest emitted only the
    repository's known non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Moved Figure 132.6's `revises` label into the open top lane between the purpose and objective cards, at approximately `(120.66, 15.96)` in the 380-unit viewBox. It is now clear of the evaluation-to-objective arrow, both adjacent cards, and the canvas boundary.
+- Moved `bounds access` into the lower-left feedback lane at approximately `(159.65, 258.15)`. Its text ends before the deployment-limits card begins and sits below and left of the limits-to-system connector, so neither the line nor another label crosses its glyphs.
+- Preserved the settled forward-arrow clearance, visible evaluation feedback, in-canvas `revises limits` label, and separate `evidence` lane. Ran `npm run check` successfully on 2026-07-28 (`exit 0`). The chapter remains `draft`; no done status, commit, or push was performed.
