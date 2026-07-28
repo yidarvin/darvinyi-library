@@ -1,0 +1,172 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="talk-to-someone"
+  thesis="Therapy changes a life less by supplying the right answer than by making an old story, a familiar pattern, and a next choice visible enough to work with."
+  minutes={6}
+/>
+
+## The thesis
+
+*Maybe You Should Talk to Someone* uses a therapist's view from both sides of the room to make
+therapy less mysterious. A person arrives with a problem and a persuasive account of why it cannot
+change. In the company of someone who can listen without being swept into that account, the problem
+becomes more detailed: a loss is allowed to hurt, a recurring pattern acquires a history, and a choice
+that seemed impossible becomes discussable. The book's humane claim is that insight and change are
+ordinary work, not a special property of patients or therapists.
+
+## Why it matters
+
+Most people know the broad instruction to "talk to someone". The difficult questions are what the
+talk is for, why a friend cannot always do the same job, and why seeing a pattern does not make it
+disappear on command. Gottlieb puts the therapist in the patient chair as well as the clinician chair.
+That reversal refuses the comforting fantasy that the helper has escaped the same fears of loss,
+belonging, illness, and uncertainty that bring everyone else through the door.
+
+## Key ideas
+
+### A life story can be true and still be incomplete
+
+People do not invent their pain. They do, however, arrange the facts of a life into a story from one
+position, often the position that has become most familiar. The story can emphasize injury, minimize
+one's own influence, or make an old conclusion sound like a law of nature. Therapy creates enough
+distance to ask what the story leaves out. A better account does not turn a bad event into a good one.
+It makes room for context, other people, and the present tense, where new evidence can still arrive.
+
+<Figure id="123.1" caption="The complaint is visible first; the history, fear, and interpretation beneath it shape what it means.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the problem I can name"
+    waterlineLabel="the account that arrives in the room"
+    below={["a feared outcome", "an old conclusion about myself", "details and choices left outside the story"]}
+  />
+</Figure>
+
+### The relationship is part of the work
+
+A therapist is not a vending machine for advice. The protected relationship matters because it lets a
+person bring shame, anger, dependency, envy, or grief into contact with another mind and find that the
+contact can hold. The therapist may notice a dodge, challenge a familiar explanation, or sit quietly
+with what cannot yet be fixed. Trust is not decorative around this work. It is what makes an honest
+experiment possible, including the experiment of disagreeing, asking for more, or returning after a
+hard session.
+
+<Figure id="123.2" caption="Advice tries to settle a problem; a therapeutic relationship helps a person examine how the problem is being lived.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "advice alone",
+      points: ["offers an answer", "can relieve uncertainty quickly", "leaves the old pattern intact"],
+    }}
+    right={{
+      title: "a working alliance",
+      points: ["builds trust over time", "makes patterns observable", "supports a new response in contact"],
+    }}
+  />
+</Figure>
+
+### Familiar pain can masquerade as a choice
+
+An old pattern often survives because it offers something immediate: a predictable role, a way to avoid
+rejection, a chance to replay a loss with different hopes, or relief from the risk of the unfamiliar.
+That does not make a person foolish or secretly committed to suffering. It means the pattern has a job.
+Once that job is visible, the question becomes more useful than self-blame: what does this move protect,
+and what does it cost? Change begins when the familiar answer stops being the only available answer.
+
+<Figure id="123.3" caption="A familiar response can reduce fear now while rebuilding the conditions that make it necessary later.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["a threat feels familiar", "the old protection appears", "brief relief arrives", "the old problem returns"]}
+    compoundingEdge={3}
+    centerLabel="the familiar loop"
+  />
+</Figure>
+
+### Change includes a loss, even when it is wanted
+
+People can want a different life and still resist the steps toward it. The old arrangement may be
+painful, but it is known. A boundary can threaten an identity built around pleasing. A breakup can end
+loneliness in one form while creating it in another. A healthier role can require letting go of the
+story that once explained everything. Progress therefore feels less like a clean ascent than a period of
+uncertainty in which a new way of living has not yet become familiar. Relapse or hesitation is
+information about that transition, not automatic proof of failure.
+
+<Figure id="123.4" caption="The passage from a known pattern to a better fit runs through a stretch where neither one feels secure yet.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="known, even if painful"
+    right="new, not yet familiar"
+    marker={0.5}
+    markerLabel="the uneasy middle"
+    zones={[
+      { from: 0.0, to: 0.3, label: "predictable role" },
+      { from: 0.38, to: 0.62, label: "grief and uncertainty", accent: true },
+      { from: 0.7, to: 1.0, label: "new practice" },
+    ]}
+  />
+</Figure>
+
+### Agency grows in the part you can change
+
+Therapy does not ask a person to deny what another person did, or to accept responsibility for another
+person's cruelty. It does ask what part of a recurring dynamic belongs to the person seeking help:
+where they go silent, whom they choose, what they tolerate, how they ask, and what they do after an
+answer. That question can feel exposing because it trades a simple villain-and-victim story for a more
+complicated one. It also restores a place to act. One changed step does not control the other person,
+but it can change the next conversation, boundary, or decision.
+
+<Figure id="123.5" caption="A relationship has two participants, but agency starts with the next move you can make and observe.">
+  <Flow
+    className="block w-full min-w-[440px]"
+    steps={["notice the pattern", "name my part", "try one different move", "observe the response"]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Write the story, then write its omissions">
+Describe one stuck situation in a paragraph, as you would tell it to a close friend. Then list three
+things the paragraph did not include: a fact you are unsure about, another person's possible point of
+view, and one choice you have made more than once. The goal is not to blame yourself. It is to find the
+parts of the situation that deserve a closer look.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Ask what the pattern is protecting">
+When you repeat a move that frustrates you, pause before calling it irrational. Ask what it gives you
+in the next ten minutes: distance from shame, a feeling of control, protection from rejection, or a role
+you know how to occupy. Write down the short-term benefit and the longer cost. A pattern becomes easier
+to revise once its purpose is named.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make one request without a verdict">
+Choose a relationship that is safe enough for direct conversation. State an observation, the effect on
+you, and one concrete request: "When plans change without a message, I start guessing. Could you text
+me when you know you will be late?" Leave room for an honest answer. A request is clearer than a test.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Treat the first change as practice">
+Pick a small new response that you can repeat this week: pause before a familiar text, take a walk after
+an argument, attend the appointment you want to avoid, or say no once without a long defense. Record
+what you felt before and after. The point is not instant comfort. It is evidence about whether a new move
+is possible.
+</ExerciseCard>
+
+## If you remember one thing
+
+The story that explains why you are stuck may also be hiding the next place you can act. Tell it
+carefully, look for what it protects and omits, and let a trustworthy conversation help you try a more
+honest next move.
+
+Feeling Good offers a practical way to test the thoughts inside a painful story. Attached traces how
+old expectations can organize closeness, while Supercommunicators helps turn a difficult insight into a
+conversation that another person can hear.
+
+<ShelvedNearby
+  related={["feeling-good", "attached", "supercommunicators"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/545191/maybe-you-should-talk-to-someone-by-lori-gottlieb/"
+  buyLabel="Maybe You Should Talk to Someone by Lori Gottlieb"
+/>
