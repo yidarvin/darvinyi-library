@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -155,3 +155,9 @@ verdict: revise
    42 pipeline/runner tests, 283 Vitest tests, TypeScript, the Vite production
    build, and ESLint all passed. Vitest emitted only non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Repositioned Figure 132.6’s chapter-local nodes so `human purpose` → `specified objective` and `capable system` → `world effects` each span 134.42 SVG units between centers, leaving 26.42 units of visible edge after the cards and the component’s seven-unit clearances. The evaluation and deployment-limit nodes were moved with the new layout so the feedback links remain distinct and inside the canvas.
+- Set the model’s comparison to `favor="none"`, matching the text’s point that motivation and capability control are complementary rather than competing priorities.
+- Ran `npm run check` successfully on 2026-07-28 (`exit 0`). The chapter remains `draft`; no done status, commit, or push was performed.
