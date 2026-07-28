@@ -5,7 +5,7 @@ import { Compare, Flow, NodeGraph, ProcessLoop, Timeline } from "../components/d
 <Hero
   slug="the-innovators"
   thesis="The digital revolution came from people who connected ideas, tools, and institutions across generations, then made their work usable by the next group."
-  minutes={9}
+  minutes={7}
 />
 
 ## The thesis
@@ -30,10 +30,10 @@ who gets to be the visionary. It is what connections would let the next good ide
 ### A breakthrough is usually a relay, not a finish line
 
 Digital history moves through handoffs. Early work on programmable machines made computation
-thinkable before the machines existed. Electronic switching made computation faster and more
-reliable. Smaller components made it cheap enough to spread. Networks let distant machines and
-people exchange work. None of those moves made the later ones inevitable, but each gave the
-next group a more useful starting point.
+thinkable before a complete working general-purpose machine existed. Electronic components came
+out of collaborative material work. Integrating components made new forms of computing
+practical. Networks let distant machines and people exchange work. None of those moves made the
+later ones inevitable, but each gave the next group a more useful starting point.
 
 Treating the relay as the unit of progress changes what deserves attention. A lab notebook,
 prototype, tool, or specification can matter even when it is not a finished product. The right
@@ -44,11 +44,12 @@ question is often: what has this work made easier for the person who comes next?
     className="block w-full min-w-[400px]"
     segments={[
       { label: "programmable ideas", sub: "instructions become explicit" },
-      { label: "electronic machines", sub: "logic gains speed and scale" },
+      { label: "electronic components", sub: "collaborative material work" },
+      { label: "integrated circuits", sub: "new forms become practical" },
       { label: "networked systems", sub: "work can travel between machines" },
     ]}
-    highlight={2}
-    ariaLabel="A conceptual timeline moves from programmable ideas to electronic machines to networked systems, showing that each stage gave the next a more useful starting point."
+    highlight={3}
+    ariaLabel="A conceptual timeline moves from programmable ideas through electronic components and integrated circuits to networked systems, showing handoffs that made the next stage possible."
   />
 </Figure>
 
@@ -90,30 +91,32 @@ with the world.
 
 ### The boundary between hardware and software is a source of possibility
 
-One of the great conceptual shifts was to treat instructions as something a machine could
-store, change, and execute, rather than as a permanent feature of its wiring. That separation
-turned a calculating device into a general-purpose tool. It also created a productive division
-of labor: hardware teams could improve a machine while programmers explored what the machine
-could do.
+One important conceptual shift was to treat a task's instructions as separate from the machinery
+that carries them out, rather than as a permanent feature of its wiring. That makes a machine
+programmable: a new task can use a new instruction set without a redesign. A programmable
+machine can receive instructions from an external medium or keep them in memory. Whether and
+where instructions are stored is a separate architectural choice, not the condition that makes
+the machine programmable. This distinction also created a productive division of labor: hardware
+teams could improve a machine while programmers explored what the machine could do.
 
 The distinction still matters whenever a team is deciding what to fix and what to keep
 adaptable. Put stable, expensive-to-change capabilities in the base. Keep the rules that will
 need frequent revision visible and editable. The goal is not to maximize abstraction. It is to
 preserve room for learning without making the foundation unreliable.
 
-<Figure id="131.3" caption="A stable machine and changeable instructions let one foundation serve many purposes.">
+<Figure id="131.3" caption="Changeable instructions make a machine programmable; their storage location is a separate design choice.">
   <Compare
     className="block w-full min-w-[384px]"
     favor="right"
     left={{
-      title: "fixed-purpose machine",
-      points: ["behavior is built into the apparatus", "a new task demands a redesign", "improvement is tied to one use"],
+      title: "fixed-purpose apparatus",
+      points: ["behavior is built into the apparatus", "a new task demands a redesign", "instructions are not separate"],
     }}
     right={{
-      title: "programmable foundation",
-      points: ["instructions can be changed", "one machine can serve new tasks", "hardware and software can improve separately"],
+      title: "programmable machine",
+      points: ["instructions can be changed", "they can arrive externally or reside in memory", "one machine can serve new tasks"],
     }}
-    ariaLabel="A comparison contrasts a fixed-purpose machine with a programmable foundation, which keeps instructions changeable and lets hardware and software improve separately."
+    ariaLabel="A comparison contrasts a fixed-purpose apparatus with a programmable machine, whose changeable instructions may arrive externally or reside in memory."
   />
 </Figure>
 

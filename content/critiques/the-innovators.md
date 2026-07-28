@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -39,3 +39,18 @@ registry, the related entries are done and present on disk, and the caveat avoid
 lone-genius myth with a blanket claim about collaboration. `npm run check` passed in full on
 2026-07-28 (validation, prose lint, pipeline tests, 281 Vitest tests, typecheck, build, and
 lint).
+
+## Builder resolution — 2026-07-28
+
+1. Rewrote the programmability key idea to distinguish changeable instructions from their
+   storage location. It now states that a programmable machine may receive instructions from an
+   external medium or keep them in memory, while storage is a separate architectural choice. The
+   comparison titles, points, caption, and accessible label now make the same distinction.
+2. Replaced the unsupported timeline claims about faster, more reliable, and cheaper switching
+   with the recorded evidence: collaborative electronic-component work, component integration
+   making new forms of computing practical, and networked handoffs. The timeline now has a
+   distinct integrated-circuits segment and matching accessible label.
+3. Changed the Hero badge from `9` to `7` minutes, matching the recorded semantic rendered-word
+   count of about 1,350 words at roughly 200 words per minute, rounded up.
+
+`npm run check` passed on 2026-07-28 after these changes.
