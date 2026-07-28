@@ -2708,7 +2708,17 @@
       "subtitle": "Benjamin Hoff · 1982",
       "part": "Philosophy & Wisdom",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "A useful kind of wisdom starts before cleverness: meet what is happening plainly, stop adding force for show, and let a modest action fit the situation.",
+      "framework": "No single signature framework; the Model section is intentionally omitted in favor of five key-idea diagrams about naturalness, fitting action, sufficiency, grounded thought, and practiced ease.",
+      "diagrams": [
+        "concentric circles",
+        "flow",
+        "spectrum",
+        "comparison",
+        "venn"
+      ]
     },
     {
       "num": 138,
