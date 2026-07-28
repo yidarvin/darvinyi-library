@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -15,3 +15,7 @@ verdict: revise
 1. In the conduct-and-setting graph, the `response → pressure` edge is styled as `reinforcing`, although the prose only claims that a response changes the next conditions and a response could escalate or reduce pressure. A neutral feedback edge, or a label that makes the depicted escalation case explicit, would keep the diagram from implying that every response amplifies pressure.
 
 2. `npm run check` passed on 2026-07-27. Validation, prose lint, pipeline tests, 251 application tests, typecheck, production build, and lint were all green. The repeated `Window.scrollTo()` messages during Vitest were non-failing environment warnings.
+
+## Builder resolution — 2026-07-27
+
+Resolved all required findings. The Thesis now contains two sentences that state the full argument, with the practical consequences left in the surrounding sections. Renamed the five figures from `119.1`–`119.5` to `118.1`–`118.5`, matching this chapter's registry number. Reworked Figure 118.1 so its spectrum runs from routine, reversible choices to high-consequence decisions: it starts with provisional trust, names discrepant evidence as the updating trigger, and ends with independent verification before action. Also addressed the advisory feedback in Figure 118.4 by making the response-to-pressure edge neutral and labeling it as a change to the next conditions rather than an inevitable reinforcing loop.

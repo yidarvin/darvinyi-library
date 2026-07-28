@@ -10,12 +10,9 @@ import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagr
 
 ## The thesis
 
-We meet strangers with a small, unreliable set of signals: a face, a voice, a story, a few
-actions under conditions we may not understand. Gladwell's argument is that we routinely turn
-that narrow sample into a confident explanation. We tend to take people at their word until
-something forces doubt, assume their inner state is legible from the outside, and forget how
-much a setting can change conduct. In ordinary life those shortcuts make social life possible.
-In a consequential encounter, they can make us dangerously sure of a story we have not earned.
+We are poorly equipped to read people we do not know: visible behavior and plausible stories
+can conceal more than they reveal. Sound judgment starts with provisional trust, then uses
+context, corroboration, and safeguards proportionate to the stakes.
 
 ## Why it matters
 
@@ -35,18 +32,18 @@ a command to ignore warnings. It is the efficient starting point that makes coop
 The risk comes when the setting calls for verification but a familiar, coherent story lets doubt
 feel unnecessary.
 
-<Figure id="119.1" caption="Ordinary conversation begins with provisional trust; higher stakes call for more independent checking.">
+<Figure id="118.1" caption="Begin with provisional trust in a routine encounter, then verify independently when evidence conflicts or stakes rise.">
   <Spectrum
     className="block w-full min-w-[440px]"
-    left="treat every claim as hostile"
-    right="accept without checking"
-    marker={0.54}
-    markerLabel="ordinary trust"
+    left="routine, reversible choice"
+    right="high-consequence decision"
+    marker={0.18}
+    markerLabel="start: provisional trust"
     markerLabelPlacement="top"
     zones={[
-      { from: 0.0, to: 0.28, label: "social life becomes costly" },
-      { from: 0.41, to: 0.66, label: "trust, then update", accent: true },
-      { from: 0.76, to: 1.0, label: "vulnerability to a polished story" },
+      { from: 0.0, to: 0.32, label: "trust, then stay open to revision" },
+      { from: 0.36, to: 0.64, label: "new discrepancy or evidence" },
+      { from: 0.68, to: 1.0, label: "verify independently before acting", accent: true },
     ]}
   />
 </Figure>
@@ -60,7 +57,7 @@ one visible cue rarely identifies its cause. Research on the [illusion of transp
 also finds that people commonly overestimate how clearly their own internal state is visible to
 others. Reading a face as a complete report invites an error in both directions.
 
-<Figure id="119.2" caption="A visible demeanor is a small signal above a much larger field of possible causes.">
+<Figure id="118.2" caption="A visible demeanor is a small signal above a much larger field of possible causes.">
   <Iceberg
     className="block w-full min-w-[440px]"
     above="a visible demeanor"
@@ -77,7 +74,7 @@ from anxiety, cultural habit, trauma, disability, unfamiliarity, or deception. A
 keeps the observation separate from the interpretation. “They paused before answering” is a fact
 to investigate. “They are hiding something” is one explanation among several.
 
-<Figure id="119.3" caption="Observing a behavior and explaining it are separate jobs, especially when the cost of error is high.">
+<Figure id="118.3" caption="Observing a behavior and explaining it are separate jobs, especially when the cost of error is high.">
   <Compare
     className="block w-full min-w-[440px]"
     favor="right"
@@ -101,7 +98,7 @@ people's expectations. These factors meet in behavior. That is why an encounter 
 cannot be understood by asking only what sort of person they are. Ask what the situation asked
 of them, what options it left open, and what each side could actually see.
 
-<Figure id="119.4" caption="Behavior emerges from a person and a setting acting on each other, then shapes the next response.">
+<Figure id="118.4" caption="Behavior emerges from a person and a setting acting on each other, then shapes the next response.">
   <NodeGraph
     className="block w-full min-w-[440px]"
     nodes={[
@@ -116,7 +113,7 @@ of them, what options it left open, and what each side could actually see.
       { from: "setting", to: "behavior" },
       { from: "pressure", to: "behavior" },
       { from: "behavior", to: "response" },
-      { from: "response", to: "pressure", kind: "reinforcing", label: "changes the room" },
+      { from: "response", to: "pressure", label: "changes next conditions" },
     ]}
   />
 </Figure>
@@ -129,7 +126,7 @@ source, a record, more time, or another person's view. Then scale the response t
 what remains uncertain, and how hard the decision will be to undo. This is slower than a quick
 read, but it is a better use of effort than trying to become a human lie detector.
 
-<Figure id="119.5" caption="A consequential judgment earns a second pass from observation through proportionate action.">
+<Figure id="118.5" caption="A consequential judgment earns a second pass from observation through proportionate action.">
   <Flow
     className="block w-full min-w-[520px]"
     steps={["name the observable facts", "separate inference", "seek context or corroboration", "choose a proportionate next step"]}
