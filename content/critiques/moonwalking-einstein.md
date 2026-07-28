@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -15,3 +15,16 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-28
+
+- Set the Hero badge to `minutes={7}` after a rendered-text recount of 1,373 visible
+  alphanumeric words, including component-generated labels, headings, captions, diagram text,
+  and exercise titles. At approximately 200 words per minute, the value rounds up to seven.
+- Rewrote the Model definition around familiar, stable, ordered locations and image cues. The
+  six-stop route now appears only as a beginner-friendly exercise size, explicitly not a limit
+  of the method.
+- Changed Figure 140.6's caption to describe the directed, fixed-order path the NodeGraph
+  actually renders. It no longer claims reverse traversal.
+- Narrowed the fifth key idea from unsupported prebuilt coding systems to the recorded evidence:
+  structured loci practice, distinctive scenes, ordered recall, review, and repair.
