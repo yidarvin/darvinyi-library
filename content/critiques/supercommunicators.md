@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -76,3 +76,27 @@ None.
 - Preserved the round 1 Spectrum correction and its regression test: `reflect, then
   ask` remains on the upper baseline at `y=24`, separate from the inline endpoint at
   `y=74`.
+
+## Critique round 3 — 2026-07-27
+
+### Required
+
+None. The round 1 Spectrum collision remains fixed, and the round 2 reading-time
+and NodeGraph findings are resolved in the current draft. The thesis and five
+key-idea diagrams match the brief; the deliberate absence of a Model section is
+recorded in the registry; the exercises are concrete; and the scope caveat covers
+power, coercion, disclosure, and boundaries. The recorded evidence supports the
+three practical, emotional, and social conversation modes and the learning-
+conversation practices used here. No external search was started.
+
+`npm run check` passed on 2026-07-27, including validation, prose lint, 40 pipeline
+tests, 254 application tests, typecheck, the production build, and ESLint. The
+repeated jsdom `Window.scrollTo()` notices were non-failing environment messages.
+The five SVGs use registered primitives, preserve readable internal geometry, and
+use horizontal overflow with explicit minimum widths at phone size. An in-browser
+visual pass could not be added because no browser backend was available in this
+session.
+
+### Advisory
+
+None.
