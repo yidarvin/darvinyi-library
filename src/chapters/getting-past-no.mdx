@@ -1,0 +1,199 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="getting-past-no"
+  thesis="When a hard no arrives with pressure or hostility, do not meet it head-on. Steady your response, understand what is holding the other side in place, and make a workable agreement easier to choose."
+  minutes={8}
+/>
+
+## The thesis
+
+William Ury's answer to a difficult negotiator is neither surrender nor a harder counterattack.
+It is a change in the shape of the conversation. Interrupt the reflex to react, hear the
+concern behind the resistance, move the discussion from clashing demands to a problem both
+sides can inspect, and offer a route toward agreement that lets the other person retain
+dignity. If pressure remains necessary, use it to clarify the consequences of no deal, not
+to punish or humiliate.
+
+## Why it matters
+
+Difficult negotiations rarely stay difficult because the parties lack a number or a clever
+argument. A threat triggers a threat back. A fixed demand turns into a contest of wills.
+Each response makes the next response feel more justified, until a solvable question has
+been buried under anger, fear, and pride. Ury focuses on the moment before that spiral
+becomes the whole meeting. The person who can change their own next move has a chance to
+change the exchange.
+
+## Put a pause between pressure and your reply
+
+An outrageous offer, insult, or threat asks for an immediate reaction. Taking that invitation
+usually gives the other side the kind of contest they expected. The first discipline is to
+create a little distance: breathe, take a break, ask for time to consider the proposal, or
+say less than your adrenaline wants to say. From that distance, separate the fact of what
+happened from the story you are telling about it. What outcome matters? What are your limits?
+What choice do you have if there is no deal? A pause does not make the behavior acceptable.
+It keeps the behavior from choosing your response for you.
+
+<Figure id="121.1" caption="A pause turns a provocation into information you can assess.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="instant reaction"
+    right="chosen response"
+    marker={0.55}
+    markerLabel="create distance"
+    zones={[
+      { from: 0, to: 0.34, label: "anger sets the agenda" },
+      { from: 0.66, to: 1, label: "interests and limits guide the reply", accent: true },
+    ]}
+  />
+</Figure>
+
+## Meet resistance with curiosity, not a counterclaim
+
+The other side may arrive angry, defensive, or committed to a position that makes no sense
+to you. Arguing against their view before they feel heard often turns your evidence into one
+more thing to resist. Start by listening for the practical concern and the emotional stake.
+Ask a question that invites detail. State their concern in neutral language, then let them
+correct it. This is not agreement with their account, and it does not require you to conceal
+your own interests. It lowers the temperature enough for the conversation to contain more
+than two competing speeches.
+
+<Figure id="121.2" caption="Understanding a concern creates an opening; disputing it immediately often seals it shut.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "counter the claim",
+      points: ["answer the accusation", "argue over whose view is right", "invite a defense", "lose the underlying concern"],
+    }}
+    right={{
+      title: "make room to explain",
+      points: ["ask for the concern", "reflect it provisionally", "listen for constraints", "keep your own limit visible"],
+    }}
+  />
+</Figure>
+
+## Treat the stated no as the surface, not the whole problem
+
+No is often a position, not an explanation. A manager's refusal may protect a budget,
+a schedule, or a promise made elsewhere. A client's attack on price may carry anxiety about
+risk or a need to look responsible to colleagues. You cannot assume which concern is present,
+but you can look for it. Shift from defending your proposal to examining the obstacle: what
+would a workable answer have to accomplish, avoid, or prove? The question turns the meeting
+away from whether your first answer wins and toward what a better answer must include.
+
+<Figure id="121.3" caption="A flat refusal can conceal the constraints, fears, and obligations a solution must address.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="a firm no"
+    waterlineLabel="the stated position"
+    below={["practical constraint", "fear of loss or blame", "need to protect status"]}
+  />
+</Figure>
+
+## Design a path the other side can carry home
+
+Even a proposal that serves both sides can fail if accepting it looks like defeat. The other
+person may have committed publicly to a different course, need to answer to a boss, or fear
+that a concession will invite more demands. Make the agreement something they can own. Ask
+what a successful outcome would let them say to the people who matter to them. Invite their
+ideas, offer real choices where choices exist, and shape the final arrangement around the
+interests you uncovered. The aim is sometimes called a golden bridge: not a concession made
+to buy peace, but a credible way to advance without losing face.
+
+<Figure id="121.4" caption="An agreement travels farther when the other side can explain it as progress, not retreat.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["name their constraint", "ask for their ideas", "offer workable choices", "shape an owned agreement"]}
+    highlight={3}
+  />
+</Figure>
+
+## Let consequences teach what pressure cannot
+
+Sometimes listening and redesign are not enough. The other side may keep delaying, bluffing,
+or expect that you will accept any terms to avoid conflict. Ury's answer is not to escalate
+for its own sake. Prepare a real alternative, make the consequences of no agreement clear,
+and leave the decision with them. A credible alternative gives your boundary weight because
+it is something you can actually do. The invitation remains open: here is the agreement we
+can support, here is what happens if we cannot reach it, and here is the choice. That is
+different from a threat whose only purpose is to make the other person smaller.
+
+<Figure id="121.5" caption="A firm boundary works through credible choices, not an escalating contest of force.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "limit", label: "your real limit", x: 0.13, y: 0.22 },
+      { id: "alternative", label: "credible alternative", x: 0.17, y: 0.74 },
+      { id: "terms", label: "workable terms", x: 0.81, y: 0.22 },
+      { id: "choice", label: "their informed choice", x: 0.76, y: 0.74 },
+      { id: "clarity", label: "clear consequences", x: 0.5, y: 0.48 },
+    ]}
+    edges={[
+      { from: "limit", to: "clarity", label: "defines" },
+      { from: "alternative", to: "clarity", label: "supports" },
+      { from: "terms", to: "choice", label: "offers" },
+      { from: "clarity", to: "choice", label: "informs", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Prepare a pressure pause">
+Before a hard conversation, choose one sentence you can use to slow the moment down: “I
+want to think about that carefully,” or “Let me make sure I understand before I answer.”
+Also name your three anchors on paper: the outcome you want, the limit you cannot cross,
+and the next best option if agreement fails. Use the sentence when the temperature rises.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Turn one demand into three questions">
+Write the demand you expect to hear. Then prepare three questions: What makes that necessary?
+What problem would it solve for you? What would make another arrangement workable? Do not
+use the questions as a cross-examination. Their job is to test your assumptions and uncover
+conditions a better proposal could meet.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Draft their explanation of yes">
+Imagine the other person has accepted an agreement and must explain it to their manager,
+team, family, or future self. Write the three reasons they could give for calling it a good
+decision. If you cannot write them honestly, the proposal may still ask them to lose face.
+Revise the arrangement, or accept that the interests may not yet fit.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make your boundary executable">
+Do not announce a consequence you cannot carry out. Identify the alternative you would take,
+the authority or preparation it needs, and the date on which you would take it. Then state
+the choice without theatrics: these are the terms I can support; without them, I will take
+this other path.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+This approach should not be read as an obligation to keep negotiating with anyone who is
+abusive, coercive, or unsafe. Calm listening cannot repair a severe power imbalance, make a
+bad-faith party cooperative, or replace legal protections. A golden bridge is also not a
+disguise for manipulation: the option offered must genuinely meet the other side's interests,
+and they must be free to decline. In some situations the right use of power is to leave,
+document what happened, involve a neutral third party, or seek outside support.
+</Callout>
+
+## If you remember one thing
+
+When someone makes negotiation difficult, do not let their pressure dictate the shape of your
+reply. Create enough distance to see the real problem, then make cooperation a choice they can
+take without surrendering dignity, while keeping your own boundary real.
+
+Getting to Yes provides the interest-and-alternative foundation beneath this method. Never
+Split the Difference offers a listening-first set of moves for tense exchanges, while
+Nonviolent Communication shares its concern for separating a person's dignity from the
+problem that needs solving.
+
+<ShelvedNearby
+  related={["getting-to-yes", "never-split-the-difference", "nonviolent-communication"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/182088/getting-past-no-by-william-ury/"
+  buyLabel="Getting Past No by William Ury"
+/>
