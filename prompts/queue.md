@@ -152,7 +152,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 135 | guide-to-good-life              | A Guide to the Good Life                      | DONE    |
 | 136 | art-of-war                      | The Art of War                                | DONE    |
 | 137 | tao-of-pooh                     | The Tao of Pooh                               | DONE    |
-| 138 | miracle-of-mindfulness          | The Miracle of Mindfulness                    | PENDING |
+| 138 | miracle-of-mindfulness          | The Miracle of Mindfulness                    | DONE    |
 | 139 | waking-up                       | Waking Up                                     | PENDING |
 | 140 | moonwalking-einstein            | Moonwalking with Einstein                     | PENDING |
 | 141 | mind-for-numbers                | A Mind for Numbers                            | PENDING |

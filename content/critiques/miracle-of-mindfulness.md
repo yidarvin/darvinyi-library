@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -67,3 +67,34 @@ Resolved all required findings from critique round 1.
    the fourth practice card to practice arriving before a reply, removed the
    no-longer-used Fourteen Mindfulness Trainings evidence note, and updated the
    registry framework description from shared conditions to communication.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+1. Both required findings from round 1 are resolved. **The thesis** is now a
+   two-sentence carry-away paragraph, and the unsupported shared-conditions
+   synthesis has been replaced by a communication practice supported by the
+   recorded book-specific evidence.
+
+2. The replacement prose and practice card do not overstate what the bounded
+   evidence establishes. The neutral `NodeGraph` keeps listening, speaker, words,
+   body, and reply in one sparse relationship map; its labels agree with the prose,
+   it uses the recorded in-vocabulary form, and its minimum width remains readable
+   through the shared `Figure` scroller on a phone.
+
+3. The complete re-review found no unsupported factual claim that changes the
+   reader's understanding, apparent close paraphrase, reproduced source figure,
+   quotation, or real cover art. The required anatomy remains in order, the brief
+   and registry support omitting the Model section, all three related slugs are
+   done, and the publisher link matches the recorded evidence. No new external web
+   search was performed.
+
+4. `npm run check` completed with `CHECK OK` on 2026-07-28: validation and prose
+   lint; all 42 pipeline and runner tests; all 297 Vitest tests; TypeScript, the
+   Vite production build, and ESLint passed. Vitest emitted only the existing
+   non-failing jsdom `Window.scrollTo()` notices.
