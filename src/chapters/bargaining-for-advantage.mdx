@@ -1,11 +1,11 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Concentric, Flow, Iceberg, NodeGraph, Venn } from "../components/diagrams";
+import { Compare, CoreContext, Flow, Iceberg, NodeGraph } from "../components/diagrams";
 
 <Hero
   slug="bargaining-for-advantage"
   thesis="Negotiate more effectively by preparing from your own strengths, knowing what the deal must beat, and using information, standards, relationships, and alternatives with discipline."
-  minutes={9}
+  minutes={8}
 />
 
 ## The thesis
@@ -26,24 +26,25 @@ actually flexible, and when no deal is the better decision.
 
 ## Start with the negotiator you actually are
 
-Some people seek agreement quickly. Others enjoy a contest, avoid tension until too late, or
-need more time to think before speaking. None of these tendencies is a permanent verdict on
-how well someone can negotiate. They become useful or costly depending on the situation. A
-cooperative style can build trust but may need a firmer limit. A competitive style can defend
-an important interest but may miss a trade that would enlarge the deal. The practical task is
-to notice your default under stress, then prepare a counterweight before the conversation
-starts.
+The publisher describes the book's approach as including a diagnostic of individual strengths
+and weaknesses. Treat that as a preparation task, not a personality label. Look back at two or
+three pressured conversations and name the move you made first: did you seek agreement, press
+for control, go quiet, or ask for more time? Then name both its benefit and its risk. A
+cooperative response can build trust but may need a firmer limit. A competitive response can
+defend an important interest but may miss a trade that would enlarge the deal. For the
+conversation ahead, read what the situation calls for and prepare one counterweight to your
+usual response before the pressure arrives.
 
-<Figure id="122.1" caption="A negotiation style is a starting tendency, not a role you are required to play.">
-  <Concentric
-    className="block w-full min-w-[440px]"
-    rings={[
-      { label: "your default response" },
-      { label: "the situation's demands" },
-      { label: "a prepared adjustment" },
+<Figure id="122.1" caption="A useful style check turns a default response into a prepared adjustment for this situation.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={[
+      "recall your pressure response",
+      "name its strength and risk",
+      "read this situation",
+      "prepare a counterweight",
     ]}
-    highlight={0}
-    externalLabel="pressure at the table"
+    highlight={3}
   />
 </Figure>
 
@@ -119,15 +120,13 @@ brings into the room. Before negotiating, consider what has built confidence, wh
 it, who needs to be heard, and how an agreement will be carried out after the meeting. That
 preparation protects both the substance of the deal and the ability to work together afterward.
 
-<Figure id="122.5" caption="A workable negotiating relationship combines candor, reliability, and a way to repair strain.">
-  <Venn
+<Figure id="122.5" caption="A workable relationship holds three peer conditions inside a changing negotiating context.">
+  <CoreContext
     className="block w-full min-w-[440px]"
-    sets={[
-      { label: "candid exchange" },
-      { label: "reliable commitments" },
-      { label: "repair after strain" },
-    ]}
-    intersectionLabel="a workable relationship"
+    coreTitle="a workable relationship"
+    coreItems={["candid exchange", "reliable commitments", "repair after strain"]}
+    contextTitle="the negotiation context"
+    contextItems={["shared history", "current stakes", "how the deal will be carried out"]}
   />
 </Figure>
 
@@ -162,28 +161,35 @@ keep negotiating without desperation.
 
 ## Put it to work
 
-<ExerciseCard n="01" title="Make a one-page negotiation brief">
+<ExerciseCard n="01" title="Run a style check before the meeting">
+Choose two recent conversations that became tense. For each, write the move you made first,
+the useful thing it achieved, and the risk it created. For the negotiation ahead, decide what
+the situation needs that your default may not supply. Write one counterweight you will use,
+such as asking one more question, stating a limit plainly, or pausing before you answer.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Make a one-page negotiation brief">
 For an upcoming conversation, write the target you want, the minimum you can responsibly
 accept, and the alternative you will use if there is no agreement. Add the assumptions behind
 each line. If you cannot explain why the target is reasonable or how the alternative would
 work, the brief has found work to do before the meeting.
 </ExerciseCard>
 
-<ExerciseCard n="02" title="Prepare questions for the hidden problem">
+<ExerciseCard n="03" title="Prepare questions for the hidden problem">
 Write the demand you expect to hear, then list three possible interests it could protect.
 For each one, draft a neutral question that tests it: “What would that date need to make
 possible?” or “What risk would this term remove for you?” Treat the list as a set of
 hypotheses, not a private diagnosis of the other person.
 </ExerciseCard>
 
-<ExerciseCard n="03" title="Choose a standard before the dispute">
+<ExerciseCard n="04" title="Choose a standard before the dispute">
 Find one external reference for each important term, such as a published salary range,
 comparable contract, policy, cost estimate, or independent opinion. Bring the source, not
 just the conclusion. Then ask yourself what evidence would make you change your view. A
 standard is useful only if it constrains both sides.
 </ExerciseCard>
 
-<ExerciseCard n="04" title="Prepare the working relationship">
+<ExerciseCard n="05" title="Prepare the working relationship">
 Before the conversation, write three notes: the history that matters, the communication
 condition that will help each side speak plainly, and the first repair step if the discussion
 turns tense. For example, agree who needs to be consulted, how tentative terms will be
@@ -191,7 +197,7 @@ recorded, and when either person can pause to check an assumption. Do not perfor
 it easier for both sides to exchange information and keep commitments.
 </ExerciseCard>
 
-<ExerciseCard n="05" title="Strengthen one source of leverage">
+<ExerciseCard n="06" title="Strengthen one source of leverage">
 Pick the weak link in your preparation: too few options, too little information, too much
 time pressure, or no authority to act. Take one concrete step before the conversation, such
 as obtaining another quote, learning the approval path, moving a deadline, or arranging a

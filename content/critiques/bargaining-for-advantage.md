@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -116,3 +116,20 @@ recorded evidence and began no external web search.
 registry, critique, and content validation; prose lint; 40 runqueue tests; 260
 Vitest tests; TypeScript and Vite production build; and ESLint all passed. Vitest
 emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-27
+
+Resolved the style requirement by replacing the nested-ring visual with Figure 122.1, a
+four-step `Flow`: recall the pressure response, name its strength and risk, read the current
+situation, and prepare a counterweight. The accompanying prose now gives a source-grounded,
+original diagnostic: inspect two or three prior pressured conversations for the first move,
+its benefit, and its risk, then choose a response the present situation needs. A new first
+practice card makes that diagnostic concrete before the meeting; the existing cards are
+renumbered 02 through 06.
+
+Corrected the Hero reading badge to 8 minutes from the final rendered content at roughly 200
+words per minute, rounded up. Also applied the relationship-diagram advisory: Figure 122.5 now
+uses `CoreContext`, with candid exchange, reliable commitments, and repair after strain as peer
+conditions in a workable relationship, surrounded by the changing negotiation context. The
+registry inventory now records `flow` and `core / context`. The chapter remains `draft`; no
+queue or chapter status was changed.
