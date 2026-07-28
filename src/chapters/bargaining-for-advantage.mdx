@@ -1,0 +1,196 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Flow, Iceberg, NodeGraph } from "../components/diagrams";
+
+<Hero
+  slug="bargaining-for-advantage"
+  thesis="Negotiate more effectively by preparing from your own strengths, knowing what the deal must beat, and using information, standards, relationships, and alternatives with discipline."
+  minutes={8}
+/>
+
+## The thesis
+
+Good bargaining is less about becoming a harder person than about becoming a better prepared
+one. Shell treats a negotiation as a problem with several sources of strength: clear goals,
+reliable standards, knowledge of what matters to both sides, a workable relationship, and an
+alternative that makes walking away possible. Knowing your natural style helps you use those
+sources without performing a personality that collapses under pressure.
+
+## Why it matters
+
+People often enter a negotiation with only a preferred result in mind. That leaves them
+vulnerable to a confident opening number, an invented deadline, or their own discomfort with
+conflict. Preparation changes the experience. Instead of improvising a response to every
+move, you can tell what the other side is asking for, what you need to learn, which terms are
+actually flexible, and when no deal is the better decision.
+
+## Start with the negotiator you actually are
+
+Some people seek agreement quickly. Others enjoy a contest, avoid tension until too late, or
+need more time to think before speaking. None of these tendencies is a permanent verdict on
+how well someone can negotiate. They become useful or costly depending on the situation. A
+cooperative style can build trust but may need a firmer limit. A competitive style can defend
+an important interest but may miss a trade that would enlarge the deal. The practical task is
+to notice your default under stress, then prepare a counterweight before the conversation
+starts.
+
+<Figure id="122.1" caption="A negotiation style is a starting tendency, not a role you are required to play.">
+  <Concentric
+    className="block w-full min-w-[440px]"
+    rings={[
+      { label: "your default response" },
+      { label: "the situation's demands" },
+      { label: "a prepared adjustment" },
+    ]}
+    highlight={0}
+    externalLabel="pressure at the table"
+  />
+</Figure>
+
+## Turn a wish into a decision rule
+
+“I want a good deal” gives you nothing to steer by when the other side presents a concrete
+offer. A useful goal has a specific target, a reason it is defensible, and a point below which
+the deal stops making sense. It also has an alternative: what you will do if an agreement does
+not arrive. Those four elements keep aspiration from turning into fantasy and caution from
+turning into a reflexive concession. They let you evaluate the whole package, rather than
+accepting one attractive term while a damaging condition slips past.
+
+<Figure id="122.2" caption="Preparation converts a hoped-for outcome into a rule for choosing among real offers.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["set a defensible target", "name the minimum", "strengthen the alternative", "compare the full offer"]}
+    highlight={3}
+    branch={{ up: "better: negotiate agreement", down: "worse: take the alternative" }}
+  />
+</Figure>
+
+## Look below the demand for the interests doing the work
+
+An announced price, date, or condition is an answer. It does not tell you what problem that
+answer is meant to solve. A buyer pressing on price may be protecting a budget, a reputation
+for fairness, or the ability to obtain internal approval. A seller holding a date may be
+managing capacity or risk. Ask questions that make those pressures discussable, and explain
+your own constraints with comparable clarity. The aim is not to guess motives correctly on
+the first try. It is to replace a narrow fight over one answer with a fuller map of the
+interests that an agreement would have to satisfy.
+
+<Figure id="122.3" caption="A stated term is only the visible edge of the interests and constraints beneath it.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the stated demand"
+    waterlineLabel="the announced position"
+    below={["practical constraint", "fairness or status concern", "risk that needs managing"]}
+  />
+</Figure>
+
+## Let standards carry part of the argument
+
+Pressure can win a concession, but it rarely explains why that concession is fair or durable.
+When the parties disagree about a number, a deadline, or a division of responsibility, look
+for a reference they can both inspect: a market range, a published policy, an independent
+assessment, a comparable deal, or a rule that fits the case. A standard does not eliminate
+judgment. It gives judgment something outside either person's preference to work against.
+Use it openly enough that the other side can question it, and be willing to revise it if it
+does not actually match the situation.
+
+<Figure id="122.4" caption="A shared reference changes the dispute from a contest of insistence into a question of fit.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "because I said so",
+      points: ["preference is the proof", "pressure decides", "fairness stays contested", "agreement is fragile"],
+    }}
+    right={{
+      title: "a standard to test",
+      points: ["name the outside reference", "ask whether it fits", "compare the evidence", "explain the result"],
+    }}
+  />
+</Figure>
+
+## Build leverage before you need to show it
+
+Leverage is not just a loud threat or a larger title. It grows when you have choices, useful
+information, enough time to decide, and a credible ability to carry out the path you name.
+That is why preparation matters before the meeting. Find other suppliers, buyers, jobs,
+funding sources, or ways to postpone the decision. Learn who approves the deal and what
+commitments constrain them. Do not confuse leverage with bluffing. A claim that cannot be
+executed invites a test, while a real alternative lets you state your boundary calmly and
+keep negotiating without desperation.
+
+<Figure id="122.5" caption="Leverage is assembled from real choices and information, then expressed through a credible boundary.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "options", label: "real options", x: 0.16, y: 0.2 },
+      { id: "info", label: "useful information", x: 0.84, y: 0.2 },
+      { id: "time", label: "time to decide", x: 0.15, y: 0.78 },
+      { id: "authority", label: "authority to act", x: 0.85, y: 0.78 },
+      { id: "boundary", label: "credible boundary", x: 0.5, y: 0.5 },
+    ]}
+    edges={[
+      { from: "options", to: "boundary", label: "supports" },
+      { from: "info", to: "boundary", label: "clarifies" },
+      { from: "time", to: "boundary", label: "protects" },
+      { from: "authority", to: "boundary", label: "makes real", kind: "reinforcing" },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Make a one-page negotiation brief">
+For an upcoming conversation, write the target you want, the minimum you can responsibly
+accept, and the alternative you will use if there is no agreement. Add the assumptions behind
+each line. If you cannot explain why the target is reasonable or how the alternative would
+work, the brief has found work to do before the meeting.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Prepare questions for the hidden problem">
+Write the demand you expect to hear, then list three possible interests it could protect.
+For each one, draft a neutral question that tests it: “What would that date need to make
+possible?” or “What risk would this term remove for you?” Treat the list as a set of
+hypotheses, not a private diagnosis of the other person.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Choose a standard before the dispute">
+Find one external reference for each important term, such as a published salary range,
+comparable contract, policy, cost estimate, or independent opinion. Bring the source, not
+just the conclusion. Then ask yourself what evidence would make you change your view. A
+standard is useful only if it constrains both sides.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Strengthen one source of leverage">
+Pick the weak link in your preparation: too few options, too little information, too much
+time pressure, or no authority to act. Take one concrete step before the conversation, such
+as obtaining another quote, learning the approval path, moving a deadline, or arranging a
+backup plan. State no threat that you are not prepared to carry out.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Knowing your style should not become an excuse to stay predictable, and preparation should
+not become a script used to corner someone. Culture, hierarchy, gender, safety, and legal
+obligations shape what can be asked for and how freely a person can say no. Better questions
+and a stronger alternative cannot repair coercion or make an exploitative deal fair. When
+power is badly unequal or conduct is unsafe, the right next step may be outside support, a
+formal process, or leaving the negotiation.
+</Callout>
+
+## If you remember one thing
+
+Enter a negotiation knowing more than what you hope to get. Know what matters to both sides,
+which standard could justify a deal, and what you will do if no deal is good enough. That
+preparation lets you negotiate as yourself, with less need to bluff, rush, or surrender.
+
+Getting to Yes supplies the interest-and-alternative foundation for this preparation. Never
+Split the Difference focuses on listening moves in a tense exchange, while Getting Past No
+shows how to keep a hard conversation from becoming a contest of pressure.
+
+<ShelvedNearby
+  related={["getting-to-yes", "never-split-the-difference", "getting-past-no"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/298835/bargaining-for-advantage-by-g-richard-shell/"
+  buyLabel="Bargaining for Advantage by G. Richard Shell"
+/>
