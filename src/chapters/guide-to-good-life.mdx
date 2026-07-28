@@ -1,0 +1,235 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Concentric, Curve, Flow, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="guide-to-good-life"
+  thesis="A calmer life asks less of chance: notice what is already good, want external things without handing them authority, and practice the response that remains yours."
+  minutes={10}
+/>
+
+## The thesis
+
+Irvine presents Stoicism as a practical answer to chronic dissatisfaction. The program does
+not promise that loss, pain, or uncertainty will become pleasant. It asks a person to train
+attention and desire so that a good day does not depend on getting every outcome, keeping every
+comfort, or winning every social comparison. The aim is tranquility with a moral direction:
+enjoy what is present, prepare for its fragility, and meet the next circumstance with judgment.
+
+## Why it matters
+
+Wanting can make plenty feel like a shortage. A promotion resets the comparison group, a new
+purchase becomes ordinary, and an imagined future makes the current life look like a waiting
+room. Irvine's appeal is not an ancient costume for modern anxiety. It is a compact set of
+exercises for interrupting that cycle before it becomes a way of seeing.
+
+## Key ideas
+
+### More can become the engine of less
+
+The book starts from a problem with the ordinary strategy of getting what we want. Acquiring a
+thing can bring real pleasure, but attention quickly normalizes it and reaches for a fresh
+standard. If contentment depends on the next acquisition, the finish line keeps moving. The
+answer is not to treat comfort, friendship, health, or achievement as worthless. It is to stop
+making them the price of being allowed to feel satisfied.
+
+This changes the question from, "What else would complete my life?" to, "What have I stopped
+seeing because it is familiar?" A warm home, a working body, a friend who answers, or an
+unremarkable afternoon can be available without being noticed. Deliberate attention does not
+solve every hardship. It does weaken the habit of measuring life only against what is absent.
+
+<Figure id="135.1" caption="Novelty can fade quickly; attention can bring an ordinary good back into view.">
+  <Curve
+    className="block w-full min-w-[380px]"
+    shape="decay"
+    axes={{ x: "time after acquiring", y: "novelty felt" }}
+    annotations={[
+      { x: 0.08, y: 0.79, text: "new" },
+      { x: 0.74, y: 0.27, text: "familiar", labelPosition: "below" },
+    ]}
+  />
+</Figure>
+
+### Put effort inside the part you can answer for
+
+Stoic practice is often compressed into a sharp line between what is and is not under control.
+Irvine makes the working question a little more practical. Some things are yours to choose
+directly, such as whether to prepare, speak honestly, or keep a promise. Some outcomes can be
+influenced but never guaranteed, such as a team's decision, a patient's recovery, or a job
+offer. The remaining conditions have to be met rather than managed.
+
+The distinction does not make the middle ring unimportant. It tells you how to enter it. Put
+care into a project, a conversation, or a civic cause, but attach your self-respect to the
+quality of the effort rather than a result shared with luck and other people. This preserves
+ambition while taking some desperation out of it.
+
+<Figure id="135.2" caption="Direct choice sits at the center; influence extends outward, while the final outcome remains shared with circumstances.">
+  <Concentric
+    className="block w-full min-w-[380px]"
+    rings={[
+      { label: "my judgment and action" },
+      { label: "what effort may influence" },
+      { label: "other people, chance, and outcomes" },
+    ]}
+    highlight={0}
+  />
+</Figure>
+
+### Rehearse enoughness before comfort becomes a demand
+
+Voluntary discomfort is one of the book's most concrete practices. Skip a convenience for a
+short time, wear something plainer, take a simpler meal, or leave the phone behind on a walk.
+The point is not to earn moral credit by suffering, and it is not an attempt to imitate the
+constraints of people who have no choice. It is a test of a private prediction: if this ease
+were unavailable, could I still function?
+
+The exercise can expose a hidden dependency. Many things are pleasant additions, not conditions
+of survival, connection, or dignity. Discovering that difference makes a person less fearful of
+small losses and less likely to organize a life around avoiding every inconvenience. Comfort can
+remain welcome without becoming a command.
+
+<Figure id="135.3" caption="The practice shifts comfort from something required for steadiness to something enjoyed without dependence.">
+  <Spectrum
+    className="block w-full min-w-[380px]"
+    left="comfort required"
+    right="comfort enjoyed"
+    marker={0.74}
+    markerLabel="enough"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
+    zones={[
+      { from: 0.0, to: 0.38, label: "loss feels like collapse" },
+      { from: 0.62, to: 1.0, label: "use without clinging", accent: true },
+    ]}
+  />
+</Figure>
+
+### A private philosophy still has a public test
+
+The book's concern with peace of mind could be mistaken for retreat. Stoicism does not make
+other people obstacles to serenity. It asks whether a steadier person becomes less vain,
+less combustible, and more useful in the relationships they already have. A difficult coworker
+still deserves fairness. A friend in trouble still calls for help. An insult may require a
+boundary, but not necessarily a counterattack.
+
+This is where emotional discipline earns its value. When status and irritation stop setting the
+agenda, attention can return to the role at hand: parent, neighbor, colleague, friend, or
+citizen. The measure is not whether one feels undisturbed. It is whether clearer judgment makes
+trust and cooperation more likely.
+
+<Figure id="135.4" caption="Reflection earns its value when it moves through chosen conduct into more dependable shared life.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "reaction", label: "first reaction", x: 0.12, y: 0.5 },
+      { id: "judgment", label: "examined judgment", x: 0.42, y: 0.18 },
+      { id: "conduct", label: "fair conduct", x: 0.44, y: 0.82 },
+      { id: "shared", label: "shared life", x: 0.84, y: 0.5 },
+    ]}
+    edges={[
+      { from: "reaction", to: "judgment" },
+      { from: "judgment", to: "conduct" },
+      { from: "conduct", to: "shared", kind: "reinforcing", label: "trust" },
+      { from: "shared", to: "reaction", label: "next encounter", labelOffset: { y: 14 } },
+    ]}
+  />
+</Figure>
+
+### Review turns a principle into a habit of attention
+
+Irvine treats self-observation as a discipline, not a personality trait. A principle that sounds
+persuasive in the morning will not necessarily appear when a meeting goes badly or a plan falls
+apart. A short review gives the day usable evidence: where did I chase an outcome I could not
+command, where did I react to an assumption, and what response would I prefer next time?
+
+The review should be exact enough to change a later moment and gentle enough to sustain. Its
+purpose is not to prosecute every mistake or to create a perfect inner scorecard. It is to make
+the gap between an impulse and a chosen response easier to find on the next pass.
+
+<Figure id="135.5" caption="A short review carries one observed mistake forward as preparation for the next encounter.">
+  <ProcessLoop
+    className="block w-full min-w-[380px]"
+    stages={["meet the day", "notice the reaction", "review the judgment", "try one adjustment"]}
+    compoundingEdge={3}
+    centerLabel="practiced attention"
+  />
+</Figure>
+
+## The Model
+
+Negative visualization is Irvine's signature exercise. Briefly picture a valued part of life as
+unavailable: the ordinary morning with a partner, the body that lets you walk, the home you take
+for granted, or a chance you assume will repeat. Then return to the real present. The move is
+not to manufacture catastrophe or predict that loss is coming. It is a controlled comparison
+that can sharpen gratitude and reveal what prudent preparation is actually possible.
+
+Done well, the exercise ends in contact with life, not in dread. You notice the value of what is
+here, make the call you have delayed, back up the files, thank the person, or take a reasonable
+protective step. The last step matters because Stoicism distinguishes preparation from the
+fantasy of a guarantee.
+
+<Figure id="135.6" caption="Negative visualization briefly imagines absence, then returns attention to appreciation and the next prudent act.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["name something valued", "picture a plausible absence", "notice what is here", "take the prudent next act"]}
+    highlight={2}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Rehearse one small loss, briefly">
+Choose a good you already have, such as an easy commute, a close friend, working eyesight, or
+time with a child. For two minutes, picture a realistic way it might become unavailable. Stop,
+return to the present, and write one sentence naming what it makes possible today. If a useful
+protective action exists, do that action. Do not turn the exercise into an inventory of disasters.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Sort a live problem into three rings">
+Take one outcome that is absorbing your attention. Write three headings: what I can choose, what
+I can influence, and what I must meet. Put one specific action under the first heading and do it
+within twenty-four hours. Put the final result in the third heading, even if it matters greatly.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Test one convenience without making a performance of it">
+Leave aside one ordinary convenience for a day: delivery, streaming, a specialty purchase, or
+constant phone access. Record the real difficulty, the story you added to it, and what was still
+available. End the trial if it would compromise health, safety, caregiving, work obligations, or
+someone else's needs.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Close the day with three lines">
+Before sleep, note one event you tried to control after it had left your hands, one thing you
+were glad you did not overlook, and one conduct adjustment for the next similar situation. Keep
+the entries specific. Tomorrow is the test, not the notebook.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Irvine's modern Stoicism is an interpretation, not a replacement for the ancient school. His
+emphasis on tranquility and techniques is useful, but the classical sources also make virtue,
+duty, and a demanding account of judgment central. Negative visualization is not a treatment for
+intrusive thoughts, grief, trauma, or depression, and voluntary discomfort should never be used
+to deny material hardship or avoid needed care. The exercises should make a person more present,
+prepared, and humane. If they intensify fear or isolation, stop and seek an approach suited to
+the situation.
+</Callout>
+
+## If you remember one thing
+
+Want what you can use and cherish what is here, but do not require fortune to cooperate before
+you act with care. A good life has room for loss because its daily practice keeps returning you
+to judgment, gratitude, and the next responsibility.
+
+## Shelved nearby
+
+Meditations is the primary Stoic notebook behind the book's emphasis on examining judgment.
+Letters from a Stoic offers the older practice of testing dependence on comfort and fortune.
+The Daily Stoic turns related practices into a shorter repeated prompt.
+
+<ShelvedNearby
+  related={["meditations", "letters-from-a-stoic", "daily-stoic"]}
+  buyUrl="https://global.oup.com/academic/product/a-guide-to-the-good-life-9780195374612"
+  buyLabel="A Guide to the Good Life by William B. Irvine"
+/>
