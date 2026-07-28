@@ -15,6 +15,6 @@ vocabulary.
 The book links formal systems, Bach's musical structures, Escher's visual paradoxes, and
 models of mind through analogy. This chapter follows that thematic link but does not recreate
 the book's dialogues, examples, argument sequence, artistic works, or musical figures. Its
-five key-idea diagrams and strange-loop model are original explanatory designs. The model is
+six key-idea diagrams and strange-loop model are original explanatory designs. The model is
 presented as Hofstadter's proposal about selfhood, not as an established scientific account
 of consciousness.

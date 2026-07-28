@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -11,3 +11,42 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-28
+
+1. Added a sixth key idea, "Logic, images, and music can make a pattern reappear at
+another level." Its original prose distinguishes Gödelian coding, a transformed musical
+theme, and a shifting visual frame, then states the analogy's limit. New Figure 134.5 is a
+structural node graph connecting those three domain-specific cases to the shared
+cross-level pattern. The former feedback and strange-loop figures were renumbered 134.6
+and 134.7.
+
+2. Reconfigured the feedback spectrum in Figure 134.6 with short endpoints, stacked
+endpoint labels, and a top-positioned marker label. The new chapter regression asserts
+that layout, the marker's separate `y=24` position, the 440px minimum SVG width, and the
+Figure horizontal-scroll wrapper. That preserves the diagram's intrinsic label geometry at
+phone width rather than shrinking it into a collision.
+
+Verification: `npm run check` passed after the changes. The interactive `npm run dev`
+visual-review step was not run because this repository reserves it for an operator
+decision.
+
+## Builder resolution addendum — 2026-07-28
+
+3. Corrected the evidence scope note to record six key-idea diagrams, matching the
+completed chapter. Shortened the four labels in the new cross-domain node graph so they
+fit its reusable fixed-size cards while the caption, aria label, and surrounding prose
+continue to name logic, visual art, music, and the shared cross-level pattern.
+
+Verification: `npm run check` passed after the complete resolver change set. The
+interactive `npm run dev` visual-review step remains an operator decision.
+
+## Builder resolution addendum — 2026-07-28
+
+4. Adjusted the chapter regression for the cross-domain node graph to inspect its
+accessible SVG label rather than concatenated SVG text nodes, which omit spaces between
+wrapped `<tspan>` elements. The assertion still verifies that logic, visual art, music,
+and the returning cross-level pattern are explicitly represented.
+
+Verification: `npm run check` passed with 288 chapter tests, the production build, and
+lint. The chapter remains `draft`; no commit or push was made.

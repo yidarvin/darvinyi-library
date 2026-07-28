@@ -129,6 +129,40 @@ Hofstadter's central metaphor asks us to follow the traffic between them.
   />
 </Figure>
 
+## Logic, images, and music can make a pattern reappear at another level
+
+The three domains in the title do not share a hidden substance. They share a way of
+making a pattern matter across levels. In Gödel's case, a numerical code lets arithmetic
+point back to an expression or proof. In music, a theme can return in another voice,
+direction, or register while remaining recognizable through its transformation. In an
+Escher image, a locally sensible view can force a change in the frame used to read the
+whole image. Each case asks the audience to carry a pattern across a shift in level.
+
+That is why Hofstadter places them beside one another. The analogy is not a proof that a
+fugue, a drawing, and a mind are the same thing. It is a guide to a recurring structure:
+parts can be read one way from nearby, then reorganized by a pattern that becomes visible
+only from a wider vantage point. Strange loops become possible when that wider pattern can
+also turn back on the system that produced it.
+
+<Figure id="134.5" caption="Logic, visual art, and music each show a pattern becoming intelligible through a shift of level.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    directed={false}
+    ariaLabel="Logic, visual art, and music connect to a shared pattern that returns at another level."
+    nodes={[
+      { id: "logic", label: "coded claim", x: 0.18, y: 0.22 },
+      { id: "art", label: "shifting frame", x: 0.82, y: 0.22 },
+      { id: "music", label: "transformed theme", x: 0.18, y: 0.78 },
+      { id: "structure", label: "pattern returns", x: 0.72, y: 0.64 },
+    ]}
+    edges={[
+      { from: "logic", to: "structure" },
+      { from: "art", to: "structure" },
+      { from: "music", to: "structure" },
+    ]}
+  />
+</Figure>
+
 ## Self-reference is generative only when it can be interpreted
 
 Recursion is a procedure that can apply its own result again. It becomes interesting when a
@@ -141,13 +175,15 @@ therefore maintain a rich model of itself or of its world. Hofstadter's proposal
 much denser case: symbols that can be recombined, interpreted, and revised across many
 levels. The loop matters because it is embedded in a system capable of carrying meaning.
 
-<Figure id="134.5" caption="Feedback becomes self-reference when a system can use a representation of itself in its next round of activity.">
+<Figure id="134.6" caption="Feedback becomes self-reference when a system can use a representation of itself in its next round of activity.">
   <Spectrum
     className="block w-full min-w-[440px]"
-    left="mere repetition"
-    right="interpreted self-reference"
+    left="repetition"
+    right="self-reference"
     marker={0.78}
     markerLabel="symbolic feedback"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
     zones={[
       { from: 0.0, to: 0.38, label: "same output repeats" },
       { from: 0.62, to: 1.0, label: "a self-model affects the next state", accent: true },
@@ -166,7 +202,7 @@ resulting self-model feeds back into what the system attends to and does. On Hof
 view, the persistent, revisable pattern made by that feedback is the best candidate for an
 "I."
 
-<Figure id="134.6" caption="A strange loop climbs from signals to a self-model, then sends that model back into the next round of signals.">
+<Figure id="134.7" caption="A strange loop climbs from signals to a self-model, then sends that model back into the next round of signals.">
   <ProcessLoop
     className="block w-full min-w-[440px]"
     stages={["signals", "recognized patterns", "symbols about a world", "a model of this system"]}

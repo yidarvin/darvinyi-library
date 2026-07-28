@@ -359,6 +359,38 @@ describe("Spectrum", () => {
   });
 });
 
+describe("Gödel, Escher, Bach figure regressions", () => {
+  it("teaches the three-domain analogy and separates the self-reference spectrum labels", async () => {
+    const mod = await mdxModules["../chapters/godel-escher-bach.mdx"]();
+    const GodelEscherBach = mod.default;
+    render(
+      <MemoryRouter>
+        <MDXProvider components={mdxComponents}>
+          <GodelEscherBach />
+        </MDXProvider>
+      </MemoryRouter>,
+    );
+
+    const analogyFigure = screen
+      .getByText(/Logic, visual art, and music each show a pattern becoming intelligible/i)
+      .closest("figure");
+    expect(analogyFigure?.querySelector("svg")?.getAttribute("aria-label")).toBe(
+      "Logic, visual art, and music connect to a shared pattern that returns at another level.",
+    );
+
+    const spectrumFigure = screen
+      .getByText(/Feedback becomes self-reference when a system can use a representation/i)
+      .closest("figure");
+    expect(spectrumFigure?.querySelector('[data-spectrum-endpoints="stacked"]')).not.toBeNull();
+    const spectrum = spectrumFigure?.querySelector("svg");
+    expect(spectrum?.getAttribute("class")).toContain("min-w-[440px]");
+    expect(spectrumFigure?.querySelector(".overflow-x-auto")).not.toBeNull();
+    expect(spectrum?.textContent).toContain("repetition");
+    expect(spectrum?.textContent).toContain("self-reference");
+    expect(screen.getByText("symbolic feedback").getAttribute("y")).toBe("24");
+  });
+});
+
 describe("Curve", () => {
   it("shows both quantities and their named intersection for a crossover", () => {
     const { container } = render(
