@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-27
 
@@ -133,3 +133,32 @@ uses `CoreContext`, with candid exchange, reliable commitments, and repair after
 conditions in a workable relationship, surrounded by the changing negotiation context. The
 registry inventory now records `flow` and `core / context`. The chapter remains `draft`; no
 queue or chapter status was changed.
+
+## Critique round 3 — 2026-07-27
+
+### Required
+
+None.
+
+### Advisory
+
+None.
+
+The round-2 style and reading-time requirements are resolved. The style section now turns the
+recorded diagnostic premise into a bounded self-check, a matching four-step flow, and a
+concrete exercise without presenting the invented check as Shell's proprietary instrument.
+The corrected eight-minute badge is consistent with the final rendered length. The
+relationship revision also retains the round-1 coverage while using the registered
+`CoreContext` form to present its peer conditions within the negotiation context.
+
+The full page now covers the brief's preparation-centered thesis with six key ideas, six
+captioned vocabulary diagrams, and six specific practices. Its deliberate omission of a
+separate Model section agrees with the brief and registry. The caveat follows the recorded
+scope note, the three related links resolve to done chapters, the publisher link points to the
+real book, and the prose and diagrams remain original on the evidence available. This review
+used the chapter brief and recorded evidence and began no external web search.
+
+`npm run check` passed on 2026-07-27 before approval: queue, registry, critique, and content
+validation; prose lint; 40 runqueue tests plus 2 pipeline tests; 260 Vitest tests; TypeScript
+and Vite production build; and ESLint all passed. Vitest emitted only the known non-failing
+jsdom `Window.scrollTo()` notices.
