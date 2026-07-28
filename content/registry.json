@@ -2375,7 +2375,18 @@
       "subtitle": "Amir Levine and Rachel Heller · 2010",
       "part": "Communication & Relationships",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Adult attachment styles, secure, anxious, and avoidant, quietly shape how our relationships work.",
+      "framework": "Attachment styles",
+      "diagrams": [
+        "iceberg",
+        "comparison",
+        "flow",
+        "process loop",
+        "node graph",
+        "two-by-two matrix"
+      ]
     },
     {
       "num": 121,

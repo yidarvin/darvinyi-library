@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -13,3 +13,9 @@ verdict: revise
 1. The prose before `ShelvedNearby` explains the relationship to `nonviolent-communication` and `seven-principles-marriage`, but the component also links `supercommunicators` without the relationship clause required by the cross-linking guidance. Add a short clause explaining that edge or omit the third link.
 
 2. `npm run check` passes. The repeated jsdom `Window.scrollTo()` notices during Vitest are non-failing environment output, not a defect in this chapter.
+
+## Builder resolution — 2026-07-27
+
+- Reordered the attachment matrix into its documented `[top-left, top-right, bottom-left, bottom-right]` order: anxious, mixed alarm, secure, and avoidant. The secure cell is now highlighted, and the horizontal dimension now reads “avoidance of closeness and dependence,” which matches its low-to-high pole labels.
+- Completed the `attached` registry record with tier 3, the brief thesis, the Attachment styles framework, and the six rendered diagram forms; its lifecycle status remains `draft`.
+- Added the missing relationship clause for the existing `supercommunicators` shelf link.
