@@ -10,12 +10,10 @@ import { Bars, Compare, Flow, NodeGraph, ProcessLoop, Timeline } from "../compon
 
 ## The thesis
 
-Tyson's short tour asks for cosmic literacy rather than a catalogue of spectacular
-objects. The useful picture begins with an expanding, cooling universe and follows what
-that change makes possible: light, atoms, stars, galaxies, planets, and observers able to
-reconstruct part of the story. The point is not to memorize every term. It is to know which
-questions have evidence behind them, which answers remain provisional, and how much of the
-universe is still unexplained.
+Tyson's short tour makes the cosmos legible through an expanding, cooling history that
+produces light, atoms, stars, galaxies, planets, and observers able to reconstruct part of
+the story. Its lasting lesson is to separate well-supported evidence from provisional
+answers, while keeping the universe's remaining unknowns in view.
 
 ## The universe has a history, not a static backdrop
 
@@ -33,7 +31,7 @@ instruments can inspect.
 
 <Figure id="129.1" caption="Expansion, cooling, and gravity turn an early hot universe into a place with stars and galaxies.">
   <Timeline
-    className="block w-full min-w-[600px]"
+    className="block w-full min-w-[656px]"
     highlight={2}
     segments={[
       { label: "hot early universe", sub: "rapid expansion" },
@@ -60,7 +58,7 @@ headline turns an indirect measurement into a certainty.
 
 <Figure id="129.2" caption="Light becomes evidence only after its measured pattern is connected to a testable physical account.">
   <Flow
-    className="block w-full min-w-[520px]"
+    className="block w-full min-w-[558px]"
     steps={[
       "distant source emits light",
       "telescope records wavelengths",
@@ -107,22 +105,23 @@ but its gravity can be inferred from the motion of visible objects and from bent
 massive foreground structures. Calling it dark describes our observational situation, not a
 known substance in a black paint bucket. Its composition remains open.
 
-<Figure id="129.4" caption="Small density differences pull in matter, helping gravity assemble the large-scale cosmic web.">
+<Figure id="129.4" caption="A slightly denser patch pulls in more matter, reinforcing its gravity, while dark matter helps provide the scaffold.">
   <NodeGraph
     className="block w-full min-w-[440px]"
+    ariaLabel="A positive feedback loop: a slightly denser patch causes gravity to pull matter inward; gathered matter makes the patch denser, strengthening the pull. Dark matter contributes to the growing structure rather than being caused by the initial patch."
     nodes={[
-      { id: "ripple", label: "small density difference", x: 0.5, y: 0.08 },
-      { id: "gravity", label: "gravity pulls inward", x: 0.16, y: 0.43 },
-      { id: "dark", label: "dark-matter scaffold", x: 0.84, y: 0.43 },
-      { id: "gas", label: "gas gathers", x: 0.27, y: 0.82 },
-      { id: "galaxy", label: "galaxy growth", x: 0.73, y: 0.82 },
+      { id: "ripple", label: "slightly denser patch", x: 0.5, y: 0.08 },
+      { id: "gravity", label: "gravity pulls in", x: 0.18, y: 0.45 },
+      { id: "matter", label: "matter gathers", x: 0.65, y: 0.44 },
+      { id: "density", label: "denser patch", x: 0.58, y: 0.78 },
+      { id: "dark", label: "dark matter", x: 0.1, y: 0.82 },
     ]}
     edges={[
       { from: "ripple", to: "gravity", kind: "reinforcing" },
-      { from: "ripple", to: "dark", kind: "reinforcing" },
-      { from: "gravity", to: "gas" },
-      { from: "dark", to: "galaxy" },
-      { from: "gas", to: "galaxy", kind: "reinforcing", label: "feeds" },
+      { from: "gravity", to: "matter", kind: "reinforcing" },
+      { from: "matter", to: "density", kind: "reinforcing" },
+      { from: "density", to: "gravity", kind: "reinforcing" },
+      { from: "dark", to: "density" },
     ]}
   />
 </Figure>
@@ -155,7 +154,7 @@ measured, and productive.
 ## A cosmic perspective needs both scale and care
 
 The scale of the universe can make familiar concerns look parochial, but it does not erase
-their consequences. Earth is a small planet around one ordinary star, and it is also the
+their consequences. Earth is a small planet around one star, and it is also the
 only place where human duties can be carried out. Cosmic perspective is useful when it
 loosens false grandeur and sharpens stewardship, not when it becomes an excuse for
 indifference.

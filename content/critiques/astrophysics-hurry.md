@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -91,3 +91,22 @@ verdict: revise
    validation, prose lint, 42 pipeline tests, 276 Vitest tests, TypeScript, the Vite
    production build, and ESLint all passed. Vitest emitted only the existing
    non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+Resolved every required finding from critique round 1.
+
+1. Reduced **The thesis** to a two-sentence paragraph that retains the cosmic history,
+   evidence, provisional answers, and unknowns synthesis.
+2. Changed Figure 129.1 to its native `min-w-[656px]` timeline width and Figure 129.2
+   to its native `min-w-[558px]` flow width. The existing Figure scroller now preserves
+   the primitives' authored label sizes on a 360px viewport.
+3. Rebuilt Figure 129.4 as a visible positive feedback loop: gravity pulls matter in,
+   gathered matter makes the patch denser, and the denser patch strengthens gravity.
+   Dark matter now enters as a neutral contributing scaffold, not as a product of the
+   initial density difference.
+4. Replaced the Figure 129.4 node labels with short, space-wrappable labels that fit
+   the fixed cards, including `dark matter`, `matter gathers`, and `denser patch`.
+
+Also changed “one ordinary star” to “one star” to avoid implying that the Sun is
+representative of the stellar population.
