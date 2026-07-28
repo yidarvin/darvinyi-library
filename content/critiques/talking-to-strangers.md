@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-27
 
@@ -67,6 +67,18 @@ the chapter remains draft and no status transition was made.
 ### Advisory
 
 1. `npm run check` passed on 2026-07-27. Queue and registry validation, prose lint,
-   42 pipeline tests, 251 application tests, typecheck, production build, and lint were
-   all green. The repeated `Window.scrollTo()` messages during Vitest were non-failing
-   environment warnings.
+42 pipeline tests, 251 application tests, typecheck, production build, and lint were
+all green. The repeated `Window.scrollTo()` messages during Vitest were non-failing
+environment warnings.
+
+## Builder resolution — 2026-07-27
+
+Resolved both round-3 required findings while preserving the earlier thesis, figure-number,
+two-trigger matrix, and neutral-feedback fixes. Figure 118.1 now follows the Matrix reading
+order: its top-left high-stakes/no-conflict cell calls for an independent check, its top-right
+high-stakes/conflicting-evidence cell calls for verification before acting, its bottom-left
+reversible/no-conflict cell keeps provisional trust, and its bottom-right reversible/conflicting-
+evidence cell says to look again. Figure 118.4 now uses the shorter neutral relationship label
+"sets next pressure" and moves it above the horizontal edge with a vertical label offset, so the
+entire label clears both endpoint cards at phone width. `npm run check` passed; the chapter
+remains draft and no status transition was made.

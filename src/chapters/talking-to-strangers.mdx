@@ -38,10 +38,10 @@ unnecessary.
     xAxis={{ left: "no conflict", right: "conflicting evidence", label: "what the evidence shows" }}
     yAxis={{ low: "reversible", high: "hard to undo", label: "decision stakes" }}
     quadrants={[
-      { title: "look again", note: "a discrepancy merits a check" },
+      { title: "add an independent check", note: "high stakes need safeguards" },
       { title: "verify before acting", note: "conflict and high stakes" },
       { title: "provisional trust", note: "stay open to revision" },
-      { title: "add an independent check", note: "high stakes need safeguards" },
+      { title: "look again", note: "a discrepancy merits a check" },
     ]}
     highlights={[0, 1, 3]}
   />
@@ -112,7 +112,7 @@ of them, what options it left open, and what each side could actually see.
       { from: "setting", to: "behavior" },
       { from: "pressure", to: "behavior" },
       { from: "behavior", to: "response" },
-      { from: "response", to: "pressure", label: "changes next conditions" },
+      { from: "response", to: "pressure", label: "sets next pressure", labelOffset: { y: -38 } },
     ]}
   />
 </Figure>
