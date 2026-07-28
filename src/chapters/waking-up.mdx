@@ -1,0 +1,218 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="waking-up"
+  thesis="Spiritual experience can be investigated in the first person, without borrowing a religion or treating the ordinary feeling of being a separate self as the final word."
+  minutes={7}
+/>
+
+## The thesis
+
+Harris asks for a secular approach to an old human project: examine consciousness closely
+enough to see how experience is assembled, including the feeling that there is a solid someone
+in the middle of it. Meditation is his method. It does not ask for belief or a better story
+about yourself. It asks you to notice sensations, thoughts, and attention as they arrive, and
+to test whether the owner they seem to imply can actually be found.
+
+## Why it matters
+
+Most of life is lived from inside a running commentary. A thought appears, is credited as
+true, and quickly becomes a reason to worry, defend, pursue, or regret. That commentary is
+useful in places. It also makes experience feel narrower than it is. The practical promise of
+this book is not permanent bliss. It is a little more freedom to meet a thought, emotion, or
+pleasant moment before the familiar story claims it.
+
+## Key ideas
+
+### Experience arrives before the narrator explains it
+
+Sight, sound, bodily feeling, mood, and thought are present before a personal narrative turns
+them into a life problem or a proof of identity. Harris treats this as an empirical distinction:
+notice the raw occurrence, then notice the explanation being added to it. A tight feeling in
+the chest is one event. "I am failing" is another. The second may be compelling, but it is not
+the same thing as the first.
+
+This is not an argument for becoming indifferent. The point is to regain the difference between
+what happened and the commentary that rushes to own it. When that gap is visible, a response can
+be considered instead of inherited from the first thought.
+
+<Figure id="139.1" caption="The felt owner of experience sits above a larger field of events that can be noticed directly.">
+  <Iceberg
+    className="block w-full"
+    above="the felt owner: 'me'"
+    waterlineLabel="close inspection"
+    below={["sights and sounds", "body sensations", "thoughts and moods", "attention shifting"]}
+  />
+</Figure>
+
+### The self can be felt without being a thing
+
+The familiar self is persuasive because it seems to occupy a point behind the face, receive the
+world, and issue decisions. Harris asks the reader to look for that point. What is found instead
+is a changing set of appearances: a visual field, a pressure in the head, remembered language,
+an intention, and attention moving among them. They connect into a convincing portrait, but no
+separate operator has to be added to explain their presence.
+
+This is a claim about experience, not a request to deny biography or responsibility. You still
+have a name, commitments, and consequences. The experiment is smaller: in this moment, can you
+locate an unchanging observer apart from what is observed? Repeatedly failing to find one can
+soften the feeling of being trapped inside a private command center.
+
+<Figure id="139.2" caption="A sense of self can emerge from connected events without a separate central node.">
+  <NodeGraph
+    className="block w-full"
+    directed={false}
+    nodes={[
+      { id: "sense", label: "sense data", x: 0.5, y: 0.1 },
+      { id: "memory", label: "memory", x: 0.13, y: 0.48 },
+      { id: "thought", label: "thought", x: 0.87, y: 0.48 },
+      { id: "attention", label: "attention", x: 0.28, y: 0.88 },
+      { id: "intention", label: "intention", x: 0.72, y: 0.88 },
+    ]}
+    edges={[
+      { from: "sense", to: "memory" },
+      { from: "sense", to: "thought" },
+      { from: "memory", to: "attention" },
+      { from: "thought", to: "intention" },
+      { from: "attention", to: "intention" },
+    ]}
+  />
+</Figure>
+
+### Meditation changes the job of attention
+
+At first, meditation often uses an object such as breathing. The object is not a test you pass
+by holding it perfectly. It makes wandering visible. When attention leaves the breath for a
+plan, memory, or irritation, recognize that it has left. Then return, or open to the whole field
+of experience. The recognition is already a break in automatic identification with the thought.
+
+Harris pushes beyond concentration toward open awareness. In that mode, no sensation has to be
+chased away and no thought needs to become a project. The instruction is to notice whatever is
+appearing while also noticing the capacity in which it appears. For a beginner, the breath is a
+useful landing place whenever that instruction becomes too abstract.
+
+<Figure id="139.3" caption="Meditation makes the transition from being carried by a thought to noticing it available in real time.">
+  <Flow
+    className="block min-w-[420px]"
+    steps={["rest with a sensation", "a thought pulls attention", "recognize the thought", "return or open awareness"]}
+    highlight={2}
+  />
+</Figure>
+
+### The narrative self and present experience are different modes
+
+A person needs a narrative self to make plans, remember commitments, and tell someone where to
+meet. Trouble begins when the narrative is mistaken for the whole of consciousness. In the
+narrative mode, attention is organized around a protagonist moving through remembered and
+imagined time. In immediate experience, there is simply this sound, feeling, image, or thought
+arising now.
+
+Neither mode needs to be abolished. Planning a trip calls for the first. Hearing a friend calls
+for the second. The useful skill is shifting deliberately rather than letting a rehearsed past or
+predicted future occupy every available moment. Harris calls the clearer, less contracted mode
+spiritual, but it requires no doctrine to practice.
+
+<Figure id="139.4" caption="Narrative is useful for coordination; immediate experience is where meditation begins.">
+  <Compare
+    className="block w-full"
+    favor="right"
+    left={{
+      title: "narrative self",
+      points: ["links past to future", "uses a protagonist", "plans and explains", "can feed rumination"],
+    }}
+    right={{
+      title: "present experience",
+      points: ["meets what appears now", "has no required center", "notices sensation and thought", "makes room to respond"],
+    }}
+  />
+</Figure>
+
+### Direct investigation does not require metaphysical certainty
+
+The book separates a practice from the religious claims often wrapped around it. You do not need
+to settle the existence of a soul, accept a tradition's cosmology, or call an unusual state a
+revelation before attending to your own mind. A breath can be felt. A thought can be noticed
+forming. The boundary between observer and observed can be examined. Those are available facts
+of experience, even when people disagree about what they mean.
+
+That restraint matters. A vivid meditation session can be meaningful without proving a theory of
+the universe. The secular version of spirituality proposed here is disciplined curiosity about
+consciousness, paired with an ethic of taking well-being seriously.
+
+<Figure id="139.5" caption="Practice can begin with direct experience, leaving larger metaphysical conclusions open.">
+  <Spectrum
+    className="block w-full"
+    left="adopt an answer"
+    right="investigate experience"
+    marker={0.78}
+    markerLabel="meditation practice"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
+    zones={[
+      { from: 0.04, to: 0.42, label: "belief first" },
+      { from: 0.58, to: 0.96, label: "attention first", accent: true },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Locate the observer">
+Sit for five minutes with eyes open or closed. Notice a sound, a body sensation, or the breath.
+Then ask, without trying to answer in words: where is the one who is aware of this? Look for a
+location, a boundary, or a stable witness. If a thought answers, notice that thought too. The
+exercise is the looking, not a particular result.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Catch one thought at its beginning">
+Choose a quiet minute and wait for the next thought. Do not manufacture one. When a phrase,
+image, or plan arrives, name its form silently: "planning," "remembering," or "judging." Notice
+that it appeared before you chose its content. Return to the breath once, then wait again.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Use a difficult moment as data">
+When irritation or anxiety appears, pause before explaining it. Find three concrete features:
+where it is felt in the body, what image or sentence accompanies it, and what action it urges.
+Let all three be present for two breaths. Then decide what to do. Observation does not settle
+the decision, but it stops the reaction from masquerading as the whole situation.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Practice open awareness briefly">
+For two minutes, give up the attempt to hold one object. Let sounds, sensations, and thoughts
+come and go. Each time you catch yourself pursuing or resisting one of them, relax the effort
+and return to the whole field. End by noticing one ordinary thing in the room without naming it
+for a few seconds.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The loss of a separate self is a report about how experience can feel under close attention, not
+a scientific proof that people lack agency, personhood, or obligations. Meditation research gives
+some support to a shift from narrative self-focus toward present-centered awareness, but it does
+not validate every philosophical conclusion a practitioner might draw. Meditation can also be
+destabilizing for some people, especially amid trauma, severe anxiety, psychosis, or a major mood
+episode. Treat this page as a non-clinical attention practice, stop if it increases distress, and
+seek qualified care when mental health support is needed.
+</Callout>
+
+## If you remember one thing
+
+You can examine consciousness without first believing a spiritual story about it. When a thought,
+feeling, or sense of self is noticed as an event in awareness, it gains a little less power to
+define the whole of you.
+
+## Shelved nearby
+
+*Wherever You Go, There You Are* offers a gentler, body-centered account of returning attention.
+*The Untethered Soul* similarly treats the inner voice as something that can be witnessed rather
+than obeyed. *The Power of Now* pursues a related distinction between present experience and
+thought about time.
+
+<ShelvedNearby
+  related={["wherever-you-go", "untethered-soul", "power-of-now"]}
+  buyUrl="https://www.simonandschuster.com/books/Waking-Up/Sam-Harris/9781451636024"
+  buyLabel="Waking Up by Sam Harris"
+/>

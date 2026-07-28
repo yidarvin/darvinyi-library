@@ -2746,7 +2746,17 @@
       "subtitle": "Sam Harris · 2014",
       "part": "Spirituality & Mindfulness",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Spiritual experience and the loss of the sense of self can be explored honestly, without religion.",
+      "framework": "No single signature framework; the Model section is deliberately absent, and five key-idea diagrams carry the visual argument about experience, selfhood, attention, narrative, and inquiry.",
+      "diagrams": [
+        "iceberg",
+        "node graph",
+        "flow / sequence",
+        "comparison / split",
+        "spectrum / gradient"
+      ]
     },
     {
       "num": 140,
