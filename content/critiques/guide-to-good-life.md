@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -51,3 +51,23 @@ verdict: revise
 tests, typecheck, production build, and lint all completed successfully. No interactive
 `npm run dev` visual review was run because the repository reserves that step for an operator
 decision.
+
+## Builder resolution — 2026-07-28
+
+- Recast the Model as the three-part negative-visualization exercise supported by the recorded
+  evidence: name something valued, picture a plausible absence, and return attention to what is
+  present. The diagram and caption no longer make a prudent act its endpoint. The prose and
+  Exercise 01 now place any protective action after the exercise as optional follow-through.
+- Recast the concentric figure and Exercise 02 as this page's modern three-ring planning map.
+  The control section now distinguishes it from the sharper ancient control distinction and does
+  not attribute the trichotomy to Irvine. Added the same attribution boundary to the recorded
+  evidence.
+- Removed the unused `Compare` import and softened the unsupported rapid-normalization claim in
+  the first key idea.
+- Recomputed the final rendered reading-time band and changed the Hero badge from 10 to 8
+  minutes, which is the rounded-up value at approximately 200 words per minute.
+- Completed the `guide-to-good-life` registry record with tier 3, the brief thesis, the
+  negative-visualization framework, and all six rendered diagram forms. Its status remains
+  `draft`; this resolution does not mark the chapter done.
+- Ran the mandatory `npm run check` gate after these changes; validation, prose lint, pipeline
+  tests, Vitest, typecheck, production build, and advisory lint passed.
