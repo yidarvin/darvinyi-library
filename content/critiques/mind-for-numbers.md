@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -74,3 +74,29 @@ verdict: revise
    all 303 Vitest tests; TypeScript and the Vite production build; and ESLint
    passed. Vitest emitted only the existing non-failing jsdom
    `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+1. Re-rendered the completed MDX through the shared components after the revisions:
+   1,382 reader-visible alphanumeric tokens, including generated component text,
+   rounds up to seven minutes at 200 words per minute. The Hero now uses
+   `minutes={7}`.
+2. Changed the Model composition wrapper from `min-w-[440px]` to
+   `min-w-[558px]`, the four-step Flow's native width. Added a chapter regression
+   test that asserts the exact Flow viewBox and readable-width wrapper remain paired.
+3. Replaced Figure 141.3's unsupported directed causal cycle with a neutral
+   `NodeGraph` (`directed={false}`) that maps the relationship among an earlier
+   attempt, time away, blank-page recall, and specific feedback. Its prose and
+   caption now describe that map directly.
+4. Narrowed the former chunk-formation claim to “Return after a gap,” grounded in
+   the recorded spacing and retrieval evidence. Exercise 03 is now a blank-page
+   recall check with precise feedback and a later retry, rather than a claimed
+   chunk-formation recipe. No new external research was added.
+5. Completed the draft registry entry with tier 3, a brief-consistent thesis,
+   “Focused versus diffuse thinking” as the framework, and the six rendered
+   diagram forms in page order.
+
+`npm run check` completed with `CHECK OK` before this resolution was recorded:
+validation, prose lint, 42 pipeline and runner tests, 304 Vitest tests, TypeScript,
+the Vite production build, and ESLint all passed. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.

@@ -8,7 +8,7 @@ import { Compare, Flow, NodeGraph, ProcessLoop, Spectrum } from "../components/d
 <Hero
   slug="mind-for-numbers"
   thesis="Hard material yields when attention, rest, recall, and practice are given distinct jobs instead of being asked to do the same work all at once."
-  minutes={8}
+  minutes={7}
 />
 
 ## The thesis
@@ -61,31 +61,29 @@ partners with different assignments.
   />
 </Figure>
 
-## Build chunks that can travel
+## Return after a gap
 
-A chunk is more than a fact you can repeat. It is a compact pattern that lets several moves be
-handled together: recognizing when a quadratic formula fits, seeing the role of a derivative,
-or knowing why a conservation law constrains an answer. Chunks grow by following a worked
-example carefully, doing a nearby problem without looking, and connecting the result to a
-larger purpose. The aim is not to memorize every move in isolation. It is to make a useful
-structure available when a new problem calls for it.
+Time between contacts changes what a review can reveal. Right after a worked solution, its
+route is still in view. Later, start from a blank page and try to reconstruct the method or
+solve a fresh version. The attempt gives feedback somewhere concrete to land: compare the work,
+name the first missing step, and make that step the target of the next return. A delayed review
+does not guarantee retention, but it gives familiarity less room to impersonate recall.
 
-<Figure id="141.3" caption="A usable chunk joins procedure, meaning, and a cue for when to use it.">
+<Figure id="141.3" caption="A delayed review links an earlier attempt, time away, recall, and specific feedback.">
   <NodeGraph
     className="block w-full min-w-[440px]"
+    directed={false}
     nodes={[
-      { id: "cue", label: "problem cue", x: 0.16, y: 0.5 },
-      { id: "pattern", label: "recognized pattern", x: 0.44, y: 0.22 },
-      { id: "steps", label: "linked steps", x: 0.73, y: 0.36 },
-      { id: "why", label: "why it works", x: 0.62, y: 0.76 },
-      { id: "check", label: "answer check", x: 0.28, y: 0.78 },
+      { id: "attempt", label: "earlier attempt", x: 0.24, y: 0.28 },
+      { id: "gap", label: "time away", x: 0.72, y: 0.28 },
+      { id: "recall", label: "blank-page recall", x: 0.7, y: 0.74 },
+      { id: "feedback", label: "specific feedback", x: 0.25, y: 0.74 },
     ]}
     edges={[
-      { from: "cue", to: "pattern", label: "suggests" },
-      { from: "pattern", to: "steps", label: "selects" },
-      { from: "steps", to: "why", label: "explains" },
-      { from: "why", to: "check", label: "tests" },
-      { from: "check", to: "cue", kind: "reinforcing", label: "sharpens" },
+      { from: "attempt", to: "gap" },
+      { from: "gap", to: "recall" },
+      { from: "recall", to: "feedback" },
+      { from: "feedback", to: "attempt" },
     ]}
   />
 </Figure>
@@ -147,7 +145,7 @@ sleep, or another low-demand activity before returning to verify the answer. The
 practical map of study states, not a claim that the brain contains two separate switches.
 
 <Figure id="141.6" caption="Focus supplies precision; diffuse time can widen the search before focused checking resumes.">
-  <div className="min-w-[440px] space-y-6">
+  <div className="min-w-[558px] space-y-6">
     <Compare
       className="block w-full"
       favor="none"
@@ -183,10 +181,10 @@ ten minutes away from the screen and the notes. On return, write one possible ne
 looking anything up. If it fails, the attempt has still made the missing connection clearer.
 </ExerciseCard>
 
-<ExerciseCard n="03" title="Turn one example into a chunk">
-Study a worked example once. Close it and reproduce the outline from a blank page. Then solve a
-nearby problem with different numbers or a changed surface detail. Finish by writing the cue
-that tells you when this method belongs, and one reason its central step is valid.
+<ExerciseCard n="03" title="Turn one example into a recall check">
+Study a worked example once. Close it and reproduce its outline from a blank page. Compare the
+attempt with the source, then name the first step that changed or disappeared. On a later day,
+try the outline again before looking back, so the review tests retrieval rather than recognition.
 </ExerciseCard>
 
 <ExerciseCard n="04" title="Schedule a short return">

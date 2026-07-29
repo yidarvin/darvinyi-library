@@ -192,6 +192,26 @@ describe("The Tao of Pooh mobile flow", () => {
   });
 });
 
+describe("A Mind for Numbers model flow", () => {
+  it("keeps the focused-and-diffuse study sequence at its readable native width", async () => {
+    const mod = await mdxModules["../chapters/mind-for-numbers.mdx"]();
+    const MindForNumbers = mod.default;
+    render(
+      <MemoryRouter>
+        <MDXProvider components={mdxComponents}>
+          <MindForNumbers />
+        </MDXProvider>
+      </MemoryRouter>,
+    );
+
+    const caption = screen.getByText(/Focus supplies precision; diffuse time can widen the search/i);
+    const flow = caption.closest("figure")?.querySelector('svg[viewBox="0 0 558 180"]');
+
+    expect(flow).not.toBeNull();
+    expect(flow?.parentElement?.getAttribute("class")).toContain("min-w-[558px]");
+  });
+});
+
 describe("The Demon-Haunted World figure regressions", () => {
   it("keeps its confidence, inquiry, and detection-kit diagrams semantically and visually distinct", async () => {
     const compactText = (value: string | null | undefined) => (value ?? "").replace(/\s+/g, "");
