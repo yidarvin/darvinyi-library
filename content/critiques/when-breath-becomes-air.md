@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -31,3 +31,22 @@ None.
   prose lint, pipeline tests, 314 Vitest tests, TypeScript, the Vite build, and
   ESLint all completed successfully. Vitest emitted only the existing non-failing
   jsdom `Window.scrollTo()` notices.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+1. **Make figure 146.1 encode the meeting it claims to show.** The prose says the
+   medical and human questions are linked, and the caption says they “meet in a
+   decision” (`src/chapters/when-breath-becomes-air.mdx:23-30`). The rendered
+   `<Compare>` primitive instead places the two questions on opposing sides of a
+   literal `vs` label and contains no decision node or convergence
+   (`src/components/diagrams/Compare.tsx`). That changes a complementary,
+   two-input relationship into an opposition and leaves the key idea's central
+   structure absent from its diagram. Use an in-vocabulary form or composition
+   that visibly brings both kinds of knowledge into a decision, with labels and
+   caption aligned to what the figure actually renders.
+
+### Advisory
+
+None.
