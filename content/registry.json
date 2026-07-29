@@ -2887,11 +2887,11 @@
       "thesis": "A young neurosurgeon facing terminal cancer asks what makes a life worth living when time runs short.",
       "framework": "No single signature framework; the Model section is deliberately absent because the memoir's five key ideas carry its central argument.",
       "diagrams": [
-        "comparison / split",
+        "assembly / contribution (decision)",
         "core / context",
         "timeline / bar",
         "flow / sequence",
-        "assembly / contribution"
+        "assembly / contribution (legacy)"
       ]
     }
   ]

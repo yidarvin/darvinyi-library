@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -50,3 +50,17 @@ None.
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-28
+
+- Replaced figure 146.1's opposing comparison panels with the in-vocabulary
+  assembly / contribution diagram. It now visibly routes `medical knowledge` and
+  `personal priorities` into `a decision`, matching both the surrounding prose and
+  the revised caption that says the inputs converge.
+- Updated the complete registry diagram inventory to replace the removed comparison
+  entry with `assembly / contribution (decision)` and distinguish the final legacy
+  figure as `assembly / contribution (legacy)`. The Model rationale, draft status,
+  prior metadata repair, prose, evidence record, and cross-links remain intact.
+- `npm run check` passed on 2026-07-28 after the diagram and registry corrections.
+  No external search was performed, no status transition was made, and the chapter
+  remains `draft` pending independent re-review.

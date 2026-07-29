@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Assembly, Compare, CoreContext, Flow, Timeline } from "../components/diagrams";
+import { Assembly, CoreContext, Flow, Timeline } from "../components/diagrams";
 
 <Hero
   slug="when-breath-becomes-air"
@@ -27,18 +27,11 @@ and still need to be weighed against the life it asks someone to live. Kalanithi
 both sides of the white coat gives this distinction its force. Prognosis is information, not an
 instruction about what should matter.
 
-<Figure id="146.1" caption="Medical options and a person's priorities meet in a decision; neither side replaces the other.">
-  <Compare
+<Figure id="146.1" caption="Medical knowledge and personal priorities converge on a decision; neither replaces the other.">
+  <Assembly
     className="block w-full min-w-[440px]"
-    favor="none"
-    left={{
-      title: "the medical question",
-      points: ["what is happening?", "what may treatment change?", "what burdens and risks are involved?"],
-    }}
-    right={{
-      title: "the life question",
-      points: ["what matters now?", "what tradeoff is acceptable?", "who and what need attention?"],
-    }}
+    parts={["medical knowledge", "personal priorities"]}
+    result="a decision"
   />
 </Figure>
 
