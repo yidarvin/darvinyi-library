@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -55,3 +55,13 @@ matches the evidence record. No new external web search was begun.
 42 pipeline and runner tests, all 306 Vitest tests, TypeScript, the Vite production
 build, and ESLint passed. Vitest emitted only the existing non-failing jsdom
 `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+Resolved all required findings using the recorded evidence. `The thesis` is now a two-sentence
+compression that joins receptive attention, making, editing, and release, and the Hero badge is
+now seven minutes. Figure 142.4 now passes `favor="none"`, giving making and editing equal visual
+weight. Figure 142.5 now uses a rectangular, non-crossing sequence with neutral response-to-notice
+edge styling; its return label is moved into clear space, and its caption makes response evidence
+rather than a command. No evidence, brief, registry, source metadata, or unrelated artifact was
+changed.

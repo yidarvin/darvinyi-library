@@ -8,17 +8,14 @@ import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagr
 <Hero
   slug="creative-act"
   thesis="Creativity grows from a practiced openness to what is already asking for attention, followed by the patience to make, choose, and release without trying to control every result."
-  minutes={6}
+  minutes={7}
 />
 
 ## The thesis
 
-Rick Rubin treats creativity as a quality of attention before it is a professional identity.
-The artist's task is to become receptive to details, accidents, questions, and combinations
-that might otherwise pass unnoticed, then give those signals a form. Skill and effort still
-matter, but they work best when they serve a live investigation rather than an attempt to
-force a predetermined masterpiece. The practice is to notice more, make more room for
-experiments, and let careful selection emerge after there is material to select.
+Creativity is practiced receptivity: notice what keeps asking for attention, make experiments
+from it, then choose and release without forcing certainty too early. Skill and effort serve
+this investigation best when making generates material and editing selects from it.
 
 ## Why it matters
 
@@ -101,7 +98,7 @@ between them.
 <Figure id="142.4" caption="Generation expands the field; editing gives the strongest material a clear shape.">
   <Compare
     className="block w-full min-w-[440px]"
-    favor="right"
+    favor="none"
     left={{
       title: "make material",
       points: ["follow associations", "try surplus versions", "allow mistakes", "postpone the verdict"],
@@ -123,20 +120,20 @@ one becomes the sole measure of what to make. The larger practice is to finish h
 release at a chosen threshold, listen without surrendering judgment, and return to the source
 of the next piece.
 
-<Figure id="142.5" caption="Release brings a work into contact with other people, then feeds new observation back into the practice.">
+<Figure id="142.5" caption="Response adds information after release; the maker returns to observation without treating it as a command.">
   <NodeGraph
     className="block w-full min-w-[440px]"
     nodes={[
-      { id: "notice", label: "notice", x: 0.5, y: 0.1 },
-      { id: "make", label: "make a piece", x: 0.14, y: 0.52 },
-      { id: "release", label: "release it", x: 0.86, y: 0.52 },
-      { id: "response", label: "receive response", x: 0.5, y: 0.9 },
+      { id: "notice", label: "notice", x: 0.18, y: 0.24 },
+      { id: "make", label: "make a piece", x: 0.76, y: 0.24 },
+      { id: "release", label: "release it", x: 0.76, y: 0.76 },
+      { id: "response", label: "receive response", x: 0.18, y: 0.76 },
     ]}
     edges={[
       { from: "notice", to: "make", label: "form" },
       { from: "make", to: "release", label: "finish" },
       { from: "release", to: "response", label: "meet others" },
-      { from: "response", to: "notice", kind: "reinforcing", label: "see again", labelOffset: { y: 18 } },
+      { from: "response", to: "notice", label: "see again", labelOffset: { x: -50 } },
     ]}
   />
 </Figure>
