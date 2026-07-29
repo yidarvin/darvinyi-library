@@ -4,16 +4,13 @@ import { Assembly, Compare, NodeGraph, Pyramid } from "../components/diagrams";
 
 <Hero
   slug="how-not-to-die"
-  thesis="Food is one of the most repeated conditions in a life. Make the ordinary pattern mostly whole plant foods, while keeping medical care, nutritional adequacy, and uncertainty in view."
+  thesis="Greger argues that everyday diet is a major preventive lever against diseases that commonly kill people. The evidence makes whole-food plant-centered patterns a credible option, while leaving their causal reach and place alongside medical care uncertain."
   minutes={7}
 />
 
 ## The thesis
 
-Greger makes an ambitious preventive case: many chronic illnesses are shaped, at least in part, by
-what people eat repeatedly, so intact plant foods deserve to be a default rather than an occasional
-repair. The bounded version is not that one menu prevents every illness, but that diet is a recurring
-exposure and whole-food plant-centered patterns can support lower blood lipids alongside ordinary care.
+Greger argues that diet is a major preventive lever against the chronic diseases most likely to kill people, and that whole plant foods should therefore organize ordinary meals. The bounded synthesis is that healthful plant-centered patterns are associated with better long-term outcomes and can lower blood lipids in trials, but neither finding proves that food is the biggest lever or a substitute for care.
 
 ## Why it matters
 
@@ -40,26 +37,33 @@ the largest share of the plate often enough that they become the normal meal.
   />
 </Figure>
 
-### The quality of the plant food changes the claim
+### The preventive case has two evidence paths
 
-"Plant-based" is too broad to settle a health question. It can describe lentils and oats, or
-refined starches, sugar, and heavily processed snack food. Large observational cohorts can show
-that people who eat more healthful plant foods tend to have better outcomes, but that is not proof
-that every plant-derived product has the same effect, or that food alone caused the difference.
-Quality, the rest of the diet, and the rest of a person's life remain part of the picture.
+Greger's central claim is about prevention over a lifetime, not a single laboratory value. In two
+long-running cohorts in the evidence record, healthful plant-food patterns were associated with
+lower cardiovascular and all-cause mortality after adjustment. Randomized trials give a different
+kind of support: vegetarian and vegan interventions lowered blood lipids on average. Together,
+these findings make a whole-food plant-centered pattern a credible preventive option. They do not
+show that diet alone caused the long-term outcomes, that every plant-derived food is helpful, or
+that the pattern prevents every illness.
 
-<Figure id="144.2" caption="A plant label says little until the food's quality and place in the pattern are clear.">
-  <Compare
+<Figure id="144.2" caption="Cohorts connect healthful patterns with outcomes, while trials test a shorter-term lipid change.">
+  <NodeGraph
     className="block w-full min-w-[380px]"
-    favor="right"
-    left={{
-      title: "plant-derived",
-      points: ["may be refined", "may be sugary or salty", "can displace little", "a category, not a verdict"],
-    }}
-    right={{
-      title: "whole-food centered",
-      points: ["largely intact foods", "fiber-rich staples", "variety across meals", "a pattern to evaluate"],
-    }}
+    directed={false}
+    nodes={[
+      { id: "pattern", label: "healthful plant pattern", x: 0.5, y: 0.5 },
+      { id: "cohorts", label: "long cohorts", x: 0.12, y: 0.22 },
+      { id: "outcomes", label: "CVD and mortality", x: 0.12, y: 0.82 },
+      { id: "trials", label: "randomized trials", x: 0.88, y: 0.22 },
+      { id: "lipids", label: "blood lipids", x: 0.88, y: 0.82 },
+    ]}
+    edges={[
+      { from: "cohorts", to: "pattern", label: "track" },
+      { from: "cohorts", to: "outcomes", label: "adjusted association" },
+      { from: "trials", to: "pattern", label: "test" },
+      { from: "trials", to: "lipids", label: "can lower" },
+    ]}
   />
 </Figure>
 

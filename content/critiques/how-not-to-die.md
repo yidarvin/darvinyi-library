@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -176,3 +176,18 @@ web search was begun.
 critique-state, and prose validation passed; all 42 pipeline and runner tests and all
 310 Vitest tests passed; TypeScript, the Vite production build, and ESLint passed.
 Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Restored the book's central preventive claim in the Hero and two-sentence Thesis as
+  **Greger's argument**, rather than an independently established fact. Both now pair it with
+  the chapter's bounded synthesis: adjusted cohort associations with cardiovascular and
+  all-cause outcomes, randomized evidence of lower blood lipids on average, and no claim that
+  diet is the biggest lever, proves causation, or replaces care.
+- Reworked Key Idea 2 and Figure 144.2 into a neutral evidence map. The map keeps long cohorts
+  and randomized trials as separate paths: cohorts connect a healthful plant pattern with
+  adjusted cardiovascular and mortality associations, while trials test the shorter-term lipid
+  result. This makes the broad preventive logic visible without turning either study design into
+  proof of universal disease prevention.
+- Updated the registry thesis to match the restored attributed argument and its evidence-bounded
+  interpretation. The record remains `draft`; the queue and done state were not changed.
