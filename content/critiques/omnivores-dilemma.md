@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -67,3 +67,11 @@ external web search was begun.
 critique-state, and prose validation passed; all 42 pipeline and runner tests and all
 312 Vitest tests passed; TypeScript, the Vite production build, and ESLint passed.
 Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Compressed “The thesis” to two sentences, retaining the chain-of-relationships argument.
+- Recentered the first key idea on the book's comparison of industrial, organic or alternative, and self-provisioned meals, including the distinct relationships those routes reveal.
+- Replaced Figure 145.2's false linear `Flow` with a node graph: feed and ingredient paths converge on a meal, while fuel ethanol ends as a competing nonfood use.
+- Reframed the price claim around what checkout price cannot report, rather than distance or a general claim of externalized costs. Figure 145.3 now contrasts the completed purchase with supply-chain questions beyond price.
+- Replaced the author-site footer with Penguin Random House's product page and recorded that publisher purchase destination in the evidence file.

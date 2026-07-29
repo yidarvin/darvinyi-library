@@ -8,7 +8,7 @@
 
 ## Thesis to convey
 
-Tracing our food back to its source reveals how industrial eating disconnects us from what we consume.
+Comparing industrial, organic or alternative, and self-provisioned meals reveals the relationships each food chain asks an eater to support.
 
 ## Signature model
 

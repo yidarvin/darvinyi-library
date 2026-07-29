@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Assembly, Compare, Flow, Iceberg, NodeGraph } from "../components/diagrams";
+import { Assembly, Compare, Iceberg, NodeGraph, ProcessLoop } from "../components/diagrams";
 
 <Hero
   slug="omnivores-dilemma"
@@ -10,11 +10,10 @@ import { Assembly, Compare, Flow, Iceberg, NodeGraph } from "../components/diagr
 
 ## The thesis
 
-Pollan's question is disarmingly ordinary: what should dinner be? His answer is to stop treating
-that question as a matter of appetite alone. A meal joins farms, processing plants, animals,
-workers, fuel, rules, and ecosystems. Trace those connections far enough and food becomes less
-anonymous. The aim is not to find a spotless meal, but to choose with a clearer sense of the
-relationships a meal asks you to support.
+By following industrial, organic or alternative, and self-provisioned meals back through their
+food chains, Pollan shows that eating is participation in relationships among land, animals,
+labor, energy, and culture. The aim is not a spotless meal, but a choice made with a clearer sense
+of the relationships it supports.
 
 ## Why it matters
 
@@ -26,21 +25,21 @@ choice informed.
 
 ## Key ideas
 
-### A meal has a history hidden beneath its surface
+### Contrasting meals reveal different food chains
 
-The visible meal is the end of a much larger system. Ingredients have origins, animals have feed,
-farms have inputs, and every handoff needs storage, transport, money, and labor. None of that
-makes a meal wrong. It means the meal carries consequences that a menu description cannot show.
-The first useful habit is to replace the question "What is this?" with "What had to happen for
-this to arrive here?" The answer will often be incomplete, but even a partial answer changes what
-counts as a good choice.
+The book's organizing move is comparison. Pollan follows an industrial meal, an organic or
+alternative meal, and a self-provisioned meal, then asks what each chain requires of land, animals,
+labor, energy, and the eater. The routes are not moral scorecards. They make different tradeoffs
+visible: a meal bought through a long commercial chain, one shaped by a production standard, and
+one assembled through direct work such as growing, gathering, hunting, or cooking. Following each
+route turns dinner from an isolated purchase into a relationship that can be examined.
 
-<Figure id="145.1" caption="The meal is visible; the chain of land, labor, and energy beneath it is easy to miss.">
+<Figure id="145.1" caption="Three contrasting routes to dinner make different relationships visible.">
   <Iceberg
     className="block w-full min-w-[380px]"
-    above="the meal on the table"
-    waterlineLabel="what the package shows"
-    below={["farm and feed", "processing and transport", "labor, rules, and waste"]}
+    above="dinner on the table"
+    waterlineLabel="the meal's visible surface"
+    below={["industrial chain", "organic or alternative chain", "self-provisioned chain"]}
   />
 </Figure>
 
@@ -53,34 +52,46 @@ uses in livestock feed and fuel ethanol as well as food ingredients. That range 
 systems lens: a decision made at the field reaches dinner by several routes, and dinner competes
 with other uses of the same harvest.
 
-<Figure id="145.2" caption="One harvest can travel through feed, fuel, and ingredient channels before it reaches a meal.">
-  <Flow
+<Figure id="145.2" caption="Feed and ingredient routes can reach a meal, while ethanol is a competing nonfood route.">
+  <NodeGraph
     className="block w-full min-w-[558px]"
-    steps={["corn field", "harvest and processing", "feed, fuel, or ingredients", "food choice"]}
-    highlight={2}
+    nodes={[
+      { id: "corn", label: "corn harvest", x: 0.16, y: 0.5 },
+      { id: "feed", label: "livestock feed", x: 0.46, y: 0.2 },
+      { id: "ingredient", label: "food ingredients", x: 0.46, y: 0.8 },
+      { id: "ethanol", label: "fuel ethanol", x: 0.78, y: 0.18 },
+      { id: "meal", label: "meal", x: 0.82, y: 0.72 },
+    ]}
+    edges={[
+      { from: "corn", to: "feed" },
+      { from: "corn", to: "ingredient" },
+      { from: "corn", to: "ethanol", label: "nonfood use", labelOffset: { x: 8, y: -6 } },
+      { from: "feed", to: "meal", label: "meat, eggs, dairy", labelOffset: { x: -3, y: -12 } },
+      { from: "ingredient", to: "meal" },
+    ]}
   />
 </Figure>
 
-### Efficiency can concentrate costs that the shelf does not display
+### A checkout price is not a full account of a food chain
 
 Industrial supply chains can deliver abundant, standardized food at a low checkout price. Their
-strength is coordination at scale. Their weakness is distance: the farther a buyer is from the
-conditions of production, the easier it is for soil loss, animal conditions, worker safety, energy
-use, or waste to become somebody else's problem. This is not a claim that every large farm is
-careless or every nearby farm is responsible. It is a prompt to notice which costs are priced,
-which are regulated, and which are pushed outside the transaction.
+strength is coordination at scale. A price records the exchange at the register, while the chain
+also includes farming, processing, transport, retail, labor, energy, animal care, and waste.
+Price alone cannot report the conditions or every cost associated with those steps. This is not a
+claim that every large farm is careless or every nearby farm is responsible. It is a prompt to ask
+which parts of the chain are documented, regulated, and left unclear.
 
-<Figure id="145.3" caption="The shelf records price and convenience more readily than the conditions that made them possible.">
+<Figure id="145.3" caption="Checkout price records a purchase, not a complete account of the chain behind it.">
   <Compare
     className="block w-full min-w-[380px]"
     favor="none"
     left={{
-      title: "what a shelf shows",
-      points: ["price", "brand and label", "taste and convenience", "a finished item"],
+      title: "at checkout",
+      points: ["the item's price", "brand and label", "taste and convenience", "a completed sale"],
     }}
     right={{
-      title: "what it can omit",
-      points: ["inputs and energy", "labor and animal care", "soil and water effects", "waste after the sale"],
+      title: "questions beyond price",
+      points: ["farm and processing conditions", "labor and animal care", "energy, transport, and waste", "costs and effects not reported here"],
     }}
   />
 </Figure>
@@ -110,22 +121,10 @@ of attention: learn one source, cook one basic ingredient, ask one better questi
 tradeoffs openly. The point is practical agency. Food knowledge is not a badge of purity. It is a
 way to keep convenience from being the only value that decides the meal.
 
-<Figure id="145.5" caption="Small acts of inquiry connect a buyer to the people and systems that make a meal possible.">
-  <NodeGraph
+<Figure id="145.5" caption="A modest question can improve the next choice without requiring perfect information.">
+  <ProcessLoop
     className="block w-full min-w-[380px]"
-    nodes={[
-      { id: "buyer", label: "buyer", x: 0.5, y: 0.5 },
-      { id: "farm", label: "farm", x: 0.5, y: 0.1 },
-      { id: "food", label: "food business", x: 0.88, y: 0.5 },
-      { id: "community", label: "community", x: 0.5, y: 0.9 },
-      { id: "policy", label: "rules and policy", x: 0.12, y: 0.5 },
-    ]}
-    edges={[
-      { from: "farm", to: "buyer", label: "source" },
-      { from: "food", to: "buyer", label: "offers" },
-      { from: "buyer", to: "community", label: "spends with" },
-      { from: "policy", to: "farm", label: "sets rules", labelOffset: { x: -14, y: -4 } },
-    ]}
+    stages={["ask about one source", "make a workable choice", "notice its tradeoffs", "adjust the next time"]}
   />
 </Figure>
 
@@ -181,6 +180,6 @@ or cooking choice into a regular practice.
 
 <ShelvedNearby
   related={["how-not-to-die", "silent-spring", "atomic-habits"]}
-  buyUrl="https://michaelpollan.com/books/the-omnivores-dilemma/"
-  buyLabel="Buy The Omnivore's Dilemma from Michael Pollan"
+  buyUrl="https://www.penguinrandomhouse.com/books/292953/the-omnivores-dilemma-by-michael-pollan/9780143038580/"
+  buyLabel="Buy The Omnivore's Dilemma from Penguin Random House"
 />

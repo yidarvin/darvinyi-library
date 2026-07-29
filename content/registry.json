@@ -2865,14 +2865,14 @@
       "routes": [],
       "status": "draft",
       "tier": 3,
-      "thesis": "Pollan treats eating as participation in a long chain of land, labor, animals, energy, and rules; tracing that chain makes food choices more informed without promising a spotless meal.",
-      "framework": "No single signature model; the Model section is deliberately omitted because the book's inquiry is carried by five connected food-system ideas.",
+      "thesis": "Pollan compares industrial, organic or alternative, and self-provisioned food chains to show that eating participates in relationships among land, animals, labor, energy, and culture.",
+      "framework": "No single signature model; the Model section is deliberately omitted because the book's comparative inquiry is carried by five connected food-system ideas.",
       "diagrams": [
         "iceberg",
-        "flow",
+        "node graph",
         "comparison",
         "assembly / contribution",
-        "node graph"
+        "process loop"
       ]
     },
     {
