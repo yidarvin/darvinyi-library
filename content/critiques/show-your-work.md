@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -61,3 +61,39 @@ Also addressed the advisory cross-link note: the nearby-shelf sentence now maps 
 four linked books to its specific relationship. Existing privacy, attribution, persistence,
 and discoverability caveats and their supporting evidence were preserved. `npm run check`
 passes on 2026-07-28.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+1. **Give the Key Ideas an original organizing logic instead of retaining the source
+   book's progression.** The recorded evidence at
+   `content/evidence/show-your-work.md:6-10` identifies Kleon's sequence of concerns
+   as process, small pieces, stories, teaching, avoiding spam, criticism, selling, and
+   persistence. The draft at `src/chapters/show-your-work.mdx:29-158` selects from
+   that sequence but keeps the selected ideas in the same order: process, small
+   pieces and cadence, public interests, teaching, non-spammy contribution, then
+   persistence. Renaming the headings and omitting several source topics does not
+   supply the thematic reorganization required by the copyright line in
+   `docs/authoring-spec.md`, which explicitly says not to mirror the book's chapter
+   order. Recompose or reorder the six ideas under a clear original progression so
+   the page reads as synthesis rather than a selected walk through the source's
+   table of contents.
+
+### Advisory
+
+None.
+
+The two findings from round 1 remain resolved. “The thesis” is two sentences, Figure
+143.3's `refine` label fits the available clearance, and the four nearby-book
+relationships are mapped individually. The brief and recorded evidence otherwise
+support the draft's process-sharing, generosity, attribution, persistence, and
+privacy-boundary claims. Six key ideas retain captioned shared-vocabulary diagrams;
+the deliberate absence of a Model section is recorded in the brief and registry; all
+four related slugs are done; and the publisher link agrees with the evidence record.
+No new external web search was begun.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28: validation, prose lint, all
+42 pipeline and runner tests, all 308 Vitest tests, TypeScript, the Vite production
+build, and ESLint passed. Vitest emitted only the existing non-failing jsdom
+`Window.scrollTo()` notices.
