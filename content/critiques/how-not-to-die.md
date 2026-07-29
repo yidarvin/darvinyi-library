@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -225,3 +225,10 @@ or real cover art was found. No new external web search was begun.
 critique-state, and prose validation passed; all 42 pipeline and runner tests and all
 310 Vitest tests passed; TypeScript, the Vite production build, and ESLint passed.
 Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Updated the `how-not-to-die` registry diagram inventory so its second entry is
+  `node graph`, matching Figure 144.2 and the rendered order: assembly, node graph,
+  node graph, comparison, pyramid. The chapter remains `draft`; no done status, commit,
+  or push was made.
