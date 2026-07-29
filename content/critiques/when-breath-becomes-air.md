@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -16,3 +16,18 @@ verdict: revise
 ### Advisory
 
 None.
+
+## Builder resolution — 2026-07-28
+
+- Completed the `when-breath-becomes-air` registry record with tier 3, the
+  brief-supported thesis, and an explicit note that no single signature framework
+  exists, so the Model section is deliberately absent and the five key ideas carry
+  the argument.
+- Recorded the five rendered diagram forms in page order: comparison / split, core
+  / context, timeline / bar, flow / sequence, and assembly / contribution. The
+  chapter remains `draft`; no queue or status transition was made.
+- Preserved the existing chapter prose, evidence record, diagrams, and cross-links.
+  No external search was begun. `npm run check` passed on 2026-07-28: validation,
+  prose lint, pipeline tests, 314 Vitest tests, TypeScript, the Vite build, and
+  ESLint all completed successfully. Vitest emitted only the existing non-failing
+  jsdom `Window.scrollTo()` notices.
