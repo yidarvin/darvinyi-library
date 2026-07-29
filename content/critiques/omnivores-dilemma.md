@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -75,3 +75,35 @@ Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
 - Replaced Figure 145.2's false linear `Flow` with a node graph: feed and ingredient paths converge on a meal, while fuel ethanol ends as a competing nonfood use.
 - Reframed the price claim around what checkout price cannot report, rather than distance or a general claim of externalized costs. Figure 145.3 now contrasts the completed purchase with supply-chain questions beyond price.
 - Replaced the author-site footer with Penguin Random House's product page and recorded that publisher purchase destination in the evidence file.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+None.
+
+The round 1 findings are resolved. “The thesis” is now two sentences. The first key
+idea and Figure 145.1 establish the brief's comparison of industrial, organic or
+alternative, and self-provisioned food chains. Figure 145.2 now separates corn's
+feed and ingredient routes to a meal from fuel ethanol's nonfood route. The
+checkout-price discussion stays within the recorded evidence's narrower claim, and
+Figure 145.3 matches it. The footer now links to the recorded Penguin Random House
+product page.
+
+The remaining factual claims were checked against the chapter brief and recorded
+evidence where practical, without beginning a new external search. The page has the
+required anatomy in order, five diagrammed key ideas, a deliberately omitted Model
+section consistent with the brief and registry, concrete exercises, an honest
+caveat, resolved related links, and no apparent quotation, close paraphrase,
+reproduced source figure, or real cover art. The imported diagram primitives encode
+the stated relationships and use explicit minimum widths with the shared
+horizontal-overflow wrapper to preserve phone legibility.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28. Queue, registry, content,
+critique-state, and prose validation passed; all 42 pipeline and runner tests and all
+312 Vitest tests passed; TypeScript, the Vite production build, and ESLint passed.
+Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.

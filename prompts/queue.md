@@ -159,7 +159,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 142 | creative-act                    | The Creative Act                              | DONE    |
 | 143 | show-your-work                  | Show Your Work!                               | DONE    |
 | 144 | how-not-to-die                  | How Not to Die                                | DONE    |
-| 145 | omnivores-dilemma               | The Omnivore's Dilemma                        | PENDING |
+| 145 | omnivores-dilemma               | The Omnivore's Dilemma                        | DONE    |
 | 146 | when-breath-becomes-air         | When Breath Becomes Air                       | PENDING |
 
 <!--
