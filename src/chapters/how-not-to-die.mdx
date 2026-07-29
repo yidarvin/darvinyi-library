@@ -1,0 +1,197 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, Pyramid, Venn } from "../components/diagrams";
+
+<Hero
+  slug="how-not-to-die"
+  thesis="Food is one of the most repeated conditions in a life. Make the ordinary pattern mostly whole plant foods, while keeping medical care, nutritional adequacy, and uncertainty in view."
+  minutes={7}
+/>
+
+## The thesis
+
+Greger makes an ambitious preventive case: many of the chronic illnesses that shorten life are
+shaped, at least in part, by what people eat repeatedly, so a pattern centered on intact plant
+foods deserves to be a default rather than an occasional repair. The useful version of the
+argument is not that one menu prevents every illness. It is that diet is a recurring exposure
+that can improve several risk factors at once, and is worth treating as part of ordinary care.
+
+## Why it matters
+
+Most food decisions look too small to matter. Breakfast is gone by noon, and a grocery choice
+hardly feels medical. Yet those choices recur for decades, alongside movement, sleep, smoking,
+medication, income, stress, family history, and access to care. That repetition makes food a
+practical place to reduce risk, particularly when the change is enjoyable enough to keep.
+
+## Key ideas
+
+### Put whole plants at the center, not just plants somewhere on the label
+
+The book's strongest practical distinction is between a diet that happens to exclude some animal
+foods and one built from beans, vegetables, fruit, whole grains, nuts, and seeds. A soda and a
+pastry can be plant-derived. That does not give them the role that fiber-rich, minimally processed
+foods play in a meal. The point is not purity. It is to give the most filling, nutrient-dense foods
+the largest share of the plate often enough that they become the normal meal.
+
+<Figure id="144.1" caption="A plant-centered pattern gets its shape from several food groups working together.">
+  <Venn
+    className="block w-full min-w-[380px]"
+    sets={[
+      { label: "vegetables and fruit" },
+      { label: "beans and whole grains" },
+      { label: "nuts and seeds" },
+    ]}
+    intersectionLabel="a repeatable whole-food pattern"
+  />
+</Figure>
+
+### The quality of the plant food changes the claim
+
+"Plant-based" is too broad to settle a health question. It can describe lentils and oats, or
+refined starches, sugar, and heavily processed snack food. Large observational cohorts can show
+that people who eat more healthful plant foods tend to have better outcomes, but that is not proof
+that every plant-derived product has the same effect, or that food alone caused the difference.
+Quality, the rest of the diet, and the rest of a person's life remain part of the picture.
+
+<Figure id="144.2" caption="A plant label says little until the food's quality and place in the pattern are clear.">
+  <Compare
+    className="block w-full min-w-[380px]"
+    favor="right"
+    left={{
+      title: "plant-derived",
+      points: ["may be refined", "may be sugary or salty", "can displace little", "a category, not a verdict"],
+    }}
+    right={{
+      title: "whole-food centered",
+      points: ["largely intact foods", "fiber-rich staples", "variety across meals", "a pattern to evaluate"],
+    }}
+  />
+</Figure>
+
+### Food is one influence among several, not a replacement for care
+
+Diet may affect blood lipids, blood pressure, glycemic control, body weight, and other risk
+factors. Those connections help explain why a dietary pattern can matter across more than one
+condition. They do not turn food into a substitute for diagnosis, prescribed treatment, vaccines,
+screening, or urgent care. A person with diabetes, kidney disease, an eating disorder, pregnancy,
+food insecurity, or a serious symptom needs an approach that fits the clinical situation, not a
+universal rule from a book.
+
+<Figure id="144.3" caption="Diet can touch several risk factors, but it sits inside a wider care and life system.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "food", label: "food pattern", x: 0.5, y: 0.5 },
+      { id: "lipids", label: "blood lipids", x: 0.5, y: 0.12 },
+      { id: "glucose", label: "glycemic control", x: 0.86, y: 0.5 },
+      { id: "pressure", label: "blood pressure", x: 0.5, y: 0.88 },
+      { id: "weight", label: "body weight", x: 0.14, y: 0.5 },
+      { id: "care", label: "care and context", x: 0.82, y: 0.16 },
+    ]}
+    edges={[
+      { from: "food", to: "lipids", label: "can affect", labelOffset: { x: -40, y: 0 } },
+      { from: "food", to: "glucose", label: "can affect", labelOffset: { x: 20, y: -8 } },
+      { from: "food", to: "pressure", label: "can affect", labelOffset: { x: 28, y: 0 } },
+      { from: "food", to: "weight", label: "can affect", labelOffset: { x: -24, y: 0 } },
+      { from: "care", to: "food", label: "individualizes", labelOffset: { x: 6, y: -20 } },
+    ]}
+  />
+</Figure>
+
+### Judge claims by the kind of evidence beneath them
+
+Nutrition evidence comes in layers. A short randomized trial can test a change in a risk factor,
+such as LDL cholesterol, but may be too brief to show whether it prevents a heart attack years
+later. Long-running cohorts can observe disease and mortality, but people who eat differently may
+also differ in exercise, income, smoking, health care, and many hard-to-measure habits. The honest
+conclusion often lives between dismissal and certainty: some effects are credible, the size and
+cause of every long-term outcome are less settled.
+
+<Figure id="144.4" caption="Different study designs answer different questions, so a result should not be stretched past its reach.">
+  <Flow
+    className="block w-full min-w-[520px]"
+    steps={["food change", "short trial: risk factor", "long cohort: outcomes", "careful conclusion"]}
+    highlight={3}
+  />
+</Figure>
+
+### A restrictive pattern needs a nutrition plan
+
+Eating more plant foods does not require perfection or a vegan identity. If someone does choose a
+fully vegan pattern, planning becomes more important. Vitamin B12 does not occur naturally in
+unfortified plant foods, and other needs, including iodine, calcium, vitamin D, iron, zinc, and
+omega-3 fats, can depend on food choices, fortification, supplements, life stage, and health.
+The right response is neither fear nor improvisation. It is to learn the basics, use reliable
+sources when needed, and discuss personal needs with a qualified clinician or dietitian.
+
+<Figure id="144.5" caption="A durable eating pattern rests on adequacy before it reaches for optimization.">
+  <Pyramid
+    className="block w-full min-w-[380px]"
+    tiers={[
+      { label: "personal goals and preferences" },
+      { label: "variety and adequate energy" },
+      { label: "planned nutrients and fortification" },
+      { label: "whole-food staples" },
+    ]}
+    ascending
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose one whole-food anchor">
+For the next week, make one meal easier to repeat: oatmeal with fruit and nuts, beans with grains
+and vegetables, or a soup built around lentils. Start with something familiar and affordable. The
+purpose is to create a dependable option, not to perform dietary virtue.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Add before you subtract">
+At a regular shopping trip, pick two plant staples that will actually be used, such as canned
+beans and frozen vegetables. Decide where they belong in a meal before buying more ingredients.
+Adding a useful default often changes the plate more reliably than banning a favorite food.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make the strict version intentional">
+If you eat no animal foods, check a reliable vitamin B12 source and review your broader nutrition
+plan. Pregnancy, childhood, older age, gastrointestinal illness, medications, and diagnosed
+conditions can change what is appropriate. Ask a clinician or registered dietitian when the plan
+is unclear.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Bring food into a care conversation">
+Before a routine visit, write down a few typical days of eating, current supplements, and the
+outcomes that matter to you. Ask what dietary change would be safe and useful alongside your
+treatment, and whether medication doses or monitoring would need attention as habits change.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Greger presents a strongly pro-plant case, and the plain criticism is that he can make the evidence
+sound more decisive than it is. The strongest long-term disease claims often come from observational
+studies, where diet travels with many other advantages and disadvantages. Randomized trials do
+support improvements in some cardiometabolic risk factors, but results vary, trials are usually
+short, and they do not establish that a diet reverses every disease. One two-year randomized trial
+of culturally tailored vegan and omnivorous diets found no between-group difference in weight or
+lipids at twelve months. Treat a whole-food plant-centered pattern as a well-supported option, not
+as settled proof, a cure, or permission to stop medical treatment. See the evidence notes for the
+studies behind this caution.
+</Callout>
+
+## If you remember one thing
+
+Make ordinary meals more often from intact plant foods, then judge the results with the same care
+you would give any health decision: quality matters, adequacy matters, and food works alongside
+rather than instead of medical care.
+
+## Shelved nearby
+
+Outlive takes the broader prevention view, including food as one part of a longer healthspan plan.
+Atomic Habits offers a method for turning a practical meal default into a routine that survives a
+busy week. Why We Sleep is a useful reminder that eating is only one recurring condition in health.
+
+<ShelvedNearby
+  related={["outlive", "atomic-habits", "why-we-sleep"]}
+  buyUrl="https://us.macmillan.com/books/9781250066114/hownottodie/"
+  buyLabel="Buy How Not to Die from Macmillan"
+/>
