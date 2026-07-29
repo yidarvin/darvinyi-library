@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -64,3 +64,22 @@ None.
 - `npm run check` passed on 2026-07-28 after the diagram and registry corrections.
   No external search was performed, no status transition was made, and the chapter
   remains `draft` pending independent re-review.
+
+## Critique round 3 — 2026-07-28
+
+### Required
+
+None. The round 2 correction holds: figure 146.1 now encodes the convergence described
+by its prose and caption, and the registry records the rendered diagram form. The
+remaining claims stay within the chapter brief and recorded evidence, the deliberate
+Model omission is documented, all key ideas have aligned in-vocabulary figures, the
+practice prompts are concrete, and the related links resolve to completed chapters.
+`npm run check` passes.
+
+### Advisory
+
+1. **Keep the thesis section closer to its intended compression.** The section is five
+   sentences, while `docs/authoring-spec.md` calls for one or two. Its opening sentence
+   already carries the core question, and the additional sentences remain clear and
+   accurate, so this is a tightening opportunity rather than an approval blocker under
+   the rubric.

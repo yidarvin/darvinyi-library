@@ -12,155 +12,155 @@ landing page, the diagram primitive components, and the shared book-page layout.
 Run it first. Every row after it is one book. Each book has a brief at
 `prompts/notes/<slug>.md`.
 
-| #   | slug                            | item                                          | status  |
-|-----|---------------------------------|-----------------------------------------------|---------|
-| 000 | about                           | About this library                            | DONE    |
-| 001 | atomic-habits                   | Atomic Habits                                 | DONE    |
-| 002 | thinking-fast-and-slow          | Thinking, Fast and Slow                       | DONE    |
-| 003 | seven-habits                    | The 7 Habits of Highly Effective People       | DONE    |
-| 004 | how-to-win-friends              | How to Win Friends and Influence People       | DONE    |
-| 005 | sapiens                         | Sapiens                                       | DONE    |
-| 006 | mans-search-for-meaning         | Man's Search for Meaning                      | DONE    |
-| 007 | psychology-of-money             | The Psychology of Money                       | DONE    |
-| 008 | start-with-why                  | Start With Why                                | DONE    |
-| 009 | mindset                         | Mindset                                       | DONE    |
-| 010 | influence                       | Influence: The Psychology of Persuasion       | DONE    |
-| 011 | power-of-habit                  | The Power of Habit                            | DONE    |
-| 012 | rich-dad-poor-dad               | Rich Dad Poor Dad                             | DONE    |
-| 013 | deep-work                       | Deep Work                                     | DONE    |
-| 014 | never-split-the-difference      | Never Split the Difference                    | DONE    |
-| 015 | subtle-art                      | The Subtle Art of Not Giving a F*ck           | DONE    |
-| 016 | predictably-irrational          | Predictably Irrational                        | DONE    |
-| 017 | nudge                           | Nudge                                         | DONE    |
-| 018 | black-swan                      | The Black Swan                                | DONE    |
-| 019 | intelligent-investor            | The Intelligent Investor                      | DONE    |
-| 020 | freakonomics                    | Freakonomics                                  | DONE    |
-| 021 | good-to-great                   | Good to Great                                 | DONE    |
-| 022 | lean-startup                    | The Lean Startup                              | DONE    |
-| 023 | zero-to-one                     | Zero to One                                   | DONE    |
-| 024 | drive                           | Drive                                         | DONE    |
-| 025 | innovators-dilemma              | The Innovator's Dilemma                       | DONE    |
-| 026 | nonviolent-communication        | Nonviolent Communication                      | DONE    |
-| 027 | crucial-conversations           | Crucial Conversations                         | DONE    |
-| 028 | five-love-languages             | The 5 Love Languages                          | DONE    |
-| 029 | getting-to-yes                  | Getting to Yes                                | DONE    |
-| 030 | emotional-intelligence          | Emotional Intelligence                        | DONE    |
-| 031 | grit                            | Grit                                          | DONE    |
-| 032 | body-keeps-the-score            | The Body Keeps the Score                      | DONE    |
-| 033 | guns-germs-steel                | Guns, Germs, and Steel                        | DONE    |
-| 034 | outliers                        | Outliers                                      | DONE    |
-| 035 | selfish-gene                    | The Selfish Gene                              | DONE    |
-| 036 | short-history-nearly-everything | A Short History of Nearly Everything          | DONE    |
-| 037 | thinking-in-systems             | Thinking in Systems                           | DONE    |
-| 038 | range                           | Range                                         | DONE    |
-| 039 | meditations                     | Meditations                                   | DONE    |
-| 040 | obstacle-is-the-way             | The Obstacle Is the Way                       | DONE    |
-| 041 | power-of-now                    | The Power of Now                              | DONE    |
-| 042 | peak                            | Peak                                          | DONE    |
-| 043 | big-magic                       | Big Magic                                     | DONE    |
-| 044 | steal-like-an-artist            | Steal Like an Artist                          | DONE    |
-| 045 | on-writing                      | On Writing                                    | DONE    |
-| 046 | why-we-sleep                    | Why We Sleep                                  | DONE    |
-| 047 | superforecasting                | Superforecasting                              | DONE    |
-| 048 | thinking-in-bets                | Thinking in Bets                              | DONE    |
-| 049 | fooled-by-randomness            | Fooled by Randomness                          | DONE    |
-| 050 | paradox-of-choice               | The Paradox of Choice                         | DONE    |
-| 051 | blink                           | Blink                                         | DONE    |
-| 052 | getting-things-done             | Getting Things Done                           | DONE    |
-| 053 | essentialism                    | Essentialism                                  | DONE    |
-| 054 | flow                            | Flow                                          | DONE    |
-| 055 | the-one-thing                   | The One Thing                                 | DONE    |
-| 056 | four-thousand-weeks             | Four Thousand Weeks                           | DONE    |
-| 057 | almanack-naval                  | The Almanack of Naval Ravikant                | DONE    |
-| 058 | think-and-grow-rich             | Think and Grow Rich                           | DONE    |
-| 059 | random-walk                     | A Random Walk Down Wall Street                | DONE    |
-| 060 | millionaire-next-door           | The Millionaire Next Door                     | DONE    |
-| 061 | richest-man-babylon             | The Richest Man in Babylon                    | DONE    |
-| 062 | common-sense-investing          | The Little Book of Common Sense Investing     | DONE    |
-| 063 | dare-to-lead                    | Dare to Lead                                  | DONE    |
-| 064 | built-to-last                   | Built to Last                                 | DONE    |
-| 065 | good-strategy                   | Good Strategy Bad Strategy                    | DONE    |
-| 066 | hard-thing                      | The Hard Thing About Hard Things              | DONE    |
-| 067 | blue-ocean                      | Blue Ocean Strategy                           | DONE    |
-| 068 | e-myth                          | The E-Myth Revisited                          | DONE    |
-| 069 | extreme-ownership               | Extreme Ownership                             | DONE    |
-| 070 | four-hour-workweek              | The 4-Hour Workweek                           | DONE    |
-| 071 | effective-executive             | The Effective Executive                       | DONE    |
-| 072 | difficult-conversations         | Difficult Conversations                       | DONE    |
-| 073 | seven-principles-marriage       | The Seven Principles for Making Marriage Work | DONE    |
-| 074 | made-to-stick                   | Made to Stick                                 | DONE    |
-| 075 | quiet                           | Quiet                                         | DONE    |
-| 076 | happiness-hypothesis            | The Happiness Hypothesis                      | DONE    |
-| 077 | flourish                        | Flourish                                      | DONE    |
-| 078 | four-agreements                 | The Four Agreements                           | DONE    |
-| 079 | twelve-rules                    | 12 Rules for Life                             | DONE    |
-| 080 | feeling-good                    | Feeling Good                                  | DONE    |
-| 081 | homo-deus                       | Homo Deus                                     | DONE    |
-| 082 | cosmos                          | Cosmos                                        | DONE    |
-| 083 | brief-history-time              | A Brief History of Time                       | DONE    |
-| 084 | the-gene                        | The Gene                                      | DONE    |
-| 085 | why-nations-fail                | Why Nations Fail                              | DONE    |
-| 086 | factfulness                     | Factfulness                                   | DONE    |
-| 087 | emperor-maladies                | The Emperor of All Maladies                   | DONE    |
-| 088 | henrietta-lacks                 | The Immortal Life of Henrietta Lacks          | DONE    |
-| 089 | antifragile                     | Antifragile                                   | DONE    |
-| 090 | fifth-discipline                | The Fifth Discipline                          | DONE    |
-| 091 | daily-stoic                     | The Daily Stoic                               | DONE    |
-| 092 | tao-te-ching                    | Tao Te Ching                                  | DONE    |
-| 093 | letters-from-a-stoic            | Letters from a Stoic                          | DONE    |
-| 094 | ego-is-the-enemy                | Ego Is the Enemy                              | DONE    |
-| 095 | untethered-soul                 | The Untethered Soul                           | DONE    |
-| 096 | wherever-you-go                 | Wherever You Go, There You Are                | DONE    |
-| 097 | make-it-stick                   | Make It Stick                                 | DONE    |
-| 098 | ultralearning                   | Ultralearning                                 | DONE    |
-| 099 | bird-by-bird                    | Bird by Bird                                  | DONE    |
-| 100 | war-of-art                      | The War of Art                                | DONE    |
-| 101 | artists-way                     | The Artist's Way                              | DONE    |
-| 102 | breath                          | Breath                                        | DONE    |
-| 103 | outlive                         | Outlive                                       | DONE    |
-| 104 | misbehaving                     | Misbehaving                                   | DONE    |
-| 105 | stumbling-on-happiness          | Stumbling on Happiness                        | DONE    |
-| 106 | noise                           | Noise                                         | DONE    |
-| 107 | make-time                       | Make Time                                     | DONE    |
-| 108 | indistractable                  | Indistractable                                | DONE    |
-| 109 | your-money-or-your-life         | Your Money or Your Life                       | DONE    |
-| 110 | i-will-teach-you                | I Will Teach You to Be Rich                   | DONE    |
-| 111 | capital-21c                     | Capital in the Twenty-First Century           | DONE    |
-| 112 | total-money-makeover            | The Total Money Makeover                      | DONE    |
-| 113 | measure-what-matters            | Measure What Matters                          | DONE    |
-| 114 | 48-laws-of-power                | The 48 Laws of Power                          | DONE    |
-| 115 | originals                       | Originals                                     | DONE    |
-| 116 | radical-candor                  | Radical Candor                                | DONE    |
-| 117 | culture-code                    | The Culture Code                              | DONE    |
-| 118 | talking-to-strangers            | Talking to Strangers                          | DONE    |
-| 119 | supercommunicators              | Supercommunicators                            | DONE    |
-| 120 | attached                        | Attached                                      | DONE    |
-| 121 | getting-past-no                 | Getting Past No                               | DONE    |
-| 122 | bargaining-for-advantage        | Bargaining for Advantage                      | DONE    |
-| 123 | talk-to-someone                 | Maybe You Should Talk to Someone              | DONE    |
-| 124 | gifts-of-imperfection           | The Gifts of Imperfection                     | DONE    |
-| 125 | lost-connections                | Lost Connections                              | DONE    |
-| 126 | behave                          | Behave                                        | DONE    |
-| 127 | silent-spring                   | Silent Spring                                 | DONE    |
-| 128 | sixth-extinction                | The Sixth Extinction                          | DONE    |
-| 129 | astrophysics-hurry              | Astrophysics for People in a Hurry            | DONE    |
-| 130 | demon-haunted-world             | The Demon-Haunted World                       | DONE    |
-| 131 | the-innovators                  | The Innovators                                | DONE    |
-| 132 | superintelligence               | Superintelligence                             | DONE    |
-| 133 | scientific-revolutions          | The Structure of Scientific Revolutions       | DONE    |
-| 134 | godel-escher-bach               | Gödel, Escher, Bach                           | DONE    |
-| 135 | guide-to-good-life              | A Guide to the Good Life                      | DONE    |
-| 136 | art-of-war                      | The Art of War                                | DONE    |
-| 137 | tao-of-pooh                     | The Tao of Pooh                               | DONE    |
-| 138 | miracle-of-mindfulness          | The Miracle of Mindfulness                    | DONE    |
-| 139 | waking-up                       | Waking Up                                     | DONE    |
-| 140 | moonwalking-einstein            | Moonwalking with Einstein                     | DONE    |
-| 141 | mind-for-numbers                | A Mind for Numbers                            | DONE    |
-| 142 | creative-act                    | The Creative Act                              | DONE    |
-| 143 | show-your-work                  | Show Your Work!                               | DONE    |
-| 144 | how-not-to-die                  | How Not to Die                                | DONE    |
-| 145 | omnivores-dilemma               | The Omnivore's Dilemma                        | DONE    |
-| 146 | when-breath-becomes-air         | When Breath Becomes Air                       | PENDING |
+| #   | slug                            | item                                          | status |
+|-----|---------------------------------|-----------------------------------------------|--------|
+| 000 | about                           | About this library                            | DONE   |
+| 001 | atomic-habits                   | Atomic Habits                                 | DONE   |
+| 002 | thinking-fast-and-slow          | Thinking, Fast and Slow                       | DONE   |
+| 003 | seven-habits                    | The 7 Habits of Highly Effective People       | DONE   |
+| 004 | how-to-win-friends              | How to Win Friends and Influence People       | DONE   |
+| 005 | sapiens                         | Sapiens                                       | DONE   |
+| 006 | mans-search-for-meaning         | Man's Search for Meaning                      | DONE   |
+| 007 | psychology-of-money             | The Psychology of Money                       | DONE   |
+| 008 | start-with-why                  | Start With Why                                | DONE   |
+| 009 | mindset                         | Mindset                                       | DONE   |
+| 010 | influence                       | Influence: The Psychology of Persuasion       | DONE   |
+| 011 | power-of-habit                  | The Power of Habit                            | DONE   |
+| 012 | rich-dad-poor-dad               | Rich Dad Poor Dad                             | DONE   |
+| 013 | deep-work                       | Deep Work                                     | DONE   |
+| 014 | never-split-the-difference      | Never Split the Difference                    | DONE   |
+| 015 | subtle-art                      | The Subtle Art of Not Giving a F*ck           | DONE   |
+| 016 | predictably-irrational          | Predictably Irrational                        | DONE   |
+| 017 | nudge                           | Nudge                                         | DONE   |
+| 018 | black-swan                      | The Black Swan                                | DONE   |
+| 019 | intelligent-investor            | The Intelligent Investor                      | DONE   |
+| 020 | freakonomics                    | Freakonomics                                  | DONE   |
+| 021 | good-to-great                   | Good to Great                                 | DONE   |
+| 022 | lean-startup                    | The Lean Startup                              | DONE   |
+| 023 | zero-to-one                     | Zero to One                                   | DONE   |
+| 024 | drive                           | Drive                                         | DONE   |
+| 025 | innovators-dilemma              | The Innovator's Dilemma                       | DONE   |
+| 026 | nonviolent-communication        | Nonviolent Communication                      | DONE   |
+| 027 | crucial-conversations           | Crucial Conversations                         | DONE   |
+| 028 | five-love-languages             | The 5 Love Languages                          | DONE   |
+| 029 | getting-to-yes                  | Getting to Yes                                | DONE   |
+| 030 | emotional-intelligence          | Emotional Intelligence                        | DONE   |
+| 031 | grit                            | Grit                                          | DONE   |
+| 032 | body-keeps-the-score            | The Body Keeps the Score                      | DONE   |
+| 033 | guns-germs-steel                | Guns, Germs, and Steel                        | DONE   |
+| 034 | outliers                        | Outliers                                      | DONE   |
+| 035 | selfish-gene                    | The Selfish Gene                              | DONE   |
+| 036 | short-history-nearly-everything | A Short History of Nearly Everything          | DONE   |
+| 037 | thinking-in-systems             | Thinking in Systems                           | DONE   |
+| 038 | range                           | Range                                         | DONE   |
+| 039 | meditations                     | Meditations                                   | DONE   |
+| 040 | obstacle-is-the-way             | The Obstacle Is the Way                       | DONE   |
+| 041 | power-of-now                    | The Power of Now                              | DONE   |
+| 042 | peak                            | Peak                                          | DONE   |
+| 043 | big-magic                       | Big Magic                                     | DONE   |
+| 044 | steal-like-an-artist            | Steal Like an Artist                          | DONE   |
+| 045 | on-writing                      | On Writing                                    | DONE   |
+| 046 | why-we-sleep                    | Why We Sleep                                  | DONE   |
+| 047 | superforecasting                | Superforecasting                              | DONE   |
+| 048 | thinking-in-bets                | Thinking in Bets                              | DONE   |
+| 049 | fooled-by-randomness            | Fooled by Randomness                          | DONE   |
+| 050 | paradox-of-choice               | The Paradox of Choice                         | DONE   |
+| 051 | blink                           | Blink                                         | DONE   |
+| 052 | getting-things-done             | Getting Things Done                           | DONE   |
+| 053 | essentialism                    | Essentialism                                  | DONE   |
+| 054 | flow                            | Flow                                          | DONE   |
+| 055 | the-one-thing                   | The One Thing                                 | DONE   |
+| 056 | four-thousand-weeks             | Four Thousand Weeks                           | DONE   |
+| 057 | almanack-naval                  | The Almanack of Naval Ravikant                | DONE   |
+| 058 | think-and-grow-rich             | Think and Grow Rich                           | DONE   |
+| 059 | random-walk                     | A Random Walk Down Wall Street                | DONE   |
+| 060 | millionaire-next-door           | The Millionaire Next Door                     | DONE   |
+| 061 | richest-man-babylon             | The Richest Man in Babylon                    | DONE   |
+| 062 | common-sense-investing          | The Little Book of Common Sense Investing     | DONE   |
+| 063 | dare-to-lead                    | Dare to Lead                                  | DONE   |
+| 064 | built-to-last                   | Built to Last                                 | DONE   |
+| 065 | good-strategy                   | Good Strategy Bad Strategy                    | DONE   |
+| 066 | hard-thing                      | The Hard Thing About Hard Things              | DONE   |
+| 067 | blue-ocean                      | Blue Ocean Strategy                           | DONE   |
+| 068 | e-myth                          | The E-Myth Revisited                          | DONE   |
+| 069 | extreme-ownership               | Extreme Ownership                             | DONE   |
+| 070 | four-hour-workweek              | The 4-Hour Workweek                           | DONE   |
+| 071 | effective-executive             | The Effective Executive                       | DONE   |
+| 072 | difficult-conversations         | Difficult Conversations                       | DONE   |
+| 073 | seven-principles-marriage       | The Seven Principles for Making Marriage Work | DONE   |
+| 074 | made-to-stick                   | Made to Stick                                 | DONE   |
+| 075 | quiet                           | Quiet                                         | DONE   |
+| 076 | happiness-hypothesis            | The Happiness Hypothesis                      | DONE   |
+| 077 | flourish                        | Flourish                                      | DONE   |
+| 078 | four-agreements                 | The Four Agreements                           | DONE   |
+| 079 | twelve-rules                    | 12 Rules for Life                             | DONE   |
+| 080 | feeling-good                    | Feeling Good                                  | DONE   |
+| 081 | homo-deus                       | Homo Deus                                     | DONE   |
+| 082 | cosmos                          | Cosmos                                        | DONE   |
+| 083 | brief-history-time              | A Brief History of Time                       | DONE   |
+| 084 | the-gene                        | The Gene                                      | DONE   |
+| 085 | why-nations-fail                | Why Nations Fail                              | DONE   |
+| 086 | factfulness                     | Factfulness                                   | DONE   |
+| 087 | emperor-maladies                | The Emperor of All Maladies                   | DONE   |
+| 088 | henrietta-lacks                 | The Immortal Life of Henrietta Lacks          | DONE   |
+| 089 | antifragile                     | Antifragile                                   | DONE   |
+| 090 | fifth-discipline                | The Fifth Discipline                          | DONE   |
+| 091 | daily-stoic                     | The Daily Stoic                               | DONE   |
+| 092 | tao-te-ching                    | Tao Te Ching                                  | DONE   |
+| 093 | letters-from-a-stoic            | Letters from a Stoic                          | DONE   |
+| 094 | ego-is-the-enemy                | Ego Is the Enemy                              | DONE   |
+| 095 | untethered-soul                 | The Untethered Soul                           | DONE   |
+| 096 | wherever-you-go                 | Wherever You Go, There You Are                | DONE   |
+| 097 | make-it-stick                   | Make It Stick                                 | DONE   |
+| 098 | ultralearning                   | Ultralearning                                 | DONE   |
+| 099 | bird-by-bird                    | Bird by Bird                                  | DONE   |
+| 100 | war-of-art                      | The War of Art                                | DONE   |
+| 101 | artists-way                     | The Artist's Way                              | DONE   |
+| 102 | breath                          | Breath                                        | DONE   |
+| 103 | outlive                         | Outlive                                       | DONE   |
+| 104 | misbehaving                     | Misbehaving                                   | DONE   |
+| 105 | stumbling-on-happiness          | Stumbling on Happiness                        | DONE   |
+| 106 | noise                           | Noise                                         | DONE   |
+| 107 | make-time                       | Make Time                                     | DONE   |
+| 108 | indistractable                  | Indistractable                                | DONE   |
+| 109 | your-money-or-your-life         | Your Money or Your Life                       | DONE   |
+| 110 | i-will-teach-you                | I Will Teach You to Be Rich                   | DONE   |
+| 111 | capital-21c                     | Capital in the Twenty-First Century           | DONE   |
+| 112 | total-money-makeover            | The Total Money Makeover                      | DONE   |
+| 113 | measure-what-matters            | Measure What Matters                          | DONE   |
+| 114 | 48-laws-of-power                | The 48 Laws of Power                          | DONE   |
+| 115 | originals                       | Originals                                     | DONE   |
+| 116 | radical-candor                  | Radical Candor                                | DONE   |
+| 117 | culture-code                    | The Culture Code                              | DONE   |
+| 118 | talking-to-strangers            | Talking to Strangers                          | DONE   |
+| 119 | supercommunicators              | Supercommunicators                            | DONE   |
+| 120 | attached                        | Attached                                      | DONE   |
+| 121 | getting-past-no                 | Getting Past No                               | DONE   |
+| 122 | bargaining-for-advantage        | Bargaining for Advantage                      | DONE   |
+| 123 | talk-to-someone                 | Maybe You Should Talk to Someone              | DONE   |
+| 124 | gifts-of-imperfection           | The Gifts of Imperfection                     | DONE   |
+| 125 | lost-connections                | Lost Connections                              | DONE   |
+| 126 | behave                          | Behave                                        | DONE   |
+| 127 | silent-spring                   | Silent Spring                                 | DONE   |
+| 128 | sixth-extinction                | The Sixth Extinction                          | DONE   |
+| 129 | astrophysics-hurry              | Astrophysics for People in a Hurry            | DONE   |
+| 130 | demon-haunted-world             | The Demon-Haunted World                       | DONE   |
+| 131 | the-innovators                  | The Innovators                                | DONE   |
+| 132 | superintelligence               | Superintelligence                             | DONE   |
+| 133 | scientific-revolutions          | The Structure of Scientific Revolutions       | DONE   |
+| 134 | godel-escher-bach               | Gödel, Escher, Bach                           | DONE   |
+| 135 | guide-to-good-life              | A Guide to the Good Life                      | DONE   |
+| 136 | art-of-war                      | The Art of War                                | DONE   |
+| 137 | tao-of-pooh                     | The Tao of Pooh                               | DONE   |
+| 138 | miracle-of-mindfulness          | The Miracle of Mindfulness                    | DONE   |
+| 139 | waking-up                       | Waking Up                                     | DONE   |
+| 140 | moonwalking-einstein            | Moonwalking with Einstein                     | DONE   |
+| 141 | mind-for-numbers                | A Mind for Numbers                            | DONE   |
+| 142 | creative-act                    | The Creative Act                              | DONE   |
+| 143 | show-your-work                  | Show Your Work!                               | DONE   |
+| 144 | how-not-to-die                  | How Not to Die                                | DONE   |
+| 145 | omnivores-dilemma               | The Omnivore's Dilemma                        | DONE   |
+| 146 | when-breath-becomes-air         | When Breath Becomes Air                       | DONE   |
 
 <!--
 Order is: the launch shelf first (highest-reach Tier 1), then the rest of Tier 1,
