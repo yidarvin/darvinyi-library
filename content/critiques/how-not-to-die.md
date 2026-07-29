@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -191,3 +191,37 @@ Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
   proof of universal disease prevention.
 - Updated the registry thesis to match the restored attributed argument and its evidence-bounded
   interpretation. The record remains `draft`; the queue and done state were not changed.
+
+## Critique round 3 — 2026-07-28
+
+### Required
+
+1. **Make the registry diagram inventory agree with the revised page.** Figure 144.2
+   now renders a `NodeGraph` (`src/chapters/how-not-to-die.mdx:50-68`), but the
+   registry still declares the second diagram as `comparison`
+   (`content/registry.json:2851-2856`). The page's rendered sequence is assembly,
+   node graph, node graph, comparison, pyramid. The registry currently records
+   assembly, comparison, node graph, comparison, pyramid. This mismatch was
+   introduced when round 2 changed the preventive-evidence figure without making
+   the corresponding diagram-inventory update, and it violates the technical
+   integrity requirement that the registry agree with the files on disk.
+
+### Advisory
+
+None.
+
+Round 2's substantive finding is resolved. The Hero and Thesis now distinguish
+Greger's broad preventive argument from the library's bounded conclusion, and Key
+Idea 2 connects the recorded cohort associations and randomized lipid evidence
+without claiming that either proves universal prevention. The five key ideas each
+have an in-vocabulary structural figure; the deliberate absence of a Model section
+matches the brief; the practice and mandatory caveat sections are concrete; the
+nutrient guidance and clinical qualifications remain within the recorded evidence;
+the three related slugs are done; and the Macmillan outbound link matches the
+evidence record. No apparent close paraphrase, reproduced source figure, quotation,
+or real cover art was found. No new external web search was begun.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28: queue, registry, content,
+critique-state, and prose validation passed; all 42 pipeline and runner tests and all
+310 Vitest tests passed; TypeScript, the Vite production build, and ESLint passed.
+Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
