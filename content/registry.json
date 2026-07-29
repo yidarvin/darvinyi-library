@@ -2824,7 +2824,18 @@
       "subtitle": "Austin Kleon · 2014",
       "part": "Creativity & Writing",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Creative work becomes easier to find when its maker shares selected process, useful lessons, and credit with patience and clear boundaries.",
+      "framework": "No single signature model; six connected practices for making work findable carry the page, so the Model section is deliberately absent.",
+      "diagrams": [
+        "iceberg",
+        "timeline",
+        "node graph",
+        "flow",
+        "comparison",
+        "process loop"
+      ]
     },
     {
       "num": 144,

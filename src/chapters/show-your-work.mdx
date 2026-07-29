@@ -1,0 +1,218 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, ProcessLoop, Timeline } from "../components/diagrams";
+
+<Hero
+  slug="show-your-work"
+  thesis="Make your process visible in small, useful pieces, so the right people can find the work, learn from it, and join the conversation around it."
+  minutes={8}
+/>
+
+## The thesis
+
+Discovery is less mysterious when people can see a practice unfolding. Kleon's argument is
+that a maker need not wait for a polished masterpiece or adopt the posture of a tireless
+self-promoter. Share a useful trace of the work as it develops, give credit to what shaped
+it, and make it easy for interested people to return. Over time, those traces form both an
+archive of your thinking and a path by which collaborators, readers, and future opportunities
+can find you.
+
+## Why it matters
+
+Finished work often arrives without its story. A reader sees a book, a client sees a product,
+or a listener hears a song, but none of them can tell what questions, revisions, references,
+or failed attempts made it possible. That gap favors people who already have attention. A
+public working record gives a newer maker another route: be specific enough that someone who
+cares about the same problem can recognize a fellow traveler. The aim is connection around
+the work, not a performance of constant availability.
+
+## Let the process carry some of the weight
+
+A finished piece is a thin surface over a much larger body of activity. Notes, rejected
+versions, source material, small experiments, and recurring questions all make the final
+choice more intelligible. Sharing selected parts of that field can be more useful than simply
+announcing that something exists. A sketch can explain a design decision. A short before-and-
+after can reveal a revision. A list of sources can help another person continue the inquiry.
+The public fragment does not need to expose every private draft. It needs to show a real piece
+of thinking that stands on its own.
+
+<Figure id="143.1" caption="A finished piece can point back to the questions and experiments that made it possible.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the finished piece"
+    below={["working questions", "rough attempts", "references and notes", "choices left out"]}
+    waterlineLabel="what an audience usually sees"
+  />
+</Figure>
+
+## Build a cadence small enough to keep
+
+The useful unit of sharing is usually smaller than a launch. A photo of a prototype, a
+paragraph about a problem solved, a reading note, a lesson from an error, or a link with a
+sentence of context can all carry the practice forward. The point of a steady rhythm is not
+to feed a platform. It is to create enough repeated signals for people to understand what you
+care about and for you to notice what the work keeps teaching. Choose an interval that does
+not damage the making. A modest weekly note that survives for a year is more valuable than a
+daily performance that burns out in a month.
+
+<Figure id="143.2" caption="Small public traces accumulate into an archive that makes a practice easier to find.">
+  <Timeline
+    className="block w-full min-w-[560px]"
+    segments={[
+      { label: "notice a useful detail", sub: "in the work" },
+      { label: "save a small trace", sub: "note, sketch, link" },
+      { label: "share with context", sub: "at a workable rhythm" },
+      { label: "build a public archive", sub: "people can return" },
+    ]}
+    highlight={3}
+  />
+</Figure>
+
+## Make your interests legible, not generic
+
+People rarely connect to a vague claim that someone is creative, curious, or available for
+work. They connect to a particular cluster of interests and a recognizable angle on it. Keep
+a cabinet of material that genuinely feeds the work, then name the links you notice between
+its parts. A designer might connect transit maps, accessibility, and neighborhood history. A
+programmer might connect classroom tools, typography, and error messages. Those connections
+are not branding decoration. They are evidence of attention, and they give others a more
+precise reason to respond, recommend, or collaborate.
+
+<Figure id="143.3" caption="A distinctive public practice makes its connections visible instead of flattening them into a generic identity.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "sources", label: "sources you follow", x: 0.5, y: 0.1 },
+      { id: "questions", label: "questions you keep", x: 0.14, y: 0.52 },
+      { id: "experiments", label: "experiments you make", x: 0.86, y: 0.52 },
+      { id: "voice", label: "recognizable angle", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "sources", to: "questions", label: "spark" },
+      { from: "sources", to: "experiments", label: "inform" },
+      { from: "questions", to: "voice", label: "shape" },
+      { from: "experiments", to: "voice", label: "test" },
+      { from: "voice", to: "sources", kind: "reinforcing", label: "sharper attention" },
+    ]}
+  />
+</Figure>
+
+## Teach from the learning edge
+
+Teaching does not require presenting yourself as the final authority. It can mean preserving
+a step that was hard to find, explaining a decision you have just learned to make, or pointing
+to the source that clarified a problem. This kind of teaching is generous because it reduces
+someone else's search time. It is also corrective: trying to explain a method exposes what you
+do not yet understand. Stay honest about the distance traveled. Report the experiment, the
+constraint, and the uncertainty rather than turning a fresh lesson into a universal law.
+
+<Figure id="143.4" caption="A lesson becomes worth sharing when it moves from firsthand work into a clear, bounded explanation.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["work through a problem", "notice a repeatable step", "explain its limits", "share the trail"]}
+    highlight={2}
+  />
+</Figure>
+
+## Offer useful signals, not demands for attention
+
+There is a difference between making work findable and treating every interaction as a lead.
+The first offers something concrete: a source, a method, a question, a finished object, or a
+careful response. The second keeps asking strangers to validate, amplify, or buy before it has
+given them a reason. Generosity is a practical standard here. Credit the people whose work you
+share. Reply when there is a real reply to make. Let a post stand without demanding a return.
+An audience is made of people with limited attention, not a resource to extract.
+
+<Figure id="143.5" caption="Contribution gives a reader something to carry away; attention-seeking asks for a return before offering value.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="left"
+    left={{
+      title: "a useful contribution",
+      points: ["shows a real observation", "credits its sources", "adds context or a method", "leaves room for no response"],
+    }}
+    right={{
+      title: "a demand for attention",
+      points: ["announces without substance", "treats people as reach", "repeats the same ask", "makes every reply transactional"],
+    }}
+  />
+</Figure>
+
+## Stay long enough for the conversation to deepen
+
+Early response is noisy. A useful post may reach almost no one, while a casual fragment may
+travel farther than the work you value most. Neither result is a reliable verdict on the
+practice. The longer horizon is better: make, document, share, listen, and let the next round
+of work be a little better informed. That loop makes an audience less like a scoreboard and
+more like a community of attention. It also protects the work from the false urgency of a
+single launch. Trust is built by showing up with substance again after the first burst has
+passed.
+
+<Figure id="143.6" caption="Sharing feeds the next round of work when response is treated as information rather than a score.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["make", "document", "share", "learn from response"]}
+    compoundingEdge={3}
+    centerLabel="a durable practice"
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Choose one visible trace">
+Pick a current project and identify one artifact that would help a peer understand it: a
+decision log, a reference list, a small prototype, a failed version with a lesson, or a
+before-and-after. Write two sentences of context, remove anything private or misleading, and
+share it in one place where interested people can find it.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Set a humane publishing rhythm">
+For the next four weeks, reserve twenty minutes after one work session to save a trace of what
+happened. At the end of each week, choose one trace to turn into a brief post, note, or email.
+The rule is to document after making, not to interrupt the work every hour looking for content.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Teach one narrow lesson">
+Write a short explanation of a problem you solved recently. Include the situation, the step
+that helped, the source that informed it, and one condition under which the advice may fail.
+Give the explanation to one person who is a few steps behind you, or publish it where such a
+person would look.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Create a boundary before you share">
+Make two lists for a current project: material that is safe to show now, and material that is
+private, unfinished in a harmful way, or belongs to someone else. Keep the second list off the
+publishing calendar. A clear boundary makes it easier to be open about the first list without
+confusing openness with exposure.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Showing work does not mean streaming every thought, accepting every platform's terms, or
+turning a private practice into a public audition. Kleon himself has described keeping his
+notebooks private when they are the messy place where he thinks. Privacy, safety, agreements
+with collaborators, copyright, employment obligations, and the pressure that public feedback
+can place on early experiments all set real limits. Visibility also does not distribute itself
+fairly. Algorithms, existing networks, time, money, disability, language, and access shape who
+gets seen. Share what you can sustain and what you are allowed to share, then judge the habit
+by the relationships and learning it creates, not by a promise of reach.
+</Callout>
+
+## If you remember one thing
+
+Do not wait for a finished identity or a perfect launch. Keep making, share selected evidence
+of the work with generosity and clear limits, and give the right people repeated chances to
+recognize what you care about.
+
+The nearby shelf pairs public creative practice with studied influence, permission to begin,
+and the patience to develop work over time.
+
+<ShelvedNearby
+  related={["steal-like-an-artist", "big-magic", "bird-by-bird", "creative-act"]}
+  buyUrl="https://www.hachettebookgroup.com/titles/austin-kleon/9780761178972/9780761178972/"
+  buyLabel="Show Your Work! by Austin Kleon"
+/>
