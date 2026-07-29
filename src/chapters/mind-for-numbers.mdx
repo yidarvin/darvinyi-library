@@ -1,0 +1,226 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, NodeGraph, ProcessLoop, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="mind-for-numbers"
+  thesis="Hard material yields when attention, rest, recall, and practice are given distinct jobs instead of being asked to do the same work all at once."
+  minutes={8}
+/>
+
+## The thesis
+
+*A Mind for Numbers* treats mathematical and scientific ability as a set of learnable study
+habits, not a fixed trait. Barbara Oakley's central suggestion is to alternate deliberate,
+close work with genuine breaks, then use recall and varied practice to make the resulting
+understanding easier to retrieve and apply.
+
+## Why it matters
+
+Hard subjects make a misleading bargain with the learner. A long session can produce the
+familiarity of having seen a solution without the ability to produce one later. When that
+feeling is mistaken for learning, more rereading follows. Oakley's approach replaces that
+loop with visible evidence: solve from a blank page, return after time has passed, and let a
+miss identify the next small piece of work.
+
+## Key ideas
+
+## Attention is for the step in front of you
+
+Focused work is narrow on purpose. It is the mode for tracing a proof, carrying a unit through
+an equation, or noticing exactly where an unfamiliar method changes direction. A short,
+protected block is often more useful than an evening of half-attention because working memory
+is small. Put the phone away, pick one problem or one section, and stay close enough to the
+work to name the step you do not understand.
+
+<Figure id="141.1" caption="Focused work holds one demanding step still long enough to inspect it.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["name one target", "work the next step", "mark the snag", "write what to try next"]}
+    highlight={1}
+  />
+</Figure>
+
+## A break can change the search, not finish the job
+
+After a real attempt, stepping away can loosen the first path your mind kept repeating. Take a
+walk, shower, make tea, or do another undemanding task. The break is not permission to skip
+the difficult part. It gives the problem a pause after you have supplied material for it, and
+you still need to return and test any new idea against the actual question. Rest and focus are
+partners with different assignments.
+
+<Figure id="141.2" caption="A useful break sits between an honest attempt and a checked return to the problem.">
+  <ProcessLoop
+    className="block w-full min-w-[440px]"
+    stages={["attempt", "step away", "notice a new path", "check it on the problem"]}
+    compoundingEdge={3}
+    centerLabel="study rhythm"
+  />
+</Figure>
+
+## Build chunks that can travel
+
+A chunk is more than a fact you can repeat. It is a compact pattern that lets several moves be
+handled together: recognizing when a quadratic formula fits, seeing the role of a derivative,
+or knowing why a conservation law constrains an answer. Chunks grow by following a worked
+example carefully, doing a nearby problem without looking, and connecting the result to a
+larger purpose. The aim is not to memorize every move in isolation. It is to make a useful
+structure available when a new problem calls for it.
+
+<Figure id="141.3" caption="A usable chunk joins procedure, meaning, and a cue for when to use it.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "cue", label: "problem cue", x: 0.16, y: 0.5 },
+      { id: "pattern", label: "recognized pattern", x: 0.44, y: 0.22 },
+      { id: "steps", label: "linked steps", x: 0.73, y: 0.36 },
+      { id: "why", label: "why it works", x: 0.62, y: 0.76 },
+      { id: "check", label: "answer check", x: 0.28, y: 0.78 },
+    ]}
+    edges={[
+      { from: "cue", to: "pattern", label: "suggests" },
+      { from: "pattern", to: "steps", label: "selects" },
+      { from: "steps", to: "why", label: "explains" },
+      { from: "why", to: "check", label: "tests" },
+      { from: "check", to: "cue", kind: "reinforcing", label: "sharpens" },
+    ]}
+  />
+</Figure>
+
+## Recall reveals the work that remains
+
+Looking at a solution has a place, especially at the beginning. It cannot tell you whether you
+can retrieve the method when the page is gone. Close the notes and solve, explain the idea out
+loud, or write the first moves from memory. A failure is useful information, not a verdict on
+ability. Compare it with the source, repair the precise gap, and try again later. That cycle
+separates recognition from command.
+
+<Figure id="141.4" caption="Retrieval turns an invisible gap into a specific target for the next practice pass.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "review only",
+      points: ["the solution stays visible", "familiarity can feel like mastery", "a weak step can remain hidden", "progress is hard to judge"],
+    }}
+    right={{
+      title: "recall, then check",
+      points: ["the page is closed first", "the method must be produced", "the exact miss becomes visible", "feedback names the repair"],
+    }}
+  />
+</Figure>
+
+## Mix old and new problems
+
+Blocked practice is comfortable because each question announces its method. Mixed practice is
+harder because you must first decide what kind of problem you are facing. That decision is
+part of expertise. Keep some immediate repetition while a technique is brand new, then bring
+back earlier types across later sessions. The point is not random variety. It is repeated
+practice in choosing between related tools.
+
+<Figure id="141.5" caption="As practice matures, shift from one announced method toward choosing among methods.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="new technique, blocked"
+    right="mixed review, choose the method"
+    marker={0.64}
+    markerLabel="after basic fluency"
+    markerLabelPlacement="top"
+    endpointLabelLayout="stacked"
+    zones={[
+      { from: 0.03, to: 0.38, label: "learn the moves" },
+      { from: 0.55, to: 0.98, label: "recognize the problem", accent: true },
+    ]}
+  />
+</Figure>
+
+## The Model
+
+The book's signature model distinguishes focused and diffuse thinking. Focused thinking narrows
+attention around a current task. Diffuse thinking is Oakley's name for the looser, less
+deliberate state in which a problem may be revisited from a different angle. Neither is the
+better mode. Good learning gives focused work a clear target, then makes room for a break,
+sleep, or another low-demand activity before returning to verify the answer. The labels are a
+practical map of study states, not a claim that the brain contains two separate switches.
+
+<Figure id="141.6" caption="Focus supplies precision; diffuse time can widen the search before focused checking resumes.">
+  <div className="min-w-[440px] space-y-6">
+    <Compare
+      className="block w-full"
+      favor="none"
+      left={{
+        title: "focused",
+        points: ["one active problem", "deliberate steps", "useful for learning a method", "limited by attention"],
+      }}
+      right={{
+        title: "diffuse",
+        points: ["attention is elsewhere", "looser associations", "useful after preparation", "ideas still need checking"],
+      }}
+    />
+    <Flow
+      className="block w-full"
+      steps={["prepare", "focus", "take a real break", "return and verify"]}
+      highlight={3}
+    />
+  </div>
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Make one focused block small enough to start">
+Choose a single concrete target for 25 minutes: three derivative problems, one proof step, or
+two pages of a difficult chapter. Before beginning, put out only the materials it needs. At the
+end, write one sentence naming the next obstruction or next move, so the return does not begin
+from zero.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Break after the attempt, not before it">
+Work until you can describe the problem's constraint or the move that has you stuck. Then take
+ten minutes away from the screen and the notes. On return, write one possible next step before
+looking anything up. If it fails, the attempt has still made the missing connection clearer.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Turn one example into a chunk">
+Study a worked example once. Close it and reproduce the outline from a blank page. Then solve a
+nearby problem with different numbers or a changed surface detail. Finish by writing the cue
+that tells you when this method belongs, and one reason its central step is valid.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Schedule a short return">
+Add two ten-minute reviews of today's material to later days. Begin each review with a blank
+page or an unsolved question, not with highlights. Mix in one older problem whose method could
+be confused with today's. Check only after you have committed to an answer.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Focused and diffuse are memorable labels, not a settled account of two brain modes that take
+turns at a switch. Research on incubation finds that breaks can help some kinds of problem
+solving, but their benefit depends on the task, the preparation, and what fills the break. A
+walk after a serious attempt may help; a distracting task in the middle of a calculation may
+not. Likewise, retrieval, spacing, and interleaving are strong study principles, yet their
+best schedule depends on what you are learning and when you will need it. Use the framework to
+run small tests on your own study routine, not as a promise that every pause will produce an
+insight.
+</Callout>
+
+## If you remember one thing
+
+Do not measure study by how long material stayed in view. Give full attention to one hard step,
+step away after a genuine attempt, and come back later to retrieve and apply it without help.
+
+## Shelved nearby
+
+[Make It Stick](/make-it-stick) deepens the case for retrieval and spacing as durable learning
+tools. [Ultralearning](/ultralearning) turns deliberate feedback into a broader self-directed
+practice system. [Peak](/peak) explains how targeted practice and correction build expertise.
+
+<ShelvedNearby
+  related={["make-it-stick", "ultralearning", "peak"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/314056/a-mind-for-numbers-by-barbara-oakley-phd/"
+  buyLabel="A Mind for Numbers by Barbara Oakley"
+/>
