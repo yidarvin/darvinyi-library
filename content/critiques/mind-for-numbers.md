@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -99,4 +99,21 @@ verdict: resolved
 `npm run check` completed with `CHECK OK` before this resolution was recorded:
 validation, prose lint, 42 pipeline and runner tests, 304 Vitest tests, TypeScript,
 the Vite production build, and ESLint all passed. Vitest emitted only the existing
+non-failing jsdom `Window.scrollTo()` notices.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+None. The five required findings from round 1 are resolved without introducing a
+new defect. The draft retains the complete page anatomy, five captioned
+shared-vocabulary key-idea diagrams, the focused-versus-diffuse signature model,
+concrete practice cards, an evidence-bounded caveat, complete registry metadata,
+and resolving nearby links. `npm run check` completed with `CHECK OK`: validation,
+prose lint, all 42 pipeline and runner tests, all 304 Vitest tests, TypeScript, the
+Vite production build, and ESLint passed. Vitest emitted only the existing
 non-failing jsdom `Window.scrollTo()` notices.

@@ -155,7 +155,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 138 | miracle-of-mindfulness          | The Miracle of Mindfulness                    | DONE    |
 | 139 | waking-up                       | Waking Up                                     | DONE    |
 | 140 | moonwalking-einstein            | Moonwalking with Einstein                     | DONE    |
-| 141 | mind-for-numbers                | A Mind for Numbers                            | PENDING |
+| 141 | mind-for-numbers                | A Mind for Numbers                            | DONE    |
 | 142 | creative-act                    | The Creative Act                              | PENDING |
 | 143 | show-your-work                  | Show Your Work!                               | PENDING |
 | 144 | how-not-to-die                  | How Not to Die                                | PENDING |
