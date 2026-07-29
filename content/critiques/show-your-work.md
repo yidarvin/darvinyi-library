@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -114,3 +114,39 @@ nearby-shelf sentence maps each linked book to its relationship. No new external
 was used. On 2026-07-28, `npm run check` cleared validation and prose lint before this
 environment's foreground runner stopped it during the unchanged repository test stage;
 `npm run build` and `npm run lint` then passed separately.
+
+## Critique round 3 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+1. **Renumber the figure identifiers if this page is revisited.** Reordering the Key
+   Ideas preserved each diagram's old identifier, so the figures now appear as `143.3`,
+   `143.1`, `143.4`, `143.5`, `143.2`, and `143.6` at
+   `src/chapters/show-your-work.mdx:42-154`. The captions and diagrams remain accurate,
+   so this does not block approval, but sequential identifiers would make the visible
+   figure labels easier to follow.
+
+The round 2 finding is resolved. The new progression moves from making a practice
+recognizable, through selective evidence, bounded teaching, generous contribution, and
+sustainable cadence, to a durable conversation. That is a stated, reader-centered
+organizing logic rather than the source-concern order recorded in
+`content/evidence/show-your-work.md`. The two round 1 fixes also remain intact: “The
+thesis” is two sentences, the `refine` edge label fits its clearance, and every nearby
+book is paired with its relationship.
+
+The bounded re-review found no unsupported factual claim that changes the reader's
+understanding, close paraphrase, reproduced source figure, quotation, or real cover art.
+The brief and evidence support the selective process-sharing, teaching, attribution,
+persistence, and privacy-boundary synthesis. Six key ideas each retain a captioned
+shared-vocabulary diagram; the deliberate absence of a Model section is recorded in the
+brief and registry; the four exercises are concrete; all related slugs are done; and the
+publisher link agrees with the evidence record. No new external web search was begun.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28: queue, registry, critique,
+content, and prose validation passed; all 42 pipeline and runner tests and all 308
+Vitest tests passed; TypeScript, the Vite production build, and ESLint passed. Vitest
+emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
