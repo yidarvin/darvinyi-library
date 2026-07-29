@@ -1,0 +1,197 @@
+import { Callout } from "../components/Callout";
+import { ExerciseCard } from "../components/ExerciseCard";
+import { Figure } from "../components/Figure";
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Compare, Flow, Iceberg, NodeGraph, Spectrum } from "../components/diagrams";
+
+<Hero
+  slug="creative-act"
+  thesis="Creativity grows from a practiced openness to what is already asking for attention, followed by the patience to make, choose, and release without trying to control every result."
+  minutes={6}
+/>
+
+## The thesis
+
+Rick Rubin treats creativity as a quality of attention before it is a professional identity.
+The artist's task is to become receptive to details, accidents, questions, and combinations
+that might otherwise pass unnoticed, then give those signals a form. Skill and effort still
+matter, but they work best when they serve a live investigation rather than an attempt to
+force a predetermined masterpiece. The practice is to notice more, make more room for
+experiments, and let careful selection emerge after there is material to select.
+
+## Why it matters
+
+The popular image of creative work starts at the moment of inspiration and ends with a
+finished piece. That frame makes every quiet period look like a personal failure. Rubin offers
+a more workable picture: attention, collecting, play, labor, editing, and release all belong
+to the work. A person does not need to wait for a special identity to use that picture. Anyone
+who can pay closer attention and test an idea can enlarge the creative part of their life.
+
+## Receptivity gives ideas somewhere to arrive
+
+Good material rarely announces itself at full volume. It may begin as a recurring image, a
+phrase overheard on a train, a discomfort in a familiar routine, or a question that keeps
+returning. The useful move is not to declare it important too soon. It is to notice the pull
+and keep it available. Receptivity means making the senses less crowded: taking a walk
+without filling it with audio, pausing before reaching for an explanation, and letting an
+unsettled observation remain unsettled long enough to show what it contains.
+
+<Figure id="142.1" caption="Creative attention shifts from controlling the signal to noticing the signal that persists.">
+  <Spectrum
+    className="block w-full min-w-[440px]"
+    left="force an answer"
+    right="notice what returns"
+    marker={0.73}
+    markerLabel="stay with the pull"
+    markerLabelPlacement="top"
+    zones={[
+      { from: 0.02, to: 0.38, label: "premature certainty" },
+      { from: 0.58, to: 0.98, label: "receptive attention", accent: true },
+    ]}
+  />
+</Figure>
+
+## The visible idea rests on a larger field of attention
+
+An idea that becomes a song, essay, product, or image has usually been fed by more than a
+single flash of insight. It draws from memory, sensory detail, taste, references, boredom,
+conversations, and time spent looking without a clear payoff. This hidden accumulation matters
+because it turns research into a habit of living rather than a frantic search conducted after
+a deadline has arrived. Keep a record of what catches your eye, but do not require every note
+to justify itself. Much of the field will never enter the final piece. That is not waste. It is
+the ground from which a particular choice can become specific.
+
+<Figure id="142.2" caption="A finished idea shows only the small visible tip of a much larger field of attention.">
+  <Iceberg
+    className="block w-full min-w-[440px]"
+    above="the formed idea"
+    below={["memory and references", "ordinary observation", "private questions", "unplanned encounters"]}
+    waterlineLabel="what the audience can see"
+  />
+</Figure>
+
+## Experiments protect the work from early certainty
+
+An early concept can be too fragile for a verdict. Calling it a failure before it has been
+tried usually means comparing a seed with someone else's mature work. Rubin's posture favors
+small tests instead: change the tempo, make three versions, use the less obvious tool, remove
+the first explanation, or follow the odd detail for another hour. An experiment does not need
+to prove that an idea is good. It needs to reveal something about the idea. That makes a dead
+end informative and leaves room for surprise to alter the original plan.
+
+<Figure id="142.3" caption="A small study turns a hunch into information before a final judgment is required.">
+  <Flow
+    className="block w-full min-w-[560px]"
+    steps={["catch a hunch", "make a small study", "notice what changes", "choose the next test"]}
+    highlight={1}
+  />
+</Figure>
+
+## Making and editing ask for opposite kinds of attention
+
+Generating material asks for breadth. It benefits from association, speed, mistakes, and a
+willingness to make more than will survive. Editing asks for a different discipline: listen
+for what has energy, remove what only explains, and arrange the remaining parts so they can be
+felt by someone else. When these jobs are fused too early, the editor can turn every fresh
+attempt into a courtroom. When they are separated too completely, the maker can avoid the
+responsibility of finishing. A healthy practice gives each job a turn, then lets the work move
+between them.
+
+<Figure id="142.4" caption="Generation expands the field; editing gives the strongest material a clear shape.">
+  <Compare
+    className="block w-full min-w-[440px]"
+    favor="right"
+    left={{
+      title: "make material",
+      points: ["follow associations", "try surplus versions", "allow mistakes", "postpone the verdict"],
+    }}
+    right={{
+      title: "shape the work",
+      points: ["listen for energy", "choose with taste", "remove the merely adequate", "serve the whole piece"],
+    }}
+  />
+</Figure>
+
+## Release completes the conversation
+
+Private work can be protected forever by a standard no real piece could meet. Releasing it
+changes the situation. The work becomes available for another person's attention, and their
+response may reveal what it communicates, what it misses, or where the next work wants to go.
+Response is evidence, not a command. Praise can distract as easily as rejection can, if either
+one becomes the sole measure of what to make. The larger practice is to finish honestly,
+release at a chosen threshold, listen without surrendering judgment, and return to the source
+of the next piece.
+
+<Figure id="142.5" caption="Release brings a work into contact with other people, then feeds new observation back into the practice.">
+  <NodeGraph
+    className="block w-full min-w-[440px]"
+    nodes={[
+      { id: "notice", label: "notice", x: 0.5, y: 0.1 },
+      { id: "make", label: "make a piece", x: 0.14, y: 0.52 },
+      { id: "release", label: "release it", x: 0.86, y: 0.52 },
+      { id: "response", label: "receive response", x: 0.5, y: 0.9 },
+    ]}
+    edges={[
+      { from: "notice", to: "make", label: "form" },
+      { from: "make", to: "release", label: "finish" },
+      { from: "release", to: "response", label: "meet others" },
+      { from: "response", to: "notice", kind: "reinforcing", label: "see again", labelOffset: { y: 18 } },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Keep one open question">
+For seven days, carry one question that has no urgent answer. It might concern a color, a
+conversation, a neighborhood, a technical problem, or a tension in your current project. Add
+one observation to a note each day. Do not turn the list into an outline. At the end of the
+week, circle the detail that still has a charge and make a twenty-minute study from it.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Make three small variations">
+Choose a work-in-progress and make three versions of one bounded element: a headline, opening
+paragraph, chord change, thumbnail, feature name, or layout. Change one condition in each
+version. Put them aside overnight, then return and write down what each version makes more
+possible. The goal is to increase your information before you choose.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Give the maker and editor separate appointments">
+Schedule one forty-minute session to generate material without deleting, ranking, or sharing
+it. Schedule a second, shorter session on the following day to mark only the parts that have
+energy. In that second session, make one cut and one arrangement decision. Keeping the jobs
+apart gives both a concrete standard.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Set a release threshold">
+Choose one small piece that has been nearly ready for too long. Define the conditions that make
+it ready enough to share, such as one proofread, one listening pass, or feedback from one
+trusted person. Meet that threshold, send it to its destination, and record one thing you
+notice about the experience before beginning the next study.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+Rubin's language about receptivity and a larger creative source is a philosophical frame, not
+an account of how ideas can be verified to arrive. It can help reduce possessiveness and make
+experimentation easier, but it should not become a reason to wait passively for inspiration.
+Nor does an open practice erase material constraints. Time, money, training, access, health,
+caregiving, collaborators, and fair compensation shape who gets to make work and sustain it.
+Attention is useful, but it is not a substitute for those conditions.
+</Callout>
+
+## If you remember one thing
+
+Treat creativity as a practice of attention with a workbench attached. Notice what has life,
+test it in small forms, shape what survives, and release it before certainty turns into delay.
+
+The nearby shelf offers protected concentration, compassion for rough drafts, creative
+permission, and practices for refilling attention.
+
+<ShelvedNearby
+  related={["deep-work", "bird-by-bird", "big-magic", "artists-way"]}
+  buyUrl="https://www.penguinrandomhouse.com/books/717356/the-creative-act-by-rick-rubin/"
+  buyLabel="The Creative Act by Rick Rubin"
+/>
