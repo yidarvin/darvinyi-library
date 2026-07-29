@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: revise
 
 ## Critique round 1 — 2026-07-28
 
@@ -127,3 +127,52 @@ Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
   status remains `draft`; the queue was not changed.
 - Made the caveat self-contained by removing the inaccessible pointer to internal evidence
   notes while retaining its concrete randomized-trial qualification.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+1. **Restore the book's central preventive argument instead of reducing the
+   distillation to dietary prudence and one lipid outcome.** The brief says the
+   thesis to convey is that Greger treats diet as the biggest lever against the
+   diseases most likely to kill people, with the evidence pointing toward whole
+   plant foods (`prompts/notes/how-not-to-die.md:10-12`). The Hero never states that
+   claim, and “The thesis” calls the case ambitious but replaces it with the much
+   narrower conclusion that plant-centered patterns can lower blood lipids
+   (`src/chapters/how-not-to-die.mdx:5-16`). Of the five Key Ideas, three are mainly
+   qualifications about medical care, evidence design, and nutritional planning;
+   none explains the book's claimed connection between the ordinary food pattern
+   and its broad chronic-disease or mortality focus. A reader therefore leaves with
+   sensible guidance for eating more plants, but not with the core argument of *How
+   Not to Die*, which fails the site's defining distillation standard and the
+   rubric's thesis requirement.
+
+   Reintroduce the broad claim explicitly as **Greger's argument**, then give the
+   library's bounded synthesis without presenting it as settled fact. The recorded
+   evidence already provides a practical way to do this without reviving round 1's
+   unsupported multi-risk-factor claims: two long-running cohorts support adjusted
+   associations between healthier plant-centered patterns and cardiovascular or
+   all-cause outcomes, while the randomized meta-analysis supports lower blood
+   lipids and the caveat explains the causal limit
+   (`content/evidence/how-not-to-die.md:6-11`). Make that preventive logic visible in
+   the Hero/Thesis and at least one structural Key Idea and diagram. Keep the
+   mandatory criticism prominent, preserve medical care, and do not state
+   “biggest lever” as an independently established fact.
+
+### Advisory
+
+None.
+
+Round 1's seven required findings are resolved. Figure 144.1 now encodes assembly,
+Figure 144.3's narrowed arrows render with clearance, Figure 144.4 keeps the study
+designs parallel, Figure 144.5 renders the hierarchy from the intended base, the
+clinical and nutrient claims match the recorded evidence, and the registry record
+is complete. The outbound link and all three related slugs resolve, the Model
+section remains correctly absent under the brief, and no apparent close paraphrase,
+source-figure reproduction, quotation, or real cover art was found. No new external
+web search was begun.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28: queue, registry, content,
+critique-state, and prose validation passed; all 42 pipeline and runner tests and all
+310 Vitest tests passed; TypeScript, the Vite production build, and ESLint passed.
+Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
