@@ -156,7 +156,7 @@ Run it first. Every row after it is one book. Each book has a brief at
 | 139 | waking-up                       | Waking Up                                     | DONE    |
 | 140 | moonwalking-einstein            | Moonwalking with Einstein                     | DONE    |
 | 141 | mind-for-numbers                | A Mind for Numbers                            | DONE    |
-| 142 | creative-act                    | The Creative Act                              | PENDING |
+| 142 | creative-act                    | The Creative Act                              | DONE    |
 | 143 | show-your-work                  | Show Your Work!                               | PENDING |
 | 144 | how-not-to-die                  | How Not to Die                                | PENDING |
 | 145 | omnivores-dilemma               | The Omnivore's Dilemma                        | PENDING |

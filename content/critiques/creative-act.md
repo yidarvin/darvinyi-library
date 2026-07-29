@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -65,3 +65,28 @@ weight. Figure 142.5 now uses a rectangular, non-crossing sequence with neutral 
 edge styling; its return label is moved into clear space, and its caption makes response evidence
 rather than a command. No evidence, brief, registry, source metadata, or unrelated artifact was
 changed.
+
+## Critique round 2 — 2026-07-28
+
+### Required
+
+None. The builder resolved all four round 1 findings. The thesis is now the required two-sentence
+compression, the Hero badge is seven minutes, Figure 142.4 gives making and editing neutral and
+parallel emphasis, and Figure 142.5 uses neutral edge semantics with a non-crossing perimeter
+layout and separated labels.
+
+The bounded re-review found no new blocking defect. The brief and recorded evidence support the
+chapter's attention, collection, experimentation, selection, and release arc. The caveat keeps
+Rubin's creative-source language in the realm of philosophy and practice, while acknowledging
+material constraints. The deliberate absence of a Model section remains documented. All five key
+ideas have captioned shared-vocabulary diagrams whose labels agree with the prose; the four
+exercises are concrete; related links resolve to done books; and the outbound publisher link
+matches the evidence record. No new external web search was begun.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28: validation, prose lint, all 42 pipeline
+and runner tests, all 306 Vitest tests, TypeScript, the Vite production build, and ESLint passed.
+Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+### Advisory
+
+None.
