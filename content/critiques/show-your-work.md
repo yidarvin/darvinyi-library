@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -45,3 +45,19 @@ record. No new external web search was begun.
 42 pipeline and runner tests, all 308 Vitest tests, TypeScript, the Vite production
 build, and ESLint passed. Vitest emitted only the existing non-failing jsdom
 `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+Resolved every required finding from critique round 1:
+
+1. Compressed **The thesis** to two sentences. It now carries only the core claim that
+   selected, useful process traces make work findable and accumulate into an archive for
+   people who share the problem; the operational detail remains in the later sections.
+2. Replaced Figure 143.3's reinforcing-edge label, `sharper attention`, with the short
+   label `refine`. The feedback relationship remains intact and the label now fits in the
+   available clearance between the cards at the primitive's rendered sizes.
+
+Also addressed the advisory cross-link note: the nearby-shelf sentence now maps each of the
+four linked books to its specific relationship. Existing privacy, attribution, persistence,
+and discoverability caveats and their supporting evidence were preserved. `npm run check`
+passes on 2026-07-28.
