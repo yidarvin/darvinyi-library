@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -101,3 +101,29 @@ matches the evidence record. No new external web search was begun.
 critique-state, and prose validation passed; all 42 pipeline and runner tests and all
 310 Vitest tests passed; TypeScript, the Vite production build, and ESLint passed.
 Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+- Compressed **The thesis** to two sentences and retained the distinction between Greger's
+  ambitious preventive case and the chapter's bounded interpretation.
+- Replaced Figure 144.1's invalid food-group Venn with the new reusable **Assembly /
+  contribution** diagram. Its three distinct food groups now converge on a whole-food
+  pattern rather than falsely overlap as sets. Added the primitive to the diagram index and
+  vocabulary.
+- Reduced Figure 144.3 to the supported relationships: food pattern → lower blood lipids
+  on average in the recorded randomized evidence, and care and context → food pattern. The
+  three cards are now spaced so every arrow segment and label stays outside the cards.
+- Replaced Figure 144.4's sequential Flow with a neutral side-by-side comparison of short
+  randomized trials and long observational cohorts. It now shows distinct evidence paths and
+  preserves the primitive's 380-unit mobile width.
+- Supplied Figure 144.5's Pyramid tiers from base to apex: whole-food staples, planned
+  nutrients and fortification, variety and adequate energy, then personal goals and
+  preferences. Removed the unsupported `ascending` prop.
+- Narrowed the clinical claim to recorded randomized lipid evidence, removed unsupported
+  blood-pressure, glycemic-control, and weight claims, and aligned the planning list with the
+  evidence record by naming B12, vitamin D, iodine, zinc, calcium, and selenium.
+- Completed the draft registry record with tier 3, a chapter-aligned thesis, the deliberate
+  absence of a signature model, and the five rendered diagram forms in order. The registry
+  status remains `draft`; the queue was not changed.
+- Made the caveat self-contained by removing the inaccessible pointer to internal evidence
+  notes while retaining its concrete randomized-trial qualification.

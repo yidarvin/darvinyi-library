@@ -2844,7 +2844,17 @@
       "subtitle": "Michael Greger · 2015",
       "part": "Health & the Body",
       "routes": [],
-      "status": "draft"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Whole-food plant-centered patterns are a practical recurring dietary option that can support lower blood lipids, while nutritional adequacy, clinical context, and uncertainty remain essential.",
+      "framework": "No single signature model; the Model section is deliberately omitted because the book's argument is carried by five key ideas.",
+      "diagrams": [
+        "assembly / contribution",
+        "comparison",
+        "node graph",
+        "comparison",
+        "pyramid"
+      ]
     },
     {
       "num": 145,

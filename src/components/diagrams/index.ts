@@ -17,3 +17,4 @@ export { Venn, type VennProps, type VennSet } from "./Venn";
 export { NodeGraph, type NodeGraphProps, type GraphNode, type GraphEdge } from "./NodeGraph";
 export { Timeline, type TimelineProps, type TimelineSegment } from "./Timeline";
 export { Bars, type BarsProps, type BarItem } from "./Bars";
+export { Assembly, type AssemblyProps } from "./Assembly";

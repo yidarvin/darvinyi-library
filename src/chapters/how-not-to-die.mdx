@@ -1,6 +1,6 @@
 import { Hero } from "../components/book/Hero";
 import { ShelvedNearby } from "../components/book/ShelvedNearby";
-import { Compare, Flow, NodeGraph, Pyramid, Venn } from "../components/diagrams";
+import { Assembly, Compare, NodeGraph, Pyramid } from "../components/diagrams";
 
 <Hero
   slug="how-not-to-die"
@@ -10,11 +10,10 @@ import { Compare, Flow, NodeGraph, Pyramid, Venn } from "../components/diagrams"
 
 ## The thesis
 
-Greger makes an ambitious preventive case: many of the chronic illnesses that shorten life are
-shaped, at least in part, by what people eat repeatedly, so a pattern centered on intact plant
-foods deserves to be a default rather than an occasional repair. The useful version of the
-argument is not that one menu prevents every illness. It is that diet is a recurring exposure
-that can improve several risk factors at once, and is worth treating as part of ordinary care.
+Greger makes an ambitious preventive case: many chronic illnesses are shaped, at least in part, by
+what people eat repeatedly, so intact plant foods deserve to be a default rather than an occasional
+repair. The bounded version is not that one menu prevents every illness, but that diet is a recurring
+exposure and whole-food plant-centered patterns can support lower blood lipids alongside ordinary care.
 
 ## Why it matters
 
@@ -34,14 +33,10 @@ foods play in a meal. The point is not purity. It is to give the most filling, n
 the largest share of the plate often enough that they become the normal meal.
 
 <Figure id="144.1" caption="A plant-centered pattern gets its shape from several food groups working together.">
-  <Venn
-    className="block w-full min-w-[380px]"
-    sets={[
-      { label: "vegetables and fruit" },
-      { label: "beans and whole grains" },
-      { label: "nuts and seeds" },
-    ]}
-    intersectionLabel="a repeatable whole-food pattern"
+  <Assembly
+    className="block w-full min-w-[400px]"
+    parts={["vegetables and fruit", "beans and whole grains", "nuts and seeds"]}
+    result="a repeatable whole-food pattern"
   />
 </Figure>
 
@@ -68,32 +63,26 @@ Quality, the rest of the diet, and the rest of a person's life remain part of th
   />
 </Figure>
 
-### Food is one influence among several, not a replacement for care
+### Food is one influence, not a replacement for care
 
-Diet may affect blood lipids, blood pressure, glycemic control, body weight, and other risk
-factors. Those connections help explain why a dietary pattern can matter across more than one
-condition. They do not turn food into a substitute for diagnosis, prescribed treatment, vaccines,
+The current record supports a cautious, narrower statement: randomized trials of vegetarian and
+vegan interventions lower blood lipids on average, although the result varies by intervention and
+person. That does not turn food into a substitute for diagnosis, prescribed treatment, vaccines,
 screening, or urgent care. A person with diabetes, kidney disease, an eating disorder, pregnancy,
 food insecurity, or a serious symptom needs an approach that fits the clinical situation, not a
 universal rule from a book.
 
-<Figure id="144.3" caption="Diet can touch several risk factors, but it sits inside a wider care and life system.">
+<Figure id="144.3" caption="Randomized trials support lower blood lipids on average; care and context guide any change.">
   <NodeGraph
     className="block w-full min-w-[380px]"
     nodes={[
-      { id: "food", label: "food pattern", x: 0.5, y: 0.5 },
+      { id: "food", label: "food pattern", x: 0.5, y: 0.55 },
       { id: "lipids", label: "blood lipids", x: 0.5, y: 0.12 },
-      { id: "glucose", label: "glycemic control", x: 0.86, y: 0.5 },
-      { id: "pressure", label: "blood pressure", x: 0.5, y: 0.88 },
-      { id: "weight", label: "body weight", x: 0.14, y: 0.5 },
-      { id: "care", label: "care and context", x: 0.82, y: 0.16 },
+      { id: "care", label: "care and context", x: 0.06, y: 0.86 },
     ]}
     edges={[
-      { from: "food", to: "lipids", label: "can affect", labelOffset: { x: -40, y: 0 } },
-      { from: "food", to: "glucose", label: "can affect", labelOffset: { x: 20, y: -8 } },
-      { from: "food", to: "pressure", label: "can affect", labelOffset: { x: 28, y: 0 } },
-      { from: "food", to: "weight", label: "can affect", labelOffset: { x: -24, y: 0 } },
-      { from: "care", to: "food", label: "individualizes", labelOffset: { x: 6, y: -20 } },
+      { from: "food", to: "lipids", label: "can lower" },
+      { from: "care", to: "food", label: "guides", labelOffset: { x: -8, y: 8 } },
     ]}
   />
 </Figure>
@@ -108,10 +97,17 @@ conclusion often lives between dismissal and certainty: some effects are credibl
 cause of every long-term outcome are less settled.
 
 <Figure id="144.4" caption="Different study designs answer different questions, so a result should not be stretched past its reach.">
-  <Flow
-    className="block w-full min-w-[520px]"
-    steps={["food change", "short trial: risk factor", "long cohort: outcomes", "careful conclusion"]}
-    highlight={3}
+  <Compare
+    className="block w-full min-w-[380px]"
+    favor="none"
+    left={{
+      title: "short randomized trials",
+      points: ["test a dietary change", "can measure LDL cholesterol", "usually run for months"],
+    }}
+    right={{
+      title: "long observational cohorts",
+      points: ["track outcomes over years", "show adjusted associations", "leave confounding possible"],
+    }}
   />
 </Figure>
 
@@ -119,8 +115,8 @@ cause of every long-term outcome are less settled.
 
 Eating more plant foods does not require perfection or a vegan identity. If someone does choose a
 fully vegan pattern, planning becomes more important. Vitamin B12 does not occur naturally in
-unfortified plant foods, and other needs, including iodine, calcium, vitamin D, iron, zinc, and
-omega-3 fats, can depend on food choices, fortification, supplements, life stage, and health.
+unfortified plant foods, and other needs, including iodine, calcium, vitamin D, zinc, and selenium,
+can depend on food choices, fortification, supplements, life stage, and health.
 The right response is neither fear nor improvisation. It is to learn the basics, use reliable
 sources when needed, and discuss personal needs with a qualified clinician or dietitian.
 
@@ -128,12 +124,11 @@ sources when needed, and discuss personal needs with a qualified clinician or di
   <Pyramid
     className="block w-full min-w-[380px]"
     tiers={[
-      { label: "personal goals and preferences" },
-      { label: "variety and adequate energy" },
-      { label: "planned nutrients and fortification" },
       { label: "whole-food staples" },
+      { label: "planned nutrients and fortification" },
+      { label: "variety and adequate energy" },
+      { label: "personal goals and preferences" },
     ]}
-    ascending
   />
 </Figure>
 
@@ -174,8 +169,7 @@ support improvements in some cardiometabolic risk factors, but results vary, tri
 short, and they do not establish that a diet reverses every disease. One two-year randomized trial
 of culturally tailored vegan and omnivorous diets found no between-group difference in weight or
 lipids at twelve months. Treat a whole-food plant-centered pattern as a well-supported option, not
-as settled proof, a cure, or permission to stop medical treatment. See the evidence notes for the
-studies behind this caution.
+as settled proof, a cure, or permission to stop medical treatment.
 </Callout>
 
 ## If you remember one thing

@@ -84,6 +84,13 @@ A horizontal axis of ordered segments or magnitudes. For sequence-in-time or sim
 - Component: `<Timeline segments={[...]} />` / `<Bars items={[...]} />`
 - For magnitude bars, keep it conceptual and clearly labeled; not a data chart.
 
+### 13. Assembly / contribution
+Several peer inputs converge on a single assembled whole. For combination where the inputs remain
+distinct, rather than overlapping as sets or arriving as stages in a procedure.
+- Use for: the food groups that make up a meal pattern, ingredients of a policy package, or
+  complementary practices that collectively create a result.
+- Component: `<Assembly parts={[...]} result="..." />`
+
 ## Matching guidance
 
 Rough defaults from concept shape to form:
@@ -99,5 +106,6 @@ Rough defaults from concept shape to form:
 - Surface vs. depth → **iceberg**.
 - A sweet spot where things overlap → **venn**.
 - A change or relationship over time → **timeline** or **annotated curve**.
+- Several distinct ingredients make a whole → **assembly / contribution**.
 
 When two forms fit, choose the simpler one, and vary forms across a single page so one book's key-idea diagrams are not all the same shape.
