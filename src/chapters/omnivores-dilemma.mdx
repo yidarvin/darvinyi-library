@@ -1,0 +1,186 @@
+import { Hero } from "../components/book/Hero";
+import { ShelvedNearby } from "../components/book/ShelvedNearby";
+import { Assembly, Compare, Flow, Iceberg, NodeGraph } from "../components/diagrams";
+
+<Hero
+  slug="omnivores-dilemma"
+  thesis="What we eat is a chain of relationships, not an isolated purchase. Following it back to land, labor, animals, and energy makes better questions possible."
+  minutes={7}
+/>
+
+## The thesis
+
+Pollan's question is disarmingly ordinary: what should dinner be? His answer is to stop treating
+that question as a matter of appetite alone. A meal joins farms, processing plants, animals,
+workers, fuel, rules, and ecosystems. Trace those connections far enough and food becomes less
+anonymous. The aim is not to find a spotless meal, but to choose with a clearer sense of the
+relationships a meal asks you to support.
+
+## Why it matters
+
+Modern food is good at removing effort from the buyer's view. A package can make a long chain of
+decisions look like a simple object on a shelf. That convenience has real value, especially when
+time, money, transport, and access are tight. It also means that price, flavor, and a front-label
+claim rarely tell the whole story. The book is a case for recovering some context before calling a
+choice informed.
+
+## Key ideas
+
+### A meal has a history hidden beneath its surface
+
+The visible meal is the end of a much larger system. Ingredients have origins, animals have feed,
+farms have inputs, and every handoff needs storage, transport, money, and labor. None of that
+makes a meal wrong. It means the meal carries consequences that a menu description cannot show.
+The first useful habit is to replace the question "What is this?" with "What had to happen for
+this to arrive here?" The answer will often be incomplete, but even a partial answer changes what
+counts as a good choice.
+
+<Figure id="145.1" caption="The meal is visible; the chain of land, labor, and energy beneath it is easy to miss.">
+  <Iceberg
+    className="block w-full min-w-[380px]"
+    above="the meal on the table"
+    waterlineLabel="what the package shows"
+    below={["farm and feed", "processing and transport", "labor, rules, and waste"]}
+  />
+</Figure>
+
+### Corn is a crop, a feed, a fuel, and an ingredient stream
+
+One of the book's sharpest demonstrations follows corn through the American food system. It can
+leave a field as animal feed, as an ingredient refined into many products, or as a feedstock for
+ethanol. The current USDA account still describes corn as the dominant U.S. feed grain, with major
+uses in livestock feed and fuel ethanol as well as food ingredients. That range makes corn a good
+systems lens: a decision made at the field reaches dinner by several routes, and dinner competes
+with other uses of the same harvest.
+
+<Figure id="145.2" caption="One harvest can travel through feed, fuel, and ingredient channels before it reaches a meal.">
+  <Flow
+    className="block w-full min-w-[558px]"
+    steps={["corn field", "harvest and processing", "feed, fuel, or ingredients", "food choice"]}
+    highlight={2}
+  />
+</Figure>
+
+### Efficiency can concentrate costs that the shelf does not display
+
+Industrial supply chains can deliver abundant, standardized food at a low checkout price. Their
+strength is coordination at scale. Their weakness is distance: the farther a buyer is from the
+conditions of production, the easier it is for soil loss, animal conditions, worker safety, energy
+use, or waste to become somebody else's problem. This is not a claim that every large farm is
+careless or every nearby farm is responsible. It is a prompt to notice which costs are priced,
+which are regulated, and which are pushed outside the transaction.
+
+<Figure id="145.3" caption="The shelf records price and convenience more readily than the conditions that made them possible.">
+  <Compare
+    className="block w-full min-w-[380px]"
+    favor="none"
+    left={{
+      title: "what a shelf shows",
+      points: ["price", "brand and label", "taste and convenience", "a finished item"],
+    }}
+    right={{
+      title: "what it can omit",
+      points: ["inputs and energy", "labor and animal care", "soil and water effects", "waste after the sale"],
+    }}
+  />
+</Figure>
+
+### Organic is a rule set, not a finished moral verdict
+
+The book makes an important distinction between a production standard and the whole food system
+that delivers a product. USDA organic rules place meaningful limits on inputs and set livestock
+requirements. For example, organic livestock feed must be organic, and ruminants must have access
+to pasture under the program's rules. Those standards answer real questions. They do not, on their
+own, settle every question about distance, labor, habitat, animal welfare beyond the rule, cost, or
+the overall structure of a large supply chain. A label is useful evidence, not the end of inquiry.
+
+<Figure id="145.4" caption="A certification can establish a floor of practices without answering every question a buyer may have.">
+  <Assembly
+    className="block w-full min-w-[400px]"
+    parts={["certified production rules", "farm-specific practices", "distribution and labor context"]}
+    result="a fuller food judgment"
+  />
+</Figure>
+
+### Responsibility grows from participation, not from perfect information
+
+Pollan's most durable move is to make eating an act of participation. Nobody can audit every
+ingredient, and few people can buy entirely from farms they know. Yet a person can widen the circle
+of attention: learn one source, cook one basic ingredient, ask one better question, and accept the
+tradeoffs openly. The point is practical agency. Food knowledge is not a badge of purity. It is a
+way to keep convenience from being the only value that decides the meal.
+
+<Figure id="145.5" caption="Small acts of inquiry connect a buyer to the people and systems that make a meal possible.">
+  <NodeGraph
+    className="block w-full min-w-[380px]"
+    nodes={[
+      { id: "buyer", label: "buyer", x: 0.5, y: 0.5 },
+      { id: "farm", label: "farm", x: 0.5, y: 0.1 },
+      { id: "food", label: "food business", x: 0.88, y: 0.5 },
+      { id: "community", label: "community", x: 0.5, y: 0.9 },
+      { id: "policy", label: "rules and policy", x: 0.12, y: 0.5 },
+    ]}
+    edges={[
+      { from: "farm", to: "buyer", label: "source" },
+      { from: "food", to: "buyer", label: "offers" },
+      { from: "buyer", to: "community", label: "spends with" },
+      { from: "policy", to: "farm", label: "sets rules", labelOffset: { x: -14, y: -4 } },
+    ]}
+  />
+</Figure>
+
+## Put it to work
+
+<ExerciseCard n="01" title="Trace one ordinary meal">
+Choose a meal you eat often and list its main ingredients. For one ingredient, find the country or
+region of origin, the producer if one is named, and the form it took before it reached the package.
+Write down what you can learn and what remains opaque. The exercise is investigation, not a test
+you can fail.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Buy one ingredient with a longer story">
+At the next grocery trip or market, choose one staple, such as eggs, beans, milk, bread, or greens.
+Compare two options on more than price: origin, production claims, ingredients, and the information
+the seller makes available. Pick the option that fits your budget and values, then notice whether
+it works in an ordinary week.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Cook from recognizable starting points">
+Make one meal from a few basic ingredients rather than from a fully assembled product. Cooking does
+not make a supply chain disappear, but it gives you a clearer view of what enters the meal and a
+better chance to use what you buy. Keep it simple enough to repeat.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Name a tradeoff before making a rule">
+If a more transparent option costs more, takes extra travel, or is unavailable, say so plainly.
+Access and budget are part of the food system, not personal failures. Choose one change that is
+actually sustainable, and leave room to revise it as circumstances change.
+</ExerciseCard>
+
+## Where people get it wrong
+
+<Callout kind="note">
+The book can make proximity, small scale, and direct knowledge feel like a simple route to better
+food. They are not reliable shortcuts. A local product can still carry serious environmental or
+labor costs, and a larger or more distant producer can follow strong standards. The evidence needed
+to compare climate, nutrition, welfare, price, and access differs by question. Organic certification
+is meaningful but bounded by its rules. Treat provenance as a way to ask better questions, not as
+a purity ranking or a demand that every eater become a private investigator.
+</Callout>
+
+## If you remember one thing
+
+A meal is a vote in a long chain of relationships. You cannot see or control all of it, but tracing
+one link at a time makes convenience, cost, care, and consequence easier to weigh honestly.
+
+## Shelved nearby
+
+How Not to Die considers food through the narrower lens of long-term health. Silent Spring shows
+how agricultural decisions can spread beyond the field. Atomic Habits helps turn one better grocery
+or cooking choice into a regular practice.
+
+<ShelvedNearby
+  related={["how-not-to-die", "silent-spring", "atomic-habits"]}
+  buyUrl="https://michaelpollan.com/books/the-omnivores-dilemma/"
+  buyLabel="Buy The Omnivore's Dilemma from Michael Pollan"
+/>

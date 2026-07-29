@@ -2863,7 +2863,17 @@
       "subtitle": "Michael Pollan · 2006",
       "part": "Health & the Body",
       "routes": [],
-      "status": "pending"
+      "status": "draft",
+      "tier": 3,
+      "thesis": "Pollan treats eating as participation in a long chain of land, labor, animals, energy, and rules; tracing that chain makes food choices more informed without promising a spotless meal.",
+      "framework": "No single signature model; the Model section is deliberately omitted because the book's inquiry is carried by five connected food-system ideas.",
+      "diagrams": [
+        "iceberg",
+        "flow",
+        "comparison",
+        "assembly / contribution",
+        "node graph"
+      ]
     },
     {
       "num": 146,
