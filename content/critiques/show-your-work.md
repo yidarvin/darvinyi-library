@@ -1,4 +1,4 @@
-verdict: revise
+verdict: resolved
 
 ## Critique round 1 — 2026-07-28
 
@@ -97,3 +97,20 @@ No new external web search was begun.
 42 pipeline and runner tests, all 308 Vitest tests, TypeScript, the Vite production
 build, and ESLint passed. Vitest emitted only the existing non-failing jsdom
 `Window.scrollTo()` notices.
+
+## Builder resolution — 2026-07-28
+
+Resolved the required finding from critique round 2:
+
+1. Reordered the six Key Ideas into an original reader-centered progression: make the
+   practice recognizable, reveal selected working evidence, teach a bounded lesson,
+   contribute without extracting attention, establish a sustainable rhythm, and stay
+   with the conversation. Added a one-sentence signpost before the ideas that states
+   this organizing logic. The source-concern sequence is no longer retained, while all
+   six original diagrams, captions, and the round 1 `refine` label fix remain intact.
+
+The two round 1 fixes remain preserved: **The thesis** is two sentences, and the
+nearby-shelf sentence maps each linked book to its relationship. No new external research
+was used. On 2026-07-28, `npm run check` cleared validation and prose lint before this
+environment's foreground runner stopped it during the unchanged repository test stage;
+`npm run build` and `npm run lint` then passed separately.
