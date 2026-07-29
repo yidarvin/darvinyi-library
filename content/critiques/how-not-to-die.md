@@ -1,4 +1,4 @@
-verdict: resolved
+verdict: approve
 
 ## Critique round 1 — 2026-07-28
 
@@ -232,3 +232,30 @@ Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
   `node graph`, matching Figure 144.2 and the rendered order: assembly, node graph,
   node graph, comparison, pyramid. The chapter remains `draft`; no done status, commit,
   or push was made.
+
+## Critique round 4 — 2026-07-28
+
+### Required
+
+None.
+
+### Advisory
+
+None.
+
+Round 3's registry finding is resolved. The registry now records the rendered
+diagram sequence as assembly / contribution, node graph, node graph, comparison,
+and pyramid. The chapter and registry otherwise remain aligned: the Hero and Thesis
+attribute Greger's broad preventive claim while bounding it with the recorded cohort
+associations and randomized lipid evidence; the mandatory caveat keeps causation,
+variable trial results, nutritional planning, and medical care explicit; all five
+key ideas have captioned in-vocabulary diagrams; the deliberate absence of a Model
+section matches the brief; and the related slugs and publisher link resolve. The
+review found no apparent close paraphrase, reproduced source figure, quotation, real
+cover art, or unsupported factual claim that changes the reader's understanding. No
+new external web search was begun.
+
+`npm run check` completed with `CHECK OK` on 2026-07-28: queue, registry, content,
+critique-state, and prose validation passed; all 42 pipeline and runner tests and all
+310 Vitest tests passed; TypeScript, the Vite production build, and ESLint passed.
+Vitest emitted only the existing non-failing jsdom `Window.scrollTo()` notices.
